@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Запрос на покупку каталог</title>
+  <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+
+<body class="page__body">
+    <div class="site-container">
+        <header class="header">
+    <div class="header__top header-top">
+        <div class="header-top__container container">
+            <div class="header-top__city city">
+                <button type="button" class="btn btn-reset city__title">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#location"></use>
+                    </svg>
+                    <span class="city__name">Краснодар</span>
+                </button>
+            </div>
+            <div class="header-top__actions">
+                <div class="header-top__action header-action header-action--ad">
+                    <button type="button" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#add"></use>
+                        </svg>
+                        <span class="header-action__name">
+                            Добавить
+                        </span>
+                    </button>
+                </div>
+                <div class="header-top__action header-action header-action--calendar">
+                    <button type="button" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#calendar"></use>
+                        </svg>
+                        <span class="header-action__quantity">
+                            2
+                        </span>
+                    </button>
+                </div>
+                <div class="header-top__action header-action header-action--chat">
+                    <button type="button" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                        </svg>
+                        <span class="header-action__quantity">
+                            2
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-top__personal header-personal">
+                <button type="button" class="btn btn-reset header-personal__title">
+                    <span class="header-personal__name">
+                        Кабинет
+                    </span>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#door-open"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header__main header-main">
+        <div class="header-main__container container">
+            <a href="#" class="header-main__logo logo">
+                <img loading="lazy" src="./img/logo.svg" width="238" height="32" class="logo__img" alt="Продам.Онлайн">
+            </a>
+            <nav class="header-main__nav nav">
+                <ul class="nav__list list-reset">
+                    <li class="nav__item"><a href="#" class="nav__link">Продажа</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Новостройки</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Покупка</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Агенты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+        <main class="main request-catalog">
+            <div class="request-catalog__container container">
+                <h1 class="request-catalog__title title-1">
+                    1 567 заявок на покупку
+                </h1>
+                <form class="request-catalog__filter filter">
+                    <div class="filter__inner">
+                        <div class="filter__row visible">
+                            <div class="filter__item filter__item--object request-catalog__select select-primary">
+                                <span class="select-primary__name">
+                                    Тип объекта
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="type-object">
+                                        <option value="apartments">Квартиры</option>
+                                        <option value="apartments2">Квартиры2</option>
+                                        <option value="apartments3">Квартиры3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div
+                                class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                                <span class="quantity-selection__subtitle">Укажите количество комнат</span>
+                                <div class="quantity-selection__inner">
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_studios" class="checkbox__label">
+                                            <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input"
+                                            type="checkbox" checked value="true">
+                                        <label for="filter-quantity_1" class="checkbox__label">
+                                            <span class="checkbox__text">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_2" name="filter-quantity-2" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_2" class="checkbox__label">
+                                            <span class="checkbox__text">2</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_3" name="filter-quantity-3" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_3" class="checkbox__label">
+                                            <span class="checkbox__text">3</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_4" name="filter-quantity-4" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_4" class="checkbox__label">
+                                            <span class="checkbox__text">4+</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__item filter__item--budget request-catalog__budget filter-dropdown">
+                                <button type="button" class="btn btn-reset filter-dropdown__button">
+                                    <span>
+                                        Бюджет
+                                    </span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <div class="filter-dropdown__dropdown">
+                                    <div class="filter-dropdown__item active">
+                                        <div class="filter-dropdown__range filter-range">
+                                            <span class="filter-range__subtitle">Сумма</span>
+                                            <div class="filter-range__nav">
+                                                <span data-default-start="1500000">1 500 000</span>
+                                                <span data-default-end="6000000">5 000 000</span>
+                                            </div>
+                                            <div class="filter-range__inner" data-min="100000" data-max="7500000"></div>
+                                        </div>
+                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#close"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="filter-dropdown__item">
+                                        <div class="filter-dropdown__range filter-range">
+                                            <span class="filter-range__subtitle">Ежемесячный платеж</span>
+                                            <div class="filter-range__nav">
+                                                <span data-default-start="15000">15000</span>
+                                                <span data-default-end="50000">50000</span>
+                                            </div>
+                                            <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
+                                        </div>
+                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#close"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button"
+                                class="btn btn-reset filter__item filter__item--area request-catalog__area">
+                                <span>Район на карте</span>
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#location-two"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="filter__row">
+                            <div class="filter__item filter__item--properties request-catalog__select select-primary">
+                                <span class="select-primary__name">
+                                    Свойства расчета
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="properties">
+                                        <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
+                                        </option>
+                                        <option value="apartments2">Свойства расчета2</option>
+                                        <option value="apartments3">Свойства расчета3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter__item filter__item--complex request-catalog__select select-primary">
+                                <span class="select-primary__name">
+                                    Комплекс
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="complex">
+                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст</option>
+                                        <option value="complex2">Комплекс2</option>
+                                        <option value="complex3">Комплекс3</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
+                                <div class="checkbox-secondary">
+                                    <input id="filter-urgent-app_1" name="filter-urgent-app-1"
+                                        class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="filter-urgent-app_1" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Срочные заявки</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-secondary">
+                                    <input id="filter-urgent-app_2" name="filter-urgent-app-2"
+                                        class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="filter-urgent-app_2" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Срочные заявки</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter__controls more">
+                        <button type="button" class="btn btn-reset filter__btn-control">
+                            <span>Еще фильтры</span>
+                            <svg>
+                                <use xlink:href="img/sprite.svg#check"></use>
+                            </svg>
+                        </button>
+                        <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                        <button type="button" class="btn btn-reset btn-primary filter__go">Показать 1567 заявок</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="footer">
+    <div class="container">
+      
+    </div>
+</footer>
+
+        <div class="test" style="margin-top:400px">
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
+        </div>
+
+    </div>
+    
+</body>
+
+
+</html>

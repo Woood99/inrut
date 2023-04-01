@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Ui Kit</title>
+    <link rel="preload" href="fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/HalvarBreit-Md.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body" style="padding: 20px;">
+    <div class="site-container">
+        <div class="container">
+            <div class="block">
+                <div>
+                    <h4>Buttons</h4>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-reset btn-primary">Primary</button>
+                    <button type="button" class="btn btn-reset btn-primary" disabled>Primary disabled</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-reset btn-secondary">Primary</button>
+                    <button type="button" class="btn btn-reset btn-secondary" disabled>Primary disabled</button>
+                </div>
+            </div>
+            <div class="block">
+                <div class="row">
+                    <div class="select-primary">
+                        <span class="select-primary__name">
+                            Свойства расчета
+                        </span>
+                        <div class="select-primary__inner">
+                            <select class="select-primary__body" name="properties">
+                                <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
+                                </option>
+                                <option value="apartments2">Свойства расчета2</option>
+                                <option value="apartments3">Свойства расчета3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="quantity-selection">
+                        <span class="quantity-selection__subtitle">Укажите количество комнат</span>
+                        <div class="quantity-selection__inner">
+                            <div class="checkbox">
+                                <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                    class="checkbox__input" type="checkbox" value="true">
+                                <label for="filter-quantity_studios" class="checkbox__label">
+                                    <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input"
+                                    type="checkbox" checked value="true">
+                                <label for="filter-quantity_1" class="checkbox__label">
+                                    <span class="checkbox__text">1</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="filter-quantity_2" name="filter-quantity-2" class="checkbox__input"
+                                    type="checkbox" value="true">
+                                <label for="filter-quantity_2" class="checkbox__label">
+                                    <span class="checkbox__text">2</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="filter-quantity_3" name="filter-quantity-3" class="checkbox__input"
+                                    type="checkbox" value="true">
+                                <label for="filter-quantity_3" class="checkbox__label">
+                                    <span class="checkbox__text">3</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="filter-quantity_4" name="filter-quantity-4" class="checkbox__input"
+                                    type="checkbox" value="true">
+                                <label for="filter-quantity_4" class="checkbox__label">
+                                    <span class="checkbox__text">4+</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+            <div class="block">
+                <div>
+                    <h4>Checkbox</h4>
+                </div>
+                <div class="row">
+                    <div class="checkbox-secondary">
+                        <input id="filter-urgent-app_1" name="filter-urgent-app-1" class="checkbox-secondary__input"
+                            type="checkbox" value="true">
+                        <label for="filter-urgent-app_1" class="checkbox-secondary__label">
+                            <span class="checkbox-secondary__text">Срочные заявки</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        h4:not([class]) {
+            font-size: 30px;
+            line-height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .block {
+            padding: 20px 0;
+        }
+
+        .block:first-child {
+            padding-top: 0;
+        }
+
+        .block:last-child {
+            padding-bottom: 0;
+        }
+
+        .block:not(:first-child) {
+            border-top: 1px solid gray;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+    </style>
+</body>
+
+
+</html>

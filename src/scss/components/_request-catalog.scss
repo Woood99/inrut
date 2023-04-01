@@ -1,0 +1,49 @@
+.request-catalog {
+    margin-top: 32px;
+
+    &__container {}
+
+    &__title {}
+
+    &__filter {
+        margin-top: 32px;
+    }
+
+    &__select {}
+
+    &__area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background-color: var(--primary100);
+        border-radius: 12px;
+
+        color: var(--gray);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        padding: 14.5px 16px;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--blue);
+        }
+    }
+
+    &__checkboxes {
+        margin-left: 23px;
+        margin-bottom: 10px;
+        align-self: end;
+        display: flex;
+        align-items: center;
+
+        >.checkbox-secondary {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+}

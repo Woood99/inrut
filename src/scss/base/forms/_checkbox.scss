@@ -7,12 +7,15 @@
         height: 0;
         opacity: 0;
 
-        &:focus+.checkbox__label:before {
-            background-color: #000;
-        }
+        &:checked {
+            +.checkbox__label {
+                background-color: var(--primary200);
 
-        &:checked+.checkbox__label:before {
-            background-color: #000;
+                .checkbox__text {
+                    color: var(--blue);
+                }
+            }
+
         }
     }
 
@@ -21,18 +24,99 @@
         display: inline-flex;
         align-items: center;
         position: relative;
+        height: 23px;
+        padding: 0 10px;
+        background-color: var(--white);
+        border-radius: 8px;
+        transition: background-color $transitionSpeed $transitionFunction;
+    }
 
-        &:before {
-            content: "";
-            align-self: flex-start;
-            flex: 0 0 20px;
-            width: 20px;
-            height: 20px;
-            border: 1px solid #a7a9ac;
+    &__text {
+        color: var(--gray);
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 400;
+        transition: color $transitionSpeed $transitionFunction;
+    }
+}
+
+
+
+.checkbox-secondary {
+    position: relative;
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:focus {
+            +.checkbox-secondary__label {
+                &::before {
+                    background-color: var(--primary100);
+                    border: 1px solid var(--primary300);
+                }
+            }
+        }
+
+        &:checked {
+            +.checkbox-secondary__label {
+                &::before {
+                    background-color: var(--blue);
+                    border: 1px solid var(--blue);
+                }
+
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary100);
+            border: 1px solid var(--primaryTwo);
+            border-radius: 2px;
+            transition: background-color $transitionSpeed $transitionFunction;
+        }
+
+        &::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction;
+
+            background-image: url('../img/check-mark.svg');
+            background-repeat: no-repeat;
+            background-size: 9px 6px;
+
+            background-position: center;
         }
     }
 
     &__text {
         margin-left: 10px;
+        color: var(--gray);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
     }
 }
