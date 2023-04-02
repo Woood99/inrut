@@ -17,17 +17,20 @@
 
 
 .btn-primary {
+    height: 48px;
     @include fontCofo;
     border-radius: 16px;
-    background-color: var(--primary400);
-    box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
+    background-color: var(--blue);
     color: var(--white);
 
-    font-size: 18px;
-    line-height: math.div(23, 18);
+    font-size: 15px;
+    line-height: math.div(19, 15);
     font-weight: 500;
 
-    padding: 16px 88px;
+    padding: 14.5px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         background-color: var(--primary500);
@@ -46,15 +49,20 @@
 }
 
 .btn-secondary {
+    height: 48px;
     @include fontCofo;
     border-radius: 16px;
-    color: var(--primary400);
+    color: var(--blue);
     border: 1px solid currentColor;
-    font-size: 18px;
-    line-height: math.div(23, 18);
+    font-size: 15px;
+    line-height: math.div(19, 15);
     font-weight: 500;
 
-    padding: 16px 88px;
+    padding: 13.5px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         color: var(--primary500);

@@ -1,0 +1,90 @@
+.main-banners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+
+    &__item {}
+}
+
+.main-banner {
+    width: 100%;
+    background-color: var(--primary100);
+    border-radius: 13px;
+    padding: 29px 30px;
+    overflow: hidden;
+    position: relative;
+
+    &--one {}
+
+    &--two {
+        background-color: var(--primary600);
+
+        .main-banner {
+
+            &__title {
+                color: var(--white);
+            }
+
+            &__descr {
+                color: #E7E7E7;
+            }
+
+            &__btn {
+                color: var(--gray);
+                background-color: var(--white);
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../img/banner-blur.png');
+        }
+    }
+
+    &__image {
+        background-position: center right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: math.div(27, 20);
+        color: var(--gray);
+        max-width: 220px;
+    }
+
+    &__descr {
+        margin-top: 10px;
+        color: var(--primaryTwo);
+        font-size: 13px;
+        line-height: math.div(15, 13);
+        font-weight: 400;
+        max-width: 300px;
+    }
+
+    &__btn {
+        margin-top: 27px;
+        padding: 14.5px 27px;
+        align-self: start;
+    }
+}

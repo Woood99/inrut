@@ -3,13 +3,14 @@
     &__top {}
 
     &__main {
-        padding: 19px 0;
+        position: relative;
+        height: 70px;
         background-color: var(--white);
     }
 }
 
 .header-top {
-    padding: 18px 0;
+    padding: 16px 0 15px;
     background-color: var(--primary100);
 
     &__container {
@@ -36,39 +37,19 @@
     &__personal {}
 }
 
-.city {
-
-    &__title {
-        color: var(--primaryTwo);
-        display: flex;
-        align-items: center;
-
-        svg {
-            width: 8px;
-            height: 10px;
-            margin-right: 9px;
-            fill: currentColor;
-        }
-    }
-
-    &__name {
-        color: inherit;
-    }
-}
-
 .header-action {
     &--add {}
 
-    &--calendar {
+    &--calendar {}
+
+    &--chat {
         .header-action__title {
             svg {
-                width: 14px;
-                height: 14px;
+                width: 19px;
+                height: 19px;
             }
         }
     }
-
-    &--chat {}
 
     &__title {
         color: var(--primaryTwo);
@@ -77,14 +58,16 @@
         position: relative;
 
         svg {
-            width: 19px;
-            height: 19px;
+            width: 14px;
+            height: 14px;
             fill: currentColor;
         }
     }
 
     &__name {
         margin-left: 10px;
+        font-size: 12px;
+        line-height: math.div(15, 12);
     }
 
     &__quantity {
@@ -127,15 +110,14 @@
     &__name {
         color: inherit;
         margin-right: 10px;
+        font-size: 12px;
+        line-height: math.div(15, 12);
     }
 }
 
-
-
 .header-main {
-
     &__container {
-
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -144,35 +126,4 @@
     &__logo {}
 
     &__nav {}
-}
-
-.logo {
-
-    &__img {}
-}
-
-.nav {
-
-    &__list {
-        display: flex;
-        align-items: center;
-    }
-
-    &__item {
-        &:not(:last-child) {
-            margin-right: 50px;
-        }
-    }
-
-    &__link {
-        color: var(--primaryTwo);
-        font-weight: 500;
-        font-size: 15px;
-        line-height: math.div(19, 15);
-        transition: color $transitionSpeed $transitionFunction;
-
-        &:hover {
-            color: var(--primary400);
-        }
-    }
 }

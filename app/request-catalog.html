@@ -2,15 +2,16 @@
 <html lang="ru" class="page">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#111111">
-  <title>Запрос на покупку каталог</title>
-  <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/vendor.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script defer src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Запрос на покупку каталог</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
 </head>
 
 
@@ -28,7 +29,7 @@
                 </button>
             </div>
             <div class="header-top__actions">
-                <div class="header-top__action header-action header-action--ad">
+                <div class="header-top__action header-action header-action--add">
                     <button type="button" class="btn btn-reset header-action__title">
                         <svg>
                             <use xlink:href="img/sprite.svg#add"></use>
@@ -78,10 +79,92 @@
             </a>
             <nav class="header-main__nav nav">
                 <ul class="nav__list list-reset">
-                    <li class="nav__item"><a href="#" class="nav__link">Продажа</a></li>
+                    <li class="nav__item nav-dropdown">
+                        <span class="nav__link">Продажа</span>
+                        <div class="nav-dropdown__dropdown">
+                            <div class="nav-dropdown__dropdown-container nav-dropdown-content container">
+                                <div class="nav-dropdown-content__card-info card-info">
+                                    <span class="card-info__title">
+                                        Успейте взять ипотеку
+                                        по выгодной ставке
+                                    </span>
+                                    <div class="card-info__image" style="background-image: url('./img/11prc.png')">
+                                    </div>
+                                </div>
+                                <div class="nav-dropdown-content__body">
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#key"></use>
+                                            </svg>
+                                            <span>Вторичка</span>
+                                        </a>
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#new-buildings"></use>
+                                            </svg>
+                                            <span>Новостройки</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#home"></use>
+                                            </svg>
+                                            <span>Дома, коттеджи, дачи</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav__item"><a href="#" class="nav__link">Новостройки</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Покупка</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
+                    <li class="nav__item nav-dropdown">
+                        <span class="nav__link">Продажа</span>
+                        <div class="nav-dropdown__dropdown">
+                            <div class="nav-dropdown__dropdown-container nav-dropdown-content container">
+                                <div class="nav-dropdown-content__card-info card-info">
+                                    <span class="card-info__title">
+                                        Успейте взять ипотеку
+                                        по выгодной ставке
+                                    </span>
+                                    <div class="card-info__image" style="background-image: url('./img/11prc.png')">
+                                    </div>
+                                </div>
+                                <div class="nav-dropdown-content__body">
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#bank"></use>
+                                            </svg>
+                                            <span>Ипотека</span>
+                                        </a>
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#shield"></use>
+                                            </svg>
+                                            <span>Ипотечное страхование</span>
+                                        </a>
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#money-check-edit"></use>
+                                            </svg>
+                                            <span>Оценка недвижимости для ипотеки</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#fingerprint"></use>
+                                            </svg>
+                                            <span>Юридическая проверка</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav__item"><a href="#" class="nav__link">Агенты</a></li>
                 </ul>
             </nav>
@@ -90,203 +173,526 @@
 </header>
 
         <main class="main request-catalog">
-            <div class="request-catalog__container container">
+            <div class="request-catalog__body container">
                 <h1 class="request-catalog__title title-1">
                     1 567 заявок на покупку
                 </h1>
                 <form class="request-catalog__filter filter">
-                    <div class="filter__inner">
-                        <div class="filter__row visible">
-                            <div class="filter__item filter__item--object request-catalog__select select-primary">
-                                <span class="select-primary__name">
-                                    Тип объекта
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="type-object">
-                                        <option value="apartments">Квартиры</option>
-                                        <option value="apartments2">Квартиры2</option>
-                                        <option value="apartments3">Квартиры3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div
-                                class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
-                                <span class="quantity-selection__subtitle">Укажите количество комнат</span>
-                                <div class="quantity-selection__inner">
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_studios" name="filter-quantity-studios"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_studios" class="checkbox__label">
-                                            <span class="checkbox__text checkbox__text-studios">Студия</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input"
-                                            type="checkbox" checked value="true">
-                                        <label for="filter-quantity_1" class="checkbox__label">
-                                            <span class="checkbox__text">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_2" name="filter-quantity-2" class="checkbox__input"
-                                            type="checkbox" value="true">
-                                        <label for="filter-quantity_2" class="checkbox__label">
-                                            <span class="checkbox__text">2</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_3" name="filter-quantity-3" class="checkbox__input"
-                                            type="checkbox" value="true">
-                                        <label for="filter-quantity_3" class="checkbox__label">
-                                            <span class="checkbox__text">3</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_4" name="filter-quantity-4" class="checkbox__input"
-                                            type="checkbox" value="true">
-                                        <label for="filter-quantity_4" class="checkbox__label">
-                                            <span class="checkbox__text">4+</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter__item filter__item--budget request-catalog__budget filter-dropdown">
-                                <button type="button" class="btn btn-reset filter-dropdown__button">
-                                    <span>
-                                        Бюджет
+                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#filter"></use>
+                        </svg>
+                        <span>Фильтр</span>
+                    </button>
+                    <div class="filter__container">
+                        <div class="filter__top">
+                            <span>Фильтры</span>
+                            <button type="button" class="btn btn-reset filter__close">Закрыть</button>
+                        </div>
+                        <div class="filter__inner">
+                            <div class="filter__row visible">
+                                <div class="filter__item filter__item--object request-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Тип объекта
                                     </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="type-object">
+                                            <option value="apartments">Квартиры</option>
+                                            <option value="apartments2">Квартиры2</option>
+                                            <option value="apartments3">Квартиры3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div
+                                    class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                                    <span class="quantity-selection__subtitle">Укажите количество комнат</span>
+                                    <div class="quantity-selection__inner">
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_studios" class="checkbox__label">
+                                                <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_1" name="filter-quantity-1"
+                                                class="checkbox__input" type="checkbox" checked value="true">
+                                            <label for="filter-quantity_1" class="checkbox__label">
+                                                <span class="checkbox__text">1</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_2" name="filter-quantity-2"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_2" class="checkbox__label">
+                                                <span class="checkbox__text">2</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_3" name="filter-quantity-3"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_3" class="checkbox__label">
+                                                <span class="checkbox__text">3</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_4" name="filter-quantity-4"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_4" class="checkbox__label">
+                                                <span class="checkbox__text">4+</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter__item filter__item--budget request-catalog__budget filter-dropdown">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <span>
+                                            Бюджет
+                                        </span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <div class="filter-dropdown__item active">
+                                            <div class="filter-dropdown__range filter-range">
+                                                <span class="filter-range__subtitle">Сумма</span>
+                                                <div class="filter-range__nav">
+                                                    <span data-default-start="1500000">1 500 000</span>
+                                                    <span data-default-end="6000000">5 000 000</span>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="100000" data-max="7500000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="filter-dropdown__item">
+                                            <div class="filter-dropdown__range filter-range">
+                                                <span class="filter-range__subtitle">Ежемесячный платеж</span>
+                                                <div class="filter-range__nav">
+                                                    <span data-default-start="15000">15000</span>
+                                                    <span data-default-end="50000">50000</span>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button"
+                                    class="btn btn-reset filter__item filter__item--area request-catalog__area">
+                                    <span>Район на карте</span>
                                     <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
                                     </svg>
                                 </button>
-                                <div class="filter-dropdown__dropdown">
-                                    <div class="filter-dropdown__item active">
-                                        <div class="filter-dropdown__range filter-range">
-                                            <span class="filter-range__subtitle">Сумма</span>
-                                            <div class="filter-range__nav">
-                                                <span data-default-start="1500000">1 500 000</span>
-                                                <span data-default-end="6000000">5 000 000</span>
-                                            </div>
-                                            <div class="filter-range__inner" data-min="100000" data-max="7500000"></div>
-                                        </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
+                            </div>
+                            <div class="filter__row">
+                                <div
+                                    class="filter__item filter__item--properties request-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Свойства расчета
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="properties">
+                                            <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
+                                            </option>
+                                            <option value="apartments2">Свойства расчета2</option>
+                                            <option value="apartments3">Свойства расчета3</option>
+                                        </select>
                                     </div>
-                                    <div class="filter-dropdown__item">
-                                        <div class="filter-dropdown__range filter-range">
-                                            <span class="filter-range__subtitle">Ежемесячный платеж</span>
-                                            <div class="filter-range__nav">
-                                                <span data-default-start="15000">15000</span>
-                                                <span data-default-end="50000">50000</span>
-                                            </div>
-                                            <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
-                                        </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
+                                </div>
+                                <div class="filter__item filter__item--complex request-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Комплекс
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="complex">
+                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
+                                            </option>
+                                            <option value="complex2">Комплекс2</option>
+                                            <option value="complex3">Комплекс3</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
+                                    <div class="checkbox-secondary">
+                                        <input id="filter-urgent-app_1" name="filter-urgent-app-1"
+                                            class="checkbox-secondary__input" type="checkbox" value="true">
+                                        <label for="filter-urgent-app_1" class="checkbox-secondary__label">
+                                            <span class="checkbox-secondary__text">Срочные заявки</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-secondary">
+                                        <input id="filter-urgent-app_2" name="filter-urgent-app-2"
+                                            class="checkbox-secondary__input" type="checkbox" value="true">
+                                        <label for="filter-urgent-app_2" class="checkbox-secondary__label">
+                                            <span class="checkbox-secondary__text">Срочные заявки</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button"
-                                class="btn btn-reset filter__item filter__item--area request-catalog__area">
-                                <span>Район на карте</span>
+                        </div>
+                        <div class="filter__controls more">
+                            <button type="button" class="btn btn-reset filter__btn-control">
+                                <span>Еще фильтры</span>
                                 <svg>
-                                    <use xlink:href="img/sprite.svg#location-two"></use>
+                                    <use xlink:href="img/sprite.svg#check"></use>
                                 </svg>
                             </button>
+                            <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                            <button type="button" class="btn btn-reset btn-primary filter__go">Показать 1567
+                                заявок</button>
                         </div>
-                        <div class="filter__row">
-                            <div class="filter__item filter__item--properties request-catalog__select select-primary">
-                                <span class="select-primary__name">
-                                    Свойства расчета
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="properties">
-                                        <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
-                                        </option>
-                                        <option value="apartments2">Свойства расчета2</option>
-                                        <option value="apartments3">Свойства расчета3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="filter__item filter__item--complex request-catalog__select select-primary">
-                                <span class="select-primary__name">
-                                    Комплекс
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="complex">
-                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст</option>
-                                        <option value="complex2">Комплекс2</option>
-                                        <option value="complex3">Комплекс3</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
-                                <div class="checkbox-secondary">
-                                    <input id="filter-urgent-app_1" name="filter-urgent-app-1"
-                                        class="checkbox-secondary__input" type="checkbox" value="true">
-                                    <label for="filter-urgent-app_1" class="checkbox-secondary__label">
-                                        <span class="checkbox-secondary__text">Срочные заявки</span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-secondary">
-                                    <input id="filter-urgent-app_2" name="filter-urgent-app-2"
-                                        class="checkbox-secondary__input" type="checkbox" value="true">
-                                    <label for="filter-urgent-app_2" class="checkbox-secondary__label">
-                                        <span class="checkbox-secondary__text">Срочные заявки</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="filter__controls more">
-                        <button type="button" class="btn btn-reset filter__btn-control">
-                            <span>Еще фильтры</span>
-                            <svg>
-                                <use xlink:href="img/sprite.svg#check"></use>
-                            </svg>
-                        </button>
-                        <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
-                        <button type="button" class="btn btn-reset btn-primary filter__go">Показать 1567 заявок</button>
                     </div>
                 </form>
+                <div class="request-catalog__table main-table">
+                    <div class="main-table__table">
+                        <div class="main-table__type">
+                            <span>Тип</span>
+                            <span>Параметры</span>
+                            <span>Бюджет</span>
+                            <span>Заявка от</span>
+                        </div>
+                        <div class="main-table__list">
+                            <a href="#" class="main-table__item object-info">
+                                <span class="object-info__type">
+                                    Квартира
+                                </span>
+                                <span class="object-info__parameter">
+                                    1,2-ком., от 34м2, до 12 эт.
+                                </span>
+                                <span class="object-info__price">
+                                    3 699 000 ₽
+                                </span>
+                                <div class="object-info__tooltips">
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--bank">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#bank"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object-info__from">
+                                    <div class="object-info__avatar">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="object-info__pos">
+                                        Агент покупателя
+                                    </span>
+                                    <span class="object-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info">
+                                <span class="object-info__type">
+                                    Дом
+                                </span>
+                                <span class="object-info__parameter">
+                                    1,2-ком., от 34м2, от 6 сот., ИЖС
+                                </span>
+                                <span class="object-info__price">
+                                    125 699 000 ₽
+                                </span>
+                                <div class="object-info__tooltips">
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#budget"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dollar"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#bolt"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object-info__from">
+                                    <div class="object-info__avatar">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Александр Г.">
+                                    </div>
+                                    <span class="object-info__pos">
+                                        Агент покупателя
+                                    </span>
+                                    <span class="object-info__name">
+                                        Александр Г.
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info">
+                                <span class="object-info__type">
+                                    Квартира
+                                </span>
+                                <span class="object-info__parameter">
+                                    Студия, 1,2-ком., от 34м2, до 12 эт.
+                                </span>
+                                <span class="object-info__price">
+                                    25 000 ₽
+                                </span>
+                                <div class="object-info__tooltips">
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--calculator">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#calculator"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object-info__from">
+                                    <div class="object-info__avatar">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Михаил Г.">
+                                    </div>
+                                    <span class="object-info__pos">
+                                        Агент покупателя
+                                    </span>
+                                    <span class="object-info__name">
+                                        Михаил Г.
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info">
+                                <span class="object-info__type">
+                                    Дом
+                                </span>
+                                <span class="object-info__parameter">
+                                    1,2-ком., от 34м2, уч. от 6 сот., ИЖС
+                                </span>
+                                <span class="object-info__price">
+                                    5 699 000 ₽
+                                </span>
+                                <div class="object-info__tooltips">
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#budget"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#bolt"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object-info__from">
+                                    <div class="object-info__avatar">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Лев Г.">
+                                    </div>
+                                    <span class="object-info__pos">
+                                        Покупатель
+                                    </span>
+                                    <span class="object-info__name">
+                                        Лев Г.
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info">
+                                <span class="object-info__type">
+                                    Квартира
+                                </span>
+                                <span class="object-info__parameter">
+                                    Студия, 1,2-ком., от 34м2, до 12 эт.
+                                </span>
+                                <span class="object-info__price">
+                                    130 000 000 ₽
+                                </span>
+                                <div class="object-info__tooltips">
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#budget"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
+                                        <div class="main-tooltip__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dollar"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="main-tooltip__content">
+                                            В сделке используется сертификат
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object-info__from">
+                                    <div class="object-info__avatar">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="object-info__pos">
+                                        Агент покупателя
+                                    </span>
+                                    <span class="object-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-table__next">
+                        <button type="button" class="btn btn-reset btn-secondary">
+                            Следующая страница
+                        </button>
+                    </div>
+                    <div class="main-table__pagination pagination">
+                        <ul class="pagination__list list-reset">
+                            <li class="pagination__item" disabled>
+                                <a href="#">
+                                    1
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    2
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    3
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    4
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    5
+                                </a>
+                            </li>
+                            <li class="pagination__item dots" tabindex="-1">
+                                ...
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    199
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="request-catalog__banners main-banners container">
+                <div class="main-banners__item main-banner main-banner--one">
+                    <div class="main-banner__content">
+                        <h2 class="main-banner__title">
+                            Семейная ипотека от 2,99%
+                        </h2>
+                        <p class="main-banner__descr">
+                            Купите квартиру в ипотеку
+                            по специальной программе для семей с детьми
+                        </p>
+                        <a href="#" class="btn btn-reset btn-primary main-banner__btn">
+                            Смотреть предложения
+                        </a>
+                    </div>
+                    <div class="main-banner__image" style="background-image: url('./img/banner-photo-1.png')" ;>
+                    </div>
+                </div>
+                <div class="main-banners__item main-banner main-banner--two">
+                    <div class="main-banner__content">
+                        <h2 class="main-banner__title">
+                            Успейте взять ипотеку
+                            по выгодной ставке
+                        </h2>
+                        <p class="main-banner__descr">
+                            Специальные предложения
+                            этой весны от 11% на новостройки
+                        </p>
+                        <a href="#" class="btn btn-reset btn-primary main-banner__btn">
+                            Смотреть предложения
+                        </a>
+                    </div>
+                    <div class="main-banner__image" style="background-image: url('./img/banner-photo-2.png')" ;>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="footer">
-    <div class="container">
-      
+    <div class="footer__container container">
+        <div class="footer__top">
+            <a href="#" class="footer__logo logo">
+                <img loading="lazy" src="./img/logo-two.svg" width="185" height="32" class="logo__img"
+                    alt="Продам.Онлайн">
+            </a>
+            <nav class="footer__nav nav">
+                <ul class="nav__list list-reset">
+                    <li class="nav__item"><a href="#" class="nav__link">Продажа</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Новостройки</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Покупка</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__write">
+            <p>
+                Есть предложения, напишите нам.
+            </p>
+            <button type="button" class="btn btn-reset btn-secondary footer__btn">Написать</button>
+        </div>
+        <p class="footer__descr">
+            © 2021-2022 ООО «Продам онлайн», официальный сайт использует куки-файлы и другие технологии, чтобы помочь
+            вам в навигации, а также предоставить лучший пользовательский опыт, анализировать использование наших
+            продуктов и услуг, повысить качество рекламных и маркетинговых активностей. Если Вы не хотите, чтобы Ваши
+            пользовательские данные обрабатывались, пожалуйста, ограничьте их использование в своём браузере.
+        </p>
     </div>
 </footer>
 
-        <div class="test" style="margin-top:400px">
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-            test text //// test text //// test text //// test text //// test text //// test text //// test text ////
-        </div>
-
     </div>
-    
 </body>
 
 

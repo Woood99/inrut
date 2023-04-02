@@ -1,12 +1,27 @@
 .request-catalog {
-    margin-top: 32px;
+    padding-top: 22px;
+    margin-bottom: 100px;
 
-    &__container {}
+    &__body {
+        @media (max-width:$smallTablet-max) {
+            padding: 24px 0 14px;
+            background-color: var(--primary100);
+        }
+    }
 
-    &__title {}
+    &__title {
+        @media (max-width:$smallTablet-max) {
+            padding: 0 $containerOffset+px;
+        }
+    }
 
     &__filter {
         margin-top: 32px;
+
+        @media (max-width:$smallTablet-max) {
+            padding: 0 $containerOffset+px;
+            margin-top: 24px;
+        }
     }
 
     &__select {}
@@ -43,7 +58,39 @@
         >.checkbox-secondary {
             &:not(:last-child) {
                 margin-right: 20px;
+
+                @media (max-width:$desktop) {
+                    margin-right: 0;
+                    margin-bottom: 14px;
+                }
             }
         }
+
+        @media (max-width:$desktop) {
+            margin: 0;
+            align-self: start;
+            flex-direction: column;
+        }
+    }
+
+    &__table {
+        margin-top: 32px;
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 24px;
+            background-color: transparent;
+        }
+    }
+
+    &__banners {
+        margin-top: 40px;
+    }
+
+    @media (max-width:$desktop) {
+        margin-bottom: 50px;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        padding-top: 0;
     }
 }

@@ -14,8 +14,15 @@
                 .checkbox__text {
                     color: var(--blue);
                 }
-            }
 
+                @media (max-width:$desktop) {
+                    background-color: var(--blue);
+
+                    .checkbox__text {
+                        color: var(--white);
+                    }
+                }
+            }
         }
     }
 
@@ -29,6 +36,13 @@
         background-color: var(--white);
         border-radius: 8px;
         transition: background-color $transitionSpeed $transitionFunction;
+
+        @media (max-width:$desktop) {
+            height: 32px;
+            padding: 0 13px;
+            background-color: var(--primary100);
+            border-radius: 7px;
+        }
     }
 
     &__text {
@@ -37,6 +51,11 @@
         line-height: math.div(15, 12);
         font-weight: 400;
         transition: color $transitionSpeed $transitionFunction;
+
+        @media (max-width:$desktop) {
+            font-size: 13px;
+            line-height: 100%;
+        }
     }
 }
 

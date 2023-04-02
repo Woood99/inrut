@@ -1,4 +1,6 @@
 import noUiSlider from 'nouislider';
+import enableScroll from '../modules/enableScroll';
+import disableScroll from '../modules/disableScroll';
 export const filterBudget = () => {
     const container = document.querySelectorAll('.filter-dropdown');
     if (!container.length >= 1) return;
@@ -57,39 +59,44 @@ export const filterControl = () => {
     const btn = container.querySelector('.filter__btn-control');
     const btnTextMap = {
         more: 'Ещё фильтры',
-        all: 'Показать фильтры',
         none: 'Скрыть фильтры'
     }
     const rows = container.querySelectorAll('.filter__row');
     const oneRow = rows[0];
     const twoRow = rows[1];
-    oneRow.style.maxHeight = oneRow.scrollHeight + 'px';
     btn.addEventListener('click', () => {
         if (controls.classList.contains('more')) {
             twoRow.classList.add('visible');
-            twoRow.style.maxHeight = twoRow.scrollHeight + 'px';
             controls.classList.remove('more');
             controls.classList.add('none');
             btn.querySelector('span').textContent = btnTextMap.none;
             return;
         }
         if (controls.classList.contains('none')) {
-            oneRow.classList.remove('visible');
             twoRow.classList.remove('visible');
-            oneRow.style.maxHeight = null;
             twoRow.style.maxHeight = null;
             controls.classList.remove('none');
-            controls.classList.add('all');
-            btn.querySelector('span').textContent = btnTextMap.all;
-            return;
-        }
-        if (controls.classList.contains('all')) {
-            oneRow.classList.add('visible');
-            oneRow.style.maxHeight = oneRow.scrollHeight + 'px';
-            controls.classList.remove('all');
             controls.classList.add('more');
             btn.querySelector('span').textContent = btnTextMap.more;
             return;
+        }
+    });
+}
+
+
+export const filterMobile = () => {
+    const btn = document.querySelector('.filter__btn');
+    const container = document.querySelector('.filter__container');
+    if (!(btn && container)) return;
+    const close = document.querySelector('.filter__close');
+    btn.addEventListener('click', () => {
+        container.classList.add('active');
+        disableScroll();
+    });
+    close.addEventListener('click', () => {
+        if (container.classList.contains('active')) {
+            container.classList.remove('active');
+            enableScroll();
         }
     });
 }
