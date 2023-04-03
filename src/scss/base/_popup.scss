@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.popup {
+.popup-primary {
     --transition-time: 0.3s;
     position: fixed;
     left: 0;
@@ -15,31 +15,21 @@
     right: 0;
     bottom: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(34, 41, 102, 0.4);
     cursor: pointer;
     overflow-y: auto;
     overflow-x: hidden;
-    text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition-time), visibility var(--transition-time);
-
-    &::before {
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        height: 100%
-    }
+    text-align: center;
 
     &__container {
         position: relative;
-        width: 1000px;
-        margin: 50px auto;
+        min-height: var(--vh);
         display: inline-block;
         vertical-align: middle;
         background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
         cursor: default;
         text-align: left;
         display: none;
@@ -47,29 +37,103 @@
         &.popup-open {
             display: inline-block;
         }
-
-        @media (max-width:1024px) {
-            width: 90%
-        }
     }
 
     &__close {
         position: absolute;
-        right: 10px;
-        top: 10px;
+        right: 0;
+        top: 0;
         border: none;
         padding: 0;
-        width: 20px;
-        height: 20px;
+        width: 60px;
+        height: 60px;
         background-color: transparent;
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512.001 512.001'%3E%3Cpath d='M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0014.143 5.857 19.94 19.94 0 0014.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z'/%3E%3C/svg%3E");
         cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: var(--primary500);
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
     }
 
     &.is-open {
         opacity: 1;
         visibility: visible;
         transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &--city {
+        .popup-primary {
+            &__container {
+                border-radius: 0 12px 12px 0;
+                padding: 65px 56px 80px 80px;
+                width: 611px;
+                min-width: 35vw;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 64px 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &--add {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 48px;
+                width: 333px;
+                min-width: 25vw;
+            }
+        }
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    @media (max-width:$desktop) {
+        background-color: transparent;
     }
 }
 

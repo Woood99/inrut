@@ -1,16 +1,17 @@
 .main-banners {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px;
 
-    &__item {}
+    &__container {}
+
+    &__item {
+        height: 100% !important;
+    }
 }
 
 .main-banner {
-    width: 100%;
     background-color: var(--primary100);
     border-radius: 13px;
     padding: 29px 30px;
+    box-sizing: border-box;
     overflow: hidden;
     position: relative;
 
@@ -44,11 +45,12 @@
             right: 0;
             bottom: 0;
             background-image: url('../img/banner-blur.png');
+            background-size: cover;
         }
     }
 
     &__image {
-        background-position: center right;
+        background-position: bottom right;
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -86,5 +88,9 @@
         margin-top: 27px;
         padding: 14.5px 27px;
         align-self: start;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        padding: 24px 16px;
     }
 }

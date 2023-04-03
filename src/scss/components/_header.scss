@@ -6,6 +6,10 @@
         position: relative;
         height: 70px;
         background-color: var(--white);
+
+        @media (max-width:$desktop) {
+            height: auto;
+        }
     }
 }
 
@@ -18,7 +22,32 @@
         align-items: center;
     }
 
-    &__city {}
+    .header-top__city {
+        @media (max-width:$desktop) {
+            display: none;
+        }
+    }
+
+    &__city {
+        @media (max-width:$desktop) {
+            margin-top: 33px;
+            padding: 0 16px;
+
+            svg {
+                width: 10px;
+                height: 12px;
+                margin-right: 26px;
+            }
+
+            .city {
+                &__name {
+                    font-weight: 500;
+                    font-size: 15px;
+                    line-height: math.div(19, 15);
+                }
+            }
+        }
+    }
 
     &__actions {
         display: flex;
@@ -26,6 +55,10 @@
 
         margin-left: auto;
         margin-right: 70px;
+
+        @media (max-width:$desktop) {
+            display: none;
+        }
     }
 
     &__action {
@@ -34,11 +67,28 @@
         }
     }
 
-    &__personal {}
+    &__personal {
+        @media (max-width:$desktop) {
+            margin-left: auto;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        background-color: var(--white);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 98;
+    }
 }
 
 .header-action {
-    &--add {}
+    &--add {
+        &:hover {
+            .header-action__title {
+                color: var(--primary400);
+            }
+        }
+    }
 
     &--calendar {}
 
@@ -121,9 +171,118 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .header-main__logo {
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
     }
 
-    &__logo {}
+    &__logo {
+        @media (max-width:$desktop) {
+            margin-left: 16px;
+        }
+    }
 
-    &__nav {}
+    &__nav {
+        @media (max-width:$desktop) {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: var(--vh);
+            height: 100%;
+            background-color: var(--white);
+            padding: 24px 0;
+
+            overflow-y: auto;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction;
+
+            &.menu--active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
+
+            .nav__list {
+                margin-top: 16px;
+                height: auto;
+                flex-direction: column;
+                align-items: start;
+                padding: 0 16px;
+            }
+
+            .nav__item {
+                padding: 0;
+                width: 100%;
+            }
+
+            .nav__link {
+                width: 100%;
+                padding: 16px 0;
+                display: flex;
+                align-items: center;
+
+            }
+        }
+    }
+
+    &__close {
+        align-self: end;
+        color: var(--blue);
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 500;
+        padding: 0 16px;
+
+        @media (min-width:$desktop) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-top: 24px;
+        padding: 0 16px;
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+        color: var(--gray);
+
+        @media (min-width:$desktop) {
+            display: none;
+        }
+    }
+
+    &__banners {
+        flex: 1 0 auto;
+        margin-top: 70px;
+        width: 100%;
+
+        &-slide {
+            height: 100% !important;
+
+            &--1 {
+                padding-left: 16px;
+                margin-left: -16px;
+            }
+
+            &--2 {
+                padding-right: 16px;
+                margin-right: -16px;
+            }
+        }
+
+        @media (min-width:$desktop) {
+            display: none;
+        }
+    }
 }

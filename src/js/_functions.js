@@ -1,16 +1,15 @@
 // ========================================================================================
 
-// Бургер-меню
-// import burgerMenu from './functions/burger';
-// burgerMenu();
+import burgerMenu from './functions/burger';
+burgerMenu();
 
 
 // ========================================================================================
 
 
-// Модальное окно
-// import popup from './functions/popup'
-// const call = new popup();
+import popup from './functions/popup';
+const city = new popup(null, '.popup-primary--city');
+const add = new popup(null, '.popup-primary--add');
 
 
 // ========================================================================================
@@ -26,7 +25,7 @@
 
 
 // Файл со слайдерами
-// import "./functions/sliders";
+import "./functions/sliders";
 
 
 // ========================================================================================
@@ -48,8 +47,8 @@
 
 
 // Спойлеры
-// import spollers from "./functions/spollers";
-// spollers();
+import spollers from "./functions/spollers";
+spollers();
 
 
 
@@ -76,7 +75,7 @@
 
 
 // Динамический адаптив
-// import "./functions/dynamic-adapt";
+import "./functions/dynamic-adapt";
 
 
 // ========================================================================================

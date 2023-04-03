@@ -6,6 +6,7 @@ const burgerMenu = () => {
     const menu = document.querySelector('[data-menu]');
     const menuItems = document.querySelectorAll('[data-menu-item]');
     const overlay = document.querySelector('[data-menu-overlay]');
+    const closeBtn = document.querySelector('.header-main__close')
     if (burger && menu) {
         burger.addEventListener('click', () => {
             !menu.classList.contains('menu--active') ? openMenu() : closeMenu();
@@ -15,6 +16,11 @@ const burgerMenu = () => {
         overlay.addEventListener('click', () => {
             closeMenu();
         });
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            closeMenu();
+        })
     }
     if (menuItems.length) {
         menuItems.forEach(el => {

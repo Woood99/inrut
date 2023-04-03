@@ -1,6 +1,6 @@
 .burger {
-    --burger-width: 30px;
-    --burger-height: 30px;
+    --burger-width: 15px;
+    --burger-height: 14px;
     --burger-line-height: 2px;
 
     position: relative;
@@ -8,10 +8,12 @@
     padding: 0;
     width: var(--burger-width);
     height: var(--burger-height);
-    color: #000;
+    color: #7A7FAA;
     background-color: transparent;
     cursor: pointer;
-
+    @media (min-width:$desktop){
+         display: none; 
+    }
     &::before,
     &::after {
         content: "";
@@ -21,6 +23,7 @@
         height: var(--burger-line-height);
         background-color: currentColor;
         transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        border-radius: 25px;
     }
 
     &::before {
@@ -40,24 +43,6 @@
         background-color: currentColor;
         transform: translateY(-50%);
         transition: transform 0.3s ease-in-out;
-    }
-
-    &--active {
-        &::before {
-            top: 50%;
-            transform: rotate(45deg);
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-        }
-
-        &::after {
-            top: 50%;
-            transform: rotate(-45deg);
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-        }
-
-        .burger__line {
-            transform: scale(0);
-            transition: transform 0.3s ease-in-out;
-        }
+        border-radius: 25px;
     }
 }

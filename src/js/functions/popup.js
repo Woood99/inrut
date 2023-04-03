@@ -1,11 +1,12 @@
 class popup {
-    constructor(options) {
+    constructor(options, selector) {
         let defaultOptions = {
             isOpen: () => {},
             isClose: () => {},
         }
+        this.popupName = selector.slice(1);
         this.options = Object.assign(defaultOptions, options);
-        this.popup = document.querySelector('.popup');
+        this.popup = document.querySelector(selector);
         this.speed = 300;
         this.animation = 'fade';
         this._reOpen = false;
@@ -37,9 +38,14 @@ class popup {
                     let speed = clickedElement.dataset.popupSpeed;
                     this.animation = animation ? animation : 'fade';
                     this.speed = speed ? parseInt(speed) : 300;
-                    this._nextContainer = document.querySelector(`[data-popup-target="${target}"]`);
-                    this.open();
-                    return;
+                    if (window.innerWidth <= 1112) {
+                        this.speed = 0;
+                    }
+                    if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {
+                        this._nextContainer = this.popup.querySelector(`[data-popup-target="${target}"]`);
+                        this.open();
+                        return;
+                    }
                 }
 
                 if (e.target.closest('.js-popup-close')) {
@@ -60,7 +66,7 @@ class popup {
             }.bind(this));
 
             document.addEventListener('click', function (e) {
-                if (e.target.classList.contains('popup') && e.target.classList.contains("is-open")) {
+                if (e.target.classList.contains(this.popupName) && e.target.classList.contains("is-open")) {
                     this.close();
                 }
             }.bind(this));
@@ -70,7 +76,6 @@ class popup {
 
     open(selector) {
         this.previousActiveElement = document.activeElement;
-
         if (this.isOpen) {
             this.reOpen = true;
             this.close();
@@ -80,7 +85,7 @@ class popup {
         this.popupContainer = this._nextContainer;
 
         if (selector) {
-            this.popupContainer = document.querySelector(`[data-popup-target="${selector}"]`);
+            this.popupContainer = this.popup.querySelector(`[data-popup-target="${selector}"]`);
         }
 
         this.popupContainer.scrollTo(0, 0)
@@ -111,7 +116,9 @@ class popup {
             this.popup.classList.remove('is-open');
             this.popupContainer.classList.remove('popup-open');
 
-            this.enableScroll();
+            if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
+                this.enableScroll();
+            }
 
             document.body.style.scrollBehavior = 'auto';
             document.documentElement.style.scrollBehavior = 'auto';
@@ -153,7 +160,7 @@ class popup {
     disableScroll() {
         let pagePosition = window.scrollY;
         this.lockPadding();
-        document.body.classList.add('disable-scroll');
+        document.body.classList.add('dis-scroll');
         document.body.dataset.position = pagePosition;
         document.body.style.top = -pagePosition + 'px';
     }
@@ -162,7 +169,7 @@ class popup {
         let pagePosition = parseInt(document.body.dataset.position, 10);
         this.unlockPadding();
         document.body.style.top = 'auto';
-        document.body.classList.remove('disable-scroll');
+        document.body.classList.remove('dis-scroll');
         window.scrollTo({
             top: pagePosition,
             left: 0

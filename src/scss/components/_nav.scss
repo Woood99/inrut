@@ -30,6 +30,28 @@
         &:hover {
             color: var(--primary400);
         }
+
+        &-icon {
+            width: 12px;
+            height: 12px;
+            fill: var(--primaryTwo);
+            margin-right: 24px;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        &-arrow {
+            width: 10px;
+            height: 5px;
+            fill: var(--primaryTwo);
+            margin-left: auto;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
     }
 }
 
@@ -59,52 +81,70 @@
         &:hover {
             color: var(--primaryTwo);
         }
+
+        @media (max-width:$desktop) {
+            height: auto;
+
+            &._spoller-active {
+                .nav__link-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
     }
 
     &__dropdown {
-        position: absolute;
-        z-index: 99;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%) translateY(20px);
-        width: 100%;
-
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity $transitionSpeed $transitionFunction,
-            visibility $transitionSpeed $transitionFunction,
-            transform $transitionSpeed $transitionFunction;
-
-        background-color: var(--white);
-        border-bottom-left-radius: 24px;
-        border-bottom-right-radius: 24px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        padding: 32px 0 24px;
-
-        &::before {
-            content: '';
+        @media (min-width:$desktop) {
             position: absolute;
-            top: 0;
-            left: 0;
+            z-index: 99;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
             width: 100%;
-            height: 1px;
-            background-color: rgba(122, 127, 170, 0.1);
-            z-index: -1;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction,
+                transform $transitionSpeed $transitionFunction;
+
+            background-color: var(--white);
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 32px 0 24px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(122, 127, 170, 0.1);
+                z-index: -1;
+            }
         }
     }
 
-    &:hover {
-        .nav__link {
-            &::before {
-                width: 125%;
+    @media (min-width:$desktop) {
+        &:hover {
+            .nav__link {
+                &::before {
+                    width: 125%;
+                }
+            }
+
+            .nav-dropdown__dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%);
             }
         }
+    }
 
-        .nav-dropdown__dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%);
-        }
+    @media (max-width:$desktop) {
+        display: block;
     }
 }
 
@@ -116,14 +156,24 @@
     &__card-info {
         margin-right: 50px;
         max-width: 323px;
-        height: 166px;
         width: 100%;
+
+        @media (max-width:$desktop) {
+            margin-right: 0;
+            width: auto;
+            max-width: none;
+            height: 100%;
+        }
     }
 
     &__body {
         display: grid;
         grid-template-columns: repeat(2, max-content);
         @include adaptiveValue("grid-column-gap", 159, 40);
+
+        @media (max-width:$desktop) {
+            display: block;
+        }
     }
 
     &__col {}
@@ -155,5 +205,21 @@
         &:hover {
             color: var(--blue);
         }
+
+        @media (max-width:$desktop) {
+            display: block;
+            padding: 16px 0;
+
+            &:not(:last-child) {
+                margin: 0;
+            }
+        }
+    }
+
+    @media (max-width:$desktop) {
+        flex-direction: column;
+        margin: 0;
+        padding: 0 0 0 36px;
+        max-width: none;
     }
 }

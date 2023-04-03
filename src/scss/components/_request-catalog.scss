@@ -46,6 +46,10 @@
             height: 18px;
             fill: var(--blue);
         }
+
+        @media (max-width:$desktop) {
+            padding: 17.5px 16px;
+        }
     }
 
     &__checkboxes {
@@ -84,6 +88,15 @@
 
     &__banners {
         margin-top: 40px;
+
+        @media (max-width:$desktop) {
+            margin-top: 18px;
+        }
+
+        &-container {
+            margin: 0 -16px;
+            padding: 0 16px;
+        }
     }
 
     @media (max-width:$desktop) {

@@ -18,6 +18,14 @@
     font-size: 24px;
     line-height: math.div(30, 24);
     color: var(--dark);
+
+    @media (max-width:$desktop) {
+        font-size: 21px;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        font-size: 18px;
+    }
 }
 
 .title-3 {
@@ -32,4 +40,43 @@
     font-size: 15px;
     line-height: math.div(19, 15);
     color: var(--dark);
+}
+
+
+
+
+.add-popup {
+
+
+
+    &__list {
+        margin-top: 32px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 500;
+        transition: color $transitionSpeed $transitionFunction;
+
+        &:hover {
+            color: var(--primary400);
+        }
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            margin-right: 16px;
+        }
+    }
 }
