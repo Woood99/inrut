@@ -38,7 +38,7 @@ class popup {
                     let speed = clickedElement.dataset.popupSpeed;
                     this.animation = animation ? animation : 'fade';
                     this.speed = speed ? parseInt(speed) : 300;
-                    if (window.innerWidth <= 1112) {
+                    if (window.innerWidth <= 1112 && !clickedElement.hasAttribute('data-mobile-speed')) {
                         this.speed = 0;
                     }
                     if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {

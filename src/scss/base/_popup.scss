@@ -102,7 +102,6 @@
                 border-radius: 0 12px 12px 0;
                 padding: 65px 56px 80px 80px;
                 width: 611px;
-                min-width: 35vw;
 
                 @media (max-width:$desktop) {
                     border-radius: 0;
@@ -119,7 +118,6 @@
                 border-radius: 12px 0 0 12px;
                 padding: 65px 48px;
                 width: 333px;
-                min-width: 25vw;
             }
         }
     }
@@ -136,6 +134,137 @@
         background-color: transparent;
     }
 }
+
+
+
+.popup-secondary {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(7.5px);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: center;
+
+    &__container {
+        position: relative;
+        min-height: var(--vh);
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #fff;
+        cursor: default;
+        text-align: left;
+        display: none;
+
+        &.popup-open {
+            display: inline-block;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: var(--primary500);
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+
+    &--personal {
+        .popup-secondary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 10px;
+                width: 413px;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 60px 10px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    @media (max-width:$desktop) {
+        background-color: transparent;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .fade {
     opacity: 0;

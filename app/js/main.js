@@ -46,6 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const city = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--city');
 const add = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--add');
+const personalArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-secondary--personal');
 
 // ========================================================================================
 
@@ -556,7 +557,7 @@ class popup {
           let speed = clickedElement.dataset.popupSpeed;
           this.animation = animation ? animation : 'fade';
           this.speed = speed ? parseInt(speed) : 300;
-          if (window.innerWidth <= 1112) {
+          if (window.innerWidth <= 1112 && !clickedElement.hasAttribute('data-mobile-speed')) {
             this.speed = 0;
           }
           if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {

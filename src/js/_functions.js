@@ -10,6 +10,7 @@ burgerMenu();
 import popup from './functions/popup';
 const city = new popup(null, '.popup-primary--city');
 const add = new popup(null, '.popup-primary--add');
+const personalArea = new popup(null, '.popup-secondary--personal');
 
 
 // ========================================================================================
