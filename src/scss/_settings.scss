@@ -64,6 +64,18 @@ a {
 
 .site-container {
     overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+
+    &.site-container--purchase-request {
+        @media (max-width:$desktop) {
+            .header {
+                display: none;
+            }
+
+            .footer__container {
+                padding-bottom: calc(56px + 12px); // 56 height + 12 gap
+            }
+        }
+    }
 }
 
 .visually-hidden {
@@ -83,7 +95,7 @@ a {
 }
 
 .is-hidden {
-    display: none !important;
+    display: none !important; // Hack! needs to be redefined globally
 }
 
 .page--ios .dis-scroll {

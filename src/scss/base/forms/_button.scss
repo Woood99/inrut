@@ -12,36 +12,37 @@
 .btn {
     transition: color $transitionSpeed $transitionFunction,
         background-color $transitionSpeed $transitionFunction,
-        border $transitionSpeed $transitionFunction;
+        border $transitionSpeed $transitionFunction,
+        box-shadow $transitionSpeed $transitionFunction;
 }
 
 
 .btn-primary {
-    height: 48px;
+    height: 55px;
     @include fontCofo;
     border-radius: 16px;
     background-color: var(--blue);
     color: var(--white);
 
-    font-size: 15px;
-    line-height: math.div(19, 15);
+    font-size: 18px;
+    line-height: math.div(23, 18);
     font-weight: 500;
 
-    padding: 14.5px 40px;
+    padding: 16px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-        background-color: var(--primary500);
+      background-color: rgba(0, 108, 238, 0.5);
     }
 
     &:active {
-        background-color: var(--primary600);
+        box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
     }
 
     &:disabled {
-        background-color: #F2F2F2;
+        background-color: var(--primary100);
         box-shadow: none;
         pointer-events: none;
         cursor: default;
@@ -49,30 +50,33 @@
 }
 
 .btn-secondary {
-    height: 48px;
+    height: 55px;
     @include fontCofo;
     border-radius: 16px;
     color: var(--blue);
     border: 1px solid currentColor;
-    font-size: 15px;
-    line-height: math.div(19, 15);
+    background-color: var(--white);
+    font-size: 18px;
+    line-height: math.div(23, 18);
     font-weight: 500;
 
-    padding: 13.5px 40px;
+    padding: 16px 40px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-        color: var(--primary500);
+        color: rgba(0, 108, 238, 0.5);
     }
 
     &:active {
-        color: var(--primary600);
+        box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
     }
 
     &:disabled {
+        background-color: var(--white);
+        border: 1px solid var(--primary100);
         color: #F2F2F2;
         pointer-events: none;
         cursor: default;

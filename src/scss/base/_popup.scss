@@ -35,7 +35,7 @@
         display: none;
 
         &.popup-open {
-            display: inline-block;
+            display: inline-block !important;
         }
     }
 
@@ -96,6 +96,18 @@
         transition: opacity var(--transition-time), visibility var(--transition-time);
     }
 
+    @media (max-width:$desktop) {
+        background-color: transparent;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
     &--city {
         .popup-primary {
             &__container {
@@ -122,16 +134,84 @@
         }
     }
 
-    &--right {
-        text-align: right;
+    &--share-app {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 24px;
+                width: 438px;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
     }
 
-    &--left {
-        text-align: left;
+    &--complaint {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 24px;
+                width: 438px;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
     }
 
-    @media (max-width:$desktop) {
-        background-color: transparent;
+    &--thanks {
+
+        text-align: center;
+
+        .popup-primary {
+            &__container {
+                min-height: auto;
+                margin: 50px auto;
+                text-align: center;
+                border-radius: 12px;
+                padding: 85px;
+                max-width: 393px;
+
+                @media (max-width:$smallTablet-max) {
+                    max-width: 100%;
+                    width: calc(100% - 4px);
+                    margin: 50px auto 0;
+                    vertical-align: bottom;
+
+                    padding: 65px 35px 48px;
+
+                    border-radius: 12px 12px 0 0;
+                }
+            }
+        }
+
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
     }
 }
 

@@ -14,7 +14,6 @@
     <script defer src="js/main.js"></script>
 </head>
 
-
 <body class="page__body">
     <div class="site-container">
         <header class="header">
@@ -217,7 +216,7 @@
     </div>
 </header>
 
-        <main class="main request-catalog">
+        <main class="main main-page-gap request-catalog">
             <div class="request-catalog__body container">
                 <h1 class="request-catalog__title title-1">
                     1 567 заявок на покупку
@@ -431,15 +430,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Алексей Г.">
                                     </div>
-                                    <span class="object-info__pos">
+                                    <span class="user-info__pos">
                                         Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>
@@ -486,15 +485,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Александр Г.">
+                                            alt="   Александр Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Агент покупателя
+                                    <span class="user-info__pos">
+                                        Покупатель
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Александр Г.
                                     </span>
                                 </div>
@@ -521,15 +520,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Михаил Г.">
                                     </div>
-                                    <span class="object-info__pos">
+                                    <span class="user-info__pos">
                                         Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Михаил Г.
                                     </span>
                                 </div>
@@ -566,15 +565,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Лев Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Покупатель
+                                    <span class="user-info__pos">
+                                        Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Лев Г.
                                     </span>
                                 </div>
@@ -611,15 +610,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Алексей Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Агент покупателя
+                                    <span class="user-info__pos">
+                                        Покупатель
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>
@@ -821,6 +820,7 @@
 </div>
 
 
+
 <div class="popup popup-secondary popup-secondary--right popup-secondary--personal">
     <div class="popup__container popup-secondary__container" role="dialog" aria-modal="true"
         data-popup-target="personal-area">
@@ -836,9 +836,10 @@
                 Личный кабинет
             </h2>
             <div class="personal-area__info">
-                <img loading="lazy" src="./img/avatar-1.jpg" class="personal-area__avatar" width="45" height="45"
-                    alt="Иван П.">
-                <span class="personal-area__name">
+                <div class="personal-area__avatar avatar">
+                    <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Иван П.">
+                </div>
+                <span class=" personal-area__name">
                     Иван П.
                 </span>
                 <button type="button" class="btn btn-reset personal-area__edit">Редактировать профиль</button>
@@ -950,6 +951,160 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--share-app">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
+        data-popup-target="share-app">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content share-app-popup">
+            <h2 class="share-app-popup__title title-3">
+                Поделиться заявкой
+            </h2>
+            <ul class="share-app-popup__list list-reset">
+                <li class="share-app-popup__item">
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </li>
+                <li class="share-app-popup__item">
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg>
+                        Telegram
+                    </a>
+                </li>
+                <li class="share-app-popup__item">
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg>
+                        Viber
+                    </a>
+                </li>
+                <li class="share-app-popup__item">
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg>
+                        Вконтакте
+                    </a>
+                </li>
+                <li class="share-app-popup__item">
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg>
+                        Одноклассники
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-reset btn-secondary share-app-popup__btn" data-href="liiiink.com">
+                Или скопировать ссылку
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--complaint">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
+        data-popup-target="complaint">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content complaint-popup">
+            <h2 class="complaint-popup__title title-3">
+                На что жалуетесь ?
+            </h2>
+            <form action="#" class="complaint-popup__form">
+                <div class="complaint-popup__radio radio-primary">
+                    <div class="radio-primary__item">
+                        <input hidden id="complaint_1" class="radio-primary__input" type="radio"
+                            value="Вымышленый запрос" name="complaint-radio">
+                        <label for="complaint_1" class="radio-primary__label">
+                            <span class="radio-primary__text">Вымышленый запрос</span>
+                        </label>
+                    </div>
+                    <div class="radio-primary__item">
+                        <input hidden id="complaint_2" class="radio-primary__input" type="radio"
+                            value="Приглашают в офис" name="complaint-radio">
+                        <label for="complaint_2" class="radio-primary__label">
+                            <span class="radio-primary__text">Приглашают в офис</span>
+                        </label>
+                    </div>
+                    <div class="radio-primary__item">
+                        <input hidden id="complaint_3" class="radio-primary__input" type="radio"
+                            value="Предложение уже не актуально" name="complaint-radio">
+                        <label for="complaint_3" class="radio-primary__label">
+                            <span class="radio-primary__text">Предложение уже не актуально</span>
+                        </label>
+                    </div>
+                    <div class="radio-primary__item">
+                        <input hidden id="complaint_4" class="radio-primary__input" type="radio"
+                            value="Некоректные параметры запроса" name="complaint-radio">
+                        <label for="complaint_4" class="radio-primary__label">
+                            <span class="radio-primary__text">Некоректные параметры запроса</span>
+                        </label>
+                    </div>
+                    <div class="radio-primary__item">
+                        <input hidden id="complaint_5" class="radio-primary__input" type="radio" value="Другое"
+                            name="complaint-radio">
+                        <label for="complaint_5" class="radio-primary__label">
+                            <span class="radio-primary__text">Другое</span>
+                        </label>
+                    </div>
+                </div>
+                <label class="complaint-popup__textarea textarea-primary">
+                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
+                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                </label>
+                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
+                    data-mobile-speed disabled data-popup-path="thanks">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--thanks">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="thanks">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content thanks-popup">
+            <div class="thanks-popup__icon">
+                <img loading="lazy" src="./img/like.png" alt="like">
+            </div>
+            <h3 class="thanks-popup__title title-3">Спасибо!</h3>
+            <p class="thanks-popup__descr">
+                Жалоба принята к рассмотрению
+            </p>
         </div>
     </div>
 </div>

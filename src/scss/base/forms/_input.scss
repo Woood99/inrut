@@ -21,3 +21,103 @@
 textarea.input-reset {
     resize: none;
 }
+
+
+.input-primary {
+    position: relative;
+    display: block;
+
+    &__input {
+        padding: 13.5px 16px;
+        background-color: #EBF1FB;
+        border-radius: 12px;
+
+        color: #3D3D3D;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        border: 1px solid transparent;
+
+        transition: padding $transitionSpeed $transitionFunction,
+            border $transitionSpeed $transitionFunction;
+
+        &:focus,
+        &.active {
+            padding: 19px 16px 8px;
+            border: 1px solid #006CEE;
+
+            &+.input-primary__span {
+                top: 8px;
+                font-size: 9px;
+                color: var(--primaryTwo);
+            }
+        }
+    }
+
+    &__span {
+        color: #3D3D3D;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        position: absolute;
+        top: 13.5px;
+        left: 16px;
+        transition: top $transitionSpeed $transitionFunction,
+            font-size $transitionSpeed $transitionFunction,
+            color $transitionSpeed $transitionFunction;
+    }
+}
+
+.textarea-primary {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: 144px;
+    display: block;
+
+    &__input {
+        width: 100%;
+        min-width: 320px;
+        height: 144px;
+        padding: 16px;
+        background-color: #EBF1FB;
+        border-radius: 12px;
+
+        color: var(--dark);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        border: 1px solid transparent;
+
+        transition: padding $transitionSpeed $transitionFunction,
+            border $transitionSpeed $transitionFunction;
+
+        &:focus,
+        &.active {
+            border: 1px solid #006CEE;
+
+            &+.textarea-primary__span {
+                top: 8px;
+                font-size: 9px;
+            }
+        }
+    }
+
+    &__span {
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        transition: top $transitionSpeed $transitionFunction,
+            transform $transitionSpeed $transitionFunction,
+            font-size $transitionSpeed $transitionFunction,
+            color $transitionSpeed $transitionFunction;
+    }
+}

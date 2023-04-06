@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('partials/head.html', {
-"title": "Запрос на покупку каталог"
-})
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Запрос на покупку каталог</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+</head>
 
 <body class="page__body">
     <div class="site-container">
         @include('partials/header.html')
-        <main class="main request-catalog">
+        <main class="main main-page-gap request-catalog">
             <div class="request-catalog__body container">
                 <h1 class="request-catalog__title title-1">
                     1 567 заявок на покупку
@@ -222,15 +231,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Алексей Г.">
                                     </div>
-                                    <span class="object-info__pos">
+                                    <span class="user-info__pos">
                                         Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>
@@ -277,15 +286,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Александр Г.">
+                                            alt="   Александр Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Агент покупателя
+                                    <span class="user-info__pos">
+                                        Покупатель
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Александр Г.
                                     </span>
                                 </div>
@@ -312,15 +321,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Михаил Г.">
                                     </div>
-                                    <span class="object-info__pos">
+                                    <span class="user-info__pos">
                                         Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Михаил Г.
                                     </span>
                                 </div>
@@ -357,15 +366,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Лев Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Покупатель
+                                    <span class="user-info__pos">
+                                        Агент покупателя
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Лев Г.
                                     </span>
                                 </div>
@@ -402,15 +411,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="object-info__from">
-                                    <div class="object-info__avatar">
+                                <div class="object-info__from user-info">
+                                    <div class="user-info__avatar avatar online">
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
                                             alt="Алексей Г.">
                                     </div>
-                                    <span class="object-info__pos">
-                                        Агент покупателя
+                                    <span class="user-info__pos">
+                                        Покупатель
                                     </span>
-                                    <span class="object-info__name">
+                                    <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>

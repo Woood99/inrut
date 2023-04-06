@@ -9,17 +9,31 @@
 
         &:checked {
             +.checkbox__label {
-                background-color: var(--primary200);
+                background-color: var(--blue);
 
                 .checkbox__text {
-                    color: var(--blue);
+                    color: var(--white);
                 }
+            }
 
-                @media (max-width:$desktop) {
+            &:hover {
+                +.checkbox__label {
                     background-color: var(--blue);
 
                     .checkbox__text {
                         color: var(--white);
+                    }
+                }
+            }
+        }
+
+        @media (min-width:$desktop) {
+            &:hover {
+                +.checkbox__label {
+                    border: 1px solid rgba(0, 108, 238, 0.5);
+
+                    .checkbox__text {
+                        color: rgba(0, 108, 238, 0.5);
                     }
                 }
             }
@@ -35,7 +49,9 @@
         padding: 0 10px;
         background-color: var(--white);
         border-radius: 8px;
-        transition: background-color $transitionSpeed $transitionFunction;
+        transition: background-color $transitionSpeed $transitionFunction,
+            border $transitionSpeed $transitionFunction;
+        border: 1px solid transparent;
 
         @media (max-width:$desktop) {
             height: 35px;
@@ -79,6 +95,14 @@
             }
         }
 
+        &:hover {
+            +.checkbox-secondary__label {
+                &::before {
+                    border: 1px solid rgba(0, 108, 238, 0.5);
+                }
+            }
+        }
+
         &:checked {
             +.checkbox-secondary__label {
                 &::before {
@@ -89,6 +113,22 @@
                 &::after {
                     opacity: 1;
                     visibility: visible;
+                }
+            }
+        }
+
+        &:disabled {
+            +.checkbox-secondary__label {
+                pointer-events: none;
+                cursor: default;
+
+                &::before {
+                    background-color: #BCBCBC;
+                    border: 1px solid #BCBCBC;
+                }
+
+                .checkbox-secondary__text {
+                    color: #BCBCBC;
                 }
             }
         }
@@ -107,7 +147,8 @@
             background-color: var(--primary100);
             border: 1px solid var(--primaryTwo);
             border-radius: 2px;
-            transition: background-color $transitionSpeed $transitionFunction;
+            transition: background-color $transitionSpeed $transitionFunction,
+                border $transitionSpeed $transitionFunction;
         }
 
         &::after {
@@ -132,10 +173,10 @@
     }
 
     &__text {
-        margin-left: 10px;
+        margin-left: 12px;
         color: var(--gray);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: 16px;
+        line-height: math.div(20, 16);
         font-weight: 400;
     }
 }

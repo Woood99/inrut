@@ -1,5 +1,6 @@
 .main-tooltip {
     position: relative;
+    display: inline-block;
 
     &__target {
         cursor: pointer;
@@ -36,10 +37,11 @@
         visibility: hidden;
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction;
-            @media (max-width:$desktop){
-                 right: 0;
-                 left: auto; 
-            }
+
+        @media (max-width:$desktop) {
+            right: 0;
+            left: auto;
+        }
     }
 
     &--bank {
