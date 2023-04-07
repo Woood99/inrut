@@ -150,7 +150,7 @@ function calendarPrimary() {
                     events[0].insertAdjacentHTML('beforeend', circleHTML);
                 }
             });
-        }, 100);
+        }, 500);
     }
 
 }

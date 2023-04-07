@@ -1288,7 +1288,7 @@ function calendarPrimary() {
           events[0].insertAdjacentHTML('beforeend', circleHTML);
         }
       });
-    }, 100);
+    }, 500);
   }
 }
 const modal = function (modalHTML, container) {
