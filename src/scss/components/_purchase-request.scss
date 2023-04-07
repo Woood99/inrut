@@ -105,10 +105,7 @@
 
         @media (max-width:$desktop) {
             background-color: var(--white);
-        }
-
-        @media (max-width:$smallTablet-max) {
-            margin-top: 0;
+            margin-top: 8px;
             padding: 16px 0;
             border-radius: 12px;
 
@@ -154,25 +151,17 @@
                         padding-bottom: 24px;
                     }
                 }
-
-                &__next {
-                    margin: 0 0 0 16px;
-                    width: calc(100% - 32px);
-                }
-
-                &__pagination {
-                    margin-top: 16px;
-                }
-            }
-
-            .tabs__body {
-                @media (max-width:$smallTablet-max) {}
             }
         }
     }
 
     &__calendar {
         margin-top: 25px;
+
+        @media (max-width:$desktop) {
+            margin-top: 8px;
+            padding: 0;
+        }
     }
 
     @media (max-width:$desktop) {
@@ -183,27 +172,56 @@
             margin-top: 24px;
             padding: 0;
         }
+
+        .tabs-primary__next {
+            margin: 0 0 0 16px;
+            width: calc(100% - 32px);
+        }
+
+        .tabs-primary__pagination {
+            margin-top: 16px;
+        }
     }
 }
 
 
 .request-calendar {
     &__container {
-        background: var(--primary100);
+        background-color: var(--primary100);
         padding: 32px;
         border-radius: 16px;
+
+        @media (max-width:$desktop) {
+            padding: 0 0 24px 0;
+            background-color: var(--white);
+        }
     }
 
     &__body {
         background-color: var(--white);
         padding: 24px;
         border-radius: 12px;
+
+        @media (max-width:$desktop) {
+            padding: 16px 0;
+        }
     }
 
     .tabs-primary {
         &__container {
             background-color: transparent;
             padding: 0;
+        }
+
+        &__title {
+            @media (max-width:$desktop) {
+                padding-left: 16px;
+                font-size: 18px;
+            }
+        }
+
+        &__inner {
+            margin-top: 16px;
         }
     }
 
@@ -221,6 +239,35 @@
                 margin-right: 50px;
             }
         }
+
+        &__list {
+            @media (max-width:$desktop) {
+                padding: 0 8px;
+            }
+        }
+
+        &__next {
+            font-weight: 400;
+
+            @media (max-width:$desktop) {
+                margin: 24px 0 0 16px;
+                width: calc(100% - 32px);
+                font-size: 12px;
+                padding: 16px 15px;
+                height: 47px;
+            }
+        }
+
+        &__pagination {
+            @media (max-width:$desktop) {
+                margin-top: 16px;
+            }
+        }
     }
 
+    .calendar-primary {
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
+    }
 }

@@ -145,26 +145,53 @@
         span {
             display: block;
             color: var(--dark);
+
             &:not(:last-child) {
                 margin-bottom: 8px;
             }
 
             &:nth-child(1) {
-              font-size: 18px;
+                font-size: 18px;
                 line-height: math.div(23, 18);
                 font-weight: 500;
+
+                @media (max-width:$desktop) {
+                    &::after {
+                        content: ',';
+                    }
+                }
             }
 
             &:nth-child(2) {
                 font-size: 15px;
-                line-height: math.div(19 , 15);
+                line-height: math.div(19, 15);
+
+                @media (max-width:$desktop) {
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            display: flex;
+            align-items: center;
+
+            span {
+                &:nth-child(1) {
+                    font-size: 15px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
             }
         }
     }
 
     &__time-geo {
         span {
-            display: block;
+            display: flex;
+            align-items: center;
             color: var(--primary600);
             font-size: 15px;
             line-height: math.div(19, 15);
@@ -174,6 +201,12 @@
                 height: 18px;
                 fill: var(--primaryTwo);
                 margin-right: 10px;
+
+                @media (max-width:$desktop) {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 8px;
+                }
             }
 
             &:not(:last-child) {
@@ -182,19 +215,47 @@
 
             &:nth-child(1) {
                 font-weight: 500;
+
+                svg {
+                    stroke: var(--primaryTwo);
+                    fill: none;
+                }
             }
 
             &:nth-child(2) {
                 font-weight: 400;
             }
         }
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+
+            span {
+                font-size: 12px;
+            }
+        }
     }
 
     &__from {
         margin-left: auto;
+
+        @media (max-width:$desktop) {
+            margin-left: 0;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--primary100);
+        }
     }
 
-    &:hover {
-        background-color: rgba(235, 241, 251, 0.5);
+    @media (min-width:$desktop) {
+        &:hover {
+            background-color: rgba(235, 241, 251, 0.5);
+        }
+    }
+
+    @media (max-width:$desktop) {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        box-shadow: none;
     }
 }
