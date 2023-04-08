@@ -39,8 +39,8 @@ function initSliders() {
 
         });
     }
-    if (document.querySelector('.request-catalog__banners-container')) {
-        new Swiper('.request-catalog__banners-container', {
+    if (document.querySelector('.main-banners__container')) {
+        new Swiper('.main-banners__container', {
             observer: true,
             observeParents: true,
             slidesPerView: 1.15,

@@ -1,0 +1,166 @@
+.selection-estate {
+
+    &__body {
+        @media (max-width:$desktop) {
+            padding: 24px 0 0 0;
+            background-color: var(--primary100);
+        }
+    }
+
+    &__title {
+        @media (max-width:$desktop) {
+            padding-left: 16px;
+        }
+    }
+
+    &__filter {
+        margin-top: 32px;
+
+        .filter {
+            &__btn {
+                height: 38px;
+
+                @media (max-width:$desktop) {
+                    margin: 0 16px;
+                    width: calc(100% - 32px);
+                }
+            }
+
+            &__clear {
+                height: 43px;
+                font-size: 15px;
+                padding: 12px 35px;
+                max-width: 224px;
+                width: 100%;
+
+                @media (max-width:$desktop) {
+                    max-width: none;
+                    width: 50%;
+                    font-size: 12px;
+                    height: 47px;
+                    padding: 16px 22px;
+                }
+            }
+
+            &__go {
+                padding: 12px 35px;
+                font-size: 15px;
+                height: 43px;
+                max-width: 224px;
+                width: 100%;
+
+                @media (max-width:$desktop) {
+                    max-width: none;
+                    height: 47px;
+                    font-size: 12px;
+                    padding: 16px 22px;
+                }
+            }
+        }
+    }
+
+    &__select {
+        grid-column: 1/4;
+
+        @media (max-width:$desktop) {
+            grid-column: 1/-1;
+
+            .choices {
+                padding: 22.5px 16px 11.5px;
+            }
+        }
+    }
+
+    &__input {
+        grid-column: 4/-1;
+
+        .input-primary {
+            &__span {
+                color: var(--primaryTwo);
+                top: 17px;
+
+                @media (max-width:$desktop) {
+                    top: 19px;
+                }
+            }
+
+            &__input {
+                @media (max-width:$desktop) {
+
+                    &.active,
+                    &:focus {
+                        padding: 19px 16px 12px;
+
+                        &+.input-primary__span {
+                            top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            grid-column: 1/-1;
+            height: 54px;
+        }
+    }
+
+    &__controls {
+        margin-top: 24px;
+    }
+
+    &__table {
+        margin-top: 32px;
+
+        .main-table {
+            &__type {
+                grid-template-columns: percent(324, 968) percent(280, 968) 1fr;
+
+                span {
+                    &:not(:first-child) {
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+
+                @media (max-width:$desktop) {
+                    display: grid !important; // need hack :( 
+                }
+
+                @media (max-width:$smallTablet-max) {
+                    display: none !important; // need hack :((( 
+                }
+            }
+
+            &__next {
+                font-size: 15px;
+                padding: 16px 20px;
+                height: 51px;
+                font-weight: 400;
+
+                @media (max-width:$desktop) {
+                    margin: 24px 16px 0;
+                    width: calc(100% - 32px);
+                    font-size: 12px;
+                    height: 47px;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            padding: 0 0 16px 0;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 16px;
+        }
+    }
+
+    &__banners {
+        margin-top: 40px;
+    }
+
+    @media (max-width:$desktop) {
+        padding-top: 0;
+    }
+}

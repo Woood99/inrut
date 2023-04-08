@@ -960,8 +960,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_inputs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/inputs */ "./src/js/components/inputs.js");
 /* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
 /* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -992,6 +994,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputPrimary)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)();
+
+  // ==================================================
+
+  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_7__["default"])('.object-info-third__controls', '.object-info-third__controls-target');
 
   // ==================================================
 });
@@ -1430,7 +1436,7 @@ const filterDropdownChoice = () => {
   });
 };
 const filterControl = () => {
-  const container = document.querySelector('.filter');
+  const container = document.querySelector('.filter--more');
   if (!container) return;
   const controls = container.querySelector('.filter__controls');
   const btn = container.querySelector('.filter__btn-control');
@@ -1595,7 +1601,8 @@ const maps = () => {
 function scrollBtn() {
   const btn = document.querySelector('.purchase-request .bid-user__btn');
   const btnScroll = document.querySelector('.purchase-request .bid-user__scroll-btn');
-  window.addEventListener('scroll', e => {
+  if (!(btn && btnScroll)) return;
+  window.addEventListener('scroll', () => {
     if (window.innerWidth >= 1112) return;
     const pageOffsetTop = window.pageYOffset;
     const btnOffsetTop = btn.getBoundingClientRect().top + pageOffsetTop;
@@ -2072,8 +2079,8 @@ function initSliders() {
       }
     });
   }
-  if (document.querySelector('.request-catalog__banners-container')) {
-    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.request-catalog__banners-container', {
+  if (document.querySelector('.main-banners__container')) {
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main-banners__container', {
       observer: true,
       observeParents: true,
       slidesPerView: 1.15,
@@ -2438,6 +2445,36 @@ const disableScroll = () => {
   document.body.style.top = `-${pagePosition}px`;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (disableScroll);
+
+/***/ }),
+
+/***/ "./src/js/modules/dropdown.js":
+/*!************************************!*\
+  !*** ./src/js/modules/dropdown.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const dropdown = (containerSelector, targetSelector) => {
+  const container = document.querySelectorAll(containerSelector);
+  container.forEach(el => {
+    const target = el.querySelector(targetSelector);
+    target.addEventListener('click', e => {
+      container.forEach(el => {
+        if (e.target.closest(containerSelector) !== el) el.classList.remove('_active');
+      });
+      el.classList.toggle('_active');
+    });
+    document.addEventListener('click', e => {
+      if (el.classList.contains('_active') && !e.target.closest(containerSelector)) el.classList.remove('_active');
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdown);
 
 /***/ }),
 

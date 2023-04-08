@@ -53,7 +53,7 @@ export const filterDropdownChoice = () => {
     })
 }
 export const filterControl = () => {
-    const container = document.querySelector('.filter');
+    const container = document.querySelector('.filter--more');
     if (!container) return;
     const controls = container.querySelector('.filter__controls');
     const btn = container.querySelector('.filter__btn-control');

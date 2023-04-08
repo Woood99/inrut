@@ -110,4 +110,89 @@
             visibility: visible;
         }
     }
+
+    &.main-tooltip--tablet-visible {
+        @media (max-width:$desktop) {
+            display: flex;
+            align-items: center;
+
+            .main-tooltip {
+                &__target {
+                    cursor: default;
+                }
+
+                &__content {
+                    margin-top: 0;
+                    margin-left: 10px;
+
+                    width: auto;
+                    position: static;
+                    padding: 0;
+                    opacity: 1;
+                    visibility: visible;
+                    border: none;
+                    background-color: transparent;
+                    box-shadow: none;
+                    font-weight: 500;
+                    color: var(--dark);
+                }
+            }
+        }
+    }
+
+    &.main-tooltip--mobile-visible {
+        @media (max-width:$smallTablet-max) {
+            display: flex;
+            align-items: center;
+
+            .main-tooltip {
+                &__target {
+                    cursor: default;
+                }
+
+                &__content {
+                    margin-top: 0;
+                    margin-left: 10px;
+
+                    width: auto;
+                    position: static;
+                    padding: 0;
+                    opacity: 1;
+                    visibility: visible;
+                    border: none;
+                    background-color: transparent;
+                    box-shadow: none;
+                    font-weight: 500;
+                    color: var(--dark);
+                }
+            }
+        }
+    }
+
+    &.main-tooltip--visible {
+        display: flex;
+        align-items: center;
+
+        .main-tooltip {
+            &__target {
+                cursor: default;
+            }
+
+            &__content {
+                margin-top: 0;
+                margin-left: 10px;
+
+                width: auto;
+                position: static;
+                padding: 0;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                background-color: transparent;
+                box-shadow: none;
+                font-weight: 500;
+                color: var(--dark);
+            }
+        }
+    }
 }

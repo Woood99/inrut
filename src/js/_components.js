@@ -17,7 +17,7 @@ import {
     complaintValidate
 } from './components/formValidate';
 import './components/calendar';
-
+import dropdown from './modules/dropdown';
 
 import './components/scrollBtn';
 
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inputPrimary();
     complaintValidate();
+
+    // ==================================================
+
+    dropdown('.object-info-third__controls', '.object-info-third__controls-target');
 
     // ==================================================
 })

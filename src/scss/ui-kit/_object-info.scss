@@ -3,10 +3,9 @@
     background-color: var(--white);
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
     color: var(--dark);
     display: grid;
+    align-items: center;
     grid-column-gap: 20px;
     justify-content: space-between;
     grid-template-columns: percent(141, 952) percent(299, 1016) max-content 1fr percent(160, 1016);
@@ -130,10 +129,9 @@
     border: 1px solid #EBF1FB;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
     color: var(--dark);
     display: grid;
+    align-items: center;
     grid-column-gap: 20px;
     grid-template-columns: percent(268, 914) max-content 1fr;
     padding: 24px 24px 22px;
@@ -257,5 +255,248 @@
         grid-template-columns: 1fr;
         padding: 16px;
         box-shadow: none;
+    }
+}
+
+
+.object-info-third {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+
+
+    color: var(--dark);
+    display: grid;
+    align-items: center;
+    grid-column-gap: 32px;
+    grid-row-gap: 8px;
+    grid-template-columns: percent(300, 968) percent(280, 968) percent(280, 968) 1fr;
+    padding: 24px 24px 24px 24px;
+
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color $transitionSpeed $transitionFunction;
+
+    &__type-mobile {
+        order: 1;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            color: var(--primaryTwo);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+        }
+
+        @media (min-width:$smallTablet-min) {
+            display: none;
+        }
+    }
+
+    &__line-mobile {
+        margin: 16px 0 8px;
+        order: 4;
+        grid-column: 1/-1;
+        background-color: var(--primary100);
+        width: 100%;
+        height: 1px;
+
+        @media (min-width:$smallTablet-min) {
+            display: none;
+        }
+    }
+
+    &__from {
+        &.user-info {
+            grid-column-gap: 16px;
+            grid-template-columns: 45px 1fr;
+
+            .user-info {
+                &__avatar {
+                    width: 45px;
+                    height: 45px;
+
+                    @media (max-width:$smallTablet-max) {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                &__pos {
+                    font-size: 15px;
+                    line-height: math.div(19, 15);
+                    color: var(--primaryTwo);
+
+                    @media (max-width:$smallTablet-max) {
+                        font-size: 12px;
+                    }
+                }
+
+                &__name {
+                    color: var(--dark);
+                    font-size: 18px;
+                    line-height: math.div(23, 18);
+                    font-weight: 500;
+
+                    @media (max-width:$smallTablet-max) {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            @media (max-width:$smallTablet-max) {
+                grid-column-gap: 8px;
+                grid-template-columns: 40px 1fr;
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            order: 5;
+        }
+    }
+
+    &__quantity {
+        text-align: center;
+        color: var(--dark);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        @media (max-width:$smallTablet-max) {
+            font-size: 18px;
+            font-weight: 400;
+            order: 2;
+            text-align: left;
+        }
+    }
+
+    &__offers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green);
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            margin-right: 10px;
+
+            @media (max-width:$smallTablet-max) {
+                height: 15px;
+                width: 15px;
+            }
+        }
+
+        span {
+            color: inherit;
+            font-size: 15px;
+            line-height: math.div(19, 15);
+            font-weight: 400;
+
+            @media (max-width:$smallTablet-max) {
+                font-size: 12px;
+            }
+        }
+
+        &--true {}
+
+        &--false {
+            color: var(--primary200);
+
+            svg {
+                margin-right: 0;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            order: 3;
+        }
+    }
+
+    &__controls {
+        position: relative;
+        justify-self: end;
+
+        &-target {
+            svg {
+                display: block;
+                width: 12px;
+                height: 13px;
+                fill: var(--gray);
+            }
+        }
+
+        &-dropdown {
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction,
+                transform $transitionSpeed $transitionFunction;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+
+            position: absolute;
+            top: 100%;
+            right: -24px;
+
+            width: 185px;
+            padding: 12px 0;
+
+            background-color: var(--white);
+            border: 1px solid rgba(122, 127, 170, 0.1);
+            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px;
+                color: var(--dark);
+                font-size: 15px;
+                line-height: math.div(19, 15);
+                font-weight: 400;
+
+                svg {
+                    margin-right: 10px;
+                    width: 20px;
+                    height: 20px;
+                    fill: var(--blue);
+                }
+            }
+        }
+
+        &._active {
+            .object-info-third__controls-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            order: 6;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        grid-column-gap: 16px;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        grid-template-columns: 1fr minmax(120px, max-content);
+        padding: 24px 16px 16px;
     }
 }

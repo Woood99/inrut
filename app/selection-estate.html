@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
-    <title>Запрос на покупку каталог</title>
+    <title>Запрос на покупку</title>
     <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script defer src="js/main.js"></script>
 </head>
 
 <body class="page__body">
-    <div class="site-container">
+    <div class="site-container site-container--selection-estate">
         <header class="header">
     <div class="header__top header-top">
         <div class="header-top__container container">
@@ -216,12 +217,12 @@
     </div>
 </header>
 
-        <main class="main main-page-gap request-catalog">
-            <div class="request-catalog__body container">
-                <h1 class="request-catalog__title title-1">
-                    1 567 заявок на покупку
+        <main class="main main-page-gap selection-estate">
+            <div class="selection-estate__body container">
+                <h1 class="selection-estate__title title-1">
+                    Предложения по вашей заявке на покупку
                 </h1>
-                <form class="request-catalog__filter filter filter--more">
+                <form class="selection-estate__filter filter">
                     <button type="button" class="btn btn-reset btn-primary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -234,402 +235,292 @@
                             <button type="button" class="btn btn-reset filter__close">Закрыть</button>
                         </div>
                         <div class="filter__inner">
-                            <div class="filter__row visible">
-                                <div class="filter__item filter__item--object request-catalog__select select-primary">
+                            <div class="filter__row">
+                                <div class="filter__item filter__item--object selection-estate__select select-primary">
                                     <span class="select-primary__name">
-                                        Тип объекта
+                                        Ваша заявка
                                     </span>
                                     <div class="select-primary__inner">
                                         <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Квартиры</option>
+                                            <option value="apartments">1-ком. квартира, 54м2fsavccv fas</option>
                                             <option value="apartments2">Квартиры2</option>
                                             <option value="apartments3">Квартиры3</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div
-                                    class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
-                                    <span class="quantity-selection__subtitle">Укажите количество комнат</span>
-                                    <div class="quantity-selection__inner">
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_studios" name="filter-quantity-studios"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_studios" class="checkbox__label">
-                                                <span class="checkbox__text checkbox__text-studios">Студия</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_1" name="filter-quantity-1"
-                                                class="checkbox__input" type="checkbox" checked value="true">
-                                            <label for="filter-quantity_1" class="checkbox__label">
-                                                <span class="checkbox__text">1</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_2" name="filter-quantity-2"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2" class="checkbox__label">
-                                                <span class="checkbox__text">2</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_3" name="filter-quantity-3"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3" class="checkbox__label">
-                                                <span class="checkbox__text">3</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_4" name="filter-quantity-4"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_4" class="checkbox__label">
-                                                <span class="checkbox__text">4+</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter__item filter__item--budget request-catalog__budget filter-dropdown">
-                                    <button type="button" class="btn btn-reset filter-dropdown__button">
-                                        <span>
-                                            Бюджет
-                                        </span>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="filter-dropdown__dropdown">
-                                        <div class="filter-dropdown__item active">
-                                            <div class="filter-dropdown__range filter-range">
-                                                <span class="filter-range__subtitle">Сумма</span>
-                                                <div class="filter-range__nav">
-                                                    <span data-default-start="1500000">1 500 000</span>
-                                                    <span data-default-end="6000000">5 000 000</span>
-                                                </div>
-                                                <div class="filter-range__inner" data-min="100000" data-max="7500000">
-                                                </div>
-                                            </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="filter-dropdown__item">
-                                            <div class="filter-dropdown__range filter-range">
-                                                <span class="filter-range__subtitle">Ежемесячный платеж</span>
-                                                <div class="filter-range__nav">
-                                                    <span data-default-start="15000">15000</span>
-                                                    <span data-default-end="50000">50000</span>
-                                                </div>
-                                                <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
-                                            </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button"
-                                    class="btn btn-reset filter__item filter__item--area request-catalog__area">
-                                    <span>Район на карте</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="filter__row">
-                                <div
-                                    class="filter__item filter__item--properties request-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Свойства расчета
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="properties">
-                                            <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
-                                            </option>
-                                            <option value="apartments2">Свойства расчета2</option>
-                                            <option value="apartments3">Свойства расчета3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="filter__item filter__item--complex request-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Комплекс
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="complex">
-                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                            </option>
-                                            <option value="complex2">Комплекс2</option>
-                                            <option value="complex3">Комплекс3</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
-                                    <div class="checkbox-secondary">
-                                        <input id="filter-urgent-app_1" name="filter-urgent-app-1"
-                                            class="checkbox-secondary__input" type="checkbox" value="true">
-                                        <label for="filter-urgent-app_1" class="checkbox-secondary__label">
-                                            <span class="checkbox-secondary__text">Срочные заявки</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox-secondary">
-                                        <input id="filter-urgent-app_2" name="filter-urgent-app-2"
-                                            class="checkbox-secondary__input" type="checkbox" value="true">
-                                        <label for="filter-urgent-app_2" class="checkbox-secondary__label">
-                                            <span class="checkbox-secondary__text">Срочные заявки</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                <label class="filter__item filter__item--input selection-estate__input input-primary">
+                                    <input type="text" name="Имя" class="input-reset input-primary__input"
+                                        placeholder="">
+                                    <span class="input-primary__span">ФИО или телефон </span>
+                                </label>
                             </div>
                         </div>
-                        <div class="filter__controls more">
-                            <button type="button" class="btn btn-reset filter__btn-control">
-                                <span>Еще фильтры</span>
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#check"></use>
-                                </svg>
-                            </button>
+                        <div class="filter__controls selection-estate__controls">
                             <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
-                            <button type="button" class="btn btn-reset btn-primary filter__go">Показать 1567
-                                заявок</button>
+                            <button type="button" class="btn btn-reset btn-primary filter__go">
+                                Показать
+                            </button>
                         </div>
                     </div>
                 </form>
-                <div class="request-catalog__table main-table">
+                <div class="selection-estate__table main-table">
                     <div class="main-table__table">
                         <div class="main-table__type">
-                            <span>Тип</span>
-                            <span>Параметры</span>
-                            <span>Бюджет</span>
-                            <span>Заявка от</span>
+                            <span>Предложения от</span>
+                            <span>Всего предложено</span>
+                            <span>Новые предложения</span>
                         </div>
                         <div class="main-table__list">
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    3 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bank">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bank"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
+                            <div class="main-table__item object-info-third">
+                                <div class="object-info-third__type-mobile">
+                                    <span>Всего предложено</span>
+                                    <span>Новые предложения</span>
                                 </div>
-                                <div class="object-info__from user-info">
+                                <div class="object-info-third__from user-info">
                                     <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Алексей Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Александр Г.">
                                     </div>
                                     <span class="user-info__pos">
-                                        Агент покупателя
+                                        Агент
                                     </span>
                                     <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Дом
+                                <span class="object-info-third__quantity">
+                                    16 объектов
                                 </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, от 6 сот., ИЖС
-                                </span>
-                                <span class="object-info__price">
-                                    125 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
+                                <div class="object-info-third__offers object-info-third__offers--true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check-circle"></use>
+                                    </svg>
+                                    <span>Есть</span>
+                                </div>
+                                <div class="object-info-third__controls">
+                                    <button type="button" class="btn btn-reset object-info-third__controls-target">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="object-info-third__controls-dropdown">
+                                        <button type="button" class="btn btn-reset">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
+                                                <use xlink:href="img/sprite.svg#prohibit"></use>
                                             </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
-                                        <div class="main-tooltip__target">
+                                            Заблокировать
+                                        </button>
+                                        <button type="button" class="btn btn-reset">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#dollar"></use>
+                                                <use xlink:href="img/sprite.svg#warning"></use>
                                             </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bolt"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
+                                            Пожаловаться
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="object-info__from user-info">
+                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                            </div>
+                            <div class="main-table__item object-info-third">
+                                <div class="object-info-third__type-mobile">
+                                    <span>Всего предложено</span>
+                                    <span>Новые предложения</span>
+                                </div>
+                                <div class="object-info-third__from user-info">
                                     <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="   Александр Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Александр Г.">
                                     </div>
                                     <span class="user-info__pos">
-                                        Покупатель
-                                    </span>
-                                    <span class="user-info__name">
-                                        Александр Г.
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    Студия, 1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    25 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--calculator">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#calculator"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Михаил Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент покупателя
-                                    </span>
-                                    <span class="user-info__name">
-                                        Михаил Г.
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Дом
-                                </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, уч. от 6 сот., ИЖС
-                                </span>
-                                <span class="object-info__price">
-                                    5 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bolt"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Лев Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент покупателя
-                                    </span>
-                                    <span class="user-info__name">
-                                        Лев Г.
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    Студия, 1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    130 000 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#dollar"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Алексей Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Покупатель
+                                        Агент
                                     </span>
                                     <span class="user-info__name">
                                         Алексей Г.
                                     </span>
                                 </div>
-                            </a>
+                                <span class="object-info-third__quantity">
+                                    16 объектов
+                                </span>
+                                <div class="object-info-third__offers object-info-third__offers--true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check-circle"></use>
+                                    </svg>
+                                    <span>Есть</span>
+                                </div>
+                                <div class="object-info-third__controls">
+                                    <button type="button" class="btn btn-reset object-info-third__controls-target">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="object-info-third__controls-dropdown">
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#prohibit"></use>
+                                            </svg>
+                                            Заблокировать
+                                        </button>
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#warning"></use>
+                                            </svg>
+                                            Пожаловаться
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                            </div>
+                            <div class="main-table__item object-info-third">
+                                <div class="object-info-third__type-mobile">
+                                    <span>Всего предложено</span>
+                                    <span>Новые предложения</span>
+                                </div>
+                                <div class="object-info-third__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Александр Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                                <span class="object-info-third__quantity">
+                                    16 объектов
+                                </span>
+                                <div class="object-info-third__offers object-info-third__offers--true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check-circle"></use>
+                                    </svg>
+                                    <span>Есть</span>
+                                </div>
+                                <div class="object-info-third__controls">
+                                    <button type="button" class="btn btn-reset object-info-third__controls-target">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="object-info-third__controls-dropdown">
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#prohibit"></use>
+                                            </svg>
+                                            Заблокировать
+                                        </button>
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#warning"></use>
+                                            </svg>
+                                            Пожаловаться
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                            </div>
+                            <div class="main-table__item object-info-third">
+                                <div class="object-info-third__type-mobile">
+                                    <span>Всего предложено</span>
+                                    <span>Новые предложения</span>
+                                </div>
+                                <div class="object-info-third__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Александр Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                                <span class="object-info-third__quantity">
+                                    16 объектов
+                                </span>
+                                <div class="object-info-third__offers object-info-third__offers--false">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check-circle"></use>
+                                    </svg>
+                                    <span>Нету</span>
+                                </div>
+                                <div class="object-info-third__controls">
+                                    <button type="button" class="btn btn-reset object-info-third__controls-target">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="object-info-third__controls-dropdown">
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#prohibit"></use>
+                                            </svg>
+                                            Заблокировать
+                                        </button>
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#warning"></use>
+                                            </svg>
+                                            Пожаловаться
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                            </div>
+                            <div class="main-table__item object-info-third">
+                                <div class="object-info-third__type-mobile">
+                                    <span>Всего предложено</span>
+                                    <span>Новые предложения</span>
+                                </div>
+                                <div class="object-info-third__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Александр Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                                <span class="object-info-third__quantity">
+                                    16 объектов
+                                </span>
+                                <div class="object-info-third__offers object-info-third__offers--false">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check-circle"></use>
+                                    </svg>
+                                    <span>Нету</span>
+                                </div>
+                                <div class="object-info-third__controls">
+                                    <button type="button" class="btn btn-reset object-info-third__controls-target">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="object-info-third__controls-dropdown">
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#prohibit"></use>
+                                            </svg>
+                                            Заблокировать
+                                        </button>
+                                        <button type="button" class="btn btn-reset">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#warning"></use>
+                                            </svg>
+                                            Пожаловаться
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="main-table__next">
-                        <button type="button" class="btn btn-reset btn-secondary">
-                            Следующая страница
-                        </button>
-                    </div>
+                    <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                        Следующая страница
+                    </button>
                     <div class="main-table__pagination pagination">
                         <ul class="pagination__list list-reset">
                             <li class="pagination__item" disabled>
@@ -669,7 +560,7 @@
                     </div>
                 </div>
             </div>
-            <div class="request-catalog__banners container main-banners">
+            <div class="selection-estate__banners container main-banners">
                 <div class="swiper main-banners__container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide main-banners__item main-banner main-banner--one">

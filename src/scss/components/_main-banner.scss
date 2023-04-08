@@ -1,6 +1,9 @@
 .main-banners {
 
-    &__container {}
+    &__container {
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
 
     &__item {
         height: 100% !important; // Hack! need to be redefined swiper
@@ -66,6 +69,7 @@
         flex-direction: column;
         position: relative;
         z-index: 2;
+        height: 100%;
     }
 
     &__title {
@@ -73,6 +77,10 @@
         line-height: math.div(27, 20);
         color: var(--gray);
         max-width: 220px;
+
+        @media (max-width:$smallTablet-max) {
+            font-size: 18px;
+        }
     }
 
     &__descr {
@@ -82,12 +90,19 @@
         line-height: math.div(15, 13);
         font-weight: 400;
         max-width: 300px;
+        flex-grow: 1;
     }
 
     &__btn {
         margin-top: 27px;
         padding: 14.5px 27px;
         align-self: start;
+
+        @media (max-width:$smallTablet-max) {
+            height: 45px;
+            font-size: 13px;
+            padding: 12px 22px;
+        }
     }
 
     @media (max-width:$smallTablet-max) {
