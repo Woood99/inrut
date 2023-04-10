@@ -213,6 +213,26 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+
+    &--complaint-two {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 24px;
+                width: 438px;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
 }
 
 .popup-secondary {
@@ -802,6 +822,38 @@
 
 
 
+.complaint-two-popup {
+
+    &__user {}
+
+    &__title {
+        margin-top: 32px;
+    }
+
+    &__form {}
+
+    &__radio {
+        margin-top: 32px;
+
+        .radio-primary__item {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    &__textarea {
+        margin-top: 32px;
+    }
+
+    &__btn {
+        margin-top: 32px;
+        width: 100%;
+    }
+}
+
+
+
 // =================================================================================
 
 
@@ -838,7 +890,3 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-
-
-

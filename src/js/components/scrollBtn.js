@@ -1,6 +1,6 @@
 function scrollBtn() {
     const btn = document.querySelector('.purchase-request .bid-user__btn');
-    const btnScroll = document.querySelector('.purchase-request .bid-user__scroll-btn');
+    const btnScroll = document.querySelector('.purchase-request .bid-user__scroll-substrate');
     if (!(btn && btnScroll)) return;
     window.addEventListener('scroll', () => {
         if (window.innerWidth >= 1112) return;

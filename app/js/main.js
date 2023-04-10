@@ -961,8 +961,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
 /* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
 /* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_dropdownText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/dropdownText */ "./src/js/modules/dropdownText.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_10__);
+
+
 
 
 
@@ -993,12 +998,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputPrimary)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)('.complaint-two-popup__form', '.textarea-primary__input', '.complaint-two-popup__btn', '.radio-primary__input');
 
   // ==================================================
 
-  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_7__["default"])('.object-info-third__controls', '.object-info-third__controls-target');
-
+  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_7__["default"])('.dots-dropdown', '.dots-dropdown__target');
+  (0,_modules_dropdownText__WEBPACK_IMPORTED_MODULE_8__["default"])('.your-app-info__item--dropdown', 'ul span', 'button');
   // ==================================================
 });
 
@@ -1033,6 +1039,7 @@ const add = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '
 const personalArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-secondary--personal');
 const shareApp = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--share-app');
 const complaint = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint');
+const complaintTwo = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint-two');
 const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--thanks');
 
 // ========================================================================================
@@ -1217,7 +1224,7 @@ function calendarPrimary() {
     calendarPrimaryEl.addEventListener('click', e => {
       if (!(e.target.classList.contains('.fc-event') || e.target.closest('.fc-event'))) return false;
       const event = e.target.closest('.fc-event');
-      const eventDate = event.closest('[data-date]').dataset.date;
+      const eventDate = event.closest('[data-date]').dataset.date.replaceAll('-', '.');
       const modalHTML = `
             <div class="calendar-event" data-date="${eventDate}">
             <div class="calendar-event__container">
@@ -1241,6 +1248,15 @@ function calendarPrimary() {
         if (el.date === eventDate) {
           const itemHTML = `
                 <li class="calendar-event__item calendar-event-item">
+                    <div class="calendar-event-item__time">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#clock"></use>
+                        </svg>
+                        <div>
+                            <span>${el.time}</span>
+                            <span>${el.date}</span>
+                        </div>
+                    </div>
                     <div class="calendar-event-item__content">
                         <div class="calendar-event-item__title">
                             ${el.title}
@@ -1264,15 +1280,6 @@ function calendarPrimary() {
                             </span>
                         </div>
                     </div>
-                    <div class="calendar-event-item__time">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#clock"></use>
-                        </svg>
-                        <div>
-                            <span>${el.time}</span>
-                            <span>${el.date}</span>
-                        </div>
-                    </div>
                 </li>
                     `;
           document.querySelector('.calendar-event__list').insertAdjacentHTML('beforeend', itemHTML);
@@ -1290,7 +1297,7 @@ function calendarPrimary() {
       document.querySelectorAll('.fc-day-event').forEach(el => {
         const events = el.querySelectorAll('.fc-event');
         for (let i = 0; i < events.length; i++) {
-          const circleHTML = `<span class="fc-event--circle">event</span>`;
+          const circleHTML = `<span class="fc-event--circle">Событие</span>`;
           events[0].insertAdjacentHTML('beforeend', circleHTML);
         }
       });
@@ -1360,6 +1367,37 @@ const modal = function (modalHTML, container) {
     }
   }
 };
+
+/***/ }),
+
+/***/ "./src/js/components/controlCards.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/controlCards.js ***!
+  \*******************************************/
+/***/ (() => {
+
+function controlCards() {
+  const containers = document.querySelectorAll('.control-cards');
+  if (!containers.length) return;
+  containers.forEach(container => {
+    const btns = container.querySelectorAll('.control-cards__btn');
+    const content = container.querySelector('.control-cards__content');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(el => el.classList.remove('_active'));
+        btn.classList.add('_active');
+        content.classList.remove('control-cards__content--horizontal', 'control-cards__content--vertical');
+        if (btn.classList.contains('control-cards__btn--horizontal')) {
+          content.classList.add('control-cards__content--horizontal');
+        }
+        if (btn.classList.contains('control-cards__btn--vertical')) {
+          content.classList.add('control-cards__content--vertical');
+        }
+      });
+    });
+  });
+}
+controlCards();
 
 /***/ }),
 
@@ -1495,11 +1533,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "complaintValidate": () => (/* binding */ complaintValidate)
 /* harmony export */ });
-const complaintValidate = () => {
-  const form = document.querySelector('.complaint-popup__form'),
-    textarea = form.querySelector('.textarea-primary__input'),
-    btn = form.querySelector('.complaint-popup__btn'),
-    radios = form.querySelectorAll('.radio-primary__input');
+const complaintValidate = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
+  const form = document.querySelector(formSelector),
+    textarea = form.querySelector(textareaSelector),
+    btn = form.querySelector(btnSelector),
+    radios = form.querySelectorAll(radiosSelector);
+  if (!form) return false;
   function checkForm() {
     let flag = false;
     for (let radio of radios) {
@@ -1600,7 +1639,7 @@ const maps = () => {
 
 function scrollBtn() {
   const btn = document.querySelector('.purchase-request .bid-user__btn');
-  const btnScroll = document.querySelector('.purchase-request .bid-user__scroll-btn');
+  const btnScroll = document.querySelector('.purchase-request .bid-user__scroll-substrate');
   if (!(btn && btnScroll)) return;
   window.addEventListener('scroll', () => {
     if (window.innerWidth >= 1112) return;
@@ -2475,6 +2514,32 @@ const dropdown = (containerSelector, targetSelector) => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdown);
+
+/***/ }),
+
+/***/ "./src/js/modules/dropdownText.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/dropdownText.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const dropdownText = (containerSelector, dropdownText, btnSelector) => {
+  const containers = document.querySelectorAll(containerSelector);
+  containers.forEach(container => {
+    const dropdownItems = container.querySelectorAll(dropdownText);
+    const btn = container.querySelector(btnSelector);
+    btn.addEventListener('click', () => {
+      dropdownItems.forEach(el => el.classList.remove('is-hidden'));
+      btn.remove();
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdownText);
 
 /***/ }),
 

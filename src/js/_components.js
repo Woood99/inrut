@@ -18,9 +18,9 @@ import {
 } from './components/formValidate';
 import './components/calendar';
 import dropdown from './modules/dropdown';
-
+import dropdownText from './modules/dropdownText';
 import './components/scrollBtn';
-
+import './components/controlCards'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     inputPrimary();
-    complaintValidate();
+    complaintValidate('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+    complaintValidate('.complaint-two-popup__form', '.textarea-primary__input', '.complaint-two-popup__btn', '.radio-primary__input');
 
     // ==================================================
 
-    dropdown('.object-info-third__controls', '.object-info-third__controls-target');
-
+    dropdown('.dots-dropdown', '.dots-dropdown__target');
+    dropdownText('.your-app-info__item--dropdown', 'ul span', 'button');
     // ==================================================
 })

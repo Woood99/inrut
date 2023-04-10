@@ -13,6 +13,7 @@ const add = new popup(null, '.popup-primary--add');
 const personalArea = new popup(null, '.popup-secondary--personal');
 const shareApp = new popup(null, '.popup-primary--share-app')
 const complaint = new popup(null, '.popup-primary--complaint')
+const complaintTwo = new popup(null, '.popup-primary--complaint-two')
 const thanks = new popup(null, '.popup-primary--thanks')
 
 // ========================================================================================

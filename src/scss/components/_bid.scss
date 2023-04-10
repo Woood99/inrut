@@ -8,7 +8,7 @@
         grid-template-columns: percent(584, 1016) percent(400, 1016);
 
         @media (max-width:$desktop) {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             grid-row-gap: 16px;
         }
 
@@ -24,6 +24,7 @@
 
         @media (max-width:$desktop) {
             order: 2;
+            grid-column: 1/-1;
         }
 
         @media (max-width:$smallTablet-max) {
@@ -155,6 +156,7 @@
 
         @media (max-width:$desktop) {
             order: 1;
+            grid-column: 1/-1;
         }
     }
 
@@ -410,34 +412,119 @@
         }
     }
 
-    &__scroll-btn {
-        position: fixed;
-        z-index: 10;
-        bottom: 12px;
-        left: 16px;
+    &__scroll {
+        &-substrate {
+            transform: translateY(200%);
+            transition: transform $transitionSpeed $transitionFunction;
+            position: fixed;
+            z-index: 10;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 64px;
+            background-color: var(--white);
+            box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        height: 44px;
-        padding: 14px 20px;
-        font-size: 12px;
-        width: calc(100% - 32px);
-        transform: translateY(200%);
-        transition: transform $transitionSpeed $transitionFunction;
-
-        svg {
-            width: 15px;
-            height: 15px;
-            fill: currentColor;
-            margin-right: 10px;
+            @media (max-width:$desktop) {
+                &.active-fixed {
+                    transform: translateY(0);
+                }
+            }
         }
 
-        @media (max-width:$desktop) {
-            &.active-fixed {
-                transform: translateY(0);
+        &-btn {
+            height: 44px;
+            padding: 14px 20px;
+            font-size: 12px;
+            width: calc(100% - 32px);
+
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: currentColor;
+                margin-right: 10px;
             }
         }
     }
 
     @media (max-width:$desktop) {
         padding: 16px 16px 24px;
+    }
+
+    &--small {
+        display: inline-flex;
+        overflow: visible;
+        flex-direction: row;
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        text-align: left;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        .bid-user {
+            &__avatar {
+                --size: 66px;
+                filter: none;
+                @media (max-width:$smallTablet-max){
+                     --size: 57px; 
+                }
+            }
+
+            &__time {
+                font-size: 12px;
+                @media (max-width:$smallTablet-max){
+                     font-size: 10px; 
+                }
+            }
+
+            &__content {
+                margin-top: 0;
+                margin-left: 16px;
+                text-align: left;
+                align-items: start;
+            }
+
+            &__name {
+                font-size: 15px;
+                @media (max-width:$smallTablet-max){
+                     font-weight: 400; 
+                }
+            }
+
+            &__rating {
+                margin-top: 5px;
+                --icon-size: 12px;
+
+                @media (max-width:$smallTablet-max) {
+                    margin-top: 5px;
+                }
+            }
+
+            &__quantity {
+                margin-top: 5px;
+
+                svg {
+                    margin-right: 10px;
+                }
+                @media (max-width:$smallTablet-max){
+                     svg{
+                        margin-right: 5px;
+                     } 
+                }
+            }
+
+            &__controls {
+                align-self: start;
+                margin-left: 15px;
+            }
+        }
     }
 }

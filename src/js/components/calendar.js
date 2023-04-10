@@ -71,8 +71,7 @@ function calendarPrimary() {
         calendarPrimaryEl.addEventListener('click', (e) => {
             if (!(e.target.classList.contains('.fc-event') || e.target.closest('.fc-event'))) return false;
             const event = e.target.closest('.fc-event');
-            const eventDate = event.closest('[data-date]').dataset.date;
-
+            const eventDate = event.closest('[data-date]').dataset.date.replaceAll('-', '.');
             const modalHTML = `
             <div class="calendar-event" data-date="${eventDate}">
             <div class="calendar-event__container">
@@ -96,6 +95,15 @@ function calendarPrimary() {
                 if (el.date === eventDate) {
                     const itemHTML = `
                 <li class="calendar-event__item calendar-event-item">
+                    <div class="calendar-event-item__time">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#clock"></use>
+                        </svg>
+                        <div>
+                            <span>${el.time}</span>
+                            <span>${el.date}</span>
+                        </div>
+                    </div>
                     <div class="calendar-event-item__content">
                         <div class="calendar-event-item__title">
                             ${el.title}
@@ -119,15 +127,6 @@ function calendarPrimary() {
                             </span>
                         </div>
                     </div>
-                    <div class="calendar-event-item__time">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#clock"></use>
-                        </svg>
-                        <div>
-                            <span>${el.time}</span>
-                            <span>${el.date}</span>
-                        </div>
-                    </div>
                 </li>
                     `;
                     document.querySelector('.calendar-event__list').insertAdjacentHTML('beforeend', itemHTML);
@@ -146,7 +145,7 @@ function calendarPrimary() {
             document.querySelectorAll('.fc-day-event').forEach(el => {
                 const events = el.querySelectorAll('.fc-event');
                 for (let i = 0; i < events.length; i++) {
-                    const circleHTML = `<span class="fc-event--circle">event</span>`;
+                    const circleHTML = `<span class="fc-event--circle">Событие</span>`;
                     events[0].insertAdjacentHTML('beforeend', circleHTML);
                 }
             });

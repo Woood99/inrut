@@ -1,9 +1,9 @@
-export const complaintValidate = () => {
-    const form = document.querySelector('.complaint-popup__form'),
-        textarea = form.querySelector('.textarea-primary__input'),
-        btn = form.querySelector('.complaint-popup__btn'),
-        radios = form.querySelectorAll('.radio-primary__input');
-
+export const complaintValidate = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
+    const form = document.querySelector(formSelector),
+        textarea = form.querySelector(textareaSelector),
+        btn = form.querySelector(btnSelector),
+        radios = form.querySelectorAll(radiosSelector);
+    if (!form) return false;
     function checkForm() {
         let flag = false;
         for (let radio of radios) {

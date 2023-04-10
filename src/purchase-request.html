@@ -24,7 +24,7 @@
                     <svg>
                         <use xlink:href="img/sprite.svg#arrow-left"></use>
                     </svg>
-                    <span data-mobile-text="Назад">К списку заявок</span>
+                    <span>К списку заявок</span>
                 </a>
                 <h1 class="purchase-request__title title-1" data-da=".purchase-request__body,1112,first">
                     Заявка на покупку
@@ -268,13 +268,16 @@
                             Предложить объект
                         </button>
                     </div>
-                    <button type="button" class="btn btn-reset btn-primary bid-user__scroll-btn">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#house-stroke"></use>
-                        </svg>
-                        Предложить объект
-                    </button>
+                    <div class="bid-user__scroll-substrate">
+                        <button type="button" class="btn btn-reset btn-primary bid-user__scroll-btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#house-stroke"></use>
+                            </svg>
+                            Предложить объект
+                        </button>
+                    </div>
                 </div>
+
             </div>
 
             <div class="purchase-request__calendar request-calendar tabs-primary container">
@@ -544,16 +547,16 @@
                             Отклоненные <span>23</span>
                         </button>
                     </nav>
-                    <div class="tabs-primary__container">
-                        <div class="tabs-primary__controls">
+                    <div class="tabs-primary__container control-cards">
+                        <div class="tabs-primary__controls control-cards__btns">
                             <button type="button"
-                                class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal _active">
+                                class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#apps"></use>
                                 </svg>
                             </button>
                             <button type="button"
-                                class="btn btn-reset tabs-primary__control tabs-primary__control--vertical">
+                                class="btn btn-reset tabs-primary__control tabs-primary__control--vertical control-cards__btn control-cards__btn--vertical">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#pause"></use>
                                 </svg>
@@ -566,7 +569,8 @@
                                 </svg>
                             </button>
                         </div>
-                        <div data-tabs-body class="tabs__content tabs-primary__content">
+                        <div data-tabs-body
+                            class="tabs__content tabs-primary__content control-cards__content control-cards__content--horizontal">
                             <div class="tabs__body">
 
                                 <div class="tabs-primary__row">
@@ -582,9 +586,9 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--new">Новое</span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--new">Новое</span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
@@ -604,8 +608,23 @@
                                                     </h3>
                                                     <div class="card-primary__address">
                                                         <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар, ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -630,9 +649,9 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--new">Новое</span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--new">Новое</span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
@@ -654,17 +673,31 @@
                                                         <span class="card-primary__address--two">Краснодар,
                                                             ул.Карла-Маркса., 234</span>
                                                     </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
                                                     <div class="user-info__avatar avatar online">
                                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Михаил В.">
+                                                            height="40" alt="Алексей Г.">
                                                     </div>
                                                     <span class="user-info__pos">
                                                         Агент
                                                     </span>
                                                     <span class="user-info__name">
-                                                        Михаил В.
+                                                        Алексей Г.
                                                     </span>
                                                 </div>
                                             </a>
@@ -677,9 +710,9 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--new">Новое</span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--new">Новое</span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
@@ -692,8 +725,24 @@
                                                         1-комн. квартира, 54 м², 12/12 эт.
                                                     </h3>
                                                     <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар,
+                                                            ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -744,8 +793,23 @@
                                                     </h3>
                                                     <div class="card-primary__address">
                                                         <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар, ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -791,17 +855,31 @@
                                                         <span class="card-primary__address--two">Краснодар,
                                                             ул.Карла-Маркса., 234</span>
                                                     </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
                                                     <div class="user-info__avatar avatar online">
                                                         <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Михаил В.">
+                                                            height="40" alt="Алексей Г.">
                                                     </div>
                                                     <span class="user-info__pos">
                                                         Агент
                                                     </span>
                                                     <span class="user-info__name">
-                                                        Михаил В.
+                                                        Алексей Г.
                                                     </span>
                                                 </div>
                                             </a>
@@ -826,8 +904,24 @@
                                                         1-комн. квартира, 54 м², 12/12 эт.
                                                     </h3>
                                                     <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар,
+                                                            ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -846,140 +940,7 @@
                                         </article>
                                     </div>
                                 </div>
-                                <div class="tabs-primary__row">
-                                    <h3 class="tabs-primary__row-title">
-                                        11.12.2022
-                                    </h3>
-                                    <div class="tabs-primary__row-list">
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Михаил В.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Михаил В.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Застройщик (Югстройинвест)
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
+
 
 
 
@@ -999,27 +960,22 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--dislike">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#dislike"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="card-primary__info--comment">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#comment"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="card-primary__info--new">Новое</span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
                                                         <span class="card-primary__price-new">
                                                             <span class="title-3">2 897 000 ₽</span>
                                                             <span>(94 742 ₽/м²)</span>
@@ -1029,9 +985,24 @@
                                                         1-комн. квартира, 54 м², 12/12 эт.
                                                     </h3>
                                                     <div class="card-primary__address">
-                                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар,
+                                                            ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -1040,7 +1011,7 @@
                                                             height="40" alt="Алексей Г.">
                                                     </div>
                                                     <span class="user-info__pos">
-                                                        Агент
+                                                        Застройщик (Югстройинвест)
                                                     </span>
                                                     <span class="user-info__name">
                                                         Алексей Г.
@@ -1056,27 +1027,21 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--dislike">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#dislike"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="card-primary__info--comment">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#comment"></use>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
                                                         <span class="card-primary__price-new">
                                                             <span class="title-3">2 897 000 ₽</span>
                                                             <span>(94 742 ₽/м²)</span>
@@ -1086,8 +1051,24 @@
                                                         1-комн. квартира, 54 м², 12/12 эт.
                                                     </h3>
                                                     <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар,
+                                                            ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -1096,7 +1077,7 @@
                                                             height="40" alt="Алексей Г.">
                                                     </div>
                                                     <span class="user-info__pos">
-                                                        Агент
+                                                        Застройщик (Югстройинвест)
                                                     </span>
                                                     <span class="user-info__name">
                                                         Алексей Г.
@@ -1112,13 +1093,18 @@
                                                         <img loading="lazy" src="./img/card-1.jpg" width="323"
                                                             height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                     </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
+                                                    <div class="card-primary__info">
+                                                        <span class="card-primary__info--dislike">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#dislike"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="card-primary__info--comment">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#comment"></use>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__content">
                                                     <div class="card-primary__price">
@@ -1131,8 +1117,24 @@
                                                         1-комн. квартира, 54 м², 12/12 эт.
                                                     </h3>
                                                     <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
+                                                        <span class="card-primary__address--two">
+                                                            Краснодар,
+                                                            ул.Карла-Маркса., 234
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-primary__text">
+                                                        <p>
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная это район Петра Метальникова.
+                                                        </p>
+                                                        <p>
+                                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                                            гостиная очень актуально в наше время, при этом квартира см.
+                                                            Уникальна квартира с ремонтом продается в новом доме по
+                                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                                            продается в новом доме по улице Тополиная
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="card-primary__user user-info user-info--small-mobile">
@@ -1141,337 +1143,7 @@
                                                             height="40" alt="Алексей Г.">
                                                     </div>
                                                     <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="tabs-primary__row">
-                                    <h3 class="tabs-primary__row-title">
-                                        12.12.2022
-                                    </h3>
-                                    <div class="tabs-primary__row-list">
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="tabs-primary__row">
-                                    <h3 class="tabs-primary__row-title">
-                                        11.12.2022
-                                    </h3>
-                                    <div class="tabs-primary__row-list">
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="card-primary__info--comment">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#comment"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-12%</span>
-                                                        </span>
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
-                                                    </span>
-                                                    <span class="user-info__name">
-                                                        Алексей Г.
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </article>
-                                        <article class="tabs-primary__row-item card-primary">
-                                            <a href="#" class="card-primary__container">
-                                                <div class="card-primary__image ibg">
-                                                    <picture>
-                                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-1.jpg" width="323"
-                                                            height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                                <div class="card-primary__info">
-                                                    <span class="card-primary__info--dislike">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="card-primary__content">
-                                                    <div class="card-primary__price">
-                                                        <span class="card-primary__price-new">
-                                                            <span class="title-3">2 897 000 ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="card-primary__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <div class="card-primary__address">
-                                                        <span class="card-primary__address--two">Краснодар,
-                                                            ул.Карла-Маркса., 234</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-primary__user user-info user-info--small-mobile">
-                                                    <div class="user-info__avatar avatar online">
-                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                            height="40" alt="Алексей Г.">
-                                                    </div>
-                                                    <span class="user-info__pos">
-                                                        Агент
+                                                        Застройщик (Югстройинвест)
                                                     </span>
                                                     <span class="user-info__name">
                                                         Алексей Г.

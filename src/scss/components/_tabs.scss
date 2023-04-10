@@ -7,10 +7,19 @@
             font-size: 15px;
             line-height: math.div(19, 15);
         }
+        @media (max-width:$desktop){
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px; 
+        }
     }
 
     &__inner {
         margin-top: 32px;
+        @media (max-width:$smallTablet-max){
+            margin-top: 0;
+            padding-top: 22px; 
+        }
     }
 
     &__btns {
@@ -61,6 +70,10 @@
                 &::before {
                     width: 100%;
                 }
+            }
+            @media (max-width:$desktop){
+                padding: 9px 15px;
+                font-size: 12px; 
             }
         }
     }
@@ -126,24 +139,27 @@
                 fill: currentColor;
             }
         }
-
-        &._active {
-            background-color: var(--blue);
-            color: var(--white);
-        }
     }
 
     &__content {
         margin-top: 32px;
+        @media (max-width:$desktop){
+            margin-top: 24px; 
+        }
     }
 
     &__row {
         &:not(:first-child) {
             margin-top: 24px;
-
-            @media (max-width:$smallTablet-max) {
-                margin-top: 8px;
+        }
+        @media (max-width:$desktop){
+            padding-top: 8px;
+            &:not(:first-child) {
+                margin-top: 0;
             }
+            &:last-child {
+                padding-bottom: 24px;
+            } 
         }
     }
 
@@ -151,7 +167,10 @@
         font-size: 15px;
         line-height: math.div(19, 15);
         font-weight: 500;
-
+        @media (max-width:$desktop){
+            padding-left: 16px;
+            padding-right: 16px; 
+        }
         @media (max-width:$smallTablet-max) {
             font-size: 12px;
         }
@@ -164,7 +183,9 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         grid-column-gap: 16px;
         grid-row-gap: 16px;
-
+        @media (max-width:$desktop){
+             margin-top: 8px; 
+        }
         @media (max-width:$mobile-max) {
             grid-row-gap: 8px;
         }
@@ -191,5 +212,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    @media (max-width:$desktop){
+        padding: 16px 0;
+        border-radius: 12px;
     }
 }
