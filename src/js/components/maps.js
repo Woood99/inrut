@@ -17,6 +17,16 @@ const maps = () => {
         }
         ymaps.ready(init);
     }
+    if (document.querySelector('#object-maps')) {
+        function init() {
+            let map = new ymaps.Map('object-maps', {
+                center: [55.77171185651524, 37.62811179984117],
+                zoom: 10,
+            });
+            removeControlsPrimary(map, '#object-maps');
+        }
+        ymaps.ready(init);
+    }
 };
 
 export default maps;

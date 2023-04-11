@@ -961,11 +961,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
 /* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
 /* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
-/* harmony import */ var _modules_dropdownText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/dropdownText */ "./src/js/modules/dropdownText.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
-/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
-/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
+/* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/scrollBtn */ "./src/js/components/scrollBtn.js");
+/* harmony import */ var _components_scrollBtn__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBtn__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -1004,7 +1006,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_7__["default"])('.dots-dropdown', '.dots-dropdown__target');
-  (0,_modules_dropdownText__WEBPACK_IMPORTED_MODULE_8__["default"])('.your-app-info__item--dropdown', 'ul span', 'button');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__["default"])('.your-app-info__item--dropdown', 'ul span', 'button');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__["default"])('.object-characteristics__container', '.object-characteristics__item', '.object-characteristics__more');
+  (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_9__["default"])('.object-data', '.object-data__text', '.object-data__more');
   // ==================================================
 });
 
@@ -1626,6 +1630,16 @@ const maps = () => {
     }
     ymaps.ready(init);
   }
+  if (document.querySelector('#object-maps')) {
+    function init() {
+      let map = new ymaps.Map('object-maps', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      removeControlsPrimary(map, '#object-maps');
+    }
+    ymaps.ready(init);
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maps);
 
@@ -2093,7 +2107,7 @@ __webpack_require__.r(__webpack_exports__);
 // =========================================================================================
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs]);
 
 // =========================================================================================
 
@@ -2138,6 +2152,35 @@ function initSliders() {
       }
     });
   }
+  objectSlider();
+}
+function objectSlider() {
+  const container = document.querySelector('.object-slider');
+  if (!container) return;
+  const nav = container.querySelector('.object-slider-nav__wrapper');
+  const body = container.querySelector('.object-slider-body__wrapper');
+  let navSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](nav, {
+    slidesPerView: 3,
+    spaceBetween: 21,
+    observer: true,
+    observeParents: true,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    direction: 'vertical'
+  });
+  let bodySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](body, {
+    spaceBetween: 10,
+    observer: true,
+    observeParents: true,
+    navigation: {
+      prevEl: container.querySelector('.nav-arrow-primary--prev'),
+      nextEl: container.querySelector('.nav-arrow-primary--next')
+    },
+    thumbs: {
+      swiper: navSlider
+    }
+  });
 }
 
 // =========================================================================================
@@ -2517,9 +2560,9 @@ const dropdown = (containerSelector, targetSelector) => {
 
 /***/ }),
 
-/***/ "./src/js/modules/dropdownText.js":
+/***/ "./src/js/modules/dropdownDown.js":
 /*!****************************************!*\
-  !*** ./src/js/modules/dropdownText.js ***!
+  !*** ./src/js/modules/dropdownDown.js ***!
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -2528,10 +2571,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const dropdownText = (containerSelector, dropdownText, btnSelector) => {
+const dropdownDown = (containerSelector, textSelector, targetSelector) => {
+  const items = document.querySelectorAll(containerSelector);
+  if (!items.length >= 1) return;
+  items.forEach(container => {
+    const text = container.querySelector(textSelector);
+    const btn = container.querySelector(targetSelector);
+    btn.addEventListener('click', () => {
+      text.classList.add('_active');
+      btn.remove();
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdownDown);
+
+/***/ }),
+
+/***/ "./src/js/modules/dropdownItems.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/dropdownItems.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const dropdownItems = (containerSelector, dropdownItemsSelector, btnSelector) => {
   const containers = document.querySelectorAll(containerSelector);
+  if (!containers.length >= 1) return;
   containers.forEach(container => {
-    const dropdownItems = container.querySelectorAll(dropdownText);
+    const dropdownItems = container.querySelectorAll(dropdownItemsSelector);
     const btn = container.querySelector(btnSelector);
     btn.addEventListener('click', () => {
       dropdownItems.forEach(el => el.classList.remove('is-hidden'));
@@ -2539,7 +2610,7 @@ const dropdownText = (containerSelector, dropdownText, btnSelector) => {
     });
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdownText);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdownItems);
 
 /***/ }),
 

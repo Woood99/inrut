@@ -291,8 +291,7 @@
                     <div class="main-table__item object-info-third">
                         <div class="object-info-third__from user-info">
                             <div class="user-info__avatar avatar online">
-                                <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                    alt="Александр Г.">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Александр Г.">
                             </div>
                             <span class="user-info__pos">
                                 Агент
@@ -306,7 +305,7 @@
                         </span>
                         <span class="object-info-third__offers object-info-third__offers--true">
                             <svg>
-                              <use xlink:href="img/sprite.svg#check-circle"></use>
+                                <use xlink:href="img/sprite.svg#check-circle"></use>
                             </svg>
                             Есть
                         </span>
@@ -329,7 +328,8 @@
                                     </svg>
                                     Заблокировать
                                 </button>
-                                <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
+                                <button type="button" class="btn btn-reset" data-mobile-speed
+                                    data-popup-path="complaint-two">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#warning"></use>
                                     </svg>
@@ -810,6 +810,60 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="bid-user bid-user--grade">
+                        <div class="bid-user__container">
+                            <div class="bid-user__avatar avatar">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
+                            </div>
+                            <div class="bid-user__content">
+                                <time class="bid-user__time" datetime="2022-12-12">
+                                    Агент был в сети 12.12.2022
+                                </time>
+                                <span class="bid-user__name">
+                                    Алексей Г.
+                                </span>
+                                <div class="bid-user__rating">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#star"></use>
+                                    </svg>
+                                    <span>4.8</span>
+                                    <span>(16 отзыва)</span>
+                                </div>
+                                <div class="bid-user__quantity">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                    </svg>
+                                    <span>10 объектов</span>,
+                                    <span>8 сделок</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bid-user__grade">
+                            <h3 class="bid-user__title title-3">
+                                Ваша оценка объекта
+                            </h3>
+                            <button type="button" class="btn btn-reset btn-secondary bid-user__btn--dislike">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#dislike"></use>
+                                </svg>
+                                Объект не подходит
+                            </button>
+                            <button type="button" class="btn btn-reset btn-secondary bid-user__btn--like">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#like"></use>
+                                </svg>
+                                Хочу на просмотр
+                            </button>
+                            <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                                </svg>
+                                Задать вопрос
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="bid-user bid-user--small">
                         <div class="bid-user__avatar avatar">
                             <img loading="lazy" src="./img/avatar-1.jpg" width="66" height="66" alt="Алексей Г.">
@@ -855,7 +909,8 @@
                                     </svg>
                                     Заблокировать
                                 </button>
-                                <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
+                                <button type="button" class="btn btn-reset" data-mobile-speed
+                                    data-popup-path="complaint-two">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#warning"></use>
                                     </svg>
@@ -891,7 +946,8 @@
                                     </svg>
                                     Заблокировать
                                 </button>
-                                <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
+                                <button type="button" class="btn btn-reset" data-mobile-speed
+                                    data-popup-path="complaint-two">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#warning"></use>
                                     </svg>
@@ -948,7 +1004,7 @@
         }
 
     </style>
-       @include('partials/popup.html')
+    @include('partials/popup.html')
 </body>
 
 

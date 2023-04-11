@@ -473,15 +473,17 @@
             &__avatar {
                 --size: 66px;
                 filter: none;
-                @media (max-width:$smallTablet-max){
-                     --size: 57px; 
+
+                @media (max-width:$smallTablet-max) {
+                    --size: 57px;
                 }
             }
 
             &__time {
                 font-size: 12px;
-                @media (max-width:$smallTablet-max){
-                     font-size: 10px; 
+
+                @media (max-width:$smallTablet-max) {
+                    font-size: 10px;
                 }
             }
 
@@ -494,8 +496,9 @@
 
             &__name {
                 font-size: 15px;
-                @media (max-width:$smallTablet-max){
-                     font-weight: 400; 
+
+                @media (max-width:$smallTablet-max) {
+                    font-weight: 400;
                 }
             }
 
@@ -514,16 +517,85 @@
                 svg {
                     margin-right: 10px;
                 }
-                @media (max-width:$smallTablet-max){
-                     svg{
+
+                @media (max-width:$smallTablet-max) {
+                    svg {
                         margin-right: 5px;
-                     } 
+                    }
                 }
             }
 
             &__controls {
                 align-self: start;
                 margin-left: 15px;
+            }
+        }
+    }
+
+    &--grade {
+        padding: 32px 16px;
+
+        @media (min-width:$desktop) {
+
+            &::before,
+            &::after {
+                height: percent(90, 538);
+            }
+        }
+
+        .bid-user {
+            &__container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 61px;
+            }
+
+            &__avatar {
+                --size: 95px;
+            }
+
+            &__grade {
+                margin-top: 24px;
+                text-align: center;
+                width: 100%;
+            }
+
+            &__btn {
+
+                &--like,
+                &--dislike,
+                &--comment {
+                    width: 100%;
+                    font-size: 15px;
+                    line-height: math.div(19, 15);
+                    height: 55px;
+                    padding: 16px 20px;
+
+                    svg {
+                        margin-right: 16px;
+                        width: 24px;
+                        height: 24px;
+                        fill: currentColor;
+                    }
+                }
+
+                &--like {
+                    margin-top: 16px;
+                }
+
+                &--dislike {
+                    margin-top: 16px;
+                }
+
+                &--comment {
+                    margin-top: 32px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
         }
     }

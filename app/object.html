@@ -16,7 +16,7 @@
 </head>
 
 <body class="page__body">
-    <div class="site-container site-container--selection-estate">
+    <div class="site-container site-container--object">
         <header class="header">
     <div class="header__top header-top">
         <div class="header-top__container container">
@@ -217,417 +217,391 @@
     </div>
 </header>
 
-        <main class="main main-page-gap selection-estate">
-            <div class="selection-estate__body container">
-                <h1 class="selection-estate__title title-1">
-                    Предложения по вашей заявке на покупку
-                </h1>
-                <form class="selection-estate__filter filter">
-                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+        <main class="main main-page-gap object">
+            <div class="object__top container">
+                <a href="#" class="object__back back-link">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-left"></use>
+                    </svg>
+                    <span>К списку объектов</span>
+                </a>
+                <div class="object__btns">
+                    <button type="button" class="btn btn-reset object__share share-btn" data-mobile-speed
+                        data-popup-path="share-app">
                         <svg>
-                            <use xlink:href="img/sprite.svg#filter"></use>
+                            <use xlink:href="img/sprite.svg#share"></use>
                         </svg>
-                        <span>Фильтр</span>
+                        <span>Поделиться</span>
                     </button>
-                    <div class="filter__container">
-                        <div class="filter__top">
-                            <span>Фильтры</span>
-                            <button type="button" class="btn btn-reset filter__close">Закрыть</button>
-                        </div>
-                        <div class="filter__inner">
-                            <div class="filter__row">
-                                <div class="filter__item filter__item--object selection-estate__select select-primary">
-                                    <span class="select-primary__name">
-                                        Ваша заявка
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">1-ком. квартира, 54м2fsavccv fas</option>
-                                            <option value="apartments2">Квартиры2</option>
-                                            <option value="apartments3">Квартиры3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <label class="filter__item filter__item--input selection-estate__input input-primary">
-                                    <input type="text" name="Имя" class="input-reset input-primary__input"
-                                        placeholder="">
-                                    <span class="input-primary__span">ФИО или телефон </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="filter__controls selection-estate__controls">
-                            <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
-                            <button type="button" class="btn btn-reset btn-primary filter__go">
-                                Показать
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <div class="selection-estate__table main-table">
-                    <div class="main-table__table">
-                        <div class="main-table__type">
-                            <span>Предложения от</span>
-                            <span>Всего предложено</span>
-                            <span>Новые предложения</span>
-                        </div>
-                        <div class="main-table__list">
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Всего предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Всего предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Всего предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Всего предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__offers object-info-third__offers--false">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Нету</span>
-                                </div>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Всего предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__offers object-info-third__offers--false">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Нету</span>
-                                </div>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" data-mobile-speed data-popup-path="complaint-two">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-reset btn-secondary main-table__next">
-                        Следующая страница
+                    <button type="button" class="btn btn-reset object__complain complain-btn" data-mobile-speed
+                        data-popup-path="complaint">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#complain"></use>
+                        </svg>
+                        <span>Пожаловаться</span>
                     </button>
-                    <div class="main-table__pagination pagination">
-                        <ul class="pagination__list list-reset">
-                            <li class="pagination__item" disabled>
-                                <a href="#">
-                                    1
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    2
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    3
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    4
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    5
-                                </a>
-                            </li>
-                            <li class="pagination__item dots" tabindex="-1">
-                                ...
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    199
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
-            <div class="selection-estate__banners container main-banners">
-                <div class="swiper main-banners__container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide main-banners__item main-banner main-banner--one">
-                            <div class="main-banner__content">
-                                <h2 class="main-banner__title">
-                                    Семейная ипотека от 2,99%
-                                </h2>
-                                <p class="main-banner__descr">
-                                    Купите квартиру в ипотеку
-                                    по специальной программе для семей с детьми
-                                </p>
-                                <a href="#" class="btn btn-reset btn-primary main-banner__btn">
-                                    Смотреть предложения
-                                </a>
+            <div class="object__body object-body container">
+
+                <div class="object-body__container">
+                    <div class="object-body__slider object-slider">
+                        <div class="object-slider__body object-slider-body">
+                            <div class="swiper object-slider-body__wrapper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="main-banner__image" style="background-image: url('./img/banner-photo-1.png')" ;>
+                            <div class="object-slider-body__navigation nav-arrow-primary nav-arrow-primary--prev">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                            <div class="object-slider-body__navigation nav-arrow-primary nav-arrow-primary--next">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                            <div class="object-slider-body__btns">
+                                <button type="button" class="btn btn-reset object-slider-body__btn"
+                                    title="Пожаловаться">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#warning"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset object-slider-body__btn" title="Поделиться">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#share"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset object-slider-body__btn"
+                                    title="Добавить в избранное">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                        <div class="swiper-slide main-banners__item main-banner main-banner--two">
-                            <div class="main-banner__content">
-                                <h2 class="main-banner__title">
-                                    Успейте взять ипотеку
-                                    по выгодной ставке
-                                </h2>
-                                <p class="main-banner__descr">
-                                    Специальные предложения
-                                    этой весны от 11% на новостройки
-                                </p>
-                                <a href="#" class="btn btn-reset btn-primary main-banner__btn">
-                                    Смотреть предложения
-                                </a>
+                        <div class="object-slider__nav object-slider-nav">
+                            <div class="swiper object-slider-nav__wrapper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="main-banner__image" style="background-image: url('./img/banner-photo-2.png')" ;>
+                        </div>
+                    </div>
+                    <div class="object-body__content">
+                        <div class="object-body__comment object-comment">
+                            <h2 class="object-comment__title title-2">
+                                Комментарий к объекту
+                            </h2>
+                            <p class="object-comment__descr">
+                                В квартире шикарный, современный ремонт панорамные окна, на полу ламинат, шикарный
+                                вид на город. Из кухни сделана кухня гостиная очень актуально в наше время, при этом
+                                квартира см
+                            </p>
+                        </div>
+                        <div class="object-body__user bid-user bid-user--grade">
+                            <div class="bid-user__container">
+                                <div class="bid-user__avatar avatar">
+                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                        alt="Алексей Г.">
+                                </div>
+                                <div class="bid-user__content">
+                                    <time class="bid-user__time" datetime="2022-12-12">
+                                        Агент был в сети 12.12.2022
+                                    </time>
+                                    <span class="bid-user__name">
+                                        Алексей Г.
+                                    </span>
+                                    <div class="bid-user__rating">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <span>4.8</span>
+                                        <span>(16 отзыва)</span>
+                                    </div>
+                                    <div class="bid-user__quantity">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                        </svg>
+                                        <span>10 объектов</span>,
+                                        <span>8 сделок</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bid-user__grade">
+                                <h3 class="bid-user__title title-3">
+                                    Ваша оценка объекта
+                                </h3>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--dislike">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#dislike"></use>
+                                    </svg>
+                                    Объект не подходит
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--like">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#like"></use>
+                                    </svg>
+                                    Хочу на просмотр
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                                    </svg>
+                                    Задать вопрос
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-body__data object-data">
+                            <div class="object-data__price">
+                                <span class="object-data__price-new">
+                                    <span class="title-2">2 897 000 ₽</span>
+                                    <span>(94 742 ₽/м²)</span>
+                                </span>
+                                <span class="object-data__price-old">
+                                    <span>
+                                        <span>3 000 000</span> ₽
+                                    </span>
+                                    <span>-12%</span>
+                                </span>
+                            </div>
+                            <h3 class="object-data__name">
+                                1-ком. квартира, 39 м², 12/12 эт.
+                            </h3>
+                            <div class="object-data__address">
+                                <span class="object-data__address--two">
+                                    Краснодар, ул.Карла-Маркса., 234
+                                </span>
+                            </div>
+                            <div class="object-data__text">
+                                <p>
+                                    Уникальна квартира с ремонтом продается в новом доме по
+                                    улице Тополиная это район Петра Метальникова.
+                                </p>
+                                <p>
+                                    В квартире шикарный, современный ремонт панорамные окна, на
+                                    полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                    гостиная очень актуально в наше время, при этом квартира см.
+                                    Уникальна квартира с ремонтом продается в новом доме по
+                                    улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                    продается в новом доме по улице Тополиная
+                                </p>
+                            </div>
+                            <button type="button" class="btn btn-reset object-data__more">
+                                Показать полностью
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#check"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="object-body__banners object-banners">
+                            <div class="object-banners__item">
+                                Банер
+                            </div>
+                            <div class="object-banners__item">
+                                Ипотека без первоначального взноса
+                            </div>
+                        </div>
+                        <div class="object-body__characteristics object-characteristics">
+                            <h2 class="object-characteristics__title title-2">
+                                Характеристики
+                            </h2>
+                            <div class="object-characteristics__container">
+                                <ul class="object-characteristics__list list-reset">
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Тип
+                                        </span>
+                                        <span>
+                                            Квартира
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Высота потолков
+                                        </span>
+                                        <span>
+                                            1
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Общая площадь
+                                        </span>
+                                        <span>
+                                            57 м²
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Этаж
+                                        </span>
+                                        <span>
+                                            12/12
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Площадь кухни
+                                        </span>
+                                        <span>
+                                            39 м²
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Площадь кухни
+                                        </span>
+                                        <span>
+                                            39 м²
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item is-hidden">
+                                        <span>
+                                            Общая площадь
+                                        </span>
+                                        <span>
+                                            57 м²
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item is-hidden">
+                                        <span>
+                                            Этаж
+                                        </span>
+                                        <span>
+                                            12/12
+                                        </span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-reset object-characteristics__more">
+                                    Показать полностью
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-body__history object-history">
+                            <h2 class="object-history__title title-2">
+                                История изменения цены
+                            </h2>
+                            <ul class="object-history__list list-reset">
+                                <li class="object-history__item object-history__item--plus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>500 000 ₽</span>
+                                        <span>+12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">200 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--minus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>6 300 000 000 ₽</span>
+                                        <span>-12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">8 300 000 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--plus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>500 000 ₽</span>
+                                        <span>+12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">200 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--minus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>6 300 000 000 ₽</span>
+                                        <span>-12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">8 300 000 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--plus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>500 000 ₽</span>
+                                        <span>+12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">200 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--minus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>6 300 000 000 ₽</span>
+                                        <span>-12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">8 300 000 000 ₽</span>
+                                </li>
+                                <li class="object-history__item object-history__item--minus">
+                                    <span class="object-history__date">
+                                        03.08.2020
+                                    </span>
+                                    <div class="object-history__old-price">
+                                        <span>3 000 000 ₽</span>
+                                        <span>-12%</span>
+                                    </div>
+                                    <span class="object-history__new-price">3 500 000 ₽</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="object-body__location object-location">
+                            <h2 class="object-location__title title-2">
+                                Расположение
+                            </h2>
+                            <p class="object-location__descr">
+                                Краснодар, Тополиная улица, 40/1к1
+                            </p>
+                            <div class="object-location__maps map-primary remove-copyrights-pane" id="object-maps">
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </main>
         <footer class="footer">

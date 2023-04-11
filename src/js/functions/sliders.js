@@ -4,9 +4,10 @@
 
 import Swiper, {
     Navigation,
-    Pagination
+    Pagination,
+    Thumbs
 } from 'swiper';
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Navigation, Pagination, Thumbs]);
 
 
 
@@ -16,8 +17,6 @@ Swiper.use([Navigation, Pagination]);
 
 
 function initSliders() {
-
-
     if (document.querySelector('.header-main__banners')) {
         new Swiper('.header-main__banners', {
             observer: true,
@@ -59,15 +58,38 @@ function initSliders() {
             },
         });
     }
-
-
-
-
+    objectSlider();
 }
 
 
-
-
+function objectSlider() {
+    const container = document.querySelector('.object-slider');
+    if (!container) return;
+    const nav = container.querySelector('.object-slider-nav__wrapper');
+    const body = container.querySelector('.object-slider-body__wrapper');
+    let navSlider = new Swiper(nav, {
+        slidesPerView: 3,
+        spaceBetween: 21,
+        observer: true,
+        observeParents: true,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        direction: 'vertical',
+    });
+    let bodySlider = new Swiper(body, {
+        spaceBetween: 10,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            prevEl: container.querySelector('.nav-arrow-primary--prev'),
+            nextEl: container.querySelector('.nav-arrow-primary--next'),
+        },
+        thumbs: {
+            swiper: navSlider,
+        },
+    })
+}
 
 
 // =========================================================================================

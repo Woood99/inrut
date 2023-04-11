@@ -18,7 +18,8 @@ import {
 } from './components/formValidate';
 import './components/calendar';
 import dropdown from './modules/dropdown';
-import dropdownText from './modules/dropdownText';
+import dropdownItems from './modules/dropdownItems';
+import dropdownDown from './modules/dropdownDown';
 import './components/scrollBtn';
 import './components/controlCards'
 
@@ -52,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     dropdown('.dots-dropdown', '.dots-dropdown__target');
-    dropdownText('.your-app-info__item--dropdown', 'ul span', 'button');
+    dropdownItems('.your-app-info__item--dropdown', 'ul span', 'button');
+    dropdownItems('.object-characteristics__container', '.object-characteristics__item', '.object-characteristics__more');
+    dropdownDown('.object-data','.object-data__text','.object-data__more');
     // ==================================================
+
+
 })
