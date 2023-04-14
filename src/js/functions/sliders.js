@@ -78,12 +78,16 @@ function objectSlider() {
         direction: 'vertical',
     });
     let bodySlider = new Swiper(body, {
-        spaceBetween: 10,
+        spaceBetween: 0,
         observer: true,
         observeParents: true,
         navigation: {
             prevEl: container.querySelector('.nav-arrow-primary--prev'),
             nextEl: container.querySelector('.nav-arrow-primary--next'),
+        },
+        pagination: {
+            el: container.querySelector('.pagination-primary'),
+            type: 'fraction',
         },
         thumbs: {
             swiper: navSlider,

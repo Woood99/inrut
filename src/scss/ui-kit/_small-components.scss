@@ -534,7 +534,7 @@
         top: 100%;
         right: -24px;
 
-        width: 185px;
+        width: auto;
         padding: 12px 0;
 
         background-color: var(--white);
@@ -566,6 +566,20 @@
             &:hover {
                 background-color: var(--primary100);
             }
+
+            @media (max-width:$smallTablet-max) {
+                padding: 10px 12px;
+                font-size: 12px;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            padding: 8px 0;
         }
     }
 
@@ -611,7 +625,8 @@
             transform: translateX(-100%);
         }
     }
-    @media (max-width:$smallTablet-max){
-         padding: 16px; 
+
+    @media (max-width:$smallTablet-max) {
+        padding: 16px;
     }
 }

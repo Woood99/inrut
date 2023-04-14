@@ -20,9 +20,8 @@ import './components/calendar';
 import dropdown from './modules/dropdown';
 import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';
-import './components/scrollBtn';
 import './components/controlCards'
-
+import emergingBlockScroll from './modules/emergingBlockScroll';
 
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
@@ -53,10 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     dropdown('.dots-dropdown', '.dots-dropdown__target');
-    dropdownItems('.your-app-info__item--dropdown', 'ul span', 'button');
-    dropdownItems('.object-characteristics__container', '.object-characteristics__item', '.object-characteristics__more');
-    dropdownDown('.object-data','.object-data__text','.object-data__more');
+    dropdownItems('.your-app-bid__item--dropdown', 'button', 'Меньше');
+    dropdownItems('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
+    dropdownDown('.object-data', '.object-data__text', '.object-data__more');
     // ==================================================
 
-
+    emergingBlockScroll('.object-body__user .bid-user__btn--dislike', '.object-plate-bottom', 1112);
+    emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
 })

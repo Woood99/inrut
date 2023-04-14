@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
-    <title>Запрос на покупку</title>
+    <title>Объект</title>
     <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/vendor.css">
@@ -223,7 +223,7 @@
                     <svg>
                         <use xlink:href="img/sprite.svg#arrow-left"></use>
                     </svg>
-                    <span>К списку объектов</span>
+                    <span>К списку заявок</span>
                 </a>
                 <div class="object__btns">
                     <button type="button" class="btn btn-reset object__share share-btn" data-mobile-speed
@@ -248,15 +248,35 @@
                     <div class="object-body__slider object-slider">
                         <div class="object-slider__body object-slider-body">
                             <div class="swiper object-slider-body__wrapper">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper" id="object-gallery">
                                     <div class="swiper-slide">
-                                        <img src="./img/card-1.jpg" alt="">
+                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                            <img src="./img/card-1.jpg" alt="">
+                                        </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="./img/card-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
+                                            data-poster="./img/card-1.jpg" class="object-gallery__item">
+                                            <div class="video-play">
+                                                <div class="video-play__icon">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#play"></use>
+                                                    </svg>
+                                                </div>
+                                                <span>Видео</span>
+                                            </div>
+                                            <img src="./img/card-1.jpg" alt="">
+                                        </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="./img/card-1.jpg" alt="">
+                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                            <img src="./img/card-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                            <img src="./img/card-1.jpg" alt="">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -270,30 +290,23 @@
                                     <use xlink:href="img/sprite.svg#arrow-right"></use>
                                 </svg>
                             </div>
-                            <div class="object-slider-body__btns">
-                                <button type="button" class="btn btn-reset object-slider-body__btn"
-                                    title="Пожаловаться">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#warning"></use>
-                                    </svg>
-                                </button>
-                                <button type="button" class="btn btn-reset object-slider-body__btn" title="Поделиться">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#share"></use>
-                                    </svg>
-                                </button>
-                                <button type="button" class="btn btn-reset object-slider-body__btn"
-                                    title="Добавить в избранное">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#favorite"></use>
-                                    </svg>
-                                </button>
-                            </div>
+                            <div class="object-slider-body__pagination pagination-primary"></div>
                         </div>
                         <div class="object-slider__nav object-slider-nav">
                             <div class="swiper object-slider-nav__wrapper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
+                                        <img src="./img/card-1.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="video-play">
+                                            <div class="video-play__icon">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#play"></use>
+                                                </svg>
+                                            </div>
+                                            <span>Видео</span>
+                                        </div>
                                         <img src="./img/card-1.jpg" alt="">
                                     </div>
                                     <div class="swiper-slide">
@@ -316,59 +329,6 @@
                                 вид на город. Из кухни сделана кухня гостиная очень актуально в наше время, при этом
                                 квартира см
                             </p>
-                        </div>
-                        <div class="object-body__user bid-user bid-user--grade">
-                            <div class="bid-user__container">
-                                <div class="bid-user__avatar avatar">
-                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
-                                        alt="Алексей Г.">
-                                </div>
-                                <div class="bid-user__content">
-                                    <time class="bid-user__time" datetime="2022-12-12">
-                                        Агент был в сети 12.12.2022
-                                    </time>
-                                    <span class="bid-user__name">
-                                        Алексей Г.
-                                    </span>
-                                    <div class="bid-user__rating">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#star"></use>
-                                        </svg>
-                                        <span>4.8</span>
-                                        <span>(16 отзыва)</span>
-                                    </div>
-                                    <div class="bid-user__quantity">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#briefcase"></use>
-                                        </svg>
-                                        <span>10 объектов</span>,
-                                        <span>8 сделок</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bid-user__grade">
-                                <h3 class="bid-user__title title-3">
-                                    Ваша оценка объекта
-                                </h3>
-                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--dislike">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#dislike"></use>
-                                    </svg>
-                                    Объект не подходит
-                                </button>
-                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--like">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#like"></use>
-                                    </svg>
-                                    Хочу на просмотр
-                                </button>
-                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
-                                    </svg>
-                                    Задать вопрос
-                                </button>
-                            </div>
                         </div>
                         <div class="object-body__data object-data">
                             <div class="object-data__price">
@@ -406,18 +366,118 @@
                                 </p>
                             </div>
                             <button type="button" class="btn btn-reset object-data__more">
-                                Показать полностью
+                                <span>Показать полностью</span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#check"></use>
                                 </svg>
                             </button>
                         </div>
-                        <div class="object-body__banners object-banners">
-                            <div class="object-banners__item">
-                                Банер
+                        <div class="object-body__user bid-user bid-user--grade">
+                            <div class="bid-user__container">
+                                <div class="bid-user__avatar avatar">
+                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                        alt="Алексей Г.">
+                                </div>
+                                <div class="bid-user__content">
+                                    <time class="bid-user__time" datetime="2022-12-12">
+                                        Агент был в сети 12.12.2022
+                                    </time>
+                                    <span class="bid-user__name">
+                                        Алексей Г.
+                                    </span>
+                                    <div class="bid-user__rating">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <span>4.8</span>
+                                        <span>(16 отзыва)</span>
+                                    </div>
+                                    <div class="bid-user__quantity">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                        </svg>
+                                        <span>10 объектов</span>,
+                                        <span>8 сделок</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="object-banners__item">
-                                Ипотека без первоначального взноса
+                            <div class="bid-user__grade">
+                                <h3 class="bid-user__title title-3">
+                                    Ваша оценка объекта
+                                </h3>
+                                <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#dislike"></use>
+                                    </svg>
+                                    <span data-mobile-text="Не подходит">Объект не подходит</span>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-primary bid-user__btn--like">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#like"></use>
+                                    </svg>
+                                    <span data-mobile-text="На просмотр">Хочу на просмотр</span>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                                    </svg>
+                                    <span>Задать вопрос</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-plate-bottom plate-bottom">
+                            <button type="button" class="btn btn-reset btn-primary object-plate-bottom__btn">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#dislike"></use>
+                                </svg>
+                                <span data-mobile-text="Не подходит">Объект не подходит</span>
+                            </button>
+                            <button type="button" class="btn btn-reset btn-primary object-plate-bottom__btn">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#like"></use>
+                                </svg>
+                                <span data-mobile-text="На просмотр">Хочу на просмотр</span>
+                            </button>
+                        </div>
+                        <div class="object-body__banners object-banners main-banners">
+                            <div class="swiper main-banners__container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide main-banners__item main-banner main-banner--one">
+                                        <div class="main-banner__content">
+                                            <h2 class="main-banner__title">
+                                                Семейная ипотека от 2,99%
+                                            </h2>
+                                            <p class="main-banner__descr">
+                                                Купите квартиру в ипотеку
+                                                по специальной программе для семей с детьми
+                                            </p>
+                                            <a href="#" class="btn btn-reset btn-primary main-banner__btn">
+                                                Смотреть предложения
+                                            </a>
+                                        </div>
+                                        <div class="main-banner__image"
+                                            style="background-image: url('./img/banner-photo-1.png')" ;>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide main-banners__item main-banner main-banner--two">
+                                        <div class="main-banner__content">
+                                            <h2 class="main-banner__title">
+                                                Успейте взять ипотеку
+                                                по выгодной ставке
+                                            </h2>
+                                            <p class="main-banner__descr">
+                                                Специальные предложения
+                                                этой весны от 11% на новостройки
+                                            </p>
+                                            <a href="#" class="btn btn-reset btn-primary main-banner__btn">
+                                                Смотреть предложения
+                                            </a>
+                                        </div>
+                                        <div class="main-banner__image"
+                                            style="background-image: url('./img/banner-photo-2.png')" ;>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="object-body__characteristics object-characteristics">
@@ -474,7 +534,25 @@
                                             39 м²
                                         </span>
                                     </li>
-                                    <li class="object-characteristics__item is-hidden">
+                                </ul>
+                                <ul class="object-characteristics__list list-reset" data-dropdown-items hidden>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Тип
+                                        </span>
+                                        <span>
+                                            Квартира
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
+                                        <span>
+                                            Высота потолков
+                                        </span>
+                                        <span>
+                                            1
+                                        </span>
+                                    </li>
+                                    <li class="object-characteristics__item">
                                         <span>
                                             Общая площадь
                                         </span>
@@ -482,17 +560,9 @@
                                             57 м²
                                         </span>
                                     </li>
-                                    <li class="object-characteristics__item is-hidden">
-                                        <span>
-                                            Этаж
-                                        </span>
-                                        <span>
-                                            12/12
-                                        </span>
-                                    </li>
                                 </ul>
                                 <button type="button" class="btn btn-reset object-characteristics__more">
-                                    Показать полностью
+                                    <span>Показать полностью</span>
                                     <svg>
                                         <use xlink:href="img/sprite.svg#check"></use>
                                     </svg>
@@ -505,7 +575,7 @@
                             </h2>
                             <ul class="object-history__list list-reset">
                                 <li class="object-history__item object-history__item--plus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -515,7 +585,7 @@
                                     <span class="object-history__new-price">200 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--minus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -525,7 +595,7 @@
                                     <span class="object-history__new-price">8 300 000 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--plus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -535,7 +605,7 @@
                                     <span class="object-history__new-price">200 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--minus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -545,7 +615,7 @@
                                     <span class="object-history__new-price">8 300 000 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--plus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -555,7 +625,7 @@
                                     <span class="object-history__new-price">200 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--minus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">
@@ -565,7 +635,7 @@
                                     <span class="object-history__new-price">8 300 000 000 ₽</span>
                                 </li>
                                 <li class="object-history__item object-history__item--minus">
-                                    <span class="object-history__date">
+                                    <span class="object-history__date" data-mobile-text="3 августа 2020">
                                         03.08.2020
                                     </span>
                                     <div class="object-history__old-price">

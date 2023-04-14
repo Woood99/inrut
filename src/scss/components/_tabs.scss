@@ -7,18 +7,20 @@
             font-size: 15px;
             line-height: math.div(19, 15);
         }
-        @media (max-width:$desktop){
+
+        @media (max-width:$desktop) {
             display: flex;
             flex-direction: column;
-            padding: 0 16px; 
+            padding: 0 16px;
         }
     }
 
     &__inner {
         margin-top: 32px;
-        @media (max-width:$smallTablet-max){
+
+        @media (max-width:$smallTablet-max) {
             margin-top: 0;
-            padding-top: 22px; 
+            padding-top: 22px;
         }
     }
 
@@ -71,9 +73,10 @@
                     width: 100%;
                 }
             }
-            @media (max-width:$desktop){
-                padding: 9px 15px;
-                font-size: 12px; 
+
+            @media (max-width:$desktop) {
+                padding: 5px 15px 4px;
+                font-size: 12px;
             }
         }
     }
@@ -143,8 +146,9 @@
 
     &__content {
         margin-top: 32px;
-        @media (max-width:$desktop){
-            margin-top: 24px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
         }
     }
 
@@ -152,14 +156,17 @@
         &:not(:first-child) {
             margin-top: 24px;
         }
-        @media (max-width:$desktop){
+
+        @media (max-width:$desktop) {
             padding-top: 8px;
+
             &:not(:first-child) {
                 margin-top: 0;
             }
+
             &:last-child {
                 padding-bottom: 24px;
-            } 
+            }
         }
     }
 
@@ -167,10 +174,12 @@
         font-size: 15px;
         line-height: math.div(19, 15);
         font-weight: 500;
-        @media (max-width:$desktop){
+
+        @media (max-width:$desktop) {
             padding-left: 16px;
-            padding-right: 16px; 
+            padding-right: 16px;
         }
+
         @media (max-width:$smallTablet-max) {
             font-size: 12px;
         }
@@ -183,9 +192,11 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         grid-column-gap: 16px;
         grid-row-gap: 16px;
-        @media (max-width:$desktop){
-             margin-top: 8px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 8px;
         }
+
         @media (max-width:$mobile-max) {
             grid-row-gap: 8px;
         }
@@ -213,7 +224,8 @@
         align-items: center;
         justify-content: center;
     }
-    @media (max-width:$desktop){
+
+    @media (max-width:$desktop) {
         padding: 16px 0;
         border-radius: 12px;
     }

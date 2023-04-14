@@ -221,3 +221,14 @@ const modal = (modalHTML, container, speed = 300) => {
         }
     }
 }
+
+
+
+// views: {
+//     timeGridFourDay: {
+//         type: 'dayGridMonth',
+//         duration: {
+//             days: 15
+//         },
+//     }
+// },
