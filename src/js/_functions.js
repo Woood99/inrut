@@ -13,8 +13,10 @@ const add = new popup(null, '.popup-primary--add');
 const personalArea = new popup(null, '.popup-secondary--personal');
 const shareApp = new popup(null, '.popup-primary--share-app')
 const complaint = new popup(null, '.popup-primary--complaint')
-const complaintTwo = new popup(null, '.popup-primary--complaint-two')
+const complaintUser = new popup(null, '.popup-primary--complaint-user')
+const complaintObject = new popup(null, '.popup-primary--complaint-object')
 const thanks = new popup(null, '.popup-primary--thanks')
+const objectNot = new popup(null, '.popup-primary--object-not')
 
 // ========================================================================================
 

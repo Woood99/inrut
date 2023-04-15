@@ -999,10 +999,11 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_linkCopy__WEBPACK_IMPORTED_MODULE_3__["default"])('.share-app-popup__btn');
 
   // ==================================================
-
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputPrimary)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.complaintValidate)('.complaint-two-popup__form', '.textarea-primary__input', '.complaint-two-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
 
   // ==================================================
 
@@ -1047,8 +1048,10 @@ const add = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '
 const personalArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-secondary--personal');
 const shareApp = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--share-app');
 const complaint = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint');
-const complaintTwo = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint-two');
+const complaintUser = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint-user');
+const complaintObject = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint-object');
 const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--thanks');
+const objectNot = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--object-not');
 
 // ========================================================================================
 
@@ -1523,14 +1526,14 @@ const filterMobile = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "complaintValidate": () => (/* binding */ complaintValidate)
+/* harmony export */   "validateRadioText": () => (/* binding */ validateRadioText)
 /* harmony export */ });
-const complaintValidate = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
-  const form = document.querySelector(formSelector),
-    textarea = form.querySelector(textareaSelector),
-    btn = form.querySelector(btnSelector),
-    radios = form.querySelectorAll(radiosSelector);
+const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
+  const form = document.querySelector(formSelector);
   if (!form) return false;
+  const textarea = form.querySelector(textareaSelector);
+  const btn = form.querySelector(btnSelector);
+  const radios = form.querySelectorAll(radiosSelector);
   function checkForm() {
     let flag = false;
     for (let radio of radios) {

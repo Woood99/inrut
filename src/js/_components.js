@@ -14,7 +14,7 @@ import {
     inputPrimary
 } from './components/inputs';
 import {
-    complaintValidate
+    validateRadioText
 } from './components/formValidate';
 import './components/calendar';
 import dropdown from './modules/dropdown';
@@ -44,10 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==================================================
-
     inputPrimary();
-    complaintValidate('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-    complaintValidate('.complaint-two-popup__form', '.textarea-primary__input', '.complaint-two-popup__btn', '.radio-primary__input');
+    validateRadioText('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+    validateRadioText('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+    validateRadioText('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+    validateRadioText('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
 
     // ==================================================
 
