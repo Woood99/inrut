@@ -59,8 +59,27 @@
                     height: 100%;
                     max-width: 85vw;
 
+                    .lg-video-poster {
+                        height: auto !important;
+                        max-width: 100%;
+
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
                     @media (max-width:$tablet-max) {
-                        height: auto;
+                        height: 100%;
+                        max-width: 100%;
+
+
+                    }
+                }
+
+                &.lg-video-loaded {
+
+
+                    .lg-video-cont {
+                        width: 100%;
                         max-width: 100%;
                     }
                 }
@@ -133,8 +152,10 @@
         z-index: 1084;
         left: 16px;
 
-        @media (max-width:$smallTablet-max) {
+        @media (max-width:$tablet-max) {
             left: 8px;
+            height: 50%;
+
         }
     }
 
@@ -143,8 +164,9 @@
         z-index: 1084;
         right: 16px;
 
-        @media (max-width:$smallTablet-max) {
+        @media (max-width:$tablet-max) {
             right: 8px;
+            height: 50%;
         }
     }
 
