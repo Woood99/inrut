@@ -10,6 +10,7 @@
   --primaryTwo: #7A7FAA;
   --dark: #161616;
   --red: #FF4848;
+  --red-dark: #cc3333;
   --green: #24CA8E;
   --yellow: #FFDA16;
   --pink: #FA8080;
@@ -1159,6 +1160,7 @@ textarea.input-reset {
 }
 .personal-area__name {
   color: var(--dark);
+  color: var(--primaryTwo);
   font-size: 18px;
   line-height: 1.2777777778;
   font-weight: 500;
@@ -1236,18 +1238,18 @@ textarea.input-reset {
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
-  font-size: 18px;
-  line-height: 1.2777777778;
+  font-size: 15px;
+  line-height: 1.2666666667;
   font-weight: 500;
 }
 .personal-area__btn svg {
-  --size: 15px;
+  --size: 12px;
   width: var(--size);
   height: var(--size);
   -webkit-box-flex: 0;
   -ms-flex: 0 0 var(--size);
   flex: 0 0 var(--size);
-  margin-right: 24px;
+  margin-right: 18px;
   fill: currentColor;
 }
 @media (min-width: 1112px) {
@@ -1276,7 +1278,7 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
   color: var(--blue);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 100%;
   font-weight: 500;
   background-color: var(--primary100);
@@ -3162,8 +3164,8 @@ textarea.input-reset {
 }
 
 .pagination {
-  --width-item: 24px;
-  --height-item: 23px;
+  --width-item: 28px;
+  --height-item: 27px;
   --gap-item: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3232,8 +3234,8 @@ textarea.input-reset {
   min-width: auto;
 }
 .pagination__item:hover, .pagination__item:focus {
-  background-color: var(--primary200);
-  color: var(--blue);
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 .quantity-selection {
@@ -3879,6 +3881,9 @@ textarea.input-reset {
   font-size: 15px;
   line-height: 1.2666666667;
   font-weight: 400;
+}
+.complain-btn:hover {
+  color: var(--red-dark);
 }
 @media (max-width: 1112px) {
   .complain-btn {
@@ -6970,6 +6975,7 @@ textarea.input-reset {
   margin-right: 10px;
   font-size: 12px;
   line-height: 1.25;
+  font-weight: 500;
 }
 
 .header-main__container {
@@ -7737,7 +7743,7 @@ textarea.input-reset {
   }
 }
 .your-app__user {
-  margin-top: 24px;
+  margin-top: 16px;
   background-color: var(--primary100);
   border-radius: 16px;
   padding: 32px 32px 32px 56px;
