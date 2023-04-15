@@ -22,7 +22,7 @@ import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';
 import './components/controlCards'
 import emergingBlockScroll from './modules/emergingBlockScroll';
-
+import './components/gallery';
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();

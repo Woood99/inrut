@@ -78,7 +78,7 @@ function objectSlider() {
         direction: 'vertical',
     });
     let bodySlider = new Swiper(body, {
-        spaceBetween: 0,
+        spaceBetween: 15,
         observer: true,
         observeParents: true,
         navigation: {

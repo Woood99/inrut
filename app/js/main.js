@@ -966,6 +966,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
 /* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
+
 
 
 
@@ -1099,11 +1101,8 @@ const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var lightgallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightgallery */ "./node_modules/lightgallery/lightgallery.es5.js");
-/* harmony import */ var lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightgallery/plugins/video */ "./node_modules/lightgallery/plugins/video/lg-video.es5.js");
-/* harmony import */ var lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lightgallery/plugins/thumbnail */ "./node_modules/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js");
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
 // ========================================================================================
 
 // Плагин кастом-скролла
@@ -1117,46 +1116,11 @@ __webpack_require__.r(__webpack_exports__);
 
 // ========================================================================================
 
-// Галерея
-
-// Документация: https://www.lightgalleryjs.com/docs/
-// Сниппет(HTML): gallery
-
-// Подключение базового набора функционала
-
-
-// Плагины
-// lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, 
-// lgShare, lgThumbnail, lgVideo, lgMediumZoom
-
-
-
-// Запуск
-const galleries = document.querySelectorAll('#object-gallery');
-galleries.forEach(gallery => {
-  (0,lightgallery__WEBPACK_IMPORTED_MODULE_0__["default"])(gallery, {
-    plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
-    licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-    selector: '.object-gallery__item',
-    addClass: 'gallery-primary-container',
-    speed: 700,
-    animateThumb: false,
-    zoomFromOrigin: false,
-    allowMediaOverlap: true,
-    toggleThumb: true,
-    download: false,
-    videoMaxSize: 'none',
-    loadYouTubePoster: false
-  });
-});
-
-// ========================================================================================
-
 
 const selectPrimary = document.querySelectorAll('.select-primary__body');
 if (selectPrimary.length >= 1) {
   selectPrimary.forEach(el => {
-    const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_3___default())(el, {
+    const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
       searchEnabled: false,
       shouldSort: false,
       itemSelectText: '',
@@ -1593,6 +1557,71 @@ const complaintValidate = (formSelector, textareaSelector, btnSelector, radiosSe
   });
   textarea.addEventListener('input', () => checkForm());
 };
+
+/***/ }),
+
+/***/ "./src/js/components/gallery.js":
+/*!**************************************!*\
+  !*** ./src/js/components/gallery.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lightgallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightgallery */ "./node_modules/lightgallery/lightgallery.es5.js");
+/* harmony import */ var lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightgallery/plugins/video */ "./node_modules/lightgallery/plugins/video/lg-video.es5.js");
+/* harmony import */ var lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lightgallery/plugins/thumbnail */ "./node_modules/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js");
+
+
+
+const galleries = document.querySelectorAll('#object-gallery');
+galleries.forEach(gallery => {
+  const galleryContainer = (0,lightgallery__WEBPACK_IMPORTED_MODULE_0__["default"])(gallery, {
+    plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
+    licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+    selector: '.object-gallery__item',
+    addClass: 'gallery-primary-container',
+    speed: 500,
+    thumbnail: true,
+    animateThumb: true,
+    zoomFromOrigin: false,
+    allowMediaOverlap: true,
+    toggleThumb: true,
+    download: false,
+    videoMaxSize: 'none',
+    loadYouTubeThumbnail: false,
+    thumbMargin: 10,
+    thumbWidth: 90,
+    thumbHeight: '90px',
+    nextHtml: `
+            <svg>
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+        `,
+    prevHtml: `
+            <svg>
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+        `,
+    enableThumbSwipe: true,
+    closeOnTap: false
+  });
+  const closeBtnHTML = `
+    <button class="btn btn-reset gallery-primary-container__close">
+        <svg>
+            <use xlink:href="img/sprite.svg#x"></use>
+        </svg>
+        <span>Закрыть</span>
+    </button>
+    `;
+  document.querySelector('.gallery-primary-container .lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
+  document.querySelector('.gallery-primary-container .lg-backdrop').addEventListener('click', () => {
+    galleryContainer.closeGallery();
+  });
+  document.querySelector('.gallery-primary-container .gallery-primary-container__close').addEventListener('click', () => {
+    galleryContainer.closeGallery();
+  });
+});
 
 /***/ }),
 
@@ -2169,7 +2198,7 @@ function objectSlider() {
     direction: 'vertical'
   });
   let bodySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](body, {
-    spaceBetween: 0,
+    spaceBetween: 15,
     observer: true,
     observeParents: true,
     navigation: {

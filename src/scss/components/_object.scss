@@ -126,6 +126,7 @@
         margin-top: 25px;
         grid-column: 1/2;
         min-width: 100%;
+
         @media (max-width:$desktop) {
             margin-top: 8px;
             grid-column: 1/-1;
@@ -333,8 +334,8 @@
     padding: 32px 24px;
 
     &__title {
-        @media (max-width:$desktop){
-             padding: 0 16px; 
+        @media (max-width:$desktop) {
+            padding: 0 16px;
         }
     }
 
@@ -343,9 +344,10 @@
         color: var(--primary600);
         font-size: 15px;
         line-height: math.div(19, 15);
-        @media (max-width:$desktop){
-             margin-top: 16px;
-             padding: 0 16px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            padding: 0 16px;
         }
     }
 
@@ -355,16 +357,19 @@
         height: 423px;
         background-color: var(--white);
         border-radius: 12px;
-        @media (max-width:$desktop){
-             margin-top: 16px;
-             height: 350px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            height: 350px;
         }
-        @media (max-width:$smallTablet-max){
-             height: 227px; 
+
+        @media (max-width:$smallTablet-max) {
+            height: 227px;
         }
     }
-    @media (max-width:$desktop){
-          padding: 16px 0;
+
+    @media (max-width:$desktop) {
+        padding: 16px 0;
     }
 }
 
@@ -373,8 +378,9 @@
     background-color: var(--white);
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
-    @media (max-width:$desktop){
-         padding: 16px; 
+
+    @media (max-width:$desktop) {
+        padding: 16px;
     }
 }
 
@@ -421,8 +427,9 @@
         @media (max-width:$desktop) {
             margin-top: 16px;
         }
-        @media (max-width:$smallTablet-max){
-             display: flex; 
+
+        @media (max-width:$smallTablet-max) {
+            display: flex;
         }
     }
 
@@ -527,8 +534,9 @@
                 font-size: 12px;
                 line-height: math.div(15, 12);
                 font-weight: 400;
-                @media (max-width:$smallTablet-max){
-                     padding: 5px 4px; 
+
+                @media (max-width:$smallTablet-max) {
+                    padding: 5px 4px;
                 }
             }
         }
@@ -538,8 +546,9 @@
         font-size: 15px;
         line-height: math.div(19, 15);
         color: var(--dark);
-        @media (max-width:$smallTablet-max){
-           justify-self: end;
+
+        @media (max-width:$smallTablet-max) {
+            justify-self: end;
         }
     }
 
@@ -753,6 +762,7 @@
         overflow: hidden;
         height: 100%;
         border-radius: 12px;
+        width: 100%;
 
         .swiper-slide {
             a {
