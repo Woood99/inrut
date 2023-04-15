@@ -11,10 +11,6 @@
 
     }
 
-    .lg-counter {
-        display: none;
-    }
-
     .lg-toggle-thumb {
         display: none;
     }
@@ -54,8 +50,8 @@
                     max-width: 85vw;
 
                     @media (max-width:$tablet-max) {
-                        max-width: 100%;
                         height: auto;
+                        max-width: 100%;
                     }
                 }
 
@@ -64,8 +60,8 @@
                     max-width: 85vw;
 
                     @media (max-width:$tablet-max) {
-                        max-width: 100%;
                         height: auto;
+                        max-width: 100%;
                     }
                 }
 
@@ -132,6 +128,26 @@
         }
     }
 
+    .gallery-primary-container__prev {
+        background-color: transparent;
+        z-index: 1084;
+        left: 16px;
+
+        @media (max-width:$smallTablet-max) {
+            left: 8px;
+        }
+    }
+
+    .gallery-primary-container__next {
+        background-color: transparent;
+        z-index: 1084;
+        right: 16px;
+
+        @media (max-width:$smallTablet-max) {
+            right: 8px;
+        }
+    }
+
     .lg-outer .lg-thumb-outer {
         background-color: rgba(22, 22, 22, 0.9);
         width: calc(100% - (48px * 2));
@@ -146,6 +162,29 @@
             margin-left: 0;
             border-radius: 0;
         }
+    }
+
+    .lg-counter {
+        padding: 6px;
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1084;
+
+        background: rgba(22, 22, 22, 0.7);
+        border-radius: 8px;
+        height: auto;
+
+        font-size: 12px;
+        line-height: 100%;
+        font-weight: 500;
+        color: var(--white);
+
+        display: flex;
+        align-items: center;
+
+        @include fontCofo;
     }
 
     .lg-thumb {
@@ -166,48 +205,7 @@
 
     .lg-next,
     .lg-prev {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        background-color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        transition: opacity $transitionSpeed $transitionFunction;
-
-        &::after,
-        &::before {
-            display: none;
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-            fill: rgba(22, 22, 22, 0.5);
-        }
-
-        @media (min-width:$tablet-min) {
-            &:hover {
-                opacity: 0.8;
-            }
-        }
-    }
-
-    .lg-prev {
-        left: 16px;
-
-        svg {
-            transform: rotate(180deg);
-        }
-    }
-
-    .lg-next {
-        right: 16px;
+        display: none;
     }
 
     .lg-outer .lg-img-wrap {}

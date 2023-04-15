@@ -1580,7 +1580,7 @@ galleries.forEach(gallery => {
     plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
     licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
     selector: '.object-gallery__item',
-    addClass: 'gallery-primary-container',
+    addClass: 'gallery-primary-container gallery-primary-container--object',
     speed: 500,
     thumbnail: true,
     animateThumb: true,
@@ -1593,18 +1593,10 @@ galleries.forEach(gallery => {
     thumbMargin: 10,
     thumbWidth: 90,
     thumbHeight: '90px',
-    nextHtml: `
-            <svg>
-                <use xlink:href="img/sprite.svg#arrow-right"></use>
-            </svg>
-        `,
-    prevHtml: `
-            <svg>
-                <use xlink:href="img/sprite.svg#arrow-right"></use>
-            </svg>
-        `,
+    mode: 'lg-fade',
     enableThumbSwipe: true,
-    closeOnTap: false
+    closeOnTap: false,
+    appendCounterTo: '.lg-content'
   });
   const closeBtnHTML = `
     <button class="btn btn-reset gallery-primary-container__close">
@@ -1614,13 +1606,31 @@ galleries.forEach(gallery => {
         <span>Закрыть</span>
     </button>
     `;
-  document.querySelector('.gallery-primary-container .lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
-  document.querySelector('.gallery-primary-container .lg-backdrop').addEventListener('click', () => {
-    galleryContainer.closeGallery();
-  });
-  document.querySelector('.gallery-primary-container .gallery-primary-container__close').addEventListener('click', () => {
-    galleryContainer.closeGallery();
-  });
+  const nextBtnHTML = `
+    <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--next gallery-primary-container__next">
+        <div class="nav-arrow-primary__wrapper">
+            <svg>
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+        </div>
+    </button>
+    `;
+  const prevBtnHTML = `
+    <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--prev gallery-primary-container__prev">
+        <div class="nav-arrow-primary__wrapper">
+            <svg>
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+        </div>
+    </button>
+    `;
+  const container = document.querySelector('.gallery-primary-container--object');
+  container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
+  container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
+  container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
+  container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
+  container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
+  container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
 });
 
 /***/ }),
