@@ -2202,7 +2202,7 @@ function objectSlider() {
   const body = container.querySelector('.object-slider-body__wrapper');
   let navSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](nav, {
     slidesPerView: 3,
-    spaceBetween: 21,
+    spaceBetween: 16,
     observer: true,
     observeParents: true,
     freeMode: true,

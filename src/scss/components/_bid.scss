@@ -310,7 +310,10 @@
         font-size: 18px;
         line-height: math.div(23, 18);
         font-weight: 500;
-
+        transition: color $transitionSpeed $transitionFunction;
+        &:hover{
+            color: var(--blue);
+        }
         @media (max-width:$smallTablet-max) {
             margin-top: 2px;
             font-size: 15px;
@@ -561,7 +564,9 @@
             }
 
             &__grade {
-                margin-top: 24px;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--primary100);
                 text-align: center;
                 width: 100%;
 
@@ -582,15 +587,13 @@
                 &--dislike,
                 &--comment {
                     width: 100%;
-                    font-size: 15px;
-                    line-height: math.div(19, 15);
                     height: 55px;
                     padding: 16px 20px;
 
                     svg {
                         margin-right: 16px;
-                        width: 24px;
-                        height: 24px;
+                        width: 18px;
+                        height: 18px;
                         fill: currentColor;
 
                         @media (max-width:$desktop) {
