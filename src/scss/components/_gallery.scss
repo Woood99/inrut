@@ -57,31 +57,28 @@
                 }
 
                 .lg-video-cont {
-                    height: 100%;
-                    max-width: 85vw;
-
-                    .lg-video-poster {
-                        height: auto !important;
-                        max-width: 100%;
-
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-
-                    @media (max-width:$tablet-max) {
+                    height: 100% !important;
+                    width: auto !important;
+                    &::before{
+                        content: "";
+                        display: inline-block;
                         height: 100%;
-                        max-width: 100%;
-
-
+                        vertical-align: middle;
+                    }
+                    .lg-video-poster {
+                        height: 100%;
+                        max-width: 85vw;
+                        @media (max-width:$tablet-max) {
+                            height: auto !important;
+                            max-width: 100%;
+                        }
                     }
                 }
 
                 &.lg-video-loaded {
-
-
                     .lg-video-cont {
-                        width: 100%;
-                        max-width: 100%;
+                        width: 100% !important;
+                        max-width: 100% !important;
                     }
                 }
 
@@ -148,29 +145,31 @@
         }
     }
 
-    .gallery-primary-container__prev {
-        background-color: transparent;
+    .gallery-primary-container__prev,
+    .gallery-primary-container__next {
         z-index: 1084;
+        height: 50%;
+        width: calc(32px + (8px * 2));
+
+        .nav-arrow-primary__wrapper {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .gallery-primary-container__prev {
         left: 16px;
-        width: 32px;
-        height: 32px;
 
         @media (max-width:$tablet-max) {
             left: 8px;
-            height: 50%;
         }
     }
 
     .gallery-primary-container__next {
-        background-color: transparent;
-        z-index: 1084;
         right: 16px;
-        width: 32px;
-        height: 32px;
 
         @media (max-width:$tablet-max) {
             right: 8px;
-            height: 50%;
         }
     }
 

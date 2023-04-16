@@ -9,7 +9,7 @@ galleries.forEach(gallery => {
         licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
         selector: '.object-gallery__item',
         addClass: 'gallery-primary-container gallery-primary-container--object',
-        speed: 500,
+        speed: 400,
         thumbnail: true,
 
         animateThumb: true,
@@ -23,8 +23,6 @@ galleries.forEach(gallery => {
         thumbMargin: 10,
         thumbWidth: 90,
         thumbHeight: '90px',
-
-        mode: 'lg-fade',
         enableThumbSwipe: true,
         closeOnTap: false,
         appendCounterTo: '.lg-content',

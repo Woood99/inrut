@@ -5,9 +5,10 @@
 import Swiper, {
     Navigation,
     Pagination,
-    Thumbs
+    Thumbs,
+    EffectFade
 } from 'swiper';
-Swiper.use([Navigation, Pagination, Thumbs]);
+Swiper.use([Navigation, Pagination, Thumbs,EffectFade]);
 
 
 
@@ -80,6 +81,7 @@ function objectSlider() {
     let bodySlider = new Swiper(body, {
         spaceBetween: 15,
         observer: true,
+        loop:true,
         observeParents: true,
         navigation: {
             prevEl: container.querySelector('.nav-arrow-primary--prev'),

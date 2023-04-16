@@ -2,7 +2,7 @@
     width: 100%;
     background-color: var(--primary100);
     border-radius: 16px;
-    padding: 32px;
+    padding: 24px 16px;
 
     &__table {}
 
@@ -34,9 +34,9 @@
         &:not(:last-child) {
             margin-bottom: 16px;
 
-            @media (max-width:$smallTablet-max) {
-                margin-bottom: 8px;
-            }
+           @media (max-width:$desktop){
+            margin-bottom: 8px; 
+           }
         }
     }
 
@@ -54,18 +54,18 @@
             color: var(--blue);
             background-color: #fff;
 
-            @media (max-width:$smallTablet-max) {
-                font-size: 12px;
-                line-height: math.div(15, 12);
-                height: 47px;
-                padding: 16px 20px;
-            }
+           @media (max-width:$desktop){
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            height: 47px;
+            padding: 16px 20px; 
+           }
         }
 
-        @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
-            padding: 0 $containerOffset+px;
-        }
+      @media (max-width:$desktop){
+        margin-top: 24px;
+        padding: 0 $containerOffset+px; 
+      }
     }
 
     &__pagination {
@@ -74,17 +74,13 @@
         justify-content: center;
         align-items: center;
 
-        @media (max-width:$smallTablet-max) {
-            margin-top: 16px;
-            padding: 0 $containerOffset+px;
-        }
+      @media (max-width:$desktop){
+        margin-top: 16px;
+        padding: 0 $containerOffset+px; 
+      }
     }
 
     @media (max-width:$desktop) {
-        padding: 24px;
-    }
-
-    @media (max-width:$smallTablet-max) {
         padding: 0;
     }
 }

@@ -2,10 +2,12 @@
     &__container {
         background-color: var(--primary100);
         border-radius: 16px;
-        padding: 32px;
-        grid-column-gap: 32px;
+        padding: 16px;
+        grid-column-gap: 24px;
         display: grid;
         grid-template-columns: percent(584, 1016) percent(400, 1016);
+        grid-template-columns: percent(604, 1048) percent(420, 1048);
+        justify-content: space-between;
 
         @media (max-width:$desktop) {
             grid-template-columns: repeat(2, 1fr);
@@ -21,6 +23,7 @@
         background-color: var(--white);
         border-radius: 12px;
         padding: 32px 24px;
+        padding: 24px;
 
         @media (max-width:$desktop) {
             order: 2;
@@ -311,9 +314,11 @@
         line-height: math.div(23, 18);
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
-        &:hover{
+
+        &:hover {
             color: var(--blue);
         }
+
         @media (max-width:$smallTablet-max) {
             margin-top: 2px;
             font-size: 15px;

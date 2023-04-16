@@ -1584,7 +1584,7 @@ galleries.forEach(gallery => {
     licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
     selector: '.object-gallery__item',
     addClass: 'gallery-primary-container gallery-primary-container--object',
-    speed: 500,
+    speed: 400,
     thumbnail: true,
     animateThumb: true,
     zoomFromOrigin: false,
@@ -1596,7 +1596,6 @@ galleries.forEach(gallery => {
     thumbMargin: 10,
     thumbWidth: 90,
     thumbHeight: '90px',
-    mode: 'lg-fade',
     enableThumbSwipe: true,
     closeOnTap: false,
     appendCounterTo: '.lg-content'
@@ -2148,7 +2147,7 @@ __webpack_require__.r(__webpack_exports__);
 // =========================================================================================
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade]);
 
 // =========================================================================================
 
@@ -2213,6 +2212,7 @@ function objectSlider() {
   let bodySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](body, {
     spaceBetween: 15,
     observer: true,
+    loop: true,
     observeParents: true,
     navigation: {
       prevEl: container.querySelector('.nav-arrow-primary--prev'),
