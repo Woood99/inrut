@@ -74,6 +74,10 @@
                 }
             }
 
+            &:hover {
+                color: var(--blue);
+            }
+
             @media (max-width:$desktop) {
                 padding: 5px 15px 4px;
                 font-size: 12px;
@@ -143,6 +147,11 @@
                 fill: currentColor;
             }
         }
+
+        &:hover {
+            background-color: var(--blue);
+            color: var(--white);
+        }
     }
 
     &__content {
@@ -208,14 +217,6 @@
     &__next {
         margin-top: 32px;
         width: 100%;
-
-        @media (max-width:$smallTablet-max) {
-            font-size: 12px;
-            line-height: math.div(15, 12);
-            font-weight: 400;
-            padding: 16px 30px;
-            height: 47px;
-        }
     }
 
     &__pagination {

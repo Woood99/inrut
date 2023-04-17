@@ -1,4 +1,550 @@
-<div class="popup popup-primary popup-primary--left popup-primary--city">
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>База агентов каталог</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--base-agent-catalog">
+        <header class="header">
+    <div class="header__top header-top">
+        <div class="header-top__container container">
+            <button class="header-top__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+                <span class="burger__line"></span>
+            </button>
+            <div class="header-top__city city" data-da=".header-main__nav,1112,3">
+                <button type="button" class="btn btn-reset city__title" data-popup-path="city">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#location"></use>
+                    </svg>
+                    <span class="city__name">Краснодар</span>
+                </button>
+            </div>
+            <div class="header-top__actions">
+                <div class="header-top__action header-action header-action--add">
+                    <button type="button" data-popup-path="add" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#add"></use>
+                        </svg>
+                        <span class="header-action__name">
+                            Добавить
+                        </span>
+                    </button>
+                </div>
+                <div class="header-top__action header-action header-action--calendar">
+                    <button type="button" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#calendar"></use>
+                        </svg>
+                        <span class="header-action__quantity">
+                            2
+                        </span>
+                    </button>
+                </div>
+                <div class="header-top__action header-action header-action--chat">
+                    <button type="button" class="btn btn-reset header-action__title">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#chat"></use>
+                        </svg>
+                        <span class="header-action__quantity">
+                            2
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-top__personal header-personal">
+                <button type="button" class="btn btn-reset header-personal__title" data-popup-path="personal-area"
+                    data-mobile-speed>
+                    <span class="header-personal__name">
+                        Кабинет
+                    </span>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#door-open"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header__main header-main">
+        <div class="header-main__container container">
+            <a href="#" class="header-main__logo logo" data-da=".header-top__container,1112,1">
+                <img loading="lazy" src="./img/logo.svg" width="238" height="32" class="logo__img" alt="Продам.Онлайн">
+            </a>
+            <nav class="header-main__nav nav" data-menu>
+                <button type="button" class="btn btn-reset header-main__close">Закрыть</button>
+                <div class="header-main__title">Меню</div>
+                <ul class="nav__list list-reset" data-spollers="1112,max" data-one-spoller>
+                    <li class="nav__item nav-dropdown">
+                        <span class="nav__link" data-spoller>
+                            <svg class="nav__link-icon">
+                                <use xlink:href="img/sprite.svg#key"></use>
+                            </svg>
+                            Продажа
+                            <svg class="nav__link-arrow">
+                                <use xlink:href="img/sprite.svg#arrow-small"></use>
+                            </svg>
+                        </span>
+                        <div class="nav-dropdown__dropdown">
+                            <div class="nav-dropdown__dropdown-container nav-dropdown-content container">
+                                <div class="nav-dropdown-content__card-info card-info"
+                                    data-da=".header-main__banners-slide--1,1112,1">
+                                    <span class="card-info__title">
+                                        Успейте взять ипотеку
+                                        по выгодной ставке
+                                    </span>
+                                    <div class="card-info__image" style="background-image: url('./img/11prc.png')">
+                                    </div>
+                                </div>
+                                <div class="nav-dropdown-content__body">
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#key"></use>
+                                            </svg>
+                                            <span>Вторичка</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#home"></use>
+                                            </svg>
+                                            <span>Дома, коттеджи, дачи</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <svg class="nav__link-icon">
+                                <use xlink:href="img/sprite.svg#new-buildings"></use>
+                            </svg>
+                            Новостройки
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <svg class="nav__link-icon">
+                                <use xlink:href="img/sprite.svg#calendar"></use>
+                            </svg>
+                            Покупка
+                        </a>
+                    </li>
+                    <li class="nav__item nav-dropdown">
+                        <span class="nav__link" data-spoller>
+                            <svg class="nav__link-icon">
+                                <use xlink:href="img/sprite.svg#bank"></use>
+                            </svg>
+                            Услуги
+                            <svg class="nav__link-arrow">
+                                <use xlink:href="img/sprite.svg#arrow-small"></use>
+                            </svg>
+                        </span>
+                        <div class="nav-dropdown__dropdown">
+                            <div class="nav-dropdown__dropdown-container nav-dropdown-content container">
+                                <div class="nav-dropdown-content__card-info card-info"
+                                    data-da=".header-main__banners-slide--2,1112,2">
+                                    <span class="card-info__title">
+                                        Успейте взять ипотеку
+                                        по выгодной ставке
+                                    </span>
+                                    <div class="card-info__image" style="background-image: url('./img/11prc.png')">
+                                    </div>
+                                </div>
+                                <div class="nav-dropdown-content__body">
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#bank"></use>
+                                            </svg>
+                                            <span>Ипотека</span>
+                                        </a>
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#shield"></use>
+                                            </svg>
+                                            <span>Ипотечное страхование</span>
+                                        </a>
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#money-check-edit"></use>
+                                            </svg>
+                                            <span>Оценка недвижимости для ипотеки</span>
+                                        </a>
+                                    </div>
+                                    <div class="nav-dropdown-content__col">
+                                        <a href="#" class="nav-dropdown-content__item">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#fingerprint"></use>
+                                            </svg>
+                                            <span>Юридическая проверка</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <svg class="nav__link-icon">
+                                <use xlink:href="img/sprite.svg#users-alt"></use>
+                            </svg>
+                            Агенты
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper header-main__banners">
+                    <div class="swiper-wrapper header-main__banners-container">
+                        <div class="swiper-slide header-main__banners-slide header-main__banners-slide--1"></div>
+                        <div class="swiper-slide header-main__banners-slide header-main__banners-slide--2"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+        <main class="main main-page-gap base-agent-catalog">
+            <div class="base-agent-catalog__body container">
+                <h1 class="base-agent-catalog__title title-1">
+                    В базе 1 567 агентов
+                </h1>
+                <form class="base-agent-catalog__filter filter">
+                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#filter"></use>
+                        </svg>
+                        <span>Фильтр</span>
+                    </button>
+                    <div class="filter__container">
+                        <div class="filter__top">
+                            <span>Фильтры</span>
+                            <button type="button" class="btn btn-reset filter__close">Закрыть</button>
+                        </div>
+                        <div class="filter__inner">
+                            <div class="filter__row">
+                                <label class="filter__item filter__item--input base-agent-catalog__input input-primary">
+                                    <input type="text" name="Имя" class="input-reset input-primary__input"
+                                        placeholder="">
+                                    <span class="input-primary__span">ФИО агента</span>
+                                </label>
+                                <div
+                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Город
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="type-object">
+                                            <option value="apartments">Санкт-Петербург</option>
+                                            <option value="apartments2">Волгоград</option>
+                                            <option value="apartments3">Москва</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div
+                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Специализация
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="type-object">
+                                            <option value="apartments">Ипотечный брокер</option>
+                                            <option value="apartments2">Ипотечный брокер2</option>
+                                            <option value="apartments3">Ипотечный брокер3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div
+                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
+                                    <span class="select-primary__name">
+                                        Новостройки
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="type-object">
+                                            <option value="apartments">Новостройки</option>
+                                            <option value="apartments2">Новостройки1</option>
+                                            <option value="apartments3">Новостройки2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__controls base-agent-catalog__controls">
+                            <div class="base-agent-catalog__sort select-sort"
+                                data-da=".base-agent-catalog__filter,1112,2">
+                                <span class="select-sort__label">Сортировка по рейтингу:</span>
+                                <select class="select-sort__body" name="filter-sort">
+                                    <option value="default">По-умолчанию</option>
+                                    <option value="high">Сначала высокий</option>
+                                </select>
+                            </div>
+                            <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                            <button type="button" class="btn btn-reset btn-primary filter__go">
+                                Показать 1567 агентов
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="base-agent-catalog__table main-table">
+                    <div class="main-table__table">
+                        <div class="main-table__type">
+                            <span>Имя</span>
+                            <span>В портфеле</span>
+                            <span>Рейтинг</span>
+                        </div>
+                        <div class="main-table__list">
+                            <a href="#" class="main-table__item object-info-grade">
+                                <div class="object-info-grade__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Абдурахманраджи Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Абдурахманраджи Г.
+                                    </span>
+                                </div>
+                                <div class="object-info-grade__quantity">
+                                    <span>100 объектов,</span>
+                                    <span>880 сделок</span>
+                                </div>
+                                <div class="object-info-grade__rating">
+                                    <div class="object-info-grade__stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span class="object-info-grade__rating--number">2.2</span>
+                                    <span class="object-info-grade__rating--quantity">(523 отзыва)</span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info-grade">
+                                <div class="object-info-grade__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Иван Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Ипотечный брокер
+                                    </span>
+                                    <span class="user-info__name">
+                                        Иван Г.
+                                    </span>
+                                </div>
+                                <div class="object-info-grade__quantity">
+                                    <span>8 сделок</span>
+                                </div>
+                                <div class="object-info-grade__rating">
+                                    <div class="object-info-grade__stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span class="object-info-grade__rating--number">2.2</span>
+                                    <span class="object-info-grade__rating--quantity">(969 отзыва)</span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info-grade">
+                                <div class="object-info-grade__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                </div>
+                                <div class="object-info-grade__quantity">
+                                    <span>10 объектов,</span>
+                                    <span>8 сделок</span>
+                                </div>
+                                <div class="object-info-grade__rating">
+                                    <div class="object-info-grade__stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span class="object-info-grade__rating--number">2.2</span>
+                                    <span class="object-info-grade__rating--quantity">(523 отзыва)</span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info-grade">
+                                <div class="object-info-grade__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Абдурахманраджи Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Олег Г.
+                                    </span>
+                                </div>
+                                <div class="object-info-grade__quantity">
+                                    <span>10 объектов,</span>
+                                    <span>8 сделок</span>
+                                </div>
+                                <div class="object-info-grade__rating">
+                                    <div class="object-info-grade__stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span class="object-info-grade__rating--number">2.2</span>
+                                    <span class="object-info-grade__rating--quantity">(523 отзыва)</span>
+                                </div>
+                            </a>
+                            <a href="#" class="main-table__item object-info-grade">
+                                <div class="object-info-grade__from user-info">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <span class="user-info__name">
+                                        Вячеслав Г.
+                                    </span>
+                                </div>
+                                <div class="object-info-grade__quantity">
+                                    <span>10 объектов,</span>
+                                    <span>8 сделок</span>
+                                </div>
+                                <div class="object-info-grade__rating">
+                                    <div class="object-info-grade__stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span class="object-info-grade__rating--number">2.2</span>
+                                    <span class="object-info-grade__rating--quantity">(2 отзыва)</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                        Следующая страница
+                    </button>
+                    <div class="main-table__pagination pagination">
+                        <ul class="pagination__list list-reset">
+                            <li class="pagination__item" disabled>
+                                <a href="#">
+                                    1
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    2
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    3
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    4
+                                </a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    5
+                                </a>
+                            </li>
+                            <li class="pagination__item dots" tabindex="-1">
+                                ...
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#">
+                                    199
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top">
+            <a href="#" class="footer__logo logo">
+                <img loading="lazy" src="./img/logo-two.svg" width="185" height="32" class="logo__img"
+                    alt="Продам.Онлайн">
+            </a>
+            <nav class="footer__nav nav">
+                <ul class="nav__list list-reset">
+                    <li class="nav__item"><a href="#" class="nav__link">Продажа</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Новостройки</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Покупка</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Услуги</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__write">
+            <p>
+                Есть предложения, напишите нам.
+            </p>
+            <button type="button" class="btn btn-reset btn-secondary footer__btn">Написать</button>
+        </div>
+        <p class="footer__descr">
+            © 2021-2022 ООО «Продам онлайн», официальный сайт использует куки-файлы и другие технологии, чтобы помочь
+            вам в навигации, а также предоставить лучший пользовательский опыт, анализировать использование наших
+            продуктов и услуг, повысить качество рекламных и маркетинговых активностей. Если Вы не хотите, чтобы Ваши
+            пользовательские данные обрабатывались, пожалуйста, ограничьте их использование в своём браузере.
+        </p>
+    </div>
+</footer>
+
+    </div>
+    <div class="popup popup-primary popup-primary--left popup-primary--city">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="city">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
             <svg>
@@ -616,3 +1162,8 @@
         </div>
     </div>
 </div>
+
+</body>
+
+
+</html>

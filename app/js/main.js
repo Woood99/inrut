@@ -1131,6 +1131,17 @@ if (selectPrimary.length >= 1) {
     });
   });
 }
+const selectSecondary = document.querySelectorAll('.select-sort__body');
+if (selectSecondary.length >= 1) {
+  selectSecondary.forEach(el => {
+    const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
+      searchEnabled: false,
+      shouldSort: false,
+      itemSelectText: '',
+      position: 'bottom'
+    });
+  });
+}
 
 /***/ }),
 
@@ -1540,7 +1551,7 @@ const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSe
       flag = radio.checked ? true : false;
       if (flag) break;
     }
-    textarea.value.length >= 5 && flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
+    flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
   }
   ;
   function clearForm() {
@@ -1558,7 +1569,6 @@ const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSe
     e.preventDefault();
     clearForm();
   });
-  textarea.addEventListener('input', () => checkForm());
 };
 
 /***/ }),

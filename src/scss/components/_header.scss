@@ -4,7 +4,7 @@
 
     &__main {
         position: relative;
-        height: 70px;
+        height: 60px;
         background-color: var(--white);
 
         @media (max-width:$desktop) {
@@ -42,8 +42,8 @@
             .city {
                 &__name {
                     font-weight: 500;
-                    font-size: 15px;
-                    line-height: math.div(19, 15);
+                    font-size: 14px;
+                    line-height: math.div(19, 14);
                 }
             }
         }
@@ -85,7 +85,7 @@
     &--add {
         &:hover {
             .header-action__title {
-                color: var(--primary400);
+                color: var(--blue);
             }
         }
     }
@@ -95,8 +95,8 @@
     &--chat {
         .header-action__title {
             svg {
-                width: 19px;
-                height: 19px;
+                width: 14px;
+                height: 14px;
             }
         }
     }
@@ -116,8 +116,9 @@
 
     &__name {
         margin-left: 10px;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: math.div(19, 14);
     }
 
     &__quantity {
@@ -150,12 +151,14 @@
         align-items: center;
         color: var(--primaryTwo);
         transition: color $transitionSpeed $transitionFunction;
+
         svg {
             width: 14px;
             height: 14px;
             fill: currentColor;
         }
-        &:hover{
+
+        &:hover {
             color: var(--blue);
         }
     }
@@ -163,8 +166,8 @@
     &__name {
         color: inherit;
         margin-right: 10px;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: 14px;
+        line-height: math.div(19, 14);
         font-weight: 500;
     }
 }

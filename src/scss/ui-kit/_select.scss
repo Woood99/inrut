@@ -2,6 +2,7 @@
     position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+
     &__name {
         position: absolute;
         z-index: 2;
@@ -110,6 +111,120 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+    }
+}
+
+
+.select-sort {
+    display: flex;
+    align-items: center;
+
+    &__label {
+        color: var(--primary600);
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 400;
+        margin-right: 8px;
+
+        @media (max-width:$desktop) {
+            font-size: 13px;
+        }
+    }
+
+    .choices {
+        overflow: visible;
+        display: flex;
+        align-items: center;
+
+        &::after {
+            border: none;
+            width: 20px;
+            height: 20px;
+            flex: 0 0 20px;
+            background-color: transparent;
+            background-image: url(../img/check-blue.svg);
+            display: block;
+            margin-top: 0;
+            position: relative;
+            margin-left: 8px;
+            right: 0;
+            top: 0;
+            transform: rotate(180deg);
+            transition: transform $transitionSpeed $transitionFunction;
+        }
+
+        &.is-open {
+            &::after {
+                margin-top: 0;
+                transform: rotate(0deg);
+            }
+
+            .choices__list--dropdown {
+                border: 1px solid rgba(122, 127, 170, 0.05);
+            }
+        }
+    }
+
+    .choices__list--dropdown {
+        top: calc(100% + 10px);
+        left: -15px;
+        min-width: 151px;
+        background: #FFFFFF;
+        border: 1px solid rgba(122, 127, 170, 0.05);
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+        border-radius: 12px;
+        padding: 0;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform $transitionSpeed $transitionFunction,
+            opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction;
+        margin-top: 0;
+
+        .choices__item {
+            padding: 12px 16px;
+            color: var(--dark);
+            font-size: 14px;
+            line-height: math.div(18, 14);
+            font-weight: 400;
+
+            &.is-selected {
+                pointer-events: none;
+                color: var(--primary600);
+                background: linear-gradient(0deg, rgba(38, 131, 242, 0.05), rgba(38, 131, 242, 0.05)), #FFFFFF;
+            }
+
+            &.is-highlighted {
+                background-color: transparent;
+            }
+        }
+
+        &.is-active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .choices__list--single {
+        padding: 0;
+    }
+
+    .choices__inner {
+        padding: 0 !important;
+        min-height: auto;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        vertical-align: middle;
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        color: var(--blue);
+
+        @media (max-width:$desktop) {
+            font-size: 13px;
         }
     }
 }

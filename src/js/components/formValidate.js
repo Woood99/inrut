@@ -11,7 +11,7 @@ export const validateRadioText = (formSelector, textareaSelector, btnSelector, r
             flag = radio.checked ? true : false;
             if (flag) break;
         }
-        textarea.value.length >= 5 && flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
+        flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
     };
 
     function clearForm() {
@@ -29,5 +29,4 @@ export const validateRadioText = (formSelector, textareaSelector, btnSelector, r
         e.preventDefault();
         clearForm();
     });
-    textarea.addEventListener('input', () => checkForm());
 };

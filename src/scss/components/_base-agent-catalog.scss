@@ -1,0 +1,113 @@
+.site-container--base-agent-catalog {}
+
+.base-agent-catalog {
+
+    &__body {
+        @media (max-width:$desktop) {
+            background-color: var(--primary100);
+            padding: 24px 0 0;
+        }
+    }
+
+    &__title {
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
+    }
+
+    &__filter {
+        margin-top: 32px;
+
+        .filter {
+            &__item {
+                grid-column: 3 span;
+
+                @media (max-width:$desktop) {
+                    grid-column: 1/-1;
+                }
+            }
+
+            &__btn {
+                @media (max-width:$desktop) {
+                    margin: 0 16px;
+                    width: calc(100% - 32px);
+                }
+            }
+        }
+
+        .input-primary__span {
+            top: 17px;
+            color: var(--primaryTwo);
+        }
+    }
+
+    &__input {}
+
+    &__select {}
+
+    &__controls {
+        margin-top: 24px;
+    }
+
+    &__sort {
+        align-self: start;
+
+        @media (max-width:$desktop) {
+            justify-content: center;
+            margin-top: 16px;
+            padding: 0 16px;
+        }
+    }
+
+    &__table {
+        margin-top: 32px;
+
+        .main-table {
+            &__type {
+                grid-template-columns: percent(340, 1016) percent(420, 1016) 1fr;
+                grid-column-gap: 40px;
+            }
+
+            &__next {
+                margin: 24px 16px 0;
+                width: calc(100% - 32px);
+            }
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            padding: 0 0 16px 0;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding-top: 0;
+    }
+}
+
+.filter {
+
+    &__btn {}
+
+    &__container {}
+
+    &__top {}
+
+    &__close {}
+
+    &__inner {}
+
+    &__row {}
+
+    &__item {}
+
+    &__item--input {}
+
+    &__item--object {}
+
+    &__controls {}
+
+    &__clear {}
+
+    &__go {}
+}

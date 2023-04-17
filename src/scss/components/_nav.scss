@@ -11,24 +11,28 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 0 25px;
-
+        margin: 0 25px;
 
         &:last-child {
             padding-right: 0;
+        }
+
+        @media (max-width:$desktop) {
+            margin: 0;
+            padding: 0 25px;
         }
     }
 
     &__link {
         color: var(--primaryTwo);
         font-weight: 500;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: 14px;
+        line-height: math.div(18, 14);
         transition: color $transitionSpeed $transitionFunction;
         cursor: pointer;
 
         &:hover {
-            color: var(--primary400);
+            color: var(--blue);
         }
 
         &-icon {
@@ -130,6 +134,8 @@
     @media (min-width:$desktop) {
         &:hover {
             .nav__link {
+                color: var(--blue);
+
                 &::before {
                     width: 125%;
                 }
@@ -193,7 +199,7 @@
 
         span {
             color: inherit;
-            font-size: 15px;
+            font-size: 14px;
             line-height: math.div(19, 15);
             font-weight: 500;
         }

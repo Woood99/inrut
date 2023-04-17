@@ -65,11 +65,12 @@
     &__item {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 32px;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 50px;
 
         >span {
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: 14px;
+            line-height: math.div(18, 14);
             font-weight: 400;
 
             &:nth-child(1) {
@@ -140,7 +141,7 @@
 
     &__descr {
         margin-top: 24px;
-        padding: 16px;
+        padding: 20px 16px;
         font-size: 15px;
         line-height: math.div(19, 15);
         font-weight: 400;
@@ -164,7 +165,7 @@
     }
 
     &__messages {
-        margin-top: 24px;
+        margin-top: 32px;
         max-width: none;
         width: 100%;
 
@@ -196,7 +197,7 @@
     }
 
     &__maps {
-        margin-top: 24px;
+        margin-top: 32px;
         width: 100%;
 
         .bid__title {
@@ -396,22 +397,18 @@
 
     &__btn {
         margin-top: 32px;
-        height: 55px;
-        padding: 17px 20px 18px;
+        padding: 0 20px;
         width: 100%;
 
         svg {
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             fill: currentColor;
             margin-right: 10px;
         }
 
         @media (max-width:$desktop) {
             margin-top: 21px;
-            height: 44px;
-            padding: 14px 20px;
-            font-size: 12px;
 
             svg {
                 width: 15px;
@@ -592,25 +589,19 @@
                 &--dislike,
                 &--comment {
                     width: 100%;
-                    height: 55px;
-                    padding: 16px 20px;
+                    padding: 0 20px;
 
                     svg {
                         margin-right: 16px;
-                        width: 18px;
-                        height: 18px;
+                        width: 17px;
+                        height: 17px;
                         fill: currentColor;
 
                         @media (max-width:$desktop) {
                             margin-right: 10px;
-                            width: 15px;
-                            height: 15px;
+                            width: 14px;
+                            height: 14px;
                         }
-                    }
-
-                    @media (max-width:$desktop) {
-                        height: 47px;
-                        font-size: 12px;
                     }
 
                     @media (max-width:$smallTablet-max) {
@@ -644,7 +635,6 @@
 
                 &--comment {
                     margin-top: 32px;
-                    height: 52px;
 
                     @media (max-width:$desktop) {
                         margin-top: 0;
