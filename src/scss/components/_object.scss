@@ -1,46 +1,5 @@
 .object {
 
-    &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @media (max-width:$desktop) {
-            background-color: var(--white);
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            padding-top: 12px;
-            padding-bottom: 12px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 99;
-        }
-    }
-
-    &__back {}
-
-    &__btns {
-        display: flex;
-        align-items: center;
-    }
-
-    &__share {
-        @media (max-width:$desktop) {
-            order: 2;
-        }
-    }
-
-    &__complain {
-        margin-left: 2px;
-
-        @media (max-width:$desktop) {
-            order: 1;
-            margin-left: 0;
-            margin-right: 24px;
-        }
-    }
-
     &__body {
         @media (max-width:$desktop) {
             padding: 0;

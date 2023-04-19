@@ -72,10 +72,11 @@ a {
             }
 
             .footer__container {
-                padding-bottom: calc(64px + 12px); // 56 height + 12 gap
+                padding-bottom: calc(60px + 12px); // 56 height + 12 gap
             }
         }
     }
+
     &.site-container--object {
         @media (max-width:$desktop) {
             .header {
@@ -83,7 +84,19 @@ a {
             }
 
             .footer__container {
-                padding-bottom: calc(56px + 12px); // 56 height + 12 gap
+                padding-bottom: calc(60px + 12px); // 56 height + 12 gap
+            }
+        }
+    }
+
+    &.site-container--agent {
+        @media (max-width:$desktop) {
+            .header {
+                display: none;
+            }
+
+            .footer__container {
+                padding-bottom: calc(60px + 12px); // 56 height + 12 gap
             }
         }
     }

@@ -141,16 +141,22 @@
 
     &__descr {
         margin-top: 24px;
-        padding: 20px 16px;
         font-size: 15px;
         line-height: math.div(19, 15);
         font-weight: 400;
         color: var(--dark);
-        border: 1px solid var(--primary200);
-        border-radius: 2px 12px 12px 12px;
+
+        &--border {
+            padding: 20px 16px;
+            border: 1px solid var(--primary200);
+            border-radius: 2px 12px 12px 12px;
+
+            @media (max-width:$smallTablet-max) {
+                padding: 16px 12px;
+            }
+        }
 
         @media (max-width:$smallTablet-max) {
-            padding: 16px 12px;
             margin: 24px 16px 0;
         }
     }
@@ -170,7 +176,7 @@
         width: 100%;
 
         .simplebar-primary {
-            border: 1px solid #CBE3FF;
+            border: 1px solid var(--primary200);
             border-radius: 2px 12px 12px 12px;
             margin-top: 16px;
             max-width: 100%;
@@ -330,13 +336,6 @@
         margin-top: 16px;
         display: flex;
         align-items: center;
-        --icon-size: 16px;
-
-        svg {
-            width: var(--icon-size);
-            height: var(--icon-size);
-            fill: var(--yellow);
-        }
 
         span {
             font-size: 12px;
@@ -364,6 +363,25 @@
 
         @media (max-width:$smallTablet-max) {
             margin-top: 8px;
+        }
+    }
+
+    &__rating-stars {
+        display: flex;
+        align-items: center;
+        --icon-size: 16px;
+
+        svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            fill: var(--yellow);
+
+            &:not(:last-child) {
+                margin-right: 2px;
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
             --icon-size: 12px;
         }
     }

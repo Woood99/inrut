@@ -179,4 +179,48 @@
         line-height: math.div(20, 16);
         font-weight: 400;
     }
+
+    &.agent-reviews__checkbox {
+        .checkbox-secondary {
+            &__content {
+                display: flex;
+                align-items: center;
+
+                >div {
+                    margin-left: 12px;
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                        fill: var(--yellow);
+                        &:not(:last-child){
+                           margin-right: 4px;
+                        }
+                        &._star-default{
+                            fill: var(--primary100);
+                        }
+                    }
+                }
+
+                >span {
+                    margin-left: 12px;
+                    color: var(--gray);
+                    font-size: 16px;
+                    line-height: math.div(20, 16);
+                    font-weight: 400;
+                    @media (max-width:$mobile-max){
+                         margin-left: auto; 
+                    }
+                }
+                @media (max-width:$mobile-max){
+                     width: 100%; 
+                }
+            }
+        }
+        @media (max-width:$mobile-max){
+             width: 100%; 
+        }
+    }
 }

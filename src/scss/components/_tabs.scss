@@ -87,9 +87,8 @@
 
     &__container {
         margin-top: 32px;
-        background-color: var(--primary100);
+        // background-color: var(--primary100);
         border-radius: 16px;
-        // padding: 24px 32px 32px;
         padding: 24px;
 
         @media (max-width:$smallTablet-max) {
@@ -230,5 +229,259 @@
     @media (max-width:$desktop) {
         padding: 16px 0;
         border-radius: 12px;
+    }
+}
+
+
+
+
+
+
+.tabs-container {
+    &__title {
+        span {
+            color: var(--primaryTwo);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: math.div(19, 15);
+        }
+
+        @media (max-width:$desktop) {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+        }
+    }
+
+    &__top {
+        padding-top: 24px;
+        padding-bottom: 32px;
+
+        @media (max-width:$desktop) {
+            padding: 24px 0;
+        }
+    }
+
+    &__body {
+        background-color: var(--bg-page);
+
+        .container {
+            padding-top: 24px;
+            padding-bottom: 24px;
+
+            @media (max-width:$smallTablet-max) {
+                padding: 24px 0;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__btns {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--primary200);
+
+        .tabs__title {
+            width: 50%;
+            padding: 9px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            line-height: math.div(19, 15);
+            color: var(--primaryTwo);
+            font-weight: 500;
+            position: relative;
+
+            span {
+                padding: 4px 8px;
+                background: var(--primary100);
+                backdrop-filter: blur(2px);
+                margin-left: 5px;
+                border-radius: 8px;
+
+                font-size: 12px;
+                line-height: math.div(15, 12);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: var(--blue);
+                transition: width $transitionSpeed $transitionFunction;
+            }
+
+            &._tab-active {
+                color: var(--blue);
+
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                color: var(--blue);
+            }
+
+            @media (max-width:$desktop) {
+                padding: 5px 15px 4px;
+                font-size: 12px;
+                white-space: nowrap;
+                min-width: 45%;
+            }
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            overflow-x: auto;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
+        }
+    }
+
+    &__content {
+        margin-top: 24px;
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 0;
+        }
+    }
+
+    &__control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: var(--white);
+        border-radius: 50%;
+        color: var(--blue);
+
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+        &--horizontal {}
+
+        &--vertical {
+            margin-left: 10px;
+        }
+
+        &--maps {
+            margin-left: auto;
+            padding: 10px 14px;
+            width: auto;
+            height: auto;
+            border-radius: 16px;
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+
+            svg {
+                width: 10px;
+                height: 11px;
+                margin-left: 10px;
+                fill: currentColor;
+            }
+        }
+
+        &:hover {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+    }
+
+    &__row {
+        &:not(:first-child) {
+            margin-top: 24px;
+
+            @media (max-width:$desktop) {
+                margin-top: 8px;
+            }
+        }
+
+        &-list {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+
+    }
+
+    &__row-title {
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 500;
+
+        @media (max-width:$desktop) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            font-size: 12px;
+        }
+    }
+
+    &__row-list {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+
+        @media (max-width:$desktop) {
+            margin-top: 8px;
+        }
+
+        @media (max-width:$mobile-max) {
+            grid-row-gap: 8px;
+        }
+    }
+
+    &__next {
+        margin-top: 32px;
+        width: 100%;
+
+        @media (max-width:$desktop) {
+            margin: 24px auto 0;
+            width: calc(100% - 32px);
+        }
+    }
+
+    &__pagination {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

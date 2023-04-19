@@ -3,6 +3,7 @@ const dropdown = (containerSelector, targetSelector) => {
     container.forEach(el => {
         const target = el.querySelector(targetSelector);
         target.addEventListener('click', (e) => {
+            e.preventDefault();
             container.forEach(el => {
                 if (e.target.closest(containerSelector) !== el) el.classList.remove('_active');
             });

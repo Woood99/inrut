@@ -967,6 +967,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
 /* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
+/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
+/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_components_videoBlock__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/reviewModal */ "./src/js/components/reviewModal.js");
+
+
 
 
 
@@ -1015,6 +1020,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-body__user .bid-user__btn--dislike', '.object-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
 });
 
 /***/ }),
@@ -1155,9 +1161,7 @@ if (selectSecondary.length >= 1) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/index.js");
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
-/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
-/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
-
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
 
 
 
@@ -1240,7 +1244,7 @@ function calendarPrimary() {
             </div>
             </div>
             `;
-      modal(modalHTML, '.calendar-event', 300);
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])(modalHTML, '.calendar-event', 300);
       eventsArray.forEach(el => {
         if (el.date === eventDate) {
           const itemHTML = `
@@ -1301,78 +1305,6 @@ function calendarPrimary() {
     }, 500);
   }
 }
-const modal = function (modalHTML, container) {
-  let speed = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
-  if (document.querySelectorAll(container).length <= 0 && modalHTML) {
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    const modalEl = document.querySelector(container);
-    const modalContainerEl = modalEl.querySelector(`${container}__container`);
-    const modalCloseEl = modalEl.querySelector(`${container}__close`);
-    const settingsModal = {
-      modal: modalEl,
-      container: modalContainerEl,
-      isOpen: false,
-      speed: speed,
-      animation: 'fade'
-    };
-    setTimeout(() => {
-      modalOpen(settingsModal);
-    }, 1);
-    modalCloseEl.addEventListener('click', () => {
-      modalClose(settingsModal);
-    });
-    modalEl.addEventListener('click', e => {
-      if (e.target.classList.contains(container.replace(/^\./, ""))) {
-        modalClose(settingsModal);
-      }
-    });
-    window.addEventListener('keydown', e => {
-      if (e.keyCode == 27) {
-        modalClose(settingsModal);
-      }
-    });
-  }
-  function modalClose(settingsModal) {
-    if (settingsModal.isOpen) {
-      settingsModal.container.classList.remove('animate-open');
-      settingsModal.container.classList.remove(settingsModal.animation);
-      settingsModal.modal.classList.remove('is-open');
-      settingsModal.container.classList.remove('open');
-      (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_3__["default"])();
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
-      setTimeout(() => {
-        settingsModal.modal.remove();
-      }, settingsModal.speed);
-      settingsModal.isOpen = false;
-    }
-  }
-  function modalOpen(settingsModal) {
-    if (!settingsModal.isOpen) {
-      settingsModal.container.scrollTo(0, 0);
-      settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
-      settingsModal.modal.classList.add('is-open');
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
-      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
-      settingsModal.container.classList.add('open');
-      settingsModal.container.classList.add(settingsModal.animation);
-      setTimeout(() => {
-        settingsModal.container.classList.add('animate-open');
-      }, settingsModal.speed);
-      settingsModal.isOpen = true;
-    }
-  }
-};
-
-// views: {
-//     timeGridFourDay: {
-//         type: 'dayGridMonth',
-//         duration: {
-//             days: 15
-//         },
-//     }
-// },
 
 /***/ }),
 
@@ -1388,6 +1320,7 @@ function controlCards() {
   containers.forEach(container => {
     const btns = container.querySelectorAll('.control-cards__btn');
     const content = container.querySelector('.control-cards__content');
+    console.log(content);
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(el => el.classList.remove('_active'));
@@ -1720,6 +1653,111 @@ const maps = () => {
 
 /***/ }),
 
+/***/ "./src/js/components/reviewModal.js":
+/*!******************************************!*\
+  !*** ./src/js/components/reviewModal.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+
+
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation]);
+const reviewModal = () => {
+  const triggers = document.querySelectorAll('[data-review-modal]');
+  if (triggers.length <= 0) return;
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.review-item');
+      const sliderItems = item.querySelectorAll('.review-item__photo .swiper-slide');
+      let slideHTML = '';
+      const sliderBtnsNavHTML = `
+            <button type="button"
+            class="btn btn-reset review-slider-body__navigation nav-arrow-primary nav-arrow-primary--prev">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+        <button type="button"
+            class="btn btn-reset review-slider-body__navigation nav-arrow-primary nav-arrow-primary--next">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+            `;
+      sliderItems.forEach(el => {
+        slideHTML += `
+                <div class="swiper-slide">
+                    ${el.innerHTML}
+                </div>
+                `;
+      });
+      const sliderHTML = `
+            <div class="swiper review-modal-content__slider">
+                <div class="swiper review-modal-content__slider-wrapper">
+                    <div class="swiper-wrapper">
+                        ${slideHTML}
+                    </div>
+                    ${sliderBtnsNavHTML}
+                </div>
+            </div>
+            `;
+      let modalHTML = '';
+      modalHTML = `
+            <div class="review-modal">
+            <div class="review-modal__container">
+                <button class="btn-reset js-popup-close review-modal__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="review-modal__content review-modal-content">
+                     <h2 class="review-modal-content__title title-2">
+                         Отзыв клиента
+                     </h2>
+                     <div class="review-modal-content__container ${sliderItems.length >= 1 ? '' : '_no-slider'}">
+                         <div class="review-modal-content__body">
+                            ${item.innerHTML}
+                         </div>
+                            ${sliderItems.length >= 1 ? sliderHTML : ''}
+                         <div class="review-modal-content__mobile">
+                            ${item.querySelector('.review-item__answer') ? item.querySelector('.review-item__answer').outerHTML : ''}
+                            ${item.querySelector('.review-item__bottom') ? item.querySelector('.review-item__bottom').outerHTML : ''}
+                         </div>
+                     </div>
+                 </div>
+            </div>
+            </div>
+            `;
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.review-modal', 300);
+      if (document.querySelector('.review-modal-content__slider')) {
+        const slider = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.review-modal-content__slider-wrapper', {
+          observer: true,
+          observeParents: true,
+          slidesPerView: 1,
+          spaceBetween: 8,
+          speed: 500,
+          navigation: {
+            prevEl: document.querySelector('.review-modal-content .nav-arrow-primary--prev'),
+            nextEl: document.querySelector('.review-modal-content .nav-arrow-primary--next')
+          }
+        });
+      }
+    });
+  });
+};
+reviewModal();
+
+/***/ }),
+
 /***/ "./src/js/components/simplebar.js":
 /*!****************************************!*\
   !*** ./src/js/components/simplebar.js ***!
@@ -1738,6 +1776,34 @@ const simplebar = selector => {
     new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](el);
   });
 };
+
+/***/ }),
+
+/***/ "./src/js/components/videoBlock.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/videoBlock.js ***!
+  \*****************************************/
+/***/ (() => {
+
+function videoBlock() {
+  const videos = document.querySelectorAll('.video-block');
+  if (!videos) return;
+  videos.forEach(video => {
+    const btn = video.querySelector('.video-block__button');
+    const content = video.querySelector('.video-block__video');
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const contentHTML = `
+                <iframe src="${btn.dataset.src}?autoplay=1&mute=0" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen></iframe>
+                </iframe>
+                `;
+      content.insertAdjacentHTML('beforeend', contentHTML);
+    });
+  });
+}
+videoBlock();
 
 /***/ }),
 
@@ -2203,6 +2269,23 @@ function initSliders() {
     });
   }
   objectSlider();
+  if (document.querySelector('.review-item__photo')) {
+    const sliders = document.querySelectorAll('.review-item__photo');
+    sliders.forEach(el => {
+      const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 2.2,
+        spaceBetween: 8,
+        speed: 800,
+        breakpoints: {
+          768: {
+            slidesPerView: 4
+          }
+        }
+      });
+    });
+  }
 }
 function objectSlider() {
   const container = document.querySelector('.object-slider');
@@ -2601,6 +2684,7 @@ const dropdown = (containerSelector, targetSelector) => {
   container.forEach(el => {
     const target = el.querySelector(targetSelector);
     target.addEventListener('click', e => {
+      e.preventDefault();
       container.forEach(el => {
         if (e.target.closest(containerSelector) !== el) el.classList.remove('_active');
       });
@@ -2761,6 +2845,88 @@ const linkCopy = selector => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (linkCopy);
+
+/***/ }),
+
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
+/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
+
+
+const modal = function (modalHTML, container) {
+  let speed = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
+  if (document.querySelectorAll(container).length <= 0 && modalHTML) {
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    const modalEl = document.querySelector(container);
+    const modalContainerEl = modalEl.querySelector(`${container}__container`);
+    const modalCloseEl = modalEl.querySelector(`${container}__close`);
+    const settingsModal = {
+      modal: modalEl,
+      container: modalContainerEl,
+      isOpen: false,
+      speed: speed,
+      animation: 'fade'
+    };
+    setTimeout(() => {
+      modalOpen(settingsModal);
+    }, 1);
+    modalCloseEl.addEventListener('click', () => {
+      modalClose(settingsModal);
+    });
+    modalEl.addEventListener('click', e => {
+      if (e.target.classList.contains(container.replace(/^\./, ""))) {
+        modalClose(settingsModal);
+      }
+    });
+    window.addEventListener('keydown', e => {
+      if (e.keyCode == 27) {
+        modalClose(settingsModal);
+      }
+    });
+  }
+  function modalClose(settingsModal) {
+    if (settingsModal.isOpen) {
+      settingsModal.container.classList.remove('animate-open');
+      settingsModal.container.classList.remove(settingsModal.animation);
+      settingsModal.modal.classList.remove('is-open');
+      settingsModal.container.classList.remove('open');
+      (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+      setTimeout(() => {
+        settingsModal.modal.remove();
+      }, settingsModal.speed);
+      settingsModal.isOpen = false;
+    }
+  }
+  function modalOpen(settingsModal) {
+    if (!settingsModal.isOpen) {
+      settingsModal.container.scrollTo(0, 0);
+      settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
+      settingsModal.modal.classList.add('is-open');
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      settingsModal.container.classList.add('open');
+      settingsModal.container.classList.add(settingsModal.animation);
+      setTimeout(() => {
+        settingsModal.container.classList.add('animate-open');
+      }, settingsModal.speed);
+      settingsModal.isOpen = true;
+    }
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
 
 /***/ }),
 

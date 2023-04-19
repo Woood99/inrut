@@ -4,6 +4,7 @@ function controlCards() {
     containers.forEach(container => {
         const btns = container.querySelectorAll('.control-cards__btn');
         const content = container.querySelector('.control-cards__content');
+        console.log(content);
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
                 btns.forEach(el => el.classList.remove('_active'));

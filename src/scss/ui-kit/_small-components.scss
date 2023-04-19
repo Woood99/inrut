@@ -64,6 +64,8 @@
 
         svg {
             margin-right: 0;
+          width: 18px;
+          height: 18px;
         }
 
         span {
@@ -112,6 +114,8 @@
 
         svg {
             margin-right: 0;
+            width: 18px;
+            height: 18px;
         }
 
         span {
@@ -119,7 +123,55 @@
         }
     }
 }
+.favorite-btn{
+    display: inline-flex;
+    align-items: center;
+    color: var(--blue);
+    transition: color $transitionSpeed $transitionFunction;
+    padding: 5px 12px;
 
+    svg {
+        margin-right: 10px;
+        width: 15px;
+        height: 14px;
+        fill: currentColor;
+
+        @media (max-width:$desktop) {
+            width: 13px;
+            height: 12px;
+        }
+    }
+
+    span {
+        color: inherit;
+        font-size: 14px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+    }
+
+    &:hover {
+        color: var(--primary500);
+    }
+
+    @media (max-width:$desktop) {
+        padding: 0;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            margin-right: 0;
+            width: 18px;
+            height: 18px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+}
 
 .avatar {
     border-radius: 50%;

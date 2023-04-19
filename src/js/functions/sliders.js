@@ -8,7 +8,7 @@ import Swiper, {
     Thumbs,
     EffectFade
 } from 'swiper';
-Swiper.use([Navigation, Pagination, Thumbs,EffectFade]);
+Swiper.use([Navigation, Pagination, Thumbs, EffectFade]);
 
 
 
@@ -60,6 +60,24 @@ function initSliders() {
         });
     }
     objectSlider();
+
+    if (document.querySelector('.review-item__photo')) {
+        const sliders = document.querySelectorAll('.review-item__photo');
+        sliders.forEach(el => {
+            const slider = new Swiper(el, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2.2,
+                spaceBetween: 8,
+                speed: 800,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 4,
+                    },
+                },
+            });
+        })
+    }
 }
 
 
@@ -81,7 +99,7 @@ function objectSlider() {
     let bodySlider = new Swiper(body, {
         spaceBetween: 15,
         observer: true,
-        loop:true,
+        loop: true,
         observeParents: true,
         navigation: {
             prevEl: container.querySelector('.nav-arrow-primary--prev'),
