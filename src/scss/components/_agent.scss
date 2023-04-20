@@ -4,11 +4,12 @@
 
         .bid {
             &__container {
-                background-color: transparent;
-                grid-template-columns: percent(688, 1112) percent(412, 1112);
+                background-color: var(--primary100);
+                grid-template-columns: percent(676, 1112) percent(412, 1112);
 
                 @media (max-width:$desktop) {
-                    padding: 24px 0 16px 0;
+                    margin-top: 24px;
+                    padding: 0;
                     grid-template-columns: repeat(2, 1fr);
                     grid-row-gap: 8px;
                 }
@@ -87,13 +88,54 @@
 
         @media (max-width:$desktop) {
             padding-top: calc(54px + 24px); // height + gap
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__tabs {
+        padding-top: 24px;
+
+        @media (max-width:$desktop) {
+            margin-top: 8px;
+            padding-bottom: 0;
+            background-color: var(--white);
+        }
+
+        .tabs-primary__container {
+            padding-bottom: 24px;
+        }
+
+        .tabs-primary__next {
+            @media (max-width:$desktop) {
+                margin-top: 0;
+            }
+
+            @media (max-width:$smallTablet-max) {
+                margin: 0 0 0 16px;
+                width: calc(100% - 32px);
+            }
+        }
+
+        .tabs-primary__pagination {
+            @media (max-width:$desktop) {
+                margin-top: 16px;
+            }
+        }
+        .tabs__body{
+            @media (max-width:$smallTablet-max){
+                 .tabs-primary__row{
+                    &:first-child{
+                    padding-top: 0;
+                    }
+                 } 
+            }
         }
     }
 
     &__top {}
 
     &__row {
-        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
         padding: 24px;
         background-color: var(--white);
         border-radius: 12px;
@@ -110,6 +152,10 @@
             box-shadow: none;
             padding: 16px;
         }
+    }
+
+    @media (max-width:$desktop) {
+        background-color: var(--primary100);
     }
 }
 

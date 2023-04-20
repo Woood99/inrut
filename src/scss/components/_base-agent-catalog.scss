@@ -5,7 +5,7 @@
     &__body {
         @media (max-width:$desktop) {
             background-color: var(--primary100);
-            padding: 24px 0 0;
+            padding: 74px 0 0;
         }
     }
 
@@ -38,6 +38,10 @@
         .input-primary__span {
             top: 17px;
             color: var(--primaryTwo);
+        }
+
+        @media (max-width:$tablet-max) {
+            margin-top: 24px;
         }
     }
 
@@ -83,31 +87,4 @@
     @media (max-width:$desktop) {
         padding-top: 0;
     }
-}
-
-.filter {
-
-    &__btn {}
-
-    &__container {}
-
-    &__top {}
-
-    &__close {}
-
-    &__inner {}
-
-    &__row {}
-
-    &__item {}
-
-    &__item--input {}
-
-    &__item--object {}
-
-    &__controls {}
-
-    &__clear {}
-
-    &__go {}
 }

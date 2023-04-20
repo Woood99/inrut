@@ -2,7 +2,7 @@
 
     &__container {
         @media (max-width:$desktop) {
-            padding: 16px 0 0 0;
+            padding: 74px 0 0 0;
             background-color: var(--primary100);
         }
     }
@@ -10,6 +10,7 @@
     &__back {
         @media (max-width:$desktop) {
             margin: 0 16px;
+            display: none;
         }
     }
 
@@ -50,6 +51,7 @@
             flex-direction: column;
             align-items: start;
             margin-right: 32px;
+            margin-top: 0;
             padding: 0 16px 26px;
             width: 100%;
         }
@@ -354,8 +356,7 @@
     &__btn {
         display: flex;
         align-items: center;
-        height: 50px;
-        padding: 15px 19px;
+        padding: 0 28px;
 
         svg {
             --size: 18px;
@@ -367,9 +368,7 @@
 
         @media (max-width:$desktop) {
             order: 2;
-            height: 40px;
-            font-size: 12px;
-            padding: 12px 36px;
+            padding: 0 20px;
 
             svg {
                 --size: 15px;
