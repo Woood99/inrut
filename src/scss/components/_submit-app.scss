@@ -1,0 +1,281 @@
+.submit-app {
+
+    &__top {}
+
+    &__body {
+        margin-top: 8px;
+
+        @media (max-width:$desktop) {
+            margin-top: 0;
+            padding: 78px 0 0;
+        }
+    }
+
+    &__container {
+        background-color: var(--primary100);
+        border-radius: 16px;
+        padding: 32px;
+
+        @media (max-width:$desktop) {
+            padding: 0 0 32px 0;
+            margin-top: 16px;
+        }
+    }
+
+    &__row {
+        padding: 24px;
+        background-color: var(--white);
+
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+        border-radius: 12px;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        @media (max-width:$desktop) {
+            padding: 16px;
+            border-radius: 12px;
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__row-title {
+        margin-bottom: 24px;
+        @media (max-width:$desktop){
+             margin-bottom: 16px; 
+        }
+    }
+
+    &__btn {
+        margin: 24px 0 0 auto;
+        padding: 0 81px;
+
+        @media (max-width:$desktop) {
+            margin-right: 16px;
+        }
+        @media (max-width:$smallTablet-max){
+             width: calc(100% - 32px); 
+             margin: 24px auto 0;
+             padding: 0 20px;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        background-color: var(--primary100);
+    }
+}
+
+
+.submit-app-options {
+
+    &__title {}
+
+    &__choice {
+        margin-bottom: 24px;
+    }
+
+    &__row {
+        display: grid;
+        justify-content: space-between;
+        grid-column-gap: 16px;
+
+
+        &--1 {
+            grid-template-columns: percent(173, 968) percent(245, 968) percent(253, 968) percent(249, 968);
+
+            @media (max-width:$desktop) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &--2 {
+            grid-template-columns: percent(242, 968) percent(250, 968) percent(224, 968) percent(204, 968);
+
+            @media (max-width:$desktop) {
+               grid-template-columns: 1fr;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        @media (max-width:$desktop) {
+            grid-row-gap: 24px;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    &__item {
+        &.select-primary {
+            .choices {
+                padding: 23px 16px 10px 16px
+            }
+        }
+    }
+
+    &__textarea {
+        height: 96px;
+
+        textarea {
+            height: 96px;
+        }
+    }
+    .filter-dropdown{
+
+    }
+}
+
+
+.submit-app-maps {
+    &__title {
+        @media (max-width:$desktop){
+             padding: 0 16px; 
+        }
+    }
+
+    &__descr {
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        @media (max-width:$desktop){
+             padding: 0 16px; 
+        }
+    }
+
+    &__map {
+        margin-top: 24px;
+        height: 550px;
+        width: 100%;
+        position: relative;
+        @media (max-width:$desktop){
+             height: 450px; 
+        }
+        @media (max-width:$smallTablet-max){
+             height: 250px; 
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        @media (max-width:$desktop){
+             top: 10px;
+             left: 10px; 
+        }
+    }
+
+    &__btn {
+        height: 48px;
+        width: 167px;
+        background-color: var(--white);
+        border: 1px solid rgba(93, 112, 134, 0.1);
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 0 10px 0 17px;
+
+        svg {
+            width: 11px;
+            height: 11px;
+            fill: var(--dark);
+        }
+
+        span {
+            margin-left: 10px;
+            font-size: 11px;
+            line-height: math.div(14, 11);
+            font-weight: 500;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        @media (max-width:$desktop){
+             height: 42px;
+             border-radius: 12px;
+        }
+    }
+
+    #submit-app-map {
+        width: 100%;
+        height: 100%;
+    }
+    @media (max-width:$desktop){
+         padding: 16px 0; 
+    }
+}
+
+
+.submit-app-ways {
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &__wrapper {}
+
+    .radio-primary {
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__text {
+            color: var(--gray);
+            font-size: 16px;
+            line-height: math.div(20, 16);
+            font-weight: 400;
+
+            @media (max-width:$desktop) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+.submit-app-contacts {
+
+    &__title {}
+
+    &__wrapper {
+        display: flex;
+
+        .input-primary {
+            width: 230px;
+
+            &:not(:last-child) {
+                margin-right: 24px;
+                @media (max-width:$smallTablet-max){
+                     margin-right: 0; 
+                     margin-bottom: 16px;
+                }
+            }
+            @media (max-width:$smallTablet-max){
+                 width: 100%; 
+            }
+        }
+        @media (max-width:$smallTablet-max){
+             flex-direction: column; 
+        }
+    }
+}

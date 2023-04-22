@@ -4,6 +4,7 @@ import {
     filterBudget,
     filterDropdownChoice,
     filterMobile,
+    filterCustomSelectCheckboxes
 } from './components/filter';
 import {
     simplebar
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBudget();
     filterDropdownChoice();
     filterMobile();
+    filterCustomSelectCheckboxes();
     // ==================================================
 
     simplebar('.simplebar-primary');

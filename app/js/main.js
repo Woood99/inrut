@@ -991,6 +991,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterBudget)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterMobile)();
+  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterCustomSelectCheckboxes)();
   // ==================================================
 
   (0,_components_simplebar__WEBPACK_IMPORTED_MODULE_1__.simplebar)('.simplebar-primary');
@@ -1351,6 +1352,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "filterBudget": () => (/* binding */ filterBudget),
 /* harmony export */   "filterControl": () => (/* binding */ filterControl),
+/* harmony export */   "filterCustomSelectCheckboxes": () => (/* binding */ filterCustomSelectCheckboxes),
 /* harmony export */   "filterDropdownChoice": () => (/* binding */ filterDropdownChoice),
 /* harmony export */   "filterMobile": () => (/* binding */ filterMobile),
 /* harmony export */   "uiSlider": () => (/* binding */ uiSlider)
@@ -1370,6 +1372,11 @@ const filterBudget = () => {
     btn.addEventListener('click', () => {
       el.classList.toggle('active');
     });
+    document.addEventListener('click', e => {
+      if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
+        el.classList.remove('active');
+      }
+    });
   });
 };
 const uiSlider = () => {
@@ -1381,18 +1388,45 @@ const uiSlider = () => {
     const maxValue = el.dataset.max;
     const defaultStart = container.querySelector('[data-default-start]');
     const defaultEnd = container.querySelector('[data-default-end]');
+    const inputMin = defaultStart.querySelector('input');
+    const inputMax = defaultEnd.querySelector('input');
+    const inputs = [inputMin, inputMax];
     nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(el, {
       start: [Number(defaultStart.dataset.defaultStart), Number(defaultEnd.dataset.defaultEnd)],
       connect: true,
       range: {
         'min': Number(minValue),
         'max': Number(maxValue)
-      }
+      },
+      step: 1
     });
-    el.noUiSlider.on('update', function (values) {
-      defaultStart.textContent = numberReplace(values[0]);
-      defaultEnd.textContent = numberReplace(values[1]);
+    el.noUiSlider.on('update', function (values, handle) {
+      inputs[handle].value = numberReplace(values[handle]);
+      inputResize(inputs[handle]);
     });
+    inputMin.addEventListener('change', function () {
+      const numberString = this.value.replace(/\s/g, "");
+      el.noUiSlider.set([numberString, null]);
+      inputResize(inputMin);
+    });
+    inputMax.addEventListener('change', function () {
+      const numberString = this.value.replace(/\s/g, "");
+      el.noUiSlider.set([null, numberString]);
+      inputResize(inputMax);
+    });
+    inputResize(inputMin);
+    inputResize(inputMax);
+    inputs.forEach(input => {
+      input.addEventListener('input', e => {
+        const numberString = input.value.replace(/\s/g, "");
+        input.value = numberReplace(numberString);
+        inputResize(input);
+      });
+    });
+    function inputResize(input) {
+      input.style.width = 0;
+      input.style.width = input.scrollWidth + 'px';
+    }
   });
   function numberReplace(number) {
     return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
@@ -1456,6 +1490,84 @@ const filterMobile = () => {
       container.classList.remove('active');
       (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
     }
+  });
+};
+const filterCustomSelectCheckboxes = () => {
+  const items = document.querySelectorAll('.select-dropdown-checkbox');
+  if (items.length <= 0) return;
+  items.forEach(item => {
+    const btn = item.querySelector('.select-dropdown-checkbox__button');
+    const title = item.querySelector('.select-dropdown-checkbox__title');
+    btn.addEventListener('click', () => {
+      item.classList.toggle('_active');
+    });
+    document.addEventListener('click', e => {
+      if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox')) {
+        item.classList.remove('_active');
+      }
+    });
+    const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
+    const cash = item.querySelector('[data-name="cash"]');
+    const mortgageYesBank = item.querySelector('[data-name="mortgage_yes-bank"]');
+    const mortgageNoBank = item.querySelector('[data-name="mortgage_no-bank"]');
+    const mortgageNoFee = item.querySelector('[data-name="mortgage_no-fee"]');
+    const certificate = item.querySelector('[data-name="certificate"]');
+    cash.checked = true;
+    mortgageYesBank.setAttribute('disabled', true);
+    mortgageNoBank.setAttribute('disabled', true);
+    mortgageNoFee.setAttribute('disabled', true);
+    certificate.removeAttribute('disabled');
+    title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
+    cash.addEventListener('change', () => {
+      if (cash.checked) {
+        mortgageYesBank.setAttribute('disabled', true);
+        mortgageNoBank.setAttribute('disabled', true);
+        mortgageNoFee.setAttribute('disabled', true);
+        certificate.removeAttribute('disabled');
+        title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
+      } else {
+        mortgageYesBank.removeAttribute('disabled');
+        mortgageNoBank.removeAttribute('disabled');
+        mortgageNoFee.setAttribute('disabled', true);
+        certificate.setAttribute('disabled', true);
+        title.textContent = 'Не выбрано';
+        if (certificate.checked) certificate.checked = false;
+      }
+    });
+    mortgageYesBank.addEventListener('change', () => {
+      if (mortgageYesBank.checked) {
+        cash.setAttribute('disabled', true);
+        mortgageNoBank.setAttribute('disabled', true);
+        mortgageNoFee.removeAttribute('disabled');
+        certificate.removeAttribute('disabled');
+        title.textContent = mortgageYesBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
+      } else {
+        cash.removeAttribute('disabled');
+        mortgageNoBank.removeAttribute('disabled');
+        mortgageNoFee.setAttribute('disabled', true);
+        certificate.setAttribute('disabled', true);
+        title.textContent = 'Не выбрано';
+        if (mortgageNoFee.checked) mortgageNoFee.checked = false;
+        if (certificate.checked) certificate.checked = false;
+      }
+    });
+    mortgageNoBank.addEventListener('change', () => {
+      if (mortgageNoBank.checked) {
+        cash.setAttribute('disabled', true);
+        mortgageYesBank.setAttribute('disabled', true);
+        mortgageNoFee.removeAttribute('disabled');
+        certificate.removeAttribute('disabled');
+        title.textContent = mortgageNoBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
+      } else {
+        cash.removeAttribute('disabled');
+        mortgageYesBank.removeAttribute('disabled');
+        mortgageNoFee.setAttribute('disabled', true);
+        certificate.setAttribute('disabled', true);
+        title.textContent = 'Не выбрано';
+        if (mortgageNoFee.checked) mortgageNoFee.checked = false;
+        if (certificate.checked) certificate.checked = false;
+      }
+    });
   });
 };
 
@@ -1645,6 +1757,16 @@ const maps = () => {
         zoom: 10
       });
       removeControlsPrimary(map, '#object-maps');
+    }
+    ymaps.ready(init);
+  }
+  if (document.querySelector('#submit-app-map')) {
+    function init() {
+      let map = new ymaps.Map('submit-app-map', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      removeControlsPrimary(map, '#submit-app-map');
     }
     ymaps.ready(init);
   }
