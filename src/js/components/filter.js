@@ -159,12 +159,8 @@ export const filterCustomSelectCheckboxes = () => {
         const mortgageNoFee = item.querySelector('[data-name="mortgage_no-fee"]');
         const certificate = item.querySelector('[data-name="certificate"]');
 
-        cash.checked = true;
-        mortgageYesBank.setAttribute('disabled', true);
-        mortgageNoBank.setAttribute('disabled', true);
         mortgageNoFee.setAttribute('disabled', true);
-        certificate.removeAttribute('disabled');
-        title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
+        title.textContent = 'Не выбрано';
 
         cash.addEventListener('change', () => {
             if (cash.checked) {
