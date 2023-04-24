@@ -242,6 +242,18 @@
                             <div class="submit-app-options__row submit-app-options__row--1">
                                 <div class="submit-app-options__item select-primary">
                                     <span class="select-primary__name">
+                                        Город
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="city">
+                                            <option value="apartments">Санкт-Петербург</option>
+                                            <option value="apartments2">Волгоград</option>
+                                            <option value="apartments3">Москва</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item select-primary">
+                                    <span class="select-primary__name">
                                         Тип объекта
                                     </span>
                                     <div class="select-primary__inner">
@@ -290,129 +302,6 @@
                                                 <span class="checkbox__text">4+</span>
                                             </label>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="submit-app-options__item ">
-                                    <div class="filter-range">
-                                        <span class="filter-range__subtitle">Этаж</span>
-                                        <div class="filter-range__nav">
-                                            <div data-default-start="2">
-                                                От
-                                                <input maxlength="2" type="text" name="Имя" class="input-reset">
-                                            </div>
-                                            <div>-</div>
-                                            <div data-default-end="20">
-                                                До
-                                                <input maxlength="2" type="text" name="Имя" class="input-reset">
-                                            </div>
-                                        </div>
-                                        <div class="filter-range__inner" data-min="1" data-max="30"></div>
-                                    </div>
-                                </div>
-                                <div class="submit-app-options__item filter-dropdown">
-                                    <button type="button" class="btn btn-reset filter-dropdown__button">
-                                        <span>
-                                            Бюджет
-                                        </span>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="filter-dropdown__dropdown">
-                                        <div class="filter-dropdown__item active">
-                                            <div class="filter-dropdown__range filter-range">
-                                                <span class="filter-range__subtitle">Сумма</span>
-                                                <div class="filter-range__nav">
-                                                    <div data-default-start="1500000">
-                                                        <input type="text" name="Имя" class="input-reset">
-                                                    </div>
-                                                    <div>-</div>
-                                                    <div data-default-end="6000000">
-                                                        <input type="text" name="Имя" class="input-reset">
-                                                    </div>
-                                                </div>
-                                                <div class="filter-range__inner" data-min="100000" data-max="7500000">
-                                                </div>
-                                            </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="filter-dropdown__item">
-                                            <div class="filter-dropdown__range filter-range">
-                                                <span class="filter-range__subtitle">Ежемесячный платеж</span>
-                                                <div class="filter-range__nav">
-                                                    <div data-default-start="15000">
-                                                        <input type="text" name="Имя" class="input-reset">
-                                                    </div>
-                                                    <div>-</div>
-                                                    <div data-default-end="50000">
-                                                        <input type="text" name="Имя" class="input-reset">
-                                                    </div>
-                                                </div>
-                                                <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
-                                            </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="submit-app-options__row submit-app-options__row--2">
-                                <div class="submit-app-options__item select-primary">
-                                    <span class="select-primary__name">
-                                        Комплекс
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="complex">
-                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                            </option>
-                                            <option value="complex2">Комплекс2</option>
-                                            <option value="complex3">Комплекс3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="submit-app-options__item">
-                                    <div class="filter-range">
-                                        <span class="filter-range__subtitle">Площадь</span>
-                                        <div class="filter-range__nav">
-                                            <div data-default-start="59">
-                                                От
-                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
-                                                м².
-                                            </div>
-                                            <div>-</div>
-                                            <div data-default-end="120">
-                                                До
-                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
-                                                м².
-                                            </div>
-                                        </div>
-                                        <div class="filter-range__inner" data-min="30" data-max="150"></div>
-                                    </div>
-                                </div>
-                                <div class="submit-app-options__item">
-                                    <div class="filter-range">
-                                        <span class="filter-range__subtitle">Площадь кухни</span>
-                                        <div class="filter-range__nav">
-                                            <div data-default-start="39">
-                                                От
-                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
-                                                м².
-                                            </div>
-                                            <div>-</div>
-                                            <div data-default-end="90">
-                                                До
-                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
-                                                м².
-                                            </div>
-                                        </div>
-                                        <div class="filter-range__inner" data-min="20" data-max="120"></div>
                                     </div>
                                 </div>
                                 <div class="submit-app-options__item select-dropdown-checkbox">
@@ -473,13 +362,141 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="submit-app-options__row submit-app-options__row--2">
+                                <div class="submit-app-options__item filter-dropdown">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <span>
+                                            Бюджет
+                                        </span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <div class="filter-dropdown__item active">
+                                            <div class="filter-dropdown__range filter-range">
+                                                <span class="filter-range__subtitle">Сумма</span>
+                                                <div class="filter-range__nav">
+                                                    <div data-default-start="1500000">
+                                                        <input type="text" name="Имя" class="input-reset">
+                                                    </div>
+                                                    <div>-</div>
+                                                    <div data-default-end="6000000">
+                                                        <input type="text" name="Имя" class="input-reset">
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="100000" data-max="7500000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="filter-dropdown__item">
+                                            <div class="filter-dropdown__range filter-range">
+                                                <span class="filter-range__subtitle">Ежемесячный платеж</span>
+                                                <div class="filter-range__nav">
+                                                    <div data-default-start="15000">
+                                                        <input type="text" name="Имя" class="input-reset">
+                                                    </div>
+                                                    <div>-</div>
+                                                    <div data-default-end="50000">
+                                                        <input type="text" name="Имя" class="input-reset">
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="5000" data-max="60000"></div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item select-primary">
+                                    <span class="select-primary__name">
+                                        Комплекс
+                                    </span>
+                                    <div class="select-primary__inner">
+                                        <select class="select-primary__body" name="complex">
+                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
+                                            </option>
+                                            <option value="complex2">Комплекс2</option>
+                                            <option value="complex3">Комплекс3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item">
+                                    <div class="filter-range">
+                                        <span class="filter-range__subtitle">Площадь</span>
+                                        <div class="filter-range__nav">
+                                            <div data-default-start="59">
+                                                От
+                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
+                                                м².
+                                            </div>
+                                            <div>-</div>
+                                            <div data-default-end="120">
+                                                До
+                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
+                                                м².
+                                            </div>
+                                        </div>
+                                        <div class="filter-range__inner" data-min="30" data-max="150"></div>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item">
+                                    <div class="filter-range">
+                                        <span class="filter-range__subtitle">Площадь кухни</span>
+                                        <div class="filter-range__nav">
+                                            <div data-default-start="39">
+                                                От
+                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
+                                                м².
+                                            </div>
+                                            <div>-</div>
+                                            <div data-default-end="90">
+                                                До
+                                                <input maxlength="3" type="text" name="Имя" class="input-reset">
+                                                м².
+                                            </div>
+                                        </div>
+                                        <div class="filter-range__inner" data-min="20" data-max="120"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-app-options__row submit-app-options__row--3">
+                                <div class="submit-app-options__item">
+                                    <div class="filter-range">
+                                        <span class="filter-range__subtitle">Этаж</span>
+                                        <div class="filter-range__nav">
+                                            <div data-default-start="2">
+                                                От
+                                                <input maxlength="2" type="text" name="Имя" class="input-reset">
+                                            </div>
+                                            <div>-</div>
+                                            <div data-default-end="20">
+                                                До
+                                                <input maxlength="2" type="text" name="Имя" class="input-reset">
+                                            </div>
+                                        </div>
+                                        <div class="filter-range__inner" data-min="1" data-max="30"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <h2 class="submit-app-options__title submit-app__row-title  title-2">
                             Описание
                         </h2>
                         <label class="submit-app-options__textarea textarea-primary">
                             <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                            <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                            <span class="textarea-primary__span">
+                                Расскажите о недвижимости, собственниках, соседях, транспортной доступности и
+                                инфраструктуре
+                            </span>
                         </label>
                     </div>
                     <div class="submit-app__row submit-app-maps">

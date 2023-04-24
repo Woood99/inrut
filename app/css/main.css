@@ -364,22 +364,42 @@ textarea.input-reset {
   border: 1px solid #006CEE;
 }
 .textarea-primary__input:focus + .textarea-primary__span, .textarea-primary__input.active + .textarea-primary__span {
-  top: 8px;
+  padding-top: 8px;
   font-size: 9px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  border-top: 1px solid #006CEE;
+}
+@media (max-width: 768px) {
+  .textarea-primary__input {
+    font-size: 14px;
+  }
 }
 .textarea-primary__span {
+  background-color: #EBF1FB;
   color: var(--primaryTwo);
   font-size: 15px;
   line-height: 1.2666666667;
   font-weight: 400;
   position: absolute;
-  top: 16px;
+  top: 0;
+  padding-top: 16px;
   left: 16px;
-  -webkit-transition: top 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  -o-transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  right: 16px;
+  border-top: 1px solid transparent;
+  -webkit-transition: top 0.4s ease-in-out, font-size 0.4s ease-in-out, padding 0.4s ease-in-out, color 0.4s ease-in-out, border 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out, font-size 0.4s ease-in-out, padding 0.4s ease-in-out, color 0.4s ease-in-out, border 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, padding 0.4s ease-in-out, color 0.4s ease-in-out, border 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, padding 0.4s ease-in-out, color 0.4s ease-in-out, border 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out, transform 0.4s ease-in-out, font-size 0.4s ease-in-out, padding 0.4s ease-in-out, color 0.4s ease-in-out, border 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+@media (max-width: 768px) {
+  .textarea-primary__span {
+    font-size: 12px;
+    padding-top: 12px;
+  }
 }
 
 .checkbox {
@@ -6330,7 +6350,7 @@ textarea.input-reset {
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--white);
   border: 1px solid rgba(122, 127, 170, 0.1);
   border-radius: 12px 0 12px 12px;
@@ -10632,24 +10652,16 @@ textarea.input-reset {
   grid-column-gap: 16px;
 }
 .submit-app-options__row--1 {
-  -ms-grid-columns: 17.8719008264% 25.3099173554% 26.1363636364% 25.7231404959%;
-  grid-template-columns: 17.8719008264% 25.3099173554% 26.1363636364% 25.7231404959%;
-}
-@media (max-width: 1112px) {
-  .submit-app-options__row--1 {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
+  -ms-grid-columns: 21.9008264463% 21.9008264463% 25.3099173554% 25.9297520661%;
+  grid-template-columns: 21.9008264463% 21.9008264463% 25.3099173554% 25.9297520661%;
 }
 .submit-app-options__row--2 {
-  -ms-grid-columns: 25% 25.826446281% 23.1404958678% 21.0743801653%;
-  grid-template-columns: 25% 25.826446281% 23.1404958678% 21.0743801653%;
+  -ms-grid-columns: 21.9008264463% 24.173553719% 25.826446281% 23.1404958678%;
+  grid-template-columns: 21.9008264463% 24.173553719% 25.826446281% 23.1404958678%;
 }
-@media (max-width: 1112px) {
-  .submit-app-options__row--2 {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
+.submit-app-options__row--3 {
+  -ms-grid-columns: 23.5537190083%;
+  grid-template-columns: 23.5537190083%;
 }
 .submit-app-options__row:not(:last-child) {
   margin-bottom: 16px;
@@ -10660,6 +10672,8 @@ textarea.input-reset {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .submit-app-options__row:not(:last-child) {
     margin-bottom: 24px;
