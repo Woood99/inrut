@@ -386,7 +386,13 @@
         width: 100%;
         display: inline-flex;
         white-space: nowrap;
-        overflow: hidden;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         >.choices__item {
             white-space: nowrap;

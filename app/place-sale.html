@@ -274,9 +274,7 @@
                                 <span class="input-primary__span">Город, улица, дом, корпус</span>
                             </label>
                         </div>
-                        <div id="place-sale-address-map"
-                            class="place-sale-address__map map-primary remove-copyrights-pane">
-                        </div>
+                    
                     </div>
                     <div class="place-sale__row place-sale-options">
                         <h2 class="place-sale__row-title place-sale-options__title title-2">
@@ -308,24 +306,24 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="place-sale-options__item select-multiple">
+                           <div class="place-sale-options__item select-multiple">
                                 <span class="select-multiple__name">
                                     Теги
                                 </span>
                                 <div class="select-multiple__inner">
-                                    <select class="select-multiple__body" data-trigger multiple name="tags">
+                                    <select class="select-multiple__body" multiple name="tags">
                                         <option value="tags1" selected>
                                             Семейная ипотека
                                         </option>
-                                        <option value="tags2">Ипотека с гос.поддержкой</option>
-                                        <option value="tags3">Комплекс3</option>
+                                        <option selected value="tags2">Ипотека с гос.поддержкой</option>
+                                        <option selected value="tags3">Комплекс3</option>
                                     </select>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="place-sale-options__row place-sale-options__row--2">
                             <div class="place-sale-options__item quantity-selection">
-                                <span class="quantity-selection__subtitle">Укажите количество комнат</span>
+                                <span class="quantity-selection__subtitle">Количество комнат</span>
                                 <div class="quantity-selection__inner">
                                     <div class="checkbox">
                                         <input id="filter-quantity_studios" name="filter-quantity-studios"
@@ -375,7 +373,7 @@
                             <div class="place-sale-options__item input-text input-text--auto-width">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Общая площадь</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                    <input type="text" name="Имя" data-input-only-number class="input-reset input-text__input" placeholder=""
                                         value="16">
                                     <span class="input-text__name">м²</span>
                                 </label>
@@ -383,7 +381,7 @@
                             <div class="place-sale-options__item input-text input-text--auto-width">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Площадь кухни</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                    <input type="text" name="Имя" data-input-only-number class="input-reset input-text__input" placeholder=""
                                         value="16">
                                     <span class="input-text__name">м²</span>
                                 </label>
@@ -393,14 +391,14 @@
                             <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Этаж</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                    <input type="number" name="Имя" class="input-reset input-text__input" data-input-only-number placeholder=""
                                         value="5">
                                 </label>
                             </div>
                             <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Этажей в доме</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                    <input type="text" name="Имя" class="input-reset input-text__input" data-input-only-number placeholder=""
                                         value="12">
                                 </label>
                             </div>

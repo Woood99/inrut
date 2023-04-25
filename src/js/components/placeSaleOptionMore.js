@@ -16,18 +16,18 @@ function placeSaleOptionMore() {
         return;
     };
     moreBtn.addEventListener('click', () => {
-        if (container.classList.contains('active')) {
+        if (container.classList.contains('_active')) {
             itemsHidden.forEach(item => {
                 _slideToggle(item, 700);
             });
             moreBtn.querySelector('span').textContent = btnTextMap.more;
-            container.classList.remove('active');
+            container.classList.remove('_active');
         } else {
             itemsHidden.forEach(item => {
                 _slideToggle(item, 700);
             });
             moreBtn.querySelector('span').textContent = btnTextMap.none;
-            container.classList.add('active');
+            container.classList.add('_active');
         }
     });
 }

@@ -30,3 +30,15 @@ export const inputText = () => {
         })
     }
 }
+
+
+export const inputOnlyNumber = () => {
+    const inputs = document.querySelectorAll('[data-input-only-number]');
+    if (inputs.length === 0) return;
+    inputs.forEach(input => {
+        input.addEventListener('input', function () {
+            const value = this.value;
+            this.value = value.replace(/\D/g, '');
+        })
+    });
+};

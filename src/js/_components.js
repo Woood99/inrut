@@ -12,7 +12,9 @@ import {
 import maps from './components/maps';
 import linkCopy from './modules/linkCopy';
 import {
-    inputPrimary,inputText
+    inputPrimary,
+    inputText,
+    inputOnlyNumber
 } from './components/inputs';
 import {
     validateRadioText
@@ -45,13 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
-
     linkCopy('.share-app-popup__btn');
 
-
     // ==================================================
+
     inputPrimary();
     inputText();
+    inputOnlyNumber();
+
+    // ==================================================
+
     validateRadioText('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
     validateRadioText('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
     validateRadioText('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');

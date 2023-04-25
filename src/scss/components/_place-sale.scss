@@ -32,11 +32,10 @@
         }
 
         @media (max-width:$desktop) {
-            padding: 16px;
-            border-radius: 12px;
+            padding: 24px 16px;
 
             &:not(:last-child) {
-                margin-bottom: 12px;
+                margin-bottom: 8px;
             }
         }
     }
@@ -74,10 +73,12 @@
     &__row-title {}
 
     &__city {
-        display: grid;
-        grid-template-columns: percent(230, 968) 1fr;
-        align-items: center;
-        grid-column-gap: 24px;
+        @media (min-width:$desktop-min) {
+            display: grid;
+            grid-template-columns: percent(230, 968) 1fr;
+            align-items: center;
+            grid-column-gap: 24px;
+        }
     }
 
     &__select {}
@@ -87,22 +88,42 @@
         font-size: 15px;
         line-height: math.div(19, 15);
         color: var(--gray);
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+            font-size: 12px;
+        }
     }
 
     &__checkbox {
         margin-top: 24px;
         align-self: start;
+        @media (max-width:$desktop){
+             margin-top: 10px; 
+        }
     }
 
     &__field {
         margin-top: 24px;
         height: 48px;
+        @media (max-width:$desktop){
+             margin-top: 16px;
+             height: 54px; 
+        }
     }
 
     &__map {
         margin-top: 24px;
-
         height: 550px;
+        
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            height: 400px;
+        }
+
+        @media (max-width:$mobile-max) {
+            height: 296px;
+        }
     }
 }
 
@@ -113,34 +134,35 @@
     &__title {}
 
     &__row {
-        display: grid;
-        justify-content: space-between;
-        grid-column-gap: 16px;
-        margin-bottom: 16px;
+        @media (min-width:$desktop-min) {
+            display: grid;
+            justify-content: space-between;
+            grid-column-gap: 16px;
+            margin-bottom: 16px;
 
-        &--1 {
-            grid-template-columns: percent(208, 968) percent(259, 968) percent(459, 968);
-        }
+            &--1 {
+                grid-template-columns: percent(208, 968) percent(259, 968) percent(459, 968);
+            }
 
-        &--2 {
-            grid-template-columns: percent(245, 968) percent(225, 968) percent(225, 968) percent(225, 968);
-        }
+            &--2 {
+                grid-template-columns: percent(245, 968) percent(225, 968) percent(225, 968) percent(225, 968);
+            }
 
-        &--3 {
-            grid-template-columns: percent(146, 968) percent(146, 968) percent(204, 968) percent(204, 968) percent(204, 968);
-        }
+            &--3 {
+                grid-template-columns: percent(146, 968) percent(146, 968) percent(204, 968) percent(204, 968) percent(204, 968);
+            }
 
-        &--4 {
-            grid-template-columns: percent(208, 968) percent(259, 968) percent(259, 968) percent(259, 968);
+            &--4 {
+                grid-template-columns: percent(208, 968) percent(259, 968) percent(259, 968) percent(259, 968);
+            }
         }
 
         @media (max-width:$desktop) {
-            grid-row-gap: 24px;
-            align-items: center;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
 
             &:not(:last-child) {
-                margin-bottom: 24px;
+                margin-bottom: 16px;
             }
         }
 
@@ -166,6 +188,7 @@
             height: 20px;
             fill: currentColor;
             margin-left: 5px;
+            transition: transform $transitionSpeed $transitionFunction;
         }
 
         &:hover {
@@ -173,7 +196,27 @@
         }
     }
 
-    &__item {}
+    &__item {
+        @media (max-width:$desktop) {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &._active {
+        .place-sale-options {
+            &__more {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding: 24px 16px 16px;
+    }
 }
 
 .place-sale-descr {
