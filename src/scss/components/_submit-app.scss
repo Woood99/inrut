@@ -45,10 +45,6 @@
 
     &__row-title {
         margin-bottom: 24px;
-
-        @media (max-width:$desktop) {
-            margin-bottom: 16px;
-        }
     }
 
     &__btn {
@@ -224,65 +220,5 @@
 
     @media (max-width:$desktop) {
         padding: 16px 0;
-    }
-}
-
-
-.submit-app-ways {
-
-    &__title {
-        margin-bottom: 16px;
-    }
-
-    &__wrapper {}
-
-    .radio-primary {
-        &__item {
-            &:not(:last-child) {
-                margin-bottom: 16px;
-            }
-        }
-
-        &__text {
-            color: var(--gray);
-            font-size: 16px;
-            line-height: math.div(20, 16);
-            font-weight: 400;
-
-            @media (max-width:$desktop) {
-                font-size: 14px;
-            }
-        }
-    }
-}
-
-
-.submit-app-contacts {
-
-    &__title {}
-
-    &__wrapper {
-        display: flex;
-
-        .input-primary {
-            width: 230px;
-
-            &:not(:last-child) {
-                margin-right: 24px;
-
-                @media (max-width:$smallTablet-max) {
-                    margin-right: 0;
-                    margin-bottom: 16px;
-                }
-            }
-
-            @media (max-width:$smallTablet-max) {
-                width: 100%;
-            }
-        }
-
-        @media (max-width:$smallTablet-max) {
-            flex-direction: column;
-        }
     }
 }

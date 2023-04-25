@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Разместить заявку на покупку</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--place-sale">
+        @include('partials/header--personal-mobile.html')
+        <main class="main main-page-gap place-sale">
+            <div class="place-sale__top top-page-inner-title">
+                <div class="top-page-inner-title__container container">
+                    <a href="#" class="place-sale__back top-page-inner-title__back back-link">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#arrow-left"></use>
+                        </svg>
+                        <span>Назад</span>
+                    </a>
+                    <h1 class="place-sale__title top-page-inner-title__title title-1"
+                        data-da=".place-sale__body,1112,first">
+                        Разместить объявление о продаже
+                    </h1>
+                </div>
+            </div>
+            <div class="place-sale__body container">
+                <form action="#" class="place-sale__container">
+                    <div class="place-sale__row place-sale-address">
+                        <h2 class="place-sale__row-title place-sale-address__title title-2">
+                            Адрес
+                        </h2>
+                        <div class="place-sale-address__city">
+                            <div class="place-sale-address__select select-primary">
+                                <span class="select-primary__name">
+                                    Город
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="city">
+                                        <option value="apartments">Санкт-Петербург</option>
+                                        <option value="apartments2">Волгоград</option>
+                                        <option value="apartments3">Москва</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="place-sale-address__text">
+                                <p>
+                                    Укажите кликом нужное место на карте или переместите маркер чтобы изменить
+                                    местоположение объекта.
+                                </p>
+                                <p>
+                                    Или добавьте адрес в ручную.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="place-sale-address__checkbox checkbox-secondary">
+                            <input id="test-id_1" name="test-id-name_1" class="checkbox-secondary__input"
+                                type="checkbox" value="true">
+                            <label for="test-id_1" class="checkbox-secondary__label">
+                                <span class="checkbox-secondary__text">Добавьте адрес в ручную</span>
+                            </label>
+                        </div>
+                        <div class="place-sale-address__field">
+                            <label class="input-primary">
+                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
+                                <span class="input-primary__span">Город, улица, дом, корпус</span>
+                            </label>
+                        </div>
+                        <div id="place-sale-address-map"
+                            class="place-sale-address__map map-primary remove-copyrights-pane">
+                        </div>
+                    </div>
+                    <div class="place-sale__row place-sale-options">
+                        <h2 class="place-sale__row-title place-sale-options__title title-2">
+                            Параметры
+                        </h2>
+                        <div class="place-sale-options__row place-sale-options__row--1">
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Тип объекта
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="type-object">
+                                        <option value="apartments">Квартиры</option>
+                                        <option value="apartments2">Квартиры2</option>
+                                        <option value="apartments3">Квартиры3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Комплекс
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="complex">
+                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
+                                        </option>
+                                        <option value="complex2">Комплекс2</option>
+                                        <option value="complex3">Комплекс3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="place-sale-options__item select-multiple">
+                                <span class="select-multiple__name">
+                                    Теги
+                                </span>
+                                <div class="select-multiple__inner">
+                                    <select class="select-multiple__body" data-trigger multiple name="tags">
+                                        <option value="tags1" selected>
+                                            Семейная ипотека
+                                        </option>
+                                        <option value="tags2">Ипотека с гос.поддержкой</option>
+                                        <option value="tags3">Комплекс3</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--2">
+                            <div class="place-sale-options__item quantity-selection">
+                                <span class="quantity-selection__subtitle">Укажите количество комнат</span>
+                                <div class="quantity-selection__inner">
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_studios" class="checkbox__label">
+                                            <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_1" class="checkbox__label">
+                                            <span class="checkbox__text">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_2" name="filter-quantity-2" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_2" class="checkbox__label">
+                                            <span class="checkbox__text">2</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_3" name="filter-quantity-3" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_3" class="checkbox__label">
+                                            <span class="checkbox__text">3</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_4" name="filter-quantity-4" class="checkbox__input"
+                                            type="checkbox" value="true">
+                                        <label for="filter-quantity_4" class="checkbox__label">
+                                            <span class="checkbox__text">4+</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="place-sale-options__item input-text input-text--auto-width">
+                                <label class="input-text__label">
+                                    <span class="input-text__span">Площадь</span>
+                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                        value="56">
+                                    <span class="input-text__name">м²</span>
+                                </label>
+                            </div>
+                            <div class="place-sale-options__item input-text input-text--auto-width">
+                                <label class="input-text__label">
+                                    <span class="input-text__span">Общая площадь</span>
+                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                        value="16">
+                                    <span class="input-text__name">м²</span>
+                                </label>
+                            </div>
+                            <div class="place-sale-options__item input-text input-text--auto-width">
+                                <label class="input-text__label">
+                                    <span class="input-text__span">Площадь кухни</span>
+                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                        value="16">
+                                    <span class="input-text__name">м²</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--3">
+                            <div class="place-sale-options__item input-text">
+                                <label class="input-text__label">
+                                    <span class="input-text__span">Этаж</span>
+                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                        value="5">
+                                </label>
+                            </div>
+                            <div class="place-sale-options__item input-text">
+                                <label class="input-text__label">
+                                    <span class="input-text__span">Этажей в доме</span>
+                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
+                                        value="12">
+                                </label>
+                            </div>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Наличие мебели
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="availability-of-furniture">
+                                        <option value="yes">Да</option>
+                                        <option value="no">Нет</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Ремонт
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="repair">
+                                        <option value="repair1">Косметический</option>
+                                        <option value="repair2">Косметический2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Вид из окна
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="window">
+                                        <option value="window1">Во двор и на улицу</option>
+                                        <option value="window2">Во двор и на улицу2</option>
+                                        <option value="window2">Во двор и на улицу3</option>
+                                        <option value="window2">Во двор и на улицу4</option>
+                                        <option value="window2">Во двор и на улицу5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--4" hidden>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Тип объекта
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="type-object">
+                                        <option value="apartments">Квартиры</option>
+                                        <option value="apartments2">Квартиры2</option>
+                                        <option value="apartments3">Квартиры3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="place-sale-options__item select-primary">
+                                <span class="select-primary__name">
+                                    Комплекс
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="complex">
+                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
+                                        </option>
+                                        <option value="complex2">Комплекс2</option>
+                                        <option value="complex3">Комплекс3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-reset place-sale-options__more">
+                            <span>Все параметры</span>
+                            <svg>
+                                <use xlink:href="img/sprite.svg#check"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="place-sale__row place-sale-descr">
+                        <h2 class="place-sale__row-title place-sale-descr__title title-2">
+                            Описание
+                        </h2>
+                        <div class="place-sale-descr__btns">
+                            <button type="button" class="btn btn-reset place-sale-descr__btn">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#plus"></use>
+                                </svg>
+                                <span>Сгенерировать описание</span>
+                            </button>
+                            <button type="button" class="btn btn-reset place-sale-descr__btn">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#plus"></use>
+                                </svg>
+                                <span>Визуальный редактор</span>
+                            </button>
+                        </div>
+                        <label class="place-sale-descr__textarea textarea-primary">
+                            <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
+                            <span class="textarea-primary__span">
+                                Расскажите о недвижимости, собственниках, соседях, транспортной доступности и
+                                инфраструктуре
+                            </span>
+                        </label>
+                    </div>
+                    <div class="place-sale__row place-sale-photo">
+                        <h2 class="place-sale__row-title place-sale-photo__title title-2">
+                            Фото
+                        </h2>
+                        <p class="place-sale-photo__descr">
+                            Покажите все важные детали и особенности: все комнаты с разных ракурсов, вид из окна, фото
+                            подъезда, вид здания.
+                        </p>
+                        <div class="place-sale-photo__wrapper photo-load">
+                            <button type="button" class="btn btn-reset photo-load__wrapper">
+                                <p>
+                                    Добавить фото (Размер до 10 Мб)
+                                </p>
+                                <p>
+                                    Выберите фото <span>или перетащите в эту область</span>
+                                </p>
+                            </button>
+                            <input type="file" data-upload-drop name="upload" multiple
+                                accept=".jpg, .png, .jpeg, .heic" class="input-reset">
+                        </div>
+                    </div>
+                    <div class="place-sale__row place-sale-video">
+                        <h2 class="place-sale__row-title place-sale-video__title title-2">
+                            Видео
+                        </h2>
+                        <p class="place-sale-video__descr">
+                            Добавте видео вашей недвижимости
+                        </p>
+                        <label class="place-sale-video__field input-primary">
+                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
+                            <span class="input-primary__span">Ссылка на видео с YouTube</span>
+                        </label>
+                    </div>
+                    <div class="submit-app__row place-sale-price">
+                        <div class="place-sale-price__top">
+                            <h2 class="place-sale__row-title place-sale-price__title title-2">
+                                Цена и тип сделки
+                            </h2>
+                            <div class="place-sale-price__tooltip secondary-tooltip">
+                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#info"></use>
+                                    </svg>
+                                </button>
+                                <div class="secondary-tooltip__content">
+                                    Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
+                                    Какой-то текст!! Какой-то текст!!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place-sale-price__wrapper">
+                            <label class="place-sale-price__input input-primary">
+                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
+                                <span class="input-primary__span">Цена</span>
+                            </label>
+                            <div class="place-sale-price__select select-primary">
+                                <span class="select-primary__name">
+                                    Тип сделки
+                                </span>
+                                <div class="select-primary__inner">
+                                    <select class="select-primary__body" name="complex">
+                                        <option value="complex">Тип сделки
+                                        </option>
+                                        <option value="complex2">Тип сделки2</option>
+                                        <option value="complex3">Тип сделки3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-app__row place-sale-videoshow">
+                        <div class="place-sale-videoshow__top">
+                            <h2 class="place-sale__row-title place-sale-videoshow__title title-2">
+                                Видеопоказ
+                            </h2>
+                            <div class="place-sale-videoshow__tooltip secondary-tooltip">
+                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#info"></use>
+                                    </svg>
+                                </button>
+                                <div class="secondary-tooltip__content">
+                                    Выберите, если готовы показать объект с помощью видео-звонка.
+                                    В объявлении появится значок «Онлайн-показ»
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place-sale-videoshow__checkbox checkbox-secondary">
+                            <input id="video-show-check_1" name="video-show-check" class="checkbox-secondary__input"
+                                type="checkbox" value="true">
+                            <label for="video-show-check_1" class="checkbox-secondary__label">
+                                <span class="checkbox-secondary__text">Готов показать по видеосвязи</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="place-sale__row communic-method-radios radio-primary">
+                        <h2 class="communic-method-radios__title place-sale__row-title title-2">
+                            Способ связи
+                        </h2>
+                        <div class="communic-method-radios__wrapper">
+                            <div class="radio-primary__item">
+                                <input hidden id="communic-method_1" class="radio-primary__input" type="radio"
+                                    value="По телефону и в сообщениях" name="communic-method">
+                                <label for="communic-method_1" class="radio-primary__label">
+                                    <span class="radio-primary__text">По телефону и в сообщениях</span>
+                                </label>
+                            </div>
+                            <div class="radio-primary__item">
+                                <input hidden id="communic-method_2" class="radio-primary__input" type="radio"
+                                    value="Только переписка в сообщениях" name="communic-method">
+                                <label for="communic-method_2" class="radio-primary__label">
+                                    <span class="radio-primary__text">Только переписка в сообщениях</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="place-sale__row your-contacts-field">
+                        <h2 class="your-contacts-field__title place-sale__row-title title-2">
+                            Ваши контакты
+                        </h2>
+                        <div class="your-contacts-field__wrapper">
+                            <label class="input-primary">
+                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input active"
+                                    disabled value="8 921 645 45 45" placeholder>
+                                <span class="input-primary__span">Номер телефона</span>
+                            </label>
+                            <label class="input-primary">
+                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input active"
+                                    disabled value="Алексей Г.">
+                                <span class="input-primary__span">Имя, фамилия</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-reset btn-primary place-sale__btn">
+                        Разместить
+                    </button>
+                </form>
+            </div>
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>

@@ -1,6 +1,7 @@
 import noUiSlider from 'nouislider';
 import enableScroll from '../modules/enableScroll';
 import disableScroll from '../modules/disableScroll';
+import inputResize from '../modules/inputResize';
 export const filterBudget = () => {
     const container = document.querySelectorAll('.filter-dropdown');
     if (!container.length >= 1) return;
@@ -67,11 +68,6 @@ export const uiSlider = () => {
                 inputResize(input);
             })
         })
-
-        function inputResize(input) {
-            input.style.width = 0;
-            input.style.width = input.scrollWidth + 'px';
-        }
     });
 
     function numberReplace(number) {

@@ -1,3 +1,5 @@
+import inputResize from "../modules/inputResize";
+import inputCursorEnd from '../modules/inputCursorEnd';
 export const inputPrimary = () => {
     const inputs = document.querySelectorAll('.input-primary');
     const textareas = document.querySelectorAll('.textarea-primary');
@@ -12,3 +14,19 @@ export const inputPrimary = () => {
         target.value.length >= 1 ? target.classList.add('active') : target.classList.remove('active');
     }
 };
+
+
+export const inputText = () => {
+    const inputs = document.querySelectorAll('.input-text');
+    if (inputs.length >= 1) {
+        inputs.forEach(el => {
+            if (!el.classList.contains('input-text--auto-width')) return;
+            const input = el.querySelector('.input-text__input');
+            inputResize(input);
+            input.addEventListener('input', () => {
+                inputResize(input);
+            });
+            inputCursorEnd(input, 'focus');
+        })
+    }
+}

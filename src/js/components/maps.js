@@ -37,6 +37,16 @@ const maps = () => {
         }
         ymaps.ready(init);
     }
+    if (document.querySelector('#place-sale-address-map')) {
+        function init() {
+            let map = new ymaps.Map('place-sale-address-map', {
+                center: [55.77171185651524, 37.62811179984117],
+                zoom: 10,
+            });
+            removeControlsPrimary(map, '#place-sale-address-map');
+        }
+        ymaps.ready(init);
+    }
 };
 
 export default maps;

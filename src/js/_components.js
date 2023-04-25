@@ -12,7 +12,7 @@ import {
 import maps from './components/maps';
 import linkCopy from './modules/linkCopy';
 import {
-    inputPrimary
+    inputPrimary,inputText
 } from './components/inputs';
 import {
     validateRadioText
@@ -25,7 +25,9 @@ import './components/controlCards'
 import emergingBlockScroll from './modules/emergingBlockScroll';
 import './components/gallery';
 import './components/videoBlock';
-import './components/reviewModal'
+import './components/reviewModal';
+import './components/placeSaleOptionMore';
+import './components/dropImage';
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
     inputPrimary();
+    inputText();
     validateRadioText('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
     validateRadioText('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
     validateRadioText('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
@@ -65,4 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     emergingBlockScroll('.object-body__user .bid-user__btn--dislike', '.object-plate-bottom', 1112);
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
+
 })

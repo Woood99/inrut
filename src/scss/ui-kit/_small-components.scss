@@ -64,8 +64,8 @@
 
         svg {
             margin-right: 0;
-          width: 18px;
-          height: 18px;
+            width: 18px;
+            height: 18px;
         }
 
         span {
@@ -123,7 +123,8 @@
         }
     }
 }
-.favorite-btn{
+
+.favorite-btn {
     display: inline-flex;
     align-items: center;
     color: var(--blue);
@@ -296,12 +297,6 @@
         opacity: 1;
     }
 }
-
-
-
-
-
-
 
 .message-item {
 
@@ -682,5 +677,67 @@
 
     @media (max-width:$smallTablet-max) {
         padding: 16px;
+    }
+}
+
+
+.communic-method-radios {
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__wrapper {}
+
+    .radio-primary {
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__text {
+            color: var(--gray);
+            font-size: 16px;
+            line-height: math.div(20, 16);
+            font-weight: 400;
+
+            @media (max-width:$desktop) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.your-contacts-field {
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__wrapper {
+        display: flex;
+
+        .input-primary {
+            width: 230px;
+            height: 48px;
+
+            &:not(:last-child) {
+                margin-right: 24px;
+
+                @media (max-width:$smallTablet-max) {
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                }
+            }
+
+            @media (max-width:$smallTablet-max) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            flex-direction: column;
+        }
     }
 }
