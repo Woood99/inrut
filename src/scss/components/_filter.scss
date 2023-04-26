@@ -594,16 +594,9 @@
             transform $transitionSpeed $transitionFunction;
 
         .checkbox-secondary {
-            &__input {
-                &:disabled {
-                    +.checkbox-secondary__label {
-                        &::before {
-                            background-color: transparent;
-                            border: 1px solid var(--red);
-                        }
-                    }
-                }
-            }
+            animation-name: fade;
+            animation-duration: 0.6s;
+
 
             &__text {
                 font-size: 15px;

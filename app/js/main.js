@@ -1514,9 +1514,9 @@ const uiSlider = () => {
     (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMin);
     (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     inputs.forEach(input => {
-      input.addEventListener('input', e => {
-        const numberString = input.value.replace(/\s/g, "");
-        input.value = numberReplace(numberString);
+      input.addEventListener('input', () => {
+        const val = input.value.replace(/\D/g, '');
+        input.value = numberReplace(val);
         (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
       });
     });
@@ -1599,6 +1599,7 @@ const filterCustomSelectCheckboxes = () => {
         item.classList.remove('_active');
       }
     });
+    const dropdownContainer = item.querySelector('.select-dropdown-checkbox__dropdown');
     const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
     const cash = item.querySelector('[data-name="cash"]');
     const mortgageYesBank = item.querySelector('[data-name="mortgage_yes-bank"]');
@@ -1613,12 +1614,14 @@ const filterCustomSelectCheckboxes = () => {
         mortgageNoBank.setAttribute('disabled', true);
         mortgageNoFee.setAttribute('disabled', true);
         certificate.removeAttribute('disabled');
+        movingCheckbox(1, certificate);
         title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
         mortgageYesBank.removeAttribute('disabled');
         mortgageNoBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
+        movingCheckboxDefault();
         title.textContent = 'Не выбрано';
         if (certificate.checked) certificate.checked = false;
       }
@@ -1629,12 +1632,16 @@ const filterCustomSelectCheckboxes = () => {
         mortgageNoBank.setAttribute('disabled', true);
         mortgageNoFee.removeAttribute('disabled');
         certificate.removeAttribute('disabled');
+        movingCheckbox(0, mortgageYesBank);
+        movingCheckbox(1, mortgageNoFee);
+        movingCheckbox(2, certificate);
         title.textContent = mortgageYesBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
         cash.removeAttribute('disabled');
         mortgageNoBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
+        movingCheckboxDefault();
         title.textContent = 'Не выбрано';
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
@@ -1646,6 +1653,9 @@ const filterCustomSelectCheckboxes = () => {
         mortgageYesBank.setAttribute('disabled', true);
         mortgageNoFee.removeAttribute('disabled');
         certificate.removeAttribute('disabled');
+        movingCheckbox(0, mortgageNoBank);
+        movingCheckbox(1, mortgageNoFee);
+        movingCheckbox(2, certificate);
         title.textContent = mortgageNoBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
         cash.removeAttribute('disabled');
@@ -1653,10 +1663,17 @@ const filterCustomSelectCheckboxes = () => {
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
         title.textContent = 'Не выбрано';
+        movingCheckboxDefault();
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
       }
     });
+    function movingCheckbox(index, element) {
+      dropdownContainer.children[index].insertAdjacentElement('beforebegin', element.closest('.checkbox-secondary'));
+    }
+    function movingCheckboxDefault() {
+      checkboxes.forEach((checkbox, index) => movingCheckbox(index, checkbox));
+    }
   });
 };
 
@@ -1820,6 +1837,7 @@ const inputText = () => {
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
       input.addEventListener('input', () => {
         input.value = input.value.replace(/\D/g, '');
+        console.log(input.value);
         (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
       });
       (0,_modules_inputCursorEnd__WEBPACK_IMPORTED_MODULE_1__["default"])(input, 'focus');

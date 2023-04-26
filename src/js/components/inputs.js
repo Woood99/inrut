@@ -25,6 +25,7 @@ export const inputText = () => {
             inputResize(input);
             input.addEventListener('input', () => {
                 input.value = input.value.replace(/\D/g, '');
+                console.log(input.value);
                 inputResize(input);
             });
             inputCursorEnd(input, 'focus');

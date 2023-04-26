@@ -2,6 +2,7 @@ import noUiSlider from 'nouislider';
 import enableScroll from '../modules/enableScroll';
 import disableScroll from '../modules/disableScroll';
 import inputResize from '../modules/inputResize';
+
 export const filterBudget = () => {
     const container = document.querySelectorAll('.filter-dropdown');
     if (!container.length >= 1) return;
@@ -61,10 +62,9 @@ export const uiSlider = () => {
         inputResize(inputMin);
         inputResize(inputMax);
         inputs.forEach(input => {
-            input.addEventListener('input', (e) => {
-                const numberString = input.value.replace(/\s/g, "")
-                input.value = numberReplace(numberString);
-
+            input.addEventListener('input', () => {
+                const val = input.value.replace(/\D/g, '');
+                input.value = numberReplace(val);
                 inputResize(input);
             })
         })
@@ -148,13 +148,13 @@ export const filterCustomSelectCheckboxes = () => {
                 item.classList.remove('_active');
             }
         })
+        const dropdownContainer = item.querySelector('.select-dropdown-checkbox__dropdown');
         const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
         const cash = item.querySelector('[data-name="cash"]');
         const mortgageYesBank = item.querySelector('[data-name="mortgage_yes-bank"]');
         const mortgageNoBank = item.querySelector('[data-name="mortgage_no-bank"]');
         const mortgageNoFee = item.querySelector('[data-name="mortgage_no-fee"]');
         const certificate = item.querySelector('[data-name="certificate"]');
-
         mortgageNoFee.setAttribute('disabled', true);
         title.textContent = 'Не выбрано';
 
@@ -166,6 +166,8 @@ export const filterCustomSelectCheckboxes = () => {
 
                 certificate.removeAttribute('disabled');
 
+                movingCheckbox(1, certificate);
+
                 title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
             } else {
                 mortgageYesBank.removeAttribute('disabled');
@@ -174,6 +176,7 @@ export const filterCustomSelectCheckboxes = () => {
                 mortgageNoFee.setAttribute('disabled', true);
                 certificate.setAttribute('disabled', true);
 
+                movingCheckboxDefault();
                 title.textContent = 'Не выбрано';
                 if (certificate.checked) certificate.checked = false;
             }
@@ -186,6 +189,10 @@ export const filterCustomSelectCheckboxes = () => {
                 mortgageNoFee.removeAttribute('disabled');
                 certificate.removeAttribute('disabled');
 
+                movingCheckbox(0, mortgageYesBank);
+                movingCheckbox(1, mortgageNoFee);
+                movingCheckbox(2, certificate);
+
                 title.textContent = mortgageYesBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
             } else {
                 cash.removeAttribute('disabled');
@@ -193,6 +200,8 @@ export const filterCustomSelectCheckboxes = () => {
 
                 mortgageNoFee.setAttribute('disabled', true);
                 certificate.setAttribute('disabled', true);
+
+                movingCheckboxDefault();
 
                 title.textContent = 'Не выбрано';
                 if (mortgageNoFee.checked) mortgageNoFee.checked = false;
@@ -207,6 +216,10 @@ export const filterCustomSelectCheckboxes = () => {
                 mortgageNoFee.removeAttribute('disabled');
                 certificate.removeAttribute('disabled');
 
+                movingCheckbox(0, mortgageNoBank);
+                movingCheckbox(1, mortgageNoFee);
+                movingCheckbox(2, certificate);
+
                 title.textContent = mortgageNoBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
             } else {
                 cash.removeAttribute('disabled');
@@ -217,9 +230,20 @@ export const filterCustomSelectCheckboxes = () => {
 
                 title.textContent = 'Не выбрано';
 
+                movingCheckboxDefault();
+
                 if (mortgageNoFee.checked) mortgageNoFee.checked = false;
                 if (certificate.checked) certificate.checked = false;
             }
         });
+
+
+        function movingCheckbox(index, element) {
+            dropdownContainer.children[index].insertAdjacentElement('beforebegin', element.closest('.checkbox-secondary'));
+        }
+
+        function movingCheckboxDefault() {
+            checkboxes.forEach((checkbox, index) => movingCheckbox(index, checkbox));
+        }
     });
 };

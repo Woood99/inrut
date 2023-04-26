@@ -2962,6 +2962,43 @@ textarea.input-reset {
   }
 }
 
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeTransformX {
+  0% {
+    -webkit-transform: translateX(15%);
+    transform: translateX(15%);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes fadeTransformX {
+  0% {
+    -webkit-transform: translateX(15%);
+    transform: translateX(15%);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
 .back-link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -6915,9 +6952,11 @@ textarea.input-reset {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
-.select-dropdown-checkbox__dropdown .checkbox-secondary__input:disabled + .checkbox-secondary__label::before {
-  background-color: transparent;
-  border: 1px solid var(--red);
+.select-dropdown-checkbox__dropdown .checkbox-secondary {
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
 }
 .select-dropdown-checkbox__dropdown .checkbox-secondary__text {
   font-size: 15px;
@@ -8027,8 +8066,8 @@ textarea.input-reset {
   }
   .control-cards__content--vertical .card-primary {
     width: 100%;
-    -webkit-animation-name: fade;
-    animation-name: fade;
+    -webkit-animation-name: fadeTransformX;
+    animation-name: fadeTransformX;
     -webkit-animation-duration: 0.6s;
     animation-duration: 0.6s;
   }
@@ -8043,26 +8082,6 @@ textarea.input-reset {
   .control-cards__content--vertical .card-primary:nth-child(3) {
     -webkit-animation-duration: 1.4s;
     animation-duration: 1.4s;
-  }
-  @-webkit-keyframes fade {
-    0% {
-      -webkit-transform: translateX(15%);
-      transform: translateX(15%);
-    }
-    100% {
-      -webkit-transform: translate(0);
-      transform: translate(0);
-    }
-  }
-  @keyframes fade {
-    0% {
-      -webkit-transform: translateX(15%);
-      transform: translateX(15%);
-    }
-    100% {
-      -webkit-transform: translate(0);
-      transform: translate(0);
-    }
   }
   .control-cards__content--vertical .card-primary__container {
     display: -ms-grid;
