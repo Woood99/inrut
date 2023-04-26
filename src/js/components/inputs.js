@@ -24,6 +24,7 @@ export const inputText = () => {
             const input = el.querySelector('.input-text__input');
             inputResize(input);
             input.addEventListener('input', () => {
+                input.value = input.value.replace(/\D/g, '');
                 inputResize(input);
             });
             inputCursorEnd(input, 'focus');

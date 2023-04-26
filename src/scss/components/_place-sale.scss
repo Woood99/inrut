@@ -9,14 +9,14 @@
     }
 
     &__container {
-        background: rgba(235, 241, 251, 0.4);
-        background-color: var(--primary100);
+        background-color: rgba(235, 241, 251, 0.4);
         border-radius: 16px;
         padding: 32px;
 
         @media (max-width:$desktop) {
             padding: 0 0 32px 0;
             margin-top: 16px;
+            background-color: var(--primary100);
         }
     }
 
@@ -54,8 +54,9 @@
 
         @media (max-width:$smallTablet-max) {
             width: calc(100% - 32px);
-            margin: 24px auto 0;
+            margin: 16px auto 0;
             padding: 0 20px;
+            height: 50px;
         }
     }
 
@@ -98,24 +99,26 @@
     &__checkbox {
         margin-top: 24px;
         align-self: start;
-        @media (max-width:$desktop){
-             margin-top: 10px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 10px;
         }
     }
 
     &__field {
         margin-top: 24px;
         height: 48px;
-        @media (max-width:$desktop){
-             margin-top: 16px;
-             height: 54px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+            height: 54px;
         }
     }
 
     &__map {
         margin-top: 24px;
         height: 550px;
-        
+
         @media (max-width:$desktop) {
             margin-top: 16px;
             height: 400px;
@@ -163,6 +166,12 @@
 
             &:not(:last-child) {
                 margin-bottom: 16px;
+            }
+
+            .input-text {
+                .input-text__label {
+                    padding: 11.5px 16px;
+                }
             }
         }
 
@@ -215,7 +224,7 @@
     }
 
     @media (max-width:$desktop) {
-        padding: 24px 16px 16px;
+        padding: 24px 16px 8px 16px;
     }
 }
 
@@ -232,6 +241,10 @@
         display: flex;
         align-items: center;
         align-self: end;
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
+        }
     }
 
     &__btn {
@@ -258,6 +271,10 @@
 
     &__textarea {
         margin-top: 16px;
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+        }
     }
 }
 
@@ -265,11 +282,29 @@
 
     &__title {}
 
-    &__descr {}
+    &__descr {
+        font-size: 15px;
+        line-height: math.div(23, 15);
+        color: var(--primaryTwo);
+        font-weight: 400;
+
+        @media (max-width:$desktop) {
+            font-size: 12px;
+        }
+    }
 
     &__field {
-        height: 48px;
         margin-top: 16px;
+        height: 48px;
+
+        .input-primary__span {
+            color: var(--primaryTwo);
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 10px;
+            height: 54px;
+        }
     }
 }
 
@@ -279,31 +314,57 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
+
+        @media (max-width:$desktop) {
+            margin-bottom: 24px;
+        }
     }
 
     &__title {
-        margin: 0 10px 0 0;
+        margin: 0 5px 0 0;
     }
 
     &__tooltip {
         .secondary-tooltip__content {
             width: 395px;
+
+            @media (max-width:$smallTablet-max) {
+                width: 210px;
+            }
         }
     }
 
     &__wrapper {
         display: flex;
         align-items: center;
+
+        @media (max-width:$smallTablet-max) {
+            flex-direction: column;
+            align-items: start;
+        }
     }
 
     &__input {
         width: 230px;
         height: 48px;
         margin-right: 16px;
+
+        @media (max-width:$smallTablet-max) {
+            margin-right: 0;
+            margin-bottom: 16px;
+            width: 100%;
+            height: 54px;
+        }
     }
 
     &__select {
         width: 230px;
+        height: 48px;
+
+        @media (max-width:$smallTablet-max) {
+            width: 100%;
+            height: 54px;
+        }
     }
 }
 
@@ -314,21 +375,30 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
+
+        @media (max-width:$desktop) {
+            margin-bottom: 24px;
+        }
     }
 
     &__title {
-        margin: 0 10px 0 0;
+        margin: 0 5px 0 0;
     }
 
     &__tooltip {
         .secondary-tooltip__content {
             width: 395px;
+
+            @media (max-width:$smallTablet-max) {
+                width: 210px;
+            }
         }
     }
 
     &__checkbox {
         .checkbox-secondary__label {
             justify-content: start;
+            display: inline-flex;
         }
     }
 }
@@ -340,85 +410,22 @@
     &__title {}
 
     &__descr {
-        margin-top: 24px;
         color: var(--primaryTwo);
         font-size: 15px;
         line-height: math.div(23, 15);
         font-weight: 400;
+
+        @media (max-width:$desktop) {
+            font-size: 12px;
+        }
     }
 
     &__wrapper {
         margin-top: 24px;
         width: 100%;
-    }
-}
 
-.photo-load {
-    width: 100%;
-    background-color: var(--primary100);
-    border: 1px dashed #2683F2;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 16px;
-    height: 96px;
-    position: relative;
-    overflow: hidden;
-    transition: border $transitionSpeed $transitionFunction;
-
-    &__wrapper {
-        width: 100%;
-        height: 100%;
-
-        p {
-            font-size: 15px;
-            line-height: math.div(10, 15);
-            color: var(--primaryTwo);
-            font-weight: 400;
-
-            &:not(:last-child) {
-                margin-bottom: 16px;
-
-                @media (max-width:$desktop) {
-                    margin-bottom: 8px;
-                }
-            }
-
-            &:nth-child(2) {
-                color: var(--blue);
-
-                span {
-                    color: var(--primaryTwo);
-
-                    @media (max-width:$desktop) {
-                        display: none;
-                    }
-                }
-            }
-
-            @media (max-width:$desktop) {
-                font-size: 12px;
-            }
+        @media (max-width:$desktop) {
+            margin-top: 10px;
         }
-    }
-
-    >input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 96px;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    &._active {
-        border: 1px dashed var(--red);
-    }
-
-    @media (max-width:$desktop) {
-        padding: 32px 16px;
     }
 }

@@ -1149,9 +1149,9 @@ if (selectPrimary.length >= 1) {
     });
   });
 }
-const selectSecondary = document.querySelectorAll('.select-sort__body');
-if (selectSecondary.length >= 1) {
-  selectSecondary.forEach(el => {
+const selectSort = document.querySelectorAll('.select-sort__body');
+if (selectSort.length >= 1) {
+  selectSort.forEach(el => {
     const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
       searchEnabled: false,
       shouldSort: false,
@@ -1175,6 +1175,18 @@ if (selectMultiple.length >= 1) {
       if ((e.target.classList.contains('choices') || e.target.classList.contains('choices__inner')) && el.closest('.choices').classList.contains('is-open')) {
         choices.hideDropdown();
       }
+    });
+  });
+}
+const selectSecondary = document.querySelectorAll('.select-secondary__body');
+if (selectSecondary.length >= 1) {
+  selectSecondary.forEach(el => {
+    const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
+      searchEnabled: false,
+      shouldSort: false,
+      itemSelectText: '',
+      position: 'bottom',
+      placeholder: true
     });
   });
 }
@@ -1807,6 +1819,7 @@ const inputText = () => {
       const input = el.querySelector('.input-text__input');
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
       input.addEventListener('input', () => {
+        input.value = input.value.replace(/\D/g, '');
         (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
       });
       (0,_modules_inputCursorEnd__WEBPACK_IMPORTED_MODULE_1__["default"])(input, 'focus');

@@ -99,20 +99,25 @@
         }
 
         @media (max-width:$desktop) {
-            grid-row-gap: 24px;
+            grid-row-gap: 16px;
             align-items: center;
             grid-template-columns: 1fr;
-
-            &:not(:last-child) {
-                margin-bottom: 24px;
-            }
         }
     }
 
     &__item {
+        height: 100%;
+
         &.select-primary {
-            .choices {
-                padding: 23px 16px 10px 16px
+            @media (min-width:$desktop-min) {
+                .select-primary__inner {
+                    height: 100%;
+                }
+
+                .choices {
+                    height: 100%;
+                    padding: 23px 16px 10px 16px
+                }
             }
         }
     }

@@ -274,7 +274,9 @@
                                 <span class="input-primary__span">Город, улица, дом, корпус</span>
                             </label>
                         </div>
-                    
+                        <div id="place-sale-address-map"
+                            class="place-sale-address__map map-primary remove-copyrights-pane">
+                        </div>
                     </div>
                     <div class="place-sale__row place-sale-options">
                         <h2 class="place-sale__row-title place-sale-options__title title-2">
@@ -293,20 +295,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Комплекс
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="complex">
-                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                        </option>
-                                        <option value="complex2">Комплекс2</option>
-                                        <option value="complex3">Комплекс3</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="complex">
+                                    <option placeholder>Комплекс</option>
+                                    <option value="complex">Выбор1</option>
+                                    <option value="complex2">Выбор2</option>
+                                    <option value="complex3">Выбор3</option>
+                                </select>
                             </div>
-                           <div class="place-sale-options__item select-multiple">
+                            <div class="place-sale-options__item select-multiple">
                                 <span class="select-multiple__name">
                                     Теги
                                 </span>
@@ -315,8 +312,8 @@
                                         <option value="tags1" selected>
                                             Семейная ипотека
                                         </option>
-                                        <option selected value="tags2">Ипотека с гос.поддержкой</option>
-                                        <option selected value="tags3">Комплекс3</option>
+                                        <option value="tags2">Ипотека с гос.поддержкой</option>
+                                        <option value="tags3">Комплекс3</option>
                                     </select>
                                 </div>
                             </div>
@@ -373,16 +370,16 @@
                             <div class="place-sale-options__item input-text input-text--auto-width">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Общая площадь</span>
-                                    <input type="text" name="Имя" data-input-only-number class="input-reset input-text__input" placeholder=""
-                                        value="16">
+                                    <input type="text" name="Имя" data-input-only-number
+                                        class="input-reset input-text__input" placeholder="" value="16">
                                     <span class="input-text__name">м²</span>
                                 </label>
                             </div>
                             <div class="place-sale-options__item input-text input-text--auto-width">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Площадь кухни</span>
-                                    <input type="text" name="Имя" data-input-only-number class="input-reset input-text__input" placeholder=""
-                                        value="16">
+                                    <input type="text" name="Имя" data-input-only-number
+                                        class="input-reset input-text__input" placeholder="" value="16">
                                     <span class="input-text__name">м²</span>
                                 </label>
                             </div>
@@ -391,15 +388,15 @@
                             <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Этаж</span>
-                                    <input type="number" name="Имя" class="input-reset input-text__input" data-input-only-number placeholder=""
-                                        value="5">
+                                    <input type="text" name="Имя" class="input-reset input-text__input"
+                                        data-input-only-number placeholder="" value="5">
                                 </label>
                             </div>
                             <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
                                     <span class="input-text__span">Этажей в доме</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" data-input-only-number placeholder=""
-                                        value="12">
+                                    <input type="text" name="Имя" class="input-reset input-text__input"
+                                        data-input-only-number placeholder="" value="12">
                                 </label>
                             </div>
                             <div class="place-sale-options__item select-primary">
@@ -449,19 +446,6 @@
                                         <option value="apartments">Квартиры</option>
                                         <option value="apartments2">Квартиры2</option>
                                         <option value="apartments3">Квартиры3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Комплекс
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="complex">
-                                        <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                        </option>
-                                        <option value="complex2">Комплекс2</option>
-                                        <option value="complex3">Комплекс3</option>
                                     </select>
                                 </div>
                             </div>
@@ -516,8 +500,8 @@
                                     Выберите фото <span>или перетащите в эту область</span>
                                 </p>
                             </button>
-                            <input type="file" data-upload-drop name="upload" multiple
-                                accept=".jpg, .png, .jpeg, .heic" class="input-reset">
+                            <input type="file" data-upload-drop name="upload" multiple accept=".jpg, .png, .jpeg, .heic"
+                                class="input-reset">
                         </div>
                     </div>
                     <div class="place-sale__row place-sale-video">
@@ -554,18 +538,13 @@
                                 <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
                                 <span class="input-primary__span">Цена</span>
                             </label>
-                            <div class="place-sale-price__select select-primary">
-                                <span class="select-primary__name">
-                                    Тип сделки
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="complex">
-                                        <option value="complex">Тип сделки
-                                        </option>
-                                        <option value="complex2">Тип сделки2</option>
-                                        <option value="complex3">Тип сделки3</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-price__select select-secondary">
+                                <select class="select-secondary__body" name="deal-type">
+                                    <option placeholder>Тип сделки</option>
+                                    <option value="deal-type1">Выбор1</option>
+                                    <option value="deal-type2">Выбор2</option>
+                                    <option value="deal-type3">Выбор3</option>
+                                </select>
                             </div>
                         </div>
                     </div>
