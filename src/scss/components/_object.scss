@@ -3,7 +3,8 @@
     &__body {
         @media (max-width:$desktop) {
             padding: 0;
-            background-color: var(--primary100);
+            background-color: rgba(235, 241, 251, 0.4);
+            border-radius: 0 0 12px 12px;
         }
     }
 
@@ -17,6 +18,7 @@
     &__slider {
         padding: 10px;
         background-color: var(--white);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
 
         @media (max-width:$desktop) {
@@ -27,9 +29,8 @@
 
     &__container {
         margin-top: 16px;
-        // padding: 16px;
         padding: 32px;
-        background-color: var(--primary100);
+        background-color: rgba(235, 241, 251, 0.4);
         border-radius: 16px;
 
         @media (max-width:$desktop) {
@@ -64,11 +65,13 @@
         grid-column: 2/3;
         grid-row: 1/4;
         align-self: start;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
         @media (max-width:$desktop) {
             grid-row: auto;
             grid-column: 1/-1;
             margin-top: 8px;
+            box-shadow: none;
         }
     }
 
@@ -123,6 +126,207 @@
             margin-top: 8px;
         }
     }
+
+    &__calc-mort {
+        margin-top: 16px;
+        grid-column: 1/2;
+
+        @media (max-width:$desktop) {
+            grid-column: 1/-1;
+            margin-top: 8px;
+        }
+    }
+
+    &__similar-objects {
+        margin-top: 25px;
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 8px;
+        }
+    }
+}
+
+
+.object-similar {
+    background-color: rgba(235, 241, 251, 0.4);
+    border-radius: 12px;
+    padding: 32px;
+
+    &__title {
+        @media (max-width:$smallTablet-max) {
+            padding: 0 $containerOffset+px;
+        }
+    }
+
+    &__items {
+        margin-top: 32px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        grid-row-gap: 16px;
+        grid-column-gap: 24px;
+
+        @media (max-width:$desktop) {
+            grid-column-gap: 16px;
+            grid-row-gap: 16px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 16px;
+            grid-row-gap: 8px;
+        }
+    }
+
+    @media (max-width:$smallTablet-max) {
+        padding: 0;
+        background-color: transparent;
+    }
+}
+
+
+
+
+.object-two {
+    .object-plate-bottom {
+        &__btn {
+            margin: 0;
+        }
+    }
+
+    .bid-user--grade {
+
+        &::before,
+        &::after {
+            height: 80px;
+        }
+    }
+
+    .bid-user__grade {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        border-top: none;
+        padding-top: 0;
+        margin-top: 32px;
+
+        .bid-user {
+            &__title {
+                display: none;
+            }
+
+            &__btn--call {
+                padding: 0 11px;
+                height: 51px;
+                margin-top: 0;
+            }
+
+            &__btn--message {
+                padding: 0 16px;
+                height: 51px;
+                margin-top: 0;
+            }
+
+            &__btn--like {
+                height: 51px;
+                grid-column: 1/-1;
+            }
+        }
+    }
+}
+
+.object-two-body {
+    &__data {
+        margin-top: 0;
+    }
+}
+
+
+.object-calc-mort {
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+
+    &__title {}
+
+    &__wrapper {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__info {
+        margin-top: 24px;
+
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        span {
+            display: inline-block;
+            margin-left: 16px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 16px;
+        }
+    }
+
+    &__app {
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+            margin-left: 10px;
+        }
+    }
+
+    &__message {
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--blue);
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding: 16px;
+        box-shadow: none;
+    }
 }
 
 
@@ -130,7 +334,7 @@
 
 .object-characteristics {
     background-color: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 32px 24px 24px;
 
@@ -290,6 +494,7 @@
 
 .object-location {
     background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 32px 24px;
 
@@ -330,17 +535,19 @@
 
     @media (max-width:$desktop) {
         padding: 16px 0;
+        box-shadow: none;
     }
 }
 
 .object-banners {
     padding: 32px 24px;
     background-color: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
 
     @media (max-width:$desktop) {
         padding: 16px;
+        box-shadow: none;
     }
 }
 
@@ -374,7 +581,7 @@
 .object-history {
     padding: 32px 24px;
     background-color: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
 
     &__title {}
@@ -525,6 +732,7 @@
 
 .object-data {
     background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     padding: 32px 24px 24px;
     border-radius: 12px;
 
@@ -694,6 +902,7 @@
 
     @media (max-width:$desktop) {
         padding: 16px;
+        box-shadow: none;
     }
 }
 

@@ -993,6 +993,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterControl)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSlider)();
+  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSliderOne)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterBudget)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterMobile)();
@@ -1030,7 +1031,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_9__["default"])('.object-data', '.object-data__text', '.object-data__more');
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-body__user .bid-user__btn--dislike', '.object-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
 });
@@ -1450,7 +1451,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "filterCustomSelectCheckboxes": () => (/* binding */ filterCustomSelectCheckboxes),
 /* harmony export */   "filterDropdownChoice": () => (/* binding */ filterDropdownChoice),
 /* harmony export */   "filterMobile": () => (/* binding */ filterMobile),
-/* harmony export */   "uiSlider": () => (/* binding */ uiSlider)
+/* harmony export */   "uiSlider": () => (/* binding */ uiSlider),
+/* harmony export */   "uiSliderOne": () => (/* binding */ uiSliderOne)
 /* harmony export */ });
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/dist/nouislider.js");
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_0__);
@@ -1521,6 +1523,44 @@ const uiSlider = () => {
         input.value = numberReplace(val);
         (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
       });
+    });
+  });
+  function numberReplace(number) {
+    return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
+  }
+};
+const uiSliderOne = () => {
+  const items = document.querySelectorAll('.filter-range-one__inner');
+  if (!items.length >= 1) return;
+  items.forEach(el => {
+    const container = el.closest('.filter-range-one');
+    const minValue = el.dataset.min;
+    const maxValue = el.dataset.max;
+    const defaultEnd = container.querySelector('[data-default-end]');
+    const inputMax = defaultEnd.querySelector('input');
+    nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(el, {
+      start: [Number(minValue), Number(defaultEnd.dataset.defaultEnd)],
+      connect: true,
+      range: {
+        'min': Number(minValue),
+        'max': Number(maxValue)
+      },
+      step: 1
+    });
+    el.noUiSlider.on('update', function (values, handle) {
+      inputMax.value = numberReplace(values[handle]);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+    });
+    inputMax.addEventListener('change', function () {
+      const numberString = this.value.replace(/\s/g, "");
+      el.noUiSlider.set([null, numberString]);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+    });
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+    inputMax.addEventListener('input', () => {
+      const val = inputMax.value.replace(/\D/g, '');
+      inputMax.value = numberReplace(val);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     });
   });
   function numberReplace(number) {

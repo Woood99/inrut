@@ -60,7 +60,6 @@ export const uiSlider = () => {
 
             inputResize(inputMax);
         })
-
         inputResize(inputMin);
         inputResize(inputMax);
         inputs.forEach(input => {
@@ -69,6 +68,50 @@ export const uiSlider = () => {
                 input.value = numberReplace(val);
                 inputResize(input);
             })
+        })
+    });
+
+    function numberReplace(number) {
+        return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
+    }
+}
+export const uiSliderOne = () => {
+    const items = document.querySelectorAll('.filter-range-one__inner');
+    if (!items.length >= 1) return;
+    items.forEach(el => {
+        const container = el.closest('.filter-range-one');
+        const minValue = el.dataset.min;
+        const maxValue = el.dataset.max;
+        const defaultEnd = container.querySelector('[data-default-end]');
+
+        const inputMax = defaultEnd.querySelector('input');
+
+        noUiSlider.create(el, {
+            start: [Number(minValue), Number(defaultEnd.dataset.defaultEnd)],
+            connect: true,
+            range: {
+                'min': Number(minValue),
+                'max': Number(maxValue),
+            },
+            step: 1,
+        });
+        el.noUiSlider.on('update', function (values, handle) {
+            inputMax.value = numberReplace(values[handle])
+            inputResize(inputMax);
+        });
+
+        inputMax.addEventListener('change', function () {
+            const numberString = this.value.replace(/\s/g, "")
+            el.noUiSlider.set([null, numberString]);
+
+            inputResize(inputMax);
+        })
+
+        inputResize(inputMax);
+        inputMax.addEventListener('input', () => {
+            const val = inputMax.value.replace(/\D/g, '');
+            inputMax.value = numberReplace(val);
+            inputResize(inputMax);
         })
     });
 

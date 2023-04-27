@@ -1,6 +1,7 @@
 import {
     filterControl,
     uiSlider,
+    uiSliderOne,
     filterBudget,
     filterDropdownChoice,
     filterMobile,
@@ -33,6 +34,7 @@ import './components/dropImage';
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();
+    uiSliderOne();
     filterBudget();
     filterDropdownChoice();
     filterMobile();
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownDown('.object-data', '.object-data__text', '.object-data__more');
     // ==================================================
 
-    emergingBlockScroll('.object-body__user .bid-user__btn--dislike', '.object-plate-bottom', 1112);
+    emergingBlockScroll('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
 

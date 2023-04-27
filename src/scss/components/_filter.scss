@@ -488,6 +488,7 @@
     background: rgba(235, 241, 251, 0.4);
     border: 1px solid var(--primary200);
     border-radius: 12px;
+    height: 100%;
 
     &__subtitle {
         font-weight: 400;
@@ -555,6 +556,110 @@
 
             &.noUi-handle-lower {
                 right: -4px;
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    .noUi-handle {
+        border: none;
+        box-shadow: none;
+
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .noUi-touch-area {
+        background-color: var(--blue);
+        border: 1px solid var(--white);
+        border-radius: 50%;
+    }
+
+    .noUi-connect {
+        background-color: var(--blue);
+    }
+}
+
+.filter-range-one {
+    padding: 8px 16px 0;
+    background: rgba(235, 241, 251, 0.4);
+    border: 1px solid var(--primary200);
+    border-radius: 12px;
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 100%;
+        display: block;
+        color: var(--primaryTwo);
+    }
+
+    .filter-range-one__nav {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 7.5px;
+
+        div {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: math.div(19, 15);
+
+            overflow: hidden;
+            white-space: nowrap;
+
+            input {
+                margin-left: 1px;
+                border-radius: 0;
+                border: none;
+                background-color: transparent;
+                color: inherit;
+            }
+
+            &:nth-child(2) {
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                text-align: right;
+            }
+        }
+    }
+
+    .noUi-target {
+        border: none;
+        box-shadow: none;
+        background-color: var(--primary200);
+        bottom: -1px;
+
+        @media (max-width:$desktop) {
+            bottom: 0px;
+        }
+    }
+
+    .noUi-horizontal {
+        height: 1px;
+
+        .noUi-handle {
+            width: 10px;
+            height: 10px;
+            top: -4px;
+
+            &.noUi-handle-upper {
+                right: -4px;
+            }
+
+            &.noUi-handle-lower {
+                display: none;
             }
 
             &:focus-visible {
