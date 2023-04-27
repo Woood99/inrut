@@ -78,9 +78,6 @@
     }
 
     &__inner {
-        display: grid;
-        grid-row-gap: 24px;
-
         @media (max-width:$desktop) {
             margin: 0;
             grid-row-gap: 24px;
@@ -96,76 +93,28 @@
 
     &__row {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        justify-content: space-between;
         grid-column-gap: 16px;
-    }
+        margin-bottom: 16px;
 
-    &.filter--more {
-        .filter__row {
-            transition: max-height 0.6s $transitionFunction,
-                visibility 0.4s $transitionFunction,
-                opacity 0.4s $transitionFunction;
-            max-height: 0;
-            visibility: hidden;
-            opacity: 0;
-
-            @media (min-width:$desktop) {
-                &.visible {
-                    opacity: 1;
-                    visibility: visible;
-                    max-height: 48px;
-                    transition: max-height 0.6s $transitionFunction,
-                        visibility 0.7s $transitionFunction,
-                        opacity 0.7s $transitionFunction;
-                }
+        @media (min-width:$desktop-min) {
+            &[hidden] {
+                display: none;
             }
+        }
 
-            @media (max-width:$desktop) {
-                max-height: none;
-                visibility: visible;
-                opacity: 1;
-                display: flex;
-                flex-direction: column;
+        @media (max-width:$desktop) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
 
-                &:not(:last-child) {
-                    margin-bottom: 24px;
-                }
+            &:not(:last-child) {
+                margin-bottom: 24px;
             }
         }
     }
 
     &__item {
-        @media (min-width:$desktop) {
-            &--object {
-                grid-column: 3 span;
-            }
-
-            &--quantity-selection {
-                grid-column: 3 span;
-
-            }
-
-            &--budget {
-                grid-column: 3 span;
-            }
-
-            &--area {
-                grid-column: 3 span;
-            }
-
-            &--properties {
-                grid-column: 4 span;
-            }
-
-            &--complex {
-                grid-column: 3 span;
-            }
-
-            &--checkboxes {
-                grid-column: 5 span;
-            }
-        }
-
         @media (max-width:$desktop) {
             &:not(:last-child) {
                 margin-bottom: 24px;
@@ -174,22 +123,9 @@
     }
 
     &__controls {
-        transition: margin-top 0.75s $transitionFunction;
+        padding-top: 8px;
         display: flex;
         align-items: center;
-
-        &.more,
-        &.all {
-            .filter__btn-control {
-                svg {
-                    transform: rotate(180deg);
-                }
-            }
-        }
-
-        &.none {
-            margin-top: 24px;
-        }
 
         @media (max-width:$desktop) {
             margin-top: auto;
@@ -234,16 +170,30 @@
         }
 
         svg {
-            width: 15px;
-            height: 12px;
+            width: 20px;
+            height: 17px;
             fill: currentColor;
-            margin-left: 12px;
+            margin-left: 8px;
             transition: transform $transitionSpeed $transitionFunction;
         }
 
         @media (max-width:$desktop) {
             display: none;
         }
+    }
+}
+
+.filter--more {
+    &._active {
+        .filter__btn-control {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    @media (max-width:$desktop) {
+        margin-bottom: 24px;
     }
 }
 
@@ -416,105 +366,6 @@
     }
 }
 
-.filter-range {
-    padding: 8px 16px 0;
-    background-color: var(--primary100);
-    border-radius: 12px;
-
-    &__subtitle {
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 100%;
-        color: var(--primaryTwo);
-    }
-
-    .filter-range__nav {
-        display: grid;
-        grid-template-columns: 42% 1fr 42%;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 7.5px;
-
-        div {
-            color: var(--gray);
-            font-size: 15px;
-            line-height: math.div(19, 15);
-
-            overflow: hidden;
-            white-space: nowrap;
-
-            input {
-                margin-left: 1px;
-                border-radius: 0;
-                border: none;
-                background-color: transparent;
-                color: inherit;
-            }
-
-            &:nth-child(2) {
-                text-align: center;
-            }
-
-            &:nth-child(3) {
-                text-align: right;
-            }
-        }
-    }
-
-    .noUi-target {
-        border: none;
-        box-shadow: none;
-        border-radius: 2px;
-        background-color: var(--primary200);
-    }
-
-    .noUi-horizontal {
-        height: 2px;
-
-        .noUi-handle {
-            width: 10px;
-            height: 10px;
-            top: -4px;
-
-            &.noUi-handle-upper {
-                right: -4px;
-            }
-
-            &.noUi-handle-lower {
-                right: -4px;
-            }
-
-            &:focus-visible {
-                outline: none;
-            }
-        }
-    }
-
-    .noUi-handle {
-        border: none;
-        box-shadow: none;
-
-        &::after {
-            display: none;
-        }
-
-        &::before {
-            display: none;
-        }
-    }
-
-    .noUi-touch-area {
-        background-color: var(--blue);
-        border: 1px solid var(--white);
-        border-radius: 50%;
-    }
-
-    .noUi-connect {
-        background-color: var(--blue);
-    }
-}
-
-
 .select-dropdown-checkbox {
     position: relative;
 
@@ -631,3 +482,229 @@
         }
     }
 }
+
+.filter-range {
+    padding: 8px 16px 0;
+    background: rgba(235, 241, 251, 0.4);
+    border: 1px solid var(--primary200);
+    border-radius: 12px;
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 100%;
+        display: block;
+        color: var(--primaryTwo);
+    }
+
+    .filter-range__nav {
+        display: grid;
+        grid-template-columns: 40% 1fr 50%;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 7.5px;
+
+        div {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: math.div(19, 15);
+
+            overflow: hidden;
+            white-space: nowrap;
+
+            input {
+                margin-left: 1px;
+                border-radius: 0;
+                border: none;
+                background-color: transparent;
+                color: inherit;
+            }
+
+            &:nth-child(2) {
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                text-align: right;
+            }
+        }
+    }
+
+    .noUi-target {
+        border: none;
+        box-shadow: none;
+        background-color: var(--primary200);
+        bottom: -3px;
+
+        @media (max-width:$desktop) {
+            bottom: 0px;
+        }
+    }
+
+    .noUi-horizontal {
+        height: 1px;
+
+        .noUi-handle {
+            width: 10px;
+            height: 10px;
+            top: -4px;
+
+            &.noUi-handle-upper {
+                right: -4px;
+            }
+
+            &.noUi-handle-lower {
+                right: -4px;
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    .noUi-handle {
+        border: none;
+        box-shadow: none;
+
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .noUi-touch-area {
+        background-color: var(--blue);
+        border: 1px solid var(--white);
+        border-radius: 50%;
+    }
+
+    .noUi-connect {
+        background-color: var(--blue);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// old filter-range
+// .filter-range {
+//     padding: 8px 16px 0;
+//     background-color: var(--primary100);
+//     border-radius: 12px;
+
+//     &__subtitle {
+//         font-weight: 400;
+//         font-size: 10px;
+//         line-height: 100%;
+//         color: var(--primaryTwo);
+//     }
+
+//     .filter-range__nav {
+//         display: grid;
+//         grid-template-columns: 42% 1fr 42%;
+//         align-items: center;
+//         justify-content: space-between;
+//         margin-bottom: 7.5px;
+
+//         div {
+//             color: var(--gray);
+//             font-size: 15px;
+//             line-height: math.div(19, 15);
+
+//             overflow: hidden;
+//             white-space: nowrap;
+
+//             input {
+//                 margin-left: 1px;
+//                 border-radius: 0;
+//                 border: none;
+//                 background-color: transparent;
+//                 color: inherit;
+//             }
+
+//             &:nth-child(2) {
+//                 text-align: center;
+//             }
+
+//             &:nth-child(3) {
+//                 text-align: right;
+//             }
+//         }
+//     }
+
+//     .noUi-target {
+//         border: none;
+//         box-shadow: none;
+//         border-radius: 2px;
+//         background-color: var(--primary200);
+//     }
+
+//     .noUi-horizontal {
+//         height: 2px;
+
+//         .noUi-handle {
+//             width: 10px;
+//             height: 10px;
+//             top: -4px;
+
+//             &.noUi-handle-upper {
+//                 right: -4px;
+//             }
+
+//             &.noUi-handle-lower {
+//                 right: -4px;
+//             }
+
+//             &:focus-visible {
+//                 outline: none;
+//             }
+//         }
+//     }
+
+//     .noUi-handle {
+//         border: none;
+//         box-shadow: none;
+
+//         &::after {
+//             display: none;
+//         }
+
+//         &::before {
+//             display: none;
+//         }
+//     }
+
+//     .noUi-touch-area {
+//         background-color: var(--blue);
+//         border: 1px solid var(--white);
+//         border-radius: 50%;
+//     }
+
+//     .noUi-connect {
+//         background-color: var(--blue);
+//     }
+// }

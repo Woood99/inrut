@@ -49,17 +49,16 @@
                 }
             }
         }
-        @media (max-width:$desktop){
-             margin-top: 24px; 
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+            margin-bottom: 24px;
         }
     }
 
     &__select {
-        grid-column: 1/4;
 
         @media (max-width:$desktop) {
-            grid-column: 1/-1;
-
             .choices {
                 padding: 22.5px 16px 11.5px;
             }
@@ -67,7 +66,6 @@
     }
 
     &__input {
-        grid-column: 4/-1;
 
         .input-primary {
             &__span {
@@ -90,7 +88,6 @@
         }
 
         @media (max-width:$desktop) {
-            grid-column: 1/-1;
             height: 54px;
         }
     }
@@ -145,5 +142,11 @@
 
     @media (max-width:$desktop) {
         padding-top: 0;
+    }
+}
+
+.selection-estate-filter {
+    &__row--1 {
+        grid-template-columns: percent(230, 1080) 1fr;
     }
 }

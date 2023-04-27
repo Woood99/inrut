@@ -10,6 +10,7 @@
         &:checked {
             +.checkbox__label {
                 background-color: var(--blue);
+                border: 1px solid transparent;
 
                 .checkbox__text {
                     color: var(--white);
@@ -46,12 +47,12 @@
         align-items: center;
         position: relative;
         height: 23px;
-        padding: 0 10px;
+        padding: 0 8px;
         background-color: var(--white);
         border-radius: 8px;
         transition: background-color $transitionSpeed $transitionFunction,
             border $transitionSpeed $transitionFunction;
-        border: 1px solid transparent;
+        border: 1px solid var(--primary200);
 
         @media (max-width:$desktop) {
             height: 35px;
@@ -195,10 +196,12 @@
                         width: 16px;
                         height: 16px;
                         fill: var(--yellow);
-                        &:not(:last-child){
-                           margin-right: 4px;
+
+                        &:not(:last-child) {
+                            margin-right: 4px;
                         }
-                        &._star-default{
+
+                        &._star-default {
                             fill: var(--primary100);
                         }
                     }
@@ -210,17 +213,20 @@
                     font-size: 16px;
                     line-height: math.div(20, 16);
                     font-weight: 400;
-                    @media (max-width:$mobile-max){
-                         margin-left: auto; 
+
+                    @media (max-width:$mobile-max) {
+                        margin-left: auto;
                     }
                 }
-                @media (max-width:$mobile-max){
-                     width: 100%; 
+
+                @media (max-width:$mobile-max) {
+                    width: 100%;
                 }
             }
         }
-        @media (max-width:$mobile-max){
-             width: 100%; 
+
+        @media (max-width:$mobile-max) {
+            width: 100%;
         }
     }
 }

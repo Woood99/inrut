@@ -1,5 +1,3 @@
-.site-container--base-agent-catalog {}
-
 .base-agent-catalog {
 
     &__body {
@@ -19,13 +17,6 @@
         margin-top: 32px;
 
         .filter {
-            &__item {
-                grid-column: 3 span;
-
-                @media (max-width:$desktop) {
-                    grid-column: 1/-1;
-                }
-            }
 
             &__btn {
                 @media (max-width:$desktop) {
@@ -89,5 +80,11 @@
 
     @media (max-width:$desktop) {
         padding-top: 0;
+    }
+}
+
+.base-agent-catalog-filter {
+    &__row--1 {
+        grid-template-columns: percent(258, 1080) percent(258, 1080) percent(258, 1080) percent(258, 1080);
     }
 }

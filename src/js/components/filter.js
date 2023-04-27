@@ -2,7 +2,9 @@ import noUiSlider from 'nouislider';
 import enableScroll from '../modules/enableScroll';
 import disableScroll from '../modules/disableScroll';
 import inputResize from '../modules/inputResize';
-
+import {
+    _slideToggle
+} from '../support-modules/slide';
 export const filterBudget = () => {
     const container = document.querySelectorAll('.filter-dropdown');
     if (!container.length >= 1) return;
@@ -91,32 +93,35 @@ export const filterDropdownChoice = () => {
 export const filterControl = () => {
     const container = document.querySelector('.filter--more');
     if (!container) return;
-    const controls = container.querySelector('.filter__controls');
-    const btn = container.querySelector('.filter__btn-control');
+    const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
+    const moreBtn = container.querySelector('.filter__btn-control');
     const btnTextMap = {
-        more: 'Ещё фильтры',
+        more: moreBtn.querySelector('span').textContent,
         none: 'Скрыть фильтры'
     }
-    const rows = container.querySelectorAll('.filter__row');
-    const oneRow = rows[0];
-    const twoRow = rows[1];
-    btn.addEventListener('click', () => {
-        if (controls.classList.contains('more')) {
-            twoRow.classList.add('visible');
-            controls.classList.remove('more');
-            controls.classList.add('none');
-            btn.querySelector('span').textContent = btnTextMap.none;
-            return;
-        }
-        if (controls.classList.contains('none')) {
-            twoRow.classList.remove('visible');
-            twoRow.style.maxHeight = null;
-            controls.classList.remove('none');
-            controls.classList.add('more');
-            btn.querySelector('span').textContent = btnTextMap.more;
-            return;
+    if (itemsHidden.length === 0) {
+        moreBtn.remove();
+        return;
+    };
+    moreBtn.addEventListener('click', () => {
+        if (container.classList.contains('_active')) {
+            itemsHidden.forEach(item => {
+                _slideToggle(item, 700);
+            });
+            moreBtn.querySelector('span').textContent = btnTextMap.more;
+            container.classList.remove('_active');
+        } else {
+            itemsHidden.forEach(item => {
+                _slideToggle(item, 700);
+            });
+            moreBtn.querySelector('span').textContent = btnTextMap.none;
+            container.classList.add('_active');
         }
     });
+
+
+
+
 }
 export const filterMobile = () => {
     const btn = document.querySelector('.filter__btn');

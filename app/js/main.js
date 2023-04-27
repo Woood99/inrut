@@ -1457,6 +1457,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
 /* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/inputResize */ "./src/js/modules/inputResize.js");
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+
 
 
 
@@ -1542,30 +1544,30 @@ const filterDropdownChoice = () => {
 const filterControl = () => {
   const container = document.querySelector('.filter--more');
   if (!container) return;
-  const controls = container.querySelector('.filter__controls');
-  const btn = container.querySelector('.filter__btn-control');
+  const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
+  const moreBtn = container.querySelector('.filter__btn-control');
   const btnTextMap = {
-    more: 'Ещё фильтры',
+    more: moreBtn.querySelector('span').textContent,
     none: 'Скрыть фильтры'
   };
-  const rows = container.querySelectorAll('.filter__row');
-  const oneRow = rows[0];
-  const twoRow = rows[1];
-  btn.addEventListener('click', () => {
-    if (controls.classList.contains('more')) {
-      twoRow.classList.add('visible');
-      controls.classList.remove('more');
-      controls.classList.add('none');
-      btn.querySelector('span').textContent = btnTextMap.none;
-      return;
-    }
-    if (controls.classList.contains('none')) {
-      twoRow.classList.remove('visible');
-      twoRow.style.maxHeight = null;
-      controls.classList.remove('none');
-      controls.classList.add('more');
-      btn.querySelector('span').textContent = btnTextMap.more;
-      return;
+  if (itemsHidden.length === 0) {
+    moreBtn.remove();
+    return;
+  }
+  ;
+  moreBtn.addEventListener('click', () => {
+    if (container.classList.contains('_active')) {
+      itemsHidden.forEach(item => {
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_4__._slideToggle)(item, 700);
+      });
+      moreBtn.querySelector('span').textContent = btnTextMap.more;
+      container.classList.remove('_active');
+    } else {
+      itemsHidden.forEach(item => {
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_4__._slideToggle)(item, 700);
+      });
+      moreBtn.querySelector('span').textContent = btnTextMap.none;
+      container.classList.add('_active');
     }
   });
 };
@@ -3394,11 +3396,12 @@ const _slideUp = function (target) {
   let showmore = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   if (!target.classList.contains('_slide')) {
     target.classList.add('_slide');
-    target.style.transitionProperty = 'height, margin, padding';
+    target.style.transitionProperty = 'height, margin, padding, opacity';
     target.style.transitionDuration = duration + 'ms';
     target.style.height = `${target.offsetHeight}px`;
     target.offsetHeight;
     target.style.overflow = 'hidden';
+    target.style.opacity = 0;
     target.style.height = showmore ? `${showmore}px` : `0px`;
     target.style.paddingTop = 0;
     target.style.paddingBottom = 0;
@@ -3411,6 +3414,7 @@ const _slideUp = function (target) {
       target.style.removeProperty('padding-bottom');
       target.style.removeProperty('margin-top');
       target.style.removeProperty('margin-bottom');
+      target.style.removeProperty('opacity');
       !showmore ? target.style.removeProperty('overflow') : null;
       target.style.removeProperty('transition-duration');
       target.style.removeProperty('transition-property');
@@ -3433,19 +3437,21 @@ const _slideDown = function (target) {
     showmore ? target.style.removeProperty('height') : null;
     let height = target.offsetHeight;
     target.style.overflow = 'hidden';
+    target.style.opacity = 0;
     target.style.height = showmore ? `${showmore}px` : `0px`;
     target.style.paddingTop = 0;
     target.style.paddingBottom = 0;
     target.style.marginTop = 0;
     target.style.marginBottom = 0;
     target.offsetHeight;
-    target.style.transitionProperty = "height, margin, padding";
+    target.style.transitionProperty = "height, margin, padding, opacity";
     target.style.transitionDuration = duration + 'ms';
     target.style.height = height + 'px';
     target.style.removeProperty('padding-top');
     target.style.removeProperty('padding-bottom');
     target.style.removeProperty('margin-top');
     target.style.removeProperty('margin-bottom');
+    target.style.removeProperty('opacity');
     window.setTimeout(() => {
       target.style.removeProperty('height');
       target.style.removeProperty('overflow');
