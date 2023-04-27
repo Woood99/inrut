@@ -845,7 +845,136 @@
     }
 }
 
+.cards-list {
+    padding: 24px 32px;
+    background: rgba(235, 241, 251, 0.4);
+    border-radius: 23px;
 
+    &__controls {
+        display: flex;
+        align-items: center;
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
+        }
+    }
+
+    &__items {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        grid-row-gap: 32px;
+        grid-column-gap: 24px;
+
+        @media (max-width:$desktop) {
+            grid-column-gap: 16px;
+            grid-row-gap: 16px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 0;
+            grid-row-gap: 8px;
+        }
+    }
+
+    &__banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: var(--white);
+        border-radius: 12px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+
+        font-size: 20px;
+        line-height: math.div(26, 20);
+        font-weight: 500;
+
+        @media (max-width:$smallTablet-max) {
+            height: 200px;
+        }
+    }
+
+    &__next {
+        margin-top: 32px;
+        width: 100%;
+
+        @media (max-width:$smallTablet-max) {
+            margin: 16px auto 0;
+            width: calc(100% - 32px);
+        }
+    }
+
+    &__pagination {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 16px;
+        }
+    }
+
+    @media (max-width:$smallTablet-max) {
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.control-cards {
+
+    &__btns {}
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: var(--white);
+        border-radius: 50%;
+        color: var(--blue);
+        border: 1px solid var(--blue);
+
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+        &--horizontal {}
+
+        &--vertical {
+            margin-left: 10px;
+        }
+
+        &--maps {
+            margin-left: auto;
+            padding: 10px 14px;
+            width: auto;
+            height: auto;
+            border-radius: 16px;
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+
+            svg {
+                width: 10px;
+                height: 11px;
+                margin-left: 10px;
+                fill: currentColor;
+            }
+        }
+
+        &:hover {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+    }
+}
 
 
 // old
