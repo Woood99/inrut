@@ -17,6 +17,7 @@ const complaintUser = new popup(null, '.popup-primary--complaint-user')
 const complaintObject = new popup(null, '.popup-primary--complaint-object')
 const thanks = new popup(null, '.popup-primary--thanks')
 const objectNot = new popup(null, '.popup-primary--object-not')
+const interestRate = new popup(null, '.popup-primary--interest-rate')
 
 // ========================================================================================
 

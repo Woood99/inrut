@@ -514,15 +514,16 @@
                         </div>
                         <div class="object-body__user bid-user bid-user--grade">
                             <div class="bid-user__container">
-                                <div class="bid-user__avatar avatar">
+                                <a href="#" class="bid-user__avatar avatar"
+                                    title="Перейти на страницу агента Алексея Г.">
                                     <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
                                         alt="Алексей Г.">
-                                </div>
+                                </a>
                                 <div class="bid-user__content">
                                     <time class="bid-user__time" datetime="2022-12-12">
                                         Агент был в сети 12.12.2022
                                     </time>
-                                    <a href="#" class="bid-user__name">
+                                    <a href="#" class="bid-user__name" title="Перейти на страницу агента Алексея Г.">
                                         Алексей Г.
                                     </a>
                                     <div class="bid-user__rating">
@@ -748,7 +749,8 @@
                                     </div>
                                     <div class="filter-range-one__inner" data-min="1800000" data-max="6000000"></div>
                                 </div>
-                                <div class="field-static">
+                                <button type="button" class="btn btn-reset field-static" data-mobile-speed
+                                    data-popup-path="interest-rate-modal">
                                     <span class="field-static__subtitle">
                                         Процентная ставка
                                     </span>
@@ -760,7 +762,7 @@
                                             <use xlink:href="img/sprite.svg#check-right"></use>
                                         </svg>
                                     </div>
-                                </div>
+                                </button>
                             </div>
                             <div class="object-calc-mort__info">
                                 Ежемесячный платеж <span>194 000 ₽/мес.</span>
@@ -871,7 +873,7 @@
                                             <span class="card-primary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-primary__info--btns-right">
-                                            <div class="card-primary__info--favorite">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -944,7 +946,7 @@
                                             <span class="card-primary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-primary__info--btns-right">
-                                            <div class="card-primary__info--favorite">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -1017,7 +1019,7 @@
                                             <span class="card-primary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-primary__info--btns-right">
-                                            <div class="card-primary__info--favorite">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -1186,6 +1188,113 @@
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--interest-rate">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
+        data-popup-target="interest-rate-modal">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content interest-rate container">
+            <h2 class="interest-rate__title title-2">
+                Выберите комфортную ставку или банк
+            </h2>
+            <div class="interest-rate__wrapper">
+                <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </div>
+                <div class="swiper interest-rate__slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <button type="button" class="interest-rate__card interest-rate-card">
+                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
+                                <h4 class="interest-rate-card__title">
+                                    Ипотека для IT-специалистов
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--old">10,8%</span>
+                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="interest-rate__card interest-rate-card">
+                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
+                                <h4 class="interest-rate-card__title">
+                                    Ипотека для IT-специалистов
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="interest-rate__card interest-rate-card">
+                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
+                                <h4 class="interest-rate-card__title">
+                                    Семейная ипотека
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="interest-rate__card interest-rate-card">
+                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
+                                <h4 class="interest-rate-card__title">
+                                    Семейная ипотека
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="interest-rate__card interest-rate-card">
+                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
+                                <h4 class="interest-rate-card__title">
+                                    Семейная ипотека
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1730,9 +1839,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 </body>
 

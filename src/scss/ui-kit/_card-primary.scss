@@ -203,6 +203,14 @@
                 width: 20px;
                 height: 18px;
                 fill: var(--white);
+                stroke: transparent;
+                transition: stroke $transitionSpeed $transitionFunction;
+            }
+
+            &:hover {
+                svg {
+                    stroke: var(--blue);
+                }
             }
         }
 

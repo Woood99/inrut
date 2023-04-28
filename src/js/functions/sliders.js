@@ -2,6 +2,9 @@
 
 
 
+import {
+    auto
+} from '@popperjs/core';
 import Swiper, {
     Navigation,
     Pagination,
@@ -74,6 +77,23 @@ function initSliders() {
                     768: {
                         slidesPerView: 4,
                     },
+                },
+            });
+        })
+    }
+
+    if (document.querySelector('.interest-rate__slider')) {
+        const sliders = document.querySelectorAll('.interest-rate__slider');
+        sliders.forEach(el => {
+            const slider = new Swiper(el, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                    prevEl: el.closest('.interest-rate').querySelector('.nav-arrow-secondary--prev'),
+                    nextEl: el.closest('.interest-rate').querySelector('.nav-arrow-secondary--next'),
                 },
             });
         })

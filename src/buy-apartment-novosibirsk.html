@@ -38,77 +38,78 @@
                         <div class="filter__inner">
                             <div class="filter__row buy-apartment-filter__row--1">
                                 <div
-                                    class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
-                                    <span class="quantity-selection__subtitle">Укажите количество комнат</span>
-                                    <div class="quantity-selection__inner">
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_studios" name="filter-quantity-studios"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_studios" class="checkbox__label">
-                                                <span class="checkbox__text checkbox__text-studios">Студия</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_1" name="filter-quantity-1"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_1" class="checkbox__label">
-                                                <span class="checkbox__text">1</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_2" name="filter-quantity-2"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2" class="checkbox__label">
-                                                <span class="checkbox__text">2</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_3" name="filter-quantity-3"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3" class="checkbox__label">
-                                                <span class="checkbox__text">3</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="filter-quantity_4" name="filter-quantity-4"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_4" class="checkbox__label">
-                                                <span class="checkbox__text">4+</span>
-                                            </label>
-                                        </div>
+                                class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                                <div class="quantity-selection__inner">
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_studios" class="checkbox__label">
+                                            <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_1" name="filter-quantity-1"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_1" class="checkbox__label">
+                                            <span class="checkbox__text">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_2" name="filter-quantity-2"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_2" class="checkbox__label">
+                                            <span class="checkbox__text">2</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_3" name="filter-quantity-3"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_3" class="checkbox__label">
+                                            <span class="checkbox__text">3</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input id="filter-quantity_4" name="filter-quantity-4"
+                                            class="checkbox__input" type="checkbox" value="true">
+                                        <label for="filter-quantity_4" class="checkbox__label">
+                                            <span class="checkbox__text">4+</span>
+                                        </label>
                                     </div>
                                 </div>
+                            </div>
                                 <div class="filter__item filter-range">
-                                    <span class="filter-range__subtitle">Цена</span>
                                     <div class="filter-range__nav">
-                                        <div data-default-start="35000000">
-                                            от
+                                        <div data-range-start>
+                                            <span>Цена</span> от
                                             <input type="text" name="Имя" class="input-reset">
                                         </div>
                                         <div>-</div>
-                                        <div data-default-end="150000000">
+                                        <div data-range-end>
                                             до
                                             <input type="text" name="Имя" class="input-reset">
+                                        </div>
+                                        <div>
+                                            ₽
                                         </div>
                                     </div>
                                     <div class="filter-range__inner" data-min="500000" data-max="200000000"></div>
                                 </div>
                                 <div class="filter__item filter-range">
-                                    <span class="filter-range__subtitle">Площадь</span>
                                     <div class="filter-range__nav">
-                                        <div data-default-start="59">
-                                            От
-                                            <input maxlength="3" type="text" name="Имя" class="input-reset">
-                                            м²
+                                        <div data-range-start>
+                                            <span>Площадь</span> от
+                                            <input type="text" name="Имя" class="input-reset">
                                         </div>
                                         <div>-</div>
-                                        <div data-default-end="120">
-                                            До
-                                            <input maxlength="3" type="text" name="Имя" class="input-reset">
+                                        <div data-range-end>
+                                            до
+                                            <input type="text" name="Имя" class="input-reset">
+                                        </div>
+                                        <div>
                                             м²
                                         </div>
                                     </div>
-                                    <div class="filter-range__inner" data-min="30" data-max="150"></div>
+                                    <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
                                 <button type="button" class="btn btn-reset filter__item select-map-btn">
                                     <span>Выберите район поиска</span>
@@ -183,7 +184,7 @@
                                             <span class="card-secondary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -291,7 +292,7 @@
                                                 Ипотека 0,1%
                                             </span>
                                             <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favotite-stroke"></use>
                                                 </svg>
@@ -316,7 +317,7 @@
                                             <span class="card-secondary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -414,7 +415,7 @@
                                                 Ипотека 0,1%
                                             </span>
                                             <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favotite-stroke"></use>
                                                 </svg>
@@ -439,7 +440,7 @@
                                             <span class="card-secondary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -543,7 +544,7 @@
                                                 Ипотека 0,1%
                                             </span>
                                             <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favotite-stroke"></use>
                                                 </svg>
@@ -568,7 +569,7 @@
                                             <span class="card-secondary__info--quantity">+2</span>
                                         </div>
                                         <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favorite"></use>
                                                 </svg>
@@ -672,7 +673,7 @@
                                                 Ипотека 0,1%
                                             </span>
                                             <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite">
+                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#favotite-stroke"></use>
                                                 </svg>

@@ -1071,6 +1071,7 @@ const complaintUser = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default
 const complaintObject = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--complaint-object');
 const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--thanks');
 const objectNot = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--object-not');
+const interestRate = new _functions_popup__WEBPACK_IMPORTED_MODULE_1__["default"](null, '.popup-primary--interest-rate');
 
 // ========================================================================================
 
@@ -2587,6 +2588,7 @@ __webpack_require__.r(__webpack_exports__);
 // =========================================================================================
 
 
+
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade]);
 
 // =========================================================================================
@@ -2646,6 +2648,22 @@ function initSliders() {
           768: {
             slidesPerView: 4
           }
+        }
+      });
+    });
+  }
+  if (document.querySelector('.interest-rate__slider')) {
+    const sliders = document.querySelectorAll('.interest-rate__slider');
+    sliders.forEach(el => {
+      const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        speed: 800,
+        navigation: {
+          prevEl: el.closest('.interest-rate').querySelector('.nav-arrow-secondary--prev'),
+          nextEl: el.closest('.interest-rate').querySelector('.nav-arrow-secondary--next')
         }
       });
     });
