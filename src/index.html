@@ -20,45 +20,37 @@
             <h2>Готовые страницы:</h2>
             <ol>
                 <li>
-                    <a href="./request-catalog.html">Запрос на покупку каталог </a>
+                    <ol>
+                        <li>
+                            <a href="./buy-apartment-moscow.html">Купить квартиру в Москве</a>
+                        </li>
+                        <li>
+                            <a href="./object-two.html">Купить квартиру в Москве объект</a>
+                        </li>
+                    </ol>
                 </li>
                 <li>
-                    <a href="./purchase-request.html">Запрос на покупку</a>
+                    <ol>
+                        <li>
+                            <a href="./request-catalog.html">Запрос на покупку каталог </a>
+                        </li>
+                        <li>
+                            <a href="./purchase-request.html">Запрос на покупку внутреняя</a>
+                        </li>
+                    </ol>
                 </li>
                 <li>
-                    <a href="./object.html">Объект</a>
-                </li>
-                <li>
-                    <a href="./selection-estate.html">Подбор недвижимости</a>
-                </li>
-                <li>
-                    <a href="./selection-estate-inner.html">Подбор недвижимости внутренняя</a>
-                </li>
-                <li>
-                    <a href="./base-agent-catalog.html">База агентов каталог</a>
-                </li>
-                <li>
-                    <a href="./agent.html">Агент</a>
-                </li>
-                <li>
-                    <a href="./submit-app.html">Разместить заявку на покупку</a>
-                </li>
-                <li>
-                    <a href="./buy-apartment-novosibirsk.html">Купить квартиру в Новостройке</a>
-                </li>
-                <li>
-                    <a href="./buy-apartment-moscow.html">Купить квартиру в Москве</a>
-                </li>
-                <li>
-                    <a href="./object-two.html">Объект 2</a>
-                </li>
-            </ol>
-        </div>
-        <div class="block">
-            <h2>В разработке:</h2>
-            <ol>
-                <li>
-                    <a href="./place-sale.html">Разместить объявление о продаже </a>
+                    <ol>
+                        <li>
+                            <a href="./selection-estate.html">Подбор недвижимости</a>
+                        </li>
+                        <li>
+                            <a href="./selection-estate-inner.html">Подбор недвижимости внутренняя</a>
+                        </li>
+                        <li>
+                            <a href="./object.html">Подбор недвижимости внутренняя объект</a>
+                        </li>
+                    </ol>
                 </li>
             </ol>
         </div>
@@ -94,11 +86,32 @@
         }
 
         ol {
+            /* need hack :( */
             margin-top: 15px !important;
+            counter-reset: item
+        }
+
+        li {
+            display: block;
+        }
+
+        li ol {
+            /* need hack :( */
+            margin-top: 5px !important;
+            padding-left: 15px;
+        }
+
+        li ol li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        li:before {
+            content: counters(item, ".") ".";
+            counter-increment: item;
         }
 
         ol li:not(:last-child) {
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         a {
@@ -110,6 +123,10 @@
 
         a:hover {
             color: red;
+        }
+
+        ol {
+            list-style-type: decimal-leading-zero;
         }
 
     </style>
