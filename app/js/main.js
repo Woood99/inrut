@@ -1487,13 +1487,13 @@ const uiSlider = () => {
     const container = el.closest('.filter-range');
     const minValue = el.dataset.min;
     const maxValue = el.dataset.max;
-    const defaultStart = container.querySelector('[data-default-start]');
-    const defaultEnd = container.querySelector('[data-default-end]');
+    const defaultStart = container.querySelector('[data-range-start]');
+    const defaultEnd = container.querySelector('[data-range-end]');
     const inputMin = defaultStart.querySelector('input');
     const inputMax = defaultEnd.querySelector('input');
     const inputs = [inputMin, inputMax];
     nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(el, {
-      start: [Number(defaultStart.dataset.defaultStart), Number(defaultEnd.dataset.defaultEnd)],
+      start: [Number(minValue), Number(maxValue)],
       connect: true,
       range: {
         'min': Number(minValue),
@@ -1503,25 +1503,33 @@ const uiSlider = () => {
     });
     el.noUiSlider.on('update', function (values, handle) {
       inputs[handle].value = numberReplace(values[handle]);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputs[handle]);
+      if (inputMax.value) container.classList.add('_active');
+      if (inputMin.value) container.classList.add('_active');
+      if (inputMin.value !== '') {
+        container.classList.add('_active');
+      } else {
+        container.classList.remove('_active');
+      }
     });
+    inputMin.value = '';
+    inputMax.value = '';
+    container.classList.remove('_active');
     inputMin.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
       el.noUiSlider.set([numberString, null]);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMin);
+      if (numberString !== ' ') container.classList.add('_active');
     });
     inputMax.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
       el.noUiSlider.set([null, numberString]);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+      if (numberString !== ' ') container.classList.add('_active');
     });
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMin);
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     inputs.forEach(input => {
       input.addEventListener('input', () => {
         const val = input.value.replace(/\D/g, '');
         input.value = numberReplace(val);
-        (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
+        if (input.value) container.classList.add('_active');
+        if (inputMin.value === ' ') container.classList.remove('_active');
       });
     });
   });
@@ -2650,7 +2658,7 @@ function objectSlider() {
   const body = container.querySelector('.object-slider-body__wrapper');
   let navSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](nav, {
     slidesPerView: 3,
-    spaceBetween: 16,
+    spaceBetween: 5,
     observer: true,
     observeParents: true,
     freeMode: true,

@@ -27,15 +27,15 @@ export const uiSlider = () => {
         const container = el.closest('.filter-range');
         const minValue = el.dataset.min;
         const maxValue = el.dataset.max;
-        const defaultStart = container.querySelector('[data-default-start]');
-        const defaultEnd = container.querySelector('[data-default-end]');
+        const defaultStart = container.querySelector('[data-range-start]');
+        const defaultEnd = container.querySelector('[data-range-end]');
 
         const inputMin = defaultStart.querySelector('input');
         const inputMax = defaultEnd.querySelector('input');
         const inputs = [inputMin, inputMax];
 
         noUiSlider.create(el, {
-            start: [Number(defaultStart.dataset.defaultStart), Number(defaultEnd.dataset.defaultEnd)],
+            start: [Number(minValue), Number(maxValue)],
             connect: true,
             range: {
                 'min': Number(minValue),
@@ -44,29 +44,34 @@ export const uiSlider = () => {
             step: 1,
         });
         el.noUiSlider.on('update', function (values, handle) {
-            inputs[handle].value = numberReplace(values[handle])
-            inputResize(inputs[handle]);
+            inputs[handle].value = numberReplace(values[handle]);
+            if (inputMax.value) container.classList.add('_active');
+            if (inputMin.value) container.classList.add('_active');
+            if (inputMin.value !== '') {
+                container.classList.add('_active');
+            } else {
+                container.classList.remove('_active');
+            }
         });
-
+        inputMin.value = '';
+        inputMax.value = '';
+        container.classList.remove('_active');
         inputMin.addEventListener('change', function () {
             const numberString = this.value.replace(/\s/g, "")
             el.noUiSlider.set([numberString, null]);
-
-            inputResize(inputMin);
+            if (numberString !== ' ') container.classList.add('_active');
         })
         inputMax.addEventListener('change', function () {
             const numberString = this.value.replace(/\s/g, "")
             el.noUiSlider.set([null, numberString]);
-
-            inputResize(inputMax);
+            if (numberString !== ' ') container.classList.add('_active');
         })
-        inputResize(inputMin);
-        inputResize(inputMax);
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 const val = input.value.replace(/\D/g, '');
                 input.value = numberReplace(val);
-                inputResize(input);
+                if (input.value) container.classList.add('_active');
+                if (inputMin.value === ' ') container.classList.remove('_active');
             })
         })
     });

@@ -43,36 +43,26 @@
 
     &__label {
         cursor: pointer;
-        display: inline-flex;
+      display: flex;
+      justify-content: center;
         align-items: center;
         position: relative;
-        height: 23px;
+       height: 41px;
         padding: 0 8px;
-        background-color: var(--white);
-        border-radius: 8px;
+        background-color: rgba(235, 241, 251, 0.4);
+        border-radius: 12px;
         transition: background-color $transitionSpeed $transitionFunction,
             border $transitionSpeed $transitionFunction;
         border: 1px solid var(--primary200);
-
-        @media (max-width:$desktop) {
-            height: 35px;
-            padding: 0 14px;
-            background-color: var(--primary100);
-            border-radius: 7px;
-        }
+        width: 100%;
     }
 
     &__text {
         color: var(--gray);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: 13px;
+        line-height: math.div(16, 13);
         font-weight: 400;
         transition: color $transitionSpeed $transitionFunction;
-
-        @media (max-width:$desktop) {
-            font-size: 13px;
-            line-height: 100%;
-        }
     }
 }
 

@@ -485,41 +485,46 @@
 }
 
 .filter-range {
-    padding: 8px 16px 0;
+    padding: 0 16px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background: rgba(235, 241, 251, 0.4);
     border: 1px solid var(--primary200);
     border-radius: 12px;
-    height: 100%;
-
-    &__subtitle {
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 100%;
-        display: block;
-        color: var(--primaryTwo);
-    }
+    height: 41px;
 
     .filter-range__nav {
         display: grid;
-        grid-template-columns: 40% 1fr 50%;
+        grid-template-columns: 1fr 15px 1fr max-content;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 7.5px;
 
         div {
+            display: flex;
+            align-items: center;
             color: var(--gray);
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: 14px;
+            line-height: math.div(17, 14);
 
             overflow: hidden;
             white-space: nowrap;
 
+            &[data-range-start] {
+                >span {
+                    margin-right: 3px;
+                }
+            }
+
             input {
-                margin-left: 1px;
+                margin-left: 5px;
                 border-radius: 0;
                 border: none;
                 background-color: transparent;
                 color: inherit;
+                flex: 0 0 75%;
+                width: 100%;
             }
 
             &:nth-child(2) {
@@ -536,11 +541,7 @@
         border: none;
         box-shadow: none;
         background-color: var(--primary200);
-        bottom: -3px;
-
-        @media (max-width:$desktop) {
-            bottom: 0px;
-        }
+        bottom: -10px;
     }
 
     .noUi-horizontal {
@@ -586,6 +587,18 @@
 
     .noUi-connect {
         background-color: var(--blue);
+    }
+
+    &._active {
+        .filter-range__nav {
+            div {
+                &[data-range-start] {
+                    >span {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 // old version
 // .quantity-selection {
-//     background-color: var(--primary100);
+//     background-color: rgba(235, 241, 251, 0.4);
+//     border: 1px solid var(--primary200);
 //     border-radius: 12px;
 //     padding: 6.5px 16px;
 
@@ -8,9 +9,10 @@
 //         display: block;
 //         color: var(--primaryTwo);
 //         font-size: 10px;
-//       line-height: 100%;
+//         line-height: 100%;
 //         font-weight: 400;
-//         @media (max-width:$desktop){
+
+//         @media (max-width:$desktop) {
 //             margin-bottom: 10px;
 //         }
 //     }
@@ -22,58 +24,54 @@
 //         justify-content: space-between;
 
 //         .checkbox {
+
 //             &:not(:last-child) {
 //                 margin-right: 7px;
-//                 @media (max-width:$desktop){
-//                      margin-right: 13px; 
+
+//                 @media (max-width:$desktop) {
+//                     margin-right: 13px;
 //                 }
 //             }
 //         }
-//         @media (max-width:$desktop){
-//              margin-top: 0;
-//              justify-content: start;
+
+//         @media (max-width:$desktop) {
+//             margin-top: 0;
+//             justify-content: start;
 //         }
 //     }
-//     @media (max-width:$desktop){
-//          border-radius: 0;
-//          background-color: transparent;
-//          padding: 0; 
+
+//     @media (max-width:$desktop) {
+//         border-radius: 0;
+//         background-color: transparent;
+//         border: none;
+//         padding: 0;
 //     }
 // }
 
 
+
+
 .quantity-selection {
-    background-color: rgba(235, 241, 251, 0.4);
-    border: 1px solid var(--primary200);
-    border-radius: 12px;
-    padding: 6.5px 16px;
-
-    &__subtitle {
-        display: block;
-        color: var(--primaryTwo);
-        font-size: 10px;
-        line-height: 100%;
-        font-weight: 400;
-
-        @media (max-width:$desktop) {
-            margin-bottom: 10px;
-        }
-    }
 
     &__inner {
-        margin-top: 2px;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .checkbox {
+            width: 40px;
+
+            &:first-child {
+                width: 93px;
+
+                @media (min-width:$desktop-min) {
+                    flex-grow: 1;
+                    width: auto;
+                }
+            }
 
             &:not(:last-child) {
-                margin-right: 7px;
-
-                @media (max-width:$desktop) {
-                    margin-right: 13px;
-                }
+                margin-right: 5px;
             }
         }
 
