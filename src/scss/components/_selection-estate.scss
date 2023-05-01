@@ -2,7 +2,7 @@
     &__body {
         @media (max-width:$desktop) {
             padding: 74px 0 0 0;
-            background-color: var(--primary100);
+            background-color: var(--stand-bg)
         }
     }
 
@@ -67,28 +67,9 @@
 
     &__input {
 
-        .input-primary {
-            &__span {
-                color: var(--primaryTwo);
-            }
-
-            &__input {
-                @media (max-width:$desktop) {
-
-                    &.active,
-                    &:focus {
-                        padding: 19px 16px 12px;
-
-                        &+.input-primary__span {
-                            top: 10px;
-                        }
-                    }
-                }
-            }
-        }
-
         @media (max-width:$desktop) {
-            height: 54px;
+            height: 45px;
+            width: 100%;
         }
     }
 

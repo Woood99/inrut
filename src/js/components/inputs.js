@@ -1,32 +1,15 @@
 import inputResize from "../modules/inputResize";
 import inputCursorEnd from '../modules/inputCursorEnd';
-export const inputPrimary = () => {
-    const inputs = document.querySelectorAll('.input-primary');
-    const textareas = document.querySelectorAll('.textarea-primary');
-    inputs.forEach(input => {
-        input.querySelector('.input-primary__input').addEventListener('input', (e) => toggleInputActive(e.target));
-    });
-    textareas.forEach(textarea => {
-        textarea.querySelector('.textarea-primary__input').addEventListener('input', (e) => toggleInputActive(e.target));
-    });
-
-    function toggleInputActive(target) {
-        target.value.length >= 1 ? target.classList.add('active') : target.classList.remove('active');
-    }
-};
-
+import numberReplace from "../modules/numberReplace";
 
 export const inputText = () => {
     const inputs = document.querySelectorAll('.input-text');
     if (inputs.length >= 1) {
         inputs.forEach(el => {
-            if (!el.classList.contains('input-text--auto-width')) return;
             const input = el.querySelector('.input-text__input');
-            inputResize(input);
             input.addEventListener('input', () => {
                 input.value = input.value.replace(/\D/g, '');
-                console.log(input.value);
-                inputResize(input);
+                input.value = numberReplace(input.value);
             });
             inputCursorEnd(input, 'focus');
         })

@@ -26,7 +26,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -262,8 +262,9 @@
                 <h1 class="buy-apartment__title title-1">
                     Купить квартиру в Новостройке
                 </h1>
-                <form class="buy-apartment__filter filter buy-apartment-filter filter--more">
-                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+                <form
+                    class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--building filter--more">
+                    <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
                         </svg>
@@ -277,55 +278,55 @@
                         <div class="filter__inner">
                             <div class="filter__row buy-apartment-filter__row--1">
                                 <div
-                                class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
-                                <div class="quantity-selection__inner">
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_studios" name="filter-quantity-studios"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_studios" class="checkbox__label">
-                                            <span class="checkbox__text checkbox__text-studios">Студия</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_1" name="filter-quantity-1"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_1" class="checkbox__label">
-                                            <span class="checkbox__text">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_2" name="filter-quantity-2"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_2" class="checkbox__label">
-                                            <span class="checkbox__text">2</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_3" name="filter-quantity-3"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_3" class="checkbox__label">
-                                            <span class="checkbox__text">3</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <input id="filter-quantity_4" name="filter-quantity-4"
-                                            class="checkbox__input" type="checkbox" value="true">
-                                        <label for="filter-quantity_4" class="checkbox__label">
-                                            <span class="checkbox__text">4+</span>
-                                        </label>
+                                    class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                                    <div class="quantity-selection__inner">
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_studios" name="filter-quantity-studios"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_studios" class="checkbox__label">
+                                                <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_1" name="filter-quantity-1"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_1" class="checkbox__label">
+                                                <span class="checkbox__text">1</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_2" name="filter-quantity-2"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_2" class="checkbox__label">
+                                                <span class="checkbox__text">2</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_3" name="filter-quantity-3"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_3" class="checkbox__label">
+                                                <span class="checkbox__text">3</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input id="filter-quantity_4" name="filter-quantity-4"
+                                                class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_4" class="checkbox__label">
+                                                <span class="checkbox__text">4+</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                                 <div class="filter__item filter-range">
                                     <div class="filter-range__nav">
                                         <div data-range-start>
-                                            <span>Цена</span> от
-                                            <input type="text" name="Имя" class="input-reset">
+                                            <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                placeholder="Цена от">
                                         </div>
-                                        <div>-</div>
+                                        <div>–</div>
                                         <div data-range-end>
-                                            до
-                                            <input type="text" name="Имя" class="input-reset">
+                                            <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                placeholder="До">
                                         </div>
                                         <div>
                                             ₽
@@ -336,13 +337,13 @@
                                 <div class="filter__item filter-range">
                                     <div class="filter-range__nav">
                                         <div data-range-start>
-                                            <span>Площадь</span> от
-                                            <input type="text" name="Имя" class="input-reset">
+                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                placeholder="Площадь от">
                                         </div>
-                                        <div>-</div>
+                                        <div>–</div>
                                         <div data-range-end>
-                                            до
-                                            <input type="text" name="Имя" class="input-reset">
+                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                placeholder="До">
                                         </div>
                                         <div>
                                             м²
@@ -403,7 +404,7 @@
                         <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--maps">
                             <span>На карте</span>
                             <svg>
-                                <use xlink:href="img/sprite.svg#location"></use>
+                                <use xlink:href="img/sprite.svg#location-fill"></use>
                             </svg>
                         </button>
                     </div>
@@ -1484,8 +1485,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1595,8 +1595,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1666,8 +1665,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1757,8 +1755,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

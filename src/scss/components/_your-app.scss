@@ -3,7 +3,7 @@
     &__container {
         @media (max-width:$desktop) {
             padding: 74px 0 0 0;
-            background-color: var(--primary100);
+            background-color: var(--stand-bg);
         }
     }
 
@@ -19,14 +19,14 @@
 
         @media (max-width:$desktop) {
             margin-top: 0;
-            background-color: var(--primary100);
+            background-color: var(--stand-bg);
             padding: 0;
         }
     }
 
     &__user {
         margin-top: 16px;
-        background-color: rgba(235, 241, 251, 0.4);
+        background-color: var(--stand-bg);
         border-radius: 16px;
         padding: 32px 32px 32px 56px;
         display: flex;
@@ -54,6 +54,8 @@
             margin-top: 0;
             padding: 0 16px 26px;
             width: 100%;
+            border-radius: 0;
+            background-color: transparent;
         }
 
 
@@ -91,7 +93,7 @@
 
     @media (max-width:$desktop) {
         padding-top: 0;
-        background-color: var(--primary100);
+        background-color: var(--stand-bg);
 
         .tabs-primary {
             &__container {
@@ -149,7 +151,7 @@
 
     &__body {
         padding: 32px;
-        background-color: rgba(235, 241, 251, 0.4);
+        background-color: var(--stand-bg);
         border-radius: 16px;
 
         @media (max-width:$desktop) {
@@ -161,8 +163,8 @@
     &__info {
         background-color: var(--white);
         padding: 32px 40px 32px 24px;
-        
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+        box-shadow: var(--shadow-primary);
         border-radius: 12px;
 
         @media (max-width:$desktop) {

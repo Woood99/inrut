@@ -1,7 +1,7 @@
 .object-info {
     width: 100%;
     background-color: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-primary);
     border-radius: 12px;
     color: var(--dark);
     display: grid;
@@ -126,65 +126,18 @@
 .object-info-secondary {
     width: 100%;
     background-color: var(--white);
-    border: 1px solid #EBF1FB;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--primary100);
+    box-shadow: var(--shadow-secondary);
     border-radius: 12px;
     color: var(--dark);
     display: grid;
     align-items: center;
     grid-column-gap: 20px;
-    grid-template-columns: percent(268, 914) max-content 1fr;
-    padding: 24px 24px 22px;
+    grid-template-columns: percent(375, 968) max-content 1fr;
+    padding: 24px;
 
     -webkit-tap-highlight-color: transparent;
-    transition: background-color $transitionSpeed $transitionFunction;
-
-    &__type {
-        span {
-            display: block;
-            color: var(--dark);
-
-            &:not(:last-child) {
-                margin-bottom: 8px;
-            }
-
-            &:nth-child(1) {
-                font-size: 18px;
-                line-height: math.div(23, 18);
-                font-weight: 500;
-
-                @media (max-width:$desktop) {
-                    &::after {
-                        content: ',';
-                    }
-                }
-            }
-
-            &:nth-child(2) {
-                font-size: 15px;
-                line-height: math.div(19, 15);
-
-                @media (max-width:$desktop) {
-                    margin-left: 2px;
-                }
-            }
-        }
-
-        @media (max-width:$desktop) {
-            display: flex;
-            align-items: center;
-
-            span {
-                &:nth-child(1) {
-                    font-size: 15px;
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
+    transition: box-shadow $transitionSpeed $transitionFunction;
 
     &__time-geo {
         span {
@@ -195,42 +148,119 @@
             line-height: math.div(19, 15);
 
             svg {
-                width: 18px;
-                height: 18px;
-                fill: var(--primaryTwo);
+                width: 20px;
+                height: 20px;
+                flex: 0 0 20px;
+                fill: none;
+                stroke: var(--primaryTwo);
                 margin-right: 10px;
 
                 @media (max-width:$desktop) {
                     width: 16px;
                     height: 16px;
+                    flex: 0 0 16px;
                     margin-right: 8px;
                 }
             }
 
             &:not(:last-child) {
                 margin-bottom: 8px;
+
+                @media (max-width:$desktop) {
+                    margin-bottom: 12px;
+                }
             }
 
             &:nth-child(1) {
                 font-weight: 500;
 
                 svg {
-                    stroke: var(--primaryTwo);
-                    fill: none;
+                    stroke-width: 2px;
+                }
+
+                @media (max-width:$desktop) {
+                    font-weight: 400;
                 }
             }
 
             &:nth-child(2) {
                 font-weight: 400;
+
+                svg {
+                    stroke-width: 1.5px;
+                }
+
+                @media (max-width:$desktop) {
+                    font-size: 12px;
+                }
             }
         }
 
         @media (max-width:$desktop) {
-            margin-top: 16px;
+            margin-top: 12px;
+            order: 2;
+        }
+    }
 
-            span {
-                font-size: 12px;
+    &__type-price {
+        div {
+            display: block;
+            color: var(--dark);
+            font-size: 18px;
+            line-height: math.div(23, 18);
+            font-weight: 500;
+
+            &:not(:last-child) {
+                margin-bottom: 8px;
             }
+
+            &:nth-child(1) {
+                span {
+                    &:nth-child(2) {
+                        font-size: 15px;
+                        line-height: math.div(19, 15);
+                        font-weight: 400;
+                        transform: translateY(-3px) translateX(4px);
+                        display: inline-block;
+
+                        @media (max-width:$desktop) {
+                            transform: translateY(0) translateX(4px);
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                @media (max-width:$desktop) {
+                    display: none;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            display: flex;
+            align-items: center;
+            order: 1;
+
+            div {
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__mobile-price {
+        margin-top: 12px;
+        order: 3;
+
+        color: var(--dark);
+        font-size: 15px;
+        line-height: math.div(29, 15);
+        font-weight: 500;
+
+        @media (min-width:$desktop-min) {
+            display: none;
         }
     }
 
@@ -238,23 +268,34 @@
         margin-left: auto;
 
         @media (max-width:$desktop) {
+            order: 4;
             margin-left: 0;
-            margin-top: 16px;
-            padding-top: 16px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 1px solid var(--primary100);
+
+            .user-info__name {
+                &[data-user-name-full] {
+                    font-size: 0;
+
+                    &::before {
+                        content: attr(data-user-name-full);
+                        font-size: 15px;
+                    }
+                }
+            }
         }
     }
 
     @media (min-width:$desktop) {
         &:hover {
-            background-color: rgba(235, 241, 251, 0.5);
+            box-shadow: var(--shadow-primary);
         }
     }
 
     @media (max-width:$desktop) {
         grid-template-columns: 1fr;
         padding: 16px;
-        box-shadow: none;
     }
 }
 
@@ -262,7 +303,7 @@
 .object-info-third {
     width: 100%;
     background-color: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-primary);
     border-radius: 12px;
 
 
@@ -437,7 +478,7 @@
 .object-info-grade {
     width: 100%;
     background: var(--white);
-    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--shadow-primary);
     border-radius: 12px;
     padding: 24px;
     grid-column-gap: 40px;

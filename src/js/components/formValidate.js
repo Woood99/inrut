@@ -1,4 +1,4 @@
-export const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
+export const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
     const form = document.querySelector(formSelector);
     if (!form) return false;
     const textarea = form.querySelector(textareaSelector);
@@ -17,7 +17,6 @@ export const validateRadioText = (formSelector, textareaSelector, btnSelector, r
     function clearForm() {
         textarea.value = '';
         btn.setAttribute('disabled', '');
-        textarea.classList.remove('active');
         for (let radio of radios) {
             radio.checked = false;
         }

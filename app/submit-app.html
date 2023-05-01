@@ -26,7 +26,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -280,29 +280,20 @@
                         </h2>
                         <div class="submit-app-options__choice">
                             <div class="submit-app-options__row submit-app-options__row--1">
-                                <div class="submit-app-options__item select-primary">
-                                    <span class="select-primary__name">
-                                        Город
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="city">
-                                            <option value="apartments">Санкт-Петербург</option>
-                                            <option value="apartments2">Волгоград</option>
-                                            <option value="apartments3">Москва</option>
-                                        </select>
-                                    </div>
+                                <div class="submit-app-options__item select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option value="apartments">Санкт-Петербург</option>
+                                        <option value="apartments2">Волгоград</option>
+                                        <option value="apartments3">Москва</option>
+                                    </select>
                                 </div>
-                                <div class="submit-app-options__item select-primary">
-                                    <span class="select-primary__name">
-                                        Тип объекта
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Квартиры</option>
-                                            <option value="apartments2">Квартиры2</option>
-                                            <option value="apartments3">Квартиры3</option>
-                                        </select>
-                                    </div>
+                                <div class="submit-app-options__item select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="apartments">Тип объекта</option>
+                                        <option value="apartments">Квартиры</option>
+                                        <option value="apartments2">Квартиры2</option>
+                                        <option value="apartments3">Квартиры3</option>
+                                    </select>
                                 </div>
                                 <div class="submit-app-options__item  quantity-selection">
                                     <div class="quantity-selection__inner">
@@ -345,11 +336,8 @@
                                 </div>
                                 <div class="submit-app-options__item select-dropdown-checkbox">
                                     <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
-                                        <span class="select-dropdown-checkbox__subtitle">
-                                            Свойства расчета
-                                        </span>
                                         <span class="select-dropdown-checkbox__title">
-
+                                            Свойства расчета
                                         </span>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
@@ -402,27 +390,30 @@
                                 </div>
                             </div>
                             <div class="submit-app-options__row submit-app-options__row--2">
-                                <div class="submit-app-options__item filter-dropdown">
+                                <div class="submit-app-options__item submit-app-options__item--sum filter-dropdown">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
-                                        <span>
-                                            Бюджет
-                                        </span>
+                                        <div class="filter-dropdown__button-wrapper">
+                                            Сумма
+                                        </div>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown">
                                         <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по стоимости, руб.
+                                            </span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
-                                                        <span>Цена</span> от
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
                                                     </div>
-                                                    <div>-</div>
+                                                    <div>–</div>
                                                     <div data-range-end>
-                                                        до
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
                                                     </div>
                                                     <div>
                                                         ₽
@@ -438,22 +429,25 @@
                                             </button>
                                         </div>
                                         <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по ежемесячному платежу, руб.
+                                            </span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
-                                                        <span>Цена</span> от
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
                                                     </div>
-                                                    <div>-</div>
+                                                    <div>–</div>
                                                     <div data-range-end>
-                                                        до
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
                                                     </div>
                                                     <div>
                                                         ₽
                                                     </div>
                                                 </div>
-                                                <div class="filter-range__inner" data-min="500000" data-max="200000000">
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
                                                 </div>
                                             </div>
                                             <button type="button" class="btn btn-reset filter-dropdown__choice">
@@ -464,72 +458,71 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="submit-app-options__item select-primary">
-                                    <span class="select-primary__name">
-                                        Комплекс
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="complex">
-                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                            </option>
-                                            <option value="complex2">Комплекс2</option>
-                                            <option value="complex3">Комплекс3</option>
-                                        </select>
+                                <div class="submit-app-options__item">
+                                    <div class="filter-range">
+                                        <div class="filter-range__nav">
+                                            <div data-range-start>
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="Площадь от">
+                                            </div>
+                                            <div>–</div>
+                                            <div data-range-end>
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="До">
+                                            </div>
+                                            <div>
+                                                м²
+                                            </div>
+                                        </div>
+                                        <div class="filter-range__inner" data-min="20" data-max="160">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="submit-app-options__item">
                                     <div class="filter-range">
                                         <div class="filter-range__nav">
                                             <div data-range-start>
-                                                <span>Площадь</span> от
-                                                <input type="text" name="Имя" class="input-reset">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="Площадь от">
                                             </div>
-                                            <div>-</div>
+                                            <div>–</div>
                                             <div data-range-end>
-                                                до
-                                                <input type="text" name="Имя" class="input-reset">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="До">
                                             </div>
                                             <div>
                                                 м²
                                             </div>
                                         </div>
-                                        <div class="filter-range__inner" data-min="20" data-max="160"></div>
-                                    </div>
-                                </div>
-                                <div class="submit-app-options__item">
-                                    <div class="filter-range">
-                                        <div class="filter-range__nav">
-                                            <div data-range-start>
-                                                <span>Площадь</span> от
-                                                <input type="text" name="Имя" class="input-reset">
-                                            </div>
-                                            <div>-</div>
-                                            <div data-range-end>
-                                                до
-                                                <input type="text" name="Имя" class="input-reset">
-                                            </div>
-                                            <div>
-                                                м²
-                                            </div>
+                                        <div class="filter-range__inner" data-min="20" data-max="160">
                                         </div>
-                                        <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-app-options__row submit-app-options__row--3">
+                                <div class="submit-app-options__item select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder>Комплекс</option>
+                                        <option value="apartments">Сказкаград, Добродом,Ска тестТекст тестТекст</option>
+                                        <option value="apartments2">Комплекс2</option>
+                                        <option value="apartments3">Комплекс3</option>
+                                    </select>
+                                </div>
                                 <div class="submit-app-options__item">
                                     <div class="filter-range">
                                         <div class="filter-range__nav">
                                             <div data-range-start>
-                                                Этаж
-                                                <input type="text" name="Имя" class="input-reset">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="Этаж от">
                                             </div>
-                                            <div>-</div>
+                                            <div>–</div>
                                             <div data-range-end>
-                                                <input type="text" name="Имя" class="input-reset">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                    placeholder="До">
                                             </div>
                                         </div>
-                                        <div class="filter-range__inner" data-min="20" data-max="160"></div>
+                                        <div class="filter-range__inner" data-min="1" data-max="30">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -538,11 +531,8 @@
                             Описание
                         </h2>
                         <label class="submit-app-options__textarea textarea-primary">
-                            <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                            <span class="textarea-primary__span">
-                                Расскажите о недвижимости, собственниках, соседях, транспортной доступности и
-                                инфраструктуре
-                            </span>
+                            <textarea class="input-reset textarea-primary__input"
+                                placeholder="Расскажите о недвижимости, собственниках, соседях, транспортной доступности иинфраструктуре"></textarea>
                         </label>
                     </div>
                     <div class="submit-app__row submit-app-maps">
@@ -603,14 +593,12 @@
                         </h2>
                         <div class="your-contacts-field__wrapper">
                             <label class="input-primary">
-                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input active"
-                                    disabled value="8 921 645 45 45" placeholder>
-                                <span class="input-primary__span">Номер телефона</span>
+                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input"
+                                    disabled value="8 921 645 45 45" placeholder="Номер телефона">
                             </label>
                             <label class="input-primary">
-                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input active"
-                                    disabled value="Алексей Г.">
-                                <span class="input-primary__span">Имя, фамилия</span>
+                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input" disabled
+                                    value="Алексей Г." placeholder="Имя, фамилия">
                             </label>
                         </div>
                     </div>
@@ -1093,8 +1081,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1204,8 +1191,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1275,8 +1261,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1366,8 +1351,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

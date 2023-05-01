@@ -36,36 +36,56 @@
                 </div>
                 <div class="row">
                     <label class="input-primary">
-                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
-                        <span class="input-primary__span">Input</span>
+                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="input">
                     </label>
                 </div>
                 <div class="row">
                     <label class="textarea-primary">
-                        <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                        <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                        <textarea class="input-reset textarea-primary__input" placeholder="placeholder"></textarea>
                     </label>
                 </div>
             </div>
             <div class="block">
+                <div>
+                    <h4>Filters</h4>
+                </div>
                 <div class="row">
-                    <div class="select-primary">
-                        <span class="select-primary__name">
-                            Свойства расчета
-                        </span>
-                        <div class="select-primary__inner">
-                            <select class="select-primary__body" name="properties">
-                                <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
-                                </option>
-                                <option value="apartments2">Свойства расчета2</option>
-                                <option value="apartments3">Свойства расчета3</option>
-                            </select>
+                    <div class="filter-range">
+                        <div class="filter-range__nav">
+                            <div data-range-start>
+                                <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="Цена от">
+                            </div>
+                            <div>–</div>
+                            <div data-range-end>
+                                <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="До">
+                            </div>
+                            <div>
+                                ₽
+                            </div>
                         </div>
+                        <div class="filter-range__inner" data-min="500000" data-max="200000000"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="filter-range">
+                        <div class="filter-range__nav">
+                            <div data-range-start>
+                                <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                    placeholder="Площадь от">
+                            </div>
+                            <div>–</div>
+                            <div data-range-end>
+                                <input type="text" maxlength="3" name="Имя" class="input-reset" placeholder="До">
+                            </div>
+                            <div>
+                                м²
+                            </div>
+                        </div>
+                        <div class="filter-range__inner" data-min="20" data-max="160"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="quantity-selection">
-                        <span class="quantity-selection__subtitle">Укажите количество комнат</span>
                         <div class="quantity-selection__inner">
                             <div class="checkbox">
                                 <input id="filter-quantity_studios" name="filter-quantity-studios"
@@ -76,7 +96,7 @@
                             </div>
                             <div class="checkbox">
                                 <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input"
-                                    type="checkbox" checked value="true">
+                                    type="checkbox" value="true">
                                 <label for="filter-quantity_1" class="checkbox__label">
                                     <span class="checkbox__text">1</span>
                                 </label>
@@ -103,6 +123,41 @@
                                 </label>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="select-secondary">
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder>Комплекс</option>
+                            <option value="complex">Выбор1</option>
+                            <option value="complex2">Выбор2</option>
+                            <option value="complex3">Выбор3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-reset select-map-btn">
+                        <span>Выберите район поиска</span>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#location-two"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="input-text">
+                        <label class="input-text__label">
+                            <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
+                                placeholder="Площадь кухни">
+                            <span class="input-text__name">м²</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-text input-text--no-subtitle">
+                        <label class="input-text__label">
+                            <input type="text" name="Имя" maxlength="2" class="input-reset input-text__input"
+                                placeholder="Этаж">
+                        </label>
                     </div>
                 </div>
             </div>
@@ -277,33 +332,44 @@
                 </div>
                 <div class="row">
                     <a href="#" class="object-info-secondary">
-                        <div class="object-info-secondary__type">
-                            <span>1-комн. квартира</span>
-                            <span>54 м², 12/12 эт.</span>
-                        </div>
                         <div class="object-info-secondary__time-geo">
                             <span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#clock"></use>
                                 </svg>
-                                09:45 &nbsp;&nbsp; 12.12.2022
+                                09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
                             </span>
                             <span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#location"></use>
                                 </svg>
-                                Краснодар, ул.Карла-Маркса., 234
+                                Краснодар, ул.Академика Королева, 8/1, к. 1
                             </span>
                         </div>
-                        <div class="object-info-secondary__from user-info">
-                            <div class="user-info__avatar avatar online">
-                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                        <div class="object-info-secondary__type-price">
+                            <div>
+                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                    эт.</span>
+                            </div>
+                            <div>
+                                3 000 000 ₽
+                            </div>
+                        </div>
+                        <div class="object-info-secondary__mobile-price">
+                            3 000 000 ₽
+                        </div>
+                        <div
+                            class="object-info-secondary__from user-info user-info--small-mobile">
+                            <div class=" user-info__avatar avatar online">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="40"
+                                    height="40" alt="Алексей Г.">
                             </div>
                             <span class="user-info__pos">
-                                Агент
+                                Собственник
                             </span>
-                            <span class="user-info__name">
-                                Алексей Г.
+                            <span class="user-info__name"
+                                data-user-name-full="Лев Гаврилов">
+                                Лев Г.
                             </span>
                         </div>
                     </a>

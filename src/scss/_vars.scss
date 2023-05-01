@@ -11,6 +11,21 @@ $containerWidth: calc($contentWidth + ($containerOffset * 2));
 $bodyColor: #fff; // Цвет body по умолчаниюу
 $mainColor: #3D3D3D; // Цвет шрифта по умолчанию
 
+// break points
+$desktop: $containerWidth+px;
+$desktop-min: ($containerWidth + 1)+px;
+$tablet-max: 1024px;
+$tablet-min: 1025px;
+
+$smallTablet-max: 768px;
+$smallTablet-min: 769px;
+
+$mobile-max: 576px;
+$mobile-min: 577px;
+
+$smallMobile-max: 480px;
+$smallMobile-min: 481px;
+
 :root {
     --black: #000;
     --white: #fff;
@@ -36,27 +51,17 @@ $mainColor: #3D3D3D; // Цвет шрифта по умолчанию
     --blue-dark: #065cc5;
 
     --bg-page: #f2f5f7;
-}
+    --stand-bg: rgba(235, 241, 251, 0.4);
+    --shadow-primary: 0 4px 12px 1px rgba(36, 38, 41, 0.078);
+    --shadow-secondary: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
+    @media (max-width:$desktop) {
+        --shadow-primary: 0 3px 2px 0px rgba(36, 38, 41, 0.078);
+        --shadow-secondary: 0px 3px 3px rgba(0, 0, 0, 0.05);
+    }
+}
 
 
 // others vars
 $transitionSpeed: 0.4s;
 $transitionFunction: ease-in-out;
-
-
-
-// break points
-$desktop: $containerWidth+px;
-$desktop-min: ($containerWidth + 1)+px;
-$tablet-max: 1024px;
-$tablet-min: 1025px;
-
-$smallTablet-max: 768px;
-$smallTablet-min: 769px;
-
-$mobile-max: 576px;
-$mobile-min: 577px;
-
-$smallMobile-max: 480px;
-$smallMobile-min: 481px;

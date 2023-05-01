@@ -138,7 +138,7 @@
         .popup-primary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 24px;
+                padding: 65px 32px;
                 width: 438px;
 
                 @media (max-width:$desktop) {
@@ -158,7 +158,7 @@
         .popup-primary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 24px;
+                padding: 65px 32px;
                 width: 438px;
 
                 @media (max-width:$desktop) {
@@ -218,7 +218,7 @@
         .popup-primary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 24px;
+                padding: 65px 32px;
                 width: 438px;
 
                 @media (max-width:$desktop) {
@@ -238,7 +238,7 @@
         .popup-primary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 24px;
+                padding: 65px 32px;
                 width: 438px;
 
                 @media (max-width:$desktop) {
@@ -258,7 +258,7 @@
         .popup-primary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 24px;
+                padding: 65px 32px;
                 width: 438px;
 
                 @media (max-width:$desktop) {
@@ -290,7 +290,7 @@
             background-color: #fff;
             cursor: default;
             text-align: left;
-            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+            box-shadow: var(--shadow-primary);
             margin: 120px auto 0;
 
             border-radius: 12px 12px 0 0;
@@ -470,7 +470,7 @@
         cursor: default;
         text-align: left;
         display: none;
-        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+        box-shadow: var(--shadow-primary);
 
         &.open {
             display: inline-block !important;
@@ -610,7 +610,7 @@
         cursor: default;
         text-align: left;
         display: none;
-        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+        box-shadow: var(--shadow-primary);
 
         &.open {
             display: inline-block !important;
@@ -833,12 +833,6 @@
 
     &__card {}
 
-    .nav-arrow-secondary {
-        position: static;
-        flex: 0 0 28px;
-        transform: translateY(0);
-    }
-
     .nav-arrow-secondary--prev {
         margin-right: 16px;
 
@@ -858,94 +852,7 @@
     }
 }
 
-.interest-rate-card {
-    background-color: var(--white);
-    border: 1px solid rgba(122, 127, 170, 0.2);
-    border-radius: 12px;
-    padding: 16px;
-    text-align: left;
-    display: grid;
-    grid-template-columns: 33px 1fr;
-    align-items: center;
-    grid-column-gap: 12px;
-    width: 242px;
-    height: 100%;
-    box-sizing: border-box;
 
-    &__circle {
-        grid-column: 1/2;
-        display: block;
-        width: 33px;
-        height: 33px;
-        border-radius: 50%;
-        background-color: var(--primary200);
-
-        @media (max-width:$desktop) {
-            width: 28px;
-            height: 28px;
-        }
-    }
-
-    &__title {
-        color: var(--primary600);
-        font-size: 15px;
-        line-height: math.div(19, 15);
-        font-weight: 500;
-        grid-column: 2/3;
-    }
-
-    &__prc {
-        margin-top: 16px;
-
-        display: flex;
-        align-items: center;
-
-        grid-column: 1/-1;
-
-        color: var(--primaryTwo);
-        font-size: 15px;
-        line-height: math.div(19, 15);
-
-        @media (max-width:$desktop) {
-            margin-top: 12px;
-            font-size: 14px;
-        }
-    }
-
-    &__prc--old {
-        margin-right: 8px;
-        position: relative;
-
-        &::before {
-            content: "";
-            border-bottom: 1px solid currentColor;
-            position: absolute;
-            width: 100%;
-            height: 50%;
-            transform: rotate(-5deg);
-        }
-    }
-
-    &__prc--new {}
-
-    &__price {
-        margin-top: 5px;
-        grid-column: 1/-1;
-
-        color: var(--dark);
-        font-size: 18px;
-        line-height: math.div(23, 18);
-        font-weight: 500;
-
-        @media (max-width:$desktop) {
-            font-size: 16px;
-        }
-    }
-
-    @media (max-width:$desktop) {
-        width: 220px;
-    }
-}
 
 
 .add-popup {

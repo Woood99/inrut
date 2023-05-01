@@ -2,23 +2,61 @@ import noUiSlider from 'nouislider';
 import enableScroll from '../modules/enableScroll';
 import disableScroll from '../modules/disableScroll';
 import inputResize from '../modules/inputResize';
+import numberReplace from '../modules/numberReplace';
 import {
     _slideToggle
 } from '../support-modules/slide';
-export const filterBudget = () => {
+export const filterSum = () => {
     const container = document.querySelectorAll('.filter-dropdown');
     if (!container.length >= 1) return;
     container.forEach(el => {
         const btn = el.querySelector('.filter-dropdown__button');
+        const inputs = el.querySelectorAll('.filter-range__nav input');
         btn.addEventListener('click', () => {
             el.classList.toggle('active');
+
+            if (!el.classList.contains('active')) {
+                changeTitle(el);
+            }
         })
         document.addEventListener('click', (e) => {
             if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
                 el.classList.remove('active');
+                changeTitle(el);
             }
         })
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                changeTitle(el);
+            });
+        })
     })
+
+    function changeTitle(el) {
+        const itemActive = el.querySelector('.filter-dropdown__item.active');
+        const inputs = itemActive.querySelectorAll('input');
+        const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+        let html = ``;
+        if (inputs[0].value && inputs[1].value) {
+            html = `
+                <div>
+                    от&nbsp; ${inputs[0].value} ₽
+                </div>
+                <div>
+                    -
+                </div>
+                <div>
+                    до&nbsp; ${inputs[1].value} ₽
+                </div>
+            `;
+            buttonWrapper.classList.add('_active')
+        } else {
+            html = `Сумма`;
+            buttonWrapper.classList.remove('_active')
+        }
+
+        buttonWrapper.innerHTML = html;
+    }
 }
 export const uiSlider = () => {
     const items = document.querySelectorAll('.filter-range__inner');
@@ -45,40 +83,60 @@ export const uiSlider = () => {
         });
         el.noUiSlider.on('update', function (values, handle) {
             inputs[handle].value = numberReplace(values[handle]);
-            if (inputMax.value) container.classList.add('_active');
-            if (inputMin.value) container.classList.add('_active');
-            if (inputMin.value !== '') {
-                container.classList.add('_active');
-            } else {
-                container.classList.remove('_active');
-            }
         });
         inputMin.value = '';
         inputMax.value = '';
-        container.classList.remove('_active');
         inputMin.addEventListener('change', function () {
-            const numberString = this.value.replace(/\s/g, "")
-            el.noUiSlider.set([numberString, null]);
-            if (numberString !== ' ') container.classList.add('_active');
+            const numberString = this.value.replace(/\s/g, "");
+            if (inputMax.value === '') {
+                if (inputMin.value === '') {
+                    el.noUiSlider.set([Number(minValue), null]);
+                    inputMin.value = '';
+                    inputMax.value = '';
+                } else {
+                    el.noUiSlider.set([numberString, null]);
+                    inputMax.value = '';
+                }
+            } else {
+                if (inputMin.value === '') {
+                    el.noUiSlider.set([Number(minValue), null]);
+                    inputMin.value = '';
+                } else {
+                    el.noUiSlider.set([numberString, null]);
+                }
+            }
         })
         inputMax.addEventListener('change', function () {
-            const numberString = this.value.replace(/\s/g, "")
-            el.noUiSlider.set([null, numberString]);
-            if (numberString !== ' ') container.classList.add('_active');
+            const numberString = this.value.replace(/\s/g, "");
+            if (inputMin.value === '') {
+                if (inputMax.value === '') {
+                    el.noUiSlider.set([null, Number(maxValue)]);
+                    inputMax.value = '';
+                    inputMin.value = '';
+                } else {
+                    el.noUiSlider.set([null, numberString]);
+                    inputMin.value = '';
+                }
+            } else {
+                if (inputMax.value === '') {
+                    el.noUiSlider.set([null, Number(maxValue)]);
+                    inputMax.value = '';
+                } else {
+                    el.noUiSlider.set([null, numberString]);
+                }
+            }
         })
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                const val = input.value.replace(/\D/g, '');
-                input.value = numberReplace(val);
-                if (input.value) container.classList.add('_active');
-                if (inputMin.value === ' ') container.classList.remove('_active');
-            })
-        })
-    });
 
-    function numberReplace(number) {
-        return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
-    }
+        inputMin.addEventListener('input', () => {
+            const val = inputMin.value.replace(/\D/g, '');
+            inputMin.value = numberReplace(val);
+        })
+        inputMax.addEventListener('input', () => {
+            const val = inputMax.value.replace(/\D/g, '');
+            inputMax.value = numberReplace(val);
+        })
+
+    });
 }
 export const uiSliderOne = () => {
     const items = document.querySelectorAll('.filter-range-one__inner');
@@ -119,10 +177,6 @@ export const uiSliderOne = () => {
             inputResize(inputMax);
         })
     });
-
-    function numberReplace(number) {
-        return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
-    }
 }
 export const filterDropdownChoice = () => {
     const items = document.querySelectorAll('.filter-dropdown__dropdown');
@@ -209,8 +263,7 @@ export const filterCustomSelectCheckboxes = () => {
         const mortgageNoFee = item.querySelector('[data-name="mortgage_no-fee"]');
         const certificate = item.querySelector('[data-name="certificate"]');
         mortgageNoFee.setAttribute('disabled', true);
-        title.textContent = 'Не выбрано';
-
+        const titleDefault = title.textContent;
         cash.addEventListener('change', () => {
             if (cash.checked) {
                 mortgageYesBank.setAttribute('disabled', true);
@@ -230,7 +283,7 @@ export const filterCustomSelectCheckboxes = () => {
                 certificate.setAttribute('disabled', true);
 
                 movingCheckboxDefault();
-                title.textContent = 'Не выбрано';
+                title.textContent = titleDefault;
                 if (certificate.checked) certificate.checked = false;
             }
         });
@@ -256,7 +309,7 @@ export const filterCustomSelectCheckboxes = () => {
 
                 movingCheckboxDefault();
 
-                title.textContent = 'Не выбрано';
+                title.textContent = titleDefault;
                 if (mortgageNoFee.checked) mortgageNoFee.checked = false;
                 if (certificate.checked) certificate.checked = false;
             }
@@ -281,7 +334,7 @@ export const filterCustomSelectCheckboxes = () => {
                 mortgageNoFee.setAttribute('disabled', true);
                 certificate.setAttribute('disabled', true);
 
-                title.textContent = 'Не выбрано';
+                title.textContent = titleDefault;
 
                 movingCheckboxDefault();
 

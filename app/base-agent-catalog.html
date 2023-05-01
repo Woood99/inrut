@@ -26,7 +26,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -263,7 +263,7 @@
                     В базе 1 567 агентов
                 </h1>
                 <form class="base-agent-catalog__filter base-agent-catalog-filter filter">
-                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+                    <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
                         </svg>
@@ -277,48 +277,30 @@
                         <div class="filter__inner">
                             <div class="filter__row base-agent-catalog-filter__row--1">
                                 <label class="filter__item filter__item--input base-agent-catalog__input input-primary">
-                                    <input type="text" name="Имя" class="input-reset input-primary__input"
-                                        placeholder="">
-                                    <span class="input-primary__span">ФИО агента</span>
+                                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="ФИО агента">
                                 </label>
-                                <div
-                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Город
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Санкт-Петербург</option>
-                                            <option value="apartments2">Волгоград</option>
-                                            <option value="apartments3">Москва</option>
-                                        </select>
-                                    </div>
+                                <div class="filter__item base-agent-catalog__select select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option value="apartments">Санкт-Петербург</option>
+                                        <option value="apartments2">Волгоград</option>
+                                        <option value="apartments3">Москва</option>
+                                    </select>
                                 </div>
-                                <div
-                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Специализация
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Ипотечный брокер</option>
-                                            <option value="apartments2">Ипотечный брокер2</option>
-                                            <option value="apartments3">Ипотечный брокер3</option>
-                                        </select>
-                                    </div>
+                                <div class="filter__item base-agent-catalog__select select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option value="apartments" placeholder>Специализация</option>
+                                        <option value="apartments">Ипотечный брокер</option>
+                                        <option value="apartments2">Ипотечный брокер2</option>
+                                        <option value="apartments3">Ипотечный брокер3</option>
+                                    </select>
                                 </div>
-                                <div
-                                    class="filter__item filter__item--object base-agent-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Новостройки
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Новостройки</option>
-                                            <option value="apartments2">Новостройки1</option>
-                                            <option value="apartments3">Новостройки2</option>
-                                        </select>
-                                    </div>
+                                <div class="filter__item base-agent-catalog__select select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option value="apartments" placeholder>Новостройки</option>
+                                        <option value="apartments">Новостройки</option>
+                                        <option value="apartments2">Новостройки1</option>
+                                        <option value="apartments3">Новостройки2</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -1025,8 +1007,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1136,8 +1117,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1207,8 +1187,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1298,8 +1277,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

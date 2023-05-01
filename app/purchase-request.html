@@ -26,7 +26,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -477,40 +477,42 @@
                             <div class="bid-maps__container map-primary remove-copyrights-pane" id="bid-maps"></div>
                         </div>
                     </div>
-                    <div class="bid__user bid-user">
-                        <div class="bid-user__avatar avatar">
-                            <img loading="lazy" src="./img/avatar-1.jpg" width="129" height="129" alt="Алексей Г.">
-                        </div>
-                        <div class="bid-user__content">
-                            <time class="bid-user__time" datetime="2022-12-12">
-                                Агент покупателя был в сети 12.12.2022
-                            </time>
-                            <a href="#" class="bid-user__name">
-                                Алексей Г.
-                            </a>
-                            <div class="bid-user__rating">
-                                <div class="bid-user__rating-stars">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#star"></use>
-                                    </svg>
+                    <div class="bid__sidebar">
+                        <div class="bid__user bid-user _sticky">
+                            <div class="bid-user__avatar avatar">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="129" height="129" alt="Алексей Г.">
+                            </div>
+                            <div class="bid-user__content">
+                                <time class="bid-user__time" datetime="2022-12-12">
+                                    Агент покупателя был в сети 12.12.2022
+                                </time>
+                                <a href="#" class="bid-user__name">
+                                    Алексей Г.
+                                </a>
+                                <div class="bid-user__rating">
+                                    <div class="bid-user__rating-stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span>2.2</span>
+                                    <span>(2 отзыва)</span>
                                 </div>
-                                <span>2.2</span>
-                                <span>(2 отзыва)</span>
+                                <div class="bid-user__quantity">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                    </svg>
+                                    <span>10 объектов</span>,
+                                    <span>8 сделок</span>
+                                </div>
                             </div>
-                            <div class="bid-user__quantity">
+                            <button type="button" class="btn btn-reset btn-primary bid-user__btn">
                                 <svg>
-                                    <use xlink:href="img/sprite.svg#briefcase"></use>
+                                    <use xlink:href="img/sprite.svg#cart-3"></use>
                                 </svg>
-                                <span>10 объектов</span>,
-                                <span>8 сделок</span>
-                            </div>
+                                Предложить объект
+                            </button>
                         </div>
-                        <button type="button" class="btn btn-reset btn-primary bid-user__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#cart-3"></use>
-                            </svg>
-                            Предложить объект
-                        </button>
                     </div>
                     <div class="plate-bottom purchase-request-plate-bottom">
                         <button type="button" class="btn btn-reset btn-primary purchase-request-plate-bottom__btn">
@@ -547,16 +549,12 @@
                                         <div class="main-table">
                                             <div class="main-table__table">
                                                 <div class="main-table__type">
-                                                    <span>Тип и характеристики</span>
                                                     <span>Время и место</span>
+                                                    <span>Характеристики и цена</span>
                                                     <span>Объект от</span>
                                                 </div>
                                                 <div class="main-table__list">
                                                     <a href="#" class="main-table__item object-info-secondary">
-                                                        <div class="object-info-secondary__type">
-                                                            <span>1-комн. квартира</span>
-                                                            <span>54 м², 12/12 эт.</span>
-                                                        </div>
                                                         <div class="object-info-secondary__time-geo">
                                                             <span>
                                                                 <svg>
@@ -568,8 +566,62 @@
                                                                 <svg>
                                                                     <use xlink:href="img/sprite.svg#location"></use>
                                                                 </svg>
-                                                                Краснодар, ул.Карла-Маркса., 234
+                                                                Краснодар, ул.Академика Королева, 8/1, к. 1
                                                             </span>
+                                                        </div>
+                                                        <div class="object-info-secondary__type-price">
+                                                            <div>
+                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                    эт.</span>
+                                                            </div>
+                                                            <div>
+                                                                3 000 000 ₽
+                                                            </div>
+                                                        </div>
+                                                        <div class="object-info-secondary__mobile-price">
+                                                            3 000 000 ₽
+                                                        </div>
+                                                        <div
+                                                            class="object-info-secondary__from user-info user-info--small-mobile">
+                                                            <div class=" user-info__avatar avatar online">
+                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40"
+                                                                    height="40" alt="Алексей Г.">
+                                                            </div>
+                                                            <span class="user-info__pos">
+                                                                Собственник
+                                                            </span>
+                                                            <span class="user-info__name"
+                                                                data-user-name-full="Лев Гаврилов">
+                                                                Лев Г.
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="main-table__item object-info-secondary">
+                                                        <div class="object-info-secondary__time-geo">
+                                                            <span>
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#clock"></use>
+                                                                </svg>
+                                                                09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
+                                                            </span>
+                                                            <span>
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#location"></use>
+                                                                </svg>
+                                                                Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                            </span>
+                                                        </div>
+                                                        <div class="object-info-secondary__type-price">
+                                                            <div>
+                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                    эт.</span>
+                                                            </div>
+                                                            <div>
+                                                                3 000 000 ₽
+                                                            </div>
+                                                        </div>
+                                                        <div class="object-info-secondary__mobile-price">
+                                                            3 000 000 ₽
                                                         </div>
                                                         <div
                                                             class="object-info-secondary__from user-info user-info--small-mobile">
@@ -580,16 +632,13 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
-                                                            <span class="user-info__name">
+                                                            <span class="user-info__name"
+                                                                data-user-name-full="Алексей Гаврилов">
                                                                 Алексей Г.
                                                             </span>
                                                         </div>
                                                     </a>
                                                     <a href="#" class="main-table__item object-info-secondary">
-                                                        <div class="object-info-secondary__type">
-                                                            <span>1-комн. квартира</span>
-                                                            <span>54 м², 12/12 эт.</span>
-                                                        </div>
                                                         <div class="object-info-secondary__time-geo">
                                                             <span>
                                                                 <svg>
@@ -601,8 +650,20 @@
                                                                 <svg>
                                                                     <use xlink:href="img/sprite.svg#location"></use>
                                                                 </svg>
-                                                                Краснодар, ул.Карла-Маркса., 234
+                                                                Краснодар, ул.Академика Королева, 8/1, к. 1
                                                             </span>
+                                                        </div>
+                                                        <div class="object-info-secondary__type-price">
+                                                            <div>
+                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                    эт.</span>
+                                                            </div>
+                                                            <div>
+                                                                3 000 000 ₽
+                                                            </div>
+                                                        </div>
+                                                        <div class="object-info-secondary__mobile-price">
+                                                            3 000 000 ₽
                                                         </div>
                                                         <div
                                                             class="object-info-secondary__from user-info user-info--small-mobile">
@@ -611,18 +672,15 @@
                                                                     height="40" alt="Алексей Г.">
                                                             </div>
                                                             <span class="user-info__pos">
-                                                                Агент
+                                                                Собственник
                                                             </span>
-                                                            <span class="user-info__name">
-                                                                Алексей Г.
+                                                            <span class="user-info__name"
+                                                                data-user-name-full="Лев Гаврилов">
+                                                                Лев Г.
                                                             </span>
                                                         </div>
                                                     </a>
                                                     <a href="#" class="main-table__item object-info-secondary">
-                                                        <div class="object-info-secondary__type">
-                                                            <span>1-комн. квартира</span>
-                                                            <span>54 м², 12/12 эт.</span>
-                                                        </div>
                                                         <div class="object-info-secondary__time-geo">
                                                             <span>
                                                                 <svg>
@@ -634,8 +692,20 @@
                                                                 <svg>
                                                                     <use xlink:href="img/sprite.svg#location"></use>
                                                                 </svg>
-                                                                Краснодар, ул.Карла-Маркса., 234
+                                                                Краснодар, ул.Академика Королева, 8/1, к. 1
                                                             </span>
+                                                        </div>
+                                                        <div class="object-info-secondary__type-price">
+                                                            <div>
+                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                    эт.</span>
+                                                            </div>
+                                                            <div>
+                                                                3 000 000 ₽
+                                                            </div>
+                                                        </div>
+                                                        <div class="object-info-secondary__mobile-price">
+                                                            3 000 000 ₽
                                                         </div>
                                                         <div
                                                             class="object-info-secondary__from user-info user-info--small-mobile">
@@ -646,73 +716,8 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
-                                                            <span class="user-info__name">
-                                                                Алексей Г.
-                                                            </span>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="main-table__item object-info-secondary">
-                                                        <div class="object-info-secondary__type">
-                                                            <span>1-комн. квартира</span>
-                                                            <span>54 м², 12/12 эт.</span>
-                                                        </div>
-                                                        <div class="object-info-secondary__time-geo">
-                                                            <span>
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#clock"></use>
-                                                                </svg>
-                                                                09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
-                                                            </span>
-                                                            <span>
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#location"></use>
-                                                                </svg>
-                                                                Краснодар, ул.Карла-Маркса., 234
-                                                            </span>
-                                                        </div>
-                                                        <div
-                                                            class="object-info-secondary__from user-info user-info--small-mobile">
-                                                            <div class=" user-info__avatar avatar online">
-                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                                    height="40" alt="Алексей Г.">
-                                                            </div>
-                                                            <span class="user-info__pos">
-                                                                Агент
-                                                            </span>
-                                                            <span class="user-info__name">
-                                                                Алексей Г.
-                                                            </span>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="main-table__item object-info-secondary">
-                                                        <div class="object-info-secondary__type">
-                                                            <span>1-комн. квартира</span>
-                                                            <span>54 м², 12/12 эт.</span>
-                                                        </div>
-                                                        <div class="object-info-secondary__time-geo">
-                                                            <span>
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#clock"></use>
-                                                                </svg>
-                                                                09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
-                                                            </span>
-                                                            <span>
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#location"></use>
-                                                                </svg>
-                                                                Краснодар, ул.Карла-Маркса., 234
-                                                            </span>
-                                                        </div>
-                                                        <div
-                                                            class="object-info-secondary__from user-info user-info--small-mobile">
-                                                            <div class=" user-info__avatar avatar online">
-                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40"
-                                                                    height="40" alt="Алексей Г.">
-                                                            </div>
-                                                            <span class="user-info__pos">
-                                                                Агент
-                                                            </span>
-                                                            <span class="user-info__name">
+                                                            <span class="user-info__name"
+                                                                data-user-name-full="Алексей Гаврилов">
                                                                 Алексей Г.
                                                             </span>
                                                         </div>
@@ -809,7 +814,7 @@
                                 class="btn btn-reset tabs-primary__control tabs-primary__control--maps">
                                 <span>На карте</span>
                                 <svg>
-                                    <use xlink:href="img/sprite.svg#location"></use>
+                                    <use xlink:href="img/sprite.svg#location-fill"></use>
                                 </svg>
                             </button>
                         </div>
@@ -1926,8 +1931,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -2037,8 +2041,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -2108,8 +2111,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -2199,8 +2201,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

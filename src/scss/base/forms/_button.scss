@@ -26,7 +26,7 @@
     color: var(--white);
 
     font-size: 14px;
-    line-height: math.div(21, 16);
+    line-height: math.div(18, 14);
     font-weight: 500;
 
     padding: 0px 40px;
@@ -36,8 +36,10 @@
 
     white-space: nowrap;
 
-    &:hover {
-        background-color: var(--blue-dark);
+    @media (min-width:$desktop-min) {
+        &:hover {
+            background-color: var(--blue-dark);
+        }
     }
 
     &:active {
@@ -67,7 +69,7 @@
     background-color: var(--white);
 
     font-size: 14px;
-    line-height: math.div(21, 16);
+    line-height: math.div(18, 14);
     font-weight: 500;
 
     padding: 0px 40px;
@@ -78,9 +80,11 @@
 
     white-space: nowrap;
 
-    &:hover {
-        color: var(--white);
-        background-color: var(--blue);
+    @media (min-width:$desktop-min) {
+        &:hover {
+            color: var(--white);
+            background-color: var(--blue);
+        }
     }
 
     &:active {

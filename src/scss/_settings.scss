@@ -63,8 +63,6 @@ a {
 // =============== Other ===============
 
 .site-container {
-    overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
-
     &.site-container--purchase-request {
         @media (max-width:$desktop) {
             .header {
@@ -99,6 +97,9 @@ a {
                 padding-bottom: calc(60px + 12px); // 56 height + 12 gap
             }
         }
+    }
+    @media (max-width:$desktop){
+         overflow: hidden; 
     }
 }
 

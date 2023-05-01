@@ -994,7 +994,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterControl)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSlider)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSliderOne)();
-  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterBudget)();
+  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterSum)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterMobile)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterCustomSelectCheckboxes)();
@@ -1012,16 +1012,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputPrimary)();
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputText)();
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputOnlyNumber)();
 
   // ==================================================
 
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioText)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
 
   // ==================================================
 
@@ -1172,6 +1171,16 @@ if (selectMultiple.length >= 1) {
       position: 'bottom',
       noChoicesText: 'Вы выбрали все доступные теги',
       removeItemButton: true
+    });
+    const placeholder = document.createElement('span');
+    placeholder.textContent = 'Теги';
+    placeholder.classList.add('select-multiple__placeholder');
+    el.closest('.choices').insertAdjacentElement('afterbegin', placeholder);
+    el.addEventListener('addItem', e => {
+      e.target.length ? placeholder.setAttribute('hidden', '') : placeholder.removeAttribute('hidden');
+    });
+    el.addEventListener('removeItem', e => {
+      e.target.length ? placeholder.setAttribute('hidden', '') : placeholder.removeAttribute('hidden');
     });
     el.closest('.choices').addEventListener('click', e => {
       if ((e.target.classList.contains('choices') || e.target.classList.contains('choices__inner')) && el.closest('.choices').classList.contains('is-open')) {
@@ -1364,7 +1373,6 @@ function controlCards() {
   containers.forEach(container => {
     const btns = container.querySelectorAll('.control-cards__btn');
     const content = container.querySelector('.control-cards__content');
-    console.log(content);
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(el => el.classList.remove('_active'));
@@ -1447,11 +1455,11 @@ dropImage();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "filterBudget": () => (/* binding */ filterBudget),
 /* harmony export */   "filterControl": () => (/* binding */ filterControl),
 /* harmony export */   "filterCustomSelectCheckboxes": () => (/* binding */ filterCustomSelectCheckboxes),
 /* harmony export */   "filterDropdownChoice": () => (/* binding */ filterDropdownChoice),
 /* harmony export */   "filterMobile": () => (/* binding */ filterMobile),
+/* harmony export */   "filterSum": () => (/* binding */ filterSum),
 /* harmony export */   "uiSlider": () => (/* binding */ uiSlider),
 /* harmony export */   "uiSliderOne": () => (/* binding */ uiSliderOne)
 /* harmony export */ });
@@ -1460,26 +1468,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
 /* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/inputResize */ "./src/js/modules/inputResize.js");
-/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+/* harmony import */ var _modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/numberReplace */ "./src/js/modules/numberReplace.js");
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 
 
 
 
 
-const filterBudget = () => {
+
+const filterSum = () => {
   const container = document.querySelectorAll('.filter-dropdown');
   if (!container.length >= 1) return;
   container.forEach(el => {
     const btn = el.querySelector('.filter-dropdown__button');
+    const inputs = el.querySelectorAll('.filter-range__nav input');
     btn.addEventListener('click', () => {
       el.classList.toggle('active');
+      if (!el.classList.contains('active')) {
+        changeTitle(el);
+      }
     });
     document.addEventListener('click', e => {
       if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
         el.classList.remove('active');
+        changeTitle(el);
       }
     });
+    inputs.forEach(input => {
+      input.addEventListener('change', () => {
+        changeTitle(el);
+      });
+    });
   });
+  function changeTitle(el) {
+    const itemActive = el.querySelector('.filter-dropdown__item.active');
+    const inputs = itemActive.querySelectorAll('input');
+    const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+    let html = ``;
+    if (inputs[0].value && inputs[1].value) {
+      html = `
+                <div>
+                    от&nbsp; ${inputs[0].value} ₽
+                </div>
+                <div>
+                    -
+                </div>
+                <div>
+                    до&nbsp; ${inputs[1].value} ₽
+                </div>
+            `;
+      buttonWrapper.classList.add('_active');
+    } else {
+      html = `Сумма`;
+      buttonWrapper.classList.remove('_active');
+    }
+    buttonWrapper.innerHTML = html;
+  }
 };
 const uiSlider = () => {
   const items = document.querySelectorAll('.filter-range__inner');
@@ -1503,40 +1547,59 @@ const uiSlider = () => {
       step: 1
     });
     el.noUiSlider.on('update', function (values, handle) {
-      inputs[handle].value = numberReplace(values[handle]);
-      if (inputMax.value) container.classList.add('_active');
-      if (inputMin.value) container.classList.add('_active');
-      if (inputMin.value !== '') {
-        container.classList.add('_active');
-      } else {
-        container.classList.remove('_active');
-      }
+      inputs[handle].value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
     });
     inputMin.value = '';
     inputMax.value = '';
-    container.classList.remove('_active');
     inputMin.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
-      el.noUiSlider.set([numberString, null]);
-      if (numberString !== ' ') container.classList.add('_active');
+      if (inputMax.value === '') {
+        if (inputMin.value === '') {
+          el.noUiSlider.set([Number(minValue), null]);
+          inputMin.value = '';
+          inputMax.value = '';
+        } else {
+          el.noUiSlider.set([numberString, null]);
+          inputMax.value = '';
+        }
+      } else {
+        if (inputMin.value === '') {
+          el.noUiSlider.set([Number(minValue), null]);
+          inputMin.value = '';
+        } else {
+          el.noUiSlider.set([numberString, null]);
+        }
+      }
     });
     inputMax.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
-      el.noUiSlider.set([null, numberString]);
-      if (numberString !== ' ') container.classList.add('_active');
+      if (inputMin.value === '') {
+        if (inputMax.value === '') {
+          el.noUiSlider.set([null, Number(maxValue)]);
+          inputMax.value = '';
+          inputMin.value = '';
+        } else {
+          el.noUiSlider.set([null, numberString]);
+          inputMin.value = '';
+        }
+      } else {
+        if (inputMax.value === '') {
+          el.noUiSlider.set([null, Number(maxValue)]);
+          inputMax.value = '';
+        } else {
+          el.noUiSlider.set([null, numberString]);
+        }
+      }
     });
-    inputs.forEach(input => {
-      input.addEventListener('input', () => {
-        const val = input.value.replace(/\D/g, '');
-        input.value = numberReplace(val);
-        if (input.value) container.classList.add('_active');
-        if (inputMin.value === ' ') container.classList.remove('_active');
-      });
+    inputMin.addEventListener('input', () => {
+      const val = inputMin.value.replace(/\D/g, '');
+      inputMin.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
+    });
+    inputMax.addEventListener('input', () => {
+      const val = inputMax.value.replace(/\D/g, '');
+      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
     });
   });
-  function numberReplace(number) {
-    return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
-  }
 };
 const uiSliderOne = () => {
   const items = document.querySelectorAll('.filter-range-one__inner');
@@ -1557,7 +1620,7 @@ const uiSliderOne = () => {
       step: 1
     });
     el.noUiSlider.on('update', function (values, handle) {
-      inputMax.value = numberReplace(values[handle]);
+      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     });
     inputMax.addEventListener('change', function () {
@@ -1568,13 +1631,10 @@ const uiSliderOne = () => {
     (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     inputMax.addEventListener('input', () => {
       const val = inputMax.value.replace(/\D/g, '');
-      inputMax.value = numberReplace(val);
+      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
     });
   });
-  function numberReplace(number) {
-    return number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
-  }
 };
 const filterDropdownChoice = () => {
   const items = document.querySelectorAll('.filter-dropdown__dropdown');
@@ -1607,13 +1667,13 @@ const filterControl = () => {
   moreBtn.addEventListener('click', () => {
     if (container.classList.contains('_active')) {
       itemsHidden.forEach(item => {
-        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_4__._slideToggle)(item, 700);
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
       });
       moreBtn.querySelector('span').textContent = btnTextMap.more;
       container.classList.remove('_active');
     } else {
       itemsHidden.forEach(item => {
-        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_4__._slideToggle)(item, 700);
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
       });
       moreBtn.querySelector('span').textContent = btnTextMap.none;
       container.classList.add('_active');
@@ -1658,7 +1718,7 @@ const filterCustomSelectCheckboxes = () => {
     const mortgageNoFee = item.querySelector('[data-name="mortgage_no-fee"]');
     const certificate = item.querySelector('[data-name="certificate"]');
     mortgageNoFee.setAttribute('disabled', true);
-    title.textContent = 'Не выбрано';
+    const titleDefault = title.textContent;
     cash.addEventListener('change', () => {
       if (cash.checked) {
         mortgageYesBank.setAttribute('disabled', true);
@@ -1673,7 +1733,7 @@ const filterCustomSelectCheckboxes = () => {
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
         movingCheckboxDefault();
-        title.textContent = 'Не выбрано';
+        title.textContent = titleDefault;
         if (certificate.checked) certificate.checked = false;
       }
     });
@@ -1693,7 +1753,7 @@ const filterCustomSelectCheckboxes = () => {
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
         movingCheckboxDefault();
-        title.textContent = 'Не выбрано';
+        title.textContent = titleDefault;
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
       }
@@ -1713,7 +1773,7 @@ const filterCustomSelectCheckboxes = () => {
         mortgageYesBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
         certificate.setAttribute('disabled', true);
-        title.textContent = 'Не выбрано';
+        title.textContent = titleDefault;
         movingCheckboxDefault();
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
@@ -1739,9 +1799,9 @@ const filterCustomSelectCheckboxes = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "validateRadioText": () => (/* binding */ validateRadioText)
+/* harmony export */   "validateRadioPrimary": () => (/* binding */ validateRadioPrimary)
 /* harmony export */ });
-const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
+const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
   const form = document.querySelector(formSelector);
   if (!form) return false;
   const textarea = form.querySelector(textareaSelector);
@@ -1759,7 +1819,6 @@ const validateRadioText = (formSelector, textareaSelector, btnSelector, radiosSe
   function clearForm() {
     textarea.value = '';
     btn.setAttribute('disabled', '');
-    textarea.classList.remove('active');
     for (let radio of radios) {
       radio.checked = false;
     }
@@ -1859,37 +1918,22 @@ galleries.forEach(gallery => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "inputOnlyNumber": () => (/* binding */ inputOnlyNumber),
-/* harmony export */   "inputPrimary": () => (/* binding */ inputPrimary),
 /* harmony export */   "inputText": () => (/* binding */ inputText)
 /* harmony export */ });
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/inputResize */ "./src/js/modules/inputResize.js");
 /* harmony import */ var _modules_inputCursorEnd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/inputCursorEnd */ "./src/js/modules/inputCursorEnd.js");
+/* harmony import */ var _modules_numberReplace__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/numberReplace */ "./src/js/modules/numberReplace.js");
 
 
-const inputPrimary = () => {
-  const inputs = document.querySelectorAll('.input-primary');
-  const textareas = document.querySelectorAll('.textarea-primary');
-  inputs.forEach(input => {
-    input.querySelector('.input-primary__input').addEventListener('input', e => toggleInputActive(e.target));
-  });
-  textareas.forEach(textarea => {
-    textarea.querySelector('.textarea-primary__input').addEventListener('input', e => toggleInputActive(e.target));
-  });
-  function toggleInputActive(target) {
-    target.value.length >= 1 ? target.classList.add('active') : target.classList.remove('active');
-  }
-};
+
 const inputText = () => {
   const inputs = document.querySelectorAll('.input-text');
   if (inputs.length >= 1) {
     inputs.forEach(el => {
-      if (!el.classList.contains('input-text--auto-width')) return;
       const input = el.querySelector('.input-text__input');
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
       input.addEventListener('input', () => {
         input.value = input.value.replace(/\D/g, '');
-        console.log(input.value);
-        (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_0__["default"])(input);
+        input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_2__["default"])(input.value);
       });
       (0,_modules_inputCursorEnd__WEBPACK_IMPORTED_MODULE_1__["default"])(input, 'focus');
     });
@@ -2668,6 +2712,30 @@ function initSliders() {
       });
     });
   }
+  if (document.querySelector('.object-similar__items')) {
+    const sliders = document.querySelectorAll('.object-similar__items');
+    sliders.forEach(el => {
+      const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 16,
+        speed: 800,
+        navigation: {
+          prevEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--prev'),
+          nextEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--next')
+        },
+        breakpoints: {
+          568: {
+            slidesPerView: 2
+          },
+          1112: {
+            slidesPerView: 3
+          }
+        }
+      });
+    });
+  }
 }
 function objectSlider() {
   const container = document.querySelector('.object-slider');
@@ -3239,8 +3307,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const inputResize = input => {
-  input.style.width = 0;
-  input.style.width = input.scrollWidth + 'px';
+  if (input.classList.contains('filter-range-one__input--w-auto')) {
+    input.style.width = 0;
+    input.style.width = input.scrollWidth + 'px';
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputResize);
 
@@ -3351,6 +3421,25 @@ const modal = function (modalHTML, container) {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
+
+/***/ }),
+
+/***/ "./src/js/modules/numberReplace.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/numberReplace.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const numberReplace = number => {
+  const result = number.match(/^(.*?)((?:[,.]\d+)?|)$/)[1].replace(/\B(?=(?:\d{3})*$)/g, ' ');
+  return result === ' ' ? '' : result;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (numberReplace);
 
 /***/ }),
 

@@ -4,7 +4,7 @@
     &__body {
         @media (max-width:$desktop) {
             padding: 74px 0 16px;
-            background-color: rgba(235, 241, 251, 0.4);
+            background-color: var(--stand-bg);
             border-radius: 0 0 12px 12px;
         }
     }
@@ -52,12 +52,12 @@
     }
 }
 
-.buy-apartment-filter {
-    &__row--1 {
-        grid-template-columns: percent(273, 1080) percent(301, 1080) percent(262, 1080) percent(197, 1080);
+.buy-apartment-filter--building {
+    .buy-apartment-filter__row--1 {
+        grid-template-columns: percent(273, 1080) percent(290, 1080) percent(254, 1080) percent(215, 1080);
     }
 
-    &__row--2 {
+    .buy-apartment-filter__row--2 {
         grid-template-columns: percent(245, 1080) percent(350, 1080) 1fr;
     }
 }

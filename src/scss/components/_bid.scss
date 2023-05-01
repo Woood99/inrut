@@ -1,11 +1,11 @@
 .bid {
     &__container {
-        background-color: rgba(235, 241, 251, 0.4);
+        background-color: var(--stand-bg);
         border-radius: 16px;
         padding: 32px;
-        grid-column-gap: 24px;
+        grid-column-gap: 16px;
         display: grid;
-        grid-template-columns: percent(604, 1048) percent(420, 1048);
+        grid-template-columns: 1fr percent(420, 1048);
         justify-content: space-between;
 
         @media (max-width:$desktop) {
@@ -20,7 +20,7 @@
 
     &__body {
         background-color: var(--white);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-primary);
         border-radius: 12px;
         padding: 32px 24px;
         padding: 24px;
@@ -161,14 +161,14 @@
         }
     }
 
-    &__user {
-        align-self: start;
-
+    &__sidebar {
         @media (max-width:$desktop) {
             order: 1;
             grid-column: 1/-1;
         }
     }
+
+    &__user {}
 
     &__messages {
         margin-top: 32px;
@@ -234,21 +234,22 @@
 
 
 .bid-user {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
+    box-shadow: var(--shadow-primary);
 
     border-radius: 12px;
     padding: 40px 69.5px;
     text-align: center;
 
     overflow: hidden;
-    position: relative;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media (min-width:$desktop) {
+    position: relative;
+
+    @media (min-width:$desktop-min) {
 
         &::before,
         &::after {
@@ -268,6 +269,12 @@
             background-image: url('../img/banner-blur.png');
             background-size: cover;
             z-index: 0;
+        }
+
+        &._sticky {
+            position: sticky;
+            top: 16px;
+            width: 100%;
         }
     }
 

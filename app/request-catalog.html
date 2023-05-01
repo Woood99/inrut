@@ -25,7 +25,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -262,7 +262,7 @@
                     1 567 заявок на покупку
                 </h1>
                 <form class="request-catalog__filter filter request-catalog-filter filter--more">
-                    <button type="button" class="btn btn-reset btn-primary filter__btn">
+                    <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
                         </svg>
@@ -275,17 +275,14 @@
                         </div>
                         <div class="filter__inner">
                             <div class="filter__row request-catalog-filter__row--1">
-                                <div class="filter__item filter__item--object request-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Тип объекта
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="type-object">
-                                            <option value="apartments">Квартиры</option>
-                                            <option value="apartments2">Квартиры2</option>
-                                            <option value="apartments3">Квартиры3</option>
-                                        </select>
-                                    </div>
+                                <div
+                                    class="filter__item filter__item--object place-sale-options__item select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder>Тип объекта</option>
+                                        <option value="complex">Квартиры1</option>
+                                        <option value="complex2">Квартиры2</option>
+                                        <option value="complex3">Квартиры3</option>
+                                    </select>
                                 </div>
                                 <div
                                     class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
@@ -329,25 +326,28 @@
                                 </div>
                                 <div class="filter__item filter__item--budget request-catalog__budget filter-dropdown">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
-                                        <span>
-                                            Бюджет
-                                        </span>
+                                        <div class="filter-dropdown__button-wrapper">
+                                            Сумма
+                                        </div>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown">
                                         <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по стоимости, руб.
+                                            </span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
-                                                        <span>Цена</span> от
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
                                                     </div>
-                                                    <div>-</div>
+                                                    <div>–</div>
                                                     <div data-range-end>
-                                                        до
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
                                                     </div>
                                                     <div>
                                                         ₽
@@ -363,22 +363,25 @@
                                             </button>
                                         </div>
                                         <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по ежемесячному платежу, руб.
+                                            </span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
-                                                        <span>Цена</span> от
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
                                                     </div>
-                                                    <div>-</div>
+                                                    <div>–</div>
                                                     <div data-range-end>
-                                                        до
-                                                        <input type="text" name="Имя" class="input-reset">
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
                                                     </div>
                                                     <div>
                                                         ₽
                                                     </div>
                                                 </div>
-                                                <div class="filter-range__inner" data-min="500000" data-max="200000000">
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
                                                 </div>
                                             </div>
                                             <button type="button" class="btn btn-reset filter-dropdown__choice">
@@ -399,31 +402,22 @@
                             </div>
                             <div class="filter__row request-catalog-filter__row--2" hidden>
                                 <div
-                                    class="filter__item filter__item--properties request-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Свойства расчета
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="properties">
-                                            <option value="apartments">Ипотека, Ипотека без первоначального текстфыв
-                                            </option>
-                                            <option value="apartments2">Свойства расчета2</option>
-                                            <option value="apartments3">Свойства расчета3</option>
-                                        </select>
-                                    </div>
+                                    class="filter__item filter__item--properties request-catalog__select select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder>Свойства расчета</option>
+                                        <option value="complex">Квартиры1</option>
+                                        <option value="complex2">Квартиры2</option>
+                                        <option value="complex3">Квартиры3</option>
+                                    </select>
                                 </div>
-                                <div class="filter__item filter__item--complex request-catalog__select select-primary">
-                                    <span class="select-primary__name">
-                                        Комплекс
-                                    </span>
-                                    <div class="select-primary__inner">
-                                        <select class="select-primary__body" name="complex">
-                                            <option value="complex">Сказкаград, Добродом,Ска тестТекст тестТекст
-                                            </option>
-                                            <option value="complex2">Комплекс2</option>
-                                            <option value="complex3">Комплекс3</option>
-                                        </select>
-                                    </div>
+                                <div
+                                    class="filter__item filter__item--complex request-catalog__select select-secondary">
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder>Комплекс</option>
+                                        <option value="complex">Комплекс1</option>
+                                        <option value="complex2">Комплекс2</option>
+                                        <option value="complex3">Комплекс3</option>
+                                    </select>
                                 </div>
                                 <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
                                     <div class="checkbox-secondary">
@@ -1239,8 +1233,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1350,8 +1343,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1421,8 +1413,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1512,8 +1503,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

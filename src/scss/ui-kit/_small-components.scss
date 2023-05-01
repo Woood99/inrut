@@ -588,7 +588,7 @@
 
         background-color: var(--white);
         border: 1px solid rgba(122, 127, 170, 0.1);
-        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+        box-shadow: var(--shadow-primary);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -648,7 +648,7 @@
 .bubble-speech {
     padding: 17px 24px;
     background-color: var(--white);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-primary);
     border-radius: 12px;
     font-size: 15px;
     line-height: math.div(19, 15);
@@ -721,7 +721,6 @@
 
         .input-primary {
             width: 230px;
-            height: 48px;
 
             &:not(:last-child) {
                 margin-right: 24px;
@@ -730,10 +729,6 @@
                     margin-right: 0;
                     margin-bottom: 16px;
                 }
-            }
-
-            @media (max-width:$desktop) {
-                height: 54px;
             }
 
             @media (max-width:$smallTablet-max) {
@@ -824,7 +819,7 @@
     align-items: center;
     justify-content: space-between;
 
-    background-color: rgba(235, 241, 251, 0.4);
+    background-color: var(--stand-bg);
     border: 1px solid var(--primary200);
     border-radius: 12px;
 
@@ -832,21 +827,24 @@
     font-size: 14px;
     line-height: math.div(17, 14);
     font-weight: 400;
-    height: 43px;
+    height: 45px;
     padding: 0 16px;
 
     svg {
         width: 18px;
         height: 18px;
         fill: var(--blue);
+        margin-left: 10px;
     }
 
-    @media (max-width:$desktop) {}
+    @media (max-width:$desktop) {
+        width: 100%;
+    }
 }
 
 .cards-list {
     padding: 24px 32px;
-    background: rgba(235, 241, 251, 0.4);
+    background-color: var(--stand-bg);
     border-radius: 23px;
 
     &__controls {
@@ -862,11 +860,10 @@
         margin-top: 32px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-        grid-row-gap: 32px;
-        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        grid-column-gap: 16px;
 
         @media (max-width:$desktop) {
-            grid-column-gap: 16px;
             grid-row-gap: 16px;
         }
 
@@ -883,15 +880,11 @@
 
         background-color: var(--white);
         border-radius: 12px;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-
+        box-shadow: var(--shadow-secondary);
         font-size: 20px;
         line-height: math.div(26, 20);
         font-weight: 500;
-
-        @media (max-width:$smallTablet-max) {
-            height: 200px;
-        }
+        min-height: 200px;
     }
 
     &__next {
@@ -982,7 +975,7 @@
     grid-template-columns: 1fr 15px;
     align-items: center;
 
-    background-color: rgba(235, 241, 251, 0.4);
+    background-color: var(--stand-bg);
     border: 1px solid var(--primary200);
     border-radius: 12px;
     text-align: left;
@@ -1030,30 +1023,91 @@
     }
 }
 
+.interest-rate-card {
+    background-color: var(--white);
+    border: 1px solid rgba(122, 127, 170, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 33px 1fr;
+    align-items: center;
+    grid-column-gap: 12px;
+    width: 242px;
+    height: 100%;
+    box-sizing: border-box;
 
-// old
-// .select-map-btn {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
+    &__circle {
+        grid-column: 1/2;
+        display: block;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        background-color: var(--primary200);
 
-//     background-color: var(--primary100);
-//     border-radius: 12px;
+        @media (max-width:$desktop) {
+            width: 28px;
+            height: 28px;
+        }
+    }
 
-//     color: var(--gray);
-//     font-size: 16px;
-//     line-height: math.div(19, 15);
-//     font-weight: 400;
+    &__title {
+        color: var(--primary600);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 500;
+        grid-column: 2/3;
+    }
 
-//     padding: 14.5px 16px;
+    &__prc {
+        margin-top: 16px;
 
-//     svg {
-//         width: 18px;
-//         height: 18px;
-//         fill: var(--blue);
-//     }
+        display: flex;
+        align-items: center;
 
-//     @media (max-width:$desktop) {
-//         padding: 19px 16px;
-//     }
-// }
+        grid-column: 1/-1;
+
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+
+        @media (max-width:$desktop) {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    }
+
+    &__prc--old {
+        margin-right: 8px;
+        position: relative;
+
+        &::before {
+            content: "";
+            border-bottom: 1px solid currentColor;
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            transform: rotate(-5deg);
+        }
+    }
+
+    &__prc--new {}
+
+    &__price {
+        margin-top: 5px;
+        grid-column: 1/-1;
+
+        color: var(--dark);
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+
+        @media (max-width:$desktop) {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        width: 220px;
+    }
+}

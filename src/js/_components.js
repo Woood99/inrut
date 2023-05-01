@@ -2,7 +2,7 @@ import {
     filterControl,
     uiSlider,
     uiSliderOne,
-    filterBudget,
+    filterSum,
     filterDropdownChoice,
     filterMobile,
     filterCustomSelectCheckboxes
@@ -13,12 +13,11 @@ import {
 import maps from './components/maps';
 import linkCopy from './modules/linkCopy';
 import {
-    inputPrimary,
     inputText,
     inputOnlyNumber
 } from './components/inputs';
 import {
-    validateRadioText
+    validateRadioPrimary
 } from './components/formValidate';
 import './components/calendar';
 import dropdown from './modules/dropdown';
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();
     uiSliderOne();
-    filterBudget();
+    filterSum();
     filterDropdownChoice();
     filterMobile();
     filterCustomSelectCheckboxes();
@@ -53,16 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
-    inputPrimary();
     inputText();
     inputOnlyNumber();
 
     // ==================================================
 
-    validateRadioText('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-    validateRadioText('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
-    validateRadioText('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-    validateRadioText('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
+    validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+    validateRadioPrimary('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+    validateRadioPrimary('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+    validateRadioPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
 
     // ==================================================
 
@@ -75,5 +73,4 @@ document.addEventListener('DOMContentLoaded', () => {
     emergingBlockScroll('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
-
 })

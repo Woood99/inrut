@@ -51,8 +51,9 @@
 
                 font-size: 12px;
                 line-height: math.div(15, 12);
-                @media (max-width:$desktop){
-                     padding: 4px 5px; 
+
+                @media (max-width:$desktop) {
+                    padding: 4px 5px;
                 }
             }
 
@@ -106,7 +107,7 @@
 
     &__container {
         margin-top: 32px;
-        background-color: rgba(235, 241, 251, 0.4);
+        background-color: var(--stand-bg);
         border-radius: 16px;
         padding: 24px;
 
@@ -157,6 +158,8 @@
             color: var(--blue);
             font-size: 12px;
             line-height: math.div(15, 12);
+            border: 1px solid var(--blue);
+            background-color: var(--white);
 
             svg {
                 width: 10px;

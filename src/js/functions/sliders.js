@@ -98,6 +98,30 @@ function initSliders() {
             });
         })
     }
+    if (document.querySelector('.object-similar__items')) {
+        const sliders = document.querySelectorAll('.object-similar__items');
+        sliders.forEach(el => {
+            const slider = new Swiper(el, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                    prevEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--prev'),
+                    nextEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--next'),
+                },
+                breakpoints: {
+                    568: {
+                        slidesPerView: 2,
+                    },
+                    1112: {
+                        slidesPerView: 3,
+                    }
+                },
+            });
+        })
+    }
 }
 
 

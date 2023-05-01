@@ -26,7 +26,7 @@
             <div class="header-top__city city" data-da=".header-main__nav,1112,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
-                        <use xlink:href="img/sprite.svg#location"></use>
+                        <use xlink:href="img/sprite.svg#location-fill"></use>
                     </svg>
                     <span class="city__name">Краснодар</span>
                 </button>
@@ -279,17 +279,12 @@
                             Адрес
                         </h2>
                         <div class="place-sale-address__city">
-                            <div class="place-sale-address__select select-primary">
-                                <span class="select-primary__name">
-                                    Город
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="city">
-                                        <option value="apartments">Санкт-Петербург</option>
-                                        <option value="apartments2">Волгоград</option>
-                                        <option value="apartments3">Москва</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-address__select select-secondary">
+                                <select class="select-secondary__body" name="city">
+                                    <option value="apartments">Санкт-Петербург</option>
+                                    <option value="apartments2">Волгоград</option>
+                                    <option value="apartments3">Москва</option>
+                                </select>
                             </div>
                             <div class="place-sale-address__text">
                                 <p>
@@ -310,8 +305,8 @@
                         </div>
                         <div class="place-sale-address__field">
                             <label class="input-primary">
-                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
-                                <span class="input-primary__span">Город, улица, дом, корпус</span>
+                                <input type="text" name="Имя" class="input-reset input-primary__input"
+                                    placeholder="Город, улица, дом, корпус">
                             </label>
                         </div>
                         <div id="place-sale-address-map"
@@ -323,17 +318,13 @@
                             Параметры
                         </h2>
                         <div class="place-sale-options__row place-sale-options__row--1">
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Тип объекта
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="type-object">
-                                        <option value="apartments">Квартиры</option>
-                                        <option value="apartments2">Квартиры2</option>
-                                        <option value="apartments3">Квартиры3</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="complex">
+                                    <option placeholder>Тип объекта</option>
+                                    <option value="complex">Выбор1</option>
+                                    <option value="complex2">Выбор2</option>
+                                    <option value="complex3">Выбор3</option>
+                                </select>
                             </div>
                             <div class="place-sale-options__item select-secondary">
                                 <select class="select-secondary__body" name="complex">
@@ -344,23 +335,18 @@
                                 </select>
                             </div>
                             <div class="place-sale-options__item select-multiple">
-                                <span class="select-multiple__name">
-                                    Теги
-                                </span>
-                                <div class="select-multiple__inner">
-                                    <select class="select-multiple__body" multiple name="tags">
-                                        <option value="tags1" selected>
-                                            Семейная ипотека
-                                        </option>
-                                        <option value="tags2">Ипотека с гос.поддержкой</option>
-                                        <option value="tags3">Комплекс3</option>
-                                    </select>
-                                </div>
+                                <select class="select-multiple__body" multiple name="tags">
+                                    <option placeholder>Теги</option>
+                                    <option value="tags1">
+                                        Семейная ипотека
+                                    </option>
+                                    <option value="tags2">Ипотека с гос.поддержкой</option>
+                                    <option value="tags3">Комплекс3</option>
+                                </select>
                             </div>
                         </div>
                         <div class="place-sale-options__row place-sale-options__row--2">
                             <div class="place-sale-options__item quantity-selection">
-                                <span class="quantity-selection__subtitle">Количество комнат</span>
                                 <div class="quantity-selection__inner">
                                     <div class="checkbox">
                                         <input id="filter-quantity_studios" name="filter-quantity-studios"
@@ -399,95 +385,74 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="place-sale-options__item input-text input-text--auto-width">
+                            <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
-                                    <span class="input-text__span">Площадь</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input" placeholder=""
-                                        value="56">
+                                    <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
+                                        placeholder="Площадь">
                                     <span class="input-text__name">м²</span>
                                 </label>
                             </div>
-                            <div class="place-sale-options__item input-text input-text--auto-width">
+                            <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
-                                    <span class="input-text__span">Общая площадь</span>
-                                    <input type="text" name="Имя" data-input-only-number
-                                        class="input-reset input-text__input" placeholder="" value="16">
+                                    <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
+                                        placeholder="Общая площадь">
                                     <span class="input-text__name">м²</span>
                                 </label>
                             </div>
-                            <div class="place-sale-options__item input-text input-text--auto-width">
+                            <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
-                                    <span class="input-text__span">Площадь кухни</span>
-                                    <input type="text" name="Имя" data-input-only-number
-                                        class="input-reset input-text__input" placeholder="" value="16">
+                                    <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
+                                        placeholder="Площадь кухни">
                                     <span class="input-text__name">м²</span>
                                 </label>
                             </div>
                         </div>
                         <div class="place-sale-options__row place-sale-options__row--3">
-                            <div class="place-sale-options__item input-text">
+                            <div class="place-sale-options__item input-text input-text--no-subtitle">
                                 <label class="input-text__label">
-                                    <span class="input-text__span">Этаж</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input"
-                                        data-input-only-number placeholder="" value="5">
+                                    <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
+                                        placeholder="Этаж">
                                 </label>
                             </div>
-                            <div class="place-sale-options__item input-text">
+                            <div class="place-sale-options__item input-text input-text--no-subtitle">
                                 <label class="input-text__label">
-                                    <span class="input-text__span">Этажей в доме</span>
-                                    <input type="text" name="Имя" class="input-reset input-text__input"
-                                        data-input-only-number placeholder="" value="12">
+                                    <input type="text" name="Имя" maxlength="4" class="input-reset input-text__input"
+                                        placeholder="Этажей в доме">
                                 </label>
                             </div>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Наличие мебели
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="availability-of-furniture">
-                                        <option value="yes">Да</option>
-                                        <option value="no">Нет</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="availability-of-furniture">
+                                    <option placeholder>Наличие мебели</option>
+                                    <option value="yes">Да</option>
+                                    <option value="no">Нет</option>
+                                </select>
                             </div>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Ремонт
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="repair">
-                                        <option value="repair1">Косметический</option>
-                                        <option value="repair2">Косметический2</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="repair">
+                                    <option placeholder>Ремонт</option>
+                                    <option value="repair1">Косметический</option>
+                                    <option value="repair2">Косметический2</option>
+                                </select>
                             </div>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Вид из окна
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="window">
-                                        <option value="window1">Во двор и на улицу</option>
-                                        <option value="window2">Во двор и на улицу2</option>
-                                        <option value="window2">Во двор и на улицу3</option>
-                                        <option value="window2">Во двор и на улицу4</option>
-                                        <option value="window2">Во двор и на улицу5</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="window">
+                                    <option placeholder>Вид из окна</option>
+                                    <option value="window1">Во двор и на улицу</option>
+                                    <option value="window2">Во двор и на улицу2</option>
+                                    <option value="window2">Во двор и на улицу3</option>
+                                    <option value="window2">Во двор и на улицу4</option>
+                                    <option value="window2">Во двор и на улицу5</option>
+                                </select>
                             </div>
                         </div>
                         <div class="place-sale-options__row place-sale-options__row--4" hidden>
-                            <div class="place-sale-options__item select-primary">
-                                <span class="select-primary__name">
-                                    Тип объекта
-                                </span>
-                                <div class="select-primary__inner">
-                                    <select class="select-primary__body" name="type-object">
-                                        <option value="apartments">Квартиры</option>
-                                        <option value="apartments2">Квартиры2</option>
-                                        <option value="apartments3">Квартиры3</option>
-                                    </select>
-                                </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <select class="select-secondary__body" name="complex">
+                                    <option placeholder>Тип объекта</option>
+                                    <option value="complex">Выбор1</option>
+                                    <option value="complex2">Выбор2</option>
+                                    <option value="complex3">Выбор3</option>
+                                </select>
                             </div>
                         </div>
                         <button type="button" class="btn btn-reset place-sale-options__more">
@@ -516,11 +481,8 @@
                             </button>
                         </div>
                         <label class="place-sale-descr__textarea textarea-primary">
-                            <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                            <span class="textarea-primary__span">
-                                Расскажите о недвижимости, собственниках, соседях, транспортной доступности и
-                                инфраструктуре
-                            </span>
+                            <textarea class="input-reset textarea-primary__input"
+                                placeholder="Расскажите о недвижимости, собственниках, соседях, транспортной доступности и инфраструктуре"></textarea>
                         </label>
                     </div>
                     <div class="place-sale__row place-sale-photo">
@@ -552,8 +514,8 @@
                             Добавте видео вашей недвижимости
                         </p>
                         <label class="place-sale-video__field input-primary">
-                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
-                            <span class="input-primary__span">Ссылка на видео с YouTube</span>
+                            <input type="text" name="Имя" class="input-reset input-primary__input"
+                                placeholder="Ссылка на видео с YouTube">
                         </label>
                     </div>
                     <div class="submit-app__row place-sale-price">
@@ -575,8 +537,8 @@
                         </div>
                         <div class="place-sale-price__wrapper">
                             <label class="place-sale-price__input input-primary">
-                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="">
-                                <span class="input-primary__span">Цена</span>
+                                <input type="text" name="Имя" class="input-reset input-primary__input"
+                                    placeholder="Цена">
                             </label>
                             <div class="place-sale-price__select select-secondary">
                                 <select class="select-secondary__body" name="deal-type">
@@ -640,14 +602,12 @@
                         </h2>
                         <div class="your-contacts-field__wrapper">
                             <label class="input-primary">
-                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input active"
-                                    disabled value="8 921 645 45 45" placeholder>
-                                <span class="input-primary__span">Номер телефона</span>
+                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input"
+                                    disabled value="8 921 645 45 45" placeholder="Номер телефона">
                             </label>
                             <label class="input-primary">
-                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input active"
-                                    disabled value="Алексей Г.">
-                                <span class="input-primary__span">Имя, фамилия</span>
+                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input" disabled
+                                    value="Алексей Г." placeholder="Имя, фамилия">
                             </label>
                         </div>
                     </div>
@@ -1130,8 +1090,7 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder=""></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1241,8 +1200,7 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1312,8 +1270,7 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее на что жалуетесь</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1403,8 +1360,7 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder></textarea>
-                    <span class="textarea-primary__span">Расскажите подробнее в чем проблема</span>
+                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">

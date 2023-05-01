@@ -53,12 +53,22 @@ if (selectMultiple.length >= 1) {
             noChoicesText: 'Вы выбрали все доступные теги',
             removeItemButton: true,
         })
-
+        const placeholder = document.createElement('span');
+        placeholder.textContent = 'Теги';
+        placeholder.classList.add('select-multiple__placeholder');
+        el.closest('.choices').insertAdjacentElement('afterbegin', placeholder);
+        el.addEventListener('addItem', (e) => {
+            e.target.length ? placeholder.setAttribute('hidden', '') : placeholder.removeAttribute('hidden');
+        })
+        el.addEventListener('removeItem', (e) => {
+            e.target.length ? placeholder.setAttribute('hidden', '') : placeholder.removeAttribute('hidden');
+        })
         el.closest('.choices').addEventListener('click', (e) => {
             if ((e.target.classList.contains('choices') || e.target.classList.contains('choices__inner')) && el.closest('.choices').classList.contains('is-open')) {
                 choices.hideDropdown();
             }
         })
+
     });
 }
 
