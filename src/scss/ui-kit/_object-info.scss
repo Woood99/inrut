@@ -11,6 +11,7 @@
     grid-template-columns: percent(141, 952) percent(299, 1016) max-content 1fr percent(160, 1016);
     padding: 27px 40px 27px 24px;
     -webkit-tap-highlight-color: transparent;
+    transition: box-shadow $transitionSpeed $transitionFunction;
 
     &__type {
         font-size: 18px;
@@ -109,6 +110,12 @@
         line-height: math.div(19, 15);
         justify-self: start;
         white-space: nowrap;
+    }
+
+    @media (min-width:$desktop-min) {
+        &:hover {
+            box-shadow: var(--shadow-secondary);
+        }
     }
 
     @media (max-width:$desktop) {
@@ -473,8 +480,6 @@
 }
 
 
-
-
 .object-info-grade {
     width: 100%;
     background: var(--white);
@@ -604,7 +609,7 @@
 
     @media (min-width:$desktop-min) {
         &:hover {
-            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-secondary)
         }
     }
 
@@ -613,5 +618,70 @@
         grid-column-gap: 16px;
         grid-row-gap: 32px;
         padding: 24px 10px 24px 16px;
+    }
+}
+
+
+
+
+.object-info-fourth {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+
+
+    color: var(--dark);
+    display: grid;
+    align-items: center;
+    grid-column-gap: 32px;
+    grid-row-gap: 8px;
+    grid-template-columns: percent(400, 968) 1fr 1fr;
+    padding: 24px 24px 24px 24px;
+
+    -webkit-tap-highlight-color: transparent;
+    transition: box-shadow $transitionSpeed $transitionFunction;
+
+    &__user {
+        @media (max-width:$smallTablet-max) {
+            margin-bottom: 32px;
+            grid-column: 1/-1;
+        }
+    }
+
+    &__quantity {
+        color: var(--primary600);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+
+        span {
+            margin-bottom: 8px;
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 400;
+            color: var(--primaryTwo);
+            display: block;
+
+            @media (min-width:$smallTablet-min) {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width:$desktop) {
+        &:hover {
+            box-shadow: var(--shadow-secondary);
+        }
+    }
+
+    @media (max-width:$desktop) {
+        grid-column-gap: 16px;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        align-items: start;
+        grid-template-columns: 1fr 1fr;
+        padding: 24px 16px 16px;
     }
 }

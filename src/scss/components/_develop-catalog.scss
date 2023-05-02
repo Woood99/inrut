@@ -1,4 +1,5 @@
-.selection-estate {
+.develop-catalog {
+
     &__body {
         @media (max-width:$desktop) {
             padding: 74px 0 0 0;
@@ -12,6 +13,7 @@
             padding-right: 16px;
         }
     }
+
 
     &__filter {
         margin-top: 32px;
@@ -56,19 +58,25 @@
         }
     }
 
-    &__select {
+    &__controls {
+        margin-top: 16px;
     }
 
     &__input {
-
         @media (max-width:$desktop) {
             height: 45px;
             width: 100%;
         }
     }
 
-    &__controls {
-        margin-top: 16px;
+    &__sort {
+        align-self: start;
+
+        @media (max-width:$desktop) {
+            justify-content: center;
+            padding: 0 16px;
+            margin-top: 16px;
+        }
     }
 
     &__table {
@@ -76,14 +84,8 @@
 
         .main-table {
             &__type {
-                grid-template-columns: percent(324, 968) percent(280, 968) 1fr;
-
-                span {
-                    &:not(:first-child) {
-                        text-align: center;
-                        margin: 0;
-                    }
-                }
+                grid-template-columns: percent(400, 968) 1fr 1fr;
+                grid-column-gap: 32px;
 
                 @media (max-width:$desktop) {
                     display: grid !important; // need hack :( 
@@ -121,7 +123,8 @@
     }
 }
 
-.selection-estate-filter {
+.develop-catalog-filter {
+
     &__row--1 {
         grid-template-columns: percent(230, 1080) 1fr;
     }
