@@ -122,6 +122,27 @@ function initSliders() {
             });
         })
     }
+    if (document.querySelector('.agent-stock__slider')) {
+        const sliders = document.querySelectorAll('.agent-stock__slider');
+        sliders.forEach(el => {
+            const slider = new Swiper(el, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                    prevEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--prev'),
+                    nextEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--next'),
+                },
+                breakpoints: {
+                    568: {
+                        slidesPerView: 2,
+                    }
+                },
+            });
+        })
+    }
 }
 
 

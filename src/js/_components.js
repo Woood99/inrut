@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownItems('.your-app-bid__item--dropdown', 'button', 'Меньше');
     dropdownItems('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
     dropdownDown('.object-data', '.object-data__text', '.object-data__more');
+
     // ==================================================
 
     emergingBlockScroll('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);

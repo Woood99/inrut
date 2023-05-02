@@ -1111,3 +1111,60 @@
         width: 220px;
     }
 }
+
+
+.card-stock {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary100);
+    border-radius: 12px;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    &__title {
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        color: var(--dark);
+        font-weight: 500;
+    }
+
+    &__descr {
+        margin-top: 8px;
+
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        color: var(--dark);
+
+        flex-grow: 1;
+    }
+
+    &__bottom {
+        margin-top: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    &__time {
+        color: var(--primaryTwo);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: math.div(15, 12);
+    }
+
+    &__tooltip {
+
+        .secondary-tooltip__btn {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

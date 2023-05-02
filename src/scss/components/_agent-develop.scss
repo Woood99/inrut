@@ -1,0 +1,136 @@
+.agent-develop {
+    .bid-user {
+        padding: 40px 24px 32px;
+
+        @media (max-width:$desktop) {
+            padding: 16px;
+        }
+    }
+
+    .agent-object {
+        padding-top: 24px;
+
+        @media (max-width:$desktop) {
+            margin-top: 8px;
+            padding: 16px 0 0;
+            background-color: var(--white);
+        }
+    }
+
+    .filter__btn {
+        @media (max-width:$desktop) {
+            margin: 0 16px;
+            width: calc(100% - 32px);
+        }
+    }
+}
+
+
+.agent-stock {
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    &__title {}
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        .nav-arrow-secondary--next {
+            margin-left: 10px;
+        }
+
+        @media (max-width:$mobile-max) {
+            display: none;
+        }
+    }
+
+    &__slider {
+        .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .card-stock {
+            height: 100%;
+            position: relative;
+
+            .secondary-tooltip {
+                position: static;
+
+                &__content {
+                    left: auto;
+                    right: 16px;
+                    max-width: 85%;
+                    bottom: calc(16px + 22px + 8px); // gap bottom + size btn + gap
+                    height: max-content;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        @media (max-width:$mobile-max) {
+            padding: 0 16px;
+            margin: 0 -16px;
+        }
+    }
+}
+
+
+
+
+
+.agent-object {
+    &__title {
+        span {
+            color: var(--primaryTwo);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: math.div(19, 15);
+        }
+
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
+    }
+
+    &__filter {
+        margin-top: 32px;
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__sort {
+        @media (max-width:$desktop) {
+            justify-content: center;
+            margin-top: 16px;
+            padding: 0 16px;
+        }
+    }
+
+    &__cards-list {
+        margin-top: 24px;
+    }
+}
+
+.agent-object-filter {
+
+    &__row--1 {
+        grid-template-columns: percent(273, 1080) percent(301, 1080) percent(262, 1080) percent(197, 1080);
+    }
+
+    &__row--2 {
+        grid-template-columns: percent(245, 1080) percent(350, 1080) 1fr;
+    }
+}
