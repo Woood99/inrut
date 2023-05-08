@@ -1,7 +1,6 @@
 const headerFixed = () => {
     const headerFixed = document.querySelector('.header-fixed');
-    if (!headerFixed && window.innerWidth <= 1112) return;
-
+    if (!(headerFixed && window.innerWidth >= 1112)) return;
     const header = document.querySelector('.header');
     const links = headerFixed.querySelectorAll('.header-fixed__item-link');
     const headerHeight = headerFixed.offsetHeight;
