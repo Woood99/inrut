@@ -1,11 +1,18 @@
-// ========================================================================================
-
 import burgerMenu from './functions/burger';
-burgerMenu();
+import tabs from "./functions/tabs";
+import spollers from "./functions/spollers";
 
+burgerMenu();
+tabs();
+spollers();
 
 // ========================================================================================
 
+import "./functions/sliders";
+import "./functions/dynamic-adapt";
+import './functions/fix-fullheight';
+
+// ========================================================================================
 
 import popup from './functions/popup';
 const city = new popup(null, '.popup-primary--city');
@@ -18,63 +25,7 @@ const complaintObject = new popup(null, '.popup-primary--complaint-object')
 const thanks = new popup(null, '.popup-primary--thanks')
 const objectNot = new popup(null, '.popup-primary--object-not')
 const interestRate = new popup(null, '.popup-primary--interest-rate')
-
-// ========================================================================================
-
-
-// Табы
-import tabs from "./functions/tabs";
-tabs();
-
-
-
-// ========================================================================================
-
-
-// Файл со слайдерами
-import "./functions/sliders";
-
-
-// ========================================================================================
-
-
-// Спойлеры
-import spollers from "./functions/spollers";
-spollers();
-
-
-
-// ========================================================================================
-
-
-
-// Звёздный рейтинг 
-// import formRating from "./functions/rating";
-// formRating();
-
-
-
-// ========================================================================================
-
-
-
-// quantity
-// import quantity from './functions/quantity'
-// quantity();
-
-
-// ========================================================================================
-
-
-// Динамический адаптив
-import "./functions/dynamic-adapt";
-
-
-// ========================================================================================
-
-
-// Фикс фулскрин-блоков
-import './functions/fix-fullheight';
-
+const constructProgress = new popup(null, '.popup-primary--construct-progress')
+const genplan = new popup(null, '.popup-genplan')
 
 // ========================================================================================

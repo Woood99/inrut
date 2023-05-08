@@ -1,7 +1,15 @@
 .agent-develop {
     .bid-user {
         padding: 40px 24px 32px;
-
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: percent(104.5, 367);
+        }
         @media (max-width:$desktop) {
             padding: 16px;
         }
@@ -77,10 +85,10 @@
             }
         }
 
-        @media (max-width:$mobile-max) {
-            padding: 0 16px;
-            margin: 0 -16px;
-        }
+       @media (max-width:$smallTablet-max){
+        padding: 0 16px;
+        margin: 0 -16px; 
+       }
     }
 }
 

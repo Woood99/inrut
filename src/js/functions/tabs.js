@@ -1,23 +1,11 @@
+import {
+    createPopper
+} from '@popperjs/core';
+
 import getHash from '../support-modules/getHash';
 import dataMediaQueries from '../support-modules/dataMediaQueries';
-import {
-    _slideUp,
-    _slideDown,
-    _slideToggle
-} from '../support-modules/slide';
 
-/*
-Для родителя табов пишем атрибут data-tabs
-Для родителя заголовков табов пишем атрибут data-tabs-titles
-Для родителя блоков табов пишем атрибут data-tabs-body
-Для родителя блоков табов можно указать data-tabs-hash, это втключит добавление хеша
-Если нужно чтобы табы открывались с анимацией 
-добавляем к data-tabs data-tabs-animate
-По умолчанию, скорость анимации 500ms, 
-указать свою скорость можно так: data-tabs-animate="1000"
-Если нужно чтобы табы превращались в "спойлеры", на неком размере экранов, пишем параметры ширины.
-Например: data-tabs="992" - табы будут превращаться в спойлеры на экранах меньше или равно 992px
-*/
+
 const tabs = () => {
     const tabs = document.querySelectorAll('[data-tabs]');
     let tabsActiveHash = [];
@@ -90,6 +78,10 @@ const tabs = () => {
                     tabsTitles[index].classList.add('_tab-active');
                 }
                 tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
+                if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.hidden) {
+                    tabsContentItem.classList.add('init-popper');
+                    popperTooltip(tabsContentItem);
+                }
             });
         }
     }
@@ -97,34 +89,19 @@ const tabs = () => {
     function setTabsStatus(tabsBlock) {
         let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
         let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
-        const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
 
-        function isTabsAnamate(tabsBlock) {
-            if (tabsBlock.hasAttribute('data-tabs-animate')) {
-                return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
-            }
-        }
-        const tabsBlockAnimate = isTabsAnamate(tabsBlock);
         if (tabsContent.length > 0) {
-            const isHash = tabsBlock.hasAttribute('data-tabs-hash');
             tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
             tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
             tabsContent.forEach((tabsContentItem, index) => {
                 if (tabsTitles[index].classList.contains('_tab-active')) {
-                    if (tabsBlockAnimate) {
-                        _slideDown(tabsContentItem, tabsBlockAnimate);
-                    } else {
-                        tabsContentItem.hidden = false;
-                    }
-                    if (isHash && !tabsContentItem.closest('.popup')) {
-                        setHash(`tab-${tabsBlockIndex}-${index}`);
+                    tabsContentItem.hidden = false;
+                    if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.classList.contains('init-popper')) {
+                        tabsContentItem.classList.add('init-popper');
+                        popperTooltip(tabsContentItem);
                     }
                 } else {
-                    if (tabsBlockAnimate) {
-                        _slideUp(tabsContentItem, tabsBlockAnimate);
-                    } else {
-                        tabsContentItem.hidden = true;
-                    }
+                    tabsContentItem.hidden = true;
                 }
             });
         }
@@ -144,6 +121,27 @@ const tabs = () => {
             }
             e.preventDefault();
         }
+    }
+
+    function popperTooltip(container) {
+        container.querySelectorAll('.object-apart-renov__mark').forEach(item => {
+            const btn = item.querySelector('.secondary-tooltip__btn');
+            const content = item.querySelector('.secondary-tooltip__content');
+          createPopper(btn, content, {
+                placement: 'auto',
+                modifiers: [{
+                    name: 'offset',
+                    options: {
+                        offset: [0, 5]
+                    }
+                }, {
+                    name: 'eventListeners',
+                    options: {
+                        scroll: false,
+                    }
+                }]
+            });
+        });
     }
 }
 

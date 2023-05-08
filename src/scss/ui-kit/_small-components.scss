@@ -256,6 +256,148 @@
     }
 }
 
+.simplebar-secondary {
+    max-width: 968px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .simplebar-mask {
+        position: static;
+    }
+
+    .simplebar-track.simplebar-horizontal {
+        background-color: var(--primary200);
+        height: 10px;
+        overflow: visible;
+
+        .simplebar-scrollbar {
+            &::before {
+                left: 0;
+                right: 0;
+            }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            height: 5px;
+        }
+    }
+
+    .simplebar-scrollbar {
+        height: 10px !important; // need hack :(
+        top: 0 !important;
+
+        &::before {
+            background-color: var(--blue);
+            border-radius: 0 0 12px 12px;
+            opacity: 1;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            height: 5px !important; // need hack :(
+        }
+    }
+}
+
+
+
+.room-info {
+    display: grid;
+    grid-template-columns: percent(235, 968) percent(181, 968) percent(240, 968) percent(180, 968) 1fr;
+    align-items: start;
+    text-align: left;
+    grid-column-gap: 16px;
+    padding: 34.5px 24px;
+
+    background-color: var(--white);
+    border: 1px solid #EBF1FB;
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+
+    color: var(--dark);
+
+    font-size: 15px;
+    line-height: math.div(19, 15);
+
+    &__name {
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+
+        @media (max-width:$desktop) {
+            font-size: 15px;
+            order: 1;
+        }
+    }
+
+    &__meter {
+        font-weight: 400;
+
+        @media (max-width:$desktop) {
+            order: 2;
+            flex-grow: 1;
+        }
+    }
+
+    &__price {
+        font-weight: 500;
+
+        @media (max-width:$desktop) {
+            order: 4;
+        }
+    }
+
+    &__quantity {
+        font-weight: 400;
+
+        @media (max-width:$desktop) {
+            order: 3;
+        }
+    }
+
+    &__check {
+        width: 20px;
+        height: 20px;
+
+        background-color: var(--blue);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        justify-self: end;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+
+            transition: transform $transitionSpeedFast $transitionFunction;
+        }
+
+        @media (max-width:$desktop) {
+            grid-column: 3/4;
+            grid-row: 1/3;
+            align-self: center;
+            background-color: transparent;
+            border-radius: 0;
+
+            svg {
+                fill: var(--blue);
+            }
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding: 23px 16px 23px 24px;
+        grid-template-columns: repeat(2, max-content) 1fr;
+        grid-row-gap: 10px;
+    }
+}
+
+
+
+
 
 .calendar-event-simplebar {
 
@@ -518,6 +660,37 @@
     }
 }
 
+.user-info-develop-two {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 5px;
+
+    &__avatar {
+        grid-column: 1/2;
+        grid-row: 1/3;
+        width: 46px;
+        height: 46px;
+    }
+
+    &__date {
+
+        align-self: end;
+        color: var(--primaryTwo);
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 100%;
+        white-space: nowrap;
+    }
+
+    &__name {
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        align-self: start;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+}
 
 
 
@@ -733,6 +906,60 @@
     }
 }
 
+.purchase-terms {
+    padding: 16px;
+
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px;
+
+        background-color: var(--primary100);
+        border-radius: 12px;
+
+        transition: box-shadow $transitionSpeed $transitionFunction;
+
+        text-align: left;
+
+        span {
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+
+            &:nth-child(1) {
+                color: var(--gray);
+                width: 37%;
+            }
+
+            &:nth-child(2) {
+                margin-left: 8px;
+                color: var(--blue);
+            }
+        }
+
+        svg {
+            margin-left: 10px;
+            --size: 17px;
+            flex: 0 0 var(--size);
+            width: var(--size);
+            height: var(--size);
+            fill: var(--blue);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}
 
 .communic-method-radios {
 

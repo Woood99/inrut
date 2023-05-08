@@ -267,7 +267,7 @@
                 </a>
                 <div class="object__btns top-page-inner__btns">
                     <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-mobile-speed
-                        data-popup-path="share-app">
+                        data-popup-path="share-app" title="Поделиться">
                         <svg>
                             <use xlink:href="img/sprite.svg#share"></use>
                         </svg>
@@ -290,7 +290,7 @@
                             <div class="swiper object-slider-body__wrapper">
                                 <div class="swiper-wrapper" id="object-gallery">
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -299,7 +299,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
-                                            data-poster="./img/card-2.jpg" class="object-gallery__item">
+                                            data-poster="./img/card-2.webp" class="object-gallery__item">
                                             <div class="video-play">
                                                 <div class="video-play__icon">
                                                     <svg>
@@ -315,7 +315,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-2.jpg" class="object-gallery__item">
+                                        <a href="./img/card-2.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-2.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-2.jpg" alt="">
@@ -323,7 +323,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -331,7 +331,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -339,7 +339,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -347,7 +347,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -356,7 +356,7 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
-                                            data-poster="./img/card-1.jpg" class="object-gallery__item">
+                                            data-poster="./img/card-1.webp" class="object-gallery__item">
                                             <div class="video-play">
                                                 <div class="video-play__icon">
                                                     <svg>
@@ -372,7 +372,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a href="./img/card-1.jpg" class="object-gallery__item">
+                                        <a href="./img/card-1.webp" class="object-gallery__item">
                                             <picture>
                                                 <source srcset="./img/card-1.webp" type="image/webp">
                                                 <img loading="lazy" src="./img/card-1.jpg" alt="">
@@ -921,10 +921,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--interest-rate">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="interest-rate-modal">
@@ -1028,9 +1024,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="popup popup-secondary popup-secondary--right popup-secondary--personal">
     <div class="popup__container popup-secondary__container" role="dialog" aria-modal="true"
         data-popup-target="personal-area">
@@ -1164,11 +1157,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--share-app">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="share-app">
@@ -1230,9 +1218,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--complaint">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="complaint">
@@ -1285,7 +1270,8 @@
                     </div>
                 </div>
                 <label class="complaint-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
+                    <textarea class="input-reset textarea-primary__input"
+                        placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1295,9 +1281,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--thanks">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="thanks">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
@@ -1317,10 +1300,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--complaint-user">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="complaint-user">
@@ -1395,7 +1374,8 @@
                     </div>
                 </div>
                 <label class="complaint-user-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
+                    <textarea class="input-reset textarea-primary__input"
+                        placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1465,7 +1445,8 @@
                     </div>
                 </div>
                 <label class="complaint-object-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
+                    <textarea class="input-reset textarea-primary__input"
+                        placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
@@ -1475,8 +1456,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="popup popup-primary popup-primary--right popup-primary--object-not">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="object-not">
@@ -1555,13 +1534,131 @@
                     </div>
                 </div>
                 <label class="object-not-popup__textarea textarea-primary">
-                    <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
+                    <textarea class="input-reset textarea-primary__input"
+                        placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"
                     data-mobile-speed disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="popup popup-primary popup-primary--construct-progress">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
+        data-popup-target="construct-progress-popup">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content construct-progress-popup">
+            <div class="construct-progress-popup__title">
+                <h2 class="title-2">
+                    Ход строительства
+                </h2>
+                <span>(обновлено 27.02.2023)</span>
+            </div>
+            <div class="swiper construct-progress-popup__images">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="construct-progress-popup__image ibg-contain">
+                            <picture>
+                                <source srcset="./img/card-3.webp" type="image/webp">
+                                <img loading="lazy" src="./img/card-3.jpg" alt="Картинка">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="construct-progress-popup__image ibg-contain">
+                            <picture>
+                                <source srcset="./img/card-5.webp" type="image/webp">
+                                <img loading="lazy" src="./img/card-5.jpg" alt="Картинка">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="construct-progress-popup__image ibg-contain">
+                            <picture>
+                                <source srcset="./img/card-1.webp" type="image/webp">
+                                <img loading="lazy" src="./img/card-1.jpg" alt="Картинка">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="construct-progress-popup__image ibg-contain">
+                            <picture>
+                                <source srcset="./img/card-2.webp" type="image/webp">
+                                <img loading="lazy" src="./img/card-2.jpg" alt="Картинка">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="construct-progress-popup__pagination pagination-primary"></div>
+                <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--prev">
+                    <div class="nav-arrow-primary__wrapper">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                        </svg>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--next">
+                    <div class="nav-arrow-primary__wrapper">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="construct-progress-popup__bottom">
+                <div class="construct-progress-popup__user user-info-develop-two">
+                    <div class="user-info-develop-two__avatar avatar">
+                        <img loading="lazy" src="./img/avatar-1.jpg" width="46" height="46" alt="ГК Самолет">
+                    </div>
+                    <span class="user-info-develop-two__date">
+                        Застройщик был в сети 12.12.2022
+                    </span>
+                    <span class="user-info-develop-two__name">
+                        ГК Самолет
+                    </span>
+                </div>
+                <div class="construct-progress-popup__btns">
+                    <button type="button"
+                        class="btn btn-reset btn-primary construct-progress-popup__btn construct-progress-popup__btn--call">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#phone"></use>
+                        </svg>
+                        Телефон
+                    </button>
+                    <button type="button"
+                        class="btn btn-reset btn-secondary construct-progress-popup__btn construct-progress-popup__btn--chat">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#chat"></use>
+                        </svg>
+                        Чат
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup popup-genplan">
+    <div class="popup__container popup-genplan__container" role="dialog" aria-modal="true"
+        data-popup-target="popup-genplan">
+        <button class="btn-reset js-popup-close popup__close popup-genplan__close" aria-label="Закрыть модальное окно">
+            Закрыть
+        </button>
+        <div class="popup__content popup-genplan__content">
+            <div class="genplan">
+              <picture>
+                  <source srcset="./img/genplan.webp" type="image/webp">
+                  <img loading="lazy" src="./img/genplan.jpg" alt="Генплан">
+                </picture>
+            </div>
         </div>
     </div>
 </div>

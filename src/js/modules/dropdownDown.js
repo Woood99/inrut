@@ -1,9 +1,8 @@
-const dropdownDown = (containerSelector, textSelector, targetSelector) => {
-    const items = document.querySelectorAll(containerSelector);
+const dropdownDown = (textSelector, targetSelector) => {
+    const items = document.querySelectorAll(textSelector);
     if (!items.length >= 1) return;
-    items.forEach(container => {
-        const text = container.querySelector(textSelector);
-        const btn = container.querySelector(targetSelector);
+    items.forEach(text => {
+        const btn = text.nextElementSibling;
         btn.addEventListener('click', () => {
             text.classList.add('_active');
             btn.remove();

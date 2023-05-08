@@ -1,0 +1,97 @@
+.develop-inner {
+    .bid-user {
+        padding: 32px 16px;
+
+        &::before,
+        &::after {
+            height: percent(90, 395);
+        }
+
+        &__avatar {
+            --size: 95px;
+        }
+
+        &__btns {
+            margin-top: 32px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 16px;
+            grid-row-gap: 24px;
+            width: 100%;
+
+
+        }
+
+        &__quantity {}
+
+        &__btn {
+            width: 100%;
+            margin: 0;
+
+            &--online-display {
+                margin-top: 0;
+                grid-column: 1/-1;
+
+                svg {
+                    fill: none;
+                    stroke: var(--white);
+                    stroke-width: 1.5px;
+                }
+            }
+
+            &--call {
+                padding: 0 11px;
+            }
+
+            &--message {
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width:$desktop) {
+            padding: 16px;
+        }
+    }
+
+    .object-data {
+        margin-top: 0;
+
+        &__name {
+            margin-top: 0;
+        }
+
+        .row {
+            margin-top: 16px;
+        }
+    }
+
+    .filter--more {
+        margin-bottom: 0;
+    }
+
+    .tabs-primary {
+        &__container {
+            @media (max-width:$desktop) {
+                margin-top: 32px;
+            }
+        }
+    }
+
+    .object-filter {
+        @media (max-width:$desktop) {
+            box-shadow: none;
+        }
+
+        &__tabs {
+            padding-bottom: 0;
+        }
+    }
+
+    .object-body__sidebar {
+        @media (max-width:$desktop) {
+            display: none;
+        }
+    }
+
+}

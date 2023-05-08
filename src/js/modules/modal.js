@@ -2,7 +2,7 @@ import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 
 
-const modal = (modalHTML, container, speed = 300) => {
+const modal = (modalHTML, container, speed = 300, target = false) => {
     if (document.querySelectorAll(container).length <= 0 && modalHTML) {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         const modalEl = document.querySelector(container);
@@ -46,6 +46,11 @@ const modal = (modalHTML, container, speed = 300) => {
                 settingsModal.modal.remove();
             }, settingsModal.speed);
             settingsModal.isOpen = false;
+
+
+            if (target && target.classList.contains('advantages-card')) {
+                target.classList.remove('_active');
+            }
         }
     }
 

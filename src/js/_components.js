@@ -30,6 +30,8 @@ import './components/videoBlock';
 import './components/reviewModal';
 import './components/placeSaleOptionMore';
 import './components/dropImage';
+import './components/checkboard';
+import './components/headerFixed';
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     simplebar('.simplebar-primary');
+    simplebar('.simplebar-secondary');
 
     // ==================================================
 
@@ -67,11 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown('.dots-dropdown', '.dots-dropdown__target');
     dropdownItems('.your-app-bid__item--dropdown', 'button', 'Меньше');
     dropdownItems('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
-    dropdownDown('.object-data', '.object-data__text', '.object-data__more');
+    dropdownDown('.object-data__text', '.object-data__more');
 
     // ==================================================
 
     emergingBlockScroll('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
+    emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112);
 })

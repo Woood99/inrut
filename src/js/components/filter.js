@@ -145,13 +145,13 @@ export const uiSliderOne = () => {
         const container = el.closest('.filter-range-one');
         const minValue = el.dataset.min;
         const maxValue = el.dataset.max;
-        const defaultEnd = container.querySelector('[data-default-end]');
+        const defaultValue = container.querySelector('[data-default]');
 
-        const inputMax = defaultEnd.querySelector('input');
+        const inputMax = defaultValue.querySelector('input');
 
         noUiSlider.create(el, {
-            start: [Number(minValue), Number(defaultEnd.dataset.defaultEnd)],
-            connect: true,
+            start: [Number(defaultValue.dataset.default)],
+            connect: 'lower',
             range: {
                 'min': Number(minValue),
                 'max': Number(maxValue),
@@ -165,7 +165,7 @@ export const uiSliderOne = () => {
 
         inputMax.addEventListener('change', function () {
             const numberString = this.value.replace(/\s/g, "")
-            el.noUiSlider.set([null, numberString]);
+            el.noUiSlider.set([numberString]);
 
             inputResize(inputMax);
         })
