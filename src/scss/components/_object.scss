@@ -1284,6 +1284,12 @@
             height: 20px;
             fill: var(--blue);
             margin-left: 10px;
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+        &:hover{
+            svg{
+                fill: var(--white);
+            }
         }
     }
 
@@ -1393,13 +1399,8 @@
         @media (max-width:$desktop) {
             height: 420px;
         }
-
-        @media (max-width:$smallTablet-max) {
-            height: 350px;
-        }
-
-        @media (max-width:$mobile-max) {
-            height: 313px;
+        @media (max-width:$smallTablet-max){
+             height: 385px; 
         }
     }
 

@@ -258,43 +258,72 @@
 
 .simplebar-secondary {
     max-width: 968px;
+    max-height: 608px;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
 
     .simplebar-mask {
         position: static;
     }
 
-    .simplebar-track.simplebar-horizontal {
-        background-color: var(--primary200);
-        height: 10px;
-        overflow: visible;
+    .simplebar-track {
+        &.simplebar-horizontal {
+            background-color: var(--primary200);
+            height: 7px;
 
-        .simplebar-scrollbar {
-            &::before {
-                left: 0;
-                right: 0;
+            .simplebar-scrollbar {
+                height: 7px;
+                top: 0;
+
+                &::before {
+                    left: 4px;
+                    right: 4px;
+                    background-color: var(--blue);
+                    border-radius: 0 0 12px 12px;
+                    opacity: 1;
+                }
+
+                @media (max-width:$smallTablet-max) {
+                    height: 5px;
+                }
+            }
+
+            @media (max-width:$smallTablet-max) {
+                height: 5px;
             }
         }
 
-        @media (max-width:$smallTablet-max) {
-            height: 5px;
+        &.simplebar-vertical {
+            background-color: var(--primary200);
+            width: 7px;
+            top: 0px;
+
+            .simplebar-scrollbar {
+                width: 7px;
+
+                &::before {
+                    left: 0;
+                    right: 0;
+                    top: -2px;
+                    bottom: -2px;
+                    background-color: var(--blue);
+                    border-radius: 12px 12px;
+                    opacity: 1;
+                }
+
+                @media (max-width:$smallTablet-max) {
+                    width: 5px;
+                }
+            }
+
+            @media (max-width:$smallTablet-max) {
+                width: 5px;
+            }
         }
     }
 
-    .simplebar-scrollbar {
-        height: 10px !important; // need hack :(
-        top: 0 !important;
-
-        &::before {
-            background-color: var(--blue);
-            border-radius: 0 0 12px 12px;
-            opacity: 1;
-        }
-
-        @media (max-width:$smallTablet-max) {
-            height: 5px !important; // need hack :(
-        }
+    .simplebar-content-wrapper {
+        margin-right: 12px;
     }
 }
 
