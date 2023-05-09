@@ -4222,7 +4222,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
 });
 
 /***/ }),
@@ -4905,17 +4905,25 @@ const filterControl = () => {
   });
 };
 const filterMobile = () => {
+  const filter = document.querySelector('.filter');
   const btn = document.querySelector('.filter__btn');
   const container = document.querySelector('.filter__container');
   if (!(btn && container)) return;
   const close = document.querySelector('.filter__close');
+  const mask = document.querySelector('.filter__mask');
   btn.addEventListener('click', () => {
-    container.classList.add('active');
+    mask ? mask.classList.add('active') : container.classList.add('active');
     (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
   });
   close.addEventListener('click', () => {
-    if (container.classList.contains('active')) {
-      container.classList.remove('active');
+    if (container.classList.contains('active')) container.classList.remove('active');
+    if (mask.classList.contains('active')) mask.classList.remove('active');
+    (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  });
+  filter.addEventListener('click', e => {
+    const target = e.target;
+    if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
+      mask.classList.remove('active');
       (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
     }
   });
@@ -6747,18 +6755,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const emergingBlockScroll = (targetThemSelector, emergingBlockSelector, screenSize) => {
+const emergingBlockScroll = function (targetThemSelector, emergingBlockSelector, screenSize) {
+  let beforeContainer = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   const target = document.querySelector(targetThemSelector);
   const block = document.querySelector(emergingBlockSelector);
   if (!(target && block)) return;
   window.addEventListener('scroll', () => {
     if (window.innerWidth >= screenSize) return;
     const pageOffsetTop = window.pageYOffset;
-    const targetOffsetTop = target.getBoundingClientRect().top + pageOffsetTop;
-    if (pageOffsetTop >= targetOffsetTop) {
-      block.classList.add('active-fixed');
+    const targetOffsetTop = target.getBoundingClientRect().top;
+    if (beforeContainer) {
+      if (targetOffsetTop > innerHeight || pageOffsetTop >= targetOffsetTop + pageOffsetTop) {
+        block.classList.add('active-fixed');
+      } else {
+        block.classList.remove('active-fixed');
+      }
     } else {
-      block.classList.remove('active-fixed');
+      if (pageOffsetTop >= targetOffsetTop) {
+        block.classList.add('active-fixed');
+      } else {
+        block.classList.remove('active-fixed');
+      }
     }
   });
 };

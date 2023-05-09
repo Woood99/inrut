@@ -226,20 +226,28 @@ export const filterControl = () => {
 
 }
 export const filterMobile = () => {
+    const filter = document.querySelector('.filter');
     const btn = document.querySelector('.filter__btn');
     const container = document.querySelector('.filter__container');
     if (!(btn && container)) return;
     const close = document.querySelector('.filter__close');
+    const mask = document.querySelector('.filter__mask');
     btn.addEventListener('click', () => {
-        container.classList.add('active');
+        mask ? mask.classList.add('active') : container.classList.add('active');
         disableScroll();
     });
     close.addEventListener('click', () => {
-        if (container.classList.contains('active')) {
-            container.classList.remove('active');
+        if (container.classList.contains('active')) container.classList.remove('active');
+        if (mask.classList.contains('active')) mask.classList.remove('active');
+        enableScroll();
+    });
+    filter.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
+            mask.classList.remove('active');
             enableScroll();
         }
-    });
+    })
 }
 export const filterCustomSelectCheckboxes = () => {
     const items = document.querySelectorAll('.select-dropdown-checkbox');

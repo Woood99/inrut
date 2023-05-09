@@ -9,6 +9,16 @@
 
         &__avatar {
             --size: 95px;
+
+            @media (max-width:$smallTablet-max) {
+                --size: 57px;
+            }
+        }
+
+        &__name {
+            @media (max-width:$smallTablet-max) {
+                font-size: 18px;
+            }
         }
 
         &__btns {
@@ -20,10 +30,16 @@
             grid-row-gap: 24px;
             width: 100%;
 
-
+            @media (max-width:$desktop) {
+                grid-row-gap: 16px;
+            }
         }
 
-        &__quantity {}
+        &__quantity {
+            @media (max-width:$desktop) {
+                margin-top: 8px;
+            }
+        }
 
         &__btn {
             width: 100%;
@@ -70,6 +86,18 @@
         margin-bottom: 0;
     }
 
+    .object-plate-bottom {
+        &__btn {
+            &--call {}
+
+            &--message {
+                svg {
+                    fill: var(--blue);
+                }
+            }
+        }
+    }
+
     .tabs-primary {
         &__container {
             @media (max-width:$desktop) {
@@ -85,6 +113,73 @@
 
         &__tabs {
             padding-bottom: 0;
+        }
+    }
+
+    .filter {
+        @media (max-width:$desktop) {
+            &__top {
+                justify-content: end;
+                padding: 24px 16px;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            &__inner {
+                padding: 0 16px 32px;
+                height: 80%;
+            }
+
+            &__mask {
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: var(--vh);
+                height: 100%;
+                pointer-events: none;
+                transition: opacity $transitionSpeed $transitionFunction,
+                    visibility $transitionSpeed $transitionFunction;
+
+                opacity: 0;
+                visibility: hidden;
+
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+            }
+
+            &__container {
+                min-height: auto;
+                height: auto;
+                position: static;
+                opacity: inherit;
+                visibility: inherit;
+                pointer-events: inherit;
+
+                margin-top: auto;
+            }
+
+            &__controls {
+                box-shadow: none;
+                padding: 0 16px 16px;
+                flex-direction: column;
+            }
+
+            &__clear {
+                width: 100%;
+            }
+
+            &__go {
+                width: 100%;
+                margin-top: 16px;
+            }
         }
     }
 
