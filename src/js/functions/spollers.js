@@ -72,7 +72,6 @@ const spollers = () => {
 
                 if (!spollersBlock.querySelectorAll('._slide').length) {
 
-
                     if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) {
                         hideSpollersBody(spollersBlock);
                     }
@@ -83,24 +82,22 @@ const spollers = () => {
                     _slideToggle(spollerTitle.nextElementSibling, speed);
 
                     if (spollerTitle.classList.contains('_spoller-active') && el.closest('.layouts__item-btn')) {
-
                         setTimeout(() => {
                             const headerFixed = document.querySelector('.header-fixed');
                             const topHeaderMobile = document.querySelector('.top-page-inner');
-                            const topGap = window.pageYOffset + spollerTitle.getBoundingClientRect().top
+                            const topGap = spollerTitle.offsetTop;
                             if (window.innerWidth >= 1112) {
                                 window.scrollTo({
-                                    top: headerFixed ? topGap - headerFixed.offsetHeight - 16 : topGap - 16,
+                                    top: topGap - headerFixed.offsetHeight - 16,
                                     behavior: 'smooth',
                                 })
                             } else {
                                 window.scrollTo({
-                                    top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 16 : topGap - 16,
+                                    top: topGap - topHeaderMobile.offsetHeight - 16,
                                     behavior: 'smooth',
                                 })
                             }
                         }, speed);
-
                     }
                 }
                 e.preventDefault();
@@ -110,7 +107,6 @@ const spollers = () => {
         function hideSpollersBody(spollersBlock) {
             const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
             if (spollerActiveTitle) {
-                console.log(speed);
                 spollerActiveTitle.classList.remove('_spoller-active');
                 _slideUp(spollerActiveTitle.nextElementSibling, speed);
             }

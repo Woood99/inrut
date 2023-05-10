@@ -120,6 +120,22 @@ const tabs = () => {
                             })
 
                             filter.classList.remove('filter--layouts');
+
+                            setTimeout(() => {
+                                const container = document.querySelector('.object-filter');
+
+                                const simplebar = tabsContentItem.querySelector('.simplebar-secondary .simplebar-content-wrapper');
+                                const simplebarHeight = simplebar.querySelector('.simplebar-content').offsetHeight;
+                                simplebar.scrollTo({
+                                    top: simplebarHeight,
+                                    behavior: "smooth"
+                                });
+                                container.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'end'
+                                });
+                            }, 200);
+
                         } else if (tabsTitles[index] === tabsTitles[0]) {
                             filter.classList.add('filter--layouts');
                         }

@@ -29,7 +29,6 @@ const headerFixed = () => {
                 links[index].classList.add('_active');
             }
 
-
             if (sections[0].offsetTop - headerHeight - gap >= scrollDistance) {
                 links.forEach(link => {
                     if (link.classList.contains('_active')) link.classList.remove('_active');
@@ -57,6 +56,15 @@ const headerFixed = () => {
     }
 
     function showHeader(scrollDistance) {
+        const filterBlock = document.querySelector('.object-body__filter');
+        const layoutsTitle = document.querySelectorAll('.tabs__title')[1];
+        if (scrollDistance >= filterBlock.offsetTop &&
+            scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight &&
+            layoutsTitle.classList.contains('_tab-active')) {
+
+            headerFixed.classList.remove('_active');
+            return;
+        }
         if (scrollDistance >= header.offsetHeight + headerHeight + gap) {
             headerFixed.classList.add('_active');
         } else {

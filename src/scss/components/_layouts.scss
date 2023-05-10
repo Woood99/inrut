@@ -15,8 +15,8 @@
             padding-right: 23px;
         }
 
-        &:not(:last-child){
-            margin-bottom: 24px;
+        &:not(:last-child) {
+            margin-bottom: 16px;
         }
     }
 
@@ -110,10 +110,11 @@
 
     &__list {
         .room-info-card {
-            &:not(:last-child) {
-                margin-bottom: 16px;
-                border-bottom: 1px solid var(--primary100);
+            &:first-child {
+                border-top: 1px solid var(--primary100);
             }
+
+            border-bottom: 1px solid var(--primary100);
         }
     }
 
@@ -145,7 +146,7 @@
     align-items: center;
     grid-template-columns: percent(291, 920) percent(265, 920) percent(240, 920) 1fr;
     grid-column-gap: 16px;
-    padding: 32px 16px;
+    padding: 24px 16px;
 
     &__name-address {}
 

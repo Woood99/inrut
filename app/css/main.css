@@ -3998,7 +3998,7 @@ textarea.input-reset {
 
 .simplebar-secondary {
   max-width: 968px;
-  max-height: 608px;
+  max-height: 500px;
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -8225,9 +8225,6 @@ textarea.input-reset {
   margin-top: 10px;
 }
 @media (min-width: 1113px) {
-  .card-scheme.card-scheme--improved:hover .card-scheme__container {
-    border: 1px solid var(--blue);
-  }
   .card-scheme.card-scheme--improved:hover .card-scheme__btn {
     border: 1px solid var(--blue);
     color: var(--blue);
@@ -11403,7 +11400,7 @@ textarea.input-reset {
 }
 
 .checkboard {
-  padding: 16px 24px 31px;
+  padding: 16px 16px 24px;
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
   position: relative;
@@ -11560,14 +11557,14 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 43px;
-  width: 95px;
+  height: 40px;
+  width: 80px;
   border-radius: 9px;
   background-color: var(--white);
   border: 1px solid rgba(122, 127, 170, 0.35);
   border-radius: 9px;
-  font-size: 12px;
-  line-height: 1.25;
+  font-size: 10px;
+  line-height: 1.2;
   color: var(--primaryTwo);
 }
 .checkboard__item:not(:last-child) {
@@ -11576,12 +11573,6 @@ textarea.input-reset {
 @media (max-width: 768px) {
   .checkboard__item:not(:last-child) {
     margin-right: 6px;
-  }
-}
-@media (max-width: 768px) {
-  .checkboard__item {
-    width: 87px;
-    font-size: 10px;
   }
 }
 .checkboard__link {
@@ -11679,7 +11670,7 @@ textarea.input-reset {
   padding-right: 23px;
 }
 .layouts__item:not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .layouts__item-btn {
   width: 100%;
@@ -11757,9 +11748,11 @@ textarea.input-reset {
 .room-body__container {
   margin-top: 24px;
 }
-.room-body__list .room-info-card:not(:last-child) {
-  margin-bottom: 16px;
+.room-body__list .room-info-card {
   border-bottom: 1px solid var(--primary100);
+}
+.room-body__list .room-info-card:first-child {
+  border-top: 1px solid var(--primary100);
 }
 .room-body__next {
   margin-top: 32px;
@@ -11793,7 +11786,7 @@ textarea.input-reset {
   -ms-grid-columns: 31.6304347826% 28.8043478261% 26.0869565217% 1fr;
   grid-template-columns: 31.6304347826% 28.8043478261% 26.0869565217% 1fr;
   grid-column-gap: 16px;
-  padding: 32px 16px;
+  padding: 24px 16px;
 }
 .room-info-card__title {
   font-size: 15px;
@@ -12311,7 +12304,7 @@ textarea.input-reset {
   right: 0;
   width: 100%;
   z-index: 100;
-  height: 121px;
+  height: 94px;
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
@@ -12329,7 +12322,7 @@ textarea.input-reset {
   max-width: 1194px;
   width: 100%;
   margin: 0 auto;
-  padding: 17px 15px 3px;
+  padding: 12px 15px 0;
 }
 .header-fixed__top {
   display: -webkit-box;
@@ -12445,7 +12438,7 @@ textarea.input-reset {
   fill: var(--white);
 }
 .header-fixed__nav {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .header-fixed__list {
   display: -webkit-box;
@@ -12464,14 +12457,14 @@ textarea.input-reset {
 }
 .header-fixed__item-link {
   color: var(--primaryTwo);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.2666666667;
   font-weight: 500;
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
   white-space: nowrap;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
   position: relative;
 }
 .header-fixed__item-link::before {
@@ -13874,6 +13867,15 @@ textarea.input-reset {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+@media (max-width: 1112px) {
+  .object-filter__sort {
+    padding: 0 16px;
+    margin-top: 16px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 }
 .object-filter__tabs {
   margin-top: 40px;

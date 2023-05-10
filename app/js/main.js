@@ -5199,6 +5199,12 @@ const headerFixed = () => {
     });
   }
   function showHeader(scrollDistance) {
+    const filterBlock = document.querySelector('.object-body__filter');
+    const layoutsTitle = document.querySelectorAll('.tabs__title')[1];
+    if (scrollDistance >= filterBlock.offsetTop && scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight && layoutsTitle.classList.contains('_tab-active')) {
+      headerFixed.classList.remove('_active');
+      return;
+    }
     if (scrollDistance >= header.offsetHeight + headerHeight + gap) {
       headerFixed.classList.add('_active');
     } else {
@@ -6451,15 +6457,15 @@ const spollers = () => {
             setTimeout(() => {
               const headerFixed = document.querySelector('.header-fixed');
               const topHeaderMobile = document.querySelector('.top-page-inner');
-              const topGap = window.pageYOffset + spollerTitle.getBoundingClientRect().top;
+              const topGap = spollerTitle.offsetTop;
               if (window.innerWidth >= 1112) {
                 window.scrollTo({
-                  top: headerFixed ? topGap - headerFixed.offsetHeight - 16 : topGap - 16,
+                  top: topGap - headerFixed.offsetHeight - 16,
                   behavior: 'smooth'
                 });
               } else {
                 window.scrollTo({
-                  top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 16 : topGap - 16,
+                  top: topGap - topHeaderMobile.offsetHeight - 16,
                   behavior: 'smooth'
                 });
               }
@@ -6472,7 +6478,6 @@ const spollers = () => {
     function hideSpollersBody(spollersBlock) {
       const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
       if (spollerActiveTitle) {
-        console.log(speed);
         spollerActiveTitle.classList.remove('_spoller-active');
         (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideUp)(spollerActiveTitle.nextElementSibling, speed);
       }
@@ -6605,6 +6610,19 @@ const tabs = () => {
                 content.setAttribute('hidden', '');
               });
               filter.classList.remove('filter--layouts');
+              setTimeout(() => {
+                const container = document.querySelector('.object-filter');
+                const simplebar = tabsContentItem.querySelector('.simplebar-secondary .simplebar-content-wrapper');
+                const simplebarHeight = simplebar.querySelector('.simplebar-content').offsetHeight;
+                simplebar.scrollTo({
+                  top: simplebarHeight,
+                  behavior: "smooth"
+                });
+                container.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'end'
+                });
+              }, 200);
             } else if (tabsTitles[index] === tabsTitles[0]) {
               filter.classList.add('filter--layouts');
             }
