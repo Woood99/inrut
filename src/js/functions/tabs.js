@@ -100,6 +100,31 @@ const tabs = () => {
                         tabsContentItem.classList.add('init-popper');
                         popperTooltip(tabsContentItem);
                     }
+
+                    if (tabsBlock.closest('.object-filter__tabs')) {
+                        const filter = tabsBlock.closest('.object-filter').querySelector('.filter');
+                        if (tabsTitles[index] === tabsTitles[1]) {
+
+                            const contentLayout = tabsContent[0];
+                            const spollersItems = contentLayout.querySelectorAll('.spollers__item');
+                            spollersItems.forEach(item => {
+                                const itemBtn = item.querySelector('.layouts__item-btn');
+                                const itemContent = itemBtn.nextElementSibling;
+                                const cardActive = item.querySelector('.card-scheme._active');
+                                const content = item.querySelector('.room-body__container');
+
+                                itemBtn.classList.remove('_spoller-active');
+                                itemContent.setAttribute('hidden', '')
+                                if (cardActive) cardActive.classList.remove('_active');
+                                content.setAttribute('hidden', '');
+                            })
+
+                            filter.classList.remove('filter--layouts');
+                        } else if (tabsTitles[index] === tabsTitles[0]) {
+                            filter.classList.add('filter--layouts');
+                        }
+                    }
+
                 } else {
                     tabsContentItem.hidden = true;
                 }
@@ -127,7 +152,7 @@ const tabs = () => {
         container.querySelectorAll('.object-apart-renov__mark').forEach(item => {
             const btn = item.querySelector('.secondary-tooltip__btn');
             const content = item.querySelector('.secondary-tooltip__content');
-          createPopper(btn, content, {
+            createPopper(btn, content, {
                 placement: 'auto',
                 modifiers: [{
                     name: 'offset',

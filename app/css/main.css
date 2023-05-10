@@ -1255,6 +1255,7 @@ textarea.input-reset {
 .popup-genplan__close {
   position: absolute;
   right: 16px;
+  top: 24px;
   background-color: var(--white);
   border-radius: 16px;
   height: 36px;
@@ -11426,6 +11427,10 @@ textarea.input-reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  position: relative;
   border-radius: 12px;
 }
 .checkboard__inner::before {
@@ -11442,7 +11447,7 @@ textarea.input-reset {
     top: -35px;
     left: 98px;
   }
-  .checkboard__section:first-child .checkboard__row:nth-last-child(1) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-last-child(2) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-last-child(3) .checkboard__item:nth-child(2) .checkboard__card {
+  .checkboard__section:first-child .checkboard__row:nth-last-child(1) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-last-child(2) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-last-child(3) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-last-child(4) .checkboard__item:nth-child(2) .checkboard__card {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -11470,7 +11475,7 @@ textarea.input-reset {
     left: auto;
     right: 0;
   }
-  .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(1) .checkboard__item:last-child .checkboard__card, .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(2) .checkboard__item:last-child .checkboard__card, .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(3) .checkboard__item:last-child .checkboard__card {
+  .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(1) .checkboard__item:last-child .checkboard__card, .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(2) .checkboard__item:last-child .checkboard__card, .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(3) .checkboard__item:last-child .checkboard__card, .checkboard__section:not(:first-child) .checkboard__row:nth-last-child(4) .checkboard__item:last-child .checkboard__card {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -11520,7 +11525,7 @@ textarea.input-reset {
     transform: translateX(-50%);
     left: 50%;
   }
-  .checkboard__row:nth-last-child(1) .checkboard__card, .checkboard__row:nth-last-child(2) .checkboard__card, .checkboard__row:nth-last-child(3) .checkboard__card {
+  .checkboard__row:nth-last-child(1) .checkboard__card, .checkboard__row:nth-last-child(2) .checkboard__card, .checkboard__row:nth-last-child(3) .checkboard__card, .checkboard__row:nth-last-child(4) .checkboard__card {
     top: auto;
     bottom: 48px;
     -webkit-transform: translateX(-50%);
@@ -11662,13 +11667,7 @@ textarea.input-reset {
 
 .layouts__item {
   background-color: var(--white);
-  border: 1px solid var(--primary100);
-  -webkit-box-shadow: var(--shadow-primary);
-  box-shadow: var(--shadow-primary);
   border-radius: 12px;
-}
-.layouts__item:not(:last-child) {
-  margin-bottom: 16px;
 }
 .layouts__item .room-info {
   -webkit-box-shadow: none;
@@ -11679,16 +11678,30 @@ textarea.input-reset {
   padding-left: 23px;
   padding-right: 23px;
 }
+.layouts__item:not(:last-child) {
+  margin-bottom: 24px;
+}
 .layouts__item-btn {
   width: 100%;
+  border-radius: 12px;
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  border: 1px solid #EBF1FB;
+}
+.layouts__item-btn._spoller-active {
+  background-color: var(--stand-bg);
 }
 .layouts__item-btn._spoller-active .room-info__check svg {
   -webkit-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
+.layouts__item-btn:hover {
+  background-color: var(--stand-bg);
+}
 .layouts__item-body {
-  padding: 0 23px 14px;
+  padding: 16px 0 0;
+  margin-top: 8px;
 }
 @media (max-width: 1112px) {
   .layouts__item-body {
@@ -11696,48 +11709,34 @@ textarea.input-reset {
   }
 }
 
-.room-body__top {
+.room-body__controls {
+  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 24px;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 @media (max-width: 1112px) {
-  .room-body__top {
+  .room-body__controls {
     padding: 0 16px;
   }
 }
 @media (max-width: 768px) {
-  .room-body__top {
+  .room-body__controls {
     display: none;
   }
 }
-.room-body__sort .choices__list--dropdown {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
 .room-body__pagination {
-  margin-left: auto;
-}
-.room-body__navigation {
-  margin-left: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.room-body__navigation .nav-arrow-secondary--next {
-  margin-left: 10px;
+  margin: 0 16px;
 }
 .room-body__items {
-  padding: 0 1px;
-  margin: 0 -1px;
+  padding: 1px;
+  margin: -1px;
 }
 .room-body__items .card-scheme {
   -webkit-box-sizing: border-box;
@@ -11756,10 +11755,11 @@ textarea.input-reset {
   }
 }
 .room-body__container {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 .room-body__list .room-info-card:not(:last-child) {
   margin-bottom: 16px;
+  border-bottom: 1px solid var(--primary100);
 }
 .room-body__next {
   margin-top: 32px;
@@ -11778,6 +11778,11 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .room-body__pagination-bottom {
+    display: none;
+  }
+}
 
 .room-info-card {
   display: -ms-grid;
@@ -11788,17 +11793,7 @@ textarea.input-reset {
   -ms-grid-columns: 31.6304347826% 28.8043478261% 26.0869565217% 1fr;
   grid-template-columns: 31.6304347826% 28.8043478261% 26.0869565217% 1fr;
   grid-column-gap: 16px;
-  background: var(--white);
-  border: 1px solid var(--primary100);
-  -webkit-box-shadow: var(--shadow-primary);
-  box-shadow: var(--shadow-primary);
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
-  border-radius: 12px;
-  padding: 21px 24px;
+  padding: 32px 16px;
 }
 .room-info-card__title {
   font-size: 15px;
@@ -11984,12 +11979,6 @@ textarea.input-reset {
 @media (max-width: 1112px) {
   .room-info-card__control {
     margin-top: 10px;
-  }
-}
-@media (min-width: 1113px) {
-  .room-info-card:hover {
-    -webkit-box-shadow: var(--shadow-secondary);
-    box-shadow: var(--shadow-secondary);
   }
 }
 @media (max-width: 1112px) {
@@ -13881,6 +13870,11 @@ textarea.input-reset {
     flex-direction: column;
   }
 }
+.object-filter__sort .choices__list--dropdown {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
 .object-filter__tabs {
   margin-top: 40px;
 }
@@ -13895,6 +13889,7 @@ textarea.input-reset {
 .object-filter__tabs .tabs-primary__container {
   padding: 0;
   margin-top: 32px;
+  background-color: var(--white);
 }
 @media (max-width: 1112px) {
   .object-filter__tabs .tabs-primary__container {
@@ -16652,6 +16647,12 @@ textarea.input-reset {
 .develop-inner .object-filter__tabs {
   padding-bottom: 0;
 }
+.develop-inner .filter__item {
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+}
 @media (max-width: 1112px) {
   .develop-inner .filter__top {
     -webkit-box-pack: end;
@@ -16719,6 +16720,13 @@ textarea.input-reset {
     width: 100%;
     margin-top: 16px;
   }
+}
+.develop-inner .filter.filter--layouts .filter__item--quantity-selection {
+  display: none;
+}
+.develop-inner .filter.filter--layouts .object-filter__row--1 {
+  -ms-grid-columns: 24.3801652893% 36.1570247934% 36.1570247934%;
+  grid-template-columns: 24.3801652893% 36.1570247934% 36.1570247934%;
 }
 @media (max-width: 1112px) {
   .develop-inner .object-body__sidebar {

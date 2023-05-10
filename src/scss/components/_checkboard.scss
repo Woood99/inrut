@@ -20,14 +20,18 @@
 
     &__inner {
         display: flex;
+        align-items: flex-end;
+        position: relative;
         border-radius: 12px;
 
         &::before {
             display: none;
         }
+      
     }
 
     &__section {
+   
         &:not(:last-child) {
             margin-right: 50px;
         }
@@ -52,7 +56,8 @@
 
                     &:nth-last-child(1),
                     &:nth-last-child(2),
-                    &:nth-last-child(3) {
+                    &:nth-last-child(3),
+                    &:nth-last-child(4) {
                         .checkboard__item {
                             &:nth-child(2) {
                                 .checkboard__card {
@@ -97,7 +102,8 @@
 
                     &:nth-last-child(1),
                     &:nth-last-child(2),
-                    &:nth-last-child(3) {
+                    &:nth-last-child(3),
+                    &:nth-last-child(4) {
                         .checkboard__item {
                             &:last-child {
                                 .checkboard__card {
@@ -159,7 +165,8 @@
 
             &:nth-last-child(1),
             &:nth-last-child(2),
-            &:nth-last-child(3) {
+            &:nth-last-child(3),
+            &:nth-last-child(4) {
                 .checkboard__card {
                     top: auto;
                     bottom: 48px;
@@ -291,9 +298,10 @@
             }
         }
     }
-   @media (max-width:$desktop){
-    padding: 0 0 32px 16px;
-    box-shadow: none;
-    border-radius: 0;  
-   }
+
+    @media (max-width:$desktop) {
+        padding: 0 0 32px 16px;
+        box-shadow: none;
+        border-radius: 0;
+    }
 }

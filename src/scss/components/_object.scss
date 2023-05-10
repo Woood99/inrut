@@ -413,6 +413,12 @@
         }
     }
 
+    &__sort {
+        .choices__list--dropdown {
+            width: max-content;
+        }
+    }
+
     &__tabs {
         margin-top: 40px;
 
@@ -427,6 +433,7 @@
         .tabs-primary__container {
             padding: 0;
             margin-top: 32px;
+            background-color: var(--white);
 
             @media (max-width:$desktop) {
                 margin-top: 16px;
@@ -1286,8 +1293,9 @@
             margin-left: 10px;
             transition: fill $transitionSpeed $transitionFunction;
         }
-        &:hover{
-            svg{
+
+        &:hover {
+            svg {
                 fill: var(--white);
             }
         }
@@ -1399,8 +1407,9 @@
         @media (max-width:$desktop) {
             height: 420px;
         }
-        @media (max-width:$smallTablet-max){
-             height: 385px; 
+
+        @media (max-width:$smallTablet-max) {
+            height: 385px;
         }
     }
 

@@ -452,15 +452,15 @@
 
 
 
-.popup-genplan{
+.popup-genplan {
     --transition-time: 0.3s;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-     z-index: 99;
-     background-color: rgba(34, 41, 102, 0.4);
+    z-index: 99;
+    background-color: rgba(34, 41, 102, 0.4);
     cursor: pointer;
     overflow-y: auto;
     overflow-x: hidden;
@@ -488,17 +488,17 @@
     &__close {
         position: absolute;
         right: 16px;
+        top: 24px;
+        background-color: var(--white);
+        border-radius: 16px;
 
-      background-color: var(--white);
-      border-radius: 16px;
+        height: 36px;
+        padding: 0 27px;
 
-      height: 36px;
-      padding: 0 27px;
-
-      color: var(--blue);
-      font-size: 12px;
-      line-height: math.div(15 , 12);
-      font-weight: 500;
+        color: var(--blue);
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 500;
     }
 
     &.is-open {
@@ -1178,6 +1178,7 @@
     &__slider {
         margin: -4px 0;
         padding: 4px 0;
+
         @media (max-width:$smallTablet-max) {
             margin: -4px -16px;
             padding: 4px 16px;

@@ -7,9 +7,9 @@ const headerFixed = () => {
     const gap = 100;
     const smallGap = 20;
 
-    toggleActiveClass();
+    toggleActiveClass(window.scrollY);
     glattScroll();
-    showHeader();
+    showHeader(window.scrollY);
     window.addEventListener('scroll', () => {
         if (window.innerWidth <= 1112) return;
         let scrollDistance = window.scrollY;

@@ -263,7 +263,18 @@ function initSliders() {
                             slider.destroy();
                         } else {
                             btn.classList.remove('_active');
-
+                            const topGap = window.pageYOffset + el.getBoundingClientRect().top;
+                            const headerFixed = document.querySelector('.header-fixed');
+                            const topHeaderMobile = document.querySelector('.top-page-inner');
+                            if (window.innerWidth >= 1112) {
+                                window.scrollTo({
+                                    top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
+                                })
+                            } else {
+                                window.scrollTo({
+                                    top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20,
+                                })
+                            }
                             slider = new Swiper(sliderEl, {
                                 observer: true,
                                 observeParents: true,
@@ -350,17 +361,47 @@ function initSliders() {
 
             function showContainer() {
                 const btns = el.querySelectorAll('.card-scheme');
-                const container = el.nextElementSibling;
+                const container = el.closest('.room-body').querySelector('.room-body__container');
                 btns.forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         btns.forEach(el => {
                             if (e.currentTarget !== el) el.classList.remove('_active');
                         });
                         btn.classList.toggle('_active');
+
+                        const headerFixed = document.querySelector('.header-fixed');
+                        const topHeaderMobile = document.querySelector('.top-page-inner');
+
                         if (btn.classList.contains('_active')) {
                             _slideDown(container, 300);
+
+                            const topGap = window.pageYOffset + container.getBoundingClientRect().top;
+                            if (window.innerWidth >= 1112) {
+                                window.scrollTo({
+                                    top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
+                                    behavior: 'smooth',
+                                })
+                            } else {
+                                window.scrollTo({
+                                    top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight : topGap,
+                                    behavior: 'smooth',
+                                })
+                            }
+
                         } else {
                             _slideUp(container, 300);
+                            const topGap = window.pageYOffset + btn.closest('.layouts__item').querySelector('.layouts__item-btn').getBoundingClientRect().top;
+                            if (window.innerWidth >= 1112) {
+                                window.scrollTo({
+                                    top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
+                                    behavior: 'smooth',
+                                })
+                            } else {
+                                window.scrollTo({
+                                    top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight : topGap,
+                                    behavior: 'smooth',
+                                })
+                            }
                         }
                     });
                 })

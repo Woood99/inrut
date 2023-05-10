@@ -107,13 +107,6 @@ class popup {
             this.isOpen = true;
             this.focusTrap();
         }, this.speed);
-
-
-        if (this.popupContainer.dataset.popupTarget === 'popup-genplan') {
-            const headerFixed = document.querySelector('.header-fixed');
-            headerFixed.classList.add('_active-reserve');
-            this.popupContainer.querySelector('.js-popup-close').style.top = `${headerFixed.offsetHeight + 24}px`;
-        }
     }
 
     close() {
@@ -137,11 +130,6 @@ class popup {
             if (this.reOpen) {
                 this.reOpen = false;
                 this.open();
-            }
-
-            if (this.popupContainer.dataset.popupTarget === 'popup-genplan') {
-                const headerFixed = document.querySelector('.header-fixed');
-                headerFixed.classList.remove('_active-reserve');
             }
         }
     }
