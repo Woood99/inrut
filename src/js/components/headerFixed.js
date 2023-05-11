@@ -58,7 +58,7 @@ const headerFixed = () => {
     function showHeader(scrollDistance) {
         const filterBlock = document.querySelector('.object-body__filter');
         const layoutsTitle = document.querySelectorAll('.tabs__title')[1];
-        if (scrollDistance >= filterBlock.offsetTop &&
+        if (scrollDistance >= filterBlock.offsetTop - (headerHeight / 2) &&
             scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight &&
             layoutsTitle.classList.contains('_tab-active')) {
 

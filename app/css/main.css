@@ -3998,7 +3998,7 @@ textarea.input-reset {
 
 .simplebar-secondary {
   max-width: 968px;
-  max-height: 500px;
+  max-height: 600px;
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -4064,8 +4064,8 @@ textarea.input-reset {
 .room-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 24.2768595041% 18.6983471074% 24.7933884298% 18.5950413223% 1fr;
-  grid-template-columns: 24.2768595041% 18.6983471074% 24.7933884298% 18.5950413223% 1fr;
+  -ms-grid-columns: 20.6611570248% 18.6983471074% 24.7933884298% 18.5950413223% 1fr;
+  grid-template-columns: 20.6611570248% 18.6983471074% 24.7933884298% 18.5950413223% 1fr;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: start;
@@ -8220,12 +8220,21 @@ textarea.input-reset {
   box-shadow: none;
   padding-bottom: 24px;
   text-align: left;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 }
 .card-scheme.card-scheme--improved .card-scheme__price {
   margin-top: 10px;
 }
 @media (min-width: 1113px) {
-  .card-scheme.card-scheme--improved:hover .card-scheme__btn {
+  .card-scheme.card-scheme--improved:hover:not(._active) .card-scheme__container {
+    -webkit-box-shadow: var(--shadow-primary);
+    box-shadow: var(--shadow-primary);
+  }
+  .card-scheme.card-scheme--improved:hover:not(._active) .card-scheme__btn {
     border: 1px solid var(--blue);
     color: var(--blue);
   }
@@ -11434,7 +11443,7 @@ textarea.input-reset {
   display: none;
 }
 .checkboard__section:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 56px;
 }
 @media (min-width: 1113px) {
   .checkboard__section:first-child .checkboard__row:nth-child(1) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-child(2) .checkboard__item:nth-child(2) .checkboard__card, .checkboard__section:first-child .checkboard__row:nth-child(3) .checkboard__item:nth-child(2) .checkboard__card {
@@ -11492,7 +11501,7 @@ textarea.input-reset {
   font-size: 14px;
   line-height: 1.2857142857;
   color: var(--gray);
-  margin-left: 40px;
+  margin-left: 56px;
 }
 @media (max-width: 768px) {
   .checkboard__title {
@@ -11510,6 +11519,7 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-left: 16px;
 }
 .checkboard__row:not(:last-child) {
   margin-bottom: 3px;
@@ -11529,6 +11539,9 @@ textarea.input-reset {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     left: 50%;
+  }
+  .checkboard__row:hover {
+    background-color: var(--primary100);
   }
 }
 .checkboard__subtitle {
@@ -11635,6 +11648,13 @@ textarea.input-reset {
   -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+}
+.checkboard__card .card-scheme__container {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid var(--primary100);
 }
 @media (max-width: 1112px) {
   .checkboard .checkboard__card {
@@ -11726,8 +11746,8 @@ textarea.input-reset {
   margin: 0 16px;
 }
 .room-body__items {
-  padding: 1px;
-  margin: -1px;
+  padding: 15px;
+  margin: -15px;
 }
 .room-body__items .card-scheme {
   -webkit-box-sizing: border-box;
@@ -11755,7 +11775,7 @@ textarea.input-reset {
   border-top: 1px solid var(--primary100);
 }
 .room-body__next {
-  margin-top: 32px;
+  margin-top: 24px;
   width: 100%;
 }
 @media (max-width: 1112px) {
@@ -11766,6 +11786,7 @@ textarea.input-reset {
 }
 .room-body__pagination-bottom {
   margin-top: 24px;
+  padding-bottom: 8px;
   width: 100%;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -11793,6 +11814,9 @@ textarea.input-reset {
   line-height: 1.2666666667;
   font-weight: 500;
   color: var(--dark);
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .room-info-card__address {
   display: block;
@@ -11972,6 +11996,11 @@ textarea.input-reset {
 @media (max-width: 1112px) {
   .room-info-card__control {
     margin-top: 10px;
+  }
+}
+@media (min-width: 1113px) {
+  .room-info-card:hover .room-info-card__title {
+    color: var(--blue);
   }
 }
 @media (max-width: 1112px) {

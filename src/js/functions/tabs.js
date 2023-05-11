@@ -103,6 +103,7 @@ const tabs = () => {
 
                     if (tabsBlock.closest('.object-filter__tabs')) {
                         const filter = tabsBlock.closest('.object-filter').querySelector('.filter');
+                        const headerFixed = document.querySelector('.header-fixed');
                         if (tabsTitles[index] === tabsTitles[1]) {
 
                             const contentLayout = tabsContent[0];
@@ -122,22 +123,24 @@ const tabs = () => {
                             filter.classList.remove('filter--layouts');
 
                             setTimeout(() => {
-                                const container = document.querySelector('.object-filter');
-
                                 const simplebar = tabsContentItem.querySelector('.simplebar-secondary .simplebar-content-wrapper');
                                 const simplebarHeight = simplebar.querySelector('.simplebar-content').offsetHeight;
                                 simplebar.scrollTo({
                                     top: simplebarHeight,
                                     behavior: "smooth"
                                 });
-                                container.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'end'
-                                });
                             }, 200);
 
+                            const filterBlock = document.querySelector('.object-body__filter');
+                            const scrollDistance = window.scrollY;
+                            if (scrollDistance >= filterBlock.offsetTop - (headerFixed.offsetHeight / 2) &&
+                                scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerFixed.offsetHeight) {
+                                console.log('da');
+                                if (headerFixed.classList.contains('_active')) headerFixed.classList.remove('_active');
+                            }
                         } else if (tabsTitles[index] === tabsTitles[0]) {
                             filter.classList.add('filter--layouts');
+                            if (!headerFixed.classList.contains('_active')) headerFixed.classList.add('_active');
                         }
                     }
 

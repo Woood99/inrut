@@ -9,11 +9,11 @@ const checkboard = () => {
     if (window.innerWidth >= innerWidth) {
         items.forEach(item => {
             item.addEventListener('mouseover', () => {
-                container.classList.add('_active');
+                // container.classList.add('_active');
                 item.classList.add('_active');
             });
             item.addEventListener('mouseout', () => {
-                container.classList.remove('_active');
+                // container.classList.remove('_active');
                 item.classList.remove('_active');
             });
         });

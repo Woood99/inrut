@@ -31,9 +31,8 @@
     }
 
     &__section {
-
         &:not(:last-child) {
-            margin-right: 50px;
+            margin-right: 56px;
         }
 
         @media (min-width:$desktop-min) {
@@ -131,7 +130,7 @@
         font-size: 14px;
         line-height: math.div(18, 14);
         color: var(--gray);
-        margin-left: 40px;
+        margin-left: 56px;
 
         @media (max-width:$smallTablet-max) {
             font-size: 15px;
@@ -146,6 +145,7 @@
     &__row {
         display: flex;
         align-items: center;
+        padding-left: 16px;
 
         &:not(:last-child) {
             margin-bottom: 3px;
@@ -173,6 +173,10 @@
                     transform: translateX(-50%);
                     left: 50%;
                 }
+            }
+
+            &:hover {
+                background-color: var(--primary100);
             }
         }
     }
@@ -277,6 +281,14 @@
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction;
 
+        box-shadow: var(--shadow-primary);
+
+        .card-scheme {
+            &__container {
+                box-shadow: none;
+                border: 1px solid var(--primary100);
+            }
+        }
     }
 
     .checkboard__card {

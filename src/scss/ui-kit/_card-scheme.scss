@@ -151,6 +151,7 @@
                 box-shadow: none;
                 padding-bottom: 24px;
                 text-align: left;
+                transition: box-shadow $transitionSpeed $transitionFunction;
             }
 
             &__price {
@@ -160,16 +161,23 @@
 
         @media (min-width:$desktop-min) {
             &:hover {
-                .card-scheme {
+                &:not(._active) {
+                    .card-scheme {
+                        &__container {
+                            box-shadow: var(--shadow-primary);
+                        }
 
-                    &__btn {
-                        border: 1px solid var(--blue);
-                        color: var(--blue);
+                        &__btn {
+                            border: 1px solid var(--blue);
+                            color: var(--blue);
+                        }
                     }
                 }
+
             }
         }
-        &._active{
+
+        &._active {
             .card-scheme {
                 &__container {
                     border: 1px solid var(--blue);
@@ -183,6 +191,3 @@
         }
     }
 }
-
-
-
