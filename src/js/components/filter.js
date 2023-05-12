@@ -193,60 +193,64 @@ export const filterDropdownChoice = () => {
     })
 }
 export const filterControl = () => {
-    const container = document.querySelector('.filter--more');
-    if (!container) return;
-    const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
-    const moreBtn = container.querySelector('.filter__btn-control');
-    const btnTextMap = {
-        more: moreBtn.querySelector('span').textContent,
-        none: 'Скрыть фильтры'
-    }
-    if (itemsHidden.length === 0) {
-        moreBtn.remove();
-        return;
-    };
-    moreBtn.addEventListener('click', () => {
-        if (container.classList.contains('_active')) {
-            itemsHidden.forEach(item => {
-                _slideToggle(item, 700);
-            });
-            moreBtn.querySelector('span').textContent = btnTextMap.more;
-            container.classList.remove('_active');
-        } else {
-            itemsHidden.forEach(item => {
-                _slideToggle(item, 700);
-            });
-            moreBtn.querySelector('span').textContent = btnTextMap.none;
-            container.classList.add('_active');
+    const containers = document.querySelectorAll('.filter--more');
+    if (containers.length === 0) return;
+    containers.forEach(container => {
+        const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
+        const moreBtn = container.querySelector('.filter__btn-control');
+        const btnTextMap = {
+            more: moreBtn.querySelector('span').textContent,
+            none: 'Скрыть фильтры'
         }
-    });
+        if (itemsHidden.length === 0) {
+            moreBtn.remove();
+            return;
+        };
+        moreBtn.addEventListener('click', () => {
+            if (container.classList.contains('_active')) {
+                itemsHidden.forEach(item => {
+                    _slideToggle(item, 700);
+                });
+                moreBtn.querySelector('span').textContent = btnTextMap.more;
+                container.classList.remove('_active');
+            } else {
+                itemsHidden.forEach(item => {
+                    _slideToggle(item, 700);
+                });
+                moreBtn.querySelector('span').textContent = btnTextMap.none;
+                container.classList.add('_active');
+            }
+        });
+    })
 
 
 
 
 }
 export const filterMobile = () => {
-    const filter = document.querySelector('.filter');
-    const btn = document.querySelector('.filter__btn');
-    const container = document.querySelector('.filter__container');
-    if (!(btn && container)) return;
-    const close = document.querySelector('.filter__close');
-    const mask = document.querySelector('.filter__mask');
-    btn.addEventListener('click', () => {
-        mask ? mask.classList.add('active') : container.classList.add('active');
-        disableScroll();
-    });
-    close.addEventListener('click', () => {
-        if (container.classList.contains('active')) container.classList.remove('active');
-        if (mask.classList.contains('active')) mask.classList.remove('active');
-        enableScroll();
-    });
-    filter.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
-            mask.classList.remove('active');
-            enableScroll();
-        }
+    const containers = document.querySelectorAll('.filter');
+    containers.forEach(filter => {
+        const btn = filter.querySelector('.filter__btn');
+        const container = filter.querySelector('.filter__container');
+        if (!(btn && container)) return;
+        const close = filter.querySelector('.filter__close');
+        const mask = filter.querySelector('.filter__mask');
+        btn.addEventListener('click', () => {
+            mask ? mask.classList.add('active') : container.classList.add('active');
+            disableScroll();
+        });
+        close.addEventListener('click', () => {
+            if (container.classList.contains('active')) container.classList.remove('active');
+            if (mask.classList.contains('active')) mask.classList.remove('active');
+            if (!filter.closest('.popup-primary--checkboard')) enableScroll();
+        });
+        filter.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
+                mask.classList.remove('active');
+                enableScroll();
+            }
+        })
     })
 }
 export const filterCustomSelectCheckboxes = () => {

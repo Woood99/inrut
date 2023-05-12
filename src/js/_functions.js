@@ -27,5 +27,6 @@ const objectNot = new popup(null, '.popup-primary--object-not')
 const interestRate = new popup(null, '.popup-primary--interest-rate')
 const constructProgress = new popup(null, '.popup-primary--construct-progress')
 const genplan = new popup(null, '.popup-genplan')
+const checkboard = new popup(null, '.popup-primary--checkboard')
 
 // ========================================================================================

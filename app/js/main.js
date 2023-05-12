@@ -4271,6 +4271,7 @@ const objectNot = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](n
 const interestRate = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--interest-rate');
 const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
 const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-genplan');
+const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
 
 // ========================================================================================
 
@@ -4557,29 +4558,66 @@ const checkboard = () => {
         const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
         const href = item.querySelector('.checkboard__link').getAttribute('href');
         const modalHTML = `
-                <div class="checkboard-popup">
-                <div class="checkboard-popup__container">
-                    <button class="btn-reset js-popup-close checkboard-popup__close" aria-label="Закрыть модальное окно">
+                <div class="checkboard-popup-card">
+                <div class="checkboard-popup-card__container">
+                    <button class="btn-reset js-popup-close checkboard-popup-card__close" aria-label="Закрыть модальное окно">
                         <svg>
                             <use xlink:href="img/sprite.svg#x"></use>
                         </svg>
                         <span>Закрыть</span>
                     </button>
-                     <div class="checkboard-popup__content">
+                     <div class="checkboard-popup-card__content">
                         <article class="card-scheme">
                             <div class="card-scheme__container">
                                     ${cardContainer.innerHTML}
                             </div>
                         </article>
-                        <a href="${href}" class="btn btn-reset btn-primary checkboard-popup__link">Перейти на страницу квартиры</a>
+                        <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
                      </div>
                 </div>
                 </div>
                 `;
-        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.checkboard-popup', 300);
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.checkboard-popup-card', 300);
       });
     });
   }
+  function checkboardScroll() {
+    const container = document.querySelector('.popup-primary--checkboard');
+    const checkboard = document.querySelector('.checkboard');
+    const nav = checkboard.querySelectorAll('.checkboard__nav');
+    container.addEventListener('scroll', () => {
+      if (window.innerWidth <= innerWidth) return;
+      const topGap = checkboard.getBoundingClientRect().top;
+      if (topGap <= 0) {
+        nav.forEach(arrow => arrow.classList.add('_active'));
+      } else {
+        nav.forEach(arrow => arrow.classList.remove('_active'));
+      }
+    });
+  }
+  ;
+  function checkboardNav() {
+    const checkboard = document.querySelector('.checkboard');
+    const navPrev = checkboard.querySelector('.checkboard__prev');
+    const navNext = checkboard.querySelector('.checkboard__next');
+    const container = checkboard.querySelector('.simplebar-content-wrapper');
+    navPrev.addEventListener('click', () => {
+      container.scrollTo({
+        left: container.scrollRight + 200,
+        behavior: 'smooth'
+      });
+    });
+    navNext.addEventListener('click', () => {
+      container.scrollTo({
+        left: container.scrollLeft + 200,
+        behavior: 'smooth'
+      });
+    });
+  }
+  checkboardScroll();
+  setTimeout(() => {
+    checkboardNav();
+  }, 500);
 };
 checkboard();
 
@@ -4875,57 +4913,61 @@ const filterDropdownChoice = () => {
   });
 };
 const filterControl = () => {
-  const container = document.querySelector('.filter--more');
-  if (!container) return;
-  const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
-  const moreBtn = container.querySelector('.filter__btn-control');
-  const btnTextMap = {
-    more: moreBtn.querySelector('span').textContent,
-    none: 'Скрыть фильтры'
-  };
-  if (itemsHidden.length === 0) {
-    moreBtn.remove();
-    return;
-  }
-  ;
-  moreBtn.addEventListener('click', () => {
-    if (container.classList.contains('_active')) {
-      itemsHidden.forEach(item => {
-        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
-      });
-      moreBtn.querySelector('span').textContent = btnTextMap.more;
-      container.classList.remove('_active');
-    } else {
-      itemsHidden.forEach(item => {
-        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
-      });
-      moreBtn.querySelector('span').textContent = btnTextMap.none;
-      container.classList.add('_active');
+  const containers = document.querySelectorAll('.filter--more');
+  if (containers.length === 0) return;
+  containers.forEach(container => {
+    const itemsHidden = container.querySelectorAll('.filter__row[hidden]');
+    const moreBtn = container.querySelector('.filter__btn-control');
+    const btnTextMap = {
+      more: moreBtn.querySelector('span').textContent,
+      none: 'Скрыть фильтры'
+    };
+    if (itemsHidden.length === 0) {
+      moreBtn.remove();
+      return;
     }
+    ;
+    moreBtn.addEventListener('click', () => {
+      if (container.classList.contains('_active')) {
+        itemsHidden.forEach(item => {
+          (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
+        });
+        moreBtn.querySelector('span').textContent = btnTextMap.more;
+        container.classList.remove('_active');
+      } else {
+        itemsHidden.forEach(item => {
+          (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_5__._slideToggle)(item, 700);
+        });
+        moreBtn.querySelector('span').textContent = btnTextMap.none;
+        container.classList.add('_active');
+      }
+    });
   });
 };
 const filterMobile = () => {
-  const filter = document.querySelector('.filter');
-  const btn = document.querySelector('.filter__btn');
-  const container = document.querySelector('.filter__container');
-  if (!(btn && container)) return;
-  const close = document.querySelector('.filter__close');
-  const mask = document.querySelector('.filter__mask');
-  btn.addEventListener('click', () => {
-    mask ? mask.classList.add('active') : container.classList.add('active');
-    (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  });
-  close.addEventListener('click', () => {
-    if (container.classList.contains('active')) container.classList.remove('active');
-    if (mask.classList.contains('active')) mask.classList.remove('active');
-    (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  });
-  filter.addEventListener('click', e => {
-    const target = e.target;
-    if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
-      mask.classList.remove('active');
-      (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
-    }
+  const containers = document.querySelectorAll('.filter');
+  containers.forEach(filter => {
+    const btn = filter.querySelector('.filter__btn');
+    const container = filter.querySelector('.filter__container');
+    if (!(btn && container)) return;
+    const close = filter.querySelector('.filter__close');
+    const mask = filter.querySelector('.filter__mask');
+    btn.addEventListener('click', () => {
+      mask ? mask.classList.add('active') : container.classList.add('active');
+      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    });
+    close.addEventListener('click', () => {
+      if (container.classList.contains('active')) container.classList.remove('active');
+      if (mask.classList.contains('active')) mask.classList.remove('active');
+      if (!filter.closest('.popup-primary--checkboard')) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    });
+    filter.addEventListener('click', e => {
+      const target = e.target;
+      if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
+        mask.classList.remove('active');
+        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      }
+    });
   });
 };
 const filterCustomSelectCheckboxes = () => {
@@ -6610,23 +6652,7 @@ const tabs = () => {
                 if (cardActive) cardActive.classList.remove('_active');
                 content.setAttribute('hidden', '');
               });
-              filter.classList.remove('filter--layouts');
-              setTimeout(() => {
-                const simplebar = tabsContentItem.querySelector('.simplebar-secondary .simplebar-content-wrapper');
-                const simplebarHeight = simplebar.querySelector('.simplebar-content').offsetHeight;
-                simplebar.scrollTo({
-                  top: simplebarHeight,
-                  behavior: "smooth"
-                });
-              }, 200);
-              const filterBlock = document.querySelector('.object-body__filter');
-              const scrollDistance = window.scrollY;
-              if (scrollDistance >= filterBlock.offsetTop - headerFixed.offsetHeight / 2 && scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerFixed.offsetHeight) {
-                console.log('da');
-                if (headerFixed.classList.contains('_active')) headerFixed.classList.remove('_active');
-              }
             } else if (tabsTitles[index] === tabsTitles[0]) {
-              filter.classList.add('filter--layouts');
               if (!headerFixed.classList.contains('_active')) headerFixed.classList.add('_active');
             }
           }

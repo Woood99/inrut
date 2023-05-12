@@ -328,7 +328,150 @@
             }
         }
     }
+
+    &--checkboard {
+        .popup-primary {
+            &__container {
+                padding: 24px 16px 16px;
+                width: 100%;
+            }
+
+            &__close {
+                margin-left: auto;
+                position: static;
+                width: auto;
+                height: 36px;
+                padding: 0 27px;
+                border: 1px solid var(--blue);
+                font-size: 12px;
+                line-height: math.div(15, 12);
+                font-weight: 500;
+                border-radius: 16px;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
 }
+
+.checkboard-popup {
+    max-width: 1278px;
+    padding: 0 16px;
+    margin: 0 auto;
+    position: relative;
+
+    &__title {
+        margin: 0 auto;
+        max-width: 1142px;
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+            max-width: none;
+            width: 100%;
+        }
+    }
+
+    &__filter {
+        margin: 24px auto 0;
+        max-width: 1142px;
+
+        @media (max-width:$desktop) {
+            max-width: none;
+            width: 100%;
+
+            &.filter--more {
+                margin: 24px 0 32px;
+            }
+        }
+    }
+
+    &__container {}
+
+    .filter {
+        &__item {
+            animation-name: fade;
+            animation-duration: 0.6s;
+        }
+
+        @media (max-width:$desktop) {
+            &__top {
+                justify-content: end;
+                padding: 24px 16px;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            &__inner {
+                padding: 0 16px 32px;
+                height: 80%;
+            }
+
+            &__mask {
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: var(--vh);
+                height: 100%;
+                pointer-events: none;
+                transition: opacity $transitionSpeed $transitionFunction,
+                    visibility $transitionSpeed $transitionFunction;
+
+                opacity: 0;
+                visibility: hidden;
+
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+            }
+
+            &__container {
+                min-height: auto;
+                height: auto;
+                position: static;
+                opacity: inherit;
+                visibility: inherit;
+                pointer-events: inherit;
+
+                margin-top: auto;
+            }
+
+            &__controls {
+                box-shadow: none;
+                padding: 0 16px 16px;
+                flex-direction: column;
+            }
+
+            &__clear {
+                width: 100%;
+            }
+
+            &__go {
+                width: 100%;
+                margin-top: 16px;
+            }
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding: 0;
+        max-width: none;
+        width: 100%;
+    }
+}
+
 
 .popup-secondary {
     --transition-time: 0.3s;
@@ -877,7 +1020,7 @@
 }
 
 
-.checkboard-popup {
+.checkboard-popup-card {
     --transition-time: 0.3s;
     position: fixed;
     left: 0;
