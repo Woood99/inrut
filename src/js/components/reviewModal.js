@@ -53,7 +53,7 @@ const reviewModal = () => {
             modalHTML = `
             <div class="review-modal">
             <div class="review-modal__container">
-                <button class="btn-reset js-popup-close review-modal__close" aria-label="Закрыть модальное окно">
+                <button class="btn-reset review-modal__close" aria-label="Закрыть модальное окно">
                     <svg>
                         <use xlink:href="img/sprite.svg#x"></use>
                     </svg>

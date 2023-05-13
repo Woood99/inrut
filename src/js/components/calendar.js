@@ -73,7 +73,7 @@ function calendarPrimary() {
             const modalHTML = `
             <div class="calendar-event" data-date="${eventDate}">
             <div class="calendar-event__container">
-                <button class="btn-reset js-popup-close calendar-event__close" aria-label="Закрыть модальное окно">
+                <button class="btn-reset calendar-event__close" aria-label="Закрыть модальное окно">
                     <svg>
                         <use xlink:href="img/sprite.svg#x"></use>
                     </svg>

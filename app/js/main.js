@@ -4444,7 +4444,7 @@ function calendarPrimary() {
       const modalHTML = `
             <div class="calendar-event" data-date="${eventDate}">
             <div class="calendar-event__container">
-                <button class="btn-reset js-popup-close calendar-event__close" aria-label="Закрыть модальное окно">
+                <button class="btn-reset calendar-event__close" aria-label="Закрыть модальное окно">
                     <svg>
                         <use xlink:href="img/sprite.svg#x"></use>
                     </svg>
@@ -4541,14 +4541,8 @@ const checkboard = () => {
   const innerWidth = 1112;
   if (window.innerWidth >= innerWidth) {
     items.forEach(item => {
-      item.addEventListener('mouseover', () => {
-        // container.classList.add('_active');
-        item.classList.add('_active');
-      });
-      item.addEventListener('mouseout', () => {
-        // container.classList.remove('_active');
-        item.classList.remove('_active');
-      });
+      item.addEventListener('mouseover', () => item.classList.add('_active'));
+      item.addEventListener('mouseout', () => item.classList.remove('_active'));
     });
   }
   if (window.innerWidth < innerWidth) {
@@ -4560,7 +4554,7 @@ const checkboard = () => {
         const modalHTML = `
                 <div class="checkboard-popup-card">
                 <div class="checkboard-popup-card__container">
-                    <button class="btn-reset js-popup-close checkboard-popup-card__close" aria-label="Закрыть модальное окно">
+                    <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
                         <svg>
                             <use xlink:href="img/sprite.svg#x"></use>
                         </svg>
@@ -4581,43 +4575,60 @@ const checkboard = () => {
       });
     });
   }
-  function checkboardScroll() {
+  function checkboardNav() {
     const container = document.querySelector('.popup-primary--checkboard');
     const checkboard = document.querySelector('.checkboard');
-    const nav = checkboard.querySelectorAll('.checkboard__nav');
+    const navPrev = checkboard.querySelector('.checkboard__prev');
+    const navNext = checkboard.querySelector('.checkboard__next');
+    const navBottom = checkboard.querySelector('.checkboard__go-bottom');
+    const navTop = checkboard.querySelector('.checkboard__go-top');
     container.addEventListener('scroll', () => {
       if (window.innerWidth <= innerWidth) return;
       const topGap = checkboard.getBoundingClientRect().top;
       if (topGap <= 0) {
-        nav.forEach(arrow => arrow.classList.add('_active'));
+        navPrev.classList.add('_active');
+        navNext.classList.add('_active');
       } else {
-        nav.forEach(arrow => arrow.classList.remove('_active'));
+        navPrev.classList.remove('_active');
+        navNext.classList.remove('_active');
+      }
+      if (container.scrollHeight - container.scrollTop === container.clientHeight) {
+        navBottom.setAttribute('hidden', '');
+        navTop.removeAttribute('hidden');
+      } else {
+        navTop.setAttribute('hidden', '');
+        navBottom.removeAttribute('hidden');
       }
     });
-  }
-  ;
-  function checkboardNav() {
-    const checkboard = document.querySelector('.checkboard');
-    const navPrev = checkboard.querySelector('.checkboard__prev');
-    const navNext = checkboard.querySelector('.checkboard__next');
-    const container = checkboard.querySelector('.simplebar-content-wrapper');
-    navPrev.addEventListener('click', () => {
+    navTop.addEventListener('click', () => {
       container.scrollTo({
-        left: container.scrollRight + 200,
+        top: 0,
         behavior: 'smooth'
       });
     });
-    navNext.addEventListener('click', () => {
+    navBottom.addEventListener('click', () => {
       container.scrollTo({
-        left: container.scrollLeft + 200,
+        top: document.body.scrollHeight,
         behavior: 'smooth'
       });
     });
+    setTimeout(() => {
+      const containerSimplebar = checkboard.querySelector('.simplebar-content-wrapper');
+      navPrev.addEventListener('click', () => {
+        containerSimplebar.scrollTo({
+          left: containerSimplebar.scrollRight + 200,
+          behavior: 'smooth'
+        });
+      });
+      navNext.addEventListener('click', () => {
+        containerSimplebar.scrollTo({
+          left: containerSimplebar.scrollLeft + 200,
+          behavior: 'smooth'
+        });
+      });
+    }, 500);
   }
-  checkboardScroll();
-  setTimeout(() => {
-    checkboardNav();
-  }, 500);
+  checkboardNav();
 };
 checkboard();
 
@@ -4958,14 +4969,14 @@ const filterMobile = () => {
     });
     close.addEventListener('click', () => {
       if (container.classList.contains('active')) container.classList.remove('active');
-      if (mask.classList.contains('active')) mask.classList.remove('active');
+      if (mask && mask.classList.contains('active')) mask.classList.remove('active');
       if (!filter.closest('.popup-primary--checkboard')) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
     });
     filter.addEventListener('click', e => {
       const target = e.target;
       if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
         mask.classList.remove('active');
-        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        if (!filter.closest('.popup-primary--checkboard')) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
       }
     });
   });
@@ -5472,7 +5483,7 @@ const reviewModal = () => {
       modalHTML = `
             <div class="review-modal">
             <div class="review-modal__container">
-                <button class="btn-reset js-popup-close review-modal__close" aria-label="Закрыть модальное окно">
+                <button class="btn-reset review-modal__close" aria-label="Закрыть модальное окно">
                     <svg>
                         <use xlink:href="img/sprite.svg#x"></use>
                     </svg>
@@ -5852,6 +5863,9 @@ class popup {
         }
       }.bind(this));
       window.addEventListener('keydown', function (e) {
+        if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
+          return;
+        }
         if (e.keyCode == 27 && this.isOpen) {
           this.close();
         }
@@ -6271,7 +6285,7 @@ function initSliders() {
               const modalHTML = `
                             <div class="advantages-popup">
                             <div class="advantages-popup__container">
-                                <button class="btn-reset js-popup-close advantages-popup__close" aria-label="Закрыть модальное окно">
+                                <button class="btn-reset advantages-popup__close" aria-label="Закрыть модальное окно">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#x"></use>
                                     </svg>
@@ -7055,9 +7069,11 @@ const modal = function (modalHTML, container) {
       settingsModal.container.classList.remove(settingsModal.animation);
       settingsModal.modal.classList.remove('is-open');
       settingsModal.container.classList.remove('open');
-      (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
+      if (!settingsModal.modal.classList.contains('checkboard-popup-card')) {
+        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        document.body.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = 'auto';
+      }
       setTimeout(() => {
         settingsModal.modal.remove();
       }, settingsModal.speed);

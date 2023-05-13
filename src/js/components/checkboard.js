@@ -8,14 +8,8 @@ const checkboard = () => {
     const innerWidth = 1112;
     if (window.innerWidth >= innerWidth) {
         items.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                // container.classList.add('_active');
-                item.classList.add('_active');
-            });
-            item.addEventListener('mouseout', () => {
-                // container.classList.remove('_active');
-                item.classList.remove('_active');
-            });
+            item.addEventListener('mouseover', () => item.classList.add('_active'));
+            item.addEventListener('mouseout', () => item.classList.remove('_active'));
         });
     }
     if (window.innerWidth < innerWidth) {
@@ -27,7 +21,7 @@ const checkboard = () => {
                 const modalHTML = `
                 <div class="checkboard-popup-card">
                 <div class="checkboard-popup-card__container">
-                    <button class="btn-reset js-popup-close checkboard-popup-card__close" aria-label="Закрыть модальное окно">
+                    <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
                         <svg>
                             <use xlink:href="img/sprite.svg#x"></use>
                         </svg>
@@ -50,47 +44,68 @@ const checkboard = () => {
         });
     }
 
-
-    function checkboardScroll() {
+    function checkboardNav() {
         const container = document.querySelector('.popup-primary--checkboard');
         const checkboard = document.querySelector('.checkboard');
-        const nav = checkboard.querySelectorAll('.checkboard__nav');
+        const navPrev = checkboard.querySelector('.checkboard__prev');
+        const navNext = checkboard.querySelector('.checkboard__next');
+        const navBottom = checkboard.querySelector('.checkboard__go-bottom');
+        const navTop = checkboard.querySelector('.checkboard__go-top');
+
         container.addEventListener('scroll', () => {
             if (window.innerWidth <= innerWidth) return;
             const topGap = checkboard.getBoundingClientRect().top;
             if (topGap <= 0) {
-                nav.forEach(arrow => arrow.classList.add('_active'));
+                navPrev.classList.add('_active');
+                navNext.classList.add('_active');
             } else {
-                nav.forEach(arrow => arrow.classList.remove('_active'));
+                navPrev.classList.remove('_active');
+                navNext.classList.remove('_active');
+            }
+
+
+            if ((container.scrollHeight - container.scrollTop) === container.clientHeight) {
+                navBottom.setAttribute('hidden', '');
+                navTop.removeAttribute('hidden');
+            } else {
+                navTop.setAttribute('hidden', '');
+                navBottom.removeAttribute('hidden');
             }
         })
-    };
 
-    function checkboardNav() {
-        const checkboard = document.querySelector('.checkboard');
-        const navPrev = checkboard.querySelector('.checkboard__prev');
-        const navNext = checkboard.querySelector('.checkboard__next');
-        const container = checkboard.querySelector('.simplebar-content-wrapper');
-        navPrev.addEventListener('click', () => {
+        navTop.addEventListener('click', () => {
             container.scrollTo({
-                left: container.scrollRight + 200,
+                top: 0,
                 behavior: 'smooth',
-            })
-        });
-        navNext.addEventListener('click', () => {
+            });
+        })
+        navBottom.addEventListener('click', () => {
             container.scrollTo({
-                left: container.scrollLeft + 200,
+                top: document.body.scrollHeight,
                 behavior: 'smooth',
-            })
-        });
+            });
+        })
+
+        setTimeout(() => {
+            const containerSimplebar = checkboard.querySelector('.simplebar-content-wrapper');
+            navPrev.addEventListener('click', () => {
+                containerSimplebar.scrollTo({
+                    left: containerSimplebar.scrollRight + 200,
+                    behavior: 'smooth',
+                })
+            });
+            navNext.addEventListener('click', () => {
+                containerSimplebar.scrollTo({
+                    left: containerSimplebar.scrollLeft + 200,
+                    behavior: 'smooth',
+                })
+            });
+        }, 500);
+
     }
 
 
-
-    checkboardScroll();
-    setTimeout(() => {
-        checkboardNav();
-    }, 500);
+    checkboardNav();
 };
 
 checkboard();

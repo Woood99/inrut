@@ -39,9 +39,11 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             settingsModal.container.classList.remove(settingsModal.animation);
             settingsModal.modal.classList.remove('is-open');
             settingsModal.container.classList.remove('open');
-            enableScroll();
-            document.body.style.scrollBehavior = 'auto';
-            document.documentElement.style.scrollBehavior = 'auto';
+            if (!settingsModal.modal.classList.contains('checkboard-popup-card')) {
+                enableScroll();
+                document.body.style.scrollBehavior = 'auto';
+                document.documentElement.style.scrollBehavior = 'auto';
+            }
             setTimeout(() => {
                 settingsModal.modal.remove();
             }, settingsModal.speed);

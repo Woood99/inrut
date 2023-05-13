@@ -241,14 +241,14 @@ export const filterMobile = () => {
         });
         close.addEventListener('click', () => {
             if (container.classList.contains('active')) container.classList.remove('active');
-            if (mask.classList.contains('active')) mask.classList.remove('active');
+            if (mask && mask.classList.contains('active')) mask.classList.remove('active');
             if (!filter.closest('.popup-primary--checkboard')) enableScroll();
         });
         filter.addEventListener('click', (e) => {
             const target = e.target;
             if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
                 mask.classList.remove('active');
-                enableScroll();
+                if (!filter.closest('.popup-primary--checkboard')) enableScroll();
             }
         })
     })

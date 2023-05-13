@@ -1648,12 +1648,11 @@
             </form>
             <div class="checkboard checkboard-popup__container">
                 <button type="button"
-                    class="btn btn-reset checkboard__nav checkboard__prev nav-arrow-secondary nav-arrow-secondary--prev">
-                    <div class="nav-arrow-primary__wrapper">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#arrow-right"></use>
-                        </svg>
-                    </div>
+                    class="btn btn-reset checkboard__prev nav-arrow-secondary nav-arrow-secondary--prev"
+                    title="Пролистать влево">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
                 </button>
                 <div class="checkboard__container simplebar-secondary">
                     <div class="checkboard__inner">
@@ -10487,18 +10486,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="checkboard__info">
-                        <span aria-label="Синий цвет"></span>
-                        <span>Квартира в продаже</span>
+                    <div class="checkboard__bottom">
+                        <div class="checkboard__bottom-info">
+                            <span aria-label="Синий цвет"></span>
+                            <span>Квартира в продаже</span>
+                        </div>
+                        <div class="checkboard__bottom-nav">
+                            <button type="button"
+                                class="btn btn-reset checkboard__go-top nav-arrow-secondary nav-arrow-secondary--prev"
+                                hidden title="Отправиться наверх">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </button>
+                            <button type="button"
+                                class="btn btn-reset checkboard__go-bottom nav-arrow-secondary nav-arrow-secondary--prev"
+                                title="Отправиться вниз">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <button type="button"
-                    class="btn btn-reset checkboard__next checkboard__nav nav-arrow-secondary nav-arrow-secondary--next">
-                    <div class="nav-arrow-primary__wrapper">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#arrow-right"></use>
-                        </svg>
-                    </div>
+                    class="btn btn-reset checkboard__next nav-arrow-secondary nav-arrow-secondary--next"
+                    title="Пролистать вправо">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
                 </button>
             </div>
 

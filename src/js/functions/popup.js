@@ -55,6 +55,9 @@ class popup {
             }.bind(this));
 
             window.addEventListener('keydown', function (e) {
+                if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
+                    return;
+                }
                 if (e.keyCode == 27 && this.isOpen) {
                     this.close();
                 }

@@ -309,7 +309,7 @@ function initSliders() {
                             const modalHTML = `
                             <div class="advantages-popup">
                             <div class="advantages-popup__container">
-                                <button class="btn-reset js-popup-close advantages-popup__close" aria-label="Закрыть модальное окно">
+                                <button class="btn-reset advantages-popup__close" aria-label="Закрыть модальное окно">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#x"></use>
                                     </svg>

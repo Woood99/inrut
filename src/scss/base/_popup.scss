@@ -347,9 +347,21 @@
                 line-height: math.div(15, 12);
                 font-weight: 500;
                 border-radius: 16px;
+                transition: background-color $transitionSpeed $transitionFunction;
 
                 span {
                     display: block;
+                    transition: color $transitionSpeed $transitionFunction;
+                }
+
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        background-color: var(--blue);
+
+                        span {
+                            color: var(--white);
+                        }
+                    }
                 }
             }
         }
