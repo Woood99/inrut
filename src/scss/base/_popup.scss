@@ -340,26 +340,32 @@
                 margin-left: auto;
                 position: static;
                 width: auto;
-                height: 36px;
-                padding: 0 27px;
+                width: 28px;
+                height: 28px;
+                background-color: var(--white);
                 border: 1px solid var(--blue);
-                font-size: 12px;
-                line-height: math.div(15, 12);
-                font-weight: 500;
-                border-radius: 16px;
+                border-radius: 50%;
                 transition: background-color $transitionSpeed $transitionFunction;
 
-                span {
+                position: sticky;
+                top: 16px;
+                right: 0;
+                z-index: 10;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    fill: var(--blue);
+                    transition: fill $transitionSpeed $transitionFunction;
                     display: block;
-                    transition: color $transitionSpeed $transitionFunction;
                 }
 
                 @media (min-width:$desktop-min) {
                     &:hover {
                         background-color: var(--blue);
 
-                        span {
-                            color: var(--white);
+                        svg {
+                            fill: var(--white);
                         }
                     }
                 }

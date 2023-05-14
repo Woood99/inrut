@@ -1106,29 +1106,34 @@ textarea.input-reset {
   margin-left: auto;
   position: static;
   width: auto;
-  height: 36px;
-  padding: 0 27px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--white);
   border: 1px solid var(--blue);
-  font-size: 12px;
-  line-height: 1.25;
-  font-weight: 500;
-  border-radius: 16px;
+  border-radius: 50%;
   -webkit-transition: background-color 0.4s ease-in-out;
   -o-transition: background-color 0.4s ease-in-out;
   transition: background-color 0.4s ease-in-out;
+  position: sticky;
+  top: 16px;
+  right: 0;
+  z-index: 10;
 }
-.popup-primary--checkboard .popup-primary__close span {
+.popup-primary--checkboard .popup-primary__close svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--blue);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
   display: block;
-  -webkit-transition: color 0.4s ease-in-out;
-  -o-transition: color 0.4s ease-in-out;
-  transition: color 0.4s ease-in-out;
 }
 @media (min-width: 1113px) {
   .popup-primary--checkboard .popup-primary__close:hover {
     background-color: var(--blue);
   }
-  .popup-primary--checkboard .popup-primary__close:hover span {
-    color: var(--white);
+  .popup-primary--checkboard .popup-primary__close:hover svg {
+    fill: var(--white);
   }
 }
 @media (max-width: 1112px) {
@@ -4428,9 +4433,9 @@ textarea.input-reset {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  grid-row: 2/3;
   font-size: 12px;
   line-height: 1.25;
   color: var(--primaryTwo);
@@ -4442,9 +4447,9 @@ textarea.input-reset {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
+  grid-row: 1/2;
   font-size: 15px;
   line-height: 1.2666666667;
   -ms-grid-row-align: start;
@@ -7584,6 +7589,9 @@ textarea.input-reset {
     padding: 16px;
   }
 }
+.card-primary__price {
+  margin-top: 24px;
+}
 .card-primary__price-old {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7614,7 +7622,7 @@ textarea.input-reset {
 }
 .card-primary__price-old span:nth-child(2) {
   margin-left: 4px;
-  padding: 2px 4px;
+  padding: 2px 8px;
   color: var(--green);
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
@@ -7630,9 +7638,6 @@ textarea.input-reset {
   font-size: 10px;
   line-height: 100%;
   font-weight: 400;
-}
-.card-primary__name {
-  margin-top: 26px;
 }
 .card-primary__address {
   margin-top: 5px;
@@ -8263,7 +8268,7 @@ textarea.input-reset {
 }
 .card-scheme__price-old span:nth-child(2) {
   margin-left: 4px;
-  padding: 2px 4px;
+  padding: 2px 8px;
   color: var(--green);
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
@@ -10364,13 +10369,14 @@ textarea.input-reset {
   }
 }
 .bid-user__time {
+  margin-top: 5px;
+  margin-bottom: 16px;
   color: var(--primaryTwo);
   font-size: 10px;
   line-height: 100%;
   font-weight: 400;
 }
 .bid-user__name {
-  margin-top: 5px;
   color: var(--dark);
   font-size: 18px;
   line-height: 1.2777777778;
@@ -10389,7 +10395,7 @@ textarea.input-reset {
   }
 }
 .bid-user__rating {
-  margin-top: 16px;
+  margin-bottom: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10448,7 +10454,6 @@ textarea.input-reset {
   }
 }
 .bid-user__quantity {
-  margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10522,6 +10527,9 @@ textarea.input-reset {
   --size: 66px;
   -webkit-filter: none;
   filter: none;
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
 }
 @media (max-width: 768px) {
   .bid-user--small .bid-user__avatar {
@@ -10553,13 +10561,8 @@ textarea.input-reset {
   }
 }
 .bid-user--small .bid-user__rating {
-  margin-top: 5px;
+  margin: 0;
   --icon-size: 12px;
-}
-@media (max-width: 768px) {
-  .bid-user--small .bid-user__rating {
-    margin-top: 5px;
-  }
 }
 .bid-user--small .bid-user__quantity {
   margin-top: 5px;
@@ -10783,6 +10786,7 @@ textarea.input-reset {
     grid-column: 1/-1;
   }
   .control-cards__content--vertical .card-primary__price {
+    margin-top: 0;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -11016,7 +11020,7 @@ textarea.input-reset {
   }
   .control-cards__content--vertical .card-secondary__price-old span:nth-child(2) {
     margin-left: 4px;
-    padding: 2px 4px;
+    padding: 2px 8px;
     color: var(--green);
     background: rgba(36, 202, 142, 0.1);
     border-radius: 8px;
@@ -12079,7 +12083,7 @@ textarea.input-reset {
 }
 .room-info-card__price-old span:nth-child(2) {
   margin-left: 4px;
-  padding: 2px 4px;
+  padding: 2px 8px;
   color: var(--green);
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
@@ -14036,14 +14040,14 @@ textarea.input-reset {
   }
 }
 .object-filter__row--1 {
-  -ms-grid-columns: 13.4297520661% 26.3429752066% 28.4090909091% 26.8595041322%;
-  grid-template-columns: 13.4297520661% 26.3429752066% 28.4090909091% 26.8595041322%;
+  -ms-grid-columns: 35.1756198347% 26.3429752066% 35.1756198347%;
+  grid-template-columns: 35.1756198347% 26.3429752066% 35.1756198347%;
 }
 .object-filter__row--2 {
-  -ms-grid-columns: 18.0785123967% -webkit-max-content;
-  -ms-grid-columns: 18.0785123967% max-content;
-  grid-template-columns: 18.0785123967% -webkit-max-content;
-  grid-template-columns: 18.0785123967% max-content;
+  -ms-grid-columns: 26.8595041322% 18.0785123967% -webkit-max-content;
+  -ms-grid-columns: 26.8595041322% 18.0785123967% max-content;
+  grid-template-columns: 26.8595041322% 18.0785123967% -webkit-max-content;
+  grid-template-columns: 26.8595041322% 18.0785123967% max-content;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
@@ -14299,6 +14303,7 @@ textarea.input-reset {
   border-radius: 12px;
 }
 .object-data__price {
+  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14306,6 +14311,9 @@ textarea.input-reset {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+.object-data__price-new span:nth-child(1) {
+  font-size: 20px;
 }
 @media (max-width: 1112px) {
   .object-data__price-new span:nth-child(1) {
@@ -14324,7 +14332,7 @@ textarea.input-reset {
   }
 }
 .object-data__price-old {
-  margin-top: 5px;
+  margin-bottom: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14359,7 +14367,7 @@ textarea.input-reset {
 }
 .object-data__price-old span:nth-child(2) {
   margin-left: 4px;
-  padding: 2px 4px;
+  padding: 2px 8px;
   color: var(--green);
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
@@ -14368,9 +14376,8 @@ textarea.input-reset {
   font-weight: 400;
 }
 .object-data__name {
-  margin-top: 16px;
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1.2916666667;
   font-weight: 500;
   color: var(--dark);
 }
@@ -14403,6 +14410,7 @@ textarea.input-reset {
   }
 }
 .object-data__mortgage {
+  margin-left: 32px;
   margin-top: 2px;
   color: var(--primaryTwo);
   font-size: 15px;
@@ -14608,10 +14616,10 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-grid-columns: -webkit-max-content 1fr 1fr;
-  -ms-grid-columns: max-content 1fr 1fr;
-  grid-template-columns: -webkit-max-content 1fr 1fr;
-  grid-template-columns: max-content 1fr 1fr;
+  -ms-grid-columns: -webkit-max-content 1.5fr 1fr;
+  -ms-grid-columns: max-content 1.5fr 1fr;
+  grid-template-columns: -webkit-max-content 1.5fr 1fr;
+  grid-template-columns: max-content 1.5fr 1fr;
   grid-column-gap: 100px;
   padding: 20px 0;
 }
@@ -14629,7 +14637,7 @@ textarea.input-reset {
     -ms-grid-columns: max-content 1fr;
     grid-template-columns: -webkit-max-content 1fr;
     grid-template-columns: max-content 1fr;
-    grid-row-gap: 8px;
+    grid-row-gap: 5px;
     grid-column-gap: 12px;
     padding: 12px 0;
   }
@@ -14689,7 +14697,7 @@ textarea.input-reset {
 }
 .object-history__old-price span:nth-child(2) {
   margin-left: 8px;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border-radius: 8px;
   font-size: 12px;
   line-height: 1.25;
@@ -14697,7 +14705,12 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .object-history__old-price span:nth-child(2) {
-    padding: 5px 4px;
+    padding: 5px 8px;
+  }
+}
+@media (max-width: 768px) {
+  .object-history__old-price {
+    margin-top: 8px;
   }
 }
 .object-history__new-price {
@@ -14707,8 +14720,7 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .object-history__new-price {
-    -ms-grid-column-align: end;
-    justify-self: end;
+    grid-column: 1/-1;
   }
 }
 @media (max-width: 1112px) {
@@ -16841,8 +16853,14 @@ textarea.input-reset {
 .develop-inner .object-data__name {
   margin-top: 0;
 }
-.develop-inner .object-data .row {
-  margin-top: 16px;
+.develop-inner .object-data .row:not(:first-child) {
+  margin-top: 24px;
+}
+.develop-inner .object-data__price {
+  margin-top: 0;
+}
+.develop-inner .object-data__mortgage {
+  margin-top: 0;
 }
 .develop-inner .filter--more {
   margin-bottom: 0;

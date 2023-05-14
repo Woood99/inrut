@@ -381,11 +381,11 @@
 
     &__row {
         &--1 {
-            grid-template-columns: percent(130, 968) percent(255, 968) percent(275, 968) percent(260, 968);
+            grid-template-columns: percent(340.5, 968) percent(255, 968) percent(340.5, 968);
         }
 
         &--2 {
-            grid-template-columns: percent(175, 968) max-content;
+            grid-template-columns: percent(260, 968) percent(175, 968) max-content;
             justify-content: start;
 
             .filter__item--checkboxes {
@@ -617,6 +617,7 @@
     border-radius: 12px;
 
     &__price {
+        margin-top: 24px;
         display: flex;
         flex-direction: column;
     }
@@ -624,6 +625,8 @@
     &__price-new {
         span {
             &:nth-child(1) {
+                font-size: 20px;
+
                 @media (max-width:$desktop) {
                     font-size: 18px;
                 }
@@ -643,7 +646,7 @@
     }
 
     &__price-old {
-        margin-top: 5px;
+        margin-bottom: 5px;
         display: flex;
         align-items: center;
         color: var(--primaryTwo);
@@ -675,7 +678,7 @@
 
             &:nth-child(2) {
                 margin-left: 4px;
-                padding: 2px 4px;
+                padding: 2px 8px;
                 color: var(--green);
                 background: rgba(36, 202, 142, 0.1);
                 border-radius: 8px;
@@ -688,10 +691,8 @@
 
 
     &__name {
-        margin-top: 16px;
-
-        font-size: 20px;
-        line-height: math.div(25, 20);
+        font-size: 24px;
+        line-height: math.div(31, 24);
         font-weight: 500;
         color: var(--dark);
 
@@ -727,6 +728,7 @@
     }
 
     &__mortgage {
+        margin-left: 32px;
         margin-top: 2px;
         color: var(--primaryTwo);
         font-size: 15px;
@@ -923,7 +925,7 @@
     &__item {
         display: grid;
         align-items: center;
-        grid-template-columns: max-content 1fr 1fr;
+        grid-template-columns: max-content 1.5fr 1fr;
         grid-column-gap: 100px;
         padding: 20px 0;
 
@@ -938,7 +940,7 @@
         @media (max-width:$smallTablet-max) {
             display: grid;
             grid-template-columns: max-content 1fr;
-            grid-row-gap: 8px;
+            grid-row-gap: 5px;
             grid-column-gap: 12px;
             padding: 12px 0;
         }
@@ -1017,16 +1019,20 @@
 
             &:nth-child(2) {
                 margin-left: 8px;
-                padding: 2px 4px;
+                padding: 2px 8px;
                 border-radius: 8px;
                 font-size: 12px;
                 line-height: math.div(15, 12);
                 font-weight: 400;
 
                 @media (max-width:$smallTablet-max) {
-                    padding: 5px 4px;
+                    padding: 5px 8px;
                 }
             }
+        }
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 8px;
         }
     }
 
@@ -1036,7 +1042,7 @@
         color: var(--dark);
 
         @media (max-width:$smallTablet-max) {
-            justify-self: end;
+            grid-column: 1/-1;
         }
     }
 

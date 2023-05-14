@@ -63,8 +63,7 @@ const checkboard = () => {
                 navNext.classList.remove('_active');
             }
 
-
-            if ((container.scrollHeight - container.scrollTop) === container.clientHeight) {
+            if ((container.scrollHeight - container.scrollTop) === window.innerHeight) {
                 navBottom.setAttribute('hidden', '');
                 navTop.removeAttribute('hidden');
             } else {

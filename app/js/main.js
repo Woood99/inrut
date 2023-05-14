@@ -4488,11 +4488,11 @@ function calendarPrimary() {
                             <div class="user-info__avatar avatar online">
                                 <img loading="lazy" src="${el.user.avatar}" width="32" height="32" alt="${el.user.name}">
                             </div>
-                            <span class="user-info__pos">
-                                ${el.user.pos}
-                            </span>
                             <span class="user-info__name">
                                 ${el.user.name}
+                            </span>
+                            <span class="user-info__pos">
+                                ${el.user.pos}
                             </span>
                         </div>
                     </div>
@@ -4592,7 +4592,7 @@ const checkboard = () => {
         navPrev.classList.remove('_active');
         navNext.classList.remove('_active');
       }
-      if (container.scrollHeight - container.scrollTop === container.clientHeight) {
+      if (container.scrollHeight - container.scrollTop === window.innerHeight) {
         navBottom.setAttribute('hidden', '');
         navTop.removeAttribute('hidden');
       } else {

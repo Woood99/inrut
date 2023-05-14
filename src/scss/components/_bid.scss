@@ -315,6 +315,8 @@
     }
 
     &__time {
+        margin-top: 5px;
+        margin-bottom: 16px;
         color: var(--primaryTwo);
         font-size: 10px;
         line-height: 100%;
@@ -322,7 +324,6 @@
     }
 
     &__name {
-        margin-top: 5px;
         color: var(--dark);
         font-size: 18px;
         line-height: math.div(23, 18);
@@ -340,7 +341,7 @@
     }
 
     &__rating {
-        margin-top: 16px;
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
 
@@ -394,7 +395,7 @@
     }
 
     &__quantity {
-        margin-top: 16px;
+
         display: flex;
         align-items: center;
         color: var(--primary600);
@@ -465,6 +466,7 @@
             &__avatar {
                 --size: 66px;
                 filter: none;
+                align-self: start;
 
                 @media (max-width:$smallTablet-max) {
                     --size: 57px;
@@ -495,12 +497,8 @@
             }
 
             &__rating {
-                margin-top: 5px;
+                margin: 0;
                 --icon-size: 12px;
-
-                @media (max-width:$smallTablet-max) {
-                    margin-top: 5px;
-                }
             }
 
             &__quantity {
