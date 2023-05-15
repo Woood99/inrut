@@ -4158,8 +4158,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
 /* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
 /* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_headerFixed__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/mortgageChoices */ "./src/js/components/mortgageChoices.js");
-/* harmony import */ var _components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
+/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_components_mortgage__WEBPACK_IMPORTED_MODULE_19__);
 
 
 
@@ -4246,6 +4246,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
 /* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
+/* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
 
 
 
@@ -4262,6 +4263,7 @@ __webpack_require__.r(__webpack_exports__);
 // ========================================================================================
 
 
+
 const city = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--city');
 const add = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--add');
 const personalArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-secondary--personal');
@@ -4271,7 +4273,12 @@ const complaintUser = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default
 const complaintObject = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--complaint-object');
 const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--thanks');
 const objectNot = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--object-not');
-const interestRate = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--interest-rate');
+const interestRate1 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--interest-rate-1');
+const interestRate2 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
+  isOpen: interestRate2 => {
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_7__["default"])(interestRate2.popupContainer.querySelector('.filter-range-one__input--w-auto'));
+  }
+}, '.popup-primary--interest-rate-2');
 const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
 const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-genplan');
 const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
@@ -4898,7 +4905,31 @@ const uiSliderOne = () => {
     el.noUiSlider.on('update', function (values, handle) {
       inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+
+      // if (el.closest('.interest-rate--add')) {
+      //     const container = document.querySelector('.object-calc-mort__wrapper');
+      //     if (container) {
+      //         const term = container.querySelector('.filter-range-one--term');
+      //         const contribution = container.querySelector('.filter-range-one--contribution');
+      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
+      //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
+      //         }
+      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--contribution')) {
+      //             contribution.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
+      //         }
+      //     }
+      // }
+      // if (el.closest('.object-calc-mort__wrapper')) {
+      //     const container = document.querySelector('.interest-rate--add');
+      //     if (container) {
+      //         const term = container.querySelector('.filter-range-one--term');
+      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
+      //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
+      //         }
+      //     }
+      // }
     });
+
     inputMax.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
       el.noUiSlider.set([numberString]);
@@ -5382,40 +5413,48 @@ const maps = () => {
 
 /***/ }),
 
-/***/ "./src/js/components/mortgageChoices.js":
-/*!**********************************************!*\
-  !*** ./src/js/components/mortgageChoices.js ***!
-  \**********************************************/
+/***/ "./src/js/components/mortgage.js":
+/*!***************************************!*\
+  !*** ./src/js/components/mortgage.js ***!
+  \***************************************/
 /***/ (() => {
 
-const mortgageChoices = () => {
-  const container = document.querySelector('.object-calc-mort');
-  const popupContainer = document.querySelector('.interest-rate--add');
-  if (container && popupContainer) {
-    const list = container.querySelector('.object-calc-mort__list');
+const mortgage = () => {
+  const containerOne = document.querySelector('.object-calc-mort');
+  const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate--add');
+  const containerAdd = document.querySelector('.object-calc-mort--add');
+  const popupContainerAdd = document.querySelector('.popup-primary--interest-rate-2 .interest-rate--add');
+  if (containerAdd && popupContainerAdd) {
+    const list = containerAdd.querySelector('.object-calc-mort__list');
+    const listPopup = popupContainerAdd.querySelector('.interest-rate__wrapper');
     const items = list.querySelectorAll('[data-mortgage-card]');
+    const itemsPopup = listPopup.querySelectorAll('[data-mortgage-card]');
+    const textPrc = containerAdd.querySelector('.field-static__text');
     list.addEventListener('click', e => {
+      toggleClass(e, items, itemsPopup, items);
+    });
+    listPopup.addEventListener('click', e => {
+      toggleClass(e, itemsPopup, items, items);
+    });
+    function toggleClass(e, containerOne, containerTwo, container) {
       const target = e.target;
       const item = target.closest('[data-mortgage-card]');
-      if (item) {
-        items.forEach(item => item.classList.remove('_active'));
-        item.classList.add('_active');
-        popupToggleClass(+item.dataset.mortgageCard);
-      }
-    });
-    function popupToggleClass(id) {
-      const popupItems = popupContainer.querySelectorAll('.interest-rate-card');
-      popupItems.forEach(item => {
-        if (+item.dataset.mortgageCard === id) {
-          item.classList.add('_active');
-        } else {
-          item.classList.remove('_active');
+      if (!item) return;
+      containerOne.forEach(item => item.classList.remove('_active'));
+      item.classList.add('_active');
+      containerTwo.forEach(el => {
+        +item.dataset.mortgageCard === +el.dataset.mortgageCard ? el.classList.add('_active') : el.classList.remove('_active');
+      });
+      container.forEach(el => {
+        if (+item.dataset.mortgageCard === +el.dataset.mortgageCard) {
+          const prc = el.querySelector('span:nth-child(2)').textContent;
+          textPrc.textContent = prc;
         }
       });
     }
   }
 };
-mortgageChoices();
+mortgage();
 
 /***/ }),
 
@@ -6081,6 +6120,56 @@ function initSliders() {
           slidesPerView: 2,
           spaceBetween: 32
         }
+      }
+    });
+  }
+  if (document.querySelector('.home-banners__container')) {
+    const slider = document.querySelector('.home-banners__container');
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      autoHeight: true,
+      speed: 800,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1112: {
+          slidesPerView: 3,
+          spaceBetween: 32
+        }
+      },
+      navigation: {
+        prevEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--prev'),
+        nextEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--next')
+      }
+    });
+  }
+  if (document.querySelector('.home-price__items')) {
+    const slider = document.querySelector('.home-price__items');
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1.15,
+      spaceBetween: 10,
+      autoHeight: true,
+      speed: 800,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1112: {
+          slidesPerView: 3,
+          spaceBetween: 24
+        }
+      },
+      navigation: {
+        prevEl: slider.closest('.home-price').querySelector('.nav-arrow-secondary--prev'),
+        nextEl: slider.closest('.home-price').querySelector('.nav-arrow-secondary--next')
       }
     });
   }

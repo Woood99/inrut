@@ -298,7 +298,6 @@
             max-width: 100%;
             height: auto;
             width: calc(100% - 4px);
-
             @media (max-width:$desktop) {
                 padding: 65px 16px 16px;
             }
@@ -1334,6 +1333,14 @@
         @media (max-width:$smallTablet-max) {
             margin-top: 16px;
         }
+    }
+
+    &__filters {
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        margin: 48px 52px 0 44px;
     }
 
     &__slider {

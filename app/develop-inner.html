@@ -7644,7 +7644,10 @@
         </div>
     </div>
 </div>
-<div class="popup popup-primary popup-primary--right popup-primary--interest-rate">
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--interest-rate popup-primary--interest-rate-1">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
         data-popup-target="interest-rate-modal">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
@@ -7653,7 +7656,7 @@
             </svg>
             <span>Закрыть</span>
         </button>
-        <div class="popup__content popup-primary__content interest-rate interest-rate--add container">
+        <div class="popup__content popup-primary__content interest-rate container">
             <h2 class="interest-rate__title title-2">
                 Выберите комфортную ставку или банк
             </h2>
@@ -7753,6 +7756,194 @@
         </div>
     </div>
 </div>
+<div class="popup popup-primary popup-primary--right popup-primary--interest-rate popup-primary--interest-rate-2">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
+        data-popup-target="interest-rate-modal-two">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content interest-rate interest-rate--add container">
+            <h2 class="interest-rate__title title-2">
+                Выберите комфортную ставку или банк
+            </h2>
+            <div class="interest-rate__filters">
+                <div class="interest-rate__filter filter-range-one filter-range-one--term">
+                    <span class="filter-range-one__subtitle">Срок кредита</span>
+                    <div class="filter-range-one__nav">
+                        <div data-default="5">
+                            <input type="text" maxlength="3" name="Имя"
+                                class="input-reset filter-range-one__input--w-auto">
+                            лет
+                        </div>
+                    </div>
+                    <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                </div>
+                <div class="interest-rate__filter filter-range-one filter-range-one--contribution">
+                    <span class="filter-range-one__subtitle">Первоначальный взнос</span>
+                    <div class="filter-range-one__nav">
+                        <div data-default="400000">
+                            <input type="text" maxlength="12" name="Имя" class="input-reset">
+                        </div>
+                        <span>15%</span>
+                    </div>
+                    <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
+                </div>
+            </div>
+            <div class="interest-rate__wrapper">
+                <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </div>
+                <div class="swiper interest-rate__slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small _active" data-mortgage-card="1">
+                                <h4 class="interest-rate-card__title">
+                                    Базовая программа
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--old">10,8%</span>
+                                    <span class="interest-rate-card__prc--new">10,9%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="2">
+                                <h4 class="interest-rate-card__title">
+                                    Господдержка
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">от 7,7%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="3">
+                                <h4 class="interest-rate-card__title">
+                                    Ипотека для IT
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--old">10,8%</span>
+                                    <span class="interest-rate-card__prc--new">от 4,7%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="4">
+                                <h4 class="interest-rate-card__title">
+                                    Военная
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--old">10,8%</span>
+                                    <span class="interest-rate-card__prc--new">от 4,7%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="5">
+                                <h4 class="interest-rate-card__title">
+                                    Семейная
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--old">10,8%</span>
+                                    <span class="interest-rate-card__prc--new">от 5,7%</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="6">
+                                <h4 class="interest-rate-card__title">
+                                    Семейная  
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">10 лет % пополам</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card interest-rate-card--small" data-mortgage-card="7">
+                                <h4 class="interest-rate-card__title">
+                                    Господдержка
+                                </h4>
+                                <div class="interest-rate-card__prc">
+                                    <span class="interest-rate-card__prc--new">10 лет % пополам</span>
+                                </div>
+                                <div class="interest-rate-card__price">
+                                    от 19 000 ₽/мес
+                                </div>
+                                <div class="interest-rate-card__check" aria-hidden="true">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#verif"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="popup popup-secondary popup-secondary--right popup-secondary--personal">
     <div class="popup__container popup-secondary__container" role="dialog" aria-modal="true"
         data-popup-target="personal-area">
