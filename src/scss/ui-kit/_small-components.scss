@@ -910,16 +910,19 @@
 }
 
 .purchase-terms {
-    padding: 16px;
-
-    background-color: var(--white);
-    box-shadow: var(--shadow-primary);
-    border-radius: 12px;
-
     &__title {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
+        font-size: 20px;
+        line-height: math.div(25 , 20);
+        font-weight: 500;
+        color: var(--dark);
     }
-
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 32px;
+        grid-row-gap: 8px;
+    }
     &__btn {
         display: flex;
         align-items: center;
@@ -957,10 +960,6 @@
             height: var(--size);
             fill: var(--blue);
         }
-
-        &:not(:last-child) {
-            margin-bottom: 8px;
-        }
     }
 }
 
@@ -991,7 +990,63 @@
         }
     }
 }
+.block-stock {
 
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    &__title {}
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        .nav-arrow-secondary--next {
+            margin-left: 10px;
+        }
+
+        @media (max-width:$mobile-max) {
+            display: none;
+        }
+    }
+
+    &__slider {
+        .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .card-stock {
+            height: 100%;
+            position: relative;
+
+            .secondary-tooltip {
+                position: static;
+
+                &__content {
+                    left: auto;
+                    right: 16px;
+                    max-width: 85%;
+                    bottom: calc(16px + 22px + 8px); // gap bottom + size btn + gap
+                    height: max-content;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+       @media (max-width:$smallTablet-max){
+        padding: 0 16px;
+        margin: 0 -16px; 
+       }
+    }
+}
 .your-contacts-field {
 
     &__title {

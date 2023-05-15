@@ -32,6 +32,7 @@ import './components/placeSaleOptionMore';
 import './components/dropImage';
 import './components/checkboard';
 import './components/headerFixed';
+import './components/mortgageChoices';
 document.addEventListener('DOMContentLoaded', () => {
     filterControl();
     uiSlider();

@@ -122,8 +122,8 @@ function initSliders() {
             });
         })
     }
-    if (document.querySelector('.agent-stock__slider')) {
-        const sliders = document.querySelectorAll('.agent-stock__slider');
+    if (document.querySelector('.block-stock__slider')) {
+        const sliders = document.querySelectorAll('.block-stock__slider');
         sliders.forEach(el => {
             const slider = new Swiper(el, {
                 observer: true,
@@ -132,8 +132,8 @@ function initSliders() {
                 spaceBetween: 16,
                 speed: 800,
                 navigation: {
-                    prevEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--prev'),
-                    nextEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--next'),
+                    prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
+                    nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next'),
                 },
                 breakpoints: {
                     577: {
@@ -408,6 +408,26 @@ function initSliders() {
             }
         })
     }
+    if (document.querySelector('.object-slider-two')) {
+        const sliders = document.querySelectorAll('.object-slider-two');
+        sliders.forEach(el => {
+            const slider = el.querySelector('.object-slider-body__wrapper');
+            new Swiper(slider, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 16,
+                navigation: {
+                    prevEl: el.querySelector('.nav-arrow-primary--prev'),
+                    nextEl: el.querySelector('.nav-arrow-primary--next'),
+                },
+                pagination: {
+                    el: el.querySelector('.pagination-primary'),
+                    type: 'fraction',
+                },
+            });
+        })
+    }
 }
 
 
@@ -429,7 +449,6 @@ function objectSlider() {
     let bodySlider = new Swiper(body, {
         spaceBetween: 15,
         observer: true,
-        loop: true,
         observeParents: true,
         navigation: {
             prevEl: container.querySelector('.nav-arrow-primary--prev'),

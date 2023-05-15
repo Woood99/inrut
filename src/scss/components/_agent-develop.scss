@@ -34,67 +34,6 @@
 }
 
 
-.agent-stock {
-
-    &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 24px;
-    }
-
-    &__title {}
-
-    &__nav {
-        display: flex;
-        align-items: center;
-
-        .nav-arrow-secondary--next {
-            margin-left: 10px;
-        }
-
-        @media (max-width:$mobile-max) {
-            display: none;
-        }
-    }
-
-    &__slider {
-        .swiper-wrapper {
-            align-items: stretch;
-        }
-
-        .swiper-slide {
-            height: auto;
-        }
-
-        .card-stock {
-            height: 100%;
-            position: relative;
-
-            .secondary-tooltip {
-                position: static;
-
-                &__content {
-                    left: auto;
-                    right: 16px;
-                    max-width: 85%;
-                    bottom: calc(16px + 22px + 8px); // gap bottom + size btn + gap
-                    height: max-content;
-                    transform: translateX(0);
-                }
-            }
-        }
-
-       @media (max-width:$smallTablet-max){
-        padding: 0 16px;
-        margin: 0 -16px; 
-       }
-    }
-}
-
-
-
-
 
 .agent-object {
     &__title {

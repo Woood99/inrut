@@ -4158,6 +4158,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
 /* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
 /* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_headerFixed__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/mortgageChoices */ "./src/js/components/mortgageChoices.js");
+/* harmony import */ var _components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_components_mortgageChoices__WEBPACK_IMPORTED_MODULE_19__);
+
 
 
 
@@ -5379,6 +5382,43 @@ const maps = () => {
 
 /***/ }),
 
+/***/ "./src/js/components/mortgageChoices.js":
+/*!**********************************************!*\
+  !*** ./src/js/components/mortgageChoices.js ***!
+  \**********************************************/
+/***/ (() => {
+
+const mortgageChoices = () => {
+  const container = document.querySelector('.object-calc-mort');
+  const popupContainer = document.querySelector('.interest-rate--add');
+  if (container && popupContainer) {
+    const list = container.querySelector('.object-calc-mort__list');
+    const items = list.querySelectorAll('[data-mortgage-card]');
+    list.addEventListener('click', e => {
+      const target = e.target;
+      const item = target.closest('[data-mortgage-card]');
+      if (item) {
+        items.forEach(item => item.classList.remove('_active'));
+        item.classList.add('_active');
+        popupToggleClass(+item.dataset.mortgageCard);
+      }
+    });
+    function popupToggleClass(id) {
+      const popupItems = popupContainer.querySelectorAll('.interest-rate-card');
+      popupItems.forEach(item => {
+        if (+item.dataset.mortgageCard === id) {
+          item.classList.add('_active');
+        } else {
+          item.classList.remove('_active');
+        }
+      });
+    }
+  }
+};
+mortgageChoices();
+
+/***/ }),
+
 /***/ "./src/js/components/placeSaleOptionMore.js":
 /*!**************************************************!*\
   !*** ./src/js/components/placeSaleOptionMore.js ***!
@@ -6102,8 +6142,8 @@ function initSliders() {
       });
     });
   }
-  if (document.querySelector('.agent-stock__slider')) {
-    const sliders = document.querySelectorAll('.agent-stock__slider');
+  if (document.querySelector('.block-stock__slider')) {
+    const sliders = document.querySelectorAll('.block-stock__slider');
     sliders.forEach(el => {
       const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
         observer: true,
@@ -6112,8 +6152,8 @@ function initSliders() {
         spaceBetween: 16,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.agent-stock').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
+          nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next')
         },
         breakpoints: {
           577: {
@@ -6377,6 +6417,26 @@ function initSliders() {
       }
     });
   }
+  if (document.querySelector('.object-slider-two')) {
+    const sliders = document.querySelectorAll('.object-slider-two');
+    sliders.forEach(el => {
+      const slider = el.querySelector('.object-slider-body__wrapper');
+      new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 16,
+        navigation: {
+          prevEl: el.querySelector('.nav-arrow-primary--prev'),
+          nextEl: el.querySelector('.nav-arrow-primary--next')
+        },
+        pagination: {
+          el: el.querySelector('.pagination-primary'),
+          type: 'fraction'
+        }
+      });
+    });
+  }
 }
 function objectSlider() {
   const container = document.querySelector('.object-slider');
@@ -6396,7 +6456,6 @@ function objectSlider() {
   let bodySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](body, {
     spaceBetween: 15,
     observer: true,
-    loop: true,
     observeParents: true,
     navigation: {
       prevEl: container.querySelector('.nav-arrow-primary--prev'),

@@ -334,12 +334,12 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="agent__stock agent__row agent-stock">
-                            <div class="agent-stock__top">
-                                <h2 class="agent-stock__title title-2">
+                        <div class="agent__stock agent__row block-stock">
+                            <div class="block-stock__top">
+                                <h2 class="block-stock__title title-2">
                                     Акции, спецпредложения
                                 </h2>
-                                <div class="agent-stock__nav">
+                                <div class="block-stock__nav">
                                     <div class="nav-arrow-secondary nav-arrow-secondary--prev">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#arrow-right"></use>
@@ -352,7 +352,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper agent-stock__slider">
+                            <div class="swiper block-stock__slider">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="card-stock">
@@ -1359,7 +1359,7 @@
             </svg>
             <span>Закрыть</span>
         </button>
-        <div class="popup__content popup-primary__content interest-rate container">
+        <div class="popup__content popup-primary__content interest-rate interest-rate--add container">
             <h2 class="interest-rate__title title-2">
                 Выберите комфортную ставку или банк
             </h2>
@@ -1372,19 +1372,19 @@
                 <div class="swiper interest-rate__slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card _active">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card _active" data-mortgage-card="1">
                                 <span class="interest-rate-card__circle" aria-hidden="true"></span>
                                 <h4 class="interest-rate-card__title">
-                                    Ипотека для IT-специалистов
+                                    Базовая программа
                                 </h4>
                                 <div class="interest-rate-card__prc">
                                     <span class="interest-rate-card__prc--old">10,8%</span>
-                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                    <span class="interest-rate-card__prc--new">от 10,9%</span>
                                 </div>
                                 <div class="interest-rate-card__price">
                                     от 19 000 ₽/мес
                                 </div>
-                                <div class="interest-rate-card__check">
+                                <div class="interest-rate-card__check" aria-hidden="true">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#verif"></use>
                                     </svg>
@@ -1392,18 +1392,18 @@
                             </button>
                         </div>
                         <div class="swiper-slide">
-                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card" data-mortgage-card="2">
                                 <span class="interest-rate-card__circle" aria-hidden="true"></span>
                                 <h4 class="interest-rate-card__title">
-                                    Ипотека для IT-специалистов
+                                    Господдержка
                                 </h4>
                                 <div class="interest-rate-card__prc">
-                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                    <span class="interest-rate-card__prc--new">от 7,7%</span>
                                 </div>
                                 <div class="interest-rate-card__price">
                                     от 19 000 ₽/мес
                                 </div>
-                                <div class="interest-rate-card__check">
+                                <div class="interest-rate-card__check" aria-hidden="true">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#verif"></use>
                                     </svg>
@@ -1411,18 +1411,18 @@
                             </button>
                         </div>
                         <div class="swiper-slide">
-                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card" data-mortgage-card="3">
                                 <span class="interest-rate-card__circle" aria-hidden="true"></span>
                                 <h4 class="interest-rate-card__title">
-                                    Семейная ипотека
+                                    Ипотека для IT
                                 </h4>
                                 <div class="interest-rate-card__prc">
-                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                    <span class="interest-rate-card__prc--new">от 4,7%</span>
                                 </div>
                                 <div class="interest-rate-card__price">
                                     от 19 000 ₽/мес
                                 </div>
-                                <div class="interest-rate-card__check">
+                                <div class="interest-rate-card__check" aria-hidden="true">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#verif"></use>
                                     </svg>
@@ -1430,37 +1430,18 @@
                             </button>
                         </div>
                         <div class="swiper-slide">
-                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card">
+                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card" data-mortgage-card="4">
                                 <span class="interest-rate-card__circle" aria-hidden="true"></span>
                                 <h4 class="interest-rate-card__title">
-                                    Семейная ипотека
+                                    Военная
                                 </h4>
                                 <div class="interest-rate-card__prc">
-                                    <span class="interest-rate-card__prc--new">9,5%</span>
+                                    <span class="interest-rate-card__prc--new">от 4,7%</span>
                                 </div>
                                 <div class="interest-rate-card__price">
                                     от 19 000 ₽/мес
                                 </div>
-                                <div class="interest-rate-card__check">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#verif"></use>
-                                    </svg>
-                                </div>
-                            </button>
-                        </div>
-                        <div class="swiper-slide">
-                            <button type="button" class="btn btn-reset interest-rate__card interest-rate-card">
-                                <span class="interest-rate-card__circle" aria-hidden="true"></span>
-                                <h4 class="interest-rate-card__title">
-                                    Семейная ипотека
-                                </h4>
-                                <div class="interest-rate-card__prc">
-                                    <span class="interest-rate-card__prc--new">9,5%</span>
-                                </div>
-                                <div class="interest-rate-card__price">
-                                    от 19 000 ₽/мес
-                                </div>
-                                <div class="interest-rate-card__check">
+                                <div class="interest-rate-card__check" aria-hidden="true">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#verif"></use>
                                     </svg>

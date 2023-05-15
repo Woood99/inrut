@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Объект</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--object">
+        @include('partials/header.html')
+        <main class="main main-page-gap object detailed-flat">
+            <div class="object__top top-page-inner container">
+                <a href="#" class="object__back top-page-inner__back back-link">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrow-left"></use>
+                    </svg>
+                    <span>Назад</span>
+                </a>
+                <div class="object__btns top-page-inner__btns">
+                    <button type="button" class="btn btn-reset top-page-inner-title__btn favorite-btn"
+                        title="Добавить в избранное">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                        </svg>
+                        <span>В избранное</span>
+                    </button>
+                    <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-mobile-speed
+                        data-popup-path="share-app" title="Поделиться">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#share"></use>
+                        </svg>
+                        <span>Поделиться</span>
+                    </button>
+                </div>
+            </div>
+            <div class="object__body object-body container">
+
+                <div class="object-body__container">
+                    <div class="object-body__content">
+                        <div class="object-body__slider object-slider-two">
+                            <div class="object-slider__body object-slider-body">
+                                <div class="swiper object-slider-body__wrapper">
+                                    <div class="swiper-wrapper" id="object-gallery">
+                                        <div class="swiper-slide _fixed-width">
+                                            <a href="./img/card-scheme.png" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-scheme.png" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-8.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-8.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-8.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-10.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-10.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
+                                                data-poster="./img/card-1.webp" class="object-gallery__item">
+                                                <div class="video-play">
+                                                    <div class="video-play__icon">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#play"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>Видео</span>
+                                                </div>
+                                                <picture>
+                                                    <source srcset="./img/card-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-1.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-1.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-1.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button"
+                                    class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--prev">
+                                    <div class="nav-arrow-primary__wrapper">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--next">
+                                    <div class="nav-arrow-primary__wrapper">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="object-slider-body__pagination pagination-primary"></div>
+                            </div>
+                        </div>
+                        <div class="object-body__data object-data develop-inner__data">
+                            <h3 class="object-data__name">
+                                1-ком. квартира, 39 м², 12/12 эт.
+                            </h3>
+                            <div class="object-data__address">
+                                <span class="object-data__address--one">
+                                    ЖК “Новое Внуково”
+                                </span>
+                            </div>
+                            <div class="object-data__price">
+                                <span class="object-data__price-old">
+                                    <span>
+                                        <span>3 000 000</span> ₽
+                                    </span>
+                                    <span>-300 000 ₽</span>
+                                </span>
+                                <span class="object-data__price-new">
+                                    <span class="title-2">2 897 000 ₽</span>
+                                    <span>(94 742 ₽/м²)</span>
+                                </span>
+                            </div>
+                            <div class="object-data__characteristics object-characteristics">
+                                <div class="object-characteristics__container">
+                                    <ul class="object-characteristics__list list-reset">
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Начало строительства
+                                            </span>
+                                            <span>
+                                                2021, 1 кв.
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                1434
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Окончание строительства
+                                            </span>
+                                            <span>
+                                                2024, 4 кв.
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                434
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                434
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                434
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul class="object-characteristics__list list-reset" data-dropdown-items hidden>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Тип
+                                            </span>
+                                            <span>
+                                                Квартира
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Высота потолков
+                                            </span>
+                                            <span>
+                                                1
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Общая площадь
+                                            </span>
+                                            <span>
+                                                57 м²
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="btn btn-reset object-characteristics__more">
+                                        <span>Показать полностью</span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="object-data__purchase-terms purchase-terms">
+                                <h3 class="purchase-terms__title">
+                                    Варианты приобретения
+                                </h3>
+                                <div class="purchase-terms__wrapper">
+                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                        <span>100% оплата</span>
+                                        <span>Скидка до 12%</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                        <span>Рассрочка</span>
+                                        <span>0-0-24</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                        <span>Ипотека</span>
+                                        <span>от 0,1%</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                        <span>Trade in</span>
+                                        <span>Возможен</span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="object-body__stock block-stock">
+                            <div class="block-stock__top">
+                                <h2 class="block-stock__title title-2">
+                                    Акции, спецпредложения
+                                </h2>
+                                <div class="block-stock__nav">
+                                    <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper block-stock__slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Скидка 3000 ₽/м²
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                На неопределенный объем лотов
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Метр от самолета
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                Приобретая сертификат
+                                                метр от самолета часть
+                                                квартиры у вас в кармане
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                        текст!!
+                                                        Какой-то текст!! Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Скидка 3000 ₽/м²
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                На неопределенный объем лотов
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Метр от самолета
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                Приобретая сертификат
+                                                метр от самолета часть
+                                                квартиры у вас в кармане
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                        текст!!
+                                                        Какой-то текст!! Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="object-apart-renov">
+                            <h2 class="object-apart-renov__title title-2">
+                                Отделка квартир
+                            </h2>
+                            <div class="object-apart-renov__container">
+                                <div class="object-apart-renov__tabs tabs-primary">
+                                    <div data-tabs class="tabs-primary__inner _image-popper">
+                                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                White box
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                Без стен
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                                Дизайнерская отделка
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                Черновая отделка
+                                            </button>
+                                        </nav>
+                                        <div class="tabs-primary__container">
+                                            <div data-tabs-body class="tabs__content tabs-primary__content">
+
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-10.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-10.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 20%; left: 22%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 40%; left: 10%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 90%; left: 22%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-2.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 88%; left: 31%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 44%; left: 33%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 52%; left: 88%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 35%; right: 4%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-1.jpg"
+                                                                        class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 77%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Учтена в цене
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-2.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 27%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-3.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-3.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 66%; left: 8%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 44%; left: 33%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 52%; left: 88%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 35%; right: 4%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-1.jpg"
+                                                                        class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 27%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tabs__body object-apart-renov__item">
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                        <li class="object-apart-renov__tag">
+                                                            Учтена в цене
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-8.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-8.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 27%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-2.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 66%; left: 8%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 44%; left: 33%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 52%; left: 88%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 35%; right: 4%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-3.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-3.jpg"
+                                                                        class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 27%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-3.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-3.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 11%; left: 22%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-2.jpg"
+                                                                        class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 88%; left: 31%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 44%; left: 33%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 52%; left: 88%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 35%; right: 4%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp"
+                                                                        type="image/webp">
+                                                                    <img loading="lazy"
+                                                                        src="./img/object-apart-renov-1.jpg"
+                                                                        class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 51%; left: 77%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 18%; left: 52%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 72%; left: 57%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Minus cum repellat, recusandae
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark secondary-tooltip"
+                                                                    style="top: 55%; right: 7%;">
+                                                                    <button type="button"
+                                                                        class="btn btn-reset secondary-tooltip__btn"
+                                                                        aria-describedby="tooltip">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye"></use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="secondary-tooltip__content"
+                                                                        role="tooltip">
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit. Doloribus, ipsum earum ipsa
+                                                                        dicta veniam adipisci dolorem maxime sapiente
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="object-calc-mort section-observ" id="section-calc-mort">
+                            <h2 class="object-calc-mort__title title-2">
+                                Рассчитайте ипотеку
+                            </h2>
+                            <div class="object-calc-mort__list">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn _active" data-mortgage-card="1">
+                                    <span>Базовая программа</span>
+                                    <span>от 10,9%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="2">
+                                    <span>Господдержка</span>
+                                    <span>от 7,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="3">
+                                    <span>Ипотека для IT</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="4">
+                                    <span>Военная</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="5">
+                                    <span>Семейная</span>
+                                    <span>от 5,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="6">
+                                    <span>Семейная</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="7">
+                                    <span>Господдержка</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                            </div>
+                            <div class="object-calc-mort__wrapper">
+                                <div class="filter-range-one">
+                                    <span class="filter-range-one__subtitle">Срок кредита</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="5">
+                                            <input type="text" maxlength="3" name="Имя"
+                                                class="input-reset filter-range-one__input--w-auto">
+                                            лет
+                                        </div>
+                                    </div>
+                                    <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                                </div>
+                                <div class="filter-range-one">
+                                    <span class="filter-range-one__subtitle">Первоначальный взнос</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="400000">
+                                            <input type="text" maxlength="12" name="Имя" class="input-reset">
+                                        </div>
+                                        <span>15%</span>
+                                    </div>
+                                    <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
+                                </div>
+                                <div class="filter-range-one">
+                                    <span class="filter-range-one__subtitle">Стоимость объекта</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="2897000">
+                                            <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                        </div>
+                                    </div>
+                                    <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset field-static" data-mobile-speed
+                                    data-popup-path="interest-rate-modal">
+                                    <span class="field-static__subtitle">
+                                        Процентная ставка
+                                    </span>
+                                    <span class="field-static__text">
+                                        10,8%
+                                    </span>
+                                    <div class="field-static__arrow">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="object-calc-mort__info">
+                                Ежемесячный платеж <span>194 000 ₽/мес.</span>
+                            </div>
+                            <div class="object-calc-mort__bottom">
+                                <button type="button" class="btn btn-reset btn-primary object-calc-mort__app">
+                                    Подать заявку
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#tg"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message">
+                                    Задать вопрос
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-plate-bottom plate-bottom">
+                            <button type="button"
+                                class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call object-plate-bottom__btn object-plate-bottom__btn--call">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#phone"></use>
+                                </svg>
+                                Позвонить
+                            </button>
+                            <button type="button"
+                                class="btn btn-reset btn-secondary object-plate-bottom__btn object-plate-bottom__btn--message">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#chat"></use>
+                                </svg>
+                                <span>Написать</span>
+                            </button>
+
+                        </div>
+                        <div class="object-body__location object-location">
+                            <h2 class="object-location__title title-2">
+                                Вид из окна
+                            </h2>
+                            <div class="object-location__maps map-primary remove-copyrights-pane" id="object-maps">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="object-body__sidebar">
+                        <div class="object-body__user bid-user _sticky">
+                            <div class="bid-user__avatar avatar">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="129" height="129" alt="Алексей Г.">
+                            </div>
+                            <div class="bid-user__content">
+                                <a href="#" class="bid-user__name">
+                                    ГК Самолет
+                                </a>
+                                <time class="bid-user__time" datetime="2022-12-12">
+                                    Застройщик был в сети 12.12.2022
+                                </time>
+                                <div class="bid-user__quantity">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#house-building"></use>
+                                    </svg>
+                                    <span>17 строится</span>,
+                                    <span>178 сдано</span>
+                                </div>
+                            </div>
+                            <div class="bid-user__btns">
+                                <button type="button"
+                                    class="btn btn-reset btn-primary bid-user__btn bid-user__btn--online-display">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#VideoCamera"></use>
+                                    </svg>
+                                    Онлайн-показ
+                                </button>
+                                <button type="button"
+                                    class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--call">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#phone"></use>
+                                    </svg>
+                                    Позвонить
+                                </button>
+                                <button type="button"
+                                    class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Написать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>
