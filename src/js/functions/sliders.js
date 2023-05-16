@@ -97,6 +97,10 @@ function initSliders() {
             autoHeight: true,
             speed: 800,
             breakpoints: {
+                576: {
+                    slidesPerView: 1.6,
+                    spaceBetween: 24,
+                },
                 768: {
                     slidesPerView: 2,
                     spaceBetween: 24,
@@ -109,6 +113,35 @@ function initSliders() {
             navigation: {
                 prevEl: slider.closest('.home-price').querySelector('.nav-arrow-secondary--prev'),
                 nextEl: slider.closest('.home-price').querySelector('.nav-arrow-secondary--next'),
+            },
+        });
+    }
+    if (document.querySelector('.home-spec__items')) {
+        const slider = document.querySelector('.home-spec__items');
+        new Swiper(slider, {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1.1,
+            spaceBetween: 10,
+            autoHeight: true,
+            speed: 800,
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+                1112: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                },
+            },
+            navigation: {
+                prevEl: slider.closest('.home-spec').querySelector('.nav-arrow-secondary--prev'),
+                nextEl: slider.closest('.home-spec').querySelector('.nav-arrow-secondary--next'),
             },
         });
     }

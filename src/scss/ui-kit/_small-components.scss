@@ -913,16 +913,18 @@
     &__title {
         margin-bottom: 24px;
         font-size: 20px;
-        line-height: math.div(25 , 20);
+        line-height: math.div(25, 20);
         font-weight: 500;
         color: var(--dark);
     }
-    &__wrapper{
+
+    &__wrapper {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 32px;
         grid-row-gap: 8px;
     }
+
     &__btn {
         display: flex;
         align-items: center;
@@ -990,6 +992,7 @@
         }
     }
 }
+
 .block-stock {
 
     &__top {
@@ -1041,12 +1044,13 @@
             }
         }
 
-       @media (max-width:$smallTablet-max){
-        padding: 0 16px;
-        margin: 0 -16px; 
-       }
+        @media (max-width:$smallTablet-max) {
+            padding: 0 16px;
+            margin: 0 -16px;
+        }
     }
 }
+
 .your-contacts-field {
 
     &__title {
@@ -1475,17 +1479,21 @@
             stroke-width: 1.5px;
         }
     }
-    &.interest-rate-card--small{
+
+    &.interest-rate-card--small {
         grid-template-columns: 1fr;
-        .interest-rate-card{
-            &__title{
+
+        .interest-rate-card {
+            &__title {
                 grid-column: 1/-1;
             }
-            &__prc--new{
+
+            &__prc--new {
                 color: var(--dark);
             }
         }
     }
+
     &._active {
         border: 1px solid var(--blue);
 
@@ -1552,6 +1560,152 @@
             svg {
                 width: 20px;
                 height: 20px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.card-agent {
+    background-color: var(--white);
+    box-shadow: var(--shadow-secondary);
+    border-radius: 12px;
+    padding: 24px 24px;
+    box-sizing: border-box;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__avatar {
+        --size: 95px;
+        filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.04));
+        z-index: 1;
+        position: relative;
+        width: var(--size);
+        height: var(--size);
+        flex: 0 0 var(--size);
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__name {
+        margin-top: 16px;
+        color: var(--dark);
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+        transition: color $transitionSpeed $transitionFunction;
+        display: block;
+    }
+
+    &__time {
+        margin-top: 5px;
+        margin-bottom: 16px;
+        color: var(--primaryTwo);
+        font-size: 10px;
+        line-height: 100%;
+        font-weight: 400;
+    }
+
+    &__rating {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            color: var(--primary600);
+
+            &:nth-child(2) {
+                font-weight: 500;
+                margin-left: 4px;
+            }
+
+            &:nth-child(3) {
+                margin-left: 4px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__rating-stars {
+        display: flex;
+        align-items: center;
+        --icon-size: 16px;
+
+        svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            fill: var(--yellow);
+
+            &:not(:last-child) {
+                margin-right: 2px;
+            }
+        }
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        color: var(--primary600);
+        margin-bottom: 24px;
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: currentColor;
+            margin-right: 5px;
+        }
+
+        span {
+            color: inherit;
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+        }
+    }
+
+    &__more {
+        margin-top: auto;
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 400;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--blue);
+            margin-left: 5px;
+        }
+    }
+
+    @media (min-width:$desktop-min) {
+        &:hover {
+            .card-agent__name {
+                color: var(--blue);
             }
         }
     }

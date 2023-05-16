@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
-    <title>Объект</title>
+    <title>Главная</title>
     <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/vendor.css">
@@ -219,7 +219,8 @@
                             <img loading="lazy" src="./img/fire.png" aria-hidden="true" alt="">
                             <span>Цена дня</span>
                         </h2>
-                        <a href="#" class="btn btn-reset btn-secondary home-price__more">
+                        <a href="#" class="btn btn-reset btn-secondary home-price__more"
+                            data-da=".home-price .container,768,last">
                             Все объекты
                         </a>
                         <div class="home-price__nav">
@@ -731,6 +732,332 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="home__spec home-spec">
+                <div class="container">
+                    <div class="home-spec__top">
+                        <h2 class="home-spec__titie home__title title-2">
+                            Популярные специалисты
+                        </h2>
+                        <a href="#" class="btn btn-reset btn-secondary home-spec__more"
+                            data-da=".home-spec .container,768,last">
+                            Все специалисты
+                        </a>
+                        <div class="home-spec__nav">
+                            <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                            <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-spec__container">
+                        <div class="swiper home-spec__items">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="card-agent">
+                                        <a href="#" class="card-agent__wrapper">
+                                            <div class="card-agent__avatar avatar">
+                                                <picture>
+                                                    <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                                        alt="Алексей Г.">
+                                                </picture>
+                                            </div>
+                                            <div class="card-agent__content">
+                                                <span class="card-agent__name">
+                                                    Алексей Г.
+                                                </span>
+                                                <time class="card-agent__time" datetime="2022-12-12">
+                                                    Ипотечный брокер был в сети 12.12.2022
+                                                </time>
+                                                <div class="card-agent__rating">
+                                                    <div class="card-agent__rating-stars">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>4.8</span>
+                                                    <span>(16 отзыва)</span>
+                                                </div>
+                                                <div class="card-agent__quantity">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                    </svg>
+                                                    <span>8 сделок</span>
+                                                </div>
+                                            </div>
+                                            <span class="card-agent__more">
+                                                Подробнее о специалисте
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card-agent">
+                                        <a href="#" class="card-agent__wrapper">
+                                            <div class="card-agent__avatar avatar">
+                                                <picture>
+                                                    <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                                        alt="Алексей Г.">
+                                                </picture>
+                                            </div>
+                                            <div class="card-agent__content">
+                                                <span class="card-agent__name">
+                                                    Алексей Г.
+                                                </span>
+                                                <time class="card-agent__time" datetime="2022-12-12">
+                                                    Агент был в сети 12.12.2022
+                                                </time>
+                                                <div class="card-agent__rating">
+                                                    <div class="card-agent__rating-stars">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>2.2</span>
+                                                    <span>(2 отзыва)</span>
+                                                </div>
+                                                <div class="card-agent__quantity">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                    </svg>
+                                                    <span>10 объектов</span>,
+                                                    <span>8 сделок</span>
+                                                </div>
+                                            </div>
+                                            <span class="card-agent__more">
+                                                Подробнее о специалисте
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card-agent">
+                                        <a href="#" class="card-agent__wrapper">
+                                            <div class="card-agent__avatar avatar">
+                                                <picture>
+                                                    <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                                        alt="Алексей Г.">
+                                                </picture>
+                                            </div>
+                                            <div class="card-agent__content">
+                                                <span class="card-agent__name">
+                                                    Алексей Г.
+                                                </span>
+                                                <time class="card-agent__time" datetime="2022-12-12">
+                                                    Агент был в сети 12.12.2022
+                                                </time>
+                                                <div class="card-agent__rating">
+                                                    <div class="card-agent__rating-stars">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>2.2</span>
+                                                    <span>(2 отзыва)</span>
+                                                </div>
+                                                <div class="card-agent__quantity">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                    </svg>
+                                                    <span>10 объектов</span>,
+                                                    <span>8 сделок</span>
+                                                </div>
+                                            </div>
+                                            <span class="card-agent__more">
+                                                Подробнее о специалисте
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card-agent">
+                                        <a href="#" class="card-agent__wrapper">
+                                            <div class="card-agent__avatar avatar">
+                                                <picture>
+                                                    <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                                        alt="Алексей Г.">
+                                                </picture>
+                                            </div>
+                                            <div class="card-agent__content">
+                                                <span class="card-agent__name">
+                                                    Алексей Г.
+                                                </span>
+                                                <time class="card-agent__time" datetime="2022-12-12">
+                                                    Агент был в сети 12.12.2022
+                                                </time>
+                                                <div class="card-agent__rating">
+                                                    <div class="card-agent__rating-stars">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>2.2</span>
+                                                    <span>(2 отзыва)</span>
+                                                </div>
+                                                <div class="card-agent__quantity">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                    </svg>
+                                                    <span>10 объектов</span>,
+                                                    <span>8 сделок</span>
+                                                </div>
+                                            </div>
+                                            <span class="card-agent__more">
+                                                Подробнее о специалисте
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card-agent">
+                                        <a href="#" class="card-agent__wrapper">
+                                            <div class="card-agent__avatar avatar">
+                                                <picture>
+                                                    <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                                        alt="Алексей Г.">
+                                                </picture>
+                                            </div>
+                                            <div class="card-agent__content">
+                                                <span class="card-agent__name">
+                                                    Алексей Г.
+                                                </span>
+                                                <time class="card-agent__time" datetime="2022-12-12">
+                                                    Агент был в сети 12.12.2022
+                                                </time>
+                                                <div class="card-agent__rating">
+                                                    <div class="card-agent__rating-stars">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>2.2</span>
+                                                    <span>(2 отзыва)</span>
+                                                </div>
+                                                <div class="card-agent__quantity">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                    </svg>
+                                                    <span>10 объектов</span>,
+                                                    <span>8 сделок</span>
+                                                </div>
+                                            </div>
+                                            <span class="card-agent__more">
+                                                Подробнее о специалисте
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="home__links home-links">
+                <div class="container">
+                    <h2 class="home-links__title home__title title-2">
+                        Полезные ссылки
+                    </h2>
+                    <div class="home-links__items">
+                        <article class="card-link">
+                            <div class="card-link__image ibg">
+                                <img src="./img/card-11.jpg" alt="Квартиры- вторичное жилье">
+                            </div>
+                            <h3 class="card-link__title">
+                                Квартиры- вторичное жилье
+                            </h3>
+                            <div class="card-link__list">
+                                <a href="#" class="card-link__link">
+                                    1-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    2-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    3-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    4-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    Студии
+                                </a>
+                            </div>
+                        </article>
+                        <article class="card-link">
+                            <div class="card-link__image ibg">
+                                <img src="./img/card-12.jpg" alt="Квартиры- вторичное жилье">
+                            </div>
+                            <h3 class="card-link__title">
+                                Коммерческая недвижимость
+                            </h3>
+                            <div class="card-link__list">
+                                <a href="#" class="card-link__link">
+                                    Гостиницы
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    Офисные помещения
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    Помещения свободного назначения
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    Торговые помещения
+                                </a>
+                            </div>
+                        </article>
+                        <article class="card-link">
+                            <div class="card-link__image ibg">
+                                <img src="./img/card-11.jpg" alt="Квартиры- вторичное жилье">
+                            </div>
+                            <h3 class="card-link__title">
+                                Новостройки
+                            </h3>
+                            <div class="card-link__list">
+                                <a href="#" class="card-link__link">
+                                    1-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    2-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    3-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    4-комнатные
+                                </a>
+                                <a href="#" class="card-link__link">
+                                    Студии
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
