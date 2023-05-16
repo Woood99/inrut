@@ -4625,14 +4625,24 @@ const checkboard = () => {
         navPrev.classList.remove('_active');
         navNext.classList.remove('_active');
       }
-      if (container.scrollHeight - container.scrollTop === window.innerHeight) {
+      console.log(container.scrollHeight);
+      console.log(container.scrollTop + container.clientHeight);
+      if (container.scrollHeight === container.scrollTop + container.clientHeight || container.scrollHeight - 1 <= container.scrollTop + container.clientHeight) {
         navBottom.setAttribute('hidden', '');
         navTop.removeAttribute('hidden');
       } else {
         navTop.setAttribute('hidden', '');
         navBottom.removeAttribute('hidden');
       }
+      // if ((container.scrollHeight - container.scrollTop) === window.innerHeight) {
+      //     navBottom.setAttribute('hidden', '');
+      //     navTop.removeAttribute('hidden');
+      // } else {
+      //     navTop.setAttribute('hidden', '');
+      //     navBottom.removeAttribute('hidden');
+      // }
     });
+
     navTop.addEventListener('click', () => {
       container.scrollTo({
         top: 0,
