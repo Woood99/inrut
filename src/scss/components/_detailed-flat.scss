@@ -69,20 +69,32 @@
             padding: 16px;
         }
     }
-    .object-data{
-        &__name{
+
+    .object-data {
+        &__name {
             font-size: 20px;
-            line-height: math.div(25 , 20);
+            line-height: math.div(25, 20);
             font-weight: 500;
             color: var(--dark);
         }
-        &__price{
+
+        &__price {
             margin-top: 32px;
+
+            @media (max-width:$smallTablet-max) {
+                margin-top: 24px;
+            }
         }
-        &__characteristics{
+
+        &__characteristics {
             margin-top: 32px;
+
+            @media (max-width:$smallTablet-max) {
+                margin-top: 24px;
+            }
         }
     }
+
     .object-body {
         &__container {
             margin-top: 16px;
@@ -90,12 +102,22 @@
             justify-content: space-between;
             grid-template-columns: 1fr 300px;
             grid-column-gap: 16px;
+
+            @media (max-width:$desktop) {
+                margin-top: 0;
+                grid-template-columns: 1fr;
+                grid-row-gap: 8px;
+            }
         }
 
         &__content {
             display: grid;
             grid-template-columns: 100%;
             grid-row-gap: 24px;
+
+            @media (max-width:$desktop) {
+                grid-row-gap: 8px;
+            }
         }
 
         &__data {
@@ -122,6 +144,20 @@
                 box-shadow: var(--shadow-secondary);
             }
         }
+
+        @media (max-width:$desktop) {
+            justify-content: center;
+            display: flex;
+            max-height: 400px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            height: 325px;
+        }
+
+        @media (max-width:$mobile-max) {
+            height: 285px;
+        }
     }
 
     .object-slider {
@@ -141,6 +177,18 @@
                         display: flex;
                         align-items: center;
                         margin: 0 auto;
+
+                        @media (max-width:$desktop) {
+                            max-width: 325px;
+                        }
+
+                        @media (max-width:$smallTablet-max) {
+                            max-width: 300px;
+                        }
+
+                        @media (max-width:$mobile-max) {
+                            max-width: 250px;
+                        }
                     }
 
                     img {
@@ -150,6 +198,8 @@
                     }
                 }
             }
+
+            @media (max-width:$desktop) {}
         }
     }
 
@@ -157,4 +207,9 @@
         margin-top: 0;
     }
 
+    .object-body__sidebar {
+        @media (max-width:$desktop) {
+            display: none;
+        }
+    }
 }

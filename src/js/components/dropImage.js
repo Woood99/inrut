@@ -49,4 +49,4 @@ const dropImage = () => {
     }
 };
 
-dropImage();
+export default dropImage;

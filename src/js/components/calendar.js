@@ -4,10 +4,8 @@ import {
 import SimpleBar from 'simplebar';
 import modal from '../modules/modal';
 
-calendarPrimary();
 
-
-function calendarPrimary() {
+export const calendarPrimary = () => {
     const calendarPrimaryEl = document.querySelector('.calendar-primary');
     if (!calendarPrimaryEl) return;
     const calendaryPrimary = new Calendar(calendarPrimaryEl, {

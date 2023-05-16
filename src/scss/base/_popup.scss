@@ -1336,11 +1336,17 @@
     }
 
     &__filters {
-        margin-top: 48px;
+        margin: 48px 52px 0 44px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
-        margin: 48px 52px 0 44px;
+        grid-row-gap: 16px;
+        @media (max-width:$smallTablet-max){
+           margin: 32px 0 0;
+        }
+        @media (max-width:$mobile-max){
+             grid-template-columns: 1fr; 
+        }
     }
 
     &__slider {

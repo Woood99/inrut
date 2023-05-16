@@ -121,7 +121,7 @@
                                 <div class="object-slider-body__pagination pagination-primary"></div>
                             </div>
                         </div>
-                        <div class="object-body__data object-data develop-inner__data">
+                        <div class="object-body__data object-data">
                             <h3 class="object-data__name">
                                 1-ком. квартира, 39 м², 12/12 эт.
                             </h3>
@@ -141,6 +141,34 @@
                                     <span class="title-2">2 897 000 ₽</span>
                                     <span>(94 742 ₽/м²)</span>
                                 </span>
+                            </div>
+                            <div class="object-data__choices choice-pay">
+                                <button type="button"
+                                    class="btn btn-reset choice-pay__card choice-pay__card--sum _active">
+                                    <div class="row">
+                                        <h4 class="choice-pay__title">
+                                            100% оплата
+                                        </h4>
+                                        <span class="choice-pay__prc">-140 000 ₽</span>
+                                    </div>
+                                    <p class="choice-pay__descr">
+                                        со скидкой 1 800 000 ₽
+                                    </p>
+                                    <span class="choice-pay__check" aria-label="Выбрано 100% оплата"></span>
+                                </button>
+                                <button type="button" class="btn btn-reset choice-pay__card choice-pay__card--mortgage">
+                                    <div class="row">
+                                        <h4 class="choice-pay__title">
+                                            Ипотека 6,5%
+                                        </h4>
+                                    </div>
+                                    <p class="choice-pay__descr">
+                                        от 14 350 ₽/мес.
+                                    </p>
+                                    <div class="btn btn-reset btn-secondary choice-pay__btn" data-mobile-speed
+                                        data-popup-path="interest-rate-modal-two">Выбрать другие программы</div>
+                                    <span class="choice-pay__check"></span>
+                                </button>
                             </div>
                             <div class="object-data__characteristics object-characteristics">
                                 <div class="object-characteristics__container">
@@ -274,7 +302,7 @@
                                 </div>
                             </div>
                             <div class="swiper block-stock__slider">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper block-stock__items">
                                     <div class="swiper-slide">
                                         <div class="card-stock">
                                             <div class="card-stock__title">
@@ -381,7 +409,9 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <button type="button" class="btn btn-reset btn-secondary block-stock__btn">
+                                Все акции и спецпредложения
+                            </button>
                         </div>
                         <div class="object-apart-renov">
                             <h2 class="object-apart-renov__title title-2">
@@ -1395,31 +1425,38 @@
                                 Рассчитайте ипотеку
                             </h2>
                             <div class="object-calc-mort__list">
-                                <button type="button" class="btn btn-reset object-calc-mort__btn _active" data-mortgage-card="1">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn _active"
+                                    data-mortgage-card="1">
                                     <span>Базовая программа</span>
                                     <span>от 10,9%</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="2">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="2">
                                     <span>Господдержка</span>
                                     <span>от 7,7%</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="3">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="3">
                                     <span>Ипотека для IT</span>
                                     <span>от 4,7%</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="4">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="4">
                                     <span>Военная</span>
                                     <span>от 4,7%</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="5">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="5">
                                     <span>Семейная</span>
                                     <span>от 5,7%</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="6">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="6">
                                     <span>Семейная</span>
                                     <span>10 лет % пополам</span>
                                 </button>
-                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="7">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn"
+                                    data-mortgage-card="7">
                                     <span>Господдержка</span>
                                     <span>10 лет % пополам</span>
                                 </button>
@@ -1515,7 +1552,7 @@
                         </div>
                     </div>
                     <div class="object-body__sidebar">
-                        <div class="object-body__user bid-user _sticky">
+                        <div class="object-body__user bid-user _sticky" data-da=".object-body__content, 1112,6">
                             <div class="bid-user__avatar avatar">
                                 <img loading="lazy" src="./img/avatar-1.jpg" width="129" height="129" alt="Алексей Г.">
                             </div>

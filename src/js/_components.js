@@ -7,6 +7,7 @@ import {
     filterMobile,
     filterCustomSelectCheckboxes
 } from './components/filter';
+import getHeightBlock from './modules/getHeightBlock'
 import {
     simplebar
 } from './components/simplebar';
@@ -19,21 +20,33 @@ import {
 import {
     validateRadioPrimary
 } from './components/formValidate';
-import './components/calendar';
+import {
+    calendarPrimary
+} from './components/calendar'
+import {
+    galleryPrimary
+} from './components/gallery';
 import dropdown from './modules/dropdown';
 import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';
-import './components/controlCards'
 import emergingBlockScroll from './modules/emergingBlockScroll';
-import './components/gallery';
-import './components/videoBlock';
-import './components/reviewModal';
-import './components/placeSaleOptionMore';
-import './components/dropImage';
-import './components/checkboard';
-import './components/headerFixed';
-import './components/mortgage';
+import controlCards from './components/controlCards';
+import videoBlock from './components/videoBlock';
+import reviewModal from './components/reviewModal';
+import placeSaleOptionMore from './components/placeSaleOptionMore';
+import dropImage from './components/dropImage';
+import checkboard from './components/checkboard';
+import headerFixed from './components/headerFixed';
+import mortgage from './components/mortgage';
+import choicePay from './components/choicePay';
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ==================================================
+
+    getHeightBlock('.header-fixed', '--header-fixed-height');
+
+    // ==================================================
+
     filterControl();
     uiSlider();
     uiSliderOne();
@@ -41,14 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     filterDropdownChoice();
     filterMobile();
     filterCustomSelectCheckboxes();
+
     // ==================================================
 
     simplebar('.simplebar-primary');
     simplebar('.simplebar-secondary');
-
-    // ==================================================
-
-    maps();
 
     // ==================================================
 
@@ -58,6 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inputText();
     inputOnlyNumber();
+
+    // ==================================================
+
+    maps();
+    calendarPrimary();
+    galleryPrimary();
+    controlCards();
+    videoBlock();
+    reviewModal();
+    placeSaleOptionMore();
+    dropImage();
+    checkboard();
+    headerFixed();
+    mortgage();
+    choicePay();
 
     // ==================================================
 
@@ -79,4 +104,5 @@ document.addEventListener('DOMContentLoaded', () => {
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
     emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
+    emergingBlockScroll('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
 })

@@ -152,15 +152,24 @@
         }
     }
 
-    &__col {
+    &__cols {
         margin-top: 24px;
         display: grid;
-        grid-template-columns: percent(700, 1016);
-        grid-row-gap: 24px;
+        grid-template-columns: percent(700, 1016) 1fr;
+        grid-column-gap: 16px;
 
         @media (max-width:$desktop) {
             margin-top: 16px;
             grid-template-columns: 100%;
+        }
+    }
+
+    &__col {
+        display: grid;
+        grid-row-gap: 24px;
+        grid-template-columns: 100%;
+
+        @media (max-width:$desktop) {
             grid-row-gap: 16px;
         }
     }
@@ -731,6 +740,14 @@
             color: var(--blue);
             font-weight: 500;
         }
+
+        @media (max-width:$smallTablet-max) {
+            margin-left: 0;
+
+            span {
+                margin-top: 4px;
+            }
+        }
     }
 
     &__text {
@@ -788,7 +805,7 @@
     }
 
     &__characteristics {
-        margin-top: 48px;
+        margin-top: 32px;
 
         .object-characteristics {
 
@@ -823,9 +840,15 @@
             margin-top: 24px;
         }
     }
-    &__purchase-terms{
-        margin-top: 24px;
+
+    &__purchase-terms {
+        margin-top: 32px;
+
+        @media (max-width:$smallTablet-max) {
+            margin-top: 24px;
+        }
     }
+
     .row {
         display: flex;
         align-items: center;
@@ -874,6 +897,10 @@
         @media (max-width:$smallTablet-max) {
             margin: 4px 0 0 0;
         }
+    }
+
+    &__choices {
+        margin-top: 24px;
     }
 
     @media (max-width:$desktop) {
@@ -1241,14 +1268,16 @@
             grid-template-columns: 1fr;
         }
     }
-    &__list{
+
+    &__list {
         margin-top: 24px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 16px;
     }
-    &__btn{
+
+    &__btn {
         max-width: 260px;
         flex-grow: 1;
         height: 44px;
@@ -1259,27 +1288,37 @@
         background-color: var(--white);
         padding: 0 16px;
         border-radius: 12px;
-        span{
+
+        span {
             font-size: 12px;
-            line-height: math.div(15 , 12);
+            line-height: math.div(15, 12);
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
-            &:nth-child(1){
+
+            &:nth-child(1) {
                 color: var(--gray);
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 color: var(--blue);
                 margin-left: 12px;
             }
         }
-        &._active{
+
+        &._active {
             border: 1px solid var(--blue);
             background-color: var(--blue);
-            span{
+
+            span {
                 color: var(--white);
             }
         }
+
+        @media (max-width:$smallTablet-max) {
+            max-width: none;
+        }
     }
+
     &__info {
         margin-top: 24px;
 
@@ -1344,6 +1383,7 @@
             }
         }
     }
+
     @media (max-width:$desktop) {
         padding: 16px;
     }
@@ -1453,6 +1493,10 @@
 
         @media (max-width:$smallTablet-max) {
             height: 385px;
+        }
+
+        @media (max-width:$mobile-max) {
+            height: 350px;
         }
     }
 

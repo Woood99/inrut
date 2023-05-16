@@ -96,4 +96,4 @@ const reviewModal = () => {
 };
 
 
-reviewModal();
+export default reviewModal;

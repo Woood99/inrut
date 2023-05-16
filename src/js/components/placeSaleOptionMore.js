@@ -32,7 +32,7 @@ function placeSaleOptionMore() {
     });
 }
 
-placeSaleOptionMore();
+export default placeSaleOptionMore;
 
 
 

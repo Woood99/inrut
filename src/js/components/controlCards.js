@@ -19,4 +19,5 @@ function controlCards() {
         })
     })
 }
-controlCards();
+
+export default controlCards;

@@ -16,4 +16,4 @@ function videoBlock() {
         });
     })
 }
-videoBlock();
+export default videoBlock;

@@ -107,4 +107,4 @@ const checkboard = () => {
     checkboardNav();
 };
 
-checkboard();
+export default checkboard;

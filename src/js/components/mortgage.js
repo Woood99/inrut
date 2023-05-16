@@ -1,6 +1,6 @@
 const mortgage = () => {
-    const containerOne = document.querySelector('.object-calc-mort');
-    const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate--add');
+    const containerOne = document.querySelector('.object-calc-mort--one');
+    const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate');
 
     const containerAdd = document.querySelector('.object-calc-mort--add');
     const popupContainerAdd = document.querySelector('.popup-primary--interest-rate-2 .interest-rate--add');
@@ -35,9 +35,23 @@ const mortgage = () => {
                 }
             })
         }
-       
+    }
+    if (containerOne && popupContainerOne) {
+        const items = popupContainerOne.querySelectorAll('.interest-rate-card');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+
+                items.forEach(item => item.classList.remove('_active'));
+                item.classList.add('_active');
+
+                const prc = item.querySelector('.interest-rate-card__prc--new').textContent;
+                const textPrc = containerOne.querySelector('.field-static__text');
+                textPrc.textContent = prc;
+
+            });
+        })
     }
 };
 
 
-mortgage();
+export default mortgage;

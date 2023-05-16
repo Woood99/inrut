@@ -206,10 +206,12 @@ function initSliders() {
             });
         })
     }
-    if (document.querySelector('.block-stock__slider')) {
-        const sliders = document.querySelectorAll('.block-stock__slider');
-        sliders.forEach(el => {
-            const slider = new Swiper(el, {
+    if (document.querySelector('.block-stock')) {
+        const container = document.querySelectorAll('.block-stock');
+        container.forEach(el => {
+            const sliderEl = el.querySelector('.block-stock__slider');
+
+            let slider = new Swiper(sliderEl, {
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1.1,
@@ -221,10 +223,95 @@ function initSliders() {
                 },
                 breakpoints: {
                     577: {
+                        slidesPerView: 1.8,
+                    },
+                    769: {
+                        slidesPerView: 2.4,
+                    },
+                    1113: {
                         slidesPerView: 2,
                     }
                 },
             });
+            const blockStock = () => {
+                sliderMoreItem();
+                itemPopup();
+
+                function sliderMoreItem() {
+                    const btn = el.querySelector('.block-stock__btn');
+                    btn.addEventListener('click', () => {
+                        el.classList.toggle('_active');
+                        if (el.classList.contains('_active')) {
+                            btn.classList.add('_active');
+                            slider.destroy();
+                        } else {
+                            btn.classList.remove('_active');
+                            const topGap = window.pageYOffset + el.getBoundingClientRect().top;
+                            const headerFixed = document.querySelector('.header-fixed');
+                            const topHeaderMobile = document.querySelector('.top-page-inner');
+                            if (window.innerWidth >= 1112) {
+                                window.scrollTo({
+                                    top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
+                                })
+                            } else {
+                                window.scrollTo({
+                                    top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20,
+                                })
+                            }
+                            slider = new Swiper(sliderEl, {
+                                observer: true,
+                                observeParents: true,
+                                slidesPerView: 1.1,
+                                spaceBetween: 16,
+                                speed: 800,
+                                navigation: {
+                                    prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
+                                    nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next'),
+                                },
+                                breakpoints: {
+                                    577: {
+                                        slidesPerView: 1.8,
+                                    },
+                                    769: {
+                                        slidesPerView: 2.4,
+                                    },
+                                    1113: {
+                                        slidesPerView: 2,
+                                    }
+                                },
+                            });
+                        }
+                    });
+                }
+
+                function itemPopup() {
+                    const items = el.querySelectorAll('.object-advantages__card');
+                    items.forEach(item => {
+                        item.addEventListener('click', () => {
+                            item.classList.add('_active');
+                            const modalHTML = `
+                            <div class="advantages-popup">
+                            <div class="advantages-popup__container">
+                                <button class="btn-reset advantages-popup__close" aria-label="Закрыть модальное окно">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#x"></use>
+                                    </svg>
+                                    <span>Закрыть</span>
+                                </button>
+                                 <div class="advantages-popup__content">
+                                        ${item.outerHTML}
+                                 </div>
+                            </div>
+                            </div>
+                            `;
+
+                            modal(modalHTML, '.advantages-popup', 300, item);
+                            document.querySelector('.advantages-popup .advantages-card').classList.remove('_active');
+                        })
+                    })
+                }
+            }
+            blockStock();
         })
     }
     if (document.querySelector('.object-other-apartment__items')) {

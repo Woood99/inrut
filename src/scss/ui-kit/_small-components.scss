@@ -916,6 +916,10 @@
         line-height: math.div(25, 20);
         font-weight: 500;
         color: var(--dark);
+
+        @media (max-width:$smallTablet-max) {
+            margin-bottom: 16px;
+        }
     }
 
     &__wrapper {
@@ -923,6 +927,15 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 32px;
         grid-row-gap: 8px;
+
+        @media (max-width:$desktop) {
+            grid-column-gap: 24px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 12px;
+        }
     }
 
     &__btn {
@@ -1049,7 +1062,64 @@
             margin: 0 -16px;
         }
     }
+
+    &._active {
+        .block-stock {
+            &__slider {
+                overflow: visible;
+            }
+
+            &__nav {
+                display: none;
+            }
+
+            &__items {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 16px;
+                grid-row-gap: 32px;
+
+                @media (max-width:$mobile-max) {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 16px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
+
+        &._active {
+            position: relative;
+            font-size: 0;
+
+            &::before {
+                content: 'Свернуть';
+                font-size: 14px;
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .your-contacts-field {
 
@@ -1568,9 +1638,130 @@
 
 
 
+.choice-pay {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(2, 268px);
 
+    &__card {
+        padding: 16px 43px 16px 16px;
+        background-color: var(--white);
+        border: 1px solid #CBE2FF;
+        border-radius: 12px;
+        position: relative;
+        transition: border $transitionSpeed $transitionFunction;
+        text-align: left;
 
+        .row {
+            display: flex;
+            align-items: center;
 
+            @media (max-width:$smallTablet-max) {
+                flex-direction: row !important; // need hack :( 
+            }
+        }
+
+        &--sum {
+            .choice-pay {
+                &__descr {
+                    color: var(--green);
+                }
+            }
+        }
+
+        &--mortgage {
+            .choice-pay {
+                &__descr {
+                    color: var(--primaryTwo);
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+
+            @media (max-width:$smallTablet-max) {
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+        }
+
+        &._active {
+            border: 1px solid var(--blue);
+            cursor: default;
+            pointer-events: none;
+
+            .choice-pay {
+                &__check {
+                    background-color: var(--blue);
+                }
+
+                &__btn {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: math.div(18, 14);
+        color: var(--dark);
+        font-weight: 500;
+    }
+
+    &__prc {
+        margin-left: 4px;
+        padding: 2px 8px;
+        color: var(--green);
+        background: rgba(36, 202, 142, 0.1);
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 1.25;
+        font-weight: 400;
+    }
+
+    &__descr {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: math.div(18, 14);
+        font-weight: 500;
+    }
+
+    &__check {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+
+        width: 15px;
+        height: 15px;
+        background-color: var(--primary100);
+        border: 1px solid var(--primaryTwo);
+        border-radius: 100px;
+        transition: background-color $transitionSpeed $transitionFunction;
+    }
+
+    &__btn {
+        margin-top: 16px;
+        height: 31px;
+        width: 100%;
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 400;
+        display: none;
+
+        cursor: pointer;
+        pointer-events: all;
+
+        @media (max-width:$smallTablet-max) {
+            height: 40px;
+        }
+    }
+
+    @media (max-width:$smallTablet-max) {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 

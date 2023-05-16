@@ -65,6 +65,12 @@
             }
         }
 
+        @media (min-width:$desktop-min) {
+            &._sticky {
+                top: calc(var(--header-fixed-height) + 16px);
+            }
+        }
+
         @media (max-width:$desktop) {
             padding: 16px;
         }
@@ -75,18 +81,20 @@
 
         &__name {
             margin-top: 0;
-          
+
         }
 
         .row {
-            &:not(:first-child){
+            &:not(:first-child) {
                 margin-top: 24px;
             }
         }
-        &__price{
-           margin-top: 0;
+
+        &__price {
+            margin-top: 0;
         }
-        &__mortgage{
+
+        &__mortgage {
             margin-top: 0;
         }
     }

@@ -4136,30 +4136,29 @@ function withinMaxClamp(min, value, max) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/filter */ "./src/js/components/filter.js");
-/* harmony import */ var _components_simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/simplebar */ "./src/js/components/simplebar.js");
-/* harmony import */ var _components_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/maps */ "./src/js/components/maps.js");
-/* harmony import */ var _modules_linkCopy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/linkCopy */ "./src/js/modules/linkCopy.js");
-/* harmony import */ var _components_inputs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/inputs */ "./src/js/components/inputs.js");
-/* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
-/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
-/* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
-/* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
-/* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
-/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
-/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_controlCards__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
-/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
-/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
-/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_components_videoBlock__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/reviewModal */ "./src/js/components/reviewModal.js");
-/* harmony import */ var _components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/placeSaleOptionMore */ "./src/js/components/placeSaleOptionMore.js");
-/* harmony import */ var _components_dropImage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/dropImage */ "./src/js/components/dropImage.js");
-/* harmony import */ var _components_dropImage__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_components_dropImage__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
-/* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
-/* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_headerFixed__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
-/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_components_mortgage__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _modules_getHeightBlock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getHeightBlock */ "./src/js/modules/getHeightBlock.js");
+/* harmony import */ var _components_simplebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/simplebar */ "./src/js/components/simplebar.js");
+/* harmony import */ var _components_maps__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/maps */ "./src/js/components/maps.js");
+/* harmony import */ var _modules_linkCopy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/linkCopy */ "./src/js/modules/linkCopy.js");
+/* harmony import */ var _components_inputs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/inputs */ "./src/js/components/inputs.js");
+/* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
+/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
+/* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
+/* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
+/* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
+/* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
+/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
+/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/reviewModal */ "./src/js/components/reviewModal.js");
+/* harmony import */ var _components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/placeSaleOptionMore */ "./src/js/components/placeSaleOptionMore.js");
+/* harmony import */ var _components_dropImage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/dropImage */ "./src/js/components/dropImage.js");
+/* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
+/* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
+/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
+/* harmony import */ var _components_choicePay__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/choicePay */ "./src/js/components/choicePay.js");
+
+
 
 
 
@@ -4181,6 +4180,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ==================================================
+
+  (0,_modules_getHeightBlock__WEBPACK_IMPORTED_MODULE_1__["default"])('.header-fixed', '--header-fixed-height');
+
+  // ==================================================
+
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterControl)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSlider)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSliderOne)();
@@ -4188,44 +4193,57 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterMobile)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterCustomSelectCheckboxes)();
-  // ==================================================
-
-  (0,_components_simplebar__WEBPACK_IMPORTED_MODULE_1__.simplebar)('.simplebar-primary');
-  (0,_components_simplebar__WEBPACK_IMPORTED_MODULE_1__.simplebar)('.simplebar-secondary');
 
   // ==================================================
 
-  (0,_components_maps__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_components_simplebar__WEBPACK_IMPORTED_MODULE_2__.simplebar)('.simplebar-primary');
+  (0,_components_simplebar__WEBPACK_IMPORTED_MODULE_2__.simplebar)('.simplebar-secondary');
 
   // ==================================================
 
-  (0,_modules_linkCopy__WEBPACK_IMPORTED_MODULE_3__["default"])('.share-app-popup__btn');
+  (0,_modules_linkCopy__WEBPACK_IMPORTED_MODULE_4__["default"])('.share-app-popup__btn');
 
   // ==================================================
 
-  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputText)();
-  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_4__.inputOnlyNumber)();
+  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_5__.inputText)();
+  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_5__.inputOnlyNumber)();
 
   // ==================================================
 
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_5__.validateRadioPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
+  (0,_components_maps__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)();
+  (0,_components_gallery__WEBPACK_IMPORTED_MODULE_8__.galleryPrimary)();
+  (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_13__["default"])();
+  (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_14__["default"])();
+  (0,_components_reviewModal__WEBPACK_IMPORTED_MODULE_15__["default"])();
+  (0,_components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_16__["default"])();
+  (0,_components_dropImage__WEBPACK_IMPORTED_MODULE_17__["default"])();
+  (0,_components_checkboard__WEBPACK_IMPORTED_MODULE_18__["default"])();
+  (0,_components_headerFixed__WEBPACK_IMPORTED_MODULE_19__["default"])();
+  (0,_components_mortgage__WEBPACK_IMPORTED_MODULE_20__["default"])();
+  (0,_components_choicePay__WEBPACK_IMPORTED_MODULE_21__["default"])();
 
   // ==================================================
 
-  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_7__["default"])('.dots-dropdown', '.dots-dropdown__target');
-  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__["default"])('.your-app-bid__item--dropdown', 'button', 'Меньше');
-  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_8__["default"])('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
-  (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_9__["default"])('.object-data__text', '.object-data__more');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_11__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
+  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_9__["default"])('.dots-dropdown', '.dots-dropdown__target');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__["default"])('.your-app-bid__item--dropdown', 'button', 'Меньше');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__["default"])('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
+  (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-data__text', '.object-data__more');
+
+  // ==================================================
+
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
 });
 
 /***/ }),
@@ -4384,14 +4402,16 @@ if (selectSecondary.length >= 1) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calendarPrimary": () => (/* binding */ calendarPrimary)
+/* harmony export */ });
 /* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/index.js");
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
 
 
 
-calendarPrimary();
-function calendarPrimary() {
+const calendarPrimary = () => {
   const calendarPrimaryEl = document.querySelector('.calendar-primary');
   if (!calendarPrimaryEl) return;
   const calendaryPrimary = new fullcalendar__WEBPACK_IMPORTED_MODULE_0__.Calendar(calendarPrimaryEl, {
@@ -4529,7 +4549,7 @@ function calendarPrimary() {
       });
     }, 500);
   }
-}
+};
 
 /***/ }),
 
@@ -4541,6 +4561,9 @@ function calendarPrimary() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
 
 const checkboard = () => {
@@ -4640,7 +4663,36 @@ const checkboard = () => {
   }
   checkboardNav();
 };
-checkboard();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (checkboard);
+
+/***/ }),
+
+/***/ "./src/js/components/choicePay.js":
+/*!****************************************!*\
+  !*** ./src/js/components/choicePay.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const choicePay = () => {
+  const container = document.querySelector('.choice-pay');
+  if (!container) return;
+  const items = container.querySelectorAll('.choice-pay__card');
+  items.forEach(item => {
+    const check = item.querySelector('.choice-pay__check');
+    item.addEventListener('click', () => {
+      items.forEach(item => item.classList.remove('_active'));
+      item.classList.add('_active');
+      if (item.classList.contains('choice-pay__card--sum')) check.setAttribute('aria-label', 'Выбрано 100% оплата');
+      if (item.classList.contains('choice-pay__card--mortgage')) check.setAttribute('aria-label', 'Выбрана ипотека');
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (choicePay);
 
 /***/ }),
 
@@ -4648,8 +4700,13 @@ checkboard();
 /*!*******************************************!*\
   !*** ./src/js/components/controlCards.js ***!
   \*******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function controlCards() {
   const containers = document.querySelectorAll('.control-cards');
   if (!containers.length) return;
@@ -4671,7 +4728,7 @@ function controlCards() {
     });
   });
 }
-controlCards();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (controlCards);
 
 /***/ }),
 
@@ -4679,8 +4736,13 @@ controlCards();
 /*!****************************************!*\
   !*** ./src/js/components/dropImage.js ***!
   \****************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 const dropImage = () => {
   const fileInputs = document.querySelectorAll('[data-upload-drop]');
   if (fileInputs.length === 0) return;
@@ -4725,7 +4787,7 @@ const dropImage = () => {
     }
   }
 };
-dropImage();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropImage);
 
 /***/ }),
 
@@ -5161,69 +5223,75 @@ const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radio
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "galleryPrimary": () => (/* binding */ galleryPrimary)
+/* harmony export */ });
 /* harmony import */ var lightgallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightgallery */ "./node_modules/lightgallery/lightgallery.es5.js");
 /* harmony import */ var lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightgallery/plugins/video */ "./node_modules/lightgallery/plugins/video/lg-video.es5.js");
 /* harmony import */ var lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lightgallery/plugins/thumbnail */ "./node_modules/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js");
 
 
 
-const galleries = document.querySelectorAll('#object-gallery');
-galleries.forEach(gallery => {
-  const galleryContainer = (0,lightgallery__WEBPACK_IMPORTED_MODULE_0__["default"])(gallery, {
-    plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
-    licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-    selector: '.object-gallery__item',
-    addClass: 'gallery-primary-container gallery-primary-container--object',
-    speed: 400,
-    thumbnail: true,
-    animateThumb: true,
-    zoomFromOrigin: false,
-    allowMediaOverlap: true,
-    toggleThumb: true,
-    download: false,
-    videoMaxSize: 'none',
-    loadYouTubeThumbnail: false,
-    thumbMargin: 10,
-    thumbWidth: 90,
-    thumbHeight: '90px',
-    enableThumbSwipe: true,
-    closeOnTap: false,
-    appendCounterTo: '.lg-content'
+const galleryPrimary = () => {
+  const items = document.querySelectorAll('#object-gallery');
+  if (items.length === 0) return;
+  items.forEach(gallery => {
+    const galleryContainer = (0,lightgallery__WEBPACK_IMPORTED_MODULE_0__["default"])(gallery, {
+      plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
+      licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+      selector: '.object-gallery__item',
+      addClass: 'gallery-primary-container gallery-primary-container--object',
+      speed: 400,
+      thumbnail: true,
+      animateThumb: true,
+      zoomFromOrigin: false,
+      allowMediaOverlap: true,
+      toggleThumb: true,
+      download: false,
+      videoMaxSize: 'none',
+      loadYouTubeThumbnail: false,
+      thumbMargin: 10,
+      thumbWidth: 90,
+      thumbHeight: '90px',
+      enableThumbSwipe: true,
+      closeOnTap: false,
+      appendCounterTo: '.lg-content'
+    });
+    const closeBtnHTML = `
+        <button class="btn btn-reset gallery-primary-container__close">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        `;
+    const nextBtnHTML = `
+        <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--next gallery-primary-container__next">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+        `;
+    const prevBtnHTML = `
+        <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--prev gallery-primary-container__prev">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+        `;
+    const container = document.querySelector('.gallery-primary-container--object');
+    container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
+    container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
+    container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
+    container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
+    container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
+    container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
   });
-  const closeBtnHTML = `
-    <button class="btn btn-reset gallery-primary-container__close">
-        <svg>
-            <use xlink:href="img/sprite.svg#x"></use>
-        </svg>
-        <span>Закрыть</span>
-    </button>
-    `;
-  const nextBtnHTML = `
-    <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--next gallery-primary-container__next">
-        <div class="nav-arrow-primary__wrapper">
-            <svg>
-                <use xlink:href="img/sprite.svg#arrow-right"></use>
-            </svg>
-        </div>
-    </button>
-    `;
-  const prevBtnHTML = `
-    <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--prev gallery-primary-container__prev">
-        <div class="nav-arrow-primary__wrapper">
-            <svg>
-                <use xlink:href="img/sprite.svg#arrow-right"></use>
-            </svg>
-        </div>
-    </button>
-    `;
-  const container = document.querySelector('.gallery-primary-container--object');
-  container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
-  container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
-  container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
-  container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
-  container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
-  container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
-});
+};
 
 /***/ }),
 
@@ -5231,8 +5299,13 @@ galleries.forEach(gallery => {
 /*!******************************************!*\
   !*** ./src/js/components/headerFixed.js ***!
   \******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 const headerFixed = () => {
   const headerFixed = document.querySelector('.header-fixed');
   if (!(headerFixed && window.innerWidth >= 1112)) return;
@@ -5299,7 +5372,7 @@ const headerFixed = () => {
     }
   }
 };
-headerFixed();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerFixed);
 
 /***/ }),
 
@@ -5417,11 +5490,16 @@ const maps = () => {
 /*!***************************************!*\
   !*** ./src/js/components/mortgage.js ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 const mortgage = () => {
-  const containerOne = document.querySelector('.object-calc-mort');
-  const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate--add');
+  const containerOne = document.querySelector('.object-calc-mort--one');
+  const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate');
   const containerAdd = document.querySelector('.object-calc-mort--add');
   const popupContainerAdd = document.querySelector('.popup-primary--interest-rate-2 .interest-rate--add');
   if (containerAdd && popupContainerAdd) {
@@ -5453,8 +5531,20 @@ const mortgage = () => {
       });
     }
   }
+  if (containerOne && popupContainerOne) {
+    const items = popupContainerOne.querySelectorAll('.interest-rate-card');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(item => item.classList.remove('_active'));
+        item.classList.add('_active');
+        const prc = item.querySelector('.interest-rate-card__prc--new').textContent;
+        const textPrc = containerOne.querySelector('.field-static__text');
+        textPrc.textContent = prc;
+      });
+    });
+  }
 };
-mortgage();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mortgage);
 
 /***/ }),
 
@@ -5466,6 +5556,9 @@ mortgage();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 
 function placeSaleOptionMore() {
@@ -5498,7 +5591,7 @@ function placeSaleOptionMore() {
     }
   });
 }
-placeSaleOptionMore();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (placeSaleOptionMore);
 
 /***/ }),
 
@@ -5510,6 +5603,9 @@ placeSaleOptionMore();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
@@ -5603,7 +5699,7 @@ const reviewModal = () => {
     });
   });
 };
-reviewModal();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reviewModal);
 
 /***/ }),
 
@@ -5632,8 +5728,13 @@ const simplebar = selector => {
 /*!*****************************************!*\
   !*** ./src/js/components/videoBlock.js ***!
   \*****************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 function videoBlock() {
   const videos = document.querySelectorAll('.video-block');
   if (!videos) return;
@@ -5652,7 +5753,7 @@ function videoBlock() {
     });
   });
 }
-videoBlock();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (videoBlock);
 
 /***/ }),
 
@@ -6264,10 +6365,11 @@ function initSliders() {
       });
     });
   }
-  if (document.querySelector('.block-stock__slider')) {
-    const sliders = document.querySelectorAll('.block-stock__slider');
-    sliders.forEach(el => {
-      const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
+  if (document.querySelector('.block-stock')) {
+    const container = document.querySelectorAll('.block-stock');
+    container.forEach(el => {
+      const sliderEl = el.querySelector('.block-stock__slider');
+      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
         observer: true,
         observeParents: true,
         slidesPerView: 1.1,
@@ -6279,10 +6381,92 @@ function initSliders() {
         },
         breakpoints: {
           577: {
+            slidesPerView: 1.8
+          },
+          769: {
+            slidesPerView: 2.4
+          },
+          1113: {
             slidesPerView: 2
           }
         }
       });
+      const blockStock = () => {
+        sliderMoreItem();
+        itemPopup();
+        function sliderMoreItem() {
+          const btn = el.querySelector('.block-stock__btn');
+          btn.addEventListener('click', () => {
+            el.classList.toggle('_active');
+            if (el.classList.contains('_active')) {
+              btn.classList.add('_active');
+              slider.destroy();
+            } else {
+              btn.classList.remove('_active');
+              const topGap = window.pageYOffset + el.getBoundingClientRect().top;
+              const headerFixed = document.querySelector('.header-fixed');
+              const topHeaderMobile = document.querySelector('.top-page-inner');
+              if (window.innerWidth >= 1112) {
+                window.scrollTo({
+                  top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
+                });
+              } else {
+                window.scrollTo({
+                  top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
+                });
+              }
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                  prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
+                  nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next')
+                },
+                breakpoints: {
+                  577: {
+                    slidesPerView: 1.8
+                  },
+                  769: {
+                    slidesPerView: 2.4
+                  },
+                  1113: {
+                    slidesPerView: 2
+                  }
+                }
+              });
+            }
+          });
+        }
+        function itemPopup() {
+          const items = el.querySelectorAll('.object-advantages__card');
+          items.forEach(item => {
+            item.addEventListener('click', () => {
+              item.classList.add('_active');
+              const modalHTML = `
+                            <div class="advantages-popup">
+                            <div class="advantages-popup__container">
+                                <button class="btn-reset advantages-popup__close" aria-label="Закрыть модальное окно">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#x"></use>
+                                    </svg>
+                                    <span>Закрыть</span>
+                                </button>
+                                 <div class="advantages-popup__content">
+                                        ${item.outerHTML}
+                                 </div>
+                            </div>
+                            </div>
+                            `;
+              (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(modalHTML, '.advantages-popup', 300, item);
+              document.querySelector('.advantages-popup .advantages-card').classList.remove('_active');
+            });
+          });
+        }
+      };
+      blockStock();
     });
   }
   if (document.querySelector('.object-other-apartment__items')) {
@@ -7124,6 +7308,33 @@ const enableScroll = () => {
   document.documentElement.style.scrollBehavior = 'smooth';
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (enableScroll);
+
+/***/ }),
+
+/***/ "./src/js/modules/getHeightBlock.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/getHeightBlock.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const getHeightBlock = (selector, nameVariable) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    const elementHeight = element.offsetHeight;
+    if (nameVariable) {
+      document.querySelector(':root').style.setProperty(nameVariable, `${elementHeight}px`);
+    }
+    return elementHeight;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getHeightBlock);
+
+// getHeightBlock('.header', '--header-height');
 
 /***/ }),
 

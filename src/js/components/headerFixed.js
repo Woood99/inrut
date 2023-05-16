@@ -72,4 +72,5 @@ const headerFixed = () => {
         }
     }
 }
-headerFixed();
+
+export default headerFixed;
