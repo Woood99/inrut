@@ -149,8 +149,6 @@
     grid-column-gap: 16px;
     padding: 24px 16px;
 
-    &__name-address {}
-
     &__title {
         font-size: 15px;
         line-height: math.div(19, 15);
@@ -159,7 +157,7 @@
         transition: color $transitionSpeed $transitionFunction;
     }
 
-    &__address {
+    &__term {
         display: block;
         margin-top: 2px;
         font-size: 14px;
@@ -290,35 +288,13 @@
     &__favorite {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
+        margin-right: 8px;
 
         svg {
             width: 16px;
             height: 16px;
             fill: var(--blue);
-        }
-    }
-
-    &__control {
-        .dots-dropdown__target {
-            background-color: var(--white);
-            border: 1px solid var(--blue);
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            svg {
-                width: 10px;
-                height: 10px;
-            }
-        }
-
-        @media (max-width:$desktop) {
-            margin-top: 10px;
         }
     }
 

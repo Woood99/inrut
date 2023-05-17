@@ -5667,7 +5667,7 @@ textarea.input-reset {
 }
 .choice-pay__prc {
   margin-left: 4px;
-  padding: 2px 8px;
+  padding: 2px 4px;
   color: var(--green);
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
@@ -8719,9 +8719,12 @@ textarea.input-reset {
   font-weight: 500;
   color: var(--blue);
 }
-.card-scheme__address {
-  margin-top: 5px;
+.card-scheme__term {
+  margin-top: 4px;
   display: block;
+  color: var(--primary600);
+  font-size: 14px;
+  line-height: 1.2857142857;
 }
 .card-scheme__floors {
   margin-top: 4px;
@@ -12432,7 +12435,7 @@ textarea.input-reset {
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
 }
-.room-info-card__address {
+.room-info-card__term {
   display: block;
   margin-top: 2px;
   font-size: 14px;
@@ -12578,39 +12581,15 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  margin-right: 8px;
 }
 .room-info-card__favorite svg {
   width: 16px;
   height: 16px;
   fill: var(--blue);
-}
-.room-info-card__control .dots-dropdown__target {
-  background-color: var(--white);
-  border: 1px solid var(--blue);
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.room-info-card__control .dots-dropdown__target svg {
-  width: 10px;
-  height: 10px;
-}
-@media (max-width: 1112px) {
-  .room-info-card__control {
-    margin-top: 10px;
-  }
 }
 @media (min-width: 1113px) {
   .room-info-card:hover .room-info-card__title {
@@ -18007,13 +17986,8 @@ textarea.input-reset {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 16px;
-  grid-row-gap: 24px;
+  grid-row-gap: 16px;
   width: 100%;
-}
-@media (max-width: 1112px) {
-  .develop-inner .bid-user__btns {
-    grid-row-gap: 16px;
-  }
 }
 @media (max-width: 1112px) {
   .develop-inner .bid-user__quantity {
