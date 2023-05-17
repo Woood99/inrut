@@ -46,9 +46,6 @@
                         <svg>
                             <use xlink:href="img/sprite.svg#calendar"></use>
                         </svg>
-                        <span class="header-action__quantity">
-                            2
-                        </span>
                     </button>
                 </div>
                 <div class="header-top__action header-action header-action--chat">
@@ -56,9 +53,6 @@
                         <svg>
                             <use xlink:href="img/sprite.svg#chat"></use>
                         </svg>
-                        <span class="header-action__quantity">
-                            2
-                        </span>
                     </button>
                 </div>
             </div>
@@ -241,7 +235,7 @@
                             <svg class="nav__link-icon">
                                 <use xlink:href="img/sprite.svg#users-alt"></use>
                             </svg>
-                            Агенты
+                          Специалисты
                         </a>
                     </li>
                 </ul>
@@ -375,7 +369,13 @@
                     <div class="home-sale__container">
                         <div class="home-sale__content">
                             <h3 class="home-sale__subtitle">
-                                Современнй поиск недвижимость в <span>Краснодаре</span>
+                                Современнй поиск недвижимость в
+                                <button type="button" class="btn btn-reset home-sale__city" data-popup-path="city">
+                                    Краснодаре
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
                             </h3>
                             <form action="#" class="home-sale__form">
                                 <div class="select-secondary home-sale__object">
@@ -453,29 +453,28 @@
             </section>
             <section class="home__price home-price">
                 <div class="container">
-                    <div class="home-price__top">
-                        <h2 class="home-price__titie home__title title-2">
-                            <img loading="lazy" src="./img/fire.png" aria-hidden="true" alt="">
-                            <span>Цена дня</span>
-                        </h2>
-                        <a href="#" class="btn btn-reset btn-secondary home-price__more"
-                            data-da=".home-price .container,768,last">
-                            Все объекты
-                        </a>
-                        <div class="home-price__nav">
-                            <div class="nav-arrow-secondary nav-arrow-secondary--prev">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <div class="nav-arrow-secondary nav-arrow-secondary--next">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                </svg>
+                    <h2 class="home-price__titie home__title title-2">
+                        <img loading="lazy" src="./img/fire.png" aria-hidden="true" alt="">
+                        <span>Цена дня</span>
+                    </h2>
+                    <div class="home-price__container">
+                        <div class="home-price__top">
+                            <a href="#" class="btn btn-reset btn-secondary home-price__more">
+                                Все объекты
+                            </a>
+                            <div class="home-price__nav">
+                                <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
+                                <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="home-price__container">
                         <div class="swiper home-price__items">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -976,28 +975,27 @@
             </section>
             <section class="home__spec home-spec">
                 <div class="container">
-                    <div class="home-spec__top">
-                        <h2 class="home-spec__titie home__title title-2">
-                            Популярные специалисты
-                        </h2>
-                        <a href="#" class="btn btn-reset btn-secondary home-spec__more"
-                            data-da=".home-spec .container,768,last">
-                            Все специалисты
-                        </a>
-                        <div class="home-spec__nav">
-                            <div class="nav-arrow-secondary nav-arrow-secondary--prev">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                </svg>
-                            </div>
-                            <div class="nav-arrow-secondary nav-arrow-secondary--next">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                </svg>
+                    <h2 class="home-spec__titie home__title title-2">
+                        Популярные специалисты
+                    </h2>
+                    <div class="home-spec__container">
+                        <div class="home-spec__top">
+                            <a href="#" class="btn btn-reset btn-secondary home-spec__more">
+                                Все специалисты
+                            </a>
+                            <div class="home-spec__nav">
+                                <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
+                                <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="home-spec__container">
                         <div class="swiper home-spec__items">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">

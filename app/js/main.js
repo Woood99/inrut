@@ -4239,7 +4239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);

@@ -47,9 +47,6 @@
                         <svg>
                             <use xlink:href="img/sprite.svg#calendar"></use>
                         </svg>
-                        <span class="header-action__quantity">
-                            2
-                        </span>
                     </button>
                 </div>
                 <div class="header-top__action header-action header-action--chat">
@@ -57,9 +54,6 @@
                         <svg>
                             <use xlink:href="img/sprite.svg#chat"></use>
                         </svg>
-                        <span class="header-action__quantity">
-                            2
-                        </span>
                     </button>
                 </div>
             </div>
@@ -242,7 +236,7 @@
                             <svg class="nav__link-icon">
                                 <use xlink:href="img/sprite.svg#users-alt"></use>
                             </svg>
-                            Агенты
+                          Специалисты
                         </a>
                     </li>
                 </ul>
@@ -266,6 +260,13 @@
                     <span>К списку заявок</span>
                 </a>
                 <div class="object__btns top-page-inner__btns">
+                    <button type="button" class="btn btn-reset top-page-inner-title__btn favorite-btn"
+                    title="Добавить в избранное">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                    </svg>
+                    <span>В избранное</span>
+                </button>
                     <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-mobile-speed
                         data-popup-path="share-app" title="Поделиться">
                         <svg>
@@ -519,14 +520,21 @@
                                     <svg>
                                         <use xlink:href="img/sprite.svg#phone"></use>
                                     </svg>
-                                    Позвонить
+                                    Телефон
                                 </button>
-                                <button type="button" class="btn btn-reset btn-primary object-plate-bottom__btn">
+                                <button type="button"
+                                    class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message object-plate-bottom__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Написать</span>
+                                </button>
+                                <!-- <button type="button" class="btn btn-reset btn-primary object-plate-bottom__btn">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#like"></use>
                                     </svg>
                                     <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                                </button>
+                                </button> -->
                             </div>
                             <div class="object-body__banners object-banners main-banners">
                                 <div class="swiper main-banners__container">
@@ -840,7 +848,7 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#phone"></use>
                                         </svg>
-                                        Позвонить
+                                        Телефон
                                     </button>
                                     <button type="button"
                                         class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message">
@@ -849,12 +857,12 @@
                                         </svg>
                                         <span>Написать</span>
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--like">
+                                    <!-- <button type="button" class="btn btn-reset btn-secondary bid-user__btn--like">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#like"></use>
                                         </svg>
                                         <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>

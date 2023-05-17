@@ -1260,10 +1260,6 @@
         grid-column-gap: 16px;
         grid-row-gap: 16px;
 
-        @media (max-width:$desktop) {
-            margin-top: 16px;
-        }
-
         @media (max-width:$smallTablet-max) {
             grid-template-columns: 1fr;
         }
@@ -1271,10 +1267,13 @@
 
     &__list {
         margin-top: 24px;
+        padding-bottom: 24px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 16px;
+
+        border-bottom: 1px solid rgba(122, 127, 170, 0.2);
     }
 
     &__btn {

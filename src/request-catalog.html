@@ -162,14 +162,59 @@
                                 </button>
                             </div>
                             <div class="filter__row request-catalog-filter__row--2" hidden>
-                                <div
-                                    class="filter__item filter__item--properties request-catalog__select select-secondary">
-                                    <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Свойства расчета</option>
-                                        <option value="complex">Квартиры1</option>
-                                        <option value="complex2">Квартиры2</option>
-                                        <option value="complex3">Квартиры3</option>
-                                    </select>
+                                <div class="filter__item request-catalog__dropdown-checkbox select-dropdown-checkbox">
+                                    <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
+                                        <span class="select-dropdown-checkbox__title">
+                                            Свойства расчета
+                                        </span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="select-dropdown-checkbox__dropdown">
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_1" name="calculation"
+                                                class="checkbox-secondary__input" data-name="cash" type="checkbox"
+                                                value="true">
+                                            <label for="calculation_1" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Наличные</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_2" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_yes-bank"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_2" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Ипотека,есть решение банка</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_3" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_no-bank"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_3" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Ипотека,нет решение банка</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input disabled id="calculation_4" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_no-fee"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_4" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Ипотека без первоначального
+                                                    взноса</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input disabled id="calculation_5" name="calculation"
+                                                class="checkbox-secondary__input" data-name="certificate"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_5" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">В сделке используется
+                                                    сертификат</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div
                                     class="filter__item filter__item--complex request-catalog__select select-secondary">

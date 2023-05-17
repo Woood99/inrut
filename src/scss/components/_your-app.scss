@@ -30,7 +30,7 @@
         border-radius: 16px;
         padding: 32px 32px 32px 56px;
         display: flex;
-        align-items: center;
+        align-items: start;
 
         .bubble-speech {
             margin-left: 32px;
@@ -380,7 +380,6 @@
     }
 
     &__add {
-        order: 3;
         margin-left: 20px;
         --size: 20px;
         width: var(--size);
@@ -394,8 +393,7 @@
         }
 
         @media (max-width:$desktop) {
-            margin-left: 24px;
-            --size: 15px;
+            order: 3;
         }
     }
 

@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
-    emergingBlockScroll('.object-body__user .bid-user__btn--like', '.object-plate-bottom', 1112);
+    emergingBlockScroll('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1112);
     emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
     emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
