@@ -2290,10 +2290,104 @@
         </button>
         <div class="popup__content popup-genplan__content">
             <div class="genplan">
-                <picture>
-                    <source srcset="./img/genplan.webp" type="image/webp">
-                    <img loading="lazy" src="./img/genplan.jpg" alt="Генплан">
-                </picture>
+                <div class="genplan__wrapper">
+                    <img loading="lazy" src="./img/genplan.webp" alt="Генплан">
+                    <svg viewBox="0 0 1920 920" version="1.1" x="0px" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" y="0px">
+                        <g class="visual-polygon">
+                            <polygon
+                                points="1002.3,506.2 1097.9,469.2 1120,480.6 1117.4,553.6 1110.1,556.7 1149.4,575.1 
+                        1147.9,602.7 1198.1,585 1122.8,535.5 1124.4,478 1150,470.7 1268.6,538.1 1264.3,594.6 1121.7,649.7 1000.7,581.4 	">
+                            </polygon>
+                        </g>
+                    </svg>
+                    <div class="genplan__mark" style="top: 58%; left: 55%;">
+                        <button type="button" class="btn btn-reset" aria-describedby="tooltip">
+                            1
+                        </button>
+                        <div role="tooltip">
+                            <div class="genplan-mark">
+                                <h4 class="genplan-mark__title">
+                                    Литер 3
+                                </h4>
+                                <div class="row">
+                                    <span class="genplan-mark__term">
+                                        Срок сдачи дома 4кв. 2024г.
+                                    </span>
+                                    <span class="genplan-mark__floor">
+                                        24 этажа
+                                    </span>
+                                </div>
+                                <div data-spollers data-one-spoller class="spollers">
+                                    <div class="spollers__item">
+                                        <button type="button" data-spoller class="btn btn-reset spollers__title">
+                                            <span>Студии</span>
+                                            <span>25</span>
+                                            <span>от 4 736 000 ₽</span>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="spollers__body">
+                                            <div>
+                                                <button class="btn btn-reset genplan__to-layouts js-popup-close">
+                                                    Смотреть в планировке
+                                                </button>
+                                                <button class="btn btn-reset" data-popup-checkboard-target>
+                                                    Смотреть в шахматке
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spollers__item">
+                                        <button type="button" data-spoller class="btn btn-reset spollers__title">
+                                            <span>1-комн.</span>
+                                            <span>15</span>
+                                            <span>от 34 736 000 ₽</span>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="spollers__body">
+                                            <div>
+                                                <button class="btn btn-reset genplan__to-layouts js-popup-close">
+                                                    Смотреть в планировке
+                                                </button>
+                                                <button class="btn btn-reset" data-popup-checkboard-target>
+                                                    Смотреть в шахматке
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spollers__item">
+                                        <button type="button" data-spoller class="btn btn-reset spollers__title">
+                                            <span>2-комн.</span>
+                                            <span>30</span>
+                                            <span>от 40 736 000 ₽</span>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="spollers__body">
+                                            <div>
+                                                <button class="btn btn-reset genplan__to-layouts js-popup-close">
+                                                    Смотреть в планировке
+                                                </button>
+                                                <button class="btn btn-reset" data-popup-checkboard-target>
+                                                    Смотреть в шахматке
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="genplan-mark__mortgage">
+                                    <span>В ипотеку</span>
+                                    <span>от 145 350 ₽/мес.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2303,18 +2397,12 @@
 
 
 
+<div class="checkboard-cst-popup">
+    <div class="checkboard-cst-popup__container">
+        <div class="checkboard-popup">
 
 
-
-
-
-
-<div class="popup popup-primary popup-primary--checkboard">
-    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true"
-        data-popup-target="checkboard-popup">
-        <div class="popup__content popup-primary__content checkboard-popup">
-            <button class="btn-reset js-popup-close popup__close popup-primary__close"
-                aria-label="Закрыть модальное окно">
+            <button class="btn-reset checkboard-cst-popup__close" aria-label="Закрыть модальное окно">
                 <svg>
                     <use xlink:href="img/sprite.svg#x"></use>
                 </svg>
@@ -6687,6 +6775,7 @@
             </div>
 
         </div>
+
     </div>
 </div>
 

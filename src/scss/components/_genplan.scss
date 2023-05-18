@@ -1,7 +1,257 @@
 .genplan {
-   img{
+    position: relative;
     width: 100%;
     height: 100%;
-    min-height: var(--vh);
-   }
+    max-height: var(--vh);
+    &__wrapper {
+        width: 100%;
+        max-height: var(--vh);
+
+        @media (max-width:$desktop) {
+            position: absolute;
+            min-height: auto;
+            top: 0;
+            left: 0;
+            height: 100%;
+            transform: translateY(0);
+            display: block;
+            width: max-content;
+        }
+    }
+
+    img {
+        width: 100%;
+        @media (max-width:$desktop) {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        @media (max-width:$desktop) {
+            height: 100%;
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        z-index: 5;
+
+        >button {
+            width: 26px;
+            height: 26px;
+            box-sizing: content-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--white);
+            color: var(--dark);
+            font-weight: 500;
+            box-shadow: var(--shadow-primary);
+            border-radius: 50%;
+            font-size: 13px;
+            line-height: 100%;
+        }
+
+        &>div {
+            width: max-content;
+            max-width: 400px;
+            min-width: 340px;
+            background-color: var(--white);
+            border: 1px solid rgba(122, 127, 170, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction;
+        }
+
+        &._active {
+            >div {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .visual-polygon {
+        fill: rgba(0, 91, 255, 0.35);
+        stroke: var(--blue);
+        stroke-width: 1.4px;
+    }
+
+    @media (max-width:$desktop) {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 100%;
+        min-height: 560px;
+        z-index: 2;
+        width: 100%;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.genplan-mark {
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: math.div(20, 16);
+        color: var(--dark);
+        margin-bottom: 5px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    &__term {
+        color: var(--primary600);
+        font-size: 13px;
+        line-height: math.div(16, 13);
+        font-weight: 400;
+    }
+
+    &__floor {
+        margin-left: 30px;
+        color: var(--primary600);
+        font-size: 13px;
+        line-height: math.div(16, 13);
+        font-weight: 400;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%) translateX(-100%);
+
+            width: 10px;
+            height: 10px;
+            background-color: #D9D9D9;
+            border-radius: 50%;
+        }
+    }
+
+    .spollers {
+
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            span {
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    font-size: 13px;
+                    line-height: math.div(16, 13);
+                    font-weight: 400;
+                }
+
+                &:nth-child(1) {
+                    color: var(--primaryTwo);
+                }
+
+                &:nth-child(2) {
+                    margin-left: 16px;
+                    color: var(--primaryTwo);
+                }
+
+                &:nth-child(3) {
+                    text-align: left;
+                    margin-left: auto;
+                    padding-left: 16px;
+                    width: 125px;
+                    color: var(--dark);
+                    font-weight: 500;
+                }
+            }
+
+            svg {
+                margin-left: 4px;
+                width: 20px;
+                height: 20px;
+                fill: var(--primaryTwo);
+                transform: rotate(-90deg);
+            }
+
+            &._spoller-active {
+                svg {
+                    transform: rotate(0);
+                    fill: var(--blue);
+                }
+            }
+        }
+
+        &__body {
+            margin-top: 8px;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+
+                .btn {
+                    color: var(--blue);
+                    font-size: 13px;
+                    line-height: math.div(16, 13);
+                    font-weight: 400;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:not(:first-child) {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__mortgage {
+        margin-top: 32px;
+        font-size: 13px;
+        line-height: math.div(16, 13);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            &:nth-child(1) {
+                color: var(--primaryTwo);
+            }
+
+            &:nth-child(2) {
+                margin-right: 14px;
+                color: var(--blue);
+                font-weight: 500;
+                width: 120px;
+            }
+        }
+    }
 }

@@ -32,7 +32,14 @@ const interestRate2 = new popup({
     }
 }, '.popup-primary--interest-rate-2')
 const constructProgress = new popup(null, '.popup-primary--construct-progress')
-const genplan = new popup(null, '.popup-genplan')
+const genplan = new popup({
+    isOpen: (genplan) => {
+        const container = document.querySelector('.genplan');
+        container.scrollTo({
+            left: container.scrollLeft + container.offsetWidth,
+        })
+    }
+}, '.popup-genplan')
 const checkboard = new popup(null, '.popup-primary--checkboard')
 
 // ========================================================================================

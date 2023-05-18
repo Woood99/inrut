@@ -1,12 +1,14 @@
 import modal from '../modules/modal';
-
+import disableScroll from '../modules/disableScroll'
+import enableScroll from '../modules/enableScroll'
 const checkboard = () => {
+    checkboardPopup();
     const container = document.querySelector('.checkboard');
     if (!container) return;
     const items = container.querySelectorAll('.checkboard__item--free');
     if (items.length === 0) return;
     const innerWidth = 1112;
-    if (window.innerWidth >= innerWidth) {
+    if (window.innerWidth > innerWidth) {
         items.forEach(item => {
             item.addEventListener('mouseover', () => item.classList.add('_active'));
             item.addEventListener('mouseout', () => item.classList.remove('_active'));
@@ -44,8 +46,69 @@ const checkboard = () => {
         });
     }
 
+
+    function checkboardPopup() {
+        const popup = document.querySelector('.checkboard-cst-popup');
+        if (!popup) return;
+        const settingsPopup = {
+            popup,
+            container: popup.querySelector('.checkboard-cst-popup__container'),
+            close: popup.querySelector('.checkboard-cst-popup__close'),
+            isOpen: false,
+            speed: 300,
+            animation: 'fade',
+        }
+
+        const targets = document.querySelectorAll('[data-popup-checkboard-target]');
+        if (targets.length === 0) return;
+        targets.forEach(target => {
+            target.addEventListener('click', () => {
+                popupOpen(settingsPopup);
+            })
+        })
+        settingsPopup.close.addEventListener('click', () => {
+            popupClose(settingsPopup);
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.keyCode == 27 && settingsPopup.isOpen) popupClose(settingsPopup);
+        })
+
+        function popupOpen(settingsPopup) {
+            if (!settingsPopup.isOpen) {
+                settingsPopup.container.scrollTo(0, 0);
+                settingsPopup.popup.style.setProperty('--transition-time', `${settingsPopup.speed / 1000}s`);
+                settingsPopup.popup.classList.add('is-open');
+                document.body.style.scrollBehavior = 'auto';
+                document.documentElement.style.scrollBehavior = 'auto';
+                disableScroll();
+                settingsPopup.container.classList.add('open');
+                settingsPopup.container.classList.add(settingsPopup.animation);
+                setTimeout(() => {
+                    settingsPopup.container.classList.add('animate-open');
+                }, settingsPopup.speed);
+                settingsPopup.isOpen = true;
+            }
+        }
+
+
+        function popupClose(settingsPopup) {
+            if (settingsPopup.isOpen) {
+                settingsPopup.container.classList.remove('animate-open');
+                settingsPopup.container.classList.remove(settingsPopup.animation);
+                settingsPopup.popup.classList.remove('is-open');
+                settingsPopup.container.classList.remove('open');
+                if (document.querySelector('.popup-genplan') && !document.querySelector('.popup-genplan').classList.contains('is-open')) {
+                    enableScroll();
+                    document.body.style.scrollBehavior = 'auto';
+                    document.documentElement.style.scrollBehavior = 'auto';
+                }
+                settingsPopup.isOpen = false;
+            }
+        }
+    }
+
     function checkboardNav() {
-        const container = document.querySelector('.popup-primary--checkboard');
+        const container = document.querySelector('.checkboard-cst-popup__container');
         const checkboard = document.querySelector('.checkboard');
         const navPrev = checkboard.querySelector('.checkboard__prev');
         const navNext = checkboard.querySelector('.checkboard__next');
@@ -63,8 +126,6 @@ const checkboard = () => {
                 navNext.classList.remove('_active');
             }
 
-            console.log(container.scrollHeight);
-            console.log(container.scrollTop + container.clientHeight);
             if (container.scrollHeight === container.scrollTop + container.clientHeight || container.scrollHeight - 1 <= container.scrollTop + container.clientHeight) {
                 navBottom.setAttribute('hidden', '');
                 navTop.removeAttribute('hidden');
@@ -72,13 +133,6 @@ const checkboard = () => {
                 navTop.setAttribute('hidden', '');
                 navBottom.removeAttribute('hidden');
             }
-            // if ((container.scrollHeight - container.scrollTop) === window.innerHeight) {
-            //     navBottom.setAttribute('hidden', '');
-            //     navTop.removeAttribute('hidden');
-            // } else {
-            //     navTop.setAttribute('hidden', '');
-            //     navBottom.removeAttribute('hidden');
-            // }
         })
 
         navTop.addEventListener('click', () => {

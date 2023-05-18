@@ -77,7 +77,7 @@ const spollers = () => {
                     }
                     spollerTitle.classList.toggle('_spoller-active');
 
-                    if (el.closest('.layouts__item-btn')) speed = 200;
+                    if (el.closest('.layouts__item-btn')) speed = 0;
 
                     _slideToggle(spollerTitle.nextElementSibling, speed);
 
@@ -86,17 +86,10 @@ const spollers = () => {
                             const headerFixed = document.querySelector('.header-fixed');
                             const topHeaderMobile = document.querySelector('.top-page-inner');
                             const topGap = spollerTitle.offsetTop;
-                            if (window.innerWidth >= 1112) {
-                                window.scrollTo({
-                                    top: topGap - headerFixed.offsetHeight - 16,
-                                    behavior: 'smooth',
-                                })
-                            } else {
-                                window.scrollTo({
-                                    top: topGap - topHeaderMobile.offsetHeight - 16,
-                                    behavior: 'smooth',
-                                })
-                            }
+                            window.scrollTo({
+                                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                                behavior: 'smooth',
+                            })
                         }, speed);
                     }
                 }
@@ -109,6 +102,12 @@ const spollers = () => {
             if (spollerActiveTitle) {
                 spollerActiveTitle.classList.remove('_spoller-active');
                 _slideUp(spollerActiveTitle.nextElementSibling, speed);
+
+                const activeCard = spollerActiveTitle.nextElementSibling.querySelector('.room-body__items .card-scheme._active');
+                if (activeCard) {
+                    activeCard.classList.remove('_active');
+                    spollerActiveTitle.nextElementSibling.querySelector('.room-body__container').setAttribute('hidden', '');
+                }
             }
         }
     }

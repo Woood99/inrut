@@ -39,6 +39,7 @@ import checkboard from './components/checkboard';
 import headerFixed from './components/headerFixed';
 import mortgage from './components/mortgage';
 import choicePay from './components/choicePay';
+import genplan from './components/genplan';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerFixed();
     mortgage();
     choicePay();
-
+    genplan();
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
