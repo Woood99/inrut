@@ -149,6 +149,12 @@
     grid-column-gap: 16px;
     padding: 24px 16px;
 
+    &__name-term {
+        @media (max-width:$desktop) {
+            grid-column: 1/2;
+        }
+    }
+
     &__title {
         font-size: 15px;
         line-height: math.div(19, 15);
@@ -171,6 +177,7 @@
 
         @media (max-width:$desktop) {
             margin-top: 16px;
+            grid-column: 1/2;
         }
     }
 
@@ -253,6 +260,7 @@
 
         @media (max-width:$desktop) {
             margin-top: 16px;
+            grid-column: 1/2;
         }
     }
 
@@ -296,6 +304,13 @@
             height: 16px;
             fill: var(--blue);
         }
+
+        @media (max-width:$desktop) {
+            margin-right: 0;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            align-self: start;
+        }
     }
 
     @media (min-width:$desktop-min) {
@@ -308,7 +323,7 @@
 
     @media (max-width:$desktop) {
         padding: 24px 16px;
-        grid-template-columns: 1fr;
-
+        grid-template-columns: 1fr 16px;
+        grid-column-gap: 8px;
     }
 }

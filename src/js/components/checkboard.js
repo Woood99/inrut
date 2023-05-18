@@ -59,13 +59,17 @@ const checkboard = () => {
             animation: 'fade',
         }
 
-        const targets = document.querySelectorAll('[data-popup-checkboard-target]');
-        if (targets.length === 0) return;
-        targets.forEach(target => {
-            target.addEventListener('click', () => {
+
+        document.addEventListener('click',(e) => {
+            const target = e.target;
+            if (target.closest('[data-popup-checkboard-target]')) {
+                const popupCard = document.querySelector('.genplan-popup-card');
+                if (popupCard) popupCard.remove();
                 popupOpen(settingsPopup);
-            })
+            }
         })
+
+
         settingsPopup.close.addEventListener('click', () => {
             popupClose(settingsPopup);
         });

@@ -4301,10 +4301,10 @@ const interestRate2 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default
 }, '.popup-primary--interest-rate-2');
 const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
 const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
-  isOpen: genplan => {
+  isOpen: () => {
     const container = document.querySelector('.genplan');
     container.scrollTo({
-      left: container.scrollLeft + container.offsetWidth
+      left: container.offsetWidth
     });
   }
 }, '.popup-genplan');
@@ -4633,12 +4633,13 @@ const checkboard = () => {
       speed: 300,
       animation: 'fade'
     };
-    const targets = document.querySelectorAll('[data-popup-checkboard-target]');
-    if (targets.length === 0) return;
-    targets.forEach(target => {
-      target.addEventListener('click', () => {
+    document.addEventListener('click', e => {
+      const target = e.target;
+      if (target.closest('[data-popup-checkboard-target]')) {
+        const popupCard = document.querySelector('.genplan-popup-card');
+        if (popupCard) popupCard.remove();
         popupOpen(settingsPopup);
-      });
+      }
     });
     settingsPopup.close.addEventListener('click', () => {
       popupClose(settingsPopup);
@@ -5375,7 +5376,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
+/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _functions_spollers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/spollers */ "./src/js/functions/spollers.js");
+
+
 
 const genplan = () => {
   const container = document.querySelector('.genplan');
@@ -5387,13 +5392,33 @@ const genplan = () => {
     marks.forEach(item => {
       const btn = item.querySelector('button');
       const content = item.querySelector('div');
-      (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_0__.createPopper)(btn, content, {
+      (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
         placement: 'auto'
       });
       item.addEventListener('mouseover', () => item.classList.add('_active'));
       item.addEventListener('mouseout', () => item.classList.remove('_active'));
     });
-  } else {}
+  } else {
+    marks.forEach(item => {
+      item.addEventListener('click', () => {
+        const card = item.querySelector('.genplan-mark');
+        const modalHTML = `
+                <div class="genplan-popup-card">
+                <div class="genplan-popup-card__container">
+                    <button class="btn-reset genplan-popup-card__close" aria-label="Закрыть модальное окно">
+                        <span>Закрыть</span>
+                    </button>
+                     <div class="genplan-popup-card__content">
+                        ${card.outerHTML}
+                     </div>
+                </div>
+                </div>
+                `;
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.genplan-popup-card', 300);
+        (0,_functions_spollers__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      });
+    });
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (genplan);
 
@@ -7533,6 +7558,7 @@ const modal = function (modalHTML, container) {
     const modalEl = document.querySelector(container);
     const modalContainerEl = modalEl.querySelector(`${container}__container`);
     const modalCloseEl = modalEl.querySelector(`${container}__close`);
+    const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
     const settingsModal = {
       modal: modalEl,
       container: modalContainerEl,
@@ -7546,6 +7572,13 @@ const modal = function (modalHTML, container) {
     modalCloseEl.addEventListener('click', () => {
       modalClose(settingsModal);
     });
+    if (genplanClose.length >= 1) {
+      genplanClose.forEach(el => {
+        el.addEventListener('click', () => {
+          modalClose(settingsModal);
+        });
+      });
+    }
     modalEl.addEventListener('click', e => {
       if (e.target.classList.contains(container.replace(/^\./, ""))) {
         modalClose(settingsModal);
@@ -7563,7 +7596,7 @@ const modal = function (modalHTML, container) {
       settingsModal.container.classList.remove(settingsModal.animation);
       settingsModal.modal.classList.remove('is-open');
       settingsModal.container.classList.remove('open');
-      if (!settingsModal.modal.classList.contains('checkboard-popup-card')) {
+      if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
         (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';

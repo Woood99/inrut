@@ -598,6 +598,11 @@
         &.popup-open {
             display: inline-block !important;
         }
+        @media (max-width:$desktop){
+             border-radius: 12px 12px 0 0; 
+             height: 100%;
+             max-height: 90%;
+        }
     }
 
     &__close {
@@ -622,7 +627,11 @@
         visibility: visible;
         transition: opacity var(--transition-time), visibility var(--transition-time);
     }
-    
+    &__content{
+        @media (max-width:$desktop){
+             height: 100%; 
+        }
+    }
 }
 
 
@@ -2022,11 +2031,103 @@
 
 
 
+}
 
 
+
+
+
+
+.genplan-popup-card {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(34, 41, 102, 0.4);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: right;
+
+    display: flex;
+    align-items: end;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &__container {
+        position: relative;
+        display: inline-block;
+        vertical-align: bottom;
+        background-color: #fff;
+        cursor: default;
+        text-align: left;
+        display: none;
+        box-shadow: var(--shadow-primary);
+
+        &.open {
+            display: inline-block !important;
+        }
+
+        margin: 0 auto;
+        border-radius: 12px 12px 0 0;
+        padding: 45px 16px 24px;
+        max-width: 100%;
+        width: 100%;
+        vertical-align: bottom;
+        max-height: 95vh;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    &__close {
+        position: absolute;
+        right: 16px;
+        top: 24px;
+        border: none;
+        padding: 0;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        span {
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
 
 }
+
+
+
+
+
+
+
 
 
 

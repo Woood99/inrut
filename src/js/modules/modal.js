@@ -8,6 +8,7 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
         const modalEl = document.querySelector(container);
         const modalContainerEl = modalEl.querySelector(`${container}__container`);
         const modalCloseEl = modalEl.querySelector(`${container}__close`);
+        const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
         const settingsModal = {
             modal: modalEl,
             container: modalContainerEl,
@@ -21,6 +22,13 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
         modalCloseEl.addEventListener('click', () => {
             modalClose(settingsModal);
         });
+        if (genplanClose.length >= 1) {
+            genplanClose.forEach(el => {
+                el.addEventListener('click', () => {
+                    modalClose(settingsModal);
+                });
+            })
+        }
         modalEl.addEventListener('click', (e) => {
             if (e.target.classList.contains(container.replace(/^\./, ""))) {
                 modalClose(settingsModal);
@@ -39,7 +47,7 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             settingsModal.container.classList.remove(settingsModal.animation);
             settingsModal.modal.classList.remove('is-open');
             settingsModal.container.classList.remove('open');
-            if (!settingsModal.modal.classList.contains('checkboard-popup-card')) {
+            if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
                 enableScroll();
                 document.body.style.scrollBehavior = 'auto';
                 document.documentElement.style.scrollBehavior = 'auto';
