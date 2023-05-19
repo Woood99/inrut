@@ -34,11 +34,23 @@ const interestRate2 = new popup({
 const constructProgress = new popup(null, '.popup-primary--construct-progress')
 const genplan = new popup({
     isOpen: () => {
+        if (window.innerWidth > 1112) return;
         const container = document.querySelector('.genplan');
-        container.scrollTo({
-            left: container.offsetWidth,
+        const wrapper = container.querySelector('.genplan__wrapper');
+        wrapper.scrollIntoView({
+            inline: 'end',
         })
-    }
+        container.scrollTo({
+            left: container.scrollLeft / 2
+        })
+    },
+    isClose: () => {
+        if (window.innerWidth > 1112) return;
+        const container = document.querySelector('.genplan');
+        const mask = container.querySelector('.genplan__mask');
+        mask.classList.remove('hidden');
+        mask.classList.add('_active');
+    },
 }, '.popup-genplan')
 const checkboard = new popup(null, '.popup-primary--checkboard')
 

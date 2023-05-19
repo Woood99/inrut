@@ -45,7 +45,13 @@ const genplan = () => {
             })
         })
 
-
+        const mask = container.querySelector('.genplan__mask');
+        mask.addEventListener('touchstart', () => {
+            mask.classList.remove('_active');
+            setTimeout(() => {
+                mask.classList.add('hidden');
+            }, 500);
+        });
     }
 
 

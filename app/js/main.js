@@ -4302,10 +4302,22 @@ const interestRate2 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default
 const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
 const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   isOpen: () => {
+    if (window.innerWidth > 1112) return;
     const container = document.querySelector('.genplan');
-    container.scrollTo({
-      left: container.offsetWidth
+    const wrapper = container.querySelector('.genplan__wrapper');
+    wrapper.scrollIntoView({
+      inline: 'end'
     });
+    container.scrollTo({
+      left: container.scrollLeft / 2
+    });
+  },
+  isClose: () => {
+    if (window.innerWidth > 1112) return;
+    const container = document.querySelector('.genplan');
+    const mask = container.querySelector('.genplan__mask');
+    mask.classList.remove('hidden');
+    mask.classList.add('_active');
   }
 }, '.popup-genplan');
 const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
@@ -5417,6 +5429,13 @@ const genplan = () => {
         (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.genplan-popup-card', 300);
         (0,_functions_spollers__WEBPACK_IMPORTED_MODULE_1__["default"])();
       });
+    });
+    const mask = container.querySelector('.genplan__mask');
+    mask.addEventListener('touchstart', () => {
+      mask.classList.remove('_active');
+      setTimeout(() => {
+        mask.classList.add('hidden');
+      }, 500);
     });
   }
 };
