@@ -903,10 +903,58 @@
         margin-top: 24px;
     }
 
+    &__ask {
+        margin-top: 32px;
+    }
+
     @media (max-width:$desktop) {
         padding: 16px;
     }
 }
+
+
+.ask {
+
+    &__title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: math.div(25, 20);
+        font-weight: 500;
+        color: var(--dark);
+    }
+
+    &__descr {
+        color: var(--dark);
+        font-size: 14px;
+        line-height: math.div(18, 14);
+    }
+
+    &__btns {
+        margin-top: 16px;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        grid-gap: 12px;
+        gap: 12px;
+    }
+
+    &__btn {
+        height: 32px;
+        padding: 0 20px;
+        font-weight: 400;
+        border-radius: 14px;
+        line-height: 1;
+    }
+
+    &__other {
+        margin-top: 16px;
+        height: 40px;
+    }
+}
+
+
+
 
 .object-banners {
     padding: 32px 24px;
@@ -1546,6 +1594,7 @@
 
         margin: -5px;
         padding: 5px;
+
         >button {
             display: flex;
             align-items: center;
