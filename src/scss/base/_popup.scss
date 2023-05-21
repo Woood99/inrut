@@ -538,8 +538,8 @@
         .popup-secondary {
             &__container {
                 border-radius: 12px 0 0 12px;
-                padding: 65px 10px;
-                width: 413px;
+                padding: 65px 32px;
+                width: 475px;
 
                 @media (max-width:$desktop) {
                     border-radius: 0;
@@ -584,9 +584,10 @@
 
     display: flex;
     align-items: end;
+
     &__container {
         position: relative;
-      
+
         width: 100%;
         display: inline-block;
         vertical-align: middle;
@@ -598,10 +599,11 @@
         &.popup-open {
             display: inline-block !important;
         }
-        @media (max-width:$desktop){
-             border-radius: 12px 12px 0 0; 
-             height: 100%;
-             max-height: 100%;
+
+        @media (max-width:$desktop) {
+            border-radius: 12px 12px 0 0;
+            height: 100%;
+            max-height: 100%;
         }
     }
 
@@ -627,9 +629,10 @@
         visibility: visible;
         transition: opacity var(--transition-time), visibility var(--transition-time);
     }
-    &__content{
-        @media (max-width:$desktop){
-             height: 100%; 
+
+    &__content {
+        @media (max-width:$desktop) {
+            height: 100%;
         }
     }
 }
@@ -2001,8 +2004,8 @@
         margin-left: auto;
 
         svg {
-         width: 16px;
-         height: 16px;
+            width: 16px;
+            height: 16px;
             fill: var(--blue);
             transition: fill $transitionSpeed $transitionFunction;
             display: block;
