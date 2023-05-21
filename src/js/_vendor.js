@@ -84,5 +84,12 @@ if (selectSecondary.length >= 1) {
             position: 'bottom',
             placeholder: true,
         })
+        el.addEventListener('change', () => {
+            if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
+                el.closest('.select-secondary').classList.add('_selected');
+            } else {
+                el.closest('.select-secondary').classList.remove('_selected');
+            }
+        })
     });
 }

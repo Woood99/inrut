@@ -50,6 +50,32 @@ export const filterSum = () => {
                 </div>
             `;
             buttonWrapper.classList.add('_active')
+        } else if (inputs[0].value && inputs[1].value === '') {
+            html = `
+            <div>
+                от&nbsp; ${inputs[0].value} ₽
+            </div>
+            <div>
+                -
+            </div>
+            <div>
+                до&nbsp; ${numberReplace(itemActive.querySelector('[data-max]').dataset.max)} ₽
+            </div>
+        `;
+            buttonWrapper.classList.add('_active')
+        } else if (inputs[0].value === '' && inputs[1].value) {
+            html = `
+            <div>
+                от&nbsp; ${numberReplace(itemActive.querySelector('[data-min]').dataset.min)} ₽
+            </div>
+            <div>
+                -
+            </div>
+            <div>
+            до&nbsp; ${inputs[1].value} ₽
+            </div>
+        `;
+            buttonWrapper.classList.add('_active')
         } else {
             html = `Сумма`;
             buttonWrapper.classList.remove('_active')

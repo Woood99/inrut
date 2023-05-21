@@ -4412,6 +4412,13 @@ if (selectSecondary.length >= 1) {
       position: 'bottom',
       placeholder: true
     });
+    el.addEventListener('change', () => {
+      if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
+        el.closest('.select-secondary').classList.add('_selected');
+      } else {
+        el.closest('.select-secondary').classList.remove('_selected');
+      }
+    });
   });
 }
 
@@ -4962,6 +4969,32 @@ const filterSum = () => {
                     до&nbsp; ${inputs[1].value} ₽
                 </div>
             `;
+      buttonWrapper.classList.add('_active');
+    } else if (inputs[0].value && inputs[1].value === '') {
+      html = `
+            <div>
+                от&nbsp; ${inputs[0].value} ₽
+            </div>
+            <div>
+                -
+            </div>
+            <div>
+                до&nbsp; ${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(itemActive.querySelector('[data-max]').dataset.max)} ₽
+            </div>
+        `;
+      buttonWrapper.classList.add('_active');
+    } else if (inputs[0].value === '' && inputs[1].value) {
+      html = `
+            <div>
+                от&nbsp; ${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(itemActive.querySelector('[data-min]').dataset.min)} ₽
+            </div>
+            <div>
+                -
+            </div>
+            <div>
+            до&nbsp; ${inputs[1].value} ₽
+            </div>
+        `;
       buttonWrapper.classList.add('_active');
     } else {
       html = `Сумма`;
