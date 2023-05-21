@@ -6182,6 +6182,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+
 class popup {
   constructor(options, selector) {
     let defaultOptions = {
@@ -6220,6 +6222,30 @@ class popup {
             this.open();
             return;
           }
+        }
+        if (e.target.closest('.js-popup-close') && e.target.closest('.genplan__to-layouts')) {
+          const name = e.target.closest('[data-layouts]').dataset.layouts;
+          const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
+          const target = currentLayouts.querySelector('.layouts__item-body');
+          if (target.hidden) {
+            document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
+              item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
+              item.querySelector('.layouts__item-body').setAttribute('hidden', '');
+            });
+            target.previousElementSibling.classList.add('_spoller-active');
+            (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideDown)(target, 0);
+            setTimeout(() => {
+              const topGap = target.previousElementSibling.offsetTop;
+              const headerFixed = document.querySelector('.header-fixed');
+              const topHeaderMobile = document.querySelector('.top-page-inner');
+              window.scrollTo({
+                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                behavior: 'smooth'
+              });
+            }, 200);
+          }
+          this.close();
+          return;
         }
         if (e.target.closest('.js-popup-close')) {
           this.close();

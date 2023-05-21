@@ -13141,6 +13141,11 @@ textarea.input-reset {
   align-items: center;
   width: 100%;
 }
+.genplan-mark .spollers__title span {
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
 .genplan-mark .spollers__title span:nth-child(1), .genplan-mark .spollers__title span:nth-child(2), .genplan-mark .spollers__title span:nth-child(3) {
   font-size: 13px;
   line-height: 1.2307692308;
@@ -13169,6 +13174,17 @@ textarea.input-reset {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+@media (min-width: 1113px) {
+  .genplan-mark .spollers__title:hover span {
+    color: var(--blue);
+  }
+  .genplan-mark .spollers__title:hover svg {
+    fill: var(--blue);
+  }
 }
 .genplan-mark .spollers__title._spoller-active svg {
   -webkit-transform: rotate(0);

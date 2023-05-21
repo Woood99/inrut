@@ -308,6 +308,7 @@
             width: 100%;
 
             span {
+                transition: color $transitionSpeed $transitionFunction;
 
                 &:nth-child(1),
                 &:nth-child(2),
@@ -342,6 +343,19 @@
                 height: 20px;
                 fill: var(--primaryTwo);
                 transform: rotate(-90deg);
+                transition: fill $transitionSpeed $transitionFunction;
+            }
+
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    span {
+                        color: var(--blue);
+                    }
+
+                    svg {
+                        fill: var(--blue);
+                    }
+                }
             }
 
             &._spoller-active {

@@ -1,3 +1,8 @@
+import {
+    _slideUp,
+    _slideDown
+} from '../support-modules/slide';
+
 class popup {
     constructor(options, selector) {
         let defaultOptions = {
@@ -48,6 +53,31 @@ class popup {
                     }
                 }
 
+                if (e.target.closest('.js-popup-close') && e.target.closest('.genplan__to-layouts')) {
+                    const name = e.target.closest('[data-layouts]').dataset.layouts;
+                    const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
+                    const target = currentLayouts.querySelector('.layouts__item-body');
+                    if (target.hidden) {
+                        document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
+                            item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
+                            item.querySelector('.layouts__item-body').setAttribute('hidden', '');
+                        })
+
+                        target.previousElementSibling.classList.add('_spoller-active');
+                        _slideDown(target, 0);
+                        setTimeout(() => {
+                            const topGap = target.previousElementSibling.offsetTop;
+                            const headerFixed = document.querySelector('.header-fixed');
+                            const topHeaderMobile = document.querySelector('.top-page-inner');
+                            window.scrollTo({
+                                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                                behavior: 'smooth'
+                            })
+                        }, 200);
+                    }
+                    this.close();
+                    return;
+                }
                 if (e.target.closest('.js-popup-close')) {
                     this.close();
                     return;
