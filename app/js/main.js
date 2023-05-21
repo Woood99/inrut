@@ -6234,16 +6234,16 @@ class popup {
             });
             target.previousElementSibling.classList.add('_spoller-active');
             (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideDown)(target, 0);
-            setTimeout(() => {
-              const topGap = target.previousElementSibling.offsetTop;
-              const headerFixed = document.querySelector('.header-fixed');
-              const topHeaderMobile = document.querySelector('.top-page-inner');
-              window.scrollTo({
-                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
-                behavior: 'smooth'
-              });
-            }, 200);
           }
+          setTimeout(() => {
+            const topGap = target.previousElementSibling.offsetTop;
+            const headerFixed = document.querySelector('.header-fixed');
+            const topHeaderMobile = document.querySelector('.top-page-inner');
+            window.scrollTo({
+              top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+              behavior: 'smooth'
+            });
+          }, 200);
           this.close();
           return;
         }

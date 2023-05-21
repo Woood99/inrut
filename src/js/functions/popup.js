@@ -65,16 +65,16 @@ class popup {
 
                         target.previousElementSibling.classList.add('_spoller-active');
                         _slideDown(target, 0);
-                        setTimeout(() => {
-                            const topGap = target.previousElementSibling.offsetTop;
-                            const headerFixed = document.querySelector('.header-fixed');
-                            const topHeaderMobile = document.querySelector('.top-page-inner');
-                            window.scrollTo({
-                                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
-                                behavior: 'smooth'
-                            })
-                        }, 200);
                     }
+                    setTimeout(() => {
+                        const topGap = target.previousElementSibling.offsetTop;
+                        const headerFixed = document.querySelector('.header-fixed');
+                        const topHeaderMobile = document.querySelector('.top-page-inner');
+                        window.scrollTo({
+                            top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                            behavior: 'smooth'
+                        })
+                    }, 200);
                     this.close();
                     return;
                 }
