@@ -64,8 +64,8 @@ function initSliders() {
             },
         });
     }
-    if (document.querySelector('.home-banners__container')) {
-        const slider = document.querySelector('.home-banners__container');
+    if (document.querySelector('.home-banners__items')) {
+        const slider = document.querySelector('.home-banners__items');
         new Swiper(slider, {
             observer: true,
             observeParents: true,
@@ -79,7 +79,7 @@ function initSliders() {
                     spaceBetween: 24,
                 },
                 1112: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 32,
                 },
             },

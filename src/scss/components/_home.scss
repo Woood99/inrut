@@ -68,6 +68,7 @@
 }
 
 .home-banners {
+
     &.container {
         @media (max-width:$smallTablet-max) {
             padding: 0;
@@ -98,7 +99,19 @@
     }
 
     &__container {
-        margin: 24px -16px 0;
+        background-color: var(--stand-bg);
+        border-radius: 12px;
+        padding: 24px;
+
+        @media (max-width:$smallTablet-max) {
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+    }
+
+    &__items {
+        margin: 16px -16px 0;
         padding: 0 16px;
 
         @media (max-width:$smallTablet-max) {
@@ -436,11 +449,12 @@
     }
 
     &__more {
-        height: 36px;
-        padding: 0 38px;
+        margin-top: 24px;
+        padding: 0 16px;
 
         @media (max-width:$smallTablet-max) {
             width: calc(100% - 32px);
+            margin: 16px;
         }
     }
 
@@ -532,11 +546,10 @@
     }
 
     &__more {
-        height: 36px;
-        padding: 0 38px;
-
-        @media (max-width:$smallTablet-max) {
-            width: calc(100% - 32px);
+        margin-top: 24px;
+        padding: 0 16px;
+        @media (max-width:$smallTablet-max){
+             margin-top: 16px; 
         }
     }
 
