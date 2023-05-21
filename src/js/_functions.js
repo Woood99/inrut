@@ -37,12 +37,15 @@ const genplan = new popup({
         if (window.innerWidth > 1112) return;
         const container = document.querySelector('.genplan');
         const wrapper = container.querySelector('.genplan__wrapper');
-        wrapper.scrollIntoView({
-            inline: 'end',
-        })
-        container.scrollTo({
-            left: container.scrollLeft / 2
-        })
+        setTimeout(() => {
+            wrapper.scrollIntoView({
+                inline: 'end',
+            })
+            container.scrollTo({
+                left: container.scrollLeft / 2
+            })
+        }, 5);
+
     },
     isClose: () => {
         if (window.innerWidth > 1112) return;

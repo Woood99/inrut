@@ -8,7 +8,8 @@ import spollers from "../functions/spollers";
 const genplan = () => {
     const container = document.querySelector('.genplan');
     if (!container) return;
-    const marks = container.querySelectorAll('.genplan__mark');;
+    const marks = container.querySelectorAll('.genplan__mark');
+    const visualInfo = container.querySelectorAll('.visual-info');
     const innerWidth = 1112;
     if (window.innerWidth > innerWidth) {
         marks.forEach(item => {
@@ -16,10 +17,20 @@ const genplan = () => {
             const content = item.querySelector('div');
             createPopper(btn, content, {
                 placement: 'auto',
+                modifiers: [{
+                    name: 'offset',
+                    options: {
+                        offset: [5, 5]
+                    }
+                }]
             });
-            item.addEventListener('mouseover', () => item.classList.add('_active'));
-            item.addEventListener('mouseout', () => item.classList.remove('_active'));
+            item.addEventListener('mouseenter', () => item.classList.add('_active'));
+            item.addEventListener('mouseleave', () => item.classList.remove('_active'));
         });
+        visualInfo.forEach(item => {
+            item.addEventListener('mouseenter', () => item.classList.add('_active'));
+            item.addEventListener('mouseleave', () => item.classList.remove('_active'));
+        })
     } else {
 
         marks.forEach(item => {
@@ -44,6 +55,15 @@ const genplan = () => {
                 spollers();
             })
         })
+        visualInfo.forEach(item => {
+            item.addEventListener('click', () => {
+                visualInfo.forEach(el => {
+                    if (item !== el) el.classList.remove('_active')
+                });
+                item.classList.toggle('_active');
+            });
+        })
+
 
         const mask = container.querySelector('.genplan__mask');
         mask.addEventListener('touchstart', () => {

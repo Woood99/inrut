@@ -1917,6 +1917,7 @@ textarea.input-reset {
 }
 .checkboard-popup-card__content .card-scheme {
   max-width: 500px;
+  position: relative;
 }
 @media (max-width: 768px) {
   .checkboard-popup-card__content {
@@ -7442,7 +7443,7 @@ textarea.input-reset {
 
 .select-sort {
   position: relative;
-  z-index: 10;
+  z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8896,6 +8897,17 @@ textarea.input-reset {
 .card-scheme__mortgage span {
   font-weight: 500;
   color: var(--blue);
+}
+.card-scheme__favorite {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 7;
+}
+.card-scheme__favorite svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--blue);
 }
 .card-scheme__term {
   margin-top: 4px;
@@ -12329,7 +12341,7 @@ textarea.input-reset {
   padding: 1.5px 42px 1.5px 6px;
 }
 @media (min-width: 1113px) {
-  .checkboard__row:nth-last-child(1) .checkboard__card, .checkboard__row:nth-last-child(2) .checkboard__card, .checkboard__row:nth-last-child(3) .checkboard__card, .checkboard__row:nth-last-child(4) .checkboard__card, .checkboard__row:nth-last-child(5) .checkboard__card {
+  .checkboard__row:nth-last-child(1) .checkboard__card, .checkboard__row:nth-last-child(2) .checkboard__card, .checkboard__row:nth-last-child(3) .checkboard__card, .checkboard__row:nth-last-child(4) .checkboard__card, .checkboard__row:nth-last-child(5) .checkboard__card, .checkboard__row:nth-last-child(6) .checkboard__card {
     top: auto;
     bottom: 43px;
   }
@@ -12451,11 +12463,19 @@ textarea.input-reset {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   -webkit-box-shadow: var(--shadow-secondary);
   box-shadow: var(--shadow-secondary);
+  padding: 3px 0;
 }
 .checkboard__card .card-scheme__container {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: 1px solid rgba(122, 127, 170, 0.35);
+}
+.checkboard__card .card-scheme__term {
+  font-size: 13px;
+  font-weight: 400;
+}
+.checkboard__card .card-scheme__mortgage {
+  margin-top: 12px;
 }
 @media (max-width: 1112px) {
   .checkboard .checkboard__card {
@@ -12901,6 +12921,9 @@ textarea.input-reset {
 .genplan__mark {
   position: absolute;
   z-index: 5;
+  margin: -5px;
+  padding: 5px;
+  cursor: pointer;
 }
 .genplan__mark > button {
   width: 26px;
@@ -12943,15 +12966,111 @@ textarea.input-reset {
   -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  cursor: default;
 }
 .genplan__mark._active > div {
   opacity: 1;
   visibility: visible;
 }
-.genplan .visual-polygon {
+.genplan .visual-element {
   fill: rgba(0, 91, 255, 0.3);
   stroke: var(--blue);
   stroke-width: 1.4px;
+}
+.genplan .visual-info {
+  position: absolute;
+  z-index: 4;
+  height: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.genplan .visual-info__icon {
+  width: 26px;
+  height: 26px;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+.genplan .visual-info__icon img {
+  width: 18px;
+  height: 18px;
+  -webkit-transition: -webkit-filter 0.4s ease-in-out;
+  transition: -webkit-filter 0.4s ease-in-out;
+  -o-transition: filter 0.4s ease-in-out;
+  transition: filter 0.4s ease-in-out;
+  transition: filter 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
+}
+.genplan .visual-info__content {
+  height: 100%;
+  color: var(--dark);
+  background-color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  border-radius: 13px;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 500;
+  padding: 0 12px 0 32px;
+  width: auto;
+  white-space: nowrap;
+  pointer-events: none;
+  max-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -o-transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.genplan .visual-info._content-left .visual-info__content {
+  right: 0;
+  left: auto;
+  padding: 0 32px 0 12px;
+}
+.genplan .visual-info._active .visual-info__icon {
+  background-color: var(--blue);
+}
+.genplan .visual-info._active .visual-info__icon img {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+.genplan .visual-info._active .visual-info__content {
+  max-width: 250px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 @media (max-width: 1112px) {
   .genplan {
@@ -16870,26 +16989,44 @@ textarea.input-reset {
   position: absolute;
   width: 30px;
   height: 30px;
+  margin: -5px;
+  padding: 5px;
 }
-.object-apart-renov__mark .secondary-tooltip {
-  position: relative;
-}
-.object-apart-renov__mark .secondary-tooltip__btn {
+.object-apart-renov__mark > button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background: rgba(61, 61, 61, 0.7);
   border-radius: 50%;
   width: 30px;
   height: 30px;
 }
-.object-apart-renov__mark .secondary-tooltip__btn svg {
+.object-apart-renov__mark > button svg {
+  stroke: var(--primaryTwo);
   width: 14px;
   height: 14px;
   fill: var(--white);
 }
-.object-apart-renov__mark .secondary-tooltip__content {
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: auto;
+.object-apart-renov__mark > div {
+  background-color: var(--white);
+  border: 1px solid rgba(122, 127, 170, 0.2);
+  border-radius: 12px;
+  color: var(--dark);
+  padding: 16px;
+  font-size: 12px;
+  line-height: 100%;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   max-width: 168px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -16898,13 +17035,9 @@ textarea.input-reset {
   width: max-content;
   z-index: 3;
 }
-@media (max-width: 768px) {
-  .object-apart-renov__mark .secondary-tooltip__content {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    transform: translate(0);
-    left: 0;
-  }
+.object-apart-renov__mark._active > div {
+  opacity: 1;
+  visibility: visible;
 }
 .object-apart-renov__nav {
   position: absolute;

@@ -4305,12 +4305,14 @@ const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
     if (window.innerWidth > 1112) return;
     const container = document.querySelector('.genplan');
     const wrapper = container.querySelector('.genplan__wrapper');
-    wrapper.scrollIntoView({
-      inline: 'end'
-    });
-    container.scrollTo({
-      left: container.scrollLeft / 2
-    });
+    setTimeout(() => {
+      wrapper.scrollIntoView({
+        inline: 'end'
+      });
+      container.scrollTo({
+        left: container.scrollLeft / 2
+      });
+    }, 5);
   },
   isClose: () => {
     if (window.innerWidth > 1112) return;
@@ -4588,6 +4590,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
 /* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
 /* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
+/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
+
 
 
 
@@ -4600,15 +4604,28 @@ const checkboard = () => {
   const innerWidth = 1112;
   if (window.innerWidth > innerWidth) {
     items.forEach(item => {
-      item.addEventListener('mouseover', () => item.classList.add('_active'));
-      item.addEventListener('mouseout', () => item.classList.remove('_active'));
+      let popper;
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('_active');
+        const btn = item.querySelector('.checkboard__link');
+        const content = item.querySelector('.checkboard__card');
+        popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(btn, content, {
+          placement: 'bottom-start'
+        });
+      });
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('_active');
+        setTimeout(() => {
+          if (!item.classList.contains('_active')) popper.destroy();
+        }, 500);
+      });
     });
-  }
-  if (window.innerWidth < innerWidth) {
+  } else {
     items.forEach(item => {
       item.addEventListener('click', e => {
         e.preventDefault();
         const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
+        const favorite = item.querySelector('.card-scheme__favorite');
         const href = item.querySelector('.checkboard__link').getAttribute('href');
         const modalHTML = `
                 <div class="checkboard-popup-card">
@@ -4622,7 +4639,8 @@ const checkboard = () => {
                      <div class="checkboard-popup-card__content">
                         <article class="card-scheme">
                             <div class="card-scheme__container">
-                                    ${cardContainer.innerHTML}
+                                ${favorite.outerHTML}
+                                ${cardContainer.innerHTML}
                             </div>
                         </article>
                         <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
@@ -5398,17 +5416,27 @@ const genplan = () => {
   const container = document.querySelector('.genplan');
   if (!container) return;
   const marks = container.querySelectorAll('.genplan__mark');
-  ;
+  const visualInfo = container.querySelectorAll('.visual-info');
   const innerWidth = 1112;
   if (window.innerWidth > innerWidth) {
     marks.forEach(item => {
       const btn = item.querySelector('button');
       const content = item.querySelector('div');
       (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
-        placement: 'auto'
+        placement: 'auto',
+        modifiers: [{
+          name: 'offset',
+          options: {
+            offset: [5, 5]
+          }
+        }]
       });
-      item.addEventListener('mouseover', () => item.classList.add('_active'));
-      item.addEventListener('mouseout', () => item.classList.remove('_active'));
+      item.addEventListener('mouseenter', () => item.classList.add('_active'));
+      item.addEventListener('mouseleave', () => item.classList.remove('_active'));
+    });
+    visualInfo.forEach(item => {
+      item.addEventListener('mouseenter', () => item.classList.add('_active'));
+      item.addEventListener('mouseleave', () => item.classList.remove('_active'));
     });
   } else {
     marks.forEach(item => {
@@ -5428,6 +5456,14 @@ const genplan = () => {
                 `;
         (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.genplan-popup-card', 300);
         (0,_functions_spollers__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      });
+    });
+    visualInfo.forEach(item => {
+      item.addEventListener('click', () => {
+        visualInfo.forEach(el => {
+          if (item !== el) el.classList.remove('_active');
+        });
+        item.classList.toggle('_active');
       });
     });
     const mask = container.querySelector('.genplan__mask');
@@ -6322,10 +6358,12 @@ class popup {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 // =========================================================================================
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade]);
+
 
 
 
@@ -6652,6 +6690,30 @@ function initSliders() {
           prevEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--prev'),
           nextEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--next')
         }
+      });
+      const marks = el.querySelectorAll('.object-apart-renov__mark');
+      marks.forEach(mark => {
+        let popper;
+        mark.addEventListener('mouseenter', () => {
+          mark.classList.add('_active');
+          const btn = mark.querySelector('button');
+          const content = mark.querySelector('div');
+          popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(btn, content, {
+            placement: 'bottom-start',
+            modifiers: [{
+              name: 'offset',
+              options: {
+                offset: [5, 5]
+              }
+            }]
+          });
+        });
+        mark.addEventListener('mouseleave', () => {
+          mark.classList.remove('_active');
+          setTimeout(() => {
+            if (!mark.classList.contains('_active')) popper.destroy();
+          }, 500);
+        });
       });
     });
   }
@@ -7066,10 +7128,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
 /* harmony import */ var _support_modules_getHash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/getHash */ "./src/js/support-modules/getHash.js");
 /* harmony import */ var _support_modules_dataMediaQueries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../support-modules/dataMediaQueries */ "./src/js/support-modules/dataMediaQueries.js");
-
 
 
 const tabs = () => {
@@ -7141,10 +7201,6 @@ const tabs = () => {
           tabsTitles[index].classList.add('_tab-active');
         }
         tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
-        if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.hidden) {
-          tabsContentItem.classList.add('init-popper');
-          popperTooltip(tabsContentItem);
-        }
       });
     }
   }
@@ -7157,10 +7213,6 @@ const tabs = () => {
       tabsContent.forEach((tabsContentItem, index) => {
         if (tabsTitles[index].classList.contains('_tab-active')) {
           tabsContentItem.hidden = false;
-          if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.classList.contains('init-popper')) {
-            tabsContentItem.classList.add('init-popper');
-            popperTooltip(tabsContentItem);
-          }
           if (tabsBlock.closest('.object-filter__tabs')) {
             const filter = tabsBlock.closest('.object-filter').querySelector('.filter');
             const headerFixed = document.querySelector('.header-fixed');
@@ -7201,26 +7253,6 @@ const tabs = () => {
       }
       e.preventDefault();
     }
-  }
-  function popperTooltip(container) {
-    container.querySelectorAll('.object-apart-renov__mark').forEach(item => {
-      const btn = item.querySelector('.secondary-tooltip__btn');
-      const content = item.querySelector('.secondary-tooltip__content');
-      (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
-        placement: 'auto',
-        modifiers: [{
-          name: 'offset',
-          options: {
-            offset: [0, 5]
-          }
-        }, {
-          name: 'eventListeners',
-          options: {
-            scroll: false
-          }
-        }]
-      });
-    });
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tabs);

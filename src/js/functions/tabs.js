@@ -1,7 +1,3 @@
-import {
-    createPopper
-} from '@popperjs/core';
-
 import getHash from '../support-modules/getHash';
 import dataMediaQueries from '../support-modules/dataMediaQueries';
 
@@ -78,10 +74,6 @@ const tabs = () => {
                     tabsTitles[index].classList.add('_tab-active');
                 }
                 tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
-                if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.hidden) {
-                    tabsContentItem.classList.add('init-popper');
-                    popperTooltip(tabsContentItem);
-                }
             });
         }
     }
@@ -96,10 +88,6 @@ const tabs = () => {
             tabsContent.forEach((tabsContentItem, index) => {
                 if (tabsTitles[index].classList.contains('_tab-active')) {
                     tabsContentItem.hidden = false;
-                    if (tabsBlock.classList.contains('_image-popper') && !tabsContentItem.classList.contains('init-popper')) {
-                        tabsContentItem.classList.add('init-popper');
-                        popperTooltip(tabsContentItem);
-                    }
 
                     if (tabsBlock.closest('.object-filter__tabs')) {
                         const filter = tabsBlock.closest('.object-filter').querySelector('.filter');
@@ -145,27 +133,6 @@ const tabs = () => {
             }
             e.preventDefault();
         }
-    }
-
-    function popperTooltip(container) {
-        container.querySelectorAll('.object-apart-renov__mark').forEach(item => {
-            const btn = item.querySelector('.secondary-tooltip__btn');
-            const content = item.querySelector('.secondary-tooltip__content');
-            createPopper(btn, content, {
-                placement: 'auto',
-                modifiers: [{
-                    name: 'offset',
-                    options: {
-                        offset: [0, 5]
-                    }
-                }, {
-                    name: 'eventListeners',
-                    options: {
-                        scroll: false,
-                    }
-                }]
-            });
-        });
     }
 }
 

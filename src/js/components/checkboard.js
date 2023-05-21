@@ -1,6 +1,9 @@
 import modal from '../modules/modal';
-import disableScroll from '../modules/disableScroll'
-import enableScroll from '../modules/enableScroll'
+import disableScroll from '../modules/disableScroll';
+import enableScroll from '../modules/enableScroll';
+import {
+    createPopper
+} from '@popperjs/core';
 const checkboard = () => {
     checkboardPopup();
     const container = document.querySelector('.checkboard');
@@ -10,15 +13,28 @@ const checkboard = () => {
     const innerWidth = 1112;
     if (window.innerWidth > innerWidth) {
         items.forEach(item => {
-            item.addEventListener('mouseover', () => item.classList.add('_active'));
-            item.addEventListener('mouseout', () => item.classList.remove('_active'));
+            let popper;
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('_active');
+                const btn = item.querySelector('.checkboard__link');
+                const content = item.querySelector('.checkboard__card');
+                popper = createPopper(btn, content, {
+                    placement: 'bottom-start',
+                });
+            });
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('_active');
+                setTimeout(() => {
+                    if (!item.classList.contains('_active')) popper.destroy();
+                }, 500);
+            });
         });
-    }
-    if (window.innerWidth < innerWidth) {
+    } else {
         items.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
+                const favorite = item.querySelector('.card-scheme__favorite');
                 const href = item.querySelector('.checkboard__link').getAttribute('href');
                 const modalHTML = `
                 <div class="checkboard-popup-card">
@@ -32,7 +48,8 @@ const checkboard = () => {
                      <div class="checkboard-popup-card__content">
                         <article class="card-scheme">
                             <div class="card-scheme__container">
-                                    ${cardContainer.innerHTML}
+                                ${favorite.outerHTML}
+                                ${cardContainer.innerHTML}
                             </div>
                         </article>
                         <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
@@ -60,7 +77,7 @@ const checkboard = () => {
         }
 
 
-        document.addEventListener('click',(e) => {
+        document.addEventListener('click', (e) => {
             const target = e.target;
             if (target.closest('[data-popup-checkboard-target]')) {
                 const popupCard = document.querySelector('.genplan-popup-card');

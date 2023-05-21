@@ -9,11 +9,13 @@ Swiper.use([Navigation, Pagination, Thumbs, EffectFade]);
 
 import modal from '../modules/modal';
 import {
+    createPopper
+} from '@popperjs/core';
+import {
     _slideDown,
     _slideUp,
     _slideToggle,
 } from '../support-modules/slide';
-
 
 // =========================================================================================
 
@@ -349,6 +351,30 @@ function initSliders() {
                     prevEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--prev'),
                     nextEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--next'),
                 },
+            });
+            const marks = el.querySelectorAll('.object-apart-renov__mark');
+            marks.forEach(mark => {
+                let popper;
+                mark.addEventListener('mouseenter', () => {
+                    mark.classList.add('_active');
+                    const btn = mark.querySelector('button');
+                    const content = mark.querySelector('div');
+                    popper = createPopper(btn, content, {
+                        placement: 'bottom-start',
+                        modifiers: [{
+                            name: 'offset',
+                            options: {
+                                offset: [5, 5]
+                            }
+                        }]
+                    });
+                })
+                mark.addEventListener('mouseleave', () => {
+                    mark.classList.remove('_active');
+                    setTimeout(() => {
+                        if (!mark.classList.contains('_active')) popper.destroy();
+                    }, 500);
+                })
             });
         })
     }

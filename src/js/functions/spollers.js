@@ -88,7 +88,7 @@ const spollers = () => {
                             const topGap = spollerTitle.offsetTop;
                             window.scrollTo({
                                 top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
-                                behavior: 'smooth',
+                                behavior: 'smooth'
                             })
                         }, speed);
                     }
