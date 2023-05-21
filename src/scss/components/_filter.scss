@@ -249,9 +249,15 @@
 
         &._active {
             display: grid;
-            grid-template-columns: repeat(3, max-content);
-            grid-column-gap: 15px;
+            grid-template-columns: repeat(4, max-content);
+            grid-column-gap: 10px;
             align-items: center;
+
+            >div {
+                &:first-child {
+                    color: var(--primary200);
+                }
+            }
         }
     }
 
@@ -456,10 +462,6 @@
         opacity: 0.6;
         text-align: right;
         margin-left: 16px;
-
-        &._choices {
-            opacity: 1;
-        }
     }
 
     &__dropdown {
@@ -543,6 +545,18 @@
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
+            }
+        }
+    }
+
+    &._selected {
+        .select-dropdown-checkbox {
+            &__placeholder {
+                color: var(--primary200);
+            }
+
+            &__title {
+                opacity: 1;
             }
         }
     }

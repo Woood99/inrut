@@ -4960,6 +4960,9 @@ const filterSum = () => {
     if (inputs[0].value && inputs[1].value) {
       html = `
                 <div>
+                    Сумма
+                </div>
+                <div>
                     от&nbsp; ${inputs[0].value} ₽
                 </div>
                 <div>
@@ -4973,6 +4976,9 @@ const filterSum = () => {
     } else if (inputs[0].value && inputs[1].value === '') {
       html = `
             <div>
+                Сумма
+            </div>
+            <div>
                 от&nbsp; ${inputs[0].value} ₽
             </div>
             <div>
@@ -4985,6 +4991,9 @@ const filterSum = () => {
       buttonWrapper.classList.add('_active');
     } else if (inputs[0].value === '' && inputs[1].value) {
       html = `
+            <div>
+                Сумма
+            </div>
             <div>
                 от&nbsp; ${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(itemActive.querySelector('[data-min]').dataset.min)} ₽
             </div>
@@ -5233,8 +5242,11 @@ const filterCustomSelectCheckboxes = () => {
     const certificate = item.querySelector('[data-name="certificate"]');
     mortgageNoFee.setAttribute('disabled', true);
     const titleDefault = title.textContent;
+    let certificateBoolean = false;
+    let mortgageNoFeeBoolean = false;
     cash.addEventListener('change', () => {
       if (cash.checked) {
+        item.classList.add('_selected');
         mortgageYesBank.setAttribute('disabled', true);
         mortgageNoBank.setAttribute('disabled', true);
         mortgageNoFee.setAttribute('disabled', true);
@@ -5242,6 +5254,7 @@ const filterCustomSelectCheckboxes = () => {
         movingCheckbox(1, certificate);
         title.textContent = cash.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
+        item.classList.remove('_selected');
         mortgageYesBank.removeAttribute('disabled');
         mortgageNoBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
@@ -5249,10 +5262,13 @@ const filterCustomSelectCheckboxes = () => {
         movingCheckboxDefault();
         title.textContent = titleDefault;
         if (certificate.checked) certificate.checked = false;
+        certificateBoolean = false;
+        mortgageNoFeeBoolean = false;
       }
     });
     mortgageYesBank.addEventListener('change', () => {
       if (mortgageYesBank.checked) {
+        item.classList.add('_selected');
         cash.setAttribute('disabled', true);
         mortgageNoBank.setAttribute('disabled', true);
         mortgageNoFee.removeAttribute('disabled');
@@ -5262,6 +5278,7 @@ const filterCustomSelectCheckboxes = () => {
         movingCheckbox(2, certificate);
         title.textContent = mortgageYesBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
+        item.classList.remove('_selected');
         cash.removeAttribute('disabled');
         mortgageNoBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
@@ -5270,10 +5287,13 @@ const filterCustomSelectCheckboxes = () => {
         title.textContent = titleDefault;
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
+        certificateBoolean = false;
+        mortgageNoFeeBoolean = false;
       }
     });
     mortgageNoBank.addEventListener('change', () => {
       if (mortgageNoBank.checked) {
+        item.classList.add('_selected');
         cash.setAttribute('disabled', true);
         mortgageYesBank.setAttribute('disabled', true);
         mortgageNoFee.removeAttribute('disabled');
@@ -5283,6 +5303,7 @@ const filterCustomSelectCheckboxes = () => {
         movingCheckbox(2, certificate);
         title.textContent = mortgageNoBank.closest('.checkbox-secondary').querySelector('.checkbox-secondary__text').textContent;
       } else {
+        item.classList.remove('_selected');
         cash.removeAttribute('disabled');
         mortgageYesBank.removeAttribute('disabled');
         mortgageNoFee.setAttribute('disabled', true);
@@ -5291,6 +5312,28 @@ const filterCustomSelectCheckboxes = () => {
         movingCheckboxDefault();
         if (mortgageNoFee.checked) mortgageNoFee.checked = false;
         if (certificate.checked) certificate.checked = false;
+        certificateBoolean = false;
+        mortgageNoFeeBoolean = false;
+      }
+    });
+    certificate.addEventListener('change', () => {
+      const value = certificate.nextElementSibling.querySelector('.checkbox-secondary__text').textContent.trim();
+      if (!certificateBoolean) {
+        title.textContent += `, ${value}`;
+        certificateBoolean = true;
+      } else {
+        title.textContent = title.textContent.replace(`, ${value}`, '');
+        certificateBoolean = false;
+      }
+    });
+    mortgageNoFee.addEventListener('change', () => {
+      const value = mortgageNoFee.nextElementSibling.querySelector('.checkbox-secondary__text').textContent.trim();
+      if (!mortgageNoFeeBoolean) {
+        title.textContent += `, ${value}`;
+        mortgageNoFeeBoolean = true;
+      } else {
+        title.textContent = title.textContent.replace(`, ${value}`, '');
+        mortgageNoFeeBoolean = false;
       }
     });
     function movingCheckbox(index, element) {
