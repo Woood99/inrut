@@ -269,16 +269,15 @@
                         </div>
                         <div class="filter__inner">
                             <div class="filter__row request-catalog-filter__row--1">
-                                <div
-                                    class="filter__item filter__item--object place-sale-options__item select-secondary">
+                                <div class="filter__item select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Комплекс
                                     </span>
                                     <select class="select-secondary__body" name="complex">
-                                      <option placeholder>Все квартиры</option> 
-                                        <option value="complex">Квартиры1</option>
-                                        <option value="complex2">Квартиры2</option>
-                                        <option value="complex3">Квартиры3</option>
+                                        <option placeholder value="all-room">Все квартиры</option>
+                                        <option value="room-1">Квартиры1</option>
+                                        <option value="room-2">Квартиры2</option>
+                                        <option value="room-3">Квартиры3</option>
                                     </select>
                                 </div>
                                 <div
@@ -391,17 +390,13 @@
                                 </div>
                             </div>
                             <div class="filter__row request-catalog-filter__row--2" hidden>
-                                <button type="button"
-                                class="btn btn-reset filter__item request-catalog__area select-map-btn">
-                                <span>Район на карте</span>
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#location-two"></use>
-                                </svg>
-                            </button>
                                 <div class="filter__item request-catalog__dropdown-checkbox select-dropdown-checkbox">
                                     <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
-                                        <span class="select-dropdown-checkbox__title">
+                                        <span class="select-dropdown-checkbox__placeholder">
                                             Свойства расчета
+                                        </span>
+                                        <span class="select-dropdown-checkbox__title">
+                                            Ничего не выбрано
                                         </span>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
@@ -452,16 +447,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="filter__item filter__item--complex request-catalog__select select-secondary">
+                                <button type="button"
+                                    class="btn btn-reset filter__item request-catalog__area select-map-btn">
+                                    <span>Район на карте</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                                <div class="filter__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Комплекс
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Комплекс</option>
-                                        <option value="complex">Комплекс1</option>
-                                        <option value="complex2">Комплекс2</option>
-                                        <option value="complex3">Комплекс3</option>
+                                        <option placeholder value="all-room">Все квартиры</option>
+                                        <option value="room-1">Квартиры1</option>
+                                        <option value="room-2">Квартиры2</option>
+                                        <option value="room-3">Квартиры3</option>
                                     </select>
                                 </div>
-                                <div class="filter__item filter__item--checkboxes request-catalog__checkboxes">
+                            </div>
+                            <div class="filter__row request-catalog-filter__row--3" hidden>
+                                <div class="filter__item request-catalog__checkboxes">
                                     <div class="checkbox-secondary">
                                         <input id="filter-urgent-app_1" name="filter-urgent-app-1"
                                             class="checkbox-secondary__input" type="checkbox" value="true">

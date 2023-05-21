@@ -7821,6 +7821,8 @@ textarea.input-reset {
   left: 16px;
   opacity: 1;
   z-index: 1;
+  font-size: 14px;
+  line-height: 1;
 }
 .select-secondary .choices {
   background-color: var(--stand-bg);
@@ -7891,12 +7893,16 @@ textarea.input-reset {
   width: 100%;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  cursor: default;
 }
 .select-secondary .choices__list--dropdown.is-active {
   opacity: 1;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
+}
+.select-secondary .choices__list--dropdown .choices__placeholder {
+  opacity: 1;
 }
 .select-secondary .choices__list--dropdown .choices__item {
   font-size: 13px;
@@ -7907,8 +7913,8 @@ textarea.input-reset {
   opacity: 0.45;
   pointer-events: none;
 }
-.select-secondary .choices__list--dropdown .choices__placeholder {
-  display: none;
+.select-secondary .choices__list--dropdown .choices__item.is-selected.choices__item--selectable {
+  cursor: default;
 }
 @media (max-width: 1112px) {
   .select-secondary .choices__list--dropdown {
@@ -7924,10 +7930,10 @@ textarea.input-reset {
   line-height: 0;
 }
 .select-secondary .choices__list--single {
-  padding: 0;
+  padding: 0 30px 0 95px;
   font-size: 14px;
   line-height: 100%;
-  width: calc(100% - 30px);
+  width: 100%;
   text-align: right;
 }
 .select-secondary .choices__list--single > .choices__item--selectable {
@@ -9939,12 +9945,12 @@ textarea.input-reset {
   z-index: 6;
   top: 100%;
   right: 0;
-  width: 380px;
+  width: 100%;
   background-color: var(--white);
   border: 1px solid rgba(122, 127, 170, 0.1);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   padding: 24px;
   -webkit-transform: translateY(10px);
   -ms-transform: translateY(10px);
@@ -9956,13 +9962,6 @@ textarea.input-reset {
   -o-transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-}
-@media (max-width: 1112px) {
-  .filter-dropdown__dropdown {
-    width: 100%;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
 }
 @media (max-width: 768px) {
   .filter-dropdown__dropdown {
@@ -10021,8 +10020,11 @@ textarea.input-reset {
 .select-dropdown-checkbox__button {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 20px;
-  grid-template-columns: 1fr 20px;
+  -ms-grid-columns: -webkit-max-content 1fr 20px;
+  -ms-grid-columns: max-content 1fr 20px;
+  grid-template-columns: -webkit-max-content 1fr 20px;
+  grid-template-columns: max-content 1fr 20px;
+  grid-column-gap: 8px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -10053,8 +10055,13 @@ textarea.input-reset {
     padding: 11.5px 16px 11.5px;
   }
 }
+.select-dropdown-checkbox__placeholder {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--gray);
+}
 .select-dropdown-checkbox__title {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.2666666667;
   color: var(--gray);
   font-weight: 400;
@@ -10062,6 +10069,12 @@ textarea.input-reset {
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  -ms-grid-column-align: end;
+  justify-self: end;
+  opacity: 0.6;
+}
+.select-dropdown-checkbox__title._choices {
+  opacity: 1;
 }
 .select-dropdown-checkbox__dropdown {
   position: absolute;
@@ -14750,8 +14763,6 @@ textarea.input-reset {
   }
 }
 .request-catalog__checkboxes {
-  margin-left: 23px;
-  margin-bottom: 10px;
   -ms-flex-item-align: end;
   -ms-grid-row-align: end;
   align-self: end;
@@ -14812,12 +14823,16 @@ textarea.input-reset {
 }
 
 .request-catalog-filter__row--1 {
-  -ms-grid-columns: 27.7777777778% 22.6851851852% 32.4074074074%;
-  grid-template-columns: 27.7777777778% 22.6851851852% 32.4074074074%;
+  -ms-grid-columns: 37.1759259259% 22.6851851852% 37.1759259259%;
+  grid-template-columns: 37.1759259259% 22.6851851852% 37.1759259259%;
 }
 .request-catalog-filter__row--2 {
-  -ms-grid-columns: 20.1851851852% 31.8518518519% 24.4444444444% 1fr;
-  grid-template-columns: 20.1851851852% 31.8518518519% 24.4444444444% 1fr;
+  -ms-grid-columns: 37.1759259259% 22.6851851852% 37.1759259259%;
+  grid-template-columns: 37.1759259259% 22.6851851852% 37.1759259259%;
+}
+.request-catalog-filter__row--3 {
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 @media (max-width: 1112px) {
