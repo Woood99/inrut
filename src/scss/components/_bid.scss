@@ -147,7 +147,7 @@
         color: var(--dark);
 
         &--border {
-            padding: 20px 16px;
+            padding: 16px;
             border: 1px solid var(--primary200);
             border-radius: 2px 12px 12px 12px;
 
@@ -202,6 +202,10 @@
         }
     }
 
+    &__import {
+        margin-top: 32px;
+    }
+
     &__maps {
         margin-top: 32px;
         width: 100%;
@@ -214,7 +218,17 @@
     }
 }
 
+.bid-import {
+    &__title {
+        @media (max-width:$smallTablet-max) {
+            margin: 16px 16px 0;
+        }
+    }
 
+    .bid__descr {
+        margin-top: 16px;
+    }
+}
 
 
 .bid-maps {
