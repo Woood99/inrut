@@ -10,6 +10,11 @@ export const inputText = () => {
             input.addEventListener('input', () => {
                 input.value = input.value.replace(/\D/g, '');
                 input.value = numberReplace(input.value);
+                if (input.value.length >= 1) {
+                    el.classList.add('_active')
+                } else {
+                    el.classList.remove('_active')
+                }
             });
             inputCursorEnd(input, 'focus');
         })

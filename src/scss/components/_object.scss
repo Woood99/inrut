@@ -395,7 +395,7 @@
         }
 
         &--2 {
-            grid-template-columns: percent(260, 968) percent(320, 968) max-content;
+            grid-template-columns: percent(340.5, 968) percent(290, 968) 1fr;
             justify-content: start;
 
             .filter__item--checkboxes {
@@ -420,9 +420,10 @@
                     flex-direction: column;
                 }
             }
-            .filter__item{
-                &:nth-child(2){
-                    .choices__list--single{
+
+            .filter__item {
+                &:nth-child(2) {
+                    .choices__list--single {
                         padding: 0 30px 0 115px;
                     }
                 }
@@ -489,8 +490,9 @@
 
     &__title {
         margin-bottom: 32px;
-        @media (max-width:$desktop){
-             margin-bottom: 16px; 
+
+        @media (max-width:$desktop) {
+            margin-bottom: 16px;
         }
     }
 
@@ -593,9 +595,9 @@
             }
         }
 
-       @media (max-width:$desktop){
-        margin-top: 12px; 
-       }
+        @media (max-width:$desktop) {
+            margin-top: 12px;
+        }
     }
 
     @media (max-width:$desktop) {
@@ -1694,17 +1696,19 @@
     &__select {
         width: 250px;
         margin-bottom: 24px;
-        .choices__list--single{
+
+        .choices__list--single {
             padding: 0 30px 0 60px;
         }
+
         @media (max-width:$desktop) {
             width: 50%;
             margin-bottom: 16px;
         }
 
-      @media (max-width:$smallTablet-max){
-         width: 100%; 
-      }
+        @media (max-width:$smallTablet-max) {
+            width: 100%;
+        }
     }
 
     &__items {

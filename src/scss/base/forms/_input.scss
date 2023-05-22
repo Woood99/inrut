@@ -133,8 +133,11 @@ textarea.input-reset {
 
         display: grid;
         align-items: center;
-        grid-template-columns: 1fr max-content;
+        grid-template-columns: max-content 1fr max-content;
         grid-column-gap: 15px;
+        span{
+            transition: color $transitionSpeed $transitionFunction;
+        }
     }
 
     &__input {
@@ -176,6 +179,13 @@ textarea.input-reset {
         .input-text {
             &__label {
                 display: block;
+            }
+        }
+    }
+    &._active{
+        .input-text__label{
+            span{
+                color: #b6d5f8;
             }
         }
     }

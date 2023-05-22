@@ -445,11 +445,16 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-grid-columns: 1fr -webkit-max-content;
-  -ms-grid-columns: 1fr max-content;
-  grid-template-columns: 1fr -webkit-max-content;
-  grid-template-columns: 1fr max-content;
+  -ms-grid-columns: -webkit-max-content 1fr -webkit-max-content;
+  -ms-grid-columns: max-content 1fr max-content;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
   grid-column-gap: 15px;
+}
+.input-text__label span {
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .input-text__input {
   border: none;
@@ -499,6 +504,9 @@ textarea.input-reset {
 }
 .input-text--no-subtitle .input-text__label {
   display: block;
+}
+.input-text._active .input-text__label span {
+  color: #b6d5f8;
 }
 
 .checkbox {
@@ -7633,6 +7641,9 @@ textarea.input-reset {
   font-size: 14px;
   line-height: 1;
   pointer-events: none;
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .select-multiple .choices__list--single {
   font-size: 14px;
@@ -7839,6 +7850,9 @@ textarea.input-reset {
   font-size: 14px;
   line-height: 1;
   pointer-events: none;
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .select-secondary .choices {
   background-color: var(--stand-bg);
@@ -9906,6 +9920,10 @@ textarea.input-reset {
   -ms-grid-columns: (max-content)[4];
   grid-template-columns: repeat(4, -webkit-max-content);
   grid-template-columns: repeat(4, max-content);
+  -ms-grid-columns: -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
+  -ms-grid-columns: max-content max-content 1fr max-content;
+  grid-template-columns: -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content max-content 1fr max-content;
   grid-column-gap: 10px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -9919,6 +9937,10 @@ textarea.input-reset {
 }
 .filter-dropdown__button-wrapper._active > div:first-child {
   color: #b6d5f8;
+}
+.filter-dropdown__button-wrapper._active > div:nth-child(3) {
+  -ms-grid-column-align: center;
+  justify-self: center;
 }
 .filter-dropdown.active .filter-dropdown__dropdown {
   opacity: 1;
@@ -10249,7 +10271,8 @@ textarea.input-reset {
   justify-content: space-between;
   height: 100%;
 }
-.filter-range .filter-range__nav div {
+.filter-range .filter-range__nav > div,
+.filter-range .filter-range__nav label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10263,7 +10286,8 @@ textarea.input-reset {
   overflow: hidden;
   white-space: nowrap;
 }
-.filter-range .filter-range__nav div input {
+.filter-range .filter-range__nav > div input,
+.filter-range .filter-range__nav label input {
   border-radius: 0;
   border: none;
   background-color: transparent;
@@ -10271,28 +10295,32 @@ textarea.input-reset {
   width: 100%;
   height: 100%;
 }
-.filter-range .filter-range__nav div input::-webkit-input-placeholder {
+.filter-range .filter-range__nav > div input::-webkit-input-placeholder, .filter-range .filter-range__nav label input::-webkit-input-placeholder {
   opacity: 0.8;
 }
-.filter-range .filter-range__nav div input::-moz-placeholder {
+.filter-range .filter-range__nav > div input::-moz-placeholder, .filter-range .filter-range__nav label input::-moz-placeholder {
   opacity: 0.8;
 }
-.filter-range .filter-range__nav div input:-ms-input-placeholder {
+.filter-range .filter-range__nav > div input:-ms-input-placeholder, .filter-range .filter-range__nav label input:-ms-input-placeholder {
   opacity: 0.8;
 }
-.filter-range .filter-range__nav div input::-ms-input-placeholder {
+.filter-range .filter-range__nav > div input::-ms-input-placeholder, .filter-range .filter-range__nav label input::-ms-input-placeholder {
   opacity: 0.8;
 }
-.filter-range .filter-range__nav div input::placeholder {
+.filter-range .filter-range__nav > div input::placeholder,
+.filter-range .filter-range__nav label input::placeholder {
   opacity: 0.8;
 }
-.filter-range .filter-range__nav div:nth-child(2) {
+.filter-range .filter-range__nav > div:nth-child(2),
+.filter-range .filter-range__nav label:nth-child(2) {
   text-align: center;
 }
-.filter-range .filter-range__nav div:nth-child(3) {
+.filter-range .filter-range__nav > div:nth-child(3),
+.filter-range .filter-range__nav label:nth-child(3) {
   text-align: right;
 }
-.filter-range .filter-range__nav div:nth-child(4) {
+.filter-range .filter-range__nav > div:nth-child(4),
+.filter-range .filter-range__nav label:nth-child(4) {
   font-weight: 500;
 }
 .filter-range .noUi-target {
@@ -10345,6 +10373,21 @@ textarea.input-reset {
   .filter-range {
     width: 100%;
   }
+}
+.filter-range--improved .filter-range__nav span {
+  -webkit-transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.filter-range--improved .filter-range__nav > label span {
+  opacity: 0.8;
+}
+.filter-range--improved .filter-range__nav > label input {
+  margin-left: 8px;
+}
+.filter-range--improved._selected .filter-range__nav span {
+  opacity: 1;
+  color: #b6d5f8;
 }
 
 .filter-range-one {
@@ -14285,7 +14328,7 @@ textarea.input-reset {
   }
 }
 .home-sale__object {
-  width: 300px;
+  width: 270px;
 }
 @media (max-width: 1112px) {
   .home-sale__object {
@@ -14293,7 +14336,7 @@ textarea.input-reset {
   }
 }
 .home-sale__price {
-  width: 310px;
+  width: 400px;
   margin-left: 16px;
 }
 @media (max-width: 1112px) {
@@ -16031,10 +16074,8 @@ textarea.input-reset {
   grid-template-columns: 35.1756198347% 26.3429752066% 35.1756198347%;
 }
 .object-filter__row--2 {
-  -ms-grid-columns: 26.8595041322% 33.0578512397% -webkit-max-content;
-  -ms-grid-columns: 26.8595041322% 33.0578512397% max-content;
-  grid-template-columns: 26.8595041322% 33.0578512397% -webkit-max-content;
-  grid-template-columns: 26.8595041322% 33.0578512397% max-content;
+  -ms-grid-columns: 35.1756198347% 29.958677686% 1fr;
+  grid-template-columns: 35.1756198347% 29.958677686% 1fr;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
@@ -17989,12 +18030,12 @@ textarea.input-reset {
   grid-template-columns: 24.7933884298% 24.2768595041% 24.2768595041% 21.694214876%;
 }
 .submit-app-options__row--2 {
-  -ms-grid-columns: 36.1570247934% 30.2685950413% 30.2685950413%;
-  grid-template-columns: 36.1570247934% 30.2685950413% 30.2685950413%;
+  -ms-grid-columns: 36.1570247934% 33.6776859504% 26.8595041322%;
+  grid-template-columns: 36.1570247934% 33.6776859504% 26.8595041322%;
 }
 .submit-app-options__row--3 {
-  -ms-grid-columns: 35.1239669421% 39.2561983471% 1fr;
-  grid-template-columns: 35.1239669421% 39.2561983471% 1fr;
+  -ms-grid-columns: 42.8719008264% 1fr;
+  grid-template-columns: 42.8719008264% 1fr;
 }
 .submit-app-options__row:not(:last-child) {
   margin-bottom: 16px;
@@ -18625,21 +18666,21 @@ textarea.input-reset {
 }
 
 .buy-apartment-filter--building .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 26.3888888889% 45.1851851852% 25.462962963%;
-  grid-template-columns: 26.3888888889% 45.1851851852% 25.462962963%;
+  -ms-grid-columns: 26.3888888889% 41.6666666667% 28.9814814815%;
+  grid-template-columns: 26.3888888889% 41.6666666667% 28.9814814815%;
 }
 .buy-apartment-filter--building .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 26.3888888889% 27.7777777778% 1fr;
-  grid-template-columns: 26.3888888889% 27.7777777778% 1fr;
+  -ms-grid-columns: 29.6296296296% 27.7777777778% 1fr;
+  grid-template-columns: 29.6296296296% 27.7777777778% 1fr;
 }
 
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 25.2777777778% 27.3148148148% 23.6111111111% 19.3518518519%;
-  grid-template-columns: 25.2777777778% 27.3148148148% 23.6111111111% 19.3518518519%;
+  -ms-grid-columns: 25.2777777778% 35.8796296296% 35.8796296296%;
+  grid-template-columns: 25.2777777778% 35.8796296296% 35.8796296296%;
 }
 .buy-apartment-filter--moskow .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 22.6851851852% 32.4074074074% 1fr;
-  grid-template-columns: 22.6851851852% 32.4074074074% 1fr;
+  -ms-grid-columns: 25.2777777778% 24.0740740741% 1fr;
+  grid-template-columns: 25.2777777778% 24.0740740741% 1fr;
 }
 
 .agent-develop .bid-user {
@@ -18709,8 +18750,8 @@ textarea.input-reset {
 }
 
 .agent-object-filter__row--1 {
-  -ms-grid-columns: 25.2777777778% 43.9814814815% 27.7777777778%;
-  grid-template-columns: 25.2777777778% 43.9814814815% 27.7777777778%;
+  -ms-grid-columns: 25.2777777778% 39.3518518519% 32.4074074074%;
+  grid-template-columns: 25.2777777778% 39.3518518519% 32.4074074074%;
 }
 .agent-object-filter__row--2 {
   -ms-grid-columns: 25.2777777778% 25.9259259259% 1fr;

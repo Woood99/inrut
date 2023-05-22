@@ -119,11 +119,23 @@ export const uiSlider = () => {
             },
             step: 1,
         });
+        inputMin.value = '';
+        inputMax.value = '';
         el.noUiSlider.on('update', function (values, handle) {
+            if (container.classList.contains('filter-range--improved')) {
+                if ((inputs[0].value === '' && +numberReplace(values[0]).replace(/\s/g, '') === Number(minValue)) &&
+                    (inputs[1].value === '' && +numberReplace(values[1]).replace(/\s/g, '') === Number(maxValue))) {
+                    container.classList.remove('_selected');
+                    return;
+                } else {
+                    container.classList.add('_selected');
+                }
+            }
             inputs[handle].value = numberReplace(values[handle]);
         });
         inputMin.value = '';
         inputMax.value = '';
+
         inputMin.addEventListener('change', function () {
             const numberString = this.value.replace(/\s/g, "");
             if (inputMax.value === '') {
