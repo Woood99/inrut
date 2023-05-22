@@ -531,16 +531,19 @@
 
                         <div data-tabs class="tabs-primary__inner">
                             <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
-                                <button type="button" class="btn btn-reset tabs__title">
-                                    Список
-                                </button>
                                 <button type="button" class="btn btn-reset tabs__title _tab-active">
                                     Календарь
+                                </button>
+                                <button type="button" class="btn btn-reset tabs__title">
+                                    Список
                                 </button>
                             </nav>
                             <div class="tabs-primary__container">
                                 <div data-tabs-body class="tabs__content tabs-primary__content">
                                     <div class="tabs__body">
+                                        <div class="calendar-primary"></div>
+                                    </div>
+                                    <div class="tabs__body" hidden>
 
                                         <div class="main-table">
                                             <div class="main-table__table">
@@ -567,7 +570,7 @@
                                                         </div>
                                                         <div class="object-info-secondary__type-price">
                                                             <div>
-                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                <span>1-комн. квартира</span> <span>,54 м², 12/12
                                                                     эт.</span>
                                                             </div>
                                                             <div>
@@ -609,7 +612,7 @@
                                                         </div>
                                                         <div class="object-info-secondary__type-price">
                                                             <div>
-                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                <span>1-комн. квартира</span> <span>,54 м², 12/12
                                                                     эт.</span>
                                                             </div>
                                                             <div>
@@ -651,7 +654,7 @@
                                                         </div>
                                                         <div class="object-info-secondary__type-price">
                                                             <div>
-                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                <span>1-комн. квартира</span> <span>,54 м², 12/12
                                                                     эт.</span>
                                                             </div>
                                                             <div>
@@ -693,7 +696,7 @@
                                                         </div>
                                                         <div class="object-info-secondary__type-price">
                                                             <div>
-                                                                <span>1-комн. квартира</span> <span>54 м², 12/12
+                                                                <span>1-комн. квартира</span> <span>,54 м², 12/12
                                                                     эт.</span>
                                                             </div>
                                                             <div>
@@ -763,9 +766,6 @@
                                         </div>
 
 
-                                    </div>
-                                    <div class="tabs__body">
-                                        <div class="calendar-primary"></div>
                                     </div>
                                 </div>
                             </div>
@@ -2673,8 +2673,11 @@
                         <div class="filter__inner">
                             <div class="filter__row object-filter__row--1">
                                 <div class="filter__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Корпус
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Корпус</option>
+                                        <option placeholder value="all-room">Неважно</option>
                                         <option value="complex">Дом1</option>
                                         <option value="complex2">Дом2</option>
                                         <option value="complex3">Дом3</option>
@@ -2757,8 +2760,11 @@
                                     <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
                                 <div class="filter__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Редкие форматы
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Редкие форматы</option>
+                                        <option placeholder value="all-room">Неважно</option>
                                         <option value="complex">Редкие форматы1</option>
                                         <option value="complex2">Редкие форматы2</option>
                                         <option value="complex3">Редкие форматы3</option>

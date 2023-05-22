@@ -206,7 +206,7 @@
 
     .fc-toolbar.fc-header-toolbar {
         margin-bottom: 24px;
-        justify-content: start;
+     justify-content: end;
 
         .fc-toolbar-chunk {
             .fc-toolbar-title {
@@ -228,22 +228,13 @@
                 margin-left: 0;
             }
 
-            &:nth-child(3) {
-                margin-left: 12px;
-            }
-
-            &:nth-child(1) {
-                width: 145px;
-
-                @media (max-width:$desktop) {
-                    width: 110px;
-                }
+            &:nth-child(2) {
+             margin: 0 24px;
             }
         }
 
         @media (max-width:$smallTablet-max) {
             margin-bottom: 5px;
-            justify-content: space-between;
         }
     }
 
@@ -558,10 +549,6 @@
 
         &:focus {
             box-shadow: none;
-        }
-
-        &.fc-customNext-button {
-            margin-left: 10px;
         }
     }
 }

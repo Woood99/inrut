@@ -322,6 +322,14 @@
                                     </div>
                                     <div class="filter-range__inner" data-min="500000" data-max="200000000"></div>
                                 </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn">
+                                    <span>Выберите район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter__row buy-apartment-filter__row--2" hidden>
                                 <div class="filter__item filter-range">
                                     <div class="filter-range__nav">
                                         <div data-range-start>
@@ -339,20 +347,17 @@
                                     </div>
                                     <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn">
-                                    <span>Выберите район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn">
-                                    <span>Выберите район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
+                                <div class="select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Комплекс
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="all-room">Любой</option>
+                                        <option value="room-1">Квартиры1</option>
+                                        <option value="room-2">Квартиры2</option>
+                                        <option value="room-3">Квартиры3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="filter__controls">
@@ -2219,8 +2224,11 @@
                         <div class="filter__inner">
                             <div class="filter__row object-filter__row--1">
                                 <div class="filter__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Корпус
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Корпус</option>
+                                        <option placeholder value="all-room">Неважно</option>
                                         <option value="complex">Дом1</option>
                                         <option value="complex2">Дом2</option>
                                         <option value="complex3">Дом3</option>
@@ -2303,8 +2311,11 @@
                                     <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
                                 <div class="filter__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Редкие форматы
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Редкие форматы</option>
+                                        <option placeholder value="all-room">Неважно</option>
                                         <option value="complex">Редкие форматы1</option>
                                         <option value="complex2">Редкие форматы2</option>
                                         <option value="complex3">Редкие форматы3</option>

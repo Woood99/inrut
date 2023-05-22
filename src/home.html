@@ -148,11 +148,14 @@
                             </h3>
                             <form action="#" class="home-sale__form">
                                 <div class="select-secondary home-sale__object">
+                                    <span class="select-secondary__placeholder">
+                                        Тип объекта
+                                    </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Тип объекта</option>
-                                        <option value="complex">Выбор1</option>
-                                        <option value="complex2">Выбор2</option>
-                                        <option value="complex3">Выбор3</option>
+                                        <option placeholder value="all-room">Любой</option>
+                                        <option value="room-1">Выбор1</option>
+                                        <option value="room-2">Выбор2</option>
+                                        <option value="room-3">Выбор3</option>
                                     </select>
                                 </div>
                                 <div class="filter-range home-sale__price">
@@ -172,18 +175,9 @@
                                     </div>
                                     <div class="filter-range__inner" data-min="1000000" data-max="50000000"></div>
                                 </div>
-                                <div class="home-sale__btns">
-                                    <button type="button"
-                                        class="btn btn-reset btn-secondary home-sale__btn home-sale__btn--maps">
-                                        <span>На карте</span>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#location-two"></use>
-                                        </svg>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-primary btn-primary home-sale__btn">
-                                        Показать 1567 объявлений
-                                    </button>
-                                </div>
+                                <button type="button" class="btn btn-reset btn-primary btn-primary home-sale__btn">
+                                    Показать 1567 объявлений
+                                </button>
                             </form>
                         </div>
                     </div>

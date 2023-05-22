@@ -43,7 +43,7 @@
     }
 
     &__row-title {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
     &__btn {
@@ -72,7 +72,7 @@
     &__title {}
 
     &__choice {
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 
     &__row {
@@ -83,7 +83,7 @@
 
 
         &--1 {
-            grid-template-columns: percent(212, 968) percent(212, 968) percent(245, 968) percent(251, 968);
+            grid-template-columns: percent(240, 968) percent(235, 968) percent(235, 968) percent(210, 968);
         }
 
         &--2 {
@@ -91,7 +91,7 @@
         }
 
         &--3 {
-            grid-template-columns: percent(212, 968) percent(212, 968) 1fr;
+            grid-template-columns: percent(340, 968) percent(380,968) 1fr;
         }
 
         &:not(:last-child) {
@@ -109,6 +109,11 @@
         &--sum {
             .filter-dropdown__dropdown {
                 left: 0;
+            }
+        }
+        &--complex{
+           .choices__list--single {
+                padding: 0 30px 0 70px;
             }
         }
     }

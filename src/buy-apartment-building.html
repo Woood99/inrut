@@ -95,6 +95,14 @@
                                     </div>
                                     <div class="filter-range__inner" data-min="500000" data-max="200000000"></div>
                                 </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn">
+                                    <span>Выберите район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter__row buy-apartment-filter__row--2" hidden>
                                 <div class="filter__item filter-range">
                                     <div class="filter-range__nav">
                                         <div data-range-start>
@@ -112,20 +120,17 @@
                                     </div>
                                     <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn">
-                                    <span>Выберите район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn">
-                                    <span>Выберите район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
+                                <div class="select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Комплекс
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="all-room">Любой</option>
+                                        <option value="room-1">Квартиры1</option>
+                                        <option value="room-2">Квартиры2</option>
+                                        <option value="room-3">Квартиры3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="filter__controls">

@@ -38,7 +38,14 @@
         }
     }
 
-    &__select {}
+    &__select {
+
+        &:nth-child(3) {
+            .choices__list--single {
+                padding: 0 30px 0 125px;
+            }
+        }
+    }
 
     &__controls {
         margin-top: 16px;
@@ -83,6 +90,6 @@
 
 .base-agent-catalog-filter {
     &__row--1 {
-        grid-template-columns: percent(258, 1080) percent(258, 1080) percent(258, 1080) percent(258, 1080);
+        grid-template-columns: percent(245, 1080) percent(250, 1080) percent(279, 1080) percent(258, 1080);
     }
 }

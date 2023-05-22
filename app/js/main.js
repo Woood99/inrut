@@ -4387,7 +4387,7 @@ if (selectMultiple.length >= 1) {
       removeItemButton: true
     });
     const placeholder = document.createElement('span');
-    placeholder.textContent = 'Теги';
+    placeholder.textContent = 'Неважно';
     placeholder.classList.add('select-multiple__placeholder');
     el.closest('.choices').insertAdjacentElement('afterbegin', placeholder);
     el.addEventListener('addItem', e => {
@@ -4399,6 +4399,13 @@ if (selectMultiple.length >= 1) {
     el.closest('.choices').addEventListener('click', e => {
       if ((e.target.classList.contains('choices') || e.target.classList.contains('choices__inner')) && el.closest('.choices').classList.contains('is-open')) {
         choices.hideDropdown();
+      }
+    });
+    el.addEventListener('change', e => {
+      if (e.target.length >= 1) {
+        el.closest('.select-multiple').classList.add('_selected');
+      } else {
+        el.closest('.select-multiple').classList.remove('_selected');
       }
     });
   });
@@ -4456,9 +4463,9 @@ const calendarPrimary = () => {
       url: 'eventsCalendar.json'
     }],
     headerToolbar: {
-      left: 'title',
-      center: '',
-      right: 'customPrev,customNext'
+      center: 'title',
+      right: 'customNext',
+      left: 'customPrev'
     },
     eventContent: obj => {
       return {

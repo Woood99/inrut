@@ -75,7 +75,7 @@
     &__city {
         @media (min-width:$desktop-min) {
             display: grid;
-            grid-template-columns: percent(230, 968) 1fr;
+            grid-template-columns: percent(260, 968) 1fr;
             align-items: center;
             grid-column-gap: 24px;
         }
@@ -144,19 +144,31 @@
             margin-bottom: 16px;
 
             &--1 {
-                grid-template-columns: percent(208, 968) percent(259, 968) percent(469, 968);
+                grid-template-columns: percent(245, 968) percent(235, 968) percent(456, 968);
             }
 
             &--2 {
-                grid-template-columns: percent(245, 968) percent(225, 968) percent(225, 968) percent(225, 968);
+                grid-template-columns: percent(245, 968) percent(235, 968) percent(220, 968) percent(220, 968);
             }
 
             &--3 {
-                grid-template-columns: percent(146, 968) percent(146, 968) percent(204, 968) percent(204, 968) percent(204, 968);
+                grid-template-columns: percent(160, 968) percent(160, 968) percent(300, 968) percent(300, 968);
             }
 
             &--4 {
-                grid-template-columns: percent(208, 968) percent(259, 968) percent(259, 968) percent(259, 968);
+                grid-template-columns: percent(312, 968) percent(312, 968) percent(312, 968);
+            }
+
+            &--5 {
+                grid-template-columns: percent(400, 968) percent(365, 968) 1fr;
+
+                .place-sale-options__item {
+                    &:first-child {
+                        .choices__list--single {
+                            padding: 0 30px 0 140px;
+                        }
+                    }
+                }
             }
         }
 

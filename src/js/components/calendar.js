@@ -19,9 +19,9 @@ export const calendarPrimary = () => {
             url: 'eventsCalendar.json',
         }],
         headerToolbar: {
-            left: 'title',
-            center: '',
-            right: 'customPrev,customNext',
+            center: 'title',
+            right: 'customNext',
+            left: 'customPrev',
         },
         eventContent: (obj) => {
             return {

@@ -161,7 +161,7 @@
 
             &:nth-child(1) {
                 font-weight: 500;
-
+                color: var(--dark);
                 svg {
                     stroke-width: 2px;
                 }
@@ -192,7 +192,8 @@
 
     &__type-price {
         div {
-            display: block;
+          display: flex;
+          align-items: center;
             color: var(--dark);
             font-size: 18px;
             line-height: math.div(23, 18);
@@ -208,11 +209,11 @@
                         font-size: 15px;
                         line-height: math.div(19, 15);
                         font-weight: 400;
-                        transform: translateY(-3px) translateX(4px);
-                        display: inline-block;
-
+                        transform: translateY(0) translateX(0px);
+                        display: inline-block;  
+                        font-weight: 500;
                         @media (max-width:$desktop) {
-                            transform: translateY(0) translateX(4px);
+                            transform: translateY(0) translateX(0px);
                         }
                     }
                 }

@@ -40,7 +40,10 @@
                             Адрес
                         </h2>
                         <div class="place-sale-address__city">
-                            <div class="place-sale-address__select select-secondary">
+                            <div class="place-sale-address__select select-secondary select-secondary--city _selected">
+                                <span class="select-secondary__placeholder">
+                                    Город
+                                </span>
                                 <select class="select-secondary__body" name="city">
                                     <option value="apartments">Санкт-Петербург</option>
                                     <option value="apartments2">Волгоград</option>
@@ -80,24 +83,33 @@
                         </h2>
                         <div class="place-sale-options__row place-sale-options__row--1">
                             <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Тип объекта
+                                </span>
                                 <select class="select-secondary__body" name="complex">
-                                    <option placeholder>Тип объекта</option>
-                                    <option value="complex">Выбор1</option>
-                                    <option value="complex2">Выбор2</option>
-                                    <option value="complex3">Выбор3</option>
+                                    <option placeholder value="all-room">Любой</option>
+                                    <option value="room-1">Выбор1</option>
+                                    <option value="room-2">Выбор2</option>
+                                    <option value="room-3">Выбор3</option>
                                 </select>
                             </div>
-                            <div class="place-sale-options__item select-secondary">
+                            <div class="place-sale-options__item  select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Комплекс
+                                </span>
                                 <select class="select-secondary__body" name="complex">
-                                    <option placeholder>Комплекс</option>
-                                    <option value="complex">Выбор1</option>
-                                    <option value="complex2">Выбор2</option>
-                                    <option value="complex3">Выбор3</option>
+                                    <option placeholder value="all-room">Любой</option>
+                                    <option value="room-1">Выбор1</option>
+                                    <option value="room-2">Выбор2</option>
+                                    <option value="room-3">Выбор3</option>
                                 </select>
                             </div>
                             <div class="place-sale-options__item select-multiple">
+                                <span class="select-multiple__main-placeholder">
+                                    Теги
+                                </span>
                                 <select class="select-multiple__body" multiple name="tags">
-                                    <option placeholder>Теги</option>
+                                    <option placeholder>Неважно</option>
                                     <option value="tags1">
                                         Семейная ипотека
                                     </option>
@@ -182,22 +194,33 @@
                                 </label>
                             </div>
                             <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Наличие мебели
+                                </span>
                                 <select class="select-secondary__body" name="availability-of-furniture">
-                                    <option placeholder>Наличие мебели</option>
+                                    <option placeholder>Неважно</option>
                                     <option value="yes">Да</option>
                                     <option value="no">Нет</option>
                                 </select>
                             </div>
                             <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Ремонт
+                                </span>
                                 <select class="select-secondary__body" name="repair">
-                                    <option placeholder>Ремонт</option>
+                                    <option placeholder>Неважно</option>
                                     <option value="repair1">Косметический</option>
                                     <option value="repair2">Косметический2</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--4" hidden>
                             <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Вид из окна
+                                </span>
                                 <select class="select-secondary__body" name="window">
-                                    <option placeholder>Вид из окна</option>
+                                    <option placeholder>Неважно</option>
                                     <option value="window1">Во двор и на улицу</option>
                                     <option value="window2">Во двор и на улицу2</option>
                                     <option value="window2">Во двор и на улицу3</option>
@@ -205,14 +228,48 @@
                                     <option value="window2">Во двор и на улицу5</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="place-sale-options__row place-sale-options__row--4" hidden>
                             <div class="place-sale-options__item select-secondary">
-                                <select class="select-secondary__body" name="complex">
-                                    <option placeholder>Тип объекта</option>
-                                    <option value="complex">Выбор1</option>
-                                    <option value="complex2">Выбор2</option>
-                                    <option value="complex3">Выбор3</option>
+                                <span class="select-secondary__placeholder">
+                                    Санузел
+                                </span>
+                                <select class="select-secondary__body" name="bathroom">
+                                    <option placeholder>Неважно</option>
+                                    <option value="Separated">Раздельный</option>
+                                    <option value="more-than-one">Более одного</option>
+                                </select>
+                            </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Тип дома
+                                </span>
+                                <select class="select-secondary__body" name="bathroom">
+                                    <option placeholder>Неважно</option>
+                                    <option value="brick">Кирпичный</option>
+                                    <option value="monolithic">Монолитный</option>
+                                    <option value="panel">Панельный</option>
+                                    <option value="block">Блочный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--5" hidden>
+                            <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Лет в собственности
+                                </span>
+                                <select class="select-secondary__body" name="years-of-ownership">
+                                    <option placeholder>Неважно</option>
+                                    <option value="one-two-three">1,2,3+</option>
+                                    <option value="true">Есть несовершеннолетние</option>
+                                </select>
+                            </div>
+                            <div class="place-sale-options__item select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Прописано
+                                </span>
+                                <select class="select-secondary__body" name="spelled-out">
+                                    <option placeholder>Неважно</option>
+                                    <option value="one-two-three">1,2,3+</option>
+                                    <option value="true">Есть несовершеннолетние</option>
                                 </select>
                             </div>
                         </div>
@@ -302,8 +359,11 @@
                                     placeholder="Цена">
                             </label>
                             <div class="place-sale-price__select select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Тип сделки
+                                </span>
                                 <select class="select-secondary__body" name="deal-type">
-                                    <option placeholder>Тип сделки</option>
+                                    <option placeholder>Неважно</option>
                                     <option value="deal-type1">Выбор1</option>
                                     <option value="deal-type2">Выбор2</option>
                                     <option value="deal-type3">Выбор3</option>

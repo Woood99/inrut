@@ -239,7 +239,6 @@
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     height: 45px;
-
     &__inner {}
 
     &__body {}
@@ -248,19 +247,40 @@
         font-size: 14px;
         line-height: 100%;
         color: var(--gray);
+        opacity: 0.6;
+    }
+
+    &__main-placeholder {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        opacity: 1;
+        z-index: 1;
+        font-size: 14px;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .choices__list--single {
+        font-size: 14px;
+        line-height: 100%;
+        width: 100%;
+        text-align: right;
     }
 
     .choices {
         background-color: var(--stand-bg);
         border: 1px solid var(--primary200);
         overflow: visible;
-        padding: 0 16px;
+        padding: 0 30px 0 55px;
         border-radius: 12px;
         transition: border-radius $transitionSpeed $transitionFunction;
         height: 100%;
         min-width: 125px;
 
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
 
 
@@ -340,6 +360,7 @@
         border: none;
         min-height: auto;
         line-height: 0;
+        pointer-events: none;
     }
 
     .choices__list--multiple .choices__item {
@@ -348,14 +369,17 @@
         font-size: 14px;
         line-height: 100%;
         font-weight: 400;
-        margin-right: 24px;
-        margin-bottom: 0;
+ margin: 0;
         background-color: transparent;
         border: none;
         color: var(--gray);
 
         display: inline-flex;
         align-items: center;
+
+        &:not(:first-child) {
+            margin-left: 16px;
+        }
     }
 
     .choices[data-type*=select-multiple] .choices__button {
@@ -368,6 +392,7 @@
         border: none;
         background-size: 15px;
         display: inline-block;
+        pointer-events: all;
     }
 
     .choices__input {
@@ -378,6 +403,7 @@
         overflow-x: auto;
         width: 100%;
         display: inline-flex;
+        justify-content: end;
         white-space: nowrap;
         overflow-x: auto;
         -ms-overflow-style: none;
@@ -390,10 +416,31 @@
         >.choices__item {
             white-space: nowrap;
         }
+
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, white 100%);
+            pointer-events: none;
+        }
     }
 
     .choices[data-type*=select-multiple] .choices__inner {
         cursor: pointer;
+    }
+    &._selected{
+        .select-multiple {
+            &__main-placeholder {
+                color: #b6d5f8;
+            }
+        }
     }
 }
 
@@ -414,6 +461,8 @@
 
         font-size: 14px;
         line-height: 1;
+
+        pointer-events: none;
     }
 
     &__inner {}
@@ -538,6 +587,12 @@
             &__placeholder {
                 color: #b6d5f8;
             }
+        }
+    }
+
+    &--city {
+        .choices__list--single {
+            padding: 0 30px 0 60px;
         }
     }
 
