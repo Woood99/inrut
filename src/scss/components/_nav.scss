@@ -99,24 +99,7 @@
 
     &__dropdown {
         @media (min-width:$desktop) {
-            position: absolute;
-            z-index: 99;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            width: 100%;
-
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity $transitionSpeed $transitionFunction,
-                visibility $transitionSpeed $transitionFunction,
-                transform $transitionSpeed $transitionFunction;
-
-            background-color: var(--white);
-            border-bottom-left-radius: 24px;
-            border-bottom-right-radius: 24px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            padding: 32px 0 24px;
+            pointer-events: none;
 
             &::before {
                 content: '';
@@ -128,7 +111,46 @@
                 background-color: rgba(122, 127, 170, 0.1);
                 z-index: -1;
             }
+
+            &::after {
+                content: '';
+                position: fixed;
+                width: 100%;
+                height: calc(var(--vh) * 2);
+                top: var(--header-height);
+                right: 0;
+
+                background-color: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(7.5px);
+                z-index: -1;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity $transitionSpeed $transitionFunction,
+                    visibility $transitionSpeed $transitionFunction;
+            }
+
+            .card-info {
+                border-radius: 24px;
+            }
         }
+    }
+
+    &__dropdown-container {
+        padding: 12px 0 0;
+        height: 100%;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        width: calc(100% - 32px);
+        min-height: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction,
+            transform $transitionSpeed $transitionFunction;
+        position: absolute;
+        z-index: 99;
     }
 
     @media (min-width:$desktop) {
@@ -142,9 +164,18 @@
             }
 
             .nav-dropdown__dropdown {
-                opacity: 1;
-                visibility: visible;
-                transform: translateX(-50%);
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: -1;
+                }
+
+                &-container {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(-50%);
+                    pointer-events: all;
+                }
             }
         }
     }
@@ -156,19 +187,25 @@
 
 
 .nav-dropdown-content {
+    padding: 5px 32px 5px 5px;
     display: flex;
     justify-content: space-between;
+    height: calc(100% + 12px);
+    background-color: var(--white);
+    border-radius: 24px;
 
     &__card-info {
         margin-right: 50px;
         max-width: 323px;
         width: 100%;
+        min-height: 190px;
 
         @media (max-width:$desktop) {
             margin-right: 0;
             width: auto;
             max-width: none;
             height: 100%;
+            min-height: auto;
         }
     }
 
@@ -176,6 +213,10 @@
         display: grid;
         grid-template-columns: repeat(2, max-content);
         @include adaptiveValue("grid-column-gap", 159, 40);
+
+        @media (min-width:$desktop-min) {
+            padding: 26px 0;
+        }
 
         @media (max-width:$desktop) {
             display: block;
@@ -187,21 +228,20 @@
     &__item {
         display: flex;
         align-items: center;
-        color: var(--primaryTwo);
-        transition: color $transitionSpeed $transitionFunction;
 
         svg {
-            fill: currentColor;
+            fill: var(--dark);
             width: 12px;
             height: 12px;
             margin-right: 25px;
         }
 
         span {
-            color: inherit;
+            color: var(--primaryTwo);
             font-size: 14px;
             line-height: math.div(19, 15);
             font-weight: 500;
+            transition: color $transitionSpeed $transitionFunction;
         }
 
         &:not(:last-child) {
@@ -209,7 +249,9 @@
         }
 
         &:hover {
-            color: var(--blue);
+            span {
+                color: var(--blue);
+            }
         }
 
         @media (max-width:$desktop) {

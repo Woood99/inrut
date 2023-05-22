@@ -9244,27 +9244,7 @@ textarea.input-reset {
 }
 @media (min-width: 1112px) {
   .nav-dropdown__dropdown {
-    position: absolute;
-    z-index: 99;
-    top: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(20px);
-    -ms-transform: translateX(-50%) translateY(20px);
-    transform: translateX(-50%) translateY(20px);
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-    background-color: var(--white);
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
-    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 32px 0 24px;
+    pointer-events: none;
   }
   .nav-dropdown__dropdown::before {
     content: "";
@@ -9276,6 +9256,46 @@ textarea.input-reset {
     background-color: rgba(122, 127, 170, 0.1);
     z-index: -1;
   }
+  .nav-dropdown__dropdown::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: calc(var(--vh) * 2);
+    top: var(--header-height);
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(7.5px);
+    backdrop-filter: blur(7.5px);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  }
+  .nav-dropdown__dropdown .card-info {
+    border-radius: 24px;
+  }
+}
+.nav-dropdown__dropdown-container {
+  padding: 12px 0 0;
+  height: 100%;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(20px);
+  -ms-transform: translateX(-50%) translateY(20px);
+  transform: translateX(-50%) translateY(20px);
+  width: calc(100% - 32px);
+  min-height: 200px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  position: absolute;
+  z-index: 99;
 }
 @media (min-width: 1112px) {
   .nav-dropdown:hover .nav__link {
@@ -9284,12 +9304,18 @@ textarea.input-reset {
   .nav-dropdown:hover .nav__link::before {
     width: 125%;
   }
-  .nav-dropdown:hover .nav-dropdown__dropdown {
+  .nav-dropdown:hover .nav-dropdown__dropdown::after {
+    opacity: 1;
+    visibility: visible;
+    z-index: -1;
+  }
+  .nav-dropdown:hover .nav-dropdown__dropdown-container {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+    pointer-events: all;
   }
 }
 @media (max-width: 1112px) {
@@ -9299,17 +9325,22 @@ textarea.input-reset {
 }
 
 .nav-dropdown-content {
+  padding: 5px 32px 5px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  height: calc(100% + 12px);
+  background-color: var(--white);
+  border-radius: 24px;
 }
 .nav-dropdown-content__card-info {
   margin-right: 50px;
   max-width: 323px;
   width: 100%;
+  min-height: 190px;
 }
 @media (max-width: 1112px) {
   .nav-dropdown-content__card-info {
@@ -9317,6 +9348,7 @@ textarea.input-reset {
     width: auto;
     max-width: none;
     height: 100%;
+    min-height: auto;
   }
 }
 .nav-dropdown-content__body {
@@ -9342,6 +9374,11 @@ textarea.input-reset {
     grid-column-gap: 2.5rem;
   }
 }
+@media (min-width: 1113px) {
+  .nav-dropdown-content__body {
+    padding: 26px 0;
+  }
+}
 @media (max-width: 1112px) {
   .nav-dropdown-content__body {
     display: block;
@@ -9354,27 +9391,26 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: var(--primaryTwo);
-  -webkit-transition: color 0.4s ease-in-out;
-  -o-transition: color 0.4s ease-in-out;
-  transition: color 0.4s ease-in-out;
 }
 .nav-dropdown-content__item svg {
-  fill: currentColor;
+  fill: var(--dark);
   width: 12px;
   height: 12px;
   margin-right: 25px;
 }
 .nav-dropdown-content__item span {
-  color: inherit;
+  color: var(--primaryTwo);
   font-size: 14px;
   line-height: 1.2666666667;
   font-weight: 500;
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .nav-dropdown-content__item:not(:last-child) {
   margin-bottom: 40px;
 }
-.nav-dropdown-content__item:hover {
+.nav-dropdown-content__item:hover span {
   color: var(--blue);
 }
 @media (max-width: 1112px) {
@@ -9831,6 +9867,19 @@ textarea.input-reset {
   -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: left;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (-webkit-max-content)[2];
+  -ms-grid-columns: (max-content)[2];
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-right: 8px;
+}
+.filter-dropdown__button-wrapper > div:nth-child(2) {
+  opacity: 0.6;
 }
 .filter-dropdown__button-wrapper._active {
   display: -ms-grid;
@@ -9843,6 +9892,12 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+.filter-dropdown__button-wrapper._active > div {
+  opacity: 1;
 }
 .filter-dropdown__button-wrapper._active > div:first-child {
   color: #b6d5f8;

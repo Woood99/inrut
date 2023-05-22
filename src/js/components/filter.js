@@ -86,7 +86,10 @@ export const filterSum = () => {
         `;
             buttonWrapper.classList.add('_active')
         } else {
-            html = `Сумма`;
+            html = `
+            <div>Сумма</div>
+            <div>Любая</div>
+            `;
             buttonWrapper.classList.remove('_active')
         }
 

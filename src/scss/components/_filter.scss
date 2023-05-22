@@ -246,14 +246,23 @@
         font-weight: 400;
         flex-grow: 1;
         text-align: left;
-
+        display: grid;
+        grid-template-columns: repeat(2,max-content);
+        justify-content: space-between;
+        margin-right: 8px;
+        >div{
+            &:nth-child(2){
+                opacity: 0.6;
+            }
+        }
         &._active {
             display: grid;
             grid-template-columns: repeat(4, max-content);
             grid-column-gap: 10px;
             align-items: center;
-
+            justify-content: start;
             >div {
+                opacity: 1;
                 &:first-child {
                     color: #b6d5f8;
                 }

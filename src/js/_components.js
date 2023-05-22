@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     getHeightBlock('.header-fixed', '--header-fixed-height');
+    getHeightBlock('.header', '--header-height');
 
     // ==================================================
 

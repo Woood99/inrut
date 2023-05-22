@@ -4185,6 +4185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_modules_getHeightBlock__WEBPACK_IMPORTED_MODULE_1__["default"])('.header-fixed', '--header-fixed-height');
+  (0,_modules_getHeightBlock__WEBPACK_IMPORTED_MODULE_1__["default"])('.header', '--header-height');
 
   // ==================================================
 
@@ -5006,7 +5007,10 @@ const filterSum = () => {
         `;
       buttonWrapper.classList.add('_active');
     } else {
-      html = `Сумма`;
+      html = `
+            <div>Сумма</div>
+            <div>Любая</div>
+            `;
       buttonWrapper.classList.remove('_active');
     }
     buttonWrapper.innerHTML = html;
