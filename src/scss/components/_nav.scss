@@ -127,8 +127,8 @@
         top: 100%;
         right: 8px;
         transform: translateY(20px);
-        width: calc(100% - 32px - 37%);
-        min-height: 200px;
+        width: auto;
+        min-height: 240px;
         opacity: 0;
         visibility: hidden;
         transition: opacity $transitionSpeed $transitionFunction,
@@ -172,7 +172,7 @@
 
 
 .nav-dropdown-content {
-    padding: 5px 50px 5px 5px;
+    padding: 5px 100px 5px 5px;
     display: flex;
 
     height: calc(100% + 12px);
@@ -181,9 +181,9 @@
 
     &__card-info {
         margin-right: 100px;
-        max-width: 323px;
-        width: 100%;
-        min-height: 190px;
+        width: 290px;
+        flex: 0 0 290px;
+        min-height: 230px;
 
         @media (max-width:$desktop) {
             margin-right: 0;
