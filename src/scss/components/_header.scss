@@ -117,7 +117,7 @@
     }
 
     &__title {
-        color: var(--primaryTwo);
+        color: var(--dark);
         display: flex;
         align-items: center;
         position: relative;
@@ -125,7 +125,7 @@
         svg {
             width: 12px;
             height: 12px;
-            fill: var(--dark);
+            fill: var(--primaryTwo);
         }
     }
 
@@ -164,13 +164,13 @@
     &__title {
         display: flex;
         align-items: center;
-        color: var(--primaryTwo);
+        color: var(--dark);
         transition: color $transitionSpeed $transitionFunction;
 
         svg {
             width: 12px;
             height: 12px;
-            fill: var(--dark);
+            fill: var(--primaryTwo);
         }
 
         &:hover {
@@ -193,6 +193,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
 
         .header-main__logo {
             @media (max-width:$desktop) {
