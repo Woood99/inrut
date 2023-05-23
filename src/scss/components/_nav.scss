@@ -56,7 +56,6 @@
 
 
 .nav-dropdown {
-
     .nav__link {
         transition: border-bottom $transitionSpeed $transitionFunction;
         height: 100%;
@@ -127,7 +126,6 @@
             padding: 12px 0 0;
             height: 100%;
             top: 100%;
-            right: 8px;
             transform: translateY(20px);
             width: auto;
             min-height: 240px;
@@ -146,6 +144,24 @@
     }
 
     @media (min-width:$desktop) {
+        &--1 {
+            .nav-dropdown__dropdown-container {
+                left: 5%;
+            }
+        }
+
+        &--2 {
+            .nav-dropdown__dropdown-container {
+                left: 12%;
+            }
+        }
+
+        &--3 {
+            .nav-dropdown__dropdown-container {
+                right: 8px;
+            }
+        }
+
         &:hover {
             .nav__link {
                 color: var(--blue);

@@ -6,19 +6,17 @@
         justify-content: space-between;
 
         .checkbox {
-            width: 40px;
-
+            width: 45px;
+            &__label{
+                border-radius: 10px;
+                height: 43px;
+            }
             &:first-child {
-                width: 93px;
-
-                @media (min-width:$desktop-min) {
-                    flex-grow: 1;
-                    width: auto;
-                }
+                width: 90px;
             }
 
             &:not(:last-child) {
-                margin-right: 3px;
+                margin-right: 4px;
             }
 
             @media (max-width:$mobile-max) {

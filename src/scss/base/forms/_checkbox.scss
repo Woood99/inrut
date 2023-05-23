@@ -31,10 +31,10 @@
         @media (min-width:$desktop) {
             &:hover {
                 +.checkbox__label {
-                    border: 1px solid rgba(0, 108, 238, 0.5);
+                    border: 1px solid var(--blue);
 
                     .checkbox__text {
-                        color: rgba(0, 108, 238, 0.5);
+                        color: var(--blue);
                     }
                 }
             }
@@ -59,8 +59,8 @@
 
     &__text {
         color: var(--gray);
-        font-size: 13px;
-        line-height: math.div(16, 13);
+        font-size: 14px;
+      line-height: 1;
         font-weight: 400;
         transition: color $transitionSpeed $transitionFunction;
     }

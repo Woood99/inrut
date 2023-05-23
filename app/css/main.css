@@ -533,10 +533,10 @@ textarea.input-reset {
 }
 @media (min-width: 1112px) {
   .checkbox__input:hover + .checkbox__label {
-    border: 1px solid rgba(0, 108, 238, 0.5);
+    border: 1px solid var(--blue);
   }
   .checkbox__input:hover + .checkbox__label .checkbox__text {
-    color: rgba(0, 108, 238, 0.5);
+    color: var(--blue);
   }
 }
 .checkbox__label {
@@ -563,8 +563,8 @@ textarea.input-reset {
 }
 .checkbox__text {
   color: var(--gray);
-  font-size: 13px;
-  line-height: 1.2307692308;
+  font-size: 14px;
+  line-height: 1;
   font-weight: 400;
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
@@ -7312,21 +7312,17 @@ textarea.input-reset {
   justify-content: space-between;
 }
 .quantity-selection__inner .checkbox {
-  width: 40px;
+  width: 45px;
+}
+.quantity-selection__inner .checkbox__label {
+  border-radius: 10px;
+  height: 43px;
 }
 .quantity-selection__inner .checkbox:first-child {
-  width: 93px;
-}
-@media (min-width: 1113px) {
-  .quantity-selection__inner .checkbox:first-child {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    width: auto;
-  }
+  width: 90px;
 }
 .quantity-selection__inner .checkbox:not(:last-child) {
-  margin-right: 3px;
+  margin-right: 4px;
 }
 @media (max-width: 576px) {
   .quantity-selection__inner .checkbox {
@@ -9330,7 +9326,6 @@ textarea.input-reset {
     padding: 12px 0 0;
     height: 100%;
     top: 100%;
-    right: 8px;
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
@@ -9353,6 +9348,15 @@ textarea.input-reset {
   }
 }
 @media (min-width: 1112px) {
+  .nav-dropdown--1 .nav-dropdown__dropdown-container {
+    left: 5%;
+  }
+  .nav-dropdown--2 .nav-dropdown__dropdown-container {
+    left: 12%;
+  }
+  .nav-dropdown--3 .nav-dropdown__dropdown-container {
+    right: 8px;
+  }
   .nav-dropdown:hover .nav__link {
     color: var(--blue);
   }
@@ -18666,8 +18670,10 @@ textarea.input-reset {
 }
 
 .buy-apartment-filter--building .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 26.3888888889% 41.6666666667% 28.9814814815%;
-  grid-template-columns: 26.3888888889% 41.6666666667% 28.9814814815%;
+  -ms-grid-columns: -webkit-max-content 41.6666666667% 28.9814814815%;
+  -ms-grid-columns: max-content 41.6666666667% 28.9814814815%;
+  grid-template-columns: -webkit-max-content 41.6666666667% 28.9814814815%;
+  grid-template-columns: max-content 41.6666666667% 28.9814814815%;
 }
 .buy-apartment-filter--building .buy-apartment-filter__row--2 {
   -ms-grid-columns: 29.6296296296% 27.7777777778% 1fr;
