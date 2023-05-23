@@ -4965,11 +4965,11 @@ const filterSum = () => {
     const inputs = itemActive.querySelectorAll('input');
     const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
     let html = ``;
-    if (el.classList.contains('filter-dropdown--price')) {
+    if (el.classList.contains('filter-dropdown--improved')) {
       if (inputs[0].value && inputs[1].value) {
         html = `
                     <div>
-                        Цена от
+                        ${el.dataset.filterDropdown} от
                     </div>
                     <div>
                        ${convertSum(inputs[0].value)}
@@ -4986,7 +4986,7 @@ const filterSum = () => {
       } else if (inputs[0].value && inputs[1].value === '') {
         html = `
                 <div>
-                    Цена от
+                ${el.dataset.filterDropdown} от
                 </div>
                 <div>
                     ${convertSum(inputs[0].value)}
@@ -5003,7 +5003,7 @@ const filterSum = () => {
       } else if (inputs[1].value && inputs[0].value === '') {
         html = `
                 <div>
-                    Цена от
+                ${el.dataset.filterDropdown} от
                 </div>
                 <div>
                     ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
@@ -5019,7 +5019,7 @@ const filterSum = () => {
         buttonWrapper.classList.add('_active');
       } else {
         html = `
-                <div>Цена</div>
+                <div>${el.dataset.filterDropdown}</div>
                 `;
         buttonWrapper.classList.remove('_active');
       }
