@@ -68,17 +68,17 @@
         }
     }
 
-    &__comment {}
-
-    &__user {}
-
-    &__data {
+    &__comment {
         margin-top: 16px;
 
         @media (max-width:$desktop) {
             margin-top: 8px;
         }
     }
+
+    &__user {}
+
+    &__data {}
 
     &__banners {
         margin-top: 16px;
@@ -391,17 +391,18 @@
 
     &__row {
         &--1 {
-            grid-template-columns: percent(331, 968) percent(280, 968) percent(325, 968);
+            grid-template-columns: percent(337, 968) percent(278, 968) percent(337, 968);
         }
 
         &--2 {
-            grid-template-columns: percent(340.5, 968) percent(290, 968) 1fr;
+            grid-template-columns: percent(345, 968) percent(315, 968) 1fr;
             justify-content: start;
 
             .filter__item--checkboxes {
                 margin-left: 8px;
                 display: flex;
                 align-items: center;
+                justify-self: end;
 
                 >.checkbox-secondary {
                     &:not(:last-child) {

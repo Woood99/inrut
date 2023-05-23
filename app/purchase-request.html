@@ -2677,97 +2677,149 @@
                                         Корпус
                                     </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder value="all-room">Неважно</option>
+                                        <option placeholder>Любой</option>
                                         <option value="complex">Дом1</option>
                                         <option value="complex2">Дом2</option>
                                         <option value="complex3">Дом3</option>
                                     </select>
                                 </div>
-                                <div class="filter__item filter__item--quantity-selection quantity-selection">
+                                <div
+                                    class="filter__item filter__item--quantity-selection quantity-selection">
                                     <div class="quantity-selection__inner">
                                         <div class="checkbox">
-                                            <input id="filter-quantity_studios_2" name="filter-quantity-studios_2"
-                                                class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_studios_2" class="checkbox__label">
-                                                <span class="checkbox__text checkbox__text-studios">Студия</span>
+                                            <input id="filter-quantity_studios"
+                                                name="filter-quantity-studios" class="checkbox__input"
+                                                type="checkbox" value="true">
+                                            <label for="filter-quantity_studios" class="checkbox__label">
+                                                <span
+                                                    class="checkbox__text checkbox__text-studios">Студия</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_2_1" name="filter-quantity-1"
+                                            <input id="filter-quantity_1" name="filter-quantity-1"
                                                 class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2_1" class="checkbox__label">
+                                            <label for="filter-quantity_1" class="checkbox__label">
                                                 <span class="checkbox__text">1</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_2_2" name="filter-quantity-2"
+                                            <input id="filter-quantity_2" name="filter-quantity-2"
                                                 class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2_2" class="checkbox__label">
+                                            <label for="filter-quantity_2" class="checkbox__label">
                                                 <span class="checkbox__text">2</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_2_3" name="filter-quantity-3"
+                                            <input id="filter-quantity_3" name="filter-quantity-3"
                                                 class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2_3" class="checkbox__label">
+                                            <label for="filter-quantity_3" class="checkbox__label">
                                                 <span class="checkbox__text">3</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_2_4" name="filter-quantity-4"
+                                            <input id="filter-quantity_4" name="filter-quantity-4"
                                                 class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_2_4" class="checkbox__label">
+                                            <label for="filter-quantity_4" class="checkbox__label">
                                                 <span class="checkbox__text">4+</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="filter__item filter-range filter-range--improved">
-                                    <div class="filter-range__nav">
-                                        <label data-range-start>
-                                            <span>Цена от</span>
-                                            <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                placeholder="">
+                                <div class="filter__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Цена" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Цена
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Стоимость объекта,
+                                                ₽</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="12" name="Имя"
+                                                            class="input-reset" placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="12" name="Имя"
+                                                            class="input-reset" placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="500000"
+                                                    data-max="200000000">
+                                                </div>
+                                            </div>
                                         </label>
-                                        <div>–</div>
-                                        <label data-range-end>
-                                            <span>До</span>
-                                            <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <span>
-                                            ₽
-                                        </span>
                                     </div>
-                                    <div class="filter-range__inner" data-min="500000" data-max="200000000"></div>
                                 </div>
                             </div>
                             <div class="filter__row object-filter__row--2" hidden>
-                                <div class="filter__item filter-range filter-range--improved">
-                                    <div class=" filter-range__nav">
-                                        <label data-range-start>
-                                            <span>Площадь от</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
+                                <div class="filter__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Площадь"
+                                    data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Площадь
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь объекта,
+                                                м²</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя"
+                                                            class="input-reset" placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя"
+                                                            class="input-reset" placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="20"
+                                                    data-max="160">
+                                                </div>
+                                            </div>
                                         </label>
-                                        <div>–</div>
-                                        <label data-range-end>
-                                            <span>До</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <span>
-                                            м²
-                                        </span>
                                     </div>
-                                    <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
                                 <div class="filter__item select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Редкие форматы
                                     </span>
                                     <select class="select-secondary__body" name="complex">
-                                        <option placeholder value="all-room">Неважно</option>
+                                        <option placeholder>Неважно</option>
                                         <option value="complex">Редкие форматы1</option>
                                         <option value="complex2">Редкие форматы2</option>
                                         <option value="complex3">Редкие форматы3</option>
@@ -2775,16 +2827,18 @@
                                 </div>
                                 <div class="filter__item filter__item--checkboxes">
                                     <div class="checkbox-secondary">
-                                        <input id="filter-urgent-app_2_1" name="filter-urgent-app-1"
+                                        <input id="filter-urgent-app_1_1" name="filter-urgent-app-1"
                                             class="checkbox-secondary__input" type="checkbox" value="true">
-                                        <label for="filter-urgent-app_2_1" class="checkbox-secondary__label">
+                                        <label for="filter-urgent-app_1_1"
+                                            class="checkbox-secondary__label">
                                             <span class="checkbox-secondary__text">Кухня-столовая</span>
                                         </label>
                                     </div>
                                     <div class="checkbox-secondary">
-                                        <input id="filter-urgent-app_2_2" checked name="filter-urgent-app-2"
+                                        <input id="filter-urgent-app_1_2" checked name="filter-urgent-app-2"
                                             class="checkbox-secondary__input" type="checkbox" value="true">
-                                        <label for="filter-urgent-app_2_2" class="checkbox-secondary__label">
+                                        <label for="filter-urgent-app_1_2"
+                                            class="checkbox-secondary__label">
                                             <span class="checkbox-secondary__text">Готовая отделка</span>
                                         </label>
                                     </div>

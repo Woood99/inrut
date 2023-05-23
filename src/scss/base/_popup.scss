@@ -434,7 +434,18 @@
             }
         }
     }
-
+    .object-filter{
+        &__row{
+            &--1 {
+                grid-template-columns: percent(424, 1142) percent(278, 1142) percent(424, 1142);
+            }
+    
+            &--2 {
+                grid-template-columns: percent(440, 1142) percent(325, 1142) 1fr;
+                justify-content: start;
+            }
+        }
+    }
     @media (max-width:$desktop) {
         padding: 0;
         max-width: none;
