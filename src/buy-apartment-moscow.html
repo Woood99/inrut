@@ -85,23 +85,29 @@
                                             <div>
                                                 Цена
                                             </div>
+                                            <div>
+                                                Любая
+                                            </div>
                                         </div>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
                                     <div class="filter__item filter-dropdown__dropdown">
-                                        <div class="filter-dropdown__item active">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Стоимость объекта, ₽</span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
+                                                        <span>от</span>
                                                         <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                            placeholder="Цена от">
+                                                            placeholder="">
                                                     </div>
                                                     <div>–</div>
                                                     <div data-range-end>
+                                                        <span>до</span>
                                                         <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                            placeholder="До">
+                                                            placeholder="">
                                                     </div>
                                                     <div>
                                                         ₽
@@ -110,7 +116,7 @@
                                                 <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="filter__item filter-dropdown filter-dropdown--improved"
@@ -120,23 +126,29 @@
                                             <div>
                                                 Площадь
                                             </div>
+                                            <div>
+                                                Любая
+                                            </div>
                                         </div>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
                                     <div class="filter__item filter-dropdown__dropdown">
-                                        <div class="filter-dropdown__item active">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
+                                                        <span>от</span>
                                                         <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                            placeholder="Площадь от">
+                                                            placeholder="">
                                                     </div>
                                                     <div>–</div>
                                                     <div data-range-end>
+                                                        <span>до</span>
                                                         <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                            placeholder="До">
+                                                            placeholder="">
                                                     </div>
                                                     <div>
                                                         м²
@@ -145,9 +157,17 @@
                                                 <div class="filter-range__inner" data-min="20" data-max="160">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </label>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn">
+                                    <span>Выберите район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter__row buy-apartment-filter__row--2" hidden>
                                 <div class="filter__item select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Комплекс
@@ -159,14 +179,6 @@
                                         <option value="room-3">Квартиры3</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn">
-                                    <span>Выберите район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
                             </div>
                         </div>
                         <div class="filter__controls">

@@ -98,7 +98,7 @@
         display: grid;
         align-items: center;
         justify-content: space-between;
-        grid-column-gap: 16px;
+         grid-column-gap: 16px;
         margin-bottom: 16px;
 
         @media (min-width:$desktop-min) {
@@ -425,8 +425,10 @@
     &--improved {
         .filter-dropdown {
             &__dropdown {
-                min-width: 350px;
-                z-index: 10;
+                min-width: 380px;
+                z-index: 44;
+                padding-bottom: 32px;
+                box-shadow: 0 8px 20px rgba(0,0,0,.16);
             }
 
             &__item {
@@ -448,6 +450,14 @@
                 }
             }
         }
+        .filter-range{
+            &__nav{
+                span{
+                    margin-right: 8px;
+                    display: inline-block;
+                }
+            }
+         }
     }
 
     @media (max-width:$desktop) {
@@ -671,16 +681,17 @@
         border: none;
         box-shadow: none;
         background-color: var(--primary200);
-        bottom: -0.9px;
+        // bottom: -0.9px;
+        bottom: -16px;
     }
 
     .noUi-horizontal {
-        height: 1px;
+        height: 2px;
 
         .noUi-handle {
-            width: 10px;
-            height: 10px;
-            top: -4px;
+            width: 13px;
+            height: 13px;
+            top: -6px;
 
             &.noUi-handle-upper {
                 right: -4px;
@@ -728,6 +739,7 @@
     }
 
     &--improved {
+
         .filter-range__nav {
             span {
                 transition: opacity $transitionSpeed $transitionFunction,

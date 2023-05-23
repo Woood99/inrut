@@ -7322,7 +7322,7 @@ textarea.input-reset {
   width: 90px;
 }
 .quantity-selection__inner .checkbox:not(:last-child) {
-  margin-right: 3px;
+  margin-right: 2px;
 }
 @media (max-width: 576px) {
   .quantity-selection__inner .checkbox {
@@ -10082,8 +10082,11 @@ textarea.input-reset {
   transition: opacity 0.4s ease-in-out;
 }
 .filter-dropdown--improved .filter-dropdown__dropdown {
-  min-width: 350px;
-  z-index: 10;
+  min-width: 380px;
+  z-index: 44;
+  padding-bottom: 32px;
+  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 .filter-dropdown--improved .filter-dropdown__item {
   -ms-grid-columns: 100%;
@@ -10095,6 +10098,10 @@ textarea.input-reset {
 .filter-dropdown--improved .filter-dropdown__button-wrapper._active > div:nth-child(3) {
   -ms-grid-column-align: start;
   justify-self: start;
+}
+.filter-dropdown--improved .filter-range__nav span {
+  margin-right: 8px;
+  display: inline-block;
 }
 @media (max-width: 1112px) {
   .filter-dropdown {
@@ -10347,15 +10354,15 @@ textarea.input-reset {
   -webkit-box-shadow: none;
   box-shadow: none;
   background-color: var(--primary200);
-  bottom: -0.9px;
+  bottom: -16px;
 }
 .filter-range .noUi-horizontal {
-  height: 1px;
+  height: 2px;
 }
 .filter-range .noUi-horizontal .noUi-handle {
-  width: 10px;
-  height: 10px;
-  top: -4px;
+  width: 13px;
+  height: 13px;
+  top: -6px;
 }
 .filter-range .noUi-horizontal .noUi-handle.noUi-handle-upper {
   right: -4px;
@@ -18696,12 +18703,14 @@ textarea.input-reset {
 }
 
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 26.1111111111% 22.2222222222% 18.5185185185% 28.7037037037%;
-  grid-template-columns: 26.1111111111% 22.2222222222% 18.5185185185% 28.7037037037%;
+  -ms-grid-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
+  grid-template-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
+  grid-column-gap: 8px;
 }
 .buy-apartment-filter--moskow .buy-apartment-filter__row--2 {
   -ms-grid-columns: 24.0740740741% 1fr;
   grid-template-columns: 24.0740740741% 1fr;
+  grid-column-gap: 8px;
 }
 
 .agent-develop .bid-user {

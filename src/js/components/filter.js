@@ -25,6 +25,8 @@ export const filterSum = () => {
             if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
                 el.classList.remove('active');
                 changeTitle(el);
+            } else if (e.target.closest('.filter-dropdown')) {
+                changeTitle(el);
             }
         })
         inputs.forEach(input => {
@@ -47,26 +49,26 @@ export const filterSum = () => {
                 if (el.dataset.filterDropdown === 'Цена') {
                     html = `
                     <div>
-                       ${convertSum(inputs[0].value)}
+                       от ${convertSum(inputs[0].value)}
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                    ${convertSum(inputs[1].value)}
+                    до ${convertSum(inputs[1].value)}
                     </div>
                 `;
                 }
                 if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
                     html = `
                     <div>
-                       ${inputs[0].value} м²
+                       от ${inputs[0].value} м²
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                        ${inputs[1].value} м²
+                        до ${inputs[1].value} м²
                     </div>
                 `;
                 }
@@ -75,26 +77,26 @@ export const filterSum = () => {
                 if (el.dataset.filterDropdown === 'Цена') {
                     html = `
                     <div>
-                        ${convertSum(inputs[0].value)}
+                        от ${convertSum(inputs[0].value)}
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                        ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
+                        до ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
                     </div>
                 `;
                 }
                 if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
                     html = `
                     <div>
-                    ${inputs[0].value} м²
+                        от ${inputs[0].value} м²
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                        ${itemActive.querySelector('[data-max]').dataset.max} м²
+                        до ${itemActive.querySelector('[data-max]').dataset.max} м²
                     </div>
                 `;
                 }
@@ -103,26 +105,26 @@ export const filterSum = () => {
                 if (el.dataset.filterDropdown === 'Цена') {
                     html = `
                     <div>
-                        ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
+                        от ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                    ${convertSum(inputs[1].value)}
+                        до ${convertSum(inputs[1].value)}
                     </div>
                 `;
                 }
                 if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
                     html = `
                     <div>
-                    ${itemActive.querySelector('[data-min]').dataset.min} м²
+                        от ${itemActive.querySelector('[data-min]').dataset.min} м²
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                    ${inputs[1].value} м²
+                        до ${inputs[1].value} м²
                     </div>
                 `;
                 }
@@ -130,6 +132,7 @@ export const filterSum = () => {
             } else {
                 html = `
                 <div>${el.dataset.filterDropdown}</div>
+                <div>Любая</div>
                 `;
                 buttonWrapper.classList.remove('_active')
             }
