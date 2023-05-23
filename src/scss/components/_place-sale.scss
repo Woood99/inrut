@@ -73,15 +73,13 @@
     &__row-title {}
 
     &__city {
-        @media (min-width:$desktop-min) {
-            display: grid;
-            grid-template-columns: percent(260, 968) 1fr;
-            align-items: center;
-            grid-column-gap: 24px;
-        }
+       
     }
 
-    &__select {}
+    &__select {
+        margin-top: 24px;
+        max-width: 300px;
+    }
 
     &__text {
         font-weight: 400;
@@ -140,27 +138,27 @@
             display: grid;
             justify-content: space-between;
             align-items: center;
-            grid-column-gap: 16px;
+            grid-column-gap: 8px;
             margin-bottom: 16px;
 
             &--1 {
-                grid-template-columns: percent(245, 968) percent(235, 968) percent(456, 968);
+                grid-template-columns: percent(278, 968) percent(241, 968) 1fr;
             }
 
             &--2 {
-                grid-template-columns: percent(245, 968) percent(235, 968) percent(220, 968) percent(220, 968);
+                grid-template-columns: percent(278, 968) percent(235, 968) percent(215.5, 968) percent(215.5, 968);
             }
 
             &--3 {
-                grid-template-columns: percent(160, 968) percent(160, 968) percent(300, 968) percent(300, 968);
+                grid-template-columns: percent(150, 968) percent(200, 968) percent(280, 968) percent(314, 968);
             }
 
             &--4 {
-                grid-template-columns: percent(312, 968) percent(312, 968) percent(312, 968);
+                grid-template-columns: percent(340, 968) percent(302, 968) percent(302, 968);
             }
 
             &--5 {
-                grid-template-columns: percent(400, 968) percent(365, 968) 1fr;
+                grid-template-columns: percent(385, 968) percent(385, 968) 1fr;
 
                 .place-sale-options__item {
                     &:first-child {
@@ -169,6 +167,9 @@
                         }
                     }
                 }
+            }
+            &--6{
+                grid-template-columns: percent(778, 968) 1fr;
             }
         }
 

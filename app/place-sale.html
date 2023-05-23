@@ -267,6 +267,15 @@
                             Адрес
                         </h2>
                         <div class="place-sale-address__city">
+                            <div class="place-sale-address__text">
+                                <p>
+                                    Укажите кликом нужное место на карте или переместите маркер чтобы изменить
+                                    местоположение объекта.
+                                </p>
+                                <p>
+                                    Или добавьте адрес в ручную.
+                                </p>
+                            </div>
                             <div class="place-sale-address__select select-secondary select-secondary--city _selected">
                                 <span class="select-secondary__placeholder">
                                     Город
@@ -277,15 +286,9 @@
                                     <option value="apartments3">Москва</option>
                                 </select>
                             </div>
-                            <div class="place-sale-address__text">
-                                <p>
-                                    Укажите кликом нужное место на карте или переместите маркер чтобы изменить
-                                    местоположение объекта.
-                                </p>
-                                <p>
-                                    Или добавьте адрес в ручную.
-                                </p>
-                            </div>
+                        </div>
+                        <div id="place-sale-address-map"
+                            class="place-sale-address__map map-primary remove-copyrights-pane">
                         </div>
                         <div class="place-sale-address__checkbox checkbox-secondary">
                             <input id="test-id_1" name="test-id-name_1" class="checkbox-secondary__input"
@@ -299,9 +302,6 @@
                                 <input type="text" name="Имя" class="input-reset input-primary__input"
                                     placeholder="Город, улица, дом, корпус">
                             </label>
-                        </div>
-                        <div id="place-sale-address-map"
-                            class="place-sale-address__map map-primary remove-copyrights-pane">
                         </div>
                     </div>
                     <div class="place-sale__row place-sale-options">
@@ -329,19 +329,6 @@
                                     <option value="room-1">Выбор1</option>
                                     <option value="room-2">Выбор2</option>
                                     <option value="room-3">Выбор3</option>
-                                </select>
-                            </div>
-                            <div class="place-sale-options__item select-multiple">
-                                <span class="select-multiple__main-placeholder">
-                                    Теги
-                                </span>
-                                <select class="select-multiple__body" multiple name="tags">
-                                    <option placeholder>Неважно</option>
-                                    <option value="tags1">
-                                        Семейная ипотека
-                                    </option>
-                                    <option value="tags2">Ипотека с гос.поддержкой</option>
-                                    <option value="tags3">Комплекс3</option>
                                 </select>
                             </div>
                         </div>
@@ -411,16 +398,20 @@
                             </div>
                         </div>
                         <div class="place-sale-options__row place-sale-options__row--3">
-                            <div class="place-sale-options__item input-text input-text--no-subtitle">
+                            <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
-                                    <input type="text" name="Имя" maxlength="3" class="input-reset input-text__input"
-                                        placeholder="Этаж">
+                                    <span>Этаж</span>
+                                    <input type="text" name="Имя" maxlength="2" class="input-reset input-text__input"
+                                        placeholder="">
+                                    <span class="input-text__name">эт.</span>
                                 </label>
                             </div>
-                            <div class="place-sale-options__item input-text input-text--no-subtitle">
+                            <div class="place-sale-options__item input-text">
                                 <label class="input-text__label">
-                                    <input type="text" name="Имя" maxlength="4" class="input-reset input-text__input"
-                                        placeholder="Этажей в доме">
+                                    <span>Этажей в доме</span>
+                                    <input type="text" name="Имя" maxlength="2" class="input-reset input-text__input"
+                                        placeholder="">
+                                    <span class="input-text__name">эт.</span>
                                 </label>
                             </div>
                             <div class="place-sale-options__item select-secondary">
@@ -500,6 +491,25 @@
                                     <option placeholder>Неважно</option>
                                     <option value="one-two-three">1,2,3+</option>
                                     <option value="true">Есть несовершеннолетние</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="place-sale-options__row place-sale-options__row--6" hidden>
+                            <div class="place-sale-options__item select-multiple">
+                                <span class="select-multiple__main-placeholder">
+                                    Теги
+                                </span>
+                                <select class="select-multiple__body" multiple name="tags">
+                                    <option placeholder>Неважно</option>
+                                    <option value="tags1">
+                                        Семейная ипотека
+                                    </option>
+                                    <option value="tags2">Ипотека с гос.поддержкой</option>
+                                    <option value="tags3">Комплекс1</option>
+                                    <option value="tags4">Комплекс2</option>
+                                    <option value="tags5">Комплекс3</option>
+                                    <option value="tags6">Комплекс4</option>
+                                    <option value="tags7">Ипотека другая</option>
                                 </select>
                             </div>
                         </div>

@@ -5258,7 +5258,7 @@ textarea.input-reset {
 
 .photo-load {
   width: 100%;
-  background-color: var(--primary100);
+  background-color: var(--stand-bg);
   border: 1px dashed #2683F2;
   border-radius: 12px;
   display: -webkit-box;
@@ -18248,17 +18248,9 @@ textarea.input-reset {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-@media (min-width: 1113px) {
-  .place-sale-address__city {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 26.8595041322% 1fr;
-    grid-template-columns: 26.8595041322% 1fr;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    grid-column-gap: 24px;
-  }
+.place-sale-address__select {
+  margin-top: 24px;
+  max-width: 300px;
 }
 .place-sale-address__text {
   font-weight: 400;
@@ -18322,31 +18314,35 @@ textarea.input-reset {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    grid-column-gap: 16px;
+    grid-column-gap: 8px;
     margin-bottom: 16px;
   }
   .place-sale-options__row--1 {
-    -ms-grid-columns: 25.3099173554% 24.2768595041% 47.1074380165%;
-    grid-template-columns: 25.3099173554% 24.2768595041% 47.1074380165%;
+    -ms-grid-columns: 28.7190082645% 24.8966942149% 1fr;
+    grid-template-columns: 28.7190082645% 24.8966942149% 1fr;
   }
   .place-sale-options__row--2 {
-    -ms-grid-columns: 25.3099173554% 24.2768595041% 22.7272727273% 22.7272727273%;
-    grid-template-columns: 25.3099173554% 24.2768595041% 22.7272727273% 22.7272727273%;
+    -ms-grid-columns: 28.7190082645% 24.2768595041% 22.2623966942% 22.2623966942%;
+    grid-template-columns: 28.7190082645% 24.2768595041% 22.2623966942% 22.2623966942%;
   }
   .place-sale-options__row--3 {
-    -ms-grid-columns: 16.5289256198% 16.5289256198% 30.9917355372% 30.9917355372%;
-    grid-template-columns: 16.5289256198% 16.5289256198% 30.9917355372% 30.9917355372%;
+    -ms-grid-columns: 15.4958677686% 20.6611570248% 28.9256198347% 32.4380165289%;
+    grid-template-columns: 15.4958677686% 20.6611570248% 28.9256198347% 32.4380165289%;
   }
   .place-sale-options__row--4 {
-    -ms-grid-columns: 32.2314049587% 32.2314049587% 32.2314049587%;
-    grid-template-columns: 32.2314049587% 32.2314049587% 32.2314049587%;
+    -ms-grid-columns: 35.1239669421% 31.1983471074% 31.1983471074%;
+    grid-template-columns: 35.1239669421% 31.1983471074% 31.1983471074%;
   }
   .place-sale-options__row--5 {
-    -ms-grid-columns: 41.3223140496% 37.7066115702% 1fr;
-    grid-template-columns: 41.3223140496% 37.7066115702% 1fr;
+    -ms-grid-columns: 39.7727272727% 39.7727272727% 1fr;
+    grid-template-columns: 39.7727272727% 39.7727272727% 1fr;
   }
   .place-sale-options__row--5 .place-sale-options__item:first-child .choices__list--single {
     padding: 0 30px 0 140px;
+  }
+  .place-sale-options__row--6 {
+    -ms-grid-columns: 80.3719008264% 1fr;
+    grid-template-columns: 80.3719008264% 1fr;
   }
 }
 @media (max-width: 1112px) {
