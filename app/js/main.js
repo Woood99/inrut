@@ -4969,12 +4969,16 @@ const filterSum = () => {
       if (inputs[0].value && inputs[1].value) {
         html = `
                     <div>
+                        Цена от
+                    </div>
+                    <div>
                        ${convertSum(inputs[0].value)}
                     </div>
                     <div>
                         -
                     </div>
                     <div>
+                        До
                     ${convertSum(inputs[1].value)}
                     </div>
                 `;
@@ -4982,12 +4986,16 @@ const filterSum = () => {
       } else if (inputs[0].value && inputs[1].value === '') {
         html = `
                 <div>
+                    Цена от
+                </div>
+                <div>
                     ${convertSum(inputs[0].value)}
                 </div>
                 <div>
                     -
                 </div>
                 <div>
+                    До
                     ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
                 </div>
             `;
@@ -4995,19 +5003,23 @@ const filterSum = () => {
       } else if (inputs[1].value && inputs[0].value === '') {
         html = `
                 <div>
+                    Цена от
+                </div>
+                <div>
                     ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
                 </div>
                 <div>
                     -
                 </div>
                 <div>
+                До
                 ${convertSum(inputs[1].value)}
                 </div>
             `;
         buttonWrapper.classList.add('_active');
       } else {
         html = `
-                <div>Сумма</div>
+                <div>Цена</div>
                 `;
         buttonWrapper.classList.remove('_active');
       }
@@ -5072,7 +5084,7 @@ const filterSum = () => {
   }
   function convertSum(number) {
     number = number.replace(/\s/g, "");
-    return Math.floor(Number(number)) >= 1.0e+6 ? Math.floor(Number(number)) / 1.0e+6 + " млн." : Math.floor(Number(number)) >= 1.0e+3 ? Math.floor(Number(number)) / 1.0e+3 + " тыс." : Math.floor(Number(number));
+    return Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
   }
 };
 const uiSlider = () => {
