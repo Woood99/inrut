@@ -37,8 +37,77 @@ export const filterSum = () => {
         const inputs = itemActive.querySelectorAll('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
         let html = ``;
-        if (inputs[0].value && inputs[1].value) {
-            html = `
+        if (el.classList.contains('filter-dropdown--price')) {
+
+
+
+            if (inputs[0].value && inputs[1].value) {
+                html = `
+                    <div>
+                       ${convertSum(inputs[0].value)}
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                    ${convertSum(inputs[1].value)}
+                    </div>
+                `;
+                buttonWrapper.classList.add('_active')
+            } else if (inputs[0].value && inputs[1].value === '') {
+                html = `
+                <div>
+                    ${convertSum(inputs[0].value)}
+                </div>
+                <div>
+                    -
+                </div>
+                <div>
+                    ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
+                </div>
+            `;
+                buttonWrapper.classList.add('_active')
+            } else if (inputs[1].value && inputs[0].value === '') {
+                html = `
+                <div>
+                    ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
+                </div>
+                <div>
+                    -
+                </div>
+                <div>
+                ${convertSum(inputs[1].value)}
+                </div>
+            `;
+                buttonWrapper.classList.add('_active')
+            } else {
+                html = `
+                <div>Сумма</div>
+                `;
+                buttonWrapper.classList.remove('_active')
+            }
+
+
+
+        } else {
+            if (inputs[0].value && inputs[1].value) {
+                html = `
+                    <div>
+                        Сумма
+                    </div>
+                    <div>
+                        от&nbsp; ${inputs[0].value} ₽
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        до&nbsp; ${inputs[1].value} ₽
+                    </div>
+                `;
+                buttonWrapper.classList.add('_active')
+            } else if (inputs[0].value && inputs[1].value === '') {
+                html = `
                 <div>
                     Сумма
                 </div>
@@ -49,51 +118,53 @@ export const filterSum = () => {
                     -
                 </div>
                 <div>
-                    до&nbsp; ${inputs[1].value} ₽
+                    до&nbsp; ${numberReplace(itemActive.querySelector('[data-max]').dataset.max)} ₽
                 </div>
             `;
-            buttonWrapper.classList.add('_active')
-        } else if (inputs[0].value && inputs[1].value === '') {
-            html = `
-            <div>
-                Сумма
-            </div>
-            <div>
-                от&nbsp; ${inputs[0].value} ₽
-            </div>
-            <div>
-                -
-            </div>
-            <div>
-                до&nbsp; ${numberReplace(itemActive.querySelector('[data-max]').dataset.max)} ₽
-            </div>
-        `;
-            buttonWrapper.classList.add('_active')
-        } else if (inputs[0].value === '' && inputs[1].value) {
-            html = `
-            <div>
-                Сумма
-            </div>
-            <div>
-                от&nbsp; ${numberReplace(itemActive.querySelector('[data-min]').dataset.min)} ₽
-            </div>
-            <div>
-                -
-            </div>
-            <div>
-            до&nbsp; ${inputs[1].value} ₽
-            </div>
-        `;
-            buttonWrapper.classList.add('_active')
-        } else {
-            html = `
-            <div>Сумма</div>
-            <div>Любая</div>
+                buttonWrapper.classList.add('_active')
+            } else if (inputs[0].value === '' && inputs[1].value) {
+                html = `
+                <div>
+                    Сумма
+                </div>
+                <div>
+                    от&nbsp; ${numberReplace(itemActive.querySelector('[data-min]').dataset.min)} ₽
+                </div>
+                <div>
+                    -
+                </div>
+                <div>
+                до&nbsp; ${inputs[1].value} ₽
+                </div>
             `;
-            buttonWrapper.classList.remove('_active')
+                buttonWrapper.classList.add('_active')
+            } else {
+                html = `
+                <div>Сумма</div>
+                <div>Любая</div>
+                `;
+                buttonWrapper.classList.remove('_active')
+            }
         }
 
         buttonWrapper.innerHTML = html;
+
+    }
+
+
+    function convertSum(number) {
+        number = number.replace(/\s/g, "");
+        return Math.floor(Number(number)) >= 1.0e+6
+
+            ?
+            (Math.floor(Number(number)) / 1.0e+6) + " млн." :
+            Math.floor(Number(number)) >= 1.0e+3
+
+            ?
+            (Math.floor(Number(number)) / 1.0e+3) + " тыс."
+
+            :
+            Math.floor(Number(number));
     }
 }
 export const uiSlider = () => {
@@ -188,6 +259,9 @@ export const uiSlider = () => {
 
     });
 }
+
+
+
 export const uiSliderOne = () => {
     const items = document.querySelectorAll('.filter-range-one__inner');
     if (!items.length >= 1) return;
