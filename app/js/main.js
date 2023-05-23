@@ -5042,13 +5042,13 @@ const filterSum = () => {
         if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
           html = `
                     <div>
-                    ${itemActive.querySelector('[data-max]').dataset.max} м²
+                    ${itemActive.querySelector('[data-min]').dataset.min} м²
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                    ${convertSum(inputs[1].value)} м²
+                    ${inputs[1].value} м²
                     </div>
                 `;
         }
