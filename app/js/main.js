@@ -4943,6 +4943,9 @@ const filterSum = () => {
     const btn = el.querySelector('.filter-dropdown__button');
     const inputs = el.querySelectorAll('.filter-range__nav input');
     btn.addEventListener('click', () => {
+      container.forEach(elTwo => {
+        if (elTwo !== el) elTwo.classList.remove('active');
+      });
       el.classList.toggle('active');
       if (!el.classList.contains('active')) {
         changeTitle(el);
@@ -4967,10 +4970,8 @@ const filterSum = () => {
     let html = ``;
     if (el.classList.contains('filter-dropdown--improved')) {
       if (inputs[0].value && inputs[1].value) {
-        html = `
-                    <div>
-                        ${el.dataset.filterDropdown} от
-                    </div>
+        if (el.dataset.filterDropdown === 'Цена') {
+          html = `
                     <div>
                        ${convertSum(inputs[0].value)}
                     </div>
@@ -4978,44 +4979,79 @@ const filterSum = () => {
                         -
                     </div>
                     <div>
-                        До
                     ${convertSum(inputs[1].value)}
                     </div>
                 `;
+        }
+        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
+          html = `
+                    <div>
+                       ${inputs[0].value} м²
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        ${inputs[1].value} м²
+                    </div>
+                `;
+        }
         buttonWrapper.classList.add('_active');
       } else if (inputs[0].value && inputs[1].value === '') {
-        html = `
-                <div>
-                ${el.dataset.filterDropdown} от
-                </div>
-                <div>
-                    ${convertSum(inputs[0].value)}
-                </div>
-                <div>
-                    -
-                </div>
-                <div>
-                    До
-                    ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
-                </div>
-            `;
+        if (el.dataset.filterDropdown === 'Цена') {
+          html = `
+                    <div>
+                        ${convertSum(inputs[0].value)}
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
+                    </div>
+                `;
+        }
+        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
+          html = `
+                    <div>
+                    ${inputs[0].value} м²
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        ${itemActive.querySelector('[data-max]').dataset.max} м²
+                    </div>
+                `;
+        }
         buttonWrapper.classList.add('_active');
       } else if (inputs[1].value && inputs[0].value === '') {
-        html = `
-                <div>
-                ${el.dataset.filterDropdown} от
-                </div>
-                <div>
-                    ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
-                </div>
-                <div>
-                    -
-                </div>
-                <div>
-                До
-                ${convertSum(inputs[1].value)}
-                </div>
-            `;
+        if (el.dataset.filterDropdown === 'Цена') {
+          html = `
+                    <div>
+                        ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                    ${convertSum(inputs[1].value)}
+                    </div>
+                `;
+        }
+        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
+          html = `
+                    <div>
+                    ${itemActive.querySelector('[data-max]').dataset.max} м²
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                    ${convertSum(inputs[1].value)} м²
+                    </div>
+                `;
+        }
         buttonWrapper.classList.add('_active');
       } else {
         html = `
@@ -5084,7 +5120,8 @@ const filterSum = () => {
   }
   function convertSum(number) {
     number = number.replace(/\s/g, "");
-    return Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
+    const result = Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
+    return result.replace('.0', '');
   }
 };
 const uiSlider = () => {

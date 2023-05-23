@@ -421,25 +421,35 @@
         margin-right: 16px;
         transition: opacity $transitionSpeed $transitionFunction;
     }
-    &--improved{
-        .filter-dropdown{
-            &__dropdown{
+
+    &--improved {
+        .filter-dropdown {
+            &__dropdown {
                 min-width: 350px;
                 z-index: 10;
             }
-            &__item{
+
+            &__item {
                 grid-template-columns: 100%;
             }
-            &__button{
-            }
-            &__button-wrapper{
-                
-                &._active{
 
+            &__button {}
+
+            &__button-wrapper {
+
+                &._active {
+                    >div {
+                        color: var(--gray);
+
+                        &:nth-child(3) {
+                            justify-self: start;
+                        }
+                    }
                 }
             }
         }
     }
+
     @media (max-width:$desktop) {
         width: 100%;
     }
