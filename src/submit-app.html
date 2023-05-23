@@ -51,6 +51,19 @@
                                         <option value="apartments3">Москва</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="submit-app-options__row submit-app-options__row--2">
+                                <div class="submit-app-options__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Тип объекта
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="apartments">Любой</option>
+                                        <option value="apartments">Квартиры</option>
+                                        <option value="apartments2">Квартиры2</option>
+                                        <option value="apartments3">Квартиры3</option>
+                                    </select>
+                                </div>
                                 <div class="submit-app-options__item quantity-selection">
                                     <div class="quantity-selection__inner">
                                         <div class="checkbox">
@@ -90,17 +103,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="submit-app-options__item select-secondary">
-                                    <span class="select-secondary__placeholder">
-                                        Тип объекта
-                                    </span>
-                                    <select class="select-secondary__body" name="complex">
-                                        <option placeholder value="apartments">Любой</option>
-                                        <option value="apartments">Квартиры</option>
-                                        <option value="apartments2">Квартиры2</option>
-                                        <option value="apartments3">Квартиры3</option>
-                                    </select>
-                                </div>
                                 <div
                                     class="submit-app-options__item submit-app-options__item--complex select-secondary">
                                     <span class="select-secondary__placeholder">
@@ -114,8 +116,134 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="submit-app-options__row submit-app-options__row--2">
-                                <div class="submit-app-options__item submit-app-options__item--sum filter-dropdown">
+                            <div class="submit-app-options__row submit-app-options__row--3">
+                                <div class="submit-app-options__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Площадь
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="20" data-max="160">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Этаж" data-filter-dropdown-subtitle="Любой">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Этаж
+                                            </div>
+                                            <div>
+                                                Любой
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Этаж</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        эт.
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="1" data-max="90">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="submit-app-options__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Площадь кухни" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Площадь кухни
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь кухни, м²</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="20" data-max="160">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-app-options__row submit-app-options__row--4">
+                                <div class="submit-app-options__item filter-dropdown" data-filter-dropdown-name="Сумма"
+                                    data-filter-dropdown-subtitle="Любая">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper">
                                             <div>
@@ -187,65 +315,6 @@
                                             </button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="submit-app-options__item filter-range filter-range--improved">
-                                    <div class=" filter-range__nav">
-                                        <label data-range-start>
-                                            <span>Площадь от</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <div>–</div>
-                                        <label data-range-end>
-                                            <span>До</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <span>
-                                            м²
-                                        </span>
-                                    </div>
-                                    <div class="filter-range__inner" data-min="20" data-max="160"></div>
-                                </div>
-                                <div class="submit-app-options__item filter-range filter-range--improved">
-                                    <div class=" filter-range__nav">
-                                        <label data-range-start>
-                                            <span>Этаж от</span>
-                                            <input type="text" maxlength="2" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <div>–</div>
-                                        <label data-range-end>
-                                            <span>До</span>
-                                            <input type="text" maxlength="2" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <span>
-                                            м²
-                                        </span>
-                                    </div>
-                                    <div class="filter-range__inner" data-min="1" data-max="30"></div>
-                                </div>
-                            </div>
-                            <div class="submit-app-options__row submit-app-options__row--3">
-                                <div class="submit-app-options__item filter-range filter-range--improved">
-                                    <div class=" filter-range__nav">
-                                        <label data-range-start>
-                                            <span>Площадь кухни от</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <div>–</div>
-                                        <label data-range-end>
-                                            <span>До</span>
-                                            <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                placeholder="">
-                                        </label>
-                                        <span>
-                                            м²
-                                        </span>
-                                    </div>
-                                    <div class="filter-range__inner" data-min="20" data-max="160"></div>
                                 </div>
                                 <div class="submit-app-options__item select-dropdown-checkbox">
                                     <button type="button" class="btn btn-reset select-dropdown-checkbox__button">

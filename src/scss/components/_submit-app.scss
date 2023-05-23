@@ -77,21 +77,23 @@
 
     &__row {
         display: grid;
-        justify-content: space-between;
+      justify-content: start;
         align-items: center;
-        grid-column-gap: 16px;
-
+        grid-column-gap: 8px;
 
         &--1 {
-            grid-template-columns: percent(240, 968) percent(235, 968) percent(235, 968) percent(210, 968);
+            grid-template-columns: percent(240, 968) 1fr;
         }
 
         &--2 {
-            grid-template-columns: percent(350, 968) percent(326, 968) percent(260, 968);
+            grid-template-columns: percent(300, 968) max-content percent(300, 968);
         }
 
         &--3 {
-            grid-template-columns: percent(415, 968) 1fr;
+            grid-template-columns: percent(300, 968) percent(240, 968) percent(300,968);
+        }
+        &--4{
+            grid-template-columns: percent(400, 968) percent(400, 968);
         }
 
         &:not(:last-child) {

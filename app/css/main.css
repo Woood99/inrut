@@ -9731,7 +9731,7 @@ textarea.input-reset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  grid-column-gap: 16px;
+  grid-column-gap: 8px;
   margin-bottom: 16px;
 }
 @media (min-width: 1113px) {
@@ -9939,23 +9939,12 @@ textarea.input-reset {
 .filter-dropdown__button-wrapper._active > div {
   opacity: 1;
 }
-.filter-dropdown__button-wrapper._active > div:first-child {
-  color: #b6d5f8;
-}
-.filter-dropdown__button-wrapper._active > div:nth-child(3) {
-  -ms-grid-column-align: center;
-  justify-self: center;
-}
 .filter-dropdown.active .filter-dropdown__dropdown {
   opacity: 1;
   visibility: visible;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-}
-.filter-dropdown.active .filter-dropdown__button {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
 }
 .filter-dropdown.active .filter-dropdown__button svg {
   -webkit-transform: rotate(180deg);
@@ -9976,11 +9965,11 @@ textarea.input-reset {
   align-items: center;
 }
 .filter-dropdown__item:not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 @media (max-width: 768px) {
   .filter-dropdown__item:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 }
 .filter-dropdown__item:not(.active) .filter-dropdown__range {
@@ -10016,16 +10005,17 @@ textarea.input-reset {
 }
 .filter-dropdown__dropdown {
   position: absolute;
-  z-index: 6;
+  min-width: 380px;
+  z-index: 44;
   top: 100%;
   right: 0;
   width: 100%;
   background-color: var(--white);
   border: 1px solid rgba(122, 127, 170, 0.1);
-  -webkit-box-shadow: var(--shadow-primary);
-  box-shadow: var(--shadow-primary);
-  border-radius: 0 0 12px 12px;
-  padding: 24px;
+  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  padding: 24px 24px 32px 24px;
   -webkit-transform: translateY(10px);
   -ms-transform: translateY(10px);
   transform: translateY(10px);
@@ -10036,6 +10026,10 @@ textarea.input-reset {
   -o-transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.filter-dropdown__dropdown--left {
+  right: auto;
+  left: 0;
 }
 @media (max-width: 768px) {
   .filter-dropdown__dropdown {
@@ -10081,23 +10075,9 @@ textarea.input-reset {
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
-.filter-dropdown--improved .filter-dropdown__dropdown {
-  min-width: 380px;
-  z-index: 44;
-  padding-bottom: 32px;
-  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-}
 .filter-dropdown--improved .filter-dropdown__item {
   -ms-grid-columns: 100%;
   grid-template-columns: 100%;
-}
-.filter-dropdown--improved .filter-dropdown__button-wrapper._active > div {
-  color: var(--gray);
-}
-.filter-dropdown--improved .filter-dropdown__button-wrapper._active > div:nth-child(3) {
-  -ms-grid-column-align: start;
-  justify-self: start;
 }
 .filter-dropdown--improved .filter-range__nav span {
   margin-right: 8px;
@@ -10188,9 +10168,7 @@ textarea.input-reset {
   -ms-flex-align: start;
   align-items: start;
   padding: 16px 32px 16px 16px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateY(10px);
@@ -10254,7 +10232,6 @@ textarea.input-reset {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  width: 100%;
   border-top-left-radius: 0;
 }
 .select-dropdown-checkbox._selected .select-dropdown-checkbox__placeholder {
@@ -18043,25 +18020,31 @@ textarea.input-reset {
 .submit-app-options__row {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  grid-column-gap: 16px;
+  grid-column-gap: 8px;
 }
 .submit-app-options__row--1 {
-  -ms-grid-columns: 24.7933884298% 24.2768595041% 24.2768595041% 21.694214876%;
-  grid-template-columns: 24.7933884298% 24.2768595041% 24.2768595041% 21.694214876%;
+  -ms-grid-columns: 24.7933884298% 1fr;
+  grid-template-columns: 24.7933884298% 1fr;
 }
 .submit-app-options__row--2 {
-  -ms-grid-columns: 36.1570247934% 33.6776859504% 26.8595041322%;
-  grid-template-columns: 36.1570247934% 33.6776859504% 26.8595041322%;
+  -ms-grid-columns: 30.9917355372% -webkit-max-content 30.9917355372%;
+  -ms-grid-columns: 30.9917355372% max-content 30.9917355372%;
+  grid-template-columns: 30.9917355372% -webkit-max-content 30.9917355372%;
+  grid-template-columns: 30.9917355372% max-content 30.9917355372%;
 }
 .submit-app-options__row--3 {
-  -ms-grid-columns: 42.8719008264% 1fr;
-  grid-template-columns: 42.8719008264% 1fr;
+  -ms-grid-columns: 30.9917355372% 24.7933884298% 30.9917355372%;
+  grid-template-columns: 30.9917355372% 24.7933884298% 30.9917355372%;
+}
+.submit-app-options__row--4 {
+  -ms-grid-columns: 41.3223140496% 41.3223140496%;
+  grid-template-columns: 41.3223140496% 41.3223140496%;
 }
 .submit-app-options__row:not(:last-child) {
   margin-bottom: 16px;
@@ -18705,12 +18688,10 @@ textarea.input-reset {
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {
   -ms-grid-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
   grid-template-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
-  grid-column-gap: 8px;
 }
 .buy-apartment-filter--moskow .buy-apartment-filter__row--2 {
   -ms-grid-columns: 24.0740740741% 1fr;
   grid-template-columns: 24.0740740741% 1fr;
-  grid-column-gap: 8px;
 }
 
 .agent-develop .bid-user {

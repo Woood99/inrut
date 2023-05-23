@@ -4963,6 +4963,9 @@ const filterSum = () => {
       input.addEventListener('change', () => {
         changeTitle(el);
       });
+      input.addEventListener('input', () => {
+        changeTitle(el);
+      });
     });
   });
   function changeTitle(el) {
@@ -4970,10 +4973,9 @@ const filterSum = () => {
     const inputs = itemActive.querySelectorAll('input');
     const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
     let html = ``;
-    if (el.classList.contains('filter-dropdown--improved')) {
-      if (inputs[0].value && inputs[1].value) {
-        if (el.dataset.filterDropdown === 'Цена') {
-          html = `
+    if (inputs[0].value && inputs[1].value) {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+        html = `
                     <div>
                        от ${convertSum(inputs[0].value)}
                     </div>
@@ -4984,9 +4986,9 @@ const filterSum = () => {
                     до ${convertSum(inputs[1].value)}
                     </div>
                 `;
-        }
-        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
-          html = `
+      }
+      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+        html = `
                     <div>
                        от ${inputs[0].value} м²
                     </div>
@@ -4997,11 +4999,24 @@ const filterSum = () => {
                         до ${inputs[1].value} м²
                     </div>
                 `;
-        }
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[0].value && inputs[1].value === '') {
-        if (el.dataset.filterDropdown === 'Цена') {
-          html = `
+      }
+      if (el.dataset.filterDropdownName === 'Этаж') {
+        html = `
+                    <div>
+                       от ${inputs[0].value} эт.
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        до ${inputs[1].value} эт.
+                    </div>
+                `;
+      }
+      buttonWrapper.classList.add('_active');
+    } else if (inputs[0].value && inputs[1].value === '') {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+        html = `
                     <div>
                         от ${convertSum(inputs[0].value)}
                     </div>
@@ -5012,9 +5027,9 @@ const filterSum = () => {
                         до ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
                     </div>
                 `;
-        }
-        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
-          html = `
+      }
+      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+        html = `
                     <div>
                         от ${inputs[0].value} м²
                     </div>
@@ -5025,11 +5040,24 @@ const filterSum = () => {
                         до ${itemActive.querySelector('[data-max]').dataset.max} м²
                     </div>
                 `;
-        }
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[1].value && inputs[0].value === '') {
-        if (el.dataset.filterDropdown === 'Цена') {
-          html = `
+      }
+      if (el.dataset.filterDropdownName === 'Этаж') {
+        html = `
+                    <div>
+                        от ${inputs[0].value} эт.
+                    </div>
+                    <div>
+                        -
+                    </div>
+                    <div>
+                        до ${itemActive.querySelector('[data-max]').dataset.max} эт.
+                    </div>
+                `;
+      }
+      buttonWrapper.classList.add('_active');
+    } else if (inputs[1].value && inputs[0].value === '') {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+        html = `
                     <div>
                         от ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
                     </div>
@@ -5040,9 +5068,9 @@ const filterSum = () => {
                         до ${convertSum(inputs[1].value)}
                     </div>
                 `;
-        }
-        if (el.dataset.filterDropdown === 'Площадь' || el.dataset.filterDropdown === 'Площадь кухни') {
-          html = `
+      }
+      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+        html = `
                     <div>
                         от ${itemActive.querySelector('[data-min]').dataset.min} м²
                     </div>
@@ -5053,77 +5081,38 @@ const filterSum = () => {
                         до ${inputs[1].value} м²
                     </div>
                 `;
-        }
-        buttonWrapper.classList.add('_active');
-      } else {
-        html = `
-                <div>${el.dataset.filterDropdown}</div>
-                <div>Любая</div>
-                `;
-        buttonWrapper.classList.remove('_active');
       }
-    } else {
-      if (inputs[0].value && inputs[1].value) {
+      if (el.dataset.filterDropdownName === 'Этаж') {
         html = `
                     <div>
-                        Сумма
-                    </div>
-                    <div>
-                        от&nbsp; ${inputs[0].value} ₽
+                        от ${itemActive.querySelector('[data-min]').dataset.min} эт.
                     </div>
                     <div>
                         -
                     </div>
                     <div>
-                        до&nbsp; ${inputs[1].value} ₽
+                        до ${inputs[1].value} эт.
                     </div>
                 `;
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[0].value && inputs[1].value === '') {
-        html = `
-                <div>
-                    Сумма
-                </div>
-                <div>
-                    от&nbsp; ${inputs[0].value} ₽
-                </div>
-                <div>
-                    -
-                </div>
-                <div>
-                    до&nbsp; ${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(itemActive.querySelector('[data-max]').dataset.max)} ₽
-                </div>
-            `;
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[0].value === '' && inputs[1].value) {
-        html = `
-                <div>
-                    Сумма
-                </div>
-                <div>
-                    от&nbsp; ${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(itemActive.querySelector('[data-min]').dataset.min)} ₽
-                </div>
-                <div>
-                    -
-                </div>
-                <div>
-                до&nbsp; ${inputs[1].value} ₽
-                </div>
-            `;
-        buttonWrapper.classList.add('_active');
-      } else {
-        html = `
-                <div>Сумма</div>
-                <div>Любая</div>
-                `;
-        buttonWrapper.classList.remove('_active');
       }
+      buttonWrapper.classList.add('_active');
+    } else {
+      html = `
+                <div>${el.dataset.filterDropdownName}</div>
+                <div>${el.dataset.filterDropdownSubtitle}</div>
+                `;
+      buttonWrapper.classList.remove('_active');
     }
     buttonWrapper.innerHTML = html;
   }
   function convertSum(number) {
     number = number.replace(/\s/g, "");
-    const result = Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
+    let result;
+    if (number < 1000) {
+      result = Number(number);
+      return result;
+    }
+    result = Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
     return result.replace('.0', '');
   }
 };
