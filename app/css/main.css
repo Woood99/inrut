@@ -1111,26 +1111,33 @@ textarea.input-reset {
   }
 }
 .popup-primary--search-area .popup-primary__container {
-  border-radius: 12px;
+  border-radius: 0;
   padding: 32px;
-  max-width: 780px;
   width: 100%;
-  min-height: auto;
-  margin: 50px auto;
+  height: auto;
+  min-height: var(--vh);
   text-align: center;
 }
 @media (max-width: 1112px) {
   .popup-primary--search-area .popup-primary__container {
-    border-radius: 0;
-    padding: 55px 16px;
+    padding: 24px;
     width: 100%;
   }
 }
-.popup-primary--search-area::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
+.popup-primary--search-area .popup-primary__contnet {
+  position: relative;
+}
+.popup-primary--search-area .popup-primary__close {
+  position: sticky;
+  top: 16px;
+  right: 0;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  z-index: 99;
 }
 
 .checkboard-popup {
@@ -13512,7 +13519,8 @@ textarea.input-reset {
 }
 .search-area__items {
   margin-top: 24px;
-  counter-reset: listPrimary;
+  padding-bottom: 72px;
+  max-width: 750px;
 }
 .search-area__item {
   text-align: left;
@@ -13535,30 +13543,38 @@ textarea.input-reset {
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
 }
-.search-area__item .spollers__title > span {
+.search-area__item .spollers__title > div {
   width: 26px;
   height: 16px;
   display: block;
   margin-right: 12px;
   position: relative;
 }
-.search-area__item .spollers__title > span svg {
-  width: 26px;
-  height: 16px;
-  fill: orange;
-}
-.search-area__item .spollers__title > span::before {
-  counter-increment: listPrimary;
-  content: counter(listPrimary);
+.search-area__item .spollers__title > div span {
   color: var(--white);
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 5.5px;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background-color: transparent;
+  height: 17px;
+  width: 28px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.search-area__item .spollers__title > div svg {
+  width: 28px;
+  height: 17px;
+  fill: orange;
 }
 .search-area__item .spollers__title > svg {
   width: 20px;
@@ -13582,11 +13598,89 @@ textarea.input-reset {
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
-.search-area__item[data-search-area-color=red] .spollers__title > span svg {
+.search-area__item[data-search-area-color=red] .spollers__title > div svg {
   fill: var(--red);
 }
 .search-area__item[data-search-area-color=red] .checkbox-secondary__circle {
   background-color: var(--red);
+}
+.search-area__item[data-search-area-color=green] .spollers__title > div svg {
+  fill: var(--green);
+}
+.search-area__item[data-search-area-color=green] .checkbox-secondary__circle {
+  background-color: var(--green);
+}
+.search-area__item[data-search-area-color=dark-blue] .spollers__title > div svg {
+  fill: var(--blue);
+}
+.search-area__item[data-search-area-color=dark-blue] .checkbox-secondary__circle {
+  background-color: var(--blue);
+}
+.search-area__item[data-search-area-color=blue] .spollers__title > div svg {
+  fill: var(--primary400);
+}
+.search-area__item[data-search-area-color=blue] .checkbox-secondary__circle {
+  background-color: var(--primary400);
+}
+.search-area__item[data-search-area-color=brown] .spollers__title > div svg {
+  fill: rgb(145, 81, 51);
+}
+.search-area__item[data-search-area-color=brown] .checkbox-secondary__circle {
+  background-color: rgb(145, 81, 51);
+}
+.search-area__item[data-search-area-color=orange] .spollers__title > div svg {
+  fill: var(--orange);
+}
+.search-area__item[data-search-area-color=orange] .checkbox-secondary__circle {
+  background-color: var(--orange);
+}
+.search-area__item[data-search-area-color=purple] .spollers__title > div svg {
+  fill: rgb(148, 62, 144);
+}
+.search-area__item[data-search-area-color=purple] .checkbox-secondary__circle {
+  background-color: rgb(148, 62, 144);
+}
+.search-area__item[data-search-area-color=yellow] .spollers__title > div svg {
+  fill: var(--yellow);
+}
+.search-area__item[data-search-area-color=yellow] .checkbox-secondary__circle {
+  background-color: var(--yellow);
+}
+.search-area__item[data-search-area-color=gray] .spollers__title > div svg {
+  fill: rgb(173, 172, 172);
+}
+.search-area__item[data-search-area-color=gray] .checkbox-secondary__circle {
+  background-color: rgb(173, 172, 172);
+}
+.search-area__item[data-search-area-color=dark-yellow] .spollers__title > div svg {
+  fill: rgb(190, 209, 44);
+}
+.search-area__item[data-search-area-color=dark-yellow] .checkbox-secondary__circle {
+  background-color: rgb(190, 209, 44);
+}
+.search-area__item[data-search-area-color=turquoise] .spollers__title > div svg {
+  fill: rgb(91, 190, 187);
+}
+.search-area__item[data-search-area-color=turquoise] .checkbox-secondary__circle {
+  background-color: rgb(91, 190, 187);
+}
+.search-area__item[data-search-area-color=silver] .spollers__title > div svg {
+  fill: rgb(186, 200, 232);
+}
+.search-area__item[data-search-area-color=silver] .checkbox-secondary__circle {
+  background-color: rgb(186, 200, 232);
+}
+.search-area__item[data-search-area-color=pink] .spollers__title > div svg {
+  fill: rgb(249, 188, 209);
+}
+.search-area__item[data-search-area-color=pink] .checkbox-secondary__circle {
+  background-color: rgb(249, 188, 209);
+}
+.search-area__item[data-search-area-color=dark-pink] .spollers__title > div svg {
+  fill: rgb(222, 100, 161);
+}
+.search-area__item[data-search-area-color=dark-pink] .checkbox-secondary__circle {
+  background-color: rgb(222, 100, 161);
 }
 .search-area .spollers__body {
   margin-top: 16px;
@@ -13611,7 +13705,6 @@ textarea.input-reset {
   justify-content: start;
 }
 .search-area__list .checkbox-secondary__text {
-  margin-top: -2px;
   margin-left: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13627,6 +13720,9 @@ textarea.input-reset {
   background-color: orange;
   border-radius: 50%;
   margin-right: 8px;
+}
+.search-area .tabs-primary {
+  padding: 0;
 }
 .search-area .tabs-primary__inner {
   margin-top: 0;
@@ -13651,6 +13747,50 @@ textarea.input-reset {
 }
 .search-area .tabs-primary .tabs__title:first-child {
   padding-left: 0;
+}
+.search-area__form {
+  position: relative;
+}
+.search-area__bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+}
+.search-area__bottom > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  max-width: 1112px;
+  padding: 0;
+  margin: 0 auto;
+}
+@media (max-width: 1112px) {
+  .search-area__bottom > div {
+    padding: 0 16px;
+  }
+}
+.search-area__clear {
+  padding: 0 37px;
+}
+.search-area__go {
+  margin-left: 16px;
+  padding: 0 37px;
+}
+@media (max-width: 1112px) {
+  .search-area {
+    padding: 0;
+  }
 }
 
 .header__main {

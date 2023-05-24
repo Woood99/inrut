@@ -12,7 +12,8 @@
 
     &__items {
         margin-top: 24px;
-        counter-reset: listPrimary;
+        padding-bottom: 72px;
+        max-width: 750px;
     }
 
     &__item {
@@ -31,29 +32,36 @@
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
 
-            >span {
+            >div {
                 width: 26px;
                 height: 16px;
                 display: block;
                 margin-right: 12px;
                 position: relative;
 
-                svg {
-                    width: 26px;
-                    height: 16px;
-                    fill: orange;
+                span {
+                    color: var(--white);
+                    font-size: 9px;
+                    line-height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+
+
+                    background-color: transparent;
+                    height: 17px;
+                    width: 28px;
+                    padding-right: 10px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
-                &::before {
-                    counter-increment: listPrimary;
-                    content: counter(listPrimary);
-                    color: var(--white);
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 5.5px;
-                    font-size: 10px;
-                    line-height: 100%;
+                svg {
+                    width: 28px;
+                    height: 17px;
+                    fill: orange;
                 }
             }
 
@@ -81,7 +89,7 @@
         }
 
         &[data-search-area-color="red"] {
-            .spollers__title>span svg {
+            .spollers__title>div svg {
                 fill: var(--red);
             }
 
@@ -90,9 +98,136 @@
             }
         }
 
-        &--green {}
+        &[data-search-area-color="green"] {
+            .spollers__title>div svg {
+                fill: var(--green);
+            }
 
-        &--blue {}
+            .checkbox-secondary__circle {
+                background-color: var(--green);
+            }
+        }
+
+        &[data-search-area-color="dark-blue"] {
+            .spollers__title>div svg {
+                fill: var(--blue);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: var(--blue);
+            }
+        }
+
+        &[data-search-area-color="blue"] {
+            .spollers__title>div svg {
+                fill: var(--primary400);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: var(--primary400);
+            }
+        }
+
+        &[data-search-area-color="brown"] {
+            .spollers__title>div svg {
+                fill: rgb(145, 81, 51);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(145, 81, 51);
+            }
+        }
+
+        &[data-search-area-color="orange"] {
+            .spollers__title>div svg {
+                fill: var(--orange)
+            }
+
+            .checkbox-secondary__circle {
+                background-color: var(--orange)
+            }
+        }
+
+        &[data-search-area-color="purple"] {
+            .spollers__title>div svg {
+                fill: rgb(148, 62, 144);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(148, 62, 144);
+            }
+        }
+
+        &[data-search-area-color="yellow"] {
+            .spollers__title>div svg {
+                fill: var(--yellow);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: var(--yellow);
+            }
+        }
+
+        &[data-search-area-color="gray"] {
+            .spollers__title>div svg {
+                fill: rgb(173, 172, 172);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(173, 172, 172);
+            }
+        }
+
+        &[data-search-area-color="dark-yellow"] {
+            .spollers__title>div svg {
+                fill: rgb(190, 209, 44);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(190, 209, 44);
+            }
+        }
+
+        &[data-search-area-color="turquoise"] {
+            .spollers__title>div svg {
+                fill: rgb(91, 190, 187);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(91, 190, 187);
+            }
+        }
+
+        &[data-search-area-color="silver"] {
+            .spollers__title>div svg {
+                fill: rgb(186, 200, 232);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(186, 200, 232);
+            }
+        }
+
+        &[data-search-area-color="pink"] {
+            .spollers__title>div svg {
+                fill: rgb(249, 188, 209);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(249, 188, 209);
+            }
+        }
+
+        &[data-search-area-color="dark-pink"] {
+            .spollers__title>div svg {
+                fill: rgb(222, 100, 161);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: rgb(222, 100, 161);
+            }
+        }
+
     }
 
     .spollers__body {
@@ -113,7 +248,6 @@
             }
 
             &__text {
-                margin-top: -2px;
                 margin-left: 8px;
                 display: flex;
                 align-items: center;
@@ -131,6 +265,8 @@
     }
 
     .tabs-primary {
+        padding: 0;
+
         &__inner {
             margin-top: 0;
         }
@@ -158,5 +294,45 @@
                 padding-left: 0;
             }
         }
+    }
+
+    &__form {
+        position: relative;
+    }
+
+    &__bottom {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: var(--white);
+        box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+
+        >div {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            max-width: 1112px;
+            padding: 0;
+            margin: 0 auto;
+
+            @media (max-width:1112px) {
+                padding: 0 16px;
+            }
+        }
+    }
+
+    &__clear {
+        padding: 0 37px;
+    }
+
+    &__go {
+        margin-left: 16px;
+        padding: 0 37px;
+    }
+
+    @media (max-width:$desktop) {
+        padding: 0;
     }
 }

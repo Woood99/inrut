@@ -331,26 +331,30 @@
     &--search-area{
         .popup-primary {
             &__container {
-                border-radius: 12px;
+                border-radius: 0;
                 padding: 32px;
-                max-width: 780px;width: 100%;
-                min-height: auto;
-                margin: 50px auto;
+           width: 100%;
+      height: auto;
+           min-height: var(--vh);
                 text-align: center;
                 @media (max-width:$desktop) {
-                    border-radius: 0;
-                    padding: 55px 16px;
+                    padding: 24px;
                     width: 100%;
                 }
             }
-        }
-
-
-        &::before {
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%
+            &__contnet{
+                position: relative;
+            }
+            &__close{
+               position:sticky;
+               top: 16px;
+               right: 0;
+               justify-content: end;
+               width: 20px;
+               height: 20px;
+               margin-left: auto;
+               z-index: 99;
+            }
         }
     }
 }
