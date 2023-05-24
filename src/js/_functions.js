@@ -56,5 +56,6 @@ const genplan = new popup({
     },
 }, '.popup-genplan')
 const checkboard = new popup(null, '.popup-primary--checkboard')
+const searchArea = new popup(null, '.popup-primary--search-area')
 
 // ========================================================================================

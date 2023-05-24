@@ -135,7 +135,9 @@ a {
 .is-hidden {
     display: none !important; // Hack! needs to be redefined globally
 }
-
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+  }
 .page--ios .dis-scroll {
     position: relative;
 }

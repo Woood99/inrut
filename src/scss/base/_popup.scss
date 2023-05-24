@@ -328,6 +328,31 @@
             }
         }
     }
+    &--search-area{
+        .popup-primary {
+            &__container {
+                border-radius: 12px;
+                padding: 32px;
+                max-width: 780px;width: 100%;
+                min-height: auto;
+                margin: 50px auto;
+                text-align: center;
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+    }
 }
 
 .checkboard-popup {

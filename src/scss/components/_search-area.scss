@@ -1,0 +1,162 @@
+.search-area {
+
+    &__title {
+        text-align: left;
+    }
+
+    &__container {
+        margin-top: 24px;
+    }
+
+    &__metro {}
+
+    &__items {
+        margin-top: 24px;
+        counter-reset: listPrimary;
+    }
+
+    &__item {
+        text-align: left;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        .spollers__title {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: math.div(21, 16);
+            color: var(--primaryTwo);
+            font-weight: 500;
+            transition: color $transitionSpeed $transitionFunction;
+
+            >span {
+                width: 26px;
+                height: 16px;
+                display: block;
+                margin-right: 12px;
+                position: relative;
+
+                svg {
+                    width: 26px;
+                    height: 16px;
+                    fill: orange;
+                }
+
+                &::before {
+                    counter-increment: listPrimary;
+                    content: counter(listPrimary);
+                    color: var(--white);
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 5.5px;
+                    font-size: 10px;
+                    line-height: 100%;
+                }
+            }
+
+            >svg {
+                width: 20px;
+                height: 20px;
+                fill: currentColor;
+                margin-left: 8px;
+                transition: transform $transitionSpeedFast $transitionFunction;
+            }
+
+            &:hover {
+                color: var(--blue);
+            }
+
+            &.focus-visible {
+                color: var(--blue);
+            }
+
+            &._spoller-active {
+                >svg {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        &[data-search-area-color="red"] {
+            .spollers__title>span svg {
+                fill: var(--red);
+            }
+
+            .checkbox-secondary__circle {
+                background-color: var(--red);
+            }
+        }
+
+        &--green {}
+
+        &--blue {}
+    }
+
+    .spollers__body {
+        margin-top: 16px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        justify-content: start;
+        align-items: start;
+
+        .checkbox-secondary {
+            &__label {
+                justify-content: start;
+            }
+
+            &__text {
+                margin-top: -2px;
+                margin-left: 8px;
+                display: flex;
+                align-items: center;
+            }
+
+            &__circle {
+                width: 8px;
+                height: 8px;
+                display: block;
+                background-color: orange;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .tabs-primary {
+        &__inner {
+            margin-top: 0;
+        }
+
+        &__btns {
+            justify-content: start;
+        }
+
+        &__content {
+            margin-top: 0;
+        }
+
+        &__container {
+            margin-top: 16px;
+            background-color: transparent;
+            border-radius: 0;
+            padding: 0;
+        }
+
+        .tabs__title {
+            width: auto;
+            padding: 5px 12px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+}
