@@ -38,16 +38,26 @@
                     }
                 }
             }
+
+            &.focus-visible {
+                +.checkbox__label {
+                    border: 1px solid var(--blue);
+
+                    .checkbox__text {
+                        color: var(--blue);
+                    }
+                }
+            }
         }
     }
 
     &__label {
         cursor: pointer;
-      display: flex;
-      justify-content: center;
+        display: flex;
+        justify-content: center;
         align-items: center;
         position: relative;
-       height: 41px;
+        height: 41px;
         padding: 0 8px;
         background-color: var(--stand-bg);
         border-radius: 12px;
@@ -60,7 +70,7 @@
     &__text {
         color: var(--gray);
         font-size: 14px;
-      line-height: 1;
+        line-height: 1;
         font-weight: 400;
         transition: color $transitionSpeed $transitionFunction;
     }
@@ -77,11 +87,11 @@
         height: 0;
         opacity: 0;
 
-        &:focus {
+        &.focus-visible {
             +.checkbox-secondary__label {
                 &::before {
-                    background-color: var(--primary100);
-                    border: 1px solid var(--primary300);
+                    background-color: var(--primary300);
+                    border: 1px solid var(--primary400);
                 }
             }
         }

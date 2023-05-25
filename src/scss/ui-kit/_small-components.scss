@@ -1242,13 +1242,16 @@
     height: 45px;
     padding: 0 16px;
 
+    transition: border $transitionSpeed $transitionFunction;
     svg {
         width: 18px;
         height: 18px;
         fill: var(--blue);
         margin-left: 10px;
     }
-
+    &.focus-visible{
+        border: 1px solid var(--blue);
+    }
     @media (max-width:$desktop) {
         width: 100%;
     }
@@ -1371,11 +1374,22 @@
                 margin-left: 10px;
                 fill: currentColor;
             }
+            &.focus-visible{
+                color: var(--white);
+                background-color: var(--blue);
+            }
         }
 
         &:hover {
             background-color: var(--blue);
             color: var(--white);
+        }
+        &.focus-visible{
+            background-color: var(--blue);
+            color: var(--white);
+            &._active{
+                background-color: var(--primary600);
+            }
         }
     }
 }

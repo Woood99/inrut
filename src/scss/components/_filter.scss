@@ -181,7 +181,9 @@
             margin-left: 8px;
             transition: transform $transitionSpeed $transitionFunction;
         }
-
+        &.focus-visible{
+          color: var(--primary600);
+        }
         @media (max-width:$desktop) {
             display: none;
         }
@@ -230,12 +232,16 @@
         justify-content: space-between;
         padding: 0 16px;
         -webkit-tap-highlight-color: transparent;
-        transition: border-radius $transitionSpeed $transitionFunction;
+        transition: border-radius $transitionSpeed $transitionFunction,
+        border $transitionSpeed $transitionFunction;
 
         svg {
             width: 20px;
             height: 20px;
             transition: transform $transitionSpeed $transitionFunction;
+        }
+        &.focus-visible{
+            border: 1px solid var(--blue);
         }
     }
 

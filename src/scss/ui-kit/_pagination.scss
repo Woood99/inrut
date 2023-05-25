@@ -36,6 +36,13 @@
             justify-content: center;
             align-items: center;
             padding: 0 2px;
+            border-radius: 7px;
+            border: 1px solid transparent;
+
+            &.focus-visible {
+                outline: none;
+                border: 1px solid var(--blue);
+            }
         }
 
         &[disabled] {
@@ -54,8 +61,7 @@
             min-width: auto;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: var(--blue);
             color: var(--white);
             border: 1px solid transparent;

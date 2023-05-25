@@ -236,6 +236,9 @@ a {
     background-color: var(--blue-dark);
   }
 }
+.btn-primary.focus-visible {
+  background-color: var(--blue-dark);
+}
 .btn-primary:active {
   -webkit-box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
   box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
@@ -283,6 +286,10 @@ a {
   }
 }
 .btn-secondary:active {
+  color: var(--white);
+  background-color: var(--blue);
+}
+.btn-secondary.focus-visible {
   color: var(--white);
   background-color: var(--blue);
 }
@@ -542,6 +549,12 @@ textarea.input-reset {
   .checkbox__input:hover + .checkbox__label .checkbox__text {
     color: var(--blue);
   }
+  .checkbox__input.focus-visible + .checkbox__label {
+    border: 1px solid var(--blue);
+  }
+  .checkbox__input.focus-visible + .checkbox__label .checkbox__text {
+    color: var(--blue);
+  }
 }
 .checkbox__label {
   cursor: pointer;
@@ -584,9 +597,9 @@ textarea.input-reset {
   height: 0;
   opacity: 0;
 }
-.checkbox-secondary__input:focus + .checkbox-secondary__label::before {
-  background-color: var(--primary100);
-  border: 1px solid var(--primary300);
+.checkbox-secondary__input.focus-visible + .checkbox-secondary__label::before {
+  background-color: var(--primary300);
+  border: 1px solid var(--primary400);
 }
 .checkbox-secondary__input:hover + .checkbox-secondary__label::before {
   border: 1px solid rgba(0, 108, 238, 0.5);
@@ -5395,12 +5408,18 @@ textarea.input-reset {
   font-weight: 400;
   height: 45px;
   padding: 0 16px;
+  -webkit-transition: border 0.4s ease-in-out;
+  -o-transition: border 0.4s ease-in-out;
+  transition: border 0.4s ease-in-out;
 }
 .select-map-btn svg {
   width: 18px;
   height: 18px;
   fill: var(--blue);
   margin-left: 10px;
+}
+.select-map-btn.focus-visible {
+  border: 1px solid var(--blue);
 }
 @media (max-width: 1112px) {
   .select-map-btn {
@@ -5541,9 +5560,20 @@ textarea.input-reset {
   margin-left: 10px;
   fill: currentColor;
 }
+.control-cards__btn--maps.focus-visible {
+  color: var(--white);
+  background-color: var(--blue);
+}
 .control-cards__btn:hover {
   background-color: var(--blue);
   color: var(--white);
+}
+.control-cards__btn.focus-visible {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.control-cards__btn.focus-visible._active {
+  background-color: var(--primary600);
 }
 
 .field-static {
@@ -7327,6 +7357,12 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 2px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+}
+.pagination__item a.focus-visible {
+  outline: none;
+  border: 1px solid var(--blue);
 }
 .pagination__item[disabled] {
   background-color: var(--blue);
@@ -7342,7 +7378,7 @@ textarea.input-reset {
   pointer-events: none;
   min-width: auto;
 }
-.pagination__item:hover, .pagination__item:focus {
+.pagination__item:hover {
   background-color: var(--blue);
   color: var(--white);
   border: 1px solid transparent;
@@ -7594,6 +7630,9 @@ textarea.input-reset {
 }
 .select-sort .choices.is-open .choices__list--dropdown {
   border: 1px solid rgba(122, 127, 170, 0.05);
+}
+.select-sort .choices.focus-visible .choices__inner .choices__list--single {
+  text-decoration: underline;
 }
 .select-sort .choices__list--dropdown {
   top: calc(100% + 10px);
@@ -8484,6 +8523,17 @@ textarea.input-reset {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.card-secondary__container.focus-visible {
+  outline: none;
+}
+.card-secondary__container.focus-visible .card-secondary__image img {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+.card-secondary__container.focus-visible .card-secondary__name {
+  color: var(--blue);
+}
 .card-secondary__image {
   padding-bottom: 64.0866873065%;
   border-radius: 12px;
@@ -8724,6 +8774,9 @@ textarea.input-reset {
   justify-content: center;
   position: relative;
   z-index: 999;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
 }
 .card-secondary__info--controls .dots-dropdown__target svg {
   width: 12px;
@@ -8731,7 +8784,10 @@ textarea.input-reset {
   fill: var(--gray);
 }
 .card-secondary__info--controls .dots-dropdown__target:hover {
-  background-color: var(--primary100);
+  background-color: var(--primary200);
+}
+.card-secondary__info--controls .dots-dropdown__target.focus-visible {
+  background-color: var(--primary200);
 }
 .card-secondary__info .row {
   display: -webkit-box;
@@ -8768,6 +8824,9 @@ textarea.input-reset {
   line-height: 1.25;
   font-weight: 500;
   color: var(--dark);
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .card-secondary__address {
   margin-top: 5px;
@@ -9872,6 +9931,9 @@ textarea.input-reset {
   transition: transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
+.filter__btn-control.focus-visible {
+  color: var(--primary600);
+}
 @media (max-width: 1112px) {
   .filter__btn-control {
     display: none;
@@ -9923,9 +9985,9 @@ textarea.input-reset {
   justify-content: space-between;
   padding: 0 16px;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: border-radius 0.4s ease-in-out;
-  -o-transition: border-radius 0.4s ease-in-out;
-  transition: border-radius 0.4s ease-in-out;
+  -webkit-transition: border-radius 0.4s ease-in-out, border 0.4s ease-in-out;
+  -o-transition: border-radius 0.4s ease-in-out, border 0.4s ease-in-out;
+  transition: border-radius 0.4s ease-in-out, border 0.4s ease-in-out;
 }
 .filter-dropdown__button svg {
   width: 20px;
@@ -9935,6 +9997,9 @@ textarea.input-reset {
   -o-transition: transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.filter-dropdown__button.focus-visible {
+  border: 1px solid var(--blue);
 }
 .filter-dropdown__button-wrapper {
   font-size: 14px;
