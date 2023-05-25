@@ -5854,6 +5854,16 @@ const maps = () => {
     }
     ymaps.ready(init);
   }
+  if (document.querySelector('#search-area__map')) {
+    function init() {
+      let map = new ymaps.Map('search-area__map', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      removeControlsPrimary(map, '#search-area__map');
+    }
+    ymaps.ready(init);
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maps);
 
