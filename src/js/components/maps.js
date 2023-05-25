@@ -48,14 +48,45 @@ const maps = () => {
         ymaps.ready(init);
     }
     if (document.querySelector('#search-area__map')) {
+        const container = document.querySelector('.search-area__form');
+        if (!container) return;
+
         function init() {
             let map = new ymaps.Map('search-area__map', {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
             removeControlsPrimary(map, '#search-area__map');
+            reziseContainer(map)
         }
         ymaps.ready(init);
+
+
+
+        const btn = container.querySelector('.search-area__resize');
+
+
+
+
+        function reziseContainer(map) {
+
+            btn.addEventListener('mousedown', function (e) {
+                e.preventDefault()
+                window.addEventListener('mousemove', resize)
+                window.addEventListener('mouseup', stopResize)
+            })
+
+            function resize(e) {
+                const width = e.pageX - container.getBoundingClientRect().left - 20;
+                if (!(width <= 750 && width >= 345)) return;
+                container.style.gridTemplateColumns = `${width}px 1fr`;
+                map.container.fitToViewport();
+            }
+
+            function stopResize() {
+                window.removeEventListener('mousemove', resize)
+            }
+        }
     }
 };
 
