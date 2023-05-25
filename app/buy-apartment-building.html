@@ -306,80 +306,122 @@
                                     </div>
                                 </div>
                                 <div class="filter__item filter-dropdown" data-filter-dropdown-name="Сумма"
-                                data-filter-dropdown-subtitle="Любая">
-                                <button type="button" class="btn btn-reset filter-dropdown__button">
-                                    <div class="filter-dropdown__button-wrapper">
-                                        <div>
-                                            Сумма
-                                        </div>
-                                        <div>
-                                            Любая
-                                        </div>
-                                    </div>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
-                                    </svg>
-                                </button>
-                                <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
-                                    <div class="filter-dropdown__item active">
-                                        <span class="filter-dropdown__subtitle">
-                                            Поиск квартиры по стоимости, руб.
-                                        </span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="Цена от">
-                                                </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="До">
-                                                </div>
-                                                <div>
-                                                    ₽
-                                                </div>
+                                    data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Сумма
                                             </div>
-                                            <div class="filter-range__inner" data-min="500000" data-max="200000000">
+                                            <div>
+                                                Любая
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="filter-dropdown__item">
-                                        <span class="filter-dropdown__subtitle">
-                                            Поиск квартиры по ежемесячному платежу, руб.
-                                        </span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="Цена от">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по стоимости, руб.
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
                                                 </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="До">
-                                                </div>
-                                                <div>
-                                                    ₽
+                                                <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                            <div class="filter-range__inner" data-min="10000" data-max="1000000">
-                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
                                         </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
+                                        <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по ежемесячному платежу, руб.
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn" data-popup-path="search-area">
+                                <div class="filter__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Площадь
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="20" data-max="160">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn"
+                                    data-popup-path="search-area">
                                     <span>Выберите район поиска</span>
                                     <svg>
                                         <use xlink:href="img/sprite.svg#location-two"></use>
@@ -387,47 +429,6 @@
                                 </button>
                             </div>
                             <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь"
-                                data-filter-dropdown-subtitle="Любая">
-                                <button type="button" class="btn btn-reset filter-dropdown__button">
-                                    <div class="filter-dropdown__button-wrapper">
-                                        <div>
-                                            Площадь
-                                        </div>
-                                        <div>
-                                            Любая
-                                        </div>
-                                    </div>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
-                                    </svg>
-                                </button>
-                                <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
-                                    <label class="filter-dropdown__item active">
-                                        <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <span>от</span>
-                                                    <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                        placeholder="">
-                                                </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <span>до</span>
-                                                    <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                        placeholder="">
-                                                </div>
-                                                <div>
-                                                    м²
-                                                </div>
-                                            </div>
-                                            <div class="filter-range__inner" data-min="20" data-max="160">
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
                                 <div class="select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Комплекс
@@ -7335,20 +7336,45 @@
                 <div data-tabs class="tabs-primary__inner">
                     <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                         <button type="button" class="btn btn-reset tabs__title _tab-active">
-                            Метро
+                            Списком
                         </button>
                         <button type="button" class="btn btn-reset tabs__title">
-                            Район
+                            Область на карте
                         </button>
                     </nav>
                     <div class="tabs-primary__container">
                         <div data-tabs-body class="tabs__content tabs-primary__content">
                             <div class="tabs__body">
                                 <form action="#" class="search-area__form">
-                                    <label class="input-primary search-area__search">
-                                        <input type="search" name="Имя" class="input-reset input-primary__input"
-                                            placeholder="Введите название станции">
-                                    </label>
+                                    <div class="search-area__top">
+                                        <label class="input-primary search-area__search">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input"
+                                                placeholder="Введите название станции">
+                                        </label>
+                                        <div class="select-secondary">
+                                            <span class="select-secondary__placeholder">
+                                                До метро
+                                            </span>
+                                            <select class="select-secondary__body" name="complex">
+                                                <option placeholder value="all-room">Неважно</option>
+                                                <option value="room-1">Пешком</option>
+                                                <option value="room-2">На транспорте</option>
+                                            </select>
+                                        </div>
+                                        <div class="select-secondary">
+                                            <span class="select-secondary__placeholder">
+                                                Время
+                                            </span>
+                                            <select class="select-secondary__body" name="complex">
+                                                <option placeholder value="all-room">Неважно</option>
+                                                <option value="5">до 5мин.</option>
+                                                <option value="10">до 10мин.</option>
+                                                <option value="15">до 15мин.</option>
+                                                <option value="20">до 20мин.</option>
+                                                <option value="30">до 30мин.</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div data-spollers data-one-spoller class="search-area__items spollers">
                                         <div class="spollers__item search-area__item" data-search-area-color="red">
                                             <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -7683,6 +7709,13 @@
                                                     </div>
 
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item" data-search-area-color="green">
@@ -7992,6 +8025,13 @@
                                                     </div>
 
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item"
@@ -8274,6 +8314,13 @@
                                                     </div>
 
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item" data-search-area-color="blue">
@@ -8449,6 +8496,13 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item" data-search-area-color="brown">
@@ -8611,6 +8665,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -8943,6 +9004,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -9286,6 +9354,13 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item" data-search-area-color="yellow">
@@ -9400,6 +9475,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -9575,6 +9657,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -9936,6 +10025,13 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item"
@@ -10277,6 +10373,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -10702,6 +10805,13 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item" data-search-area-color="silver">
@@ -10804,6 +10914,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -11250,6 +11367,13 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="spollers__item search-area__item"
@@ -11399,6 +11523,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -11720,6 +11851,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -12174,13 +12312,18 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="search-area__controls">
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Выбрать
+                                                        все</button>
+                                                    <button type="button"
+                                                        class="btn btn-reset btn-secondary search-area__control">Очистить</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="search-area__bottom">
                                         <div>
-                                            <button type="reset"
-                                                class="btn btn-reset btn-secondary search-area__clear">Очистить</button>
                                             <button type="button" class="btn btn-reset btn-primary search-area__go">
                                                 Показать 1567 объявлений
                                             </button>
@@ -12189,6 +12332,7 @@
                                 </form>
                             </div>
                             <div class="tabs__body" hidden>
+
 
                             </div>
                         </div>

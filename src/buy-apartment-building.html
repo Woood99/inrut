@@ -79,80 +79,122 @@
                                     </div>
                                 </div>
                                 <div class="filter__item filter-dropdown" data-filter-dropdown-name="Сумма"
-                                data-filter-dropdown-subtitle="Любая">
-                                <button type="button" class="btn btn-reset filter-dropdown__button">
-                                    <div class="filter-dropdown__button-wrapper">
-                                        <div>
-                                            Сумма
-                                        </div>
-                                        <div>
-                                            Любая
-                                        </div>
-                                    </div>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
-                                    </svg>
-                                </button>
-                                <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
-                                    <div class="filter-dropdown__item active">
-                                        <span class="filter-dropdown__subtitle">
-                                            Поиск квартиры по стоимости, руб.
-                                        </span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="Цена от">
-                                                </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="До">
-                                                </div>
-                                                <div>
-                                                    ₽
-                                                </div>
+                                    data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Сумма
                                             </div>
-                                            <div class="filter-range__inner" data-min="500000" data-max="200000000">
+                                            <div>
+                                                Любая
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="filter-dropdown__item">
-                                        <span class="filter-dropdown__subtitle">
-                                            Поиск квартиры по ежемесячному платежу, руб.
-                                        </span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="Цена от">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по стоимости, руб.
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
                                                 </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                        placeholder="До">
-                                                </div>
-                                                <div>
-                                                    ₽
+                                                <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                            <div class="filter-range__inner" data-min="10000" data-max="1000000">
-                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
                                         </div>
-                                        <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </button>
+                                        <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по ежемесячному платежу, руб.
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn" data-popup-path="search-area">
+                                <div class="filter__item filter-dropdown filter-dropdown--improved"
+                                    data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Площадь
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <span>от</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <span>до</span>
+                                                        <input type="text" maxlength="3" name="Имя" class="input-reset"
+                                                            placeholder="">
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="20" data-max="160">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn"
+                                    data-popup-path="search-area">
                                     <span>Выберите район поиска</span>
                                     <svg>
                                         <use xlink:href="img/sprite.svg#location-two"></use>
@@ -160,47 +202,6 @@
                                 </button>
                             </div>
                             <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь"
-                                data-filter-dropdown-subtitle="Любая">
-                                <button type="button" class="btn btn-reset filter-dropdown__button">
-                                    <div class="filter-dropdown__button-wrapper">
-                                        <div>
-                                            Площадь
-                                        </div>
-                                        <div>
-                                            Любая
-                                        </div>
-                                    </div>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
-                                    </svg>
-                                </button>
-                                <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
-                                    <label class="filter-dropdown__item active">
-                                        <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
-                                        <div class="filter-dropdown__range filter-range">
-                                            <div class="filter-range__nav">
-                                                <div data-range-start>
-                                                    <span>от</span>
-                                                    <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                        placeholder="">
-                                                </div>
-                                                <div>–</div>
-                                                <div data-range-end>
-                                                    <span>до</span>
-                                                    <input type="text" maxlength="3" name="Имя" class="input-reset"
-                                                        placeholder="">
-                                                </div>
-                                                <div>
-                                                    м²
-                                                </div>
-                                            </div>
-                                            <div class="filter-range__inner" data-min="20" data-max="160">
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
                                 <div class="select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Комплекс

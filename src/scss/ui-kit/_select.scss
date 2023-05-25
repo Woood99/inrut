@@ -473,10 +473,12 @@
     .choices {
         background-color: var(--stand-bg);
         border: 1px solid var(--primary200);
+
         overflow: visible;
         padding: 0 16px;
         border-radius: 12px;
-        transition: border-radius $transitionSpeed $transitionFunction;
+        transition: border-radius $transitionSpeed $transitionFunction,
+        border $transitionSpeed $transitionFunction;
         height: 100%;
         display: flex;
         align-items: center;
@@ -497,15 +499,20 @@
             transform: translateY(-50%);
             right: 16px;
         }
-
+        .choices__list{
+            border-color: rgba(122, 127, 170, 0.1);
+        }
         &.is-open {
             .choices__list{
-                border-color: rgba(122, 127, 170, 0.1);
+
             }
             &::after {
                 margin-top: 0;
                 transform: translateY(-50%) rotate(-180deg);
             }
+        }
+        &.focus-visible{
+            border: 1px solid var(--blue);
         }
     }
 
