@@ -1008,3 +1008,87 @@
         transform: translate(0);
     }
 }
+
+
+
+.map-metro {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__container {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-height: var(--vh);
+        margin-top: -40px;
+        z-index: -1;
+    }
+
+    &__map {
+        will-change: scale;
+
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        svg {
+            overflow: visible;
+            padding: 90px 90px 210px;
+
+            >g {
+                transition-timing-function: linear
+            }
+        }
+    }
+
+    .MetroMap_stop.MetroMap_hovered .MetroMap_circle {
+        stroke-width: 2;
+        r: 8;
+    }
+
+    .MetroMap_station_item.MetroMap_hovered .MetroMap_text {
+        fill: var(--red);
+    }
+
+    .MetroMap_station_item {
+        cursor: pointer;
+    }
+
+    .MetroMap_stop {
+        cursor: pointer;
+    }
+
+    .MetroMap_station_item .MetroMap_text {
+        transition: fill $transitionSpeed $transitionFunction;
+    }
+
+    .MetroMap_stop .MetroMap_circle {
+        transition: r $transitionSpeed $transitionFunction,
+            stroke-width $transitionSpeed $transitionFunction,
+            fill $transitionSpeed $transitionFunction,
+            stroke $transitionSpeed $transitionFunction;
+    }
+
+    .MetroMap_stop.MetroMap_hovered {
+        .MetroMap_circle {
+            stroke-width: 2;
+            r: 8;
+        }
+    }
+
+    .MetroMap_transit_group.MetroMap_hovered {
+        .MetroMap_circle {
+            stroke-width: 2;
+            r: 8;
+        }
+    }
+}
+
+
+// let a1 = Math.max(Math.min(e.pageX-offsetX,target.parentNode.clientWidth-100),- target.clientHeight * scale + 100) + 'px'
+// let a2 = Math.max(Math.min(e.pageY-offsetY,target.parentNode.clientHeight-100),- target.clientWidth * scale + 100) + 'px'
+// target.style.transform = `translate(${a2},${a1});`;

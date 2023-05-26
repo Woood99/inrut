@@ -4158,6 +4158,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
 /* harmony import */ var _components_choicePay__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/choicePay */ "./src/js/components/choicePay.js");
 /* harmony import */ var _components_genplan__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/genplan */ "./src/js/components/genplan.js");
+/* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
+
 
 
 
@@ -4226,6 +4228,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_mortgage__WEBPACK_IMPORTED_MODULE_20__["default"])();
   (0,_components_choicePay__WEBPACK_IMPORTED_MODULE_21__["default"])();
   (0,_components_genplan__WEBPACK_IMPORTED_MODULE_22__["default"])();
+  (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_23__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4838,6 +4841,46 @@ function controlCards() {
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (controlCards);
+
+/***/ }),
+
+/***/ "./src/js/components/dragscroll.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/dragscroll.js ***!
+  \*****************************************/
+/***/ (function(module, exports) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function (e, n) {
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (n),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
+}(this, function (e) {
+  var n,
+    t,
+    o = window,
+    l = document,
+    c = "mousemove",
+    r = "mouseup",
+    i = "mousedown",
+    m = "EventListener",
+    d = "add" + m,
+    s = "remove" + m,
+    f = [],
+    u = function (e, m) {
+      for (e = 0; e < f.length;) m = f[e++], m = m.container || m, m[s](i, m.md, 0), o[s](r, m.mu, 0), o[s](c, m.mm, 0);
+      for (f = [].slice.call(l.getElementsByClassName("dragscroll")), e = 0; e < f.length;) !function (e, m, s, f, u, a) {
+        (a = e.container || e)[d](i, a.md = function (n) {
+          e.hasAttribute("nochilddrag") && l.elementFromPoint(n.pageX, n.pageY) != a || (f = 1, m = n.clientX, s = n.clientY, n.preventDefault());
+        }, 0), o[d](r, a.mu = function () {
+          f = 0;
+        }, 0), o[d](c, a.mm = function (o) {
+          f && ((u = e.scroller || e).scrollLeft -= n = -m + (m = o.clientX), u.scrollTop -= t = -s + (s = o.clientY), e == l.body && ((u = l.documentElement).scrollLeft -= n, u.scrollTop -= t));
+        }, 0);
+      }(f[e++]);
+    };
+  "complete" == l.readyState ? u() : o[d]("load", u, 0), e.reset = u;
+});
 
 /***/ }),
 
@@ -5793,6 +5836,106 @@ const inputOnlyNumber = () => {
 
 /***/ }),
 
+/***/ "./src/js/components/mapMetro.js":
+/*!***************************************!*\
+  !*** ./src/js/components/mapMetro.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_dragscroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/dragscroll */ "./src/js/components/dragscroll.js");
+/* harmony import */ var _components_dragscroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_dragscroll__WEBPACK_IMPORTED_MODULE_0__);
+
+const mapMetro = () => {
+  const container = document.querySelector('.map-metro');
+  if (!container) return;
+  container.addEventListener('mousemove', e => {
+    const target = e.target;
+    if (target.closest('.MetroMap_station_item')) {
+      const item = target.closest('.MetroMap_station_item');
+      const idStation = item.id.replace('MetroMap_station_', '');
+      const circleItems = document.querySelectorAll(`.MetroMap_to_${idStation}`);
+      item.classList.add('MetroMap_hovered');
+      circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'));
+    } else if (target.closest('.MetroMap_transit_group')) {
+      const item = target.closest('.MetroMap_transit_group');
+      const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
+      document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
+      item.querySelectorAll('.MetroMap_stop').forEach(el => el.classList.add('MetroMap_hovered'));
+    } else if (target.closest('.MetroMap_stop')) {
+      const item = target.closest('.MetroMap_stop');
+      const idItem = item.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
+      document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
+      item.classList.add('MetroMap_hovered');
+    } else {
+      removeAllHovered();
+    }
+  });
+  function removeAllHovered() {
+    const items = container.querySelectorAll('.MetroMap_hovered');
+    if (items.length === 0) return;
+    items.forEach(item => item.classList.remove('MetroMap_hovered'));
+  }
+  reziseContainer();
+  scaleMap();
+  function reziseContainer() {
+    const containerResize = document.querySelector('.search-area__form');
+    const btnResize = document.querySelector('.search-area__resize');
+    btnResize.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+      window.addEventListener('mousemove', resize);
+      window.addEventListener('mouseup', stopResize);
+    });
+    function resize(e) {
+      const width = e.pageX - containerResize.getBoundingClientRect().left - 20;
+      if (!(width <= 750 && width >= 345)) return;
+      containerResize.style.gridTemplateColumns = `${width}px 1fr`;
+    }
+    function stopResize() {
+      window.removeEventListener('mousemove', resize);
+    }
+  }
+  function scaleMap() {
+    function addOnWheel(elem, handler) {
+      if (elem.addEventListener) {
+        if ('onwheel' in document) {
+          elem.addEventListener("wheel", handler);
+        } else if ('onmousewheel' in document) {
+          elem.addEventListener("mousewheel", handler);
+        } else {
+          elem.addEventListener("MozMousePixelScroll", handler);
+        }
+      } else {
+        container.attachEvent("onmousewheel", handler);
+      }
+    }
+    let scale = 0.9;
+    const maxScale = 1.15;
+    const minScale = 0.5;
+    const stap = 0.05;
+    addOnWheel(container, function (e) {
+      let delta = e.deltaY || e.detail || e.wheelDelta;
+      if (delta === 100) {
+        if (scale > minScale) scale -= stap;
+        if (scale < minScale) scale = minScale;
+      }
+      if (delta === -100) {
+        if (scale < maxScale) scale += stap;
+        if (scale > maxScale) scale = maxScale;
+      }
+      container.querySelector('#map-metro_moscow').style.transform = container.style.WebkitTransform = container.style.MsTransform = 'scale(' + scale + ')';
+      e.preventDefault();
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapMetro);
+
+/***/ }),
+
 /***/ "./src/js/components/maps.js":
 /*!***********************************!*\
   !*** ./src/js/components/maps.js ***!
@@ -5853,36 +5996,6 @@ const maps = () => {
       removeControlsPrimary(map, '#place-sale-address-map');
     }
     ymaps.ready(init);
-  }
-  if (document.querySelector('#search-area__map')) {
-    const container = document.querySelector('.search-area__form');
-    if (!container) return;
-    function init() {
-      let map = new ymaps.Map('search-area__map', {
-        center: [55.77171185651524, 37.62811179984117],
-        zoom: 10
-      });
-      removeControlsPrimary(map, '#search-area__map');
-      reziseContainer(map);
-    }
-    ymaps.ready(init);
-    const btn = container.querySelector('.search-area__resize');
-    function reziseContainer(map) {
-      btn.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        window.addEventListener('mousemove', resize);
-        window.addEventListener('mouseup', stopResize);
-      });
-      function resize(e) {
-        const width = e.pageX - container.getBoundingClientRect().left - 20;
-        if (!(width <= 750 && width >= 345)) return;
-        container.style.gridTemplateColumns = `${width}px 1fr`;
-        map.container.fitToViewport();
-      }
-      function stopResize() {
-        window.removeEventListener('mousemove', resize);
-      }
-    }
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maps);

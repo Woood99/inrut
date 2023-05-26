@@ -46,23 +46,43 @@
 
     &__search {}
 
-    &__map {
+    .dragscroll {
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__left {
         grid-row: 1/3;
         grid-column: 2/3;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__map {
         max-height: var(--vh);
-        overflow: hidden;
+        width: 100%;
+        overflow: auto;
         padding-left: 20px;
         margin-left: -20px;
+        height: 100%;
+
+
+        .map-primary {
+            height: 100%;
+            width: 100%;
+        }
 
         &._sticky {
             position: sticky;
             top: 0;
             width: calc(100% + 20px);
-        }
-
-        .map-primary {
-            height: 100%;
-            width: 100%;
         }
     }
 

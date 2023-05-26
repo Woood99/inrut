@@ -40,6 +40,7 @@ import headerFixed from './components/headerFixed';
 import mortgage from './components/mortgage';
 import choicePay from './components/choicePay';
 import genplan from './components/genplan';
+import mapMetro from './components/mapMetro';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -86,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mortgage();
     choicePay();
     genplan();
+    mapMetro();
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
