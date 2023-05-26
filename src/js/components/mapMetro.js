@@ -1,45 +1,127 @@
-import '../components/dragscroll'
+import '../vendor/dragscroll'
 const mapMetro = () => {
-    const container = document.querySelector('.map-metro');
+    const container = document.querySelector('.search-area__form');
     if (!container) return;
-    container.addEventListener('mousemove', (e) => {
-        const target = e.target;
-        if (target.closest('.MetroMap_station_item')) {
-            const item = target.closest('.MetroMap_station_item');
-            const idStation = item.id.replace('MetroMap_station_', '');
-            const circleItems = document.querySelectorAll(`.MetroMap_to_${idStation}`);
-            item.classList.add('MetroMap_hovered')
-            circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'))
-        } else if (target.closest('.MetroMap_transit_group')) {
-            const item = target.closest('.MetroMap_transit_group');
-            const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-            document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-            item.querySelectorAll('.MetroMap_stop').forEach(el => el.classList.add('MetroMap_hovered'));
-        } else if (target.closest('.MetroMap_stop')) {
-            const item = target.closest('.MetroMap_stop');
-            const idItem = item.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-            document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-            item.classList.add('MetroMap_hovered');
-        } else {
-            removeAllHovered();
-        }
-    });
+    const map = container.querySelector('.map-metro');
 
-    function removeAllHovered() {
-        const items = container.querySelectorAll('.MetroMap_hovered');
-        if (items.length === 0) return;
-        items.forEach(item => item.classList.remove('MetroMap_hovered'));
-    }
-
-
-
+    metroHovered();
     reziseContainer();
     scaleMap();
+    activationCheckbox();
 
+
+    function activationCheckbox() {
+        const elementList = container.querySelectorAll('[data-metro-id]');
+        elementList.forEach(element => {
+            const checkbox = element.querySelector('.checkbox-secondary__input');
+            checkbox.addEventListener('change', () => {
+                const currentId = element.dataset.metroId;
+                const currentElementMap = map.querySelector(`[data-map-metro-id='${currentId}']`);
+                if (checkbox.checked) {
+                    currentElementMap.classList.add('MetroMap_select');
+                } else {
+                    currentElementMap.classList.remove('MetroMap_select');
+                }
+            });
+        })
+
+        map.addEventListener('click', (e) => {
+            const target = e.target;
+            const stationItem = target.closest('.MetroMap_station_item');
+            const circleItem = target.closest('.MetroMap_stop');
+            if (stationItem) {
+                const stationId = stationItem.id.replace('MetroMap_station_', '');
+                const circle = map.querySelector(`.MetroMap_to_${stationId}`);
+                const currentId = stationItem.dataset.mapMetroId;
+                const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
+                if (!stationItem.classList.contains('MetroMap_select')) {
+                    stationItem.classList.add('MetroMap_select');
+                    stationItem.classList.remove('MetroMap_hovered');
+
+                    circle.classList.add('MetroMap_select');
+                    circle.classList.remove('MetroMap_hovered');
+
+                    if (!currentElementList) return;
+                    currentElementList.querySelector('.checkbox-secondary__input').checked = true;
+                } else {
+                    stationItem.classList.remove('MetroMap_select');
+
+                    circle.classList.remove('MetroMap_select');
+
+                    if (!currentElementList) return;
+                    currentElementList.querySelector('.checkbox-secondary__input').checked = false;
+                }
+            }
+
+            if (circleItem) {
+                if (circleItem.closest('.MetroMap_transit_group')) {
+                    let item = circleItem.closest('.MetroMap_transit_group');
+                    const stationId = item.getAttribute('class').replace('MetroMap_transit_group ', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').trim();
+                    const station = map.querySelector(`#MetroMap_station_${stationId}`);
+
+                    station.classList.add('MetroMap_select');
+                    station.classList.remove('MetroMap_hovered');
+
+                    item.querySelectorAll('.MetroMap_stop').forEach(item => {
+                        item.classList.add('MetroMap_select');
+                        item.classList.remove('MetroMap_hovered');
+                    })
+
+                    const currentId = station.dataset.mapMetroId;
+                    console.log(currentId);
+                    // const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
+                    if (!circleItem.classList.contains('MetroMap_select')) {
+                        // ...
+                    } else {
+
+                    }
+                } else {
+                    const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').trim();
+                    const station = map.querySelector(`#MetroMap_station_${stationId}`);
+                    const currentId = station.dataset.mapMetroId;
+                    const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
+                    if (!circleItem.classList.contains('MetroMap_select')) {} else {
+
+                    }
+                }
+            }
+        })
+
+    }
+
+    function metroHovered() {
+        map.addEventListener('mousemove', (e) => {
+            const target = e.target;
+            if (target.closest('.MetroMap_station_item')) {
+                const item = target.closest('.MetroMap_station_item');
+                if (item.classList.contains('MetroMap_select')) return;
+                const idStation = item.id.replace('MetroMap_station_', '');
+                const circleItems = document.querySelectorAll(`.MetroMap_to_${idStation}`);
+                item.classList.add('MetroMap_hovered')
+                circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'))
+            } else if (target.closest('.MetroMap_transit_group')) {
+                const item = target.closest('.MetroMap_transit_group');
+                const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
+                document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
+                item.querySelectorAll('.MetroMap_stop').forEach(el => {
+                    if (!el.classList.contains('MetroMap_select')) el.classList.add('MetroMap_hovered');
+                });
+            } else if (target.closest('.MetroMap_stop')) {
+                const item = target.closest('.MetroMap_stop');
+                if (item.classList.contains('MetroMap_select')) return;
+                const idItem = item.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
+                document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
+                item.classList.add('MetroMap_hovered');
+            } else {
+                const items = map.querySelectorAll('.MetroMap_hovered');
+                if (items.length === 0) return;
+                items.forEach(item => item.classList.remove('MetroMap_hovered'));
+            }
+        });
+    }
 
     function reziseContainer() {
-        const containerResize = document.querySelector('.search-area__form');
-        const btnResize = document.querySelector('.search-area__resize');
+        const btnResize = container.querySelector('.search-area__resize');
         btnResize.addEventListener('mousedown', function (e) {
             e.preventDefault()
             window.addEventListener('mousemove', resize)
@@ -47,9 +129,9 @@ const mapMetro = () => {
         })
 
         function resize(e) {
-            const width = e.pageX - containerResize.getBoundingClientRect().left - 20;
+            const width = e.pageX - container.getBoundingClientRect().left - 20;
             if (!(width <= 750 && width >= 345)) return;
-            containerResize.style.gridTemplateColumns = `${width}px 1fr`;
+            container.style.gridTemplateColumns = `${width}px 1fr`;
         }
 
         function stopResize() {
@@ -68,7 +150,7 @@ const mapMetro = () => {
                     elem.addEventListener("MozMousePixelScroll", handler);
                 }
             } else {
-                container.attachEvent("onmousewheel", handler);
+                map.attachEvent("onmousewheel", handler);
             }
         }
 
@@ -76,7 +158,7 @@ const mapMetro = () => {
         const maxScale = 1.15;
         const minScale = 0.5;
         const stap = 0.05;
-        addOnWheel(container, function (e) {
+        addOnWheel(map, function (e) {
 
             let delta = e.deltaY || e.detail || e.wheelDelta;
 
@@ -89,7 +171,7 @@ const mapMetro = () => {
                 if (scale > maxScale) scale = maxScale;
             }
 
-            container.querySelector('#map-metro_moscow').style.transform = container.style.WebkitTransform = container.style.MsTransform = 'scale(' + scale + ')';
+            map.querySelector('#map-metro_moscow').style.transform = map.style.WebkitTransform = map.style.MsTransform = 'scale(' + scale + ')';
             e.preventDefault();
         });
     }

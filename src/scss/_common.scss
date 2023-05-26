@@ -1044,18 +1044,45 @@
             }
         }
     }
-
-    .MetroMap_stop.MetroMap_hovered .MetroMap_circle {
-        stroke-width: 2;
-        r: 8;
+    .MetroMap_stop{
+        &.MetroMap_hovered {
+            .MetroMap_circle {
+                stroke-width: 2;
+                r: 8;
+            }
+        }
+        &.MetroMap_select{
+            .MetroMap_circle {
+                fill: var(--white);
+                stroke: var(--blue);
+            }
+        }
     }
 
-    .MetroMap_station_item.MetroMap_hovered .MetroMap_text {
-        fill: var(--red);
-    }
+
 
     .MetroMap_station_item {
         cursor: pointer;
+
+        &.MetroMap_hovered {
+            .MetroMap_text {
+                fill: var(--red);
+            }
+        }
+
+        &.MetroMap_select {
+            .MetroMap_bg {
+                opacity: 1;
+            }
+
+            .MetroMap_text {
+                fill: var(--white);
+            }
+        }
+    }
+
+    .MetroMap_bg {
+        transition: opacity $transitionSpeed $transitionFunction;
     }
 
     .MetroMap_stop {
@@ -1080,15 +1107,19 @@
         }
     }
 
-    .MetroMap_transit_group.MetroMap_hovered {
-        .MetroMap_circle {
-            stroke-width: 2;
-            r: 8;
+    .MetroMap_transit_group {
+        &.MetroMap_hovered {
+            .MetroMap_circle {
+                stroke-width: 2;
+                r: 8;
+            }
+        }
+        &.MetroMap_select{
+            .MetroMap_circle {
+                fill: var(--white);
+                stroke: var(--blue);
+            }
         }
     }
+
 }
-
-
-// let a1 = Math.max(Math.min(e.pageX-offsetX,target.parentNode.clientWidth-100),- target.clientHeight * scale + 100) + 'px'
-// let a2 = Math.max(Math.min(e.pageY-offsetY,target.parentNode.clientHeight-100),- target.clientWidth * scale + 100) + 'px'
-// target.style.transform = `translate(${a2},${a1});`;

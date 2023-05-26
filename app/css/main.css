@@ -4159,11 +4159,26 @@ textarea.input-reset {
   stroke-width: 2;
   r: 8;
 }
-.map-metro .MetroMap_station_item.MetroMap_hovered .MetroMap_text {
-  fill: var(--red);
+.map-metro .MetroMap_stop.MetroMap_select .MetroMap_circle {
+  fill: var(--white);
+  stroke: var(--blue);
 }
 .map-metro .MetroMap_station_item {
   cursor: pointer;
+}
+.map-metro .MetroMap_station_item.MetroMap_hovered .MetroMap_text {
+  fill: var(--red);
+}
+.map-metro .MetroMap_station_item.MetroMap_select .MetroMap_bg {
+  opacity: 1;
+}
+.map-metro .MetroMap_station_item.MetroMap_select .MetroMap_text {
+  fill: var(--white);
+}
+.map-metro .MetroMap_bg {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 .map-metro .MetroMap_stop {
   cursor: pointer;
@@ -4185,6 +4200,10 @@ textarea.input-reset {
 .map-metro .MetroMap_transit_group.MetroMap_hovered .MetroMap_circle {
   stroke-width: 2;
   r: 8;
+}
+.map-metro .MetroMap_transit_group.MetroMap_select .MetroMap_circle {
+  fill: var(--white);
+  stroke: var(--blue);
 }
 
 .back-link {
@@ -14002,8 +14021,8 @@ textarea.input-reset {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 750px 1fr;
-  grid-template-columns: 750px 1fr;
+  -ms-grid-columns: 350px 1fr;
+  grid-template-columns: 350px 1fr;
   grid-column-gap: 24px;
 }
 .search-area__bottom {
