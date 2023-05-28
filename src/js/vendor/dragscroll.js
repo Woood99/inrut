@@ -1,26 +1,45 @@
-! function (e, n) {
+!function(e, n) {
     "function" == typeof define && define.amd ? define(["exports"], n) : n("undefined" != typeof exports ? exports : e.dragscroll = {})
-}(this, function (e) {
-    var n, t, o = window,
-        l = document,
-        c = "mousemove",
-        r = "mouseup",
-        i = "mousedown",
-        m = "EventListener",
-        d = "add" + m,
-        s = "remove" + m,
-        f = [],
-        u = function (e, m) {
-            for (e = 0; e < f.length;) m = f[e++], m = m.container || m, m[s](i, m.md, 0), o[s](r, m.mu, 0), o[s](c, m.mm, 0);
-            for (f = [].slice.call(l.getElementsByClassName("dragscroll")), e = 0; e < f.length;) ! function (e, m, s, f, u, a) {
-                (a = e.container || e)[d](i, a.md = function (n) {
-                    e.hasAttribute("nochilddrag") && l.elementFromPoint(n.pageX, n.pageY) != a || (f = 1, m = n.clientX, s = n.clientY, n.preventDefault())
-                }, 0), o[d](r, a.mu = function () {
+}(this, function(e) {
+    var n = window
+      , o = document
+      , t = "mousemove"
+      , l = "mouseup"
+      , i = "mousedown"
+      , r = "EventListener"
+      , c = "add" + r
+      , f = "remove" + r
+      , m = []
+      , s = function(e, r) {
+        for (e = 0; e < m.length; )
+            r = m[e++],
+            r[f](i, r.md, 0),
+            n[f](l, r.mu, 0),
+            n[f](t, r.mm, 0);
+        for (m = o.getElementsByClassName("dragscroll"),
+        e = 0; e < m.length; )
+            !function(e, o, r, f) {
+                e[c](i, e.md = function(e) {
+                    f = 1,
+                    o = e.clientX,
+                    r = e.clientY,
+                    e.preventDefault(),
+                    e.stopPropagation()
+                }
+                , 0),
+                n[c](l, e.mu = function() {
                     f = 0
-                }, 0), o[d](c, a.mm = function (o) {
-                    f && ((u = e.scroller || e).scrollLeft -= n = -m + (m = o.clientX), u.scrollTop -= t = -s + (s = o.clientY), e == l.body && ((u = l.documentElement).scrollLeft -= n, u.scrollTop -= t))
-                }, 0)
-            }(f[e++])
-        };
-    "complete" == l.readyState ? u() : o[d]("load", u, 0), e.reset = u
+                }
+                , 0),
+                n[c](t, e.mm = function(n, t) {
+                    t = e.scroller || e,
+                    f && (t.scrollLeft -= -o + (o = n.clientX),
+                    t.scrollTop -= -r + (r = n.clientY))
+                    f ? e.classList.add('is-moving') : e.classList.remove('is-moving')
+                }
+                , 0)
+            }(m[e++])
+    };
+    "complete" == o.readyState ? s() : n[c]("load", s, 0),
+    e.reset = s
 });

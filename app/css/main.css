@@ -4165,6 +4165,7 @@ textarea.input-reset {
 }
 .map-metro .MetroMap_station_item {
   cursor: pointer;
+  background-color: red;
 }
 .map-metro .MetroMap_station_item.MetroMap_hovered .MetroMap_text {
   fill: var(--red);
@@ -13868,89 +13869,107 @@ textarea.input-reset {
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
-.search-area__item[data-search-area-color=red] .spollers__title > div svg {
+.search-area__item[data-search-area-metro="1"] .spollers__title > div svg {
   fill: var(--red);
 }
-.search-area__item[data-search-area-color=red] .checkbox-secondary__circle {
+.search-area__item[data-search-area-metro="1"] .checkbox-secondary__circle {
   background-color: var(--red);
 }
-.search-area__item[data-search-area-color=green] .spollers__title > div svg {
-  fill: var(--green);
+.search-area__item[data-search-area-metro="2"] .spollers__title > div svg {
+  fill: rgb(79, 130, 66);
 }
-.search-area__item[data-search-area-color=green] .checkbox-secondary__circle {
-  background-color: var(--green);
+.search-area__item[data-search-area-metro="2"] .checkbox-secondary__circle {
+  background-color: rgb(79, 130, 66);
 }
-.search-area__item[data-search-area-color=dark-blue] .spollers__title > div svg {
-  fill: var(--blue);
+.search-area__item[data-search-area-metro="3"] .spollers__title > div svg {
+  fill: rgb(0, 66, 165);
 }
-.search-area__item[data-search-area-color=dark-blue] .checkbox-secondary__circle {
-  background-color: var(--blue);
+.search-area__item[data-search-area-metro="3"] .checkbox-secondary__circle {
+  background-color: rgb(0, 66, 165);
 }
-.search-area__item[data-search-area-color=blue] .spollers__title > div svg {
-  fill: var(--primary400);
+.search-area__item[data-search-area-metro="4"] .spollers__title > div svg {
+  fill: rgb(9, 157, 212);
 }
-.search-area__item[data-search-area-color=blue] .checkbox-secondary__circle {
-  background-color: var(--primary400);
+.search-area__item[data-search-area-metro="4"] .checkbox-secondary__circle {
+  background-color: rgb(9, 157, 212);
 }
-.search-area__item[data-search-area-color=brown] .spollers__title > div svg {
-  fill: rgb(145, 81, 51);
+.search-area__item[data-search-area-metro="5"] .spollers__title > div svg {
+  fill: rgb(121, 72, 53);
 }
-.search-area__item[data-search-area-color=brown] .checkbox-secondary__circle {
-  background-color: rgb(145, 81, 51);
+.search-area__item[data-search-area-metro="5"] .checkbox-secondary__circle {
+  background-color: rgb(121, 72, 53);
 }
-.search-area__item[data-search-area-color=orange] .spollers__title > div svg {
-  fill: var(--orange);
+.search-area__item[data-search-area-metro="6"] .spollers__title > div svg {
+  fill: rgb(255, 129, 3);
 }
-.search-area__item[data-search-area-color=orange] .checkbox-secondary__circle {
-  background-color: var(--orange);
+.search-area__item[data-search-area-metro="6"] .checkbox-secondary__circle {
+  background-color: rgb(255, 129, 3);
 }
-.search-area__item[data-search-area-color=purple] .spollers__title > div svg {
-  fill: rgb(148, 62, 144);
+.search-area__item[data-search-area-metro="7"] .spollers__title > div svg {
+  fill: rgb(177, 23, 154);
 }
-.search-area__item[data-search-area-color=purple] .checkbox-secondary__circle {
-  background-color: rgb(148, 62, 144);
+.search-area__item[data-search-area-metro="7"] .checkbox-secondary__circle {
+  background-color: rgb(177, 23, 154);
 }
-.search-area__item[data-search-area-color=yellow] .spollers__title > div svg {
-  fill: var(--yellow);
+.search-area__item[data-search-area-metro="8"] .spollers__title > div svg {
+  fill: rgb(255, 228, 0);
 }
-.search-area__item[data-search-area-color=yellow] .checkbox-secondary__circle {
-  background-color: var(--yellow);
+.search-area__item[data-search-area-metro="8"] .checkbox-secondary__circle {
+  background-color: rgb(255, 228, 0);
 }
-.search-area__item[data-search-area-color=gray] .spollers__title > div svg {
-  fill: rgb(173, 172, 172);
+.search-area__item[data-search-area-metro="8A"] .spollers__title > div svg {
+  fill: rgb(255, 228, 0);
 }
-.search-area__item[data-search-area-color=gray] .checkbox-secondary__circle {
-  background-color: rgb(173, 172, 172);
+.search-area__item[data-search-area-metro="8A"] .checkbox-secondary__circle {
+  background-color: rgb(255, 228, 0);
 }
-.search-area__item[data-search-area-color=dark-yellow] .spollers__title > div svg {
-  fill: rgb(190, 209, 44);
+.search-area__item[data-search-area-metro="9"] .spollers__title > div svg {
+  fill: rgb(144, 144, 144);
 }
-.search-area__item[data-search-area-color=dark-yellow] .checkbox-secondary__circle {
-  background-color: rgb(190, 209, 44);
+.search-area__item[data-search-area-metro="9"] .checkbox-secondary__circle {
+  background-color: rgb(144, 144, 144);
 }
-.search-area__item[data-search-area-color=turquoise] .spollers__title > div svg {
-  fill: rgb(91, 190, 187);
+.search-area__item[data-search-area-metro="10"] .spollers__title > div svg {
+  fill: rgb(105, 205, 55);
 }
-.search-area__item[data-search-area-color=turquoise] .checkbox-secondary__circle {
-  background-color: rgb(91, 190, 187);
+.search-area__item[data-search-area-metro="10"] .checkbox-secondary__circle {
+  background-color: rgb(105, 205, 55);
 }
-.search-area__item[data-search-area-color=silver] .spollers__title > div svg {
-  fill: rgb(186, 200, 232);
+.search-area__item[data-search-area-metro="11"] .spollers__title > div svg {
+  fill: rgb(111, 193, 186);
 }
-.search-area__item[data-search-area-color=silver] .checkbox-secondary__circle {
-  background-color: rgb(186, 200, 232);
+.search-area__item[data-search-area-metro="11"] .checkbox-secondary__circle {
+  background-color: rgb(111, 193, 186);
 }
-.search-area__item[data-search-area-color=pink] .spollers__title > div svg {
-  fill: rgb(249, 188, 209);
+.search-area__item[data-search-area-metro="12"] .spollers__title > div svg {
+  fill: rgb(141, 190, 206);
 }
-.search-area__item[data-search-area-color=pink] .checkbox-secondary__circle {
-  background-color: rgb(249, 188, 209);
+.search-area__item[data-search-area-metro="12"] .checkbox-secondary__circle {
+  background-color: rgb(141, 190, 206);
 }
-.search-area__item[data-search-area-color=dark-pink] .spollers__title > div svg {
-  fill: rgb(222, 100, 161);
+.search-area__item[data-search-area-metro="14"] .spollers__title > div svg {
+  fill: rgb(255, 168, 175);
 }
-.search-area__item[data-search-area-color=dark-pink] .checkbox-secondary__circle {
-  background-color: rgb(222, 100, 161);
+.search-area__item[data-search-area-metro="14"] .checkbox-secondary__circle {
+  background-color: rgb(255, 168, 175);
+}
+.search-area__item[data-search-area-metro="15"] .spollers__title > div svg {
+  fill: rgb(255, 102, 232);
+}
+.search-area__item[data-search-area-metro="15"] .checkbox-secondary__circle {
+  background-color: rgb(255, 102, 232);
+}
+.search-area__item[data-search-area-metro=d1] .spollers__title > div svg {
+  fill: rgb(237, 159, 45);
+}
+.search-area__item[data-search-area-metro=d1] .checkbox-secondary__circle {
+  background-color: rgb(237, 159, 45);
+}
+.search-area__item[data-search-area-metro=d2] .spollers__title > div svg {
+  fill: rgb(223, 71, 124);
+}
+.search-area__item[data-search-area-metro=d2] .checkbox-secondary__circle {
+  background-color: rgb(223, 71, 124);
 }
 .search-area .spollers__body {
   margin-top: 16px;
@@ -14021,8 +14040,8 @@ textarea.input-reset {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 350px 1fr;
-  grid-template-columns: 350px 1fr;
+  -ms-grid-columns: 750px 1fr;
+  grid-template-columns: 750px 1fr;
   grid-column-gap: 24px;
 }
 .search-area__bottom {

@@ -5818,6 +5818,55 @@ const mapMetro = () => {
   reziseContainer();
   scaleMap();
   activationCheckbox();
+  activationAndClearAll();
+  function activationAndClearAll() {
+    const items = container.querySelectorAll('.search-area__item');
+    items.forEach(item => {
+      const elements = item.querySelectorAll('[data-metro-id]');
+      const btnAll = item.querySelector('.search-area__control');
+      const btnClear = item.querySelector('.search-area__control:nth-child(2)');
+      btnAll.addEventListener('click', () => {
+        elements.forEach(el => {
+          el.querySelector('.checkbox-secondary__input').checked = true;
+          const currentId = el.dataset.metroId;
+          const stationName = map.querySelector(`[data-map-metro-id='${currentId}']`);
+          if (stationName) {
+            const stationCircle = map.querySelector(`.MetroMap_to_${stationName.id.replace('MetroMap_station_', '')}`);
+            stationName.classList.add('MetroMap_select');
+            stationCircle.classList.add('MetroMap_select');
+          }
+          const currentIdItems = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+          if (currentIdItems.length > 1) {
+            currentIdItems.forEach(item => {
+              if (item !== el) {
+                item.querySelector('.checkbox-secondary__input').checked = true;
+              }
+            });
+          }
+        });
+      });
+      btnClear.addEventListener('click', () => {
+        elements.forEach(el => {
+          el.querySelector('.checkbox-secondary__input').checked = false;
+          const currentId = el.dataset.metroId;
+          const stationName = map.querySelector(`[data-map-metro-id='${currentId}']`);
+          if (stationName) {
+            const stationCircle = map.querySelector(`.MetroMap_to_${stationName.id.replace('MetroMap_station_', '')}`);
+            stationName.classList.remove('MetroMap_select');
+            stationCircle.classList.remove('MetroMap_select');
+          }
+          const currentIdItems = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+          if (currentIdItems.length > 1) {
+            currentIdItems.forEach(item => {
+              if (item !== el) {
+                item.querySelector('.checkbox-secondary__input').checked = false;
+              }
+            });
+          }
+        });
+      });
+    });
+  }
   function activationCheckbox() {
     const elementList = container.querySelectorAll('[data-metro-id]');
     elementList.forEach(element => {
@@ -5825,14 +5874,30 @@ const mapMetro = () => {
       checkbox.addEventListener('change', () => {
         const currentId = element.dataset.metroId;
         const currentElementMap = map.querySelector(`[data-map-metro-id='${currentId}']`);
+        if (!currentElementMap) return;
+        const circle = container.querySelector(`.MetroMap_to_${currentElementMap.id.replace('MetroMap_station_', '')}`);
+        const inputs = container.querySelectorAll(`[data-metro-id='${currentId}'] .checkbox-secondary__input`);
         if (checkbox.checked) {
+          circle.classList.add('MetroMap_select');
           currentElementMap.classList.add('MetroMap_select');
+          inputs.forEach(input => {
+            if (input.checked === false) {
+              input.checked = true;
+            }
+          });
         } else {
           currentElementMap.classList.remove('MetroMap_select');
+          circle.classList.remove('MetroMap_select');
+          inputs.forEach(input => {
+            if (input.checked) {
+              input.checked = false;
+            }
+          });
         }
       });
     });
     map.addEventListener('click', e => {
+      if (map.closest('.dragscroll').classList.contains('is-moving')) return;
       const target = e.target;
       const stationItem = target.closest('.MetroMap_station_item');
       const circleItem = target.closest('.MetroMap_stop');
@@ -5840,44 +5905,67 @@ const mapMetro = () => {
         const stationId = stationItem.id.replace('MetroMap_station_', '');
         const circle = map.querySelector(`.MetroMap_to_${stationId}`);
         const currentId = stationItem.dataset.mapMetroId;
-        const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
+        const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
         if (!stationItem.classList.contains('MetroMap_select')) {
           stationItem.classList.add('MetroMap_select');
           stationItem.classList.remove('MetroMap_hovered');
           circle.classList.add('MetroMap_select');
           circle.classList.remove('MetroMap_hovered');
-          if (!currentElementList) return;
-          currentElementList.querySelector('.checkbox-secondary__input').checked = true;
+          if (currentElementList.length === 0) return;
+          currentElementList.forEach(item => {
+            item.querySelector('.checkbox-secondary__input').checked = true;
+          });
         } else {
           stationItem.classList.remove('MetroMap_select');
           circle.classList.remove('MetroMap_select');
-          if (!currentElementList) return;
-          currentElementList.querySelector('.checkbox-secondary__input').checked = false;
+          if (currentElementList.length === 0) return;
+          currentElementList.forEach(item => {
+            item.querySelector('.checkbox-secondary__input').checked = false;
+          });
         }
       }
       if (circleItem) {
         if (circleItem.closest('.MetroMap_transit_group')) {
           let item = circleItem.closest('.MetroMap_transit_group');
-          const stationId = item.getAttribute('class').replace('MetroMap_transit_group ', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').trim();
+          const stationId = item.getAttribute('class').replace('MetroMap_transit_group ', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
           const station = map.querySelector(`#MetroMap_station_${stationId}`);
-          station.classList.add('MetroMap_select');
-          station.classList.remove('MetroMap_hovered');
-          item.querySelectorAll('.MetroMap_stop').forEach(item => {
+          const currentId = station.dataset.mapMetroId;
+          const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+          if (!item.classList.contains('MetroMap_select')) {
+            station.classList.add('MetroMap_select');
+            station.classList.remove('MetroMap_hovered');
             item.classList.add('MetroMap_select');
             item.classList.remove('MetroMap_hovered');
-          });
-          const currentId = station.dataset.mapMetroId;
-          console.log(currentId);
-          // const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
-          if (!circleItem.classList.contains('MetroMap_select')) {
-            // ...
-          } else {}
+            currentElementList.forEach(item => {
+              item.querySelector('.checkbox-secondary__input').checked = true;
+            });
+          } else {
+            station.classList.remove('MetroMap_select');
+            item.classList.remove('MetroMap_select');
+            currentElementList.forEach(item => {
+              item.querySelector('.checkbox-secondary__input').checked = false;
+            });
+          }
         } else {
-          const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').trim();
+          const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
           const station = map.querySelector(`#MetroMap_station_${stationId}`);
           const currentId = station.dataset.mapMetroId;
-          const currentElementList = container.querySelector(`[data-metro-id='${currentId}']`);
-          if (!circleItem.classList.contains('MetroMap_select')) {} else {}
+          const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+          if (!circleItem.classList.contains('MetroMap_select')) {
+            circleItem.classList.add('MetroMap_select');
+            circleItem.classList.remove('MetroMap_hovered');
+            station.classList.add('MetroMap_select');
+            station.classList.remove('MetroMap_hovered');
+            currentElementList.forEach(item => {
+              item.querySelector('.checkbox-secondary__input').checked = true;
+            });
+          } else {
+            circleItem.classList.remove('MetroMap_select');
+            station.classList.remove('MetroMap_select');
+            currentElementList.forEach(item => {
+              item.querySelector('.checkbox-secondary__input').checked = false;
+            });
+          }
         }
       }
     });
@@ -5894,11 +5982,10 @@ const mapMetro = () => {
         circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'));
       } else if (target.closest('.MetroMap_transit_group')) {
         const item = target.closest('.MetroMap_transit_group');
+        if (item.classList.contains('MetroMap_select')) return;
         const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
         document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-        item.querySelectorAll('.MetroMap_stop').forEach(el => {
-          if (!el.classList.contains('MetroMap_select')) el.classList.add('MetroMap_hovered');
-        });
+        item.classList.add('MetroMap_hovered');
       } else if (target.closest('.MetroMap_stop')) {
         const item = target.closest('.MetroMap_stop');
         if (item.classList.contains('MetroMap_select')) return;
@@ -8290,30 +8377,29 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
 }(this, function (e) {
-  var n,
-    t,
-    o = window,
-    l = document,
-    c = "mousemove",
-    r = "mouseup",
+  var n = window,
+    o = document,
+    t = "mousemove",
+    l = "mouseup",
     i = "mousedown",
-    m = "EventListener",
-    d = "add" + m,
-    s = "remove" + m,
-    f = [],
-    u = function (e, m) {
-      for (e = 0; e < f.length;) m = f[e++], m = m.container || m, m[s](i, m.md, 0), o[s](r, m.mu, 0), o[s](c, m.mm, 0);
-      for (f = [].slice.call(l.getElementsByClassName("dragscroll")), e = 0; e < f.length;) !function (e, m, s, f, u, a) {
-        (a = e.container || e)[d](i, a.md = function (n) {
-          e.hasAttribute("nochilddrag") && l.elementFromPoint(n.pageX, n.pageY) != a || (f = 1, m = n.clientX, s = n.clientY, n.preventDefault());
-        }, 0), o[d](r, a.mu = function () {
+    r = "EventListener",
+    c = "add" + r,
+    f = "remove" + r,
+    m = [],
+    s = function (e, r) {
+      for (e = 0; e < m.length;) r = m[e++], r[f](i, r.md, 0), n[f](l, r.mu, 0), n[f](t, r.mm, 0);
+      for (m = o.getElementsByClassName("dragscroll"), e = 0; e < m.length;) !function (e, o, r, f) {
+        e[c](i, e.md = function (e) {
+          f = 1, o = e.clientX, r = e.clientY, e.preventDefault(), e.stopPropagation();
+        }, 0), n[c](l, e.mu = function () {
           f = 0;
-        }, 0), o[d](c, a.mm = function (o) {
-          f && ((u = e.scroller || e).scrollLeft -= n = -m + (m = o.clientX), u.scrollTop -= t = -s + (s = o.clientY), e == l.body && ((u = l.documentElement).scrollLeft -= n, u.scrollTop -= t));
+        }, 0), n[c](t, e.mm = function (n, t) {
+          t = e.scroller || e, f && (t.scrollLeft -= -o + (o = n.clientX), t.scrollTop -= -r + (r = n.clientY));
+          f ? e.classList.add('is-moving') : e.classList.remove('is-moving');
         }, 0);
-      }(f[e++]);
+      }(m[e++]);
     };
-  "complete" == l.readyState ? u() : o[d]("load", u, 0), e.reset = u;
+  "complete" == o.readyState ? s() : n[c]("load", s, 0), e.reset = s;
 });
 
 /***/ }),
