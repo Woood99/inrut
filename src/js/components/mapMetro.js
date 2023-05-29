@@ -257,7 +257,17 @@ const mapMetro = () => {
             nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
                 if (navItem.dataset.searchAreaMetroNav === spoller.dataset.searchAreaMetro) {
                     navItem.classList.add('_active');
-                    navItem.querySelector('div:nth-child(2)').innerHTML += `<span>${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}; </span>`;
+                    const counter = navItem.querySelector('.search-area__nav-counter');
+                    const itemsCheckbox = spoller.querySelectorAll('.checkbox-secondary__input:checked'); 
+                    if (navItem.querySelector('div:nth-child(2)').children.length  <= 2) {
+                        navItem.querySelector('div:nth-child(2)').innerHTML += `<span>${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}; </span>`;
+                    } 
+                    if (itemsCheckbox.length > 3) {
+                        counter.classList.add('_active');
+                       counter.querySelector('span').textContent = itemsCheckbox.length - 3;
+                    } else {
+                        counter.classList.remove('_active');    
+                    }
                 }
             })
         })

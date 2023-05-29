@@ -464,16 +464,29 @@
         background-color: var(--white);
         box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
         padding: 12px 0;
-
+        max-height: 94px;
         >div {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             max-width: 1332px;
             margin: 0 auto;
            @media (max-width:$desktop){
             padding: 0 16px; 
            }
+        }
+        .simplebar-primary{
+            max-height: 80px;
+            width: 100%;
+            max-width: none;
+            .simplebar-track.simplebar-vertical{
+                top: 0;
+                bottom: 0px;
+                margin-right: 0;
+                height: 100%;
+            }
+            .simplebar-content-wrapper {
+              padding-right: 30px;
+            }
         }
     }
     &__nav{
@@ -642,7 +655,25 @@
           display: flex;
         }
     }
+    &__nav-counter{
+        display: none;
 
+        margin-left: 8px;
+        font-size: 10px;
+        line-height: 100%;
+        background-color: var(--blue);
+        padding: 4px 8px;
+        color: var(--white);
+        border-radius: 8px;
+
+        align-items: center;
+        span{
+            margin-left: 4px;
+        }
+        &._active{
+            display: flex;
+        }
+    }
     &__go {
         margin-left: 24px;
         padding: 0 32px;
