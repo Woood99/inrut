@@ -5828,24 +5828,8 @@ const mapMetro = () => {
       const btnAll = item.querySelector('.search-area__control');
       const btnClear = item.querySelector('.search-area__control:nth-child(2)');
       btnAll.addEventListener('click', () => {
-        elements.forEach(el => {
-          el.querySelector('.checkbox-secondary__input').checked = true;
-          const currentId = el.dataset.metroId;
-          const stationName = map.querySelector(`[data-map-metro-id='${currentId}']`);
-          if (stationName) {
-            const stationCircle = map.querySelector(`.MetroMap_to_${stationName.id.replace('MetroMap_station_', '')}`);
-            stationName.classList.add('MetroMap_select');
-            stationCircle.classList.add('MetroMap_select');
-          }
-          const currentIdItems = container.querySelectorAll(`[data-metro-id='${currentId}']`);
-          if (currentIdItems.length > 1) {
-            currentIdItems.forEach(item => {
-              if (item !== el) {
-                item.querySelector('.checkbox-secondary__input').checked = true;
-              }
-            });
-          }
-        });
+        clearAllLine(elements);
+        navBottom();
       });
       btnClear.addEventListener('click', () => {
         elements.forEach(el => {
@@ -5866,7 +5850,28 @@ const mapMetro = () => {
             });
           }
         });
+        navBottom();
       });
+    });
+  }
+  function clearAllLine(elements) {
+    elements.forEach(el => {
+      el.querySelector('.checkbox-secondary__input').checked = true;
+      const currentId = el.dataset.metroId;
+      const stationName = map.querySelector(`[data-map-metro-id='${currentId}']`);
+      if (stationName) {
+        const stationCircle = map.querySelector(`.MetroMap_to_${stationName.id.replace('MetroMap_station_', '')}`);
+        stationName.classList.add('MetroMap_select');
+        stationCircle.classList.add('MetroMap_select');
+      }
+      const currentIdItems = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+      if (currentIdItems.length > 1) {
+        currentIdItems.forEach(item => {
+          if (item !== el) {
+            item.querySelector('.checkbox-secondary__input').checked = true;
+          }
+        });
+      }
     });
   }
   function activationCheckbox() {
@@ -5896,6 +5901,7 @@ const mapMetro = () => {
             }
           });
         }
+        navBottom();
       });
     });
     map.addEventListener('click', e => {
@@ -5956,6 +5962,7 @@ const mapMetro = () => {
               item.querySelector('.checkbox-secondary__input').checked = false;
             });
           }
+          navBottom();
         } else {
           const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
           const station = map.querySelector(`#MetroMap_station_${stationId}`);
@@ -5977,6 +5984,7 @@ const mapMetro = () => {
               item.querySelector('.checkbox-secondary__input').checked = false;
             });
           }
+          navBottom();
         }
       }
     });
@@ -6018,6 +6026,25 @@ const mapMetro = () => {
         });
       }, 0);
     }
+  }
+  function navBottom() {
+    const items = container.querySelectorAll('[data-metro-id] .checkbox-secondary__input:checked');
+    const nav = container.querySelector('.search-area__nav');
+    nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
+      navItem.classList.remove('_active');
+      navItem.querySelector('div:nth-child(2)').textContent = '';
+    });
+    items.forEach(item => {
+      const checkbox = item.closest('.checkbox-secondary');
+      const spoller = item.closest('.search-area__item');
+      const btn = spoller.querySelector('.spollers__title');
+      nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
+        if (navItem.dataset.searchAreaMetroNav === spoller.dataset.searchAreaMetro) {
+          navItem.classList.add('_active');
+          navItem.querySelector('div:nth-child(2)').innerHTML += `<span>${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}; </span>`;
+        }
+      });
+    });
   }
   function metroHovered() {
     map.addEventListener('mousemove', e => {

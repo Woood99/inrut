@@ -465,23 +465,186 @@
         box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
         padding: 12px 0;
 
-        display: flex;
-
         >div {
             display: flex;
             align-items: center;
-            justify-content: end;
-            max-width: 1112px;
-            padding: 0;
+            justify-content: space-between;
+            max-width: 1332px;
             margin: 0 auto;
+           @media (max-width:$desktop){
+            padding: 0 16px; 
+           }
+        }
+    }
+    &__nav{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+    }
+    &__nav-item {
 
-            @media (max-width:1112px) {
-                padding: 0 16px;
+        >div {
+            &:nth-child(1) {
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                line-height: 1.3125;
+                color: var(--primaryTwo);
+                font-weight: 500;
+                white-space: nowrap;
+                >div {
+                    width: 25px;
+                    height: 15px;
+                    display: block;
+                    margin-right: 6px;
+                    position: relative;
+
+                    span {
+                        color: var(--white);
+                        font-size: 8px;
+                        line-height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0px;
+                        background-color: transparent;
+                        width: 25px;
+                        height: 15px;
+                        padding-right: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    svg {
+                        width: 25px;
+                        height: 15px;
+                    }
+                }
             }
+            &:nth-child(2){
+                margin-top: -1px;
+                margin-left: 4px;
+                font-size: 12px;
+                line-height: math.div(15 , 12);
+                text-align: left;
+            }
+        }
+
+
+        &[data-search-area-metro-nav="1"] {
+            svg {
+                fill: #E4402D;
+            }
+        }
+
+        &[data-search-area-metro-nav="2"] {
+            svg {
+                fill: rgb(79, 130, 66);
+            }
+
+        }
+
+        &[data-search-area-metro-nav="3"] {
+            svg {
+                fill: rgb(0, 66, 165);
+            }
+        }
+
+        &[data-search-area-metro-nav="4"] {
+            svg {
+                fill: rgb(9, 157, 212);
+            }
+        }
+
+        &[data-search-area-metro-nav="5"] {
+            svg {
+                fill: rgb(121, 72, 53);
+            }
+        }
+
+        &[data-search-area-metro-nav="6"] {
+            svg {
+                fill: rgb(255, 129, 3);
+            }
+
+        }
+
+        &[data-search-area-metro-nav="7"] {
+            svg {
+                fill: rgb(177, 23, 154);
+            }
+        }
+
+        &[data-search-area-metro-nav="8"] {
+            svg {
+                fill: rgb(255, 228, 0);
+            }
+        }
+
+        &[data-search-area-metro-nav="8A"] {
+            svg {
+                fill: rgb(255, 228, 0);
+            }
+        }
+
+        &[data-search-area-metro-nav="9"] {
+            svg {
+                fill: rgb(144, 144, 144);
+            }
+        }
+
+        &[data-search-area-metro-nav="10"] {
+            svg {
+                fill: rgb(105, 205, 55);
+            }
+        }
+
+        &[data-search-area-metro-nav="11"] {
+            svg {
+                fill: rgb(111, 193, 186);
+            }
+        }
+
+        &[data-search-area-metro-nav="12"] {
+            svg {
+                fill: rgb(141, 190, 206);
+            }
+        }
+
+        &[data-search-area-metro-nav="14"] {
+            svg {
+                fill: rgb(255, 168, 175);
+            }
+        }
+
+        &[data-search-area-metro-nav="15"] {
+            svg {
+                fill: rgb(255, 102, 232);
+            }
+        }
+
+        &[data-search-area-metro-nav="d1"] {
+            svg {
+                fill: rgb(237, 159, 45);
+            }
+        }
+
+        &[data-search-area-metro-nav="d2"] {
+            svg {
+                fill: rgb(223, 71, 124);
+            }
+        }
+
+        display: none;
+        align-items: center;
+        &._active{
+          display: flex;
         }
     }
 
     &__go {
+        margin-left: 24px;
         padding: 0 32px;
         margin-right: 16px;
         height: 42px;
