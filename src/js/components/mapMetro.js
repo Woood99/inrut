@@ -1,4 +1,8 @@
-import '../vendor/dragscroll'
+import '../vendor/dragscroll';
+import {
+    _slideDown,
+    _slideUp
+} from '../support-modules/slide'
 const mapMetro = () => {
     const container = document.querySelector('.search-area__form');
     if (!container) return;
@@ -116,7 +120,7 @@ const mapMetro = () => {
             //             item.querySelector('.checkbox-secondary__input').checked = true;
             //         })
 
-            //         openAndMovingSpoller(stationItem, currentElementList);
+            //         openSpoller(currentElementList,?);
             //     } else {
             //         stationItem.classList.remove('MetroMap_select');
 
@@ -143,10 +147,11 @@ const mapMetro = () => {
 
                         item.classList.add('MetroMap_select');
                         item.classList.remove('MetroMap_hovered');
-
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
                         })
+
+                        openSpoller(currentElementList, circleItem);
                     } else {
                         station.classList.remove('MetroMap_select');
                         item.classList.remove('MetroMap_select');
@@ -173,6 +178,8 @@ const mapMetro = () => {
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
                         })
+
+                        openSpoller(currentElementList, circleItem);
                     } else {
                         circleItem.classList.remove('MetroMap_select');
 
@@ -188,9 +195,44 @@ const mapMetro = () => {
 
     }
 
-    function openAndMovingSpoller(item, target) {
-        console.log(item);
-        console.log(target);
+    function openSpoller(target, currentElem) {
+        const spollers = container.querySelectorAll('.search-area__item');
+        const currentColor = window.getComputedStyle(currentElem.querySelector('.MetroMap_circle')).fill;
+        spollers.forEach(spoller => {
+            const btn = spoller.querySelector('.spollers__title');
+            const body = spoller.querySelector('.spollers__body');
+            if (btn.classList.contains('_spoller-active')) {
+                const colorSpoller = window.getComputedStyle(spoller.querySelector('div svg')).fill;
+                if (currentColor === colorSpoller) return;
+                btn.classList.remove('_spoller-active');
+                _slideUp(body, 0);
+            }
+        })
+        if (target.length === 1) {
+            slideDownAndMoving(target[0]);
+        } else {
+            target.forEach(el => {
+                const colorSpoller = window.getComputedStyle(el.querySelector('.checkbox-secondary__circle')).backgroundColor;
+                if (currentColor === colorSpoller) slideDownAndMoving(el);
+            })
+        }
+
+        function slideDownAndMoving(target) {
+            const spoller = target.closest('.search-area__item');
+            const btn = spoller.querySelector('.spollers__title');
+            const body = spoller.querySelector('.spollers__body');
+            if (!btn.classList.contains('_spoller-active')) {
+                btn.classList.add('_spoller-active');
+                _slideDown(body, 0);
+            }
+            setTimeout(() => {
+                const topGap = target.offsetTop;
+                target.closest('.popup-primary--search-area').scrollTo({
+                    top: topGap - 100,
+                    behavior: 'smooth',
+                });
+            }, 0);
+        }
     }
 
     function metroHovered() {
@@ -222,7 +264,7 @@ const mapMetro = () => {
             // }
 
 
-             if (target.closest('.MetroMap_transit_group')) {
+            if (target.closest('.MetroMap_transit_group')) {
                 const item = target.closest('.MetroMap_transit_group');
                 if (item.classList.contains('MetroMap_select')) return;
                 const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();

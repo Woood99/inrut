@@ -5809,6 +5809,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _vendor_dragscroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vendor/dragscroll */ "./src/js/vendor/dragscroll.js");
 /* harmony import */ var _vendor_dragscroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_dragscroll__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+
 
 const mapMetro = () => {
   const container = document.querySelector('.search-area__form');
@@ -5918,7 +5920,7 @@ const mapMetro = () => {
       //             item.querySelector('.checkbox-secondary__input').checked = true;
       //         })
 
-      //         openAndMovingSpoller(stationItem, currentElementList);
+      //         openSpoller(currentElementList,?);
       //     } else {
       //         stationItem.classList.remove('MetroMap_select');
 
@@ -5946,6 +5948,7 @@ const mapMetro = () => {
             currentElementList.forEach(item => {
               item.querySelector('.checkbox-secondary__input').checked = true;
             });
+            openSpoller(currentElementList, circleItem);
           } else {
             station.classList.remove('MetroMap_select');
             item.classList.remove('MetroMap_select');
@@ -5966,6 +5969,7 @@ const mapMetro = () => {
             currentElementList.forEach(item => {
               item.querySelector('.checkbox-secondary__input').checked = true;
             });
+            openSpoller(currentElementList, circleItem);
           } else {
             circleItem.classList.remove('MetroMap_select');
             station.classList.remove('MetroMap_select');
@@ -5977,9 +5981,43 @@ const mapMetro = () => {
       }
     });
   }
-  function openAndMovingSpoller(item, target) {
-    console.log(item);
-    console.log(target);
+  function openSpoller(target, currentElem) {
+    const spollers = container.querySelectorAll('.search-area__item');
+    const currentColor = window.getComputedStyle(currentElem.querySelector('.MetroMap_circle')).fill;
+    spollers.forEach(spoller => {
+      const btn = spoller.querySelector('.spollers__title');
+      const body = spoller.querySelector('.spollers__body');
+      if (btn.classList.contains('_spoller-active')) {
+        const colorSpoller = window.getComputedStyle(spoller.querySelector('div svg')).fill;
+        if (currentColor === colorSpoller) return;
+        btn.classList.remove('_spoller-active');
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideUp)(body, 0);
+      }
+    });
+    if (target.length === 1) {
+      slideDownAndMoving(target[0]);
+    } else {
+      target.forEach(el => {
+        const colorSpoller = window.getComputedStyle(el.querySelector('.checkbox-secondary__circle')).backgroundColor;
+        if (currentColor === colorSpoller) slideDownAndMoving(el);
+      });
+    }
+    function slideDownAndMoving(target) {
+      const spoller = target.closest('.search-area__item');
+      const btn = spoller.querySelector('.spollers__title');
+      const body = spoller.querySelector('.spollers__body');
+      if (!btn.classList.contains('_spoller-active')) {
+        btn.classList.add('_spoller-active');
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideDown)(body, 0);
+      }
+      setTimeout(() => {
+        const topGap = target.offsetTop;
+        target.closest('.popup-primary--search-area').scrollTo({
+          top: topGap - 100,
+          behavior: 'smooth'
+        });
+      }, 0);
+    }
   }
   function metroHovered() {
     map.addEventListener('mousemove', e => {
