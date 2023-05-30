@@ -1243,15 +1243,18 @@
     padding: 0 16px;
 
     transition: border $transitionSpeed $transitionFunction;
+
     svg {
         width: 18px;
         height: 18px;
         fill: var(--blue);
         margin-left: 10px;
     }
-    &.focus-visible{
+
+    &.focus-visible {
         border: 1px solid var(--blue);
     }
+
     @media (max-width:$desktop) {
         width: 100%;
     }
@@ -1367,6 +1370,11 @@
             color: var(--blue);
             font-size: 12px;
             line-height: math.div(15, 12);
+            background-color: var(--white);
+            border: 1px solid var(--blue);
+
+            display: flex;
+            align-items: center;
 
             svg {
                 width: 10px;
@@ -1374,9 +1382,15 @@
                 margin-left: 10px;
                 fill: currentColor;
             }
-            &.focus-visible{
+
+            &.focus-visible {
                 color: var(--white);
                 background-color: var(--blue);
+            }
+
+            &:hover {
+                background-color: var(--blue);
+                color: var(--white);
             }
         }
 
@@ -1384,10 +1398,12 @@
             background-color: var(--blue);
             color: var(--white);
         }
-        &.focus-visible{
+
+        &.focus-visible {
             background-color: var(--blue);
             color: var(--white);
-            &._active{
+
+            &._active {
                 background-color: var(--primary600);
             }
         }

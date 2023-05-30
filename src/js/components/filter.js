@@ -417,15 +417,18 @@ export const filterMobile = () => {
         close.addEventListener('click', () => {
             if (container.classList.contains('active')) container.classList.remove('active');
             if (mask && mask.classList.contains('active')) mask.classList.remove('active');
-            if (!filter.closest('.checkboard-cst-popup')) enableScroll();
+            if (!exceptionEnableScroll()) enableScroll();
         });
         filter.addEventListener('click', (e) => {
             const target = e.target;
             if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
                 mask.classList.remove('active');
-                if (!filter.closest('.checkboard-cst-popup')) enableScroll();
+                if (!exceptionEnableScroll()) enableScroll();
             }
         })
+        function exceptionEnableScroll() {
+            return filter.closest('.checkboard-cst-popup') || filter.closest('.popup-primary');
+        }
     })
 }
 export const filterCustomSelectCheckboxes = () => {

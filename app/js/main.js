@@ -4327,6 +4327,7 @@ const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   }
 }, '.popup-genplan');
 const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
+const map = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--popup-map');
 const searchArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--search-area');
 
 // ========================================================================================
@@ -5319,15 +5320,18 @@ const filterMobile = () => {
     close.addEventListener('click', () => {
       if (container.classList.contains('active')) container.classList.remove('active');
       if (mask && mask.classList.contains('active')) mask.classList.remove('active');
-      if (!filter.closest('.checkboard-cst-popup')) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      if (!exceptionEnableScroll()) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
     });
     filter.addEventListener('click', e => {
       const target = e.target;
       if (target.classList.contains('filter__mask') && target.classList.contains('active')) {
         mask.classList.remove('active');
-        if (!filter.closest('.checkboard-cst-popup')) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        if (!exceptionEnableScroll()) (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
       }
     });
+    function exceptionEnableScroll() {
+      return filter.closest('.checkboard-cst-popup') || filter.closest('.popup-primary');
+    }
   });
 };
 const filterCustomSelectCheckboxes = () => {
@@ -6264,6 +6268,36 @@ const maps = () => {
       removeControlsPrimary(map, '#place-sale-address-map');
     }
     ymaps.ready(init);
+  }
+  if (document.querySelector('#popup-map__map')) {
+    const container = document.querySelector('.popup-map__container');
+    if (!container) return;
+    function init() {
+      let map = new ymaps.Map('popup-map__map', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      removeControlsPrimary(map, '#popup-map__map');
+      reziseContainer(map);
+    }
+    ymaps.ready(init);
+    const btn = container.querySelector('.popup-map__resize');
+    function reziseContainer(map) {
+      btn.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        window.addEventListener('mousemove', resize);
+        window.addEventListener('mouseup', stopResize);
+      });
+      function resize(e) {
+        const width = e.pageX - container.getBoundingClientRect().left - 20;
+        if (!(width <= 750 && width >= 345)) return;
+        container.style.gridTemplateColumns = `${width}px 1fr`;
+        map.container.fitToViewport();
+      }
+      function stopResize() {
+        window.removeEventListener('mousemove', resize);
+      }
+    }
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maps);
