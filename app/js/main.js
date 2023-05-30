@@ -5816,11 +5816,14 @@ const mapMetro = () => {
   const container = document.querySelector('.search-area__form');
   if (!container) return;
   const map = container.querySelector('.map-metro');
+  const clearAllBtn = container.querySelector('.search-area__clear');
   metroHovered();
   reziseContainer();
   scaleMap();
   activationCheckbox();
   activationAndClearAll();
+  navBottomCloseItem();
+  navBottomMoreItem();
   function activationAndClearAll() {
     const items = container.querySelectorAll('.search-area__item');
     items.forEach(item => {
@@ -5829,7 +5832,7 @@ const mapMetro = () => {
       const btnClear = item.querySelector('.search-area__control:nth-child(2)');
       btnAll.addEventListener('click', () => {
         clearAllLine(elements);
-        navBottom();
+        navBottomUpdate();
       });
       btnClear.addEventListener('click', () => {
         elements.forEach(el => {
@@ -5850,7 +5853,7 @@ const mapMetro = () => {
             });
           }
         });
-        navBottom();
+        navBottomUpdate();
       });
     });
   }
@@ -5873,6 +5876,11 @@ const mapMetro = () => {
         });
       }
     });
+  }
+  function clearAll() {
+    container.querySelectorAll('.checkbox-secondary__input').forEach(input => input.checked = false);
+    container.querySelectorAll('.MetroMap_select').forEach(el => el.classList.remove('MetroMap_select'));
+    navBottomUpdate();
   }
   function activationCheckbox() {
     const elementList = container.querySelectorAll('[data-metro-id]');
@@ -5901,7 +5909,7 @@ const mapMetro = () => {
             }
           });
         }
-        navBottom();
+        navBottomUpdate();
       });
     });
     map.addEventListener('click', e => {
@@ -5962,7 +5970,7 @@ const mapMetro = () => {
               item.querySelector('.checkbox-secondary__input').checked = false;
             });
           }
-          navBottom();
+          navBottomUpdate();
         } else {
           const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
           const station = map.querySelector(`#MetroMap_station_${stationId}`);
@@ -5984,7 +5992,7 @@ const mapMetro = () => {
               item.querySelector('.checkbox-secondary__input').checked = false;
             });
           }
-          navBottom();
+          navBottomUpdate();
         }
       }
     });
@@ -6027,33 +6035,72 @@ const mapMetro = () => {
       }, 0);
     }
   }
-  function navBottom() {
+  function navBottomUpdate() {
     const items = container.querySelectorAll('[data-metro-id] .checkbox-secondary__input:checked');
     const nav = container.querySelector('.search-area__nav');
     nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
+      if (!navItem.classList.contains('_active')) return;
       navItem.classList.remove('_active');
       navItem.querySelector('div:nth-child(2)').textContent = '';
     });
     items.forEach(item => {
       const checkbox = item.closest('.checkbox-secondary');
       const spoller = item.closest('.search-area__item');
-      const btn = spoller.querySelector('.spollers__title');
       nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
         if (navItem.dataset.searchAreaMetroNav === spoller.dataset.searchAreaMetro) {
           navItem.classList.add('_active');
           const counter = navItem.querySelector('.search-area__nav-counter');
           const itemsCheckbox = spoller.querySelectorAll('.checkbox-secondary__input:checked');
-          if (navItem.querySelector('div:nth-child(2)').children.length <= 2) {
-            navItem.querySelector('div:nth-child(2)').innerHTML += `<span>${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}; </span>`;
+          if (navItem.querySelector('div:nth-child(2)').children.length <= 2 || navItem.classList.contains('_all-visible-item')) {
+            navItem.querySelector('div:nth-child(2)').innerHTML += `
+                        <div data-search-area-metro-item="${checkbox.dataset.metroId}">${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}
+                            <button type="button" class="btn btn-reset search-area__nav-close">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                            </button>
+                        </div>`;
           }
-          if (itemsCheckbox.length > 3) {
+          if (itemsCheckbox.length > 3 && !navItem.classList.contains('_all-visible-item')) {
             counter.classList.add('_active');
             counter.querySelector('span').textContent = itemsCheckbox.length - 3;
           } else {
             counter.classList.remove('_active');
           }
+          if (itemsCheckbox.length <= 3 && navItem.classList.contains('_all-visible-item')) {
+            navItem.classList.remove('_all-visible-item');
+          }
         }
       });
+    });
+  }
+  function navBottomCloseItem() {
+    const nav = container.querySelector('.search-area__nav');
+    nav.addEventListener('click', e => {
+      const target = e.target;
+      const closeBtn = target.closest('.search-area__nav-close');
+      if (!closeBtn) return;
+      const item = closeBtn.closest('[data-search-area-metro-item]');
+      container.querySelectorAll(`[data-metro-id="${item.dataset.searchAreaMetroItem}"]`).forEach(el => {
+        el.querySelector('.checkbox-secondary__input').checked = false;
+      });
+      container.querySelectorAll(`[data-map-metro-id="${item.dataset.searchAreaMetroItem}"]`).forEach(el => {
+        el.classList.remove('MetroMap_select');
+        const id = el.id.replace('MetroMap_station_', '');
+        map.querySelector(`.MetroMap_to_${id}`).classList.remove('MetroMap_select');
+      });
+      navBottomUpdate();
+    });
+  }
+  function navBottomMoreItem() {
+    const nav = container.querySelector('.search-area__nav');
+    nav.addEventListener('click', e => {
+      const target = e.target;
+      const moreBtn = target.closest('.search-area__nav-counter');
+      if (!moreBtn) return;
+      const item = moreBtn.closest('[data-search-area-metro-nav]');
+      item.classList.add('_all-visible-item');
+      navBottomUpdate();
     });
   }
   function metroHovered() {
@@ -6151,6 +6198,7 @@ const mapMetro = () => {
       e.preventDefault();
     });
   }
+  clearAllBtn.addEventListener('click', clearAll);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapMetro);
 
