@@ -13954,7 +13954,7 @@ textarea.input-reset {
   width: 100%;
   height: 100%;
 }
-.search-area__map {
+.search-area__metro {
   max-height: var(--vh);
   width: 100%;
   overflow: auto;
@@ -13962,11 +13962,7 @@ textarea.input-reset {
   margin-left: -20px;
   height: 100%;
 }
-.search-area__map .map-primary {
-  height: 100%;
-  width: 100%;
-}
-.search-area__map._sticky {
+.search-area__metro._sticky {
   position: sticky;
   top: 0;
   width: calc(100% + 20px);
@@ -14510,6 +14506,16 @@ textarea.input-reset {
   padding: 0 32px;
   height: 37.5px;
   width: 100%;
+}
+.search-area__map.map-draw {
+  min-height: calc(var(--vh) - 200px);
+}
+.search-area__map-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  z-index: 2;
+  padding: 0 32px;
 }
 @media (max-width: 1112px) {
   .search-area {
@@ -19152,21 +19158,29 @@ textarea.input-reset {
 }
 .submit-app-maps__map {
   margin-top: 24px;
+}
+@media (max-width: 1112px) {
+  .submit-app-maps {
+    padding: 16px 0;
+  }
+}
+
+.map-draw {
   height: 550px;
   width: 100%;
   position: relative;
 }
 @media (max-width: 1112px) {
-  .submit-app-maps__map {
+  .map-draw {
     height: 450px;
   }
 }
 @media (max-width: 768px) {
-  .submit-app-maps__map {
+  .map-draw {
     height: 250px;
   }
 }
-.submit-app-maps__btns {
+.map-draw__btns {
   position: absolute;
   top: 20px;
   left: 15px;
@@ -19183,12 +19197,12 @@ textarea.input-reset {
   align-items: start;
 }
 @media (max-width: 1112px) {
-  .submit-app-maps__btns {
+  .map-draw__btns {
     top: 10px;
     left: 10px;
   }
 }
-.submit-app-maps__btn {
+.map-draw__btn {
   height: 48px;
   width: 167px;
   background-color: var(--white);
@@ -19204,34 +19218,29 @@ textarea.input-reset {
   align-items: center;
   padding: 0 10px 0 17px;
 }
-.submit-app-maps__btn svg {
+.map-draw__btn svg {
   width: 11px;
   height: 11px;
   fill: var(--dark);
 }
-.submit-app-maps__btn span {
+.map-draw__btn span {
   margin-left: 10px;
   font-size: 11px;
   line-height: 1.2727272727;
   font-weight: 500;
 }
-.submit-app-maps__btn:not(:last-child) {
+.map-draw__btn:not(:last-child) {
   margin-bottom: 10px;
 }
 @media (max-width: 1112px) {
-  .submit-app-maps__btn {
+  .map-draw__btn {
     height: 42px;
     border-radius: 12px;
   }
 }
-.submit-app-maps #submit-app-map {
+.map-draw #map-draw {
   width: 100%;
   height: 100%;
-}
-@media (max-width: 1112px) {
-  .submit-app-maps {
-    padding: 16px 0;
-  }
 }
 
 .place-sale__body {

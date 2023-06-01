@@ -7537,7 +7537,7 @@
                 <div data-tabs class="tabs-primary__inner">
                     <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                         <button type="button" class="btn btn-reset tabs__title _tab-active">
-                            Списком
+                            Метро
                         </button>
                         <button type="button" class="btn btn-reset tabs__title">
                             Область на карте
@@ -12573,7 +12573,7 @@
                                         </div>
                                     </div>
                                     <div class="search-area__left">
-                                        <div class="search-area__map _sticky">
+                                        <div class="search-area__metro _sticky">
                                             <button type="button" class="btn btn-reset search-area__resize">
                                                 <svg>
                                                     <use xlink:href="img/sprite.svg#resize"></use>
@@ -18189,8 +18189,30 @@
                             </div>
                             <div class="tabs__body" hidden>
 
-
-
+                                <div class="map-draw search-area__map">
+                                    <div class="map-draw__btns">
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#path"></use>
+                                            </svg>
+                                            <span>Нарисовать область </span>
+                                        </button>
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#plus"></use>
+                                            </svg>
+                                            <span>Добавить ещё область</span>
+                                        </button>
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#trash"></use>
+                                            </svg>
+                                            <span>Очистить</span>
+                                        </button>
+                                    </div>
+                                    <button type="button" class="btn btn-reset btn-primary search-area__map-btn">Показать 1234 объявлений</button>
+                                    <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
+                                </div>
 
 
                             </div>

@@ -65,19 +65,13 @@
         height: 100%;
     }
 
-    &__map {
+    &__metro {
         max-height: var(--vh);
         width: 100%;
         overflow: auto;
         padding-left: 20px;
         margin-left: -20px;
         height: 100%;
-
-
-        .map-primary {
-            height: 100%;
-            width: 100%;
-        }
 
         &._sticky {
             position: sticky;
@@ -743,6 +737,21 @@
         padding: 0 32px;
         height: 37.5px;
         width: 100%;
+    }
+
+    &__map {
+        &.map-draw {
+            min-height: calc(var(--vh) - 200px);
+        }
+    }
+
+    &__map-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        z-index: 2;
+
+        padding: 0 32px;
     }
 
     @media (max-width:$desktop) {

@@ -173,19 +173,29 @@
 
     &__map {
         margin-top: 24px;
-        height: 550px;
-        width: 100%;
-        position: relative;
-
-        @media (max-width:$desktop) {
-            height: 450px;
-        }
-
-        @media (max-width:$smallTablet-max) {
-            height: 250px;
-        }
     }
 
+
+    @media (max-width:$desktop) {
+        padding: 16px 0;
+    }
+}
+
+
+
+
+.map-draw {
+    height: 550px;
+    width: 100%;
+    position: relative;
+
+    @media (max-width:$desktop) {
+        height: 450px;
+    }
+
+    @media (max-width:$smallTablet-max) {
+        height: 250px;
+    }
     &__btns {
         position: absolute;
         top: 20px;
@@ -237,13 +247,8 @@
             border-radius: 12px;
         }
     }
-
-    #submit-app-map {
+    #map-draw {
         width: 100%;
         height: 100%;
-    }
-
-    @media (max-width:$desktop) {
-        padding: 16px 0;
     }
 }

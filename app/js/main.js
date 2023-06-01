@@ -6273,13 +6273,13 @@ const maps = () => {
     }
     ymaps.ready(init);
   }
-  if (document.querySelector('#submit-app-map')) {
+  if (document.querySelector('#map-draw')) {
     function init() {
-      let map = new ymaps.Map('submit-app-map', {
+      let map = new ymaps.Map('map-draw', {
         center: [55.77171185651524, 37.62811179984117],
         zoom: 10
       });
-      removeControlsPrimary(map, '#submit-app-map');
+      removeControlsPrimary(map, '#map-draw');
     }
     ymaps.ready(init);
   }
@@ -6334,7 +6334,7 @@ const maps = () => {
         setTimeout(() => {
           const pageBody = (cardFull.contentDocument || cardFull.contentWindow.document).querySelector('.page__body');
           cardFull.style.height = `${pageBody.clientHeight + 50}px`;
-        }, 1000);
+        }, 1500);
       }
     });
   }
