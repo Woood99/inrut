@@ -16,6 +16,11 @@ const mapMetro = () => {
     navBottomCloseItem();
     navBottomMoreItem();
 
+    const moscowMetroItems = {};
+    container.querySelectorAll('.search-area__item').forEach(item => {
+        moscowMetroItems[item.dataset.searchAreaMetro] = Array.from(item.querySelectorAll('[data-metro-id]'));
+    })
+
     function activationAndClearAll() {
         const items = container.querySelectorAll('.search-area__item');
         items.forEach(item => {
@@ -98,6 +103,9 @@ const mapMetro = () => {
                         if (input.checked === false) {
                             input.checked = true;
                         }
+
+                        reindexingArrayMetro(input.closest('[data-metro-id]'))
+
                         navBottomUpdate(element.closest('.search-area__item').dataset.searchAreaMetro);
                     })
                 } else {
@@ -164,6 +172,7 @@ const mapMetro = () => {
                         item.classList.remove('MetroMap_hovered');
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
+                            reindexingArrayMetro(item);
                             navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
                         })
                         openSpoller(currentElementList, circleItem);
@@ -192,6 +201,7 @@ const mapMetro = () => {
 
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
+                            reindexingArrayMetro(item);
                             navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
                         })
 
@@ -210,6 +220,12 @@ const mapMetro = () => {
             }
         })
 
+    }
+
+    function reindexingArrayMetro(currentElement) {
+        const currentLineElement = currentElement.closest('[data-search-area-metro]').dataset.searchAreaMetro;
+        const currentElementArrayIndex = moscowMetroItems[currentLineElement].indexOf(currentElement);
+        moscowMetroItems[currentLineElement].splice(0, 0, moscowMetroItems[currentLineElement].splice(currentElementArrayIndex, 1)[0]);
     }
 
     function openSpoller(target, currentElem) {
@@ -252,9 +268,7 @@ const mapMetro = () => {
         }
     }
 
-
     function navBottomUpdate(line) {
-        const items = container.querySelectorAll('[data-metro-id] .checkbox-secondary__input:checked');
         const nav = container.querySelector('.search-area__nav');
         nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
             if (line && navItem.dataset.searchAreaMetroNav === line) {
@@ -264,31 +278,39 @@ const mapMetro = () => {
             navItem.classList.remove('_active');
             navItem.querySelector('div:nth-child(2)').textContent = '';
         });
-        items.forEach(item => {
-            const checkbox = item.closest('.checkbox-secondary');
+        const itemsChecked = [];
+        for (const key in moscowMetroItems) {
+            moscowMetroItems[key].forEach(item => {
+                if (item.querySelector('.checkbox-secondary__input').checked) {
+                    itemsChecked.push(item);
+                }
+            })
+        }
+
+        itemsChecked.forEach(item => {
             const spoller = item.closest('.search-area__item');
             nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
                 if (navItem.dataset.searchAreaMetroNav === spoller.dataset.searchAreaMetro) {
                     navItem.classList.add('_active');
                     const counter = navItem.querySelector('.search-area__nav-counter');
                     const itemsCheckbox = spoller.querySelectorAll('.checkbox-secondary__input:checked');
-                    if (navItem.querySelector('div:nth-child(2)').children.length <= 3 || navItem.classList.contains('_all-visible-item')) {
+                    if (navItem.querySelector('div:nth-child(2)').children.length <= 5 || navItem.classList.contains('_all-visible-item')) {
                         navItem.querySelector('div:nth-child(2)').innerHTML += `
-                        <div data-search-area-metro-item="${checkbox.dataset.metroId}">${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}
-                            <button type="button" class="btn btn-reset search-area__nav-close">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#x"></use>
-                                </svg>
-                            </button>
-                        </div>`;
+                    <div data-search-area-metro-item="${item.dataset.metroId}">${item.querySelector('.checkbox-secondary__text').textContent.trim()}
+                        <button type="button" class="btn btn-reset search-area__nav-close">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#x"></use>
+                            </svg>
+                        </button>
+                    </div>`;
                     }
-                    if (itemsCheckbox.length > 4 && !navItem.classList.contains('_all-visible-item')) {
+                    if (itemsCheckbox.length > 6 && !navItem.classList.contains('_all-visible-item')) {
                         counter.classList.add('_active');
-                        counter.querySelector('span').textContent = itemsCheckbox.length - 4;
+                        counter.querySelector('span').textContent = itemsCheckbox.length - 6;
                     } else {
                         counter.classList.remove('_active');
                     }
-                    if (itemsCheckbox.length <= 4 && navItem.classList.contains('_all-visible-item')) {
+                    if (itemsCheckbox.length <= 6 && navItem.classList.contains('_all-visible-item')) {
                         navItem.classList.remove('_all-visible-item');
                     }
                 }
