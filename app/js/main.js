@@ -6314,7 +6314,7 @@ const maps = () => {
       });
       function resize(e) {
         const width = e.pageX - container.getBoundingClientRect().left - 20;
-        if (!(width <= 750 && width >= 345)) return;
+        if (!(width <= 885 && width >= 345)) return;
         container.style.gridTemplateColumns = `${width}px 1fr`;
         map.container.fitToViewport();
       }
@@ -6322,6 +6322,21 @@ const maps = () => {
         window.removeEventListener('mousemove', resize);
       }
     }
+    const cardFull = container.querySelector('.popup-map__card-full');
+    container.addEventListener('click', e => {
+      const target = e.target;
+      const card = target.closest('[data-card-full-page-src]');
+      if (card) {
+        e.preventDefault();
+        cardFull.classList.add('_active');
+        cardFull.setAttribute('src', card.dataset.cardFullPageSrc);
+        container.querySelector('.popup-map__items').setAttribute('hidden', '');
+        setTimeout(() => {
+          const pageBody = (cardFull.contentDocument || cardFull.contentWindow.document).querySelector('.page__body');
+          cardFull.style.height = `${pageBody.clientHeight + 50}px`;
+        }, 1000);
+      }
+    });
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (maps);
