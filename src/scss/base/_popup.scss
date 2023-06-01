@@ -375,7 +375,7 @@
                 text-align: center;
 
                 @media (max-width:$desktop) {
-                    padding: 24px;
+                    padding: 24px 0;
                     width: 100%;
                 }
             }
@@ -384,7 +384,6 @@
                 position: relative;
                 max-width: 1332px;
                 margin: 0 auto;
-                padding: 0 16px;
                 text-align: left;
             }
 
@@ -397,16 +396,32 @@
                 height: 20px;
                 margin-left: auto;
                 z-index: 99;
+
+                svg {
+                    display: block;
+                }
+
+                @media (max-width:$desktop) {
+                    right: 16px;
+                }
             }
         }
     }
 }
 
 .popup-map {
-    &__title {}
+    &__title {
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
+    }
 
     &__filter {
         margin-top: 24px;
+
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
     }
 
     &__container {
@@ -415,6 +430,10 @@
         display: grid;
         grid-template-columns: 750px 1fr;
         grid-column-gap: 24px;
+
+        @media (max-width:$desktop) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__items {
@@ -422,6 +441,10 @@
         grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
         grid-column-gap: 16px;
         grid-row-gap: 24px;
+
+        @media (max-width:$desktop) {
+            order: 2;
+        }
     }
 
     &__map {
@@ -431,15 +454,22 @@
         padding-left: 20px;
         margin-left: -20px;
 
-        &._sticky {
-            position: sticky;
-            top: 0;
-            width: calc(100% + 20px);
+        @media (min-width:$desktop-min) {
+            &._sticky {
+                position: sticky;
+                top: 0;
+                width: calc(100% + 20px);
+            }
         }
 
         .map-primary {
             height: 100%;
             width: 100%;
+        }
+
+        @media (max-width:$desktop) {
+            order: 1;
+            margin-bottom: 24px;
         }
     }
 
@@ -467,6 +497,10 @@
             width: 25px;
             height: 25px;
             fill: var(--dark);
+        }
+
+        @media (max-width:$desktop) {
+            display: none;
         }
     }
 
@@ -510,7 +544,7 @@
             }
 
             &__container {
-                min-height: auto;
+                min-height: 85vh;
                 height: auto;
                 position: static;
                 opacity: inherit;

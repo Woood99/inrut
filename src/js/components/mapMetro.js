@@ -25,7 +25,7 @@ const mapMetro = () => {
 
             btnAll.addEventListener('click', () => {
                 clearAllLine(elements);
-                navBottomUpdate();
+                navBottomUpdate(item.dataset.searchAreaMetro);
             })
             btnClear.addEventListener('click', () => {
                 elements.forEach(el => {
@@ -98,6 +98,7 @@ const mapMetro = () => {
                         if (input.checked === false) {
                             input.checked = true;
                         }
+                        navBottomUpdate(element.closest('.search-area__item').dataset.searchAreaMetro);
                     })
                 } else {
                     currentElementMap.classList.remove('MetroMap_select');
@@ -107,8 +108,8 @@ const mapMetro = () => {
                             input.checked = false;
                         }
                     })
+                    navBottomUpdate();
                 }
-                navBottomUpdate();
             });
         })
 
@@ -163,8 +164,8 @@ const mapMetro = () => {
                         item.classList.remove('MetroMap_hovered');
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
+                            navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
                         })
-
                         openSpoller(currentElementList, circleItem);
                     } else {
                         station.classList.remove('MetroMap_select');
@@ -173,8 +174,8 @@ const mapMetro = () => {
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = false;
                         })
+                        navBottomUpdate();
                     }
-                    navBottomUpdate();
                 } else {
                     const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
                     const station = map.querySelector(`#MetroMap_station_${stationId}`);
@@ -191,6 +192,7 @@ const mapMetro = () => {
 
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = true;
+                            navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
                         })
 
                         openSpoller(currentElementList, circleItem);
@@ -202,8 +204,8 @@ const mapMetro = () => {
                         currentElementList.forEach(item => {
                             item.querySelector('.checkbox-secondary__input').checked = false;
                         })
+                        navBottomUpdate();
                     }
-                    navBottomUpdate();
                 }
             }
         })
@@ -251,10 +253,13 @@ const mapMetro = () => {
     }
 
 
-    function navBottomUpdate() {
+    function navBottomUpdate(line) {
         const items = container.querySelectorAll('[data-metro-id] .checkbox-secondary__input:checked');
         const nav = container.querySelector('.search-area__nav');
         nav.querySelectorAll('.search-area__nav-item').forEach(navItem => {
+            if (line && navItem.dataset.searchAreaMetroNav === line) {
+                nav.children[0].insertAdjacentElement('beforebegin', navItem);
+            }
             if (!navItem.classList.contains('_active')) return;
             navItem.classList.remove('_active');
             navItem.querySelector('div:nth-child(2)').textContent = '';
@@ -267,7 +272,7 @@ const mapMetro = () => {
                     navItem.classList.add('_active');
                     const counter = navItem.querySelector('.search-area__nav-counter');
                     const itemsCheckbox = spoller.querySelectorAll('.checkbox-secondary__input:checked');
-                    if (navItem.querySelector('div:nth-child(2)').children.length <= 2 || navItem.classList.contains('_all-visible-item')) {
+                    if (navItem.querySelector('div:nth-child(2)').children.length <= 3 || navItem.classList.contains('_all-visible-item')) {
                         navItem.querySelector('div:nth-child(2)').innerHTML += `
                         <div data-search-area-metro-item="${checkbox.dataset.metroId}">${checkbox.querySelector('.checkbox-secondary__text').textContent.trim()}
                             <button type="button" class="btn btn-reset search-area__nav-close">
@@ -277,16 +282,15 @@ const mapMetro = () => {
                             </button>
                         </div>`;
                     }
-                    if (itemsCheckbox.length > 3 && !navItem.classList.contains('_all-visible-item')) {
+                    if (itemsCheckbox.length > 4 && !navItem.classList.contains('_all-visible-item')) {
                         counter.classList.add('_active');
-                        counter.querySelector('span').textContent = itemsCheckbox.length - 3;
+                        counter.querySelector('span').textContent = itemsCheckbox.length - 4;
                     } else {
                         counter.classList.remove('_active');
                     }
-                    if (itemsCheckbox.length <= 3 && navItem.classList.contains('_all-visible-item')) {
+                    if (itemsCheckbox.length <= 4 && navItem.classList.contains('_all-visible-item')) {
                         navItem.classList.remove('_all-visible-item');
                     }
-
                 }
             })
         })

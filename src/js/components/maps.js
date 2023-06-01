@@ -57,7 +57,7 @@ const maps = () => {
                 zoom: 10,
             });
             removeControlsPrimary(map, '#popup-map__map');
-            reziseContainer(map)
+            if (innerWidth > 1112) reziseContainer(map)
         }
         ymaps.ready(init);
 
