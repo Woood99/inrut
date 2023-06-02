@@ -13162,15 +13162,43 @@
                 <div data-tabs class="tabs-primary__inner">
                     <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                         <button type="button" class="btn btn-reset tabs__title _tab-active">
-                            Метро
+                            Область на карте
                         </button>
                         <button type="button" class="btn btn-reset tabs__title">
-                            Область на карте
+                            Метро
                         </button>
                     </nav>
                     <div class="tabs-primary__container">
                         <div data-tabs-body class="tabs__content tabs-primary__content">
                             <div class="tabs__body">
+                                <div class="map-draw search-area__map">
+                                    <div class="map-draw__btns">
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#path"></use>
+                                            </svg>
+                                            <span>Нарисовать область </span>
+                                        </button>
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#plus"></use>
+                                            </svg>
+                                            <span>Добавить ещё область</span>
+                                        </button>
+                                        <button type="button" class="btn btn-reset map-draw__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#trash"></use>
+                                            </svg>
+                                            <span>Очистить</span>
+                                        </button>
+                                    </div>
+                                    <button type="button"
+                                        class="btn btn-reset btn-primary search-area__map-btn">Показать 1234
+                                        объявлений</button>
+                                    <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
+                                </div>
+                            </div>
+                            <div class="tabs__body" hidden>
                                 <form action="#" class="search-area__form">
                                     <div class="search-area__top">
                                         <label class="input-primary search-area__search">
@@ -18205,7 +18233,7 @@
                                                 </svg>
                                             </button>
                                             <div class="dragscroll">
-                                                <div class="map-metro" style="transform: scale(0.9);">
+                                                <div class="map-metro" style="transform: scale(0.9)">
     <div class="map-metro__container">
         <div class="map-metro__map">
             <svg width="2000" height="2600" viewBox="0 0 2000 2600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23812,35 +23840,6 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="tabs__body" hidden>
-
-                                <div class="map-draw search-area__map">
-                                    <div class="map-draw__btns">
-                                        <button type="button" class="btn btn-reset map-draw__btn">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#path"></use>
-                                            </svg>
-                                            <span>Нарисовать область </span>
-                                        </button>
-                                        <button type="button" class="btn btn-reset map-draw__btn">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#plus"></use>
-                                            </svg>
-                                            <span>Добавить ещё область</span>
-                                        </button>
-                                        <button type="button" class="btn btn-reset map-draw__btn">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#trash"></use>
-                                            </svg>
-                                            <span>Очистить</span>
-                                        </button>
-                                    </div>
-                                    <button type="button" class="btn btn-reset btn-primary search-area__map-btn">Показать 1234 объявлений</button>
-                                    <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
-                                </div>
-
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -24061,7 +24060,7 @@
                 </div>
             </form>
             <div class="popup-map__container">
-                <iframe frameborder="0" class="popup-map__card-full"></iframe>
+                <iframe frameborder="0" scrolling="no" class="popup-map__card-full"></iframe>
                 <div class="popup-map__items">
                     <article class="card-secondary" data-card-full-page-src="./develop-inner.html">
                         <a href="#" class="card-secondary__container">

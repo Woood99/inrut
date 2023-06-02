@@ -5925,38 +5925,7 @@ const mapMetro = () => {
     map.addEventListener('click', e => {
       if (map.closest('.dragscroll').classList.contains('is-moving')) return;
       const target = e.target;
-      const stationItem = target.closest('.MetroMap_station_item');
       const circleItem = target.closest('.MetroMap_stop');
-      // if (stationItem) {
-      //     const stationId = stationItem.id.replace('MetroMap_station_', '');
-      //     const circle = map.querySelector(`.MetroMap_to_${stationId}`);
-      //     const currentId = stationItem.dataset.mapMetroId;
-      //     const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
-      //     if (!stationItem.classList.contains('MetroMap_select')) {
-      //         stationItem.classList.add('MetroMap_select');
-      //         stationItem.classList.remove('MetroMap_hovered');
-
-      //         circle.classList.add('MetroMap_select');
-      //         circle.classList.remove('MetroMap_hovered');
-
-      //         if (currentElementList.length === 0) return;
-      //         currentElementList.forEach(item => {
-      //             item.querySelector('.checkbox-secondary__input').checked = true;
-      //         })
-
-      //         openSpoller(currentElementList,?);
-      //     } else {
-      //         stationItem.classList.remove('MetroMap_select');
-
-      //         circle.classList.remove('MetroMap_select');
-
-      //         if (currentElementList.length === 0) return;
-      //         currentElementList.forEach(item => {
-      //             item.querySelector('.checkbox-secondary__input').checked = false;
-      //         })
-      //     }
-      // }
-
       if (circleItem) {
         if (circleItem.closest('.MetroMap_transit_group')) {
           let item = circleItem.closest('.MetroMap_transit_group');
@@ -6134,31 +6103,6 @@ const mapMetro = () => {
   function metroHovered() {
     map.addEventListener('mousemove', e => {
       const target = e.target;
-      // if (target.closest('.MetroMap_station_item')) {
-      //     const item = target.closest('.MetroMap_station_item');
-      //     if (item.classList.contains('MetroMap_select')) return;
-      //     const idStation = item.id.replace('MetroMap_station_', '');
-      //     const circleItems = document.querySelectorAll(`.MetroMap_to_${idStation}`);
-      //     item.classList.add('MetroMap_hovered')
-      //     circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'))
-      // } else if (target.closest('.MetroMap_transit_group')) {
-      //     const item = target.closest('.MetroMap_transit_group');
-      //     if (item.classList.contains('MetroMap_select')) return;
-      //     const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-      //     document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-      //     item.classList.add('MetroMap_hovered');
-      // } else if (target.closest('.MetroMap_stop')) {
-      //     const item = target.closest('.MetroMap_stop');
-      //     if (item.classList.contains('MetroMap_select')) return;
-      //     const idItem = item.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-      //     document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-      //     item.classList.add('MetroMap_hovered');
-      // } else {
-      //     const items = map.querySelectorAll('.MetroMap_hovered');
-      //     if (items.length === 0) return;
-      //     items.forEach(item => item.classList.remove('MetroMap_hovered'));
-      // }
-
       if (target.closest('.MetroMap_transit_group')) {
         const item = target.closest('.MetroMap_transit_group');
         if (item.classList.contains('MetroMap_select')) return;
@@ -6314,7 +6258,7 @@ const maps = () => {
       });
       function resize(e) {
         const width = e.pageX - container.getBoundingClientRect().left - 20;
-        if (!(width <= 885 && width >= 345)) return;
+        if (!(width <= 706 && width >= 345)) return;
         container.style.gridTemplateColumns = `${width}px 1fr`;
         map.container.fitToViewport();
       }
@@ -6334,7 +6278,16 @@ const maps = () => {
         setTimeout(() => {
           const pageBody = (cardFull.contentDocument || cardFull.contentWindow.document).querySelector('.page__body');
           cardFull.style.height = `${pageBody.clientHeight + 50}px`;
+          cardFull.removeAttribute('scrolling');
+          pageBody.querySelector('.object__back').addEventListener('click', () => {
+            closeCardFull();
+          });
         }, 1500);
+        function closeCardFull() {
+          cardFull.classList.remove('_active');
+          cardFull.setAttribute('src', '');
+          container.querySelector('.popup-map__items').removeAttribute('hidden');
+        }
       }
     });
   }
@@ -7832,6 +7785,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const tabs = () => {
+  const metroContainer = document.querySelector('.popup-primary--search-area');
+  const metroInnerMoscow = document.querySelector('#map-metro_moscow');
+  let metroBooleanStatus = false;
   const tabs = document.querySelectorAll('[data-tabs]');
   let tabsActiveHash = [];
   if (tabs.length > 0) {
@@ -7949,6 +7905,13 @@ const tabs = () => {
         tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_tab-active') : null;
         tabTitle.classList.add('_tab-active');
         setTabsStatus(tabsBlock);
+        if (!metroBooleanStatus && metroContainer && metroInnerMoscow) {
+          metroContainer.querySelector('.dragscroll').scrollTo({
+            top: metroInnerMoscow.getBoundingClientRect().height / 3,
+            left: metroInnerMoscow.getBoundingClientRect().width / 3
+          });
+          metroBooleanStatus = true;
+        }
       }
       e.preventDefault();
     }

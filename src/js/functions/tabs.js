@@ -3,6 +3,12 @@ import dataMediaQueries from '../support-modules/dataMediaQueries';
 
 
 const tabs = () => {
+    const metroContainer = document.querySelector('.popup-primary--search-area');
+    const metroInnerMoscow = document.querySelector('#map-metro_moscow');
+    let metroBooleanStatus = false;
+
+
+
     const tabs = document.querySelectorAll('[data-tabs]');
     let tabsActiveHash = [];
 
@@ -58,7 +64,6 @@ const tabs = () => {
         let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
         const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
         const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
-
         if (tabsActiveHashBlock) {
             const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._tab-active');
             tabsActiveTitle ? tabsActiveTitle.classList.remove('_tab-active') : null;
@@ -130,6 +135,14 @@ const tabs = () => {
                 tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_tab-active') : null;
                 tabTitle.classList.add('_tab-active');
                 setTabsStatus(tabsBlock);
+
+                if (!metroBooleanStatus && metroContainer && metroInnerMoscow) {
+                    metroContainer.querySelector('.dragscroll').scrollTo({
+                        top: metroInnerMoscow.getBoundingClientRect().height / 3,
+                        left: metroInnerMoscow.getBoundingClientRect().width / 3,
+                    });
+                    metroBooleanStatus = true;
+                }
             }
             e.preventDefault();
         }

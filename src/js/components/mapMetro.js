@@ -124,37 +124,7 @@ const mapMetro = () => {
         map.addEventListener('click', (e) => {
             if (map.closest('.dragscroll').classList.contains('is-moving')) return;
             const target = e.target;
-            const stationItem = target.closest('.MetroMap_station_item');
             const circleItem = target.closest('.MetroMap_stop');
-            // if (stationItem) {
-            //     const stationId = stationItem.id.replace('MetroMap_station_', '');
-            //     const circle = map.querySelector(`.MetroMap_to_${stationId}`);
-            //     const currentId = stationItem.dataset.mapMetroId;
-            //     const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
-            //     if (!stationItem.classList.contains('MetroMap_select')) {
-            //         stationItem.classList.add('MetroMap_select');
-            //         stationItem.classList.remove('MetroMap_hovered');
-
-            //         circle.classList.add('MetroMap_select');
-            //         circle.classList.remove('MetroMap_hovered');
-
-            //         if (currentElementList.length === 0) return;
-            //         currentElementList.forEach(item => {
-            //             item.querySelector('.checkbox-secondary__input').checked = true;
-            //         })
-
-            //         openSpoller(currentElementList,?);
-            //     } else {
-            //         stationItem.classList.remove('MetroMap_select');
-
-            //         circle.classList.remove('MetroMap_select');
-
-            //         if (currentElementList.length === 0) return;
-            //         currentElementList.forEach(item => {
-            //             item.querySelector('.checkbox-secondary__input').checked = false;
-            //         })
-            //     }
-            // }
 
             if (circleItem) {
                 if (circleItem.closest('.MetroMap_transit_group')) {
@@ -352,32 +322,6 @@ const mapMetro = () => {
     function metroHovered() {
         map.addEventListener('mousemove', (e) => {
             const target = e.target;
-            // if (target.closest('.MetroMap_station_item')) {
-            //     const item = target.closest('.MetroMap_station_item');
-            //     if (item.classList.contains('MetroMap_select')) return;
-            //     const idStation = item.id.replace('MetroMap_station_', '');
-            //     const circleItems = document.querySelectorAll(`.MetroMap_to_${idStation}`);
-            //     item.classList.add('MetroMap_hovered')
-            //     circleItems.forEach(circle => circle.classList.add('MetroMap_hovered'))
-            // } else if (target.closest('.MetroMap_transit_group')) {
-            //     const item = target.closest('.MetroMap_transit_group');
-            //     if (item.classList.contains('MetroMap_select')) return;
-            //     const idItem = item.getAttribute('class').replace('MetroMap_transit_group', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-            //     document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-            //     item.classList.add('MetroMap_hovered');
-            // } else if (target.closest('.MetroMap_stop')) {
-            //     const item = target.closest('.MetroMap_stop');
-            //     if (item.classList.contains('MetroMap_select')) return;
-            //     const idItem = item.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_hovered', '').replace('MetroMap_to_', '').trim();
-            //     document.getElementById(`MetroMap_station_${idItem}`).classList.add('MetroMap_hovered');
-            //     item.classList.add('MetroMap_hovered');
-            // } else {
-            //     const items = map.querySelectorAll('.MetroMap_hovered');
-            //     if (items.length === 0) return;
-            //     items.forEach(item => item.classList.remove('MetroMap_hovered'));
-            // }
-
-
             if (target.closest('.MetroMap_transit_group')) {
                 const item = target.closest('.MetroMap_transit_group');
                 if (item.classList.contains('MetroMap_select')) return;

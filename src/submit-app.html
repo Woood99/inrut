@@ -247,7 +247,84 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="submit-app-options__choice">
+                            <h2 class="submit-app-options__title submit-app__row-title  title-2">
+                                Как планируете покупать объект
+                            </h2>
                             <div class="submit-app-options__row submit-app-options__row--7">
+                                <div class="submit-app-options__item select-dropdown-checkbox">
+                                    <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
+                                        <span class="select-dropdown-checkbox__placeholder">
+                                            Свойства расчета
+                                        </span>
+                                        <div class="select-dropdown-checkbox__title">
+                                            Неважно
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="select-dropdown-checkbox__dropdown">
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_1" name="calculation"
+                                                class="checkbox-secondary__input" data-name="cash" type="checkbox"
+                                                value="true">
+                                            <label for="calculation_1" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Наличные</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_2" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_yes-bank"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_2" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Ипотека,есть одобрение от
+                                                    банка</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input id="calculation_3" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_no-bank"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_3" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">Ипотека, нет одобрения от
+                                                    банка</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input disabled id="calculation_4" name="calculation"
+                                                class="checkbox-secondary__input" data-name="mortgage_no-fee"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_4" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    У меня нет первоначального
+                                                    взноса
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-secondary">
+                                            <input disabled id="calculation_5" name="calculation"
+                                                class="checkbox-secondary__input" data-name="certificate"
+                                                type="checkbox" value="true">
+                                            <label for="calculation_5" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    В сделке буду использовать сертификат
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="submit-app-options__item filter-dropdown" data-filter-dropdown-name="Сумма"
                                     data-filter-dropdown-subtitle="Любая">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
@@ -322,77 +399,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="submit-app-options__item select-dropdown-checkbox">
-                                    <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
-                                        <span class="select-dropdown-checkbox__placeholder">
-                                            Свойства расчета
-                                        </span>
-                                        <div class="select-dropdown-checkbox__title">
-                                            Неважно
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="select-dropdown-checkbox__dropdown">
-                                        <div class="checkbox-secondary">
-                                            <input id="calculation_1" name="calculation"
-                                                class="checkbox-secondary__input" data-name="cash" type="checkbox"
-                                                value="true">
-                                            <label for="calculation_1" class="checkbox-secondary__label">
-                                                <span class="checkbox-secondary__text">Наличные</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-secondary">
-                                            <input id="calculation_2" name="calculation"
-                                                class="checkbox-secondary__input" data-name="mortgage_yes-bank"
-                                                type="checkbox" value="true">
-                                            <label for="calculation_2" class="checkbox-secondary__label">
-                                                <span class="checkbox-secondary__text">Ипотека,есть одобрение от
-                                                    банка</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-secondary">
-                                            <input id="calculation_3" name="calculation"
-                                                class="checkbox-secondary__input" data-name="mortgage_no-bank"
-                                                type="checkbox" value="true">
-                                            <label for="calculation_3" class="checkbox-secondary__label">
-                                                <span class="checkbox-secondary__text">Ипотека, нет одобрения от
-                                                    банка</span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-secondary">
-                                            <input disabled id="calculation_4" name="calculation"
-                                                class="checkbox-secondary__input" data-name="mortgage_no-fee"
-                                                type="checkbox" value="true">
-                                            <label for="calculation_4" class="checkbox-secondary__label">
-                                                <span class="checkbox-secondary__text">
-                                                    У меня нет первоначального
-                                                    взноса
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox-secondary">
-                                            <input disabled id="calculation_5" name="calculation"
-                                                class="checkbox-secondary__input" data-name="certificate"
-                                                type="checkbox" value="true">
-                                            <label for="calculation_5" class="checkbox-secondary__label">
-                                                <span class="checkbox-secondary__text">
-                                                    В сделке буду использовать сертификат
-                                                </span>
-                                                <div class="secondary-tooltip">
-                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#info"></use>
-                                                        </svg>
-                                                    </button>
-                                                    <div class="secondary-tooltip__content">
-                                                        Какой-то текст!!
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="submit-app-options__choice">
+                            <h2 class="submit-app-options__title submit-app__row-title  title-2">
+                                Когда планируете начинать просмотр
+                            </h2>
+                            <div class="submit-app-options__row submit-app-options__row--8">
+                                <div class="submit-app-options__item select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Дата
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="apartments">Любая</option>
+                                        <option value="apartments">Сегодня</option>
+                                        <option value="apartments2">В течение недели</option>
+                                        <option value="apartments3">В течение месяца</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
