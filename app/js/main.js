@@ -4159,6 +4159,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_choicePay__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/choicePay */ "./src/js/components/choicePay.js");
 /* harmony import */ var _components_genplan__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/genplan */ "./src/js/components/genplan.js");
 /* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
+/* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
+
 
 
 
@@ -4229,6 +4231,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_choicePay__WEBPACK_IMPORTED_MODULE_21__["default"])();
   (0,_components_genplan__WEBPACK_IMPORTED_MODULE_22__["default"])();
   (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_23__["default"])();
+  (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-developer__content .cards-list__items');
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_6__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4586,6 +4589,118 @@ const calendarPrimary = () => {
     }, 500);
   }
 };
+
+/***/ }),
+
+/***/ "./src/js/components/cardStockPopup.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/cardStockPopup.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
+const cardStockPopup = containerSelector => {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+  container.addEventListener('click', e => {
+    const target = e.target;
+    const cardSecondary = target.closest('.card-stock-secondary');
+    const cardThird = target.closest('.card-stock-third');
+    if (!cardSecondary && !cardThird) return;
+    if (cardSecondary) {
+      const modalHTML = `
+            <div class="stock-popup">
+            <div class="stock-popup__container">
+                <button class="btn-reset stock-popup__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                <div class="stock-popup__content">
+                    <div class="stock-popup__image ibg">
+                        ${cardSecondary.querySelector('.card-stock-secondary__image').innerHTML}
+                    </div>
+                    <div class="stock-popup__name">
+                        ${cardSecondary.querySelector('.card-stock-secondary__name').innerHTML}
+                    </div>
+                    <div class="stock-popup__descr">
+                        ${cardSecondary.querySelector('.card-stock-secondary__descr').dataset.cardStockDescrFull}
+                    </div>
+                    <div class="stock-popup__user user-info">
+                        ${cardSecondary.querySelector('.card-stock-secondary__user').innerHTML}
+                    </div>
+                    <div class="stock-popup__btns">
+                    <button type="button" class="btn btn-reset btn-primary stock-popup__call">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#phone"></use>
+                        </svg>
+                        <span>Позвонить</span>
+                    </button>
+                    <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#chat"></use>
+                        </svg>
+                        <span>Написать</span>
+                    </button>
+                </div>
+            </div>
+            </div>
+            `;
+      cardSecondary.classList.add('_active');
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.stock-popup', 300, cardSecondary);
+    }
+    if (cardThird) {
+      if (target.closest('.card-stock-third__tooltip')) return;
+      const modalHTML = `
+            <div class="stock-popup">
+            <div class="stock-popup__container">
+                <button class="btn-reset stock-popup__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="stock-popup__content">
+                    <div class="stock-popup__name">
+                        ${cardThird.querySelector('.card-stock-third__name').innerHTML}
+                    </div>
+                    <div class="stock-popup__descr">
+                        ${cardThird.querySelector('.card-stock-third__descr').dataset.cardStockDescrFull}
+                    </div>
+                    <div class="stock-popup__user user-info">
+                        ${cardThird.querySelector('.card-stock-third__user').innerHTML}
+                    </div>
+                    <div class="stock-popup__btns">
+                    <button type="button" class="btn btn-reset btn-primary stock-popup__call">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#phone"></use>
+                        </svg>
+                        <span>Позвонить</span>
+                    </button>
+                    <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#chat"></use>
+                        </svg>
+                        <span>Написать</span>
+                    </button>
+                    </div>
+                 </div>
+            </div>
+            </div>
+            `;
+      cardThird.classList.add('_active');
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.stock-popup', 300, cardThird);
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardStockPopup);
 
 /***/ }),
 
@@ -5924,60 +6039,62 @@ const mapMetro = () => {
     });
     map.addEventListener('click', e => {
       if (map.closest('.dragscroll').classList.contains('is-moving')) return;
-      const target = e.target;
-      const circleItem = target.closest('.MetroMap_stop');
-      if (circleItem) {
-        if (circleItem.closest('.MetroMap_transit_group')) {
-          let item = circleItem.closest('.MetroMap_transit_group');
-          const stationId = item.getAttribute('class').replace('MetroMap_transit_group ', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
-          const station = map.querySelector(`#MetroMap_station_${stationId}`);
-          const currentId = station.dataset.mapMetroId;
-          const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
-          if (!item.classList.contains('MetroMap_select')) {
-            station.classList.add('MetroMap_select');
-            station.classList.remove('MetroMap_hovered');
-            item.classList.add('MetroMap_select');
-            item.classList.remove('MetroMap_hovered');
-            currentElementList.forEach(item => {
-              item.querySelector('.checkbox-secondary__input').checked = true;
-              reindexingArrayMetro(item);
-              navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
-            });
-            openSpoller(currentElementList, circleItem);
+      setTimeout(() => {
+        const target = e.target;
+        const circleItem = target.closest('.MetroMap_stop');
+        if (circleItem) {
+          if (circleItem.closest('.MetroMap_transit_group')) {
+            let item = circleItem.closest('.MetroMap_transit_group');
+            const stationId = item.getAttribute('class').replace('MetroMap_transit_group ', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
+            const station = map.querySelector(`#MetroMap_station_${stationId}`);
+            const currentId = station.dataset.mapMetroId;
+            const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+            if (!item.classList.contains('MetroMap_select')) {
+              station.classList.add('MetroMap_select');
+              station.classList.remove('MetroMap_hovered');
+              item.classList.add('MetroMap_select');
+              item.classList.remove('MetroMap_hovered');
+              currentElementList.forEach(item => {
+                item.querySelector('.checkbox-secondary__input').checked = true;
+                reindexingArrayMetro(item);
+                navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
+              });
+              openSpoller(currentElementList, circleItem);
+            } else {
+              station.classList.remove('MetroMap_select');
+              item.classList.remove('MetroMap_select');
+              currentElementList.forEach(item => {
+                item.querySelector('.checkbox-secondary__input').checked = false;
+              });
+              navBottomUpdate();
+            }
           } else {
-            station.classList.remove('MetroMap_select');
-            item.classList.remove('MetroMap_select');
-            currentElementList.forEach(item => {
-              item.querySelector('.checkbox-secondary__input').checked = false;
-            });
-            navBottomUpdate();
-          }
-        } else {
-          const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
-          const station = map.querySelector(`#MetroMap_station_${stationId}`);
-          const currentId = station.dataset.mapMetroId;
-          const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
-          if (!circleItem.classList.contains('MetroMap_select')) {
-            circleItem.classList.add('MetroMap_select');
-            circleItem.classList.remove('MetroMap_hovered');
-            station.classList.add('MetroMap_select');
-            station.classList.remove('MetroMap_hovered');
-            currentElementList.forEach(item => {
-              item.querySelector('.checkbox-secondary__input').checked = true;
-              reindexingArrayMetro(item);
-              navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
-            });
-            openSpoller(currentElementList, circleItem);
-          } else {
-            circleItem.classList.remove('MetroMap_select');
-            station.classList.remove('MetroMap_select');
-            currentElementList.forEach(item => {
-              item.querySelector('.checkbox-secondary__input').checked = false;
-            });
-            navBottomUpdate();
+            const stationId = circleItem.getAttribute('class').replace('MetroMap_stop', '').replace('MetroMap_to_', '').replace('MetroMap_hovered', '').replace('MetroMap_select', '').trim();
+            const station = map.querySelector(`#MetroMap_station_${stationId}`);
+            const currentId = station.dataset.mapMetroId;
+            const currentElementList = container.querySelectorAll(`[data-metro-id='${currentId}']`);
+            if (!circleItem.classList.contains('MetroMap_select')) {
+              circleItem.classList.add('MetroMap_select');
+              circleItem.classList.remove('MetroMap_hovered');
+              station.classList.add('MetroMap_select');
+              station.classList.remove('MetroMap_hovered');
+              currentElementList.forEach(item => {
+                item.querySelector('.checkbox-secondary__input').checked = true;
+                reindexingArrayMetro(item);
+                navBottomUpdate(item.closest('.search-area__item').dataset.searchAreaMetro);
+              });
+              openSpoller(currentElementList, circleItem);
+            } else {
+              circleItem.classList.remove('MetroMap_select');
+              station.classList.remove('MetroMap_select');
+              currentElementList.forEach(item => {
+                item.querySelector('.checkbox-secondary__input').checked = false;
+              });
+              navBottomUpdate();
+            }
           }
         }
-      }
+      }, 25);
     });
   }
   function reindexingArrayMetro(currentElement) {
@@ -8320,6 +8437,14 @@ const modal = function (modalHTML, container) {
       settingsModal.isOpen = false;
       if (target && target.classList.contains('advantages-card')) {
         target.classList.remove('_active');
+      }
+      if (target && target.classList.contains('card-stock-secondary')) {
+        target.classList.remove('_active');
+        target.querySelector('.card-stock-secondary__container').blur();
+      }
+      if (target && target.classList.contains('card-stock-third')) {
+        target.classList.remove('_active');
+        target.querySelector('.card-stock-third__container').blur();
       }
     }
   }

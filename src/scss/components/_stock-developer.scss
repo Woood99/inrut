@@ -1,0 +1,45 @@
+.stock-developer {
+    &__body{
+        @media (max-width:$desktop){
+            padding: 74px 0 16px;
+            background-color: var(--stand-bg);
+            border-radius: 0 0 12px 12px; 
+        }
+    }
+    &__title{
+        padding: 0 16px;
+    }
+    &__filter {
+        margin-top: 32px;
+        @media (max-width:$desktop){
+            padding: 0 16px;
+            margin-top: 16px;
+            margin-bottom: 16px 
+        }
+    }
+    &__input{
+       @media (max-width:$desktop){
+        height: 45px;
+        width: 100%; 
+       }
+    }
+    &__controls {
+        .filter__clear {
+            padding: 0 37px;
+        }
+
+        .filter__go {
+            padding: 0 58px;
+        }
+    }
+
+    &__content {
+        margin-top: 32px;
+    }
+
+    .cards-list {
+        &__items {
+            margin-top: 0;
+        }
+    }
+}

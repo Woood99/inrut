@@ -61,6 +61,14 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             if (target && target.classList.contains('advantages-card')) {
                 target.classList.remove('_active');
             }
+            if (target && target.classList.contains('card-stock-secondary')) {
+                target.classList.remove('_active');
+              target.querySelector('.card-stock-secondary__container').blur();
+            }
+            if (target && target.classList.contains('card-stock-third')) {
+                target.classList.remove('_active');
+              target.querySelector('.card-stock-third__container').blur();
+            }
         }
     }
 

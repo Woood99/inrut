@@ -41,6 +41,7 @@ import mortgage from './components/mortgage';
 import choicePay from './components/choicePay';
 import genplan from './components/genplan';
 import mapMetro from './components/mapMetro';
+import cardStockPopup from './components/cardStockPopup';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     choicePay();
     genplan();
     mapMetro();
+    cardStockPopup('.stock-developer__content .cards-list__items');
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

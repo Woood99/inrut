@@ -442,6 +442,7 @@
         height: 100%;
 
         scrollbar-width: none;
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -1560,6 +1561,184 @@
             @media (max-width:$smallTablet-max) {
                 margin-top: 24px;
             }
+        }
+    }
+}
+
+.stock-popup {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(34, 41, 102, 0.4);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: right;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &__container {
+        position: relative;
+        min-height: var(--vh);
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #fff;
+        cursor: default;
+        text-align: left;
+        display: none;
+        max-width: 558px;
+        border-radius: 12px 0 0 12px;
+
+        &.open {
+            display: inline-flex !important;
+        }
+
+        padding: 58px 48px 32px;
+        align-items: center;
+        @media (max-width:$smallTablet-max) {
+            max-width: 100%;
+            border-radius: 0;
+            padding: 58px 16px 24px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: var(--primary500);
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__image{
+        padding-bottom: percent(207, 323);
+        border-radius: 12px;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 16px;
+
+        img {
+            border-radius: 12px;
+        }
+    }
+    &__name {
+        font-size: 24px;
+        line-height: math.div(30, 24);
+        color: var(--dark);
+        font-weight: 500;
+    }
+
+    &__descr {
+        margin-top: 8px;
+        color: var(--primaryTwo);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 400;
+    }
+
+    &__user {
+        margin-top: 48px;
+        align-self: end;
+        &.user-info{
+            grid-template-columns: 46px 1fr;
+            grid-column-gap: 16px;
+            .user-info__avatar{
+                width: 46px;
+                height: 46px;
+            }
+        }
+    }
+
+    &__btns {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        @media (max-width:$mobile-max){
+             grid-template-columns: 1fr; 
+             grid-row-gap: 16px;
+        }
+    }
+    &__call{
+        svg{
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            fill: var(--white);
+        }
+    }
+    &__message{
+        svg{
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            fill: var(--blue);
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+        @media (min-width:$desktop-min){
+             &:hover{
+                svg{
+                    fill: var(--white);
+                }
+             } 
         }
     }
 }
