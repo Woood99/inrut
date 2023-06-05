@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     maps();
-    calendarPrimary();
+    calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
+    calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
     galleryPrimary();
     controlCards();
     videoBlock();

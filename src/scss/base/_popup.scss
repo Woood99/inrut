@@ -961,8 +961,8 @@
         }
 
         border-radius: 12px 0 0 12px;
-        padding: 65px 0 65px 24px;
-        width: 348px;
+        padding: 65px 48px;
+        width: 406px;
 
         @media (max-width:$desktop) {
             border-radius: 12px 12px 0 0;
@@ -972,6 +972,7 @@
             margin: 120px auto 0;
             vertical-align: bottom;
             min-height: auto;
+            left: -2px;
         }
     }
 
@@ -1042,13 +1043,17 @@
     }
 
     &__list {
+        margin-top: 32px;
+        padding: 16px 0 16px 16px;
+        border-radius: 12px;
         overflow-y: auto;
         overflow-x: hidden;
         max-height: calc(var(--vh) - 120px - 20px); // 100vh - main gap - gap bottom
 
+        background-color: var(--stand-bg);
+
         @media (max-width:$desktop) {
             max-height: calc(var(--vh) - 220px - 20px);
-            padding-bottom: 20px !important;
         }
     }
 
@@ -1606,6 +1611,7 @@
 
         padding: 58px 48px 32px;
         align-items: center;
+
         @media (max-width:$smallTablet-max) {
             max-width: 100%;
             border-radius: 0;
@@ -1668,7 +1674,8 @@
         display: flex;
         flex-direction: column;
     }
-    &__image{
+
+    &__image {
         padding-bottom: percent(207, 323);
         border-radius: 12px;
         overflow: hidden;
@@ -1679,6 +1686,7 @@
             border-radius: 12px;
         }
     }
+
     &__name {
         font-size: 24px;
         line-height: math.div(30, 24);
@@ -1697,10 +1705,12 @@
     &__user {
         margin-top: 48px;
         align-self: end;
-        &.user-info{
+
+        &.user-info {
             grid-template-columns: 46px 1fr;
             grid-column-gap: 16px;
-            .user-info__avatar{
+
+            .user-info__avatar {
                 width: 46px;
                 height: 46px;
             }
@@ -1712,33 +1722,37 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
-        @media (max-width:$mobile-max){
-             grid-template-columns: 1fr; 
-             grid-row-gap: 16px;
+
+        @media (max-width:$mobile-max) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 16px;
         }
     }
-    &__call{
-        svg{
+
+    &__call {
+        svg {
             width: 15px;
             height: 15px;
             margin-right: 10px;
             fill: var(--white);
         }
     }
-    &__message{
-        svg{
+
+    &__message {
+        svg {
             width: 15px;
             height: 15px;
             margin-right: 10px;
             fill: var(--blue);
             transition: fill $transitionSpeed $transitionFunction;
         }
-        @media (min-width:$desktop-min){
-             &:hover{
-                svg{
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                svg {
                     fill: var(--white);
                 }
-             } 
+            }
         }
     }
 }

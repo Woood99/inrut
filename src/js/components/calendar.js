@@ -5,10 +5,10 @@ import SimpleBar from 'simplebar';
 import modal from '../modules/modal';
 
 
-export const calendarPrimary = () => {
-    const calendarPrimaryEl = document.querySelector('.calendar-primary');
-    if (!calendarPrimaryEl) return;
-    const calendaryPrimary = new Calendar(calendarPrimaryEl, {
+export const calendarPrimary = (containerSelector, url, edit = false) => {
+    const calendarEl = document.querySelector(containerSelector);
+    if (!calendarEl) return;
+    const calendaryPrimary = new Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'ru',
         dayMaxEvents: 1,
@@ -16,7 +16,7 @@ export const calendarPrimary = () => {
         fixedWeekCount: false,
         eventClassNames: 'fc-event-container',
         eventSources: [{
-            url: 'eventsCalendar.json',
+            url,
         }],
         headerToolbar: {
             center: 'title',
@@ -26,7 +26,7 @@ export const calendarPrimary = () => {
         eventContent: (obj) => {
             return {
                 html: `
-            <span>${obj.timeText}</span>
+            <span>${obj.event._def.extendedProps.time}</span>
             <span>${obj.event._def.title}</span>
             `
             }
@@ -64,12 +64,13 @@ export const calendarPrimary = () => {
     }
 
     function eventModal(eventsArray) {
-        calendarPrimaryEl.addEventListener('click', (e) => {
+        calendarEl.addEventListener('click', (e) => {
             if (!(e.target.classList.contains('.fc-event') || e.target.closest('.fc-event'))) return false;
             const event = e.target.closest('.fc-event');
-            const eventDate = event.closest('[data-date]').dataset.date.replaceAll('-', '.');
+            const eventDate = event.closest('[data-date]').dataset.date.split('-');
+            const eventDateNew = `${eventDate[2]}.${eventDate[1]}.${eventDate[0]}`;
             const modalHTML = `
-            <div class="calendar-event" data-date="${eventDate}">
+            <div class="calendar-event" data-date="${eventDateNew}">
             <div class="calendar-event__container">
                 <button class="btn-reset calendar-event__close" aria-label="Закрыть модальное окно">
                     <svg>
@@ -87,8 +88,27 @@ export const calendarPrimary = () => {
             </div>
             `;
             modal(modalHTML, '.calendar-event', 300);
+            let editHTML = '';
+            if (edit) {
+                editHTML = `
+                <div class="calendar-event-item__bottom">
+                    <button type="button" class="btn btn-reset calendar-event-item__cancel">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#x"></use>
+                        </svg>
+                        Отменить
+                    </button>
+                    <button type="button" class="btn btn-reset calendar-event-item__edit">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#pencil"></use>
+                        </svg>
+                        Редактировать
+                    </button>
+                </div>
+                `;
+            }
             eventsArray.forEach(el => {
-                if (el.date === eventDate) {
+                if (el.date === eventDateNew) {
                     const itemHTML = `
                 <li class="calendar-event__item calendar-event-item">
                     <div class="calendar-event-item__time">
@@ -100,15 +120,14 @@ export const calendarPrimary = () => {
                             <span>${el.date}</span>
                         </div>
                     </div>
-                    <div class="calendar-event-item__content">
+                    <div class="calendar-event-item__location">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#location"></use>
+                        </svg>
+                        ${el.location}
+                    </div>
                         <div class="calendar-event-item__title">
                             ${el.title}
-                        </div>
-                        <div class="calendar-event-item__location">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#location"></use>
-                            </svg>
-                            ${el.location}
                         </div>
                         <span class="calendar-event-item__price">${el.price}</span>
                         <div class="calendar-event-item__user user-info">
@@ -122,7 +141,7 @@ export const calendarPrimary = () => {
                                 ${el.user.pos}
                             </span>
                         </div>
-                    </div>
+                        ${editHTML}
                 </li>
                     `;
                     document.querySelector('.calendar-event__list').insertAdjacentHTML('beforeend', itemHTML);

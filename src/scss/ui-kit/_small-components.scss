@@ -413,7 +413,7 @@
     }
 
     .simplebar-content-wrapper {
-        padding-right: 24px;
+        padding-right: 16px;
     }
 
     .simplebar-scrollbar {
@@ -699,14 +699,12 @@
 
 
 .calendar-event-item {
-    padding: 16px 11px;
-    background: #EBF1FB;
+    padding: 16px;
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
     border-radius: 12px;
 
     &__time {
-        padding: 16px;
-        border-radius: 12px;
-        background-color: var(--white);
         display: flex;
         align-items: center;
 
@@ -714,8 +712,9 @@
             width: 16px;
             height: 16px;
             stroke: var(--primaryTwo);
+            stroke-width: 1.5px;
             fill: none;
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
         >div {
@@ -736,15 +735,8 @@
         }
     }
 
-    &__content {
-        margin-top: 10px;
-        background: #FFFFFF;
-        border-radius: 12px;
-        padding: 13px 16px;
-    }
-
-
     &__title {
+        margin-top: 24px;
         color: var(--dark);
         font-size: 15px;
         line-height: math.div(19, 15);
@@ -752,19 +744,20 @@
     }
 
     &__location {
-        display: block;
         margin-top: 12px;
         display: flex;
+        align-items: center;
         color: var(--primary600);
         font-size: 12px;
         line-height: math.div(15, 12);
 
         svg {
-            margin-top: 1px;
-            margin-right: 11px;
-            width: 10px;
-            height: 13px;
-            fill: var(--primaryTwo);
+            margin-right: 8px;
+            width: 19px;
+            height: 19px;
+            stroke: var(--primaryTwo);
+            stroke-width: 1.5px;
+            fill: none;
         }
     }
 
@@ -783,6 +776,60 @@
         border-top: 1px solid var(--primary100);
     }
 
+    &__bottom {
+        margin-top: 16px;
+  padding-top: 16px;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: var(--primary100);
+            top: 0;
+            left: -16px;
+            height: 1px;
+            width: calc(100% + 32px);
+        }
+    }
+
+    &__cancel,
+    &__edit {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: math.div(15 , 12);
+        color: var(--primaryTwo);
+        svg{
+            margin-right: 8px;
+            width: 15px;
+            height: 15px;
+        }
+     @media (min-width:$desktop-min){
+        transition: color $transitionSpeed $transitionFunction;
+        &:hover{
+            color: var(--blue);
+        } 
+     }
+    }
+
+    &__cancel {
+        svg {
+            fill: currentColor;
+        }
+    }
+
+    &__edit {
+        margin-left: 24px;
+        svg {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1px;
+        }
+
+    }
 }
 
 

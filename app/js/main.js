@@ -4218,7 +4218,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_components_maps__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)();
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
   (0,_components_gallery__WEBPACK_IMPORTED_MODULE_8__.galleryPrimary)();
   (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_13__["default"])();
   (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_14__["default"])();
@@ -4450,10 +4451,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const calendarPrimary = () => {
-  const calendarPrimaryEl = document.querySelector('.calendar-primary');
-  if (!calendarPrimaryEl) return;
-  const calendaryPrimary = new fullcalendar__WEBPACK_IMPORTED_MODULE_0__.Calendar(calendarPrimaryEl, {
+const calendarPrimary = function (containerSelector, url) {
+  let edit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  const calendarEl = document.querySelector(containerSelector);
+  if (!calendarEl) return;
+  const calendaryPrimary = new fullcalendar__WEBPACK_IMPORTED_MODULE_0__.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
     locale: 'ru',
     dayMaxEvents: 1,
@@ -4461,7 +4463,7 @@ const calendarPrimary = () => {
     fixedWeekCount: false,
     eventClassNames: 'fc-event-container',
     eventSources: [{
-      url: 'eventsCalendar.json'
+      url
     }],
     headerToolbar: {
       center: 'title',
@@ -4471,7 +4473,7 @@ const calendarPrimary = () => {
     eventContent: obj => {
       return {
         html: `
-            <span>${obj.timeText}</span>
+            <span>${obj.event._def.extendedProps.time}</span>
             <span>${obj.event._def.title}</span>
             `
       };
@@ -4506,12 +4508,13 @@ const calendarPrimary = () => {
     }
   }
   function eventModal(eventsArray) {
-    calendarPrimaryEl.addEventListener('click', e => {
+    calendarEl.addEventListener('click', e => {
       if (!(e.target.classList.contains('.fc-event') || e.target.closest('.fc-event'))) return false;
       const event = e.target.closest('.fc-event');
-      const eventDate = event.closest('[data-date]').dataset.date.replaceAll('-', '.');
+      const eventDate = event.closest('[data-date]').dataset.date.split('-');
+      const eventDateNew = `${eventDate[2]}.${eventDate[1]}.${eventDate[0]}`;
       const modalHTML = `
-            <div class="calendar-event" data-date="${eventDate}">
+            <div class="calendar-event" data-date="${eventDateNew}">
             <div class="calendar-event__container">
                 <button class="btn-reset calendar-event__close" aria-label="Закрыть модальное окно">
                     <svg>
@@ -4529,8 +4532,27 @@ const calendarPrimary = () => {
             </div>
             `;
       (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])(modalHTML, '.calendar-event', 300);
+      let editHTML = '';
+      if (edit) {
+        editHTML = `
+                <div class="calendar-event-item__bottom">
+                    <button type="button" class="btn btn-reset calendar-event-item__cancel">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#x"></use>
+                        </svg>
+                        Отменить
+                    </button>
+                    <button type="button" class="btn btn-reset calendar-event-item__edit">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#pencil"></use>
+                        </svg>
+                        Редактировать
+                    </button>
+                </div>
+                `;
+      }
       eventsArray.forEach(el => {
-        if (el.date === eventDate) {
+        if (el.date === eventDateNew) {
           const itemHTML = `
                 <li class="calendar-event__item calendar-event-item">
                     <div class="calendar-event-item__time">
@@ -4542,15 +4564,14 @@ const calendarPrimary = () => {
                             <span>${el.date}</span>
                         </div>
                     </div>
-                    <div class="calendar-event-item__content">
+                    <div class="calendar-event-item__location">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#location"></use>
+                        </svg>
+                        ${el.location}
+                    </div>
                         <div class="calendar-event-item__title">
                             ${el.title}
-                        </div>
-                        <div class="calendar-event-item__location">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#location"></use>
-                            </svg>
-                            ${el.location}
                         </div>
                         <span class="calendar-event-item__price">${el.price}</span>
                         <div class="calendar-event-item__user user-info">
@@ -4564,7 +4585,7 @@ const calendarPrimary = () => {
                                 ${el.user.pos}
                             </span>
                         </div>
-                    </div>
+                        ${editHTML}
                 </li>
                     `;
           document.querySelector('.calendar-event__list').insertAdjacentHTML('beforeend', itemHTML);
