@@ -3,6 +3,12 @@ const emergingBlockScroll = (targetThemSelector, emergingBlockSelector, screenSi
     const block = document.querySelector(emergingBlockSelector);
     if (!(target && block)) return;
     window.addEventListener('scroll', () => {
+        targetScroll();
+    })
+    targetScroll();
+
+
+    function targetScroll() {
         if (window.innerWidth >= screenSize) return;
         const pageOffsetTop = window.pageYOffset;
         const targetOffsetTop = target.getBoundingClientRect().top;
@@ -15,12 +21,12 @@ const emergingBlockScroll = (targetThemSelector, emergingBlockSelector, screenSi
             }
 
         } else {
-            if (pageOffsetTop >= targetOffsetTop) {
+            if (pageOffsetTop >= targetOffsetTop + pageOffsetTop) {
                 block.classList.add('active-fixed');
             } else {
                 block.classList.remove('active-fixed');
             }
         }
-    })
+    }
 };
 export default emergingBlockScroll;

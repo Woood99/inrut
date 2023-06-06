@@ -1,0 +1,72 @@
+.object-base-inner {
+    .object-body {
+        &__data {
+            margin-top: 16px;
+
+            @media (max-width:$desktop) {
+                margin-top: 8px;
+            }
+        }
+
+        &__user {}
+
+        ._sticky {
+            position: sticky;
+            top: 16px;
+            width: 100%;
+        }
+    }
+
+    &__btns {
+        margin-top: 24px;
+        background-color: var(--white);
+        box-shadow: var(--shadow-primary);
+        border-radius: 12px;
+        padding: 24px 16px;
+
+        @media (max-width:$desktop) {
+            padding: 16px;
+            margin-top: 8px;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 0 20px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+
+            @media (max-width:$desktop) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .plate-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .object-plate-bottom__btn {
+        width: 100%;
+    }
+
+    .object-body {
+        &__wrapper {
+            &>.object-body__sidebar {
+                @media (max-width:$desktop) {
+                    display: none;
+                }
+            }
+        }
+
+        &__content {}
+    }
+}

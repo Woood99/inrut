@@ -4254,6 +4254,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1112, true);
 });
 
 /***/ }),
@@ -8235,6 +8236,10 @@ const emergingBlockScroll = function (targetThemSelector, emergingBlockSelector,
   const block = document.querySelector(emergingBlockSelector);
   if (!(target && block)) return;
   window.addEventListener('scroll', () => {
+    targetScroll();
+  });
+  targetScroll();
+  function targetScroll() {
     if (window.innerWidth >= screenSize) return;
     const pageOffsetTop = window.pageYOffset;
     const targetOffsetTop = target.getBoundingClientRect().top;
@@ -8245,13 +8250,13 @@ const emergingBlockScroll = function (targetThemSelector, emergingBlockSelector,
         block.classList.remove('active-fixed');
       }
     } else {
-      if (pageOffsetTop >= targetOffsetTop) {
+      if (pageOffsetTop >= targetOffsetTop + pageOffsetTop) {
         block.classList.add('active-fixed');
       } else {
         block.classList.remove('active-fixed');
       }
     }
-  });
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (emergingBlockScroll);
 

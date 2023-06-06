@@ -112,4 +112,5 @@ document.addEventListener('DOMContentLoaded', () => {
     emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
     emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
     emergingBlockScroll('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
+    emergingBlockScroll('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1112, true);
 })
