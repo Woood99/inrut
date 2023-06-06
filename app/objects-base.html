@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
-    <title>Купить квартиру в Москве </title>
+    <title>База объектов</title>
     <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/vendor.css">
@@ -16,7 +16,7 @@
 </head>
 
 <body class="page__body">
-    <div class="site-container site-container--buy-apartment">
+    <div class="site-container site-container--objects-base">
         <header class="header">
     <div class="header__top header-top">
         <div class="header-top__container container">
@@ -245,13 +245,12 @@
     </div>
 </header>
 
-        <main class="main main-page-gap buy-apartment">
-            <div class="buy-apartment__body container">
-                <h1 class="buy-apartment__title title-1">
-                    Купить квартиру в Москве
+        <main class="main main-page-gap objects-base">
+            <div class="objects-base__body container">
+                <h1 class="objects-base__title title-1">
+                    База объектов
                 </h1>
-                <form
-                    class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--moskow filter--more">
+                <form class="objects-base__filter filter objects-base-filter filter--more">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -264,9 +263,9 @@
                             <button type="button" class="btn btn-reset filter__close">Закрыть</button>
                         </div>
                         <div class="filter__inner">
-                            <div class="filter__row buy-apartment-filter__row--1">
-                                <div
-                                    class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                            <div class="filter__row"
+                                style="grid-template-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;">
+                                <div class="filter__item filter__item--quantity-selection quantity-selection">
                                     <div class="quantity-selection__inner">
                                         <div class="checkbox">
                                             <input id="filter-quantity_studios" name="filter-quantity-studios"
@@ -305,12 +304,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="filter__item filter-dropdown filter-dropdown--improved"
-                                    data-filter-dropdown-name="Цена" data-filter-dropdown-subtitle="Любая">
+                                <div class="filter__item filter-dropdown" data-filter-dropdown-name="Сумма"
+                                    data-filter-dropdown-subtitle="Любая">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper">
                                             <div>
-                                                Цена
+                                                Сумма
                                             </div>
                                             <div>
                                                 Любая
@@ -320,21 +319,21 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter__item filter-dropdown__dropdown">
-                                        <label class="filter-dropdown__item active">
-                                            <span class="filter-dropdown__subtitle">Стоимость объекта, ₽</span>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по стоимости, руб.
+                                            </span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div data-range-start>
-                                                        <span>от</span>
                                                         <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                            placeholder="">
+                                                            placeholder="Цена от">
                                                     </div>
                                                     <div>–</div>
                                                     <div data-range-end>
-                                                        <span>до</span>
                                                         <input type="text" maxlength="12" name="Имя" class="input-reset"
-                                                            placeholder="">
+                                                            placeholder="До">
                                                     </div>
                                                     <div>
                                                         ₽
@@ -343,7 +342,40 @@
                                                 <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                        </label>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Поиск квартиры по ежемесячному платежу, руб.
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="Цена от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset"
+                                                            placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="filter__item filter-dropdown filter-dropdown--improved"
@@ -361,7 +393,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter__item filter-dropdown__dropdown">
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
                                         <label class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
                                             <div class="filter-dropdown__range filter-range">
@@ -388,15 +420,15 @@
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-reset filter__item select-map-btn"
-                                data-popup-path="search-area">
-                                <span>Выберите район поиска</span>
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#location-two"></use>
-                                </svg>
-                            </button>
+                                    data-popup-path="search-area">
+                                    <span>Выберите район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <div class="filter__item select-secondary">
+                            <div class="filter__row" hidden style="grid-template-columns: 24.0740740741% 1fr;">
+                                <div class="select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Комплекс
                                     </span>
@@ -423,14 +455,14 @@
                         </div>
                     </div>
                 </form>
-                <div class="buy-apartment__sort select-sort">
+                <div class="objects-base__sort select-sort">
                     <span class="select-sort__label">Сортировка:</span>
                     <select class="select-sort__body" name="filter-sort">
                         <option value="price">Стоимость</option>
                         <option value="rating">Рейтинг</option>
                     </select>
                 </div>
-                <div class="buy-apartment__cards-list cards-list control-cards">
+                <div class="objects-base__cards-list cards-list control-cards">
                     <div class="cards-list__controls control-cards__btns">
                         <button type="button"
                             class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
@@ -443,7 +475,8 @@
                                 <use xlink:href="img/sprite.svg#pause"></use>
                             </svg>
                         </button>
-                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--maps">
+                        <button type="button" class="btn btn-reset control-cards__btn--maps" data-mobile-speed
+                            data-popup-path="popup-map_buy-apartment-building">
                             <span>На карте</span>
                             <svg>
                                 <use xlink:href="img/sprite.svg#location-fill"></use>
@@ -451,7 +484,7 @@
                         </button>
                     </div>
                     <div class="cards-list__items control-cards__content control-cards__content--horizontal">
-                        <article class="card-primary card-primary--no-user">
+                        <article class="card-primary card-primary--improved">
                             <a href="#" class="card-primary__container">
                                 <div class="card-primary__top">
                                     <div class="card-primary__image ibg">
@@ -462,11 +495,6 @@
                                         </picture>
                                     </div>
                                     <div class="card-primary__info">
-                                        <div class="row">
-                                            <span class="card-primary__info--mortgage">Ипотека
-                                                0,1%</span>
-                                            <span class="card-primary__info--quantity">+2</span>
-                                        </div>
                                         <div class="card-primary__info--btns-right">
                                             <div class="card-primary__info--favorite" title="Добавить в избранное">
                                                 <svg>
@@ -483,18 +511,22 @@
                                                 <div class="dots-dropdown__dropdown">
                                                     <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
                                                         </svg>
-                                                        Заблокировать
+                                                        Поделиться
                                                     </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
+                                                    <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
                                                             </use>
                                                         </svg>
-                                                        Пожаловаться
+                                                        Добавить в заявку
                                                     </button>
                                                 </div>
                                             </div>
@@ -514,7 +546,7 @@
                                     <div class="card-primary__price">
                                         <span class="card-primary__price-old">
                                             <span>
-                                                <span>3 000 000</span> ₽
+                                                <span>3 000 000 ₽</span>
                                             </span>
                                             <span>-300 000 ₽</span>
                                         </span>
@@ -538,9 +570,23 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="card-primary__user user-info user-info--small-mobile">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <img loading="lazy" src="./img/vect.jpg" width="32" height="32"
+                                        class="user-info__img" alt="">
+                                </div>
                             </a>
                         </article>
-                        <article class="card-primary card-primary--no-user">
+                        <article class="card-primary card-primary--improved">
                             <a href="#" class="card-primary__container">
                                 <div class="card-primary__top">
                                     <div class="card-primary__image ibg">
@@ -567,18 +613,22 @@
                                                 <div class="dots-dropdown__dropdown">
                                                     <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
                                                         </svg>
-                                                        Заблокировать
+                                                        Поделиться
                                                     </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
+                                                    <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
                                                             </use>
                                                         </svg>
-                                                        Пожаловаться
+                                                        Добавить в заявку
                                                     </button>
                                                 </div>
                                             </div>
@@ -597,7 +647,7 @@
                                     <div class="card-primary__price">
                                         <span class="card-primary__price-old">
                                             <span>
-                                                <span>3 000 000</span> ₽
+                                                <span>3 000 000 ₽</span>
                                             </span>
                                             <span>-300 000 ₽</span>
                                         </span>
@@ -621,9 +671,19 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
+                                </div>
                             </a>
                         </article>
-                        <article class="card-primary card-primary--no-user">
+                        <article class="card-primary card-primary--improved">
                             <a href="#" class="card-primary__container">
                                 <div class="card-primary__top">
                                     <div class="card-primary__image ibg">
@@ -650,18 +710,22 @@
                                                 <div class="dots-dropdown__dropdown">
                                                     <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
                                                         </svg>
-                                                        Заблокировать
+                                                        Поделиться
                                                     </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
+                                                    <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
                                                             </use>
                                                         </svg>
-                                                        Пожаловаться
+                                                        Добавить в заявку
                                                     </button>
                                                 </div>
                                             </div>
@@ -698,9 +762,19 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
+                                </div>
                             </a>
                         </article>
-                        <article class="card-primary card-primary--no-user">
+                        <article class="card-primary card-primary--improved">
                             <a href="#" class="card-primary__container">
                                 <div class="card-primary__top">
                                     <div class="card-primary__image ibg">
@@ -727,18 +801,221 @@
                                                 <div class="dots-dropdown__dropdown">
                                                     <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
                                                         </svg>
-                                                        Заблокировать
+                                                        Поделиться
                                                     </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
+                                                    <button type="button" class="btn btn-reset">
                                                         <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
                                                             </use>
                                                         </svg>
-                                                        Пожаловаться
+                                                        Добавить в заявку
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-primary__content">
+                                    <h3 class="card-primary__name title-4">
+                                        1-комн. квартира, 54 м², 12/12 эт.
+                                    </h3>
+                                    <div class="card-primary__address">
+                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
+                                        <span class="card-primary__address--two">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__price">
+                                        <span class="card-primary__price-old">
+                                            <span>
+                                                <span>3 000 000 ₽</span>
+                                            </span>
+                                            <span>-300 000 ₽</span>
+                                        </span>
+                                        <span class="card-primary__price-new">
+                                            <span class="title-3">2 897 000 ₽</span>
+                                            <span>(94 742 ₽/м²)</span>
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__text">
+                                        <p>
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная это район Петра Метальникова.
+                                        </p>
+                                        <p>
+                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                            гостиная очень актуально в наше время, при этом квартира см.
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                            продается в новом доме по улице Тополиная
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-primary__user user-info user-info--small-mobile">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <img loading="lazy" src="./img/vect.jpg" width="32" height="32"
+                                        class="user-info__img" alt="">
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-primary card-primary--improved">
+                            <a href="#" class="card-primary__container">
+                                <div class="card-primary__top">
+                                    <div class="card-primary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                    </div>
+                                    <div class="card-primary__info">
+                                        <div class="card-primary__info--btns-right">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card-primary__info--controls dots-dropdown">
+                                                <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#dots-vertical">
+                                                        </use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dots-dropdown__dropdown">
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
+                                                        </svg>
+                                                        Поделиться
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
+                                                            </use>
+                                                        </svg>
+                                                        Добавить в заявку
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-primary__content">
+                                    <h3 class="card-primary__name title-4">
+                                        1-комн. квартира, 54 м², 12/12 эт.
+                                    </h3>
+                                    <div class="card-primary__address">
+                                        <span class="card-primary__address--two">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__price">
+                                        <span class="card-primary__price-old">
+                                            <span>
+                                                <span>3 000 000 ₽</span>
+                                            </span>
+                                            <span>-300 000 ₽</span>
+                                        </span>
+                                        <span class="card-primary__price-new">
+                                            <span class="title-3">2 897 000 ₽</span>
+                                            <span>(94 742 ₽/м²)</span>
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__text">
+                                        <p>
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная это район Петра Метальникова.
+                                        </p>
+                                        <p>
+                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                            гостиная очень актуально в наше время, при этом квартира см.
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                            продается в новом доме по улице Тополиная
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-primary card-primary--improved">
+                            <a href="#" class="card-primary__container">
+                                <div class="card-primary__top">
+                                    <div class="card-primary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                    </div>
+                                    <div class="card-primary__info">
+                                        <div class="card-primary__info--btns-right">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card-primary__info--controls dots-dropdown">
+                                                <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#dots-vertical">
+                                                        </use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dots-dropdown__dropdown">
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
+                                                        </svg>
+                                                        Поделиться
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
+                                                            </use>
+                                                        </svg>
+                                                        Добавить в заявку
                                                     </button>
                                                 </div>
                                             </div>
@@ -774,6 +1051,306 @@
                                             продается в новом доме по улице Тополиная
                                         </p>
                                     </div>
+                                </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-primary card-primary--improved">
+                            <a href="#" class="card-primary__container">
+                                <div class="card-primary__top">
+                                    <div class="card-primary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                    </div>
+                                    <div class="card-primary__info">
+                                        <div class="card-primary__info--btns-right">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card-primary__info--controls dots-dropdown">
+                                                <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#dots-vertical">
+                                                        </use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dots-dropdown__dropdown">
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
+                                                        </svg>
+                                                        Поделиться
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
+                                                            </use>
+                                                        </svg>
+                                                        Добавить в заявку
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-primary__content">
+                                    <h3 class="card-primary__name title-4">
+                                        1-комн. квартира, 54 м², 12/12 эт.
+                                    </h3>
+                                    <div class="card-primary__address">
+                                        <span class="card-primary__address--one">ЖК Вознесенский</span>
+                                        <span class="card-primary__address--two">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__price">
+                                        <span class="card-primary__price-old">
+                                            <span>
+                                                <span>3 000 000 ₽</span>
+                                            </span>
+                                            <span>-300 000 ₽</span>
+                                        </span>
+                                        <span class="card-primary__price-new">
+                                            <span class="title-3">2 897 000 ₽</span>
+                                            <span>(94 742 ₽/м²)</span>
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__text">
+                                        <p>
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная это район Петра Метальникова.
+                                        </p>
+                                        <p>
+                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                            гостиная очень актуально в наше время, при этом квартира см.
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                            продается в новом доме по улице Тополиная
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-primary__user user-info user-info--small-mobile">
+                                    <div class="user-info__avatar avatar online">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                            alt="Алексей Г.">
+                                    </div>
+                                    <span class="user-info__name">
+                                        Алексей Г.
+                                    </span>
+                                    <span class="user-info__pos">
+                                        Агент
+                                    </span>
+                                    <img loading="lazy" src="./img/vect.jpg" width="32" height="32"
+                                        class="user-info__img" alt="">
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-primary card-primary--improved">
+                            <a href="#" class="card-primary__container">
+                                <div class="card-primary__top">
+                                    <div class="card-primary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                    </div>
+                                    <div class="card-primary__info">
+                                        <div class="card-primary__info--btns-right">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card-primary__info--controls dots-dropdown">
+                                                <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#dots-vertical">
+                                                        </use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dots-dropdown__dropdown">
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
+                                                        </svg>
+                                                        Поделиться
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
+                                                            </use>
+                                                        </svg>
+                                                        Добавить в заявку
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-primary__content">
+                                    <h3 class="card-primary__name title-4">
+                                        1-комн. квартира, 54 м², 12/12 эт.
+                                    </h3>
+                                    <div class="card-primary__address">
+                                        <span class="card-primary__address--two">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__price">
+                                        <span class="card-primary__price-old">
+                                            <span>
+                                                <span>3 000 000 ₽</span>
+                                            </span>
+                                            <span>-300 000 ₽</span>
+                                        </span>
+                                        <span class="card-primary__price-new">
+                                            <span class="title-3">2 897 000 ₽</span>
+                                            <span>(94 742 ₽/м²)</span>
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__text">
+                                        <p>
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная это район Петра Метальникова.
+                                        </p>
+                                        <p>
+                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                            гостиная очень актуально в наше время, при этом квартира см.
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                            продается в новом доме по улице Тополиная
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
+                                </div>
+                            </a>
+                        </article>
+                        <article class="card-primary card-primary--improved">
+                            <a href="#" class="card-primary__container">
+                                <div class="card-primary__top">
+                                    <div class="card-primary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                    </div>
+                                    <div class="card-primary__info">
+                                        <div class="card-primary__info--btns-right">
+                                            <div class="card-primary__info--favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card-primary__info--controls dots-dropdown">
+                                                <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#dots-vertical">
+                                                        </use>
+                                                    </svg>
+                                                </button>
+                                                <div class="dots-dropdown__dropdown">
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#share"></use>
+                                                        </svg>
+                                                        Поделиться
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                        </svg>
+                                                        В свои объекты
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#application">
+                                                            </use>
+                                                        </svg>
+                                                        Добавить в заявку
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-primary__content">
+                                    <h3 class="card-primary__name title-4">
+                                        1-комн. квартира, 54 м², 12/12 эт.
+                                    </h3>
+                                    <div class="card-primary__address">
+                                        <span class="card-primary__address--two">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__price">
+                                        <span class="card-primary__price-new">
+                                            <span class="title-3">2 897 000 ₽</span>
+                                            <span>(94 742 ₽/м²)</span>
+                                        </span>
+                                    </div>
+                                    <div class="card-primary__text">
+                                        <p>
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная это район Петра Метальникова.
+                                        </p>
+                                        <p>
+                                            В квартире шикарный, современный ремонт панорамные окна, на
+                                            полу ламинат, шикарный вид на город. Из кухни сделана кухня
+                                            гостиная очень актуально в наше время, при этом квартира см.
+                                            Уникальна квартира с ремонтом продается в новом доме по
+                                            улице Тополиная квартира см. Уникальна квартира с ремонтом
+                                            продается в новом доме по улице Тополиная
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-primary__user user-info-improved">
+                                    <div class="user-info-improved__name">
+                                        Михаил Владимирович
+                                    </div>
+                                    <div class="user-info-improved__pos">
+                                        Собственник <span>еще 3 объекта</span>
+                                    </div>
+                                    <img loading="lazy" src="./img/avito.jpg" width="32" height="32"
+                                        class="user-info-improved__img" alt="">
                                 </div>
                             </a>
                         </article>
@@ -820,7 +1397,7 @@
                     </div>
                 </div>
             </div>
-            <div class="buy-apartment__banners container main-banners">
+            <div class="objects-base__banners container main-banners">
                 <div class="swiper main-banners__container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide main-banners__item main-banner main-banner--one">
