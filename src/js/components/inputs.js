@@ -32,3 +32,20 @@ export const inputOnlyNumber = () => {
         })
     });
 };
+
+export const textareaSecondary = () => {
+    const textareas = document.querySelectorAll('.textarea-secondary');
+    textareas.forEach(textarea => {
+        const textareaInput = textarea.querySelector('.textarea-secondary__input');
+        textareaInput.addEventListener('input', (e) => {
+            toggleActive(e.target, textarea);
+
+            textarea.style.height = `45px`;
+            textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+        });
+    });
+
+    function toggleActive(target, currentTextarea) {
+        target.value.length >= 1 ? currentTextarea.classList.add('_active') : currentTextarea.classList.remove('_active');
+    }
+};

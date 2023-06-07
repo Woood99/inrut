@@ -4200,6 +4200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterMobile)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterCustomSelectCheckboxes)();
+  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.dropdownDefault)('.presentation', '.presentation__btn', '.presentation__dropdown');
 
   // ==================================================
 
@@ -4214,6 +4215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_5__.inputText)();
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_5__.inputOnlyNumber)();
+  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_5__.textareaSecondary)();
 
   // ==================================================
 
@@ -5050,6 +5052,7 @@ const dropImage = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dropdownDefault": () => (/* binding */ dropdownDefault),
 /* harmony export */   "filterControl": () => (/* binding */ filterControl),
 /* harmony export */   "filterCustomSelectCheckboxes": () => (/* binding */ filterCustomSelectCheckboxes),
 /* harmony export */   "filterDropdownChoice": () => (/* binding */ filterDropdownChoice),
@@ -5596,6 +5599,26 @@ const filterCustomSelectCheckboxes = () => {
     }
   });
 };
+const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
+  const container = document.querySelector(containerEl);
+  if (!container) return;
+  const target = container.querySelector(targetEl);
+  const dropdown = container.querySelector(dropdownEl);
+  target.addEventListener('click', () => {
+    !target.classList.contains('_active') ? openDropdown() : closeDropdown();
+  });
+  document.addEventListener('click', e => {
+    if (target.classList.contains('_active') && !e.target.closest(containerEl)) closeDropdown();
+  });
+  function openDropdown() {
+    dropdown.classList.add('_active');
+    target.classList.add('_active');
+  }
+  function closeDropdown() {
+    dropdown.classList.remove('_active');
+    target.classList.remove('_active');
+  }
+};
 
 /***/ }),
 
@@ -5898,7 +5921,8 @@ const headerFixed = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "inputOnlyNumber": () => (/* binding */ inputOnlyNumber),
-/* harmony export */   "inputText": () => (/* binding */ inputText)
+/* harmony export */   "inputText": () => (/* binding */ inputText),
+/* harmony export */   "textareaSecondary": () => (/* binding */ textareaSecondary)
 /* harmony export */ });
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/inputResize */ "./src/js/modules/inputResize.js");
 /* harmony import */ var _modules_inputCursorEnd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/inputCursorEnd */ "./src/js/modules/inputCursorEnd.js");
@@ -5933,6 +5957,20 @@ const inputOnlyNumber = () => {
       this.value = value.replace(/\D/g, '');
     });
   });
+};
+const textareaSecondary = () => {
+  const textareas = document.querySelectorAll('.textarea-secondary');
+  textareas.forEach(textarea => {
+    const textareaInput = textarea.querySelector('.textarea-secondary__input');
+    textareaInput.addEventListener('input', e => {
+      toggleActive(e.target, textarea);
+      textarea.style.height = `45px`;
+      textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+    });
+  });
+  function toggleActive(target, currentTextarea) {
+    target.value.length >= 1 ? currentTextarea.classList.add('_active') : currentTextarea.classList.remove('_active');
+  }
 };
 
 /***/ }),

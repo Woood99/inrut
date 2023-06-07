@@ -4,7 +4,9 @@ import disableScroll from '../modules/disableScroll';
 import inputResize from '../modules/inputResize';
 import numberReplace from '../modules/numberReplace';
 import {
-    _slideToggle
+    _slideToggle,
+    _slideDown,
+    _slideUp
 } from '../support-modules/slide';
 export const filterSum = () => {
     const container = document.querySelectorAll('.filter-dropdown');
@@ -289,9 +291,6 @@ export const uiSlider = () => {
 
     });
 }
-
-
-
 export const uiSliderOne = () => {
     const items = document.querySelectorAll('.filter-range-one__inner');
     if (!items.length >= 1) return;
@@ -426,6 +425,7 @@ export const filterMobile = () => {
                 if (!exceptionEnableScroll()) enableScroll();
             }
         })
+
         function exceptionEnableScroll() {
             return filter.closest('.checkboard-cst-popup') || filter.closest('.popup-primary');
         }
@@ -588,3 +588,25 @@ export const filterCustomSelectCheckboxes = () => {
         }
     });
 };
+export const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
+    const container = document.querySelector(containerEl);
+    if (!container) return;
+    const target = container.querySelector(targetEl);
+    const dropdown = container.querySelector(dropdownEl);
+    target.addEventListener('click', () => {
+        !target.classList.contains('_active') ? openDropdown() : closeDropdown();
+    });
+    document.addEventListener('click', (e) => {
+        if (target.classList.contains('_active') && !e.target.closest(containerEl)) closeDropdown();
+    })
+
+    function openDropdown() {
+        dropdown.classList.add('_active');
+        target.classList.add('_active');
+    }
+
+    function closeDropdown() {
+        dropdown.classList.remove('_active');
+        target.classList.remove('_active');
+    }
+}

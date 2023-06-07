@@ -5,7 +5,8 @@ import {
     filterSum,
     filterDropdownChoice,
     filterMobile,
-    filterCustomSelectCheckboxes
+    filterCustomSelectCheckboxes,
+    dropdownDefault
 } from './components/filter';
 import getHeightBlock from './modules/getHeightBlock'
 import {
@@ -15,7 +16,8 @@ import maps from './components/maps';
 import linkCopy from './modules/linkCopy';
 import {
     inputText,
-    inputOnlyNumber
+    inputOnlyNumber,
+    textareaSecondary
 } from './components/inputs';
 import {
     validateRadioPrimary
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterDropdownChoice();
     filterMobile();
     filterCustomSelectCheckboxes();
+    dropdownDefault('.presentation', '.presentation__btn', '.presentation__dropdown');
 
     // ==================================================
 
@@ -72,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inputText();
     inputOnlyNumber();
+    textareaSecondary();
 
     // ==================================================
 
