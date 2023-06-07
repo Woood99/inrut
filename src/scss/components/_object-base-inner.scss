@@ -214,7 +214,11 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                left: 27px;
+                left: 28px;
+
+                font-size: 15px;
+                line-height: math.div(19 , 15);
+                color: var(--blue);
             }
 
             textarea {
@@ -226,6 +230,10 @@
                     display: none;
                 }
             }
+        }
+        @media (max-width:$desktop){
+             margin-top: 8px; 
+             padding: 16px;
         }
     }
 }

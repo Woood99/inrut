@@ -12,6 +12,7 @@ export const calendarPrimary = (containerSelector, url, edit = false) => {
         initialView: 'dayGridMonth',
         locale: 'ru',
         dayMaxEvents: 1,
+        firstDay: 1,
         moreLinkContent: (obj) => `+ еще ${obj.num}`,
         fixedWeekCount: false,
         eventClassNames: 'fc-event-container',

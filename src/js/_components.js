@@ -9,6 +9,7 @@ import {
     dropdownDefault
 } from './components/filter';
 import getHeightBlock from './modules/getHeightBlock'
+import choicesSelect from './components/choices';
 import {
     simplebar
 } from './components/simplebar';
@@ -53,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
+    choicesSelect();
+
+    // ==================================================
+    
     filterControl();
     uiSlider();
     uiSliderOne();

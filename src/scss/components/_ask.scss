@@ -1,0 +1,46 @@
+.ask {
+
+    &__title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: math.div(25, 20);
+        font-weight: 500;
+        color: var(--dark);
+    }
+
+    &__descr {
+        color: var(--dark);
+        font-size: 14px;
+        line-height: math.div(18, 14);
+    }
+
+    &__btns {
+        margin-top: 16px;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        grid-gap: 12px;
+        gap: 12px;
+
+        @media (max-width:$mobile-max) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__btn {
+        height: auto;
+        padding: 7px 20px;
+        font-weight: 400;
+        border-radius: 14px;
+        line-height: math.div(16, 14);
+        white-space: normal;
+        text-align: left;
+
+        @media (max-width:$mobile-max) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

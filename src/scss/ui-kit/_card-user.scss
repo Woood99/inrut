@@ -1,0 +1,105 @@
+.card-user {
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+    padding: 24px 16px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--blue);
+        font-size: 12px;
+        line-height: math.div(15, 12);
+        font-weight: 400;
+        transition: color $transitionSpeed $transitionFunction;
+
+        img {
+            margin-left: 8px;
+            margin-right: 4px;
+        }
+
+        &:hover {
+            color: var(--blue-dark);
+        }
+    }
+
+    &__pos {
+        margin-top: 10px;
+        color: var(--primaryTwo);
+        font-size: 12px;
+        line-height: math.div(10, 12);
+        font-weight: 400;
+
+        a {
+            color: var(--blue);
+            transition: color $transitionSpeed $transitionFunction;
+
+            &:hover {
+                color: var(--blue-dark);
+            }
+        }
+    }
+
+    &__name {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+        color: var(--dark);
+
+        @media (min-width:$desktop-min) {
+            a {
+                transition: color $transitionSpeed $transitionFunction;
+
+                &:hover {
+                    color: var(--blue);
+                }
+            }
+        }
+    }
+
+    &__done {
+        margin-top: 16px;
+        color: var(--green);
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        font-weight: 500;
+        background: rgba(36, 202, 142, 0.1);
+        border-radius: 8px;
+
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 15px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+    }
+
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
+        padding: 0 20px;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 16px;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        padding: 16px;
+    }
+}
