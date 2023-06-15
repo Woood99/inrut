@@ -26,6 +26,14 @@
         }
     }
 
+    &__banners {
+        margin-top: 16px;
+
+        @media (max-width:$desktop) {
+            margin-top: 0;
+        }
+    }
+
     &__sale {
         margin-top: 48px;
 
@@ -76,6 +84,9 @@
     }
 
     &__nav {
+        position: relative;
+        top: -57px;
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: end;
@@ -102,21 +113,10 @@
     }
 
     &__container {
-        background-color: var(--stand-bg);
-        border-radius: 12px;
-        padding: 24px;
-
-        @media (max-width:$smallTablet-max) {
-            padding: 0;
-            background-color: transparent;
-            border-radius: 0;
-        }
-
+        position: relative;
     }
 
     &__items {
-        margin: 16px -16px 0;
-        padding: 0 16px;
 
         .swiper-wrapper {
             min-height: 270px;
@@ -125,6 +125,12 @@
         @media (max-width:$smallTablet-max) {
             margin: 0;
             padding: 0;
+        }
+    }
+
+    .main-banner {
+        &__image {
+            background-position: bottom right 20%;
         }
     }
 
@@ -151,7 +157,7 @@
         margin-top: 24px;
         background-color: var(--stand-bg);
         border-radius: 12px;
-        padding: 32px;
+        padding: 32px 0;
 
         @media (max-width:$desktop) {
             margin-top: 16px;
@@ -482,9 +488,8 @@
 
     &__container {
         margin-top: 16px;
-        border-radius: 24px;
         background-color: var(--stand-bg);
-        padding: 16px 32px 32px;
+        padding: 16px 0 32px;
 
         @media (max-width:$desktop) {
             padding: 24px;
@@ -584,9 +589,8 @@
 
     &__container {
         margin-top: 16px;
-        border-radius: 24px;
         background-color: var(--stand-bg);
-        padding: 16px 32px 32px;
+        padding: 16px 0 32px;
 
         @media (max-width:$desktop) {
             padding: 24px;

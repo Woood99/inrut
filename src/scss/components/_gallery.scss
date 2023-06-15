@@ -16,8 +16,7 @@
     }
 
     .lg-outer {
-        background-color: var(--white);
-        box-shadow: var(--shadow-primary);
+        background-color: #151515;
         height: 100%;
         bottom: 0;
         top: auto;
@@ -29,17 +28,15 @@
     }
 
     .lg-outer .lg-content {
-        border-radius: 12px 12px 0 0;
-        height: calc(100% - 181px - 16px);
-        width: calc(100% - 96px);
+        height: calc(100% - 116px);
+     width: 70%;
         position: relative;
-        margin: 65px auto 0;
         overflow: hidden;
 
         .lg-inner {
             height: 100%;
             position: relative;
-            background: rgba(22, 22, 22, 0.7);
+            background-color: transparent;
 
             .lg-item {
                 height: 100%;
@@ -101,20 +98,22 @@
     }
 
     .gallery-primary-container__close {
-        margin: 10px 10px 0 0;
+        margin: 16px 16px 0 0;
         float: right;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
+     width: 32px;
+     height: 32px;
         color: var(--blue);
+        background-color: var(--white);
+        border-radius: 50%;
         transition: color $transitionSpeed $transitionFunction;
 
         svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+            width: 18px;
+            height: 18px;
+            fill: rgba(22, 22, 22, 0.5);
 
             @media (max-width:$tablet-max) {
                 display: none;
@@ -172,18 +171,11 @@
     }
 
     .lg-outer .lg-thumb-outer {
-        background-color: rgba(22, 22, 22, 0.9);
-        width: calc(100% - (48px * 2));
-        margin-left: 48px;
-        margin-bottom: 16px;
-        border-radius: 0 0 12px 12px;
+        background-color: transparent;
+        width: 70%;
         height: 116px;
 
         @media (max-width:$tablet-max) {
-            margin-bottom: 0;
-            width: 100%;
-            margin-left: 0;
-            border-radius: 0;
         }
     }
 
@@ -266,5 +258,36 @@
 
     .lg-backdrop {
         background: rgba(34, 41, 102, 0.4);
+    }
+
+    .object-gallery-info{
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: calc(30% - 32px);
+        padding: 24px;
+        background-color: #2e2e2e;
+        box-shadow: var(--shadow-primary);
+        color: var(--white);
+        border-radius: 16px;
+        &__price{
+            display: block;
+            color: var(--white);
+        }
+        &__descr{
+                margin-top: 16px;
+                display: block;
+        }
+        &__address{
+            margin-top: 8px;
+            margin-bottom: 24px;
+            display: block;
+        }
+        &__btn{
+            width: 100%;
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
     }
 }

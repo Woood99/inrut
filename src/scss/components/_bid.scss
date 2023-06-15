@@ -1,8 +1,9 @@
 .bid {
     background-color: var(--stand-bg);
+
     &__container {
         border-radius: 16px;
-        padding: 32px 0;
+        padding: 16px 0;
         grid-column-gap: 16px;
         display: grid;
         grid-template-columns: 1fr percent(400, 1112);
@@ -63,11 +64,7 @@
     }
 
     &__item {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-columns: 1.2fr 2fr;
-        grid-column-gap: 50px;
-
+ display: flex;
         >span {
             font-size: 14px;
             line-height: math.div(18, 14);
@@ -75,17 +72,36 @@
 
             &:nth-child(1) {
                 color: var(--primaryTwo);
+                order: 1;
             }
 
             &:nth-child(2) {
                 color: var(--dark);
+                order: 3;
+                width: max-content;
+                min-width: 35%;
+                @media (max-width:$smallTablet-max){
+                    width: 150px;
+                    min-width: auto;
+                }
             }
         }
-
+        &::after {
+            content: '';
+            flex: 1 1 0%;
+            position: relative;
+            top: 12px;
+            border-bottom: 1px dashed var(--primary200);
+            height: 1px;
+            order: 2;
+            margin: 0 4px;
+        }
         &--price {
             >div {
                 display: flex;
-
+                order: 4;
+                width: max-content;
+                min-width: 35%;
                 >span {
                     white-space: nowrap;
                     color: var(--dark);
@@ -112,6 +128,10 @@
                         display: none;
                     }
                 }
+                @media (max-width:$smallTablet-max){
+                    width: 150px;
+                    min-width: auto;
+                }
             }
         }
 
@@ -120,8 +140,6 @@
         }
 
         @media (max-width:$smallTablet-max) {
-            grid-template-columns: 150px 1fr;
-            grid-column-gap: 15px;
 
             &:not(:last-child) {
                 margin-bottom: 12px;
@@ -203,7 +221,7 @@
     }
 
     &__import {
-        margin-top: 32px;
+        margin-top: 48px;
     }
 
     &__maps {

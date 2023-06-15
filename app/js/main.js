@@ -5762,6 +5762,30 @@ const galleryPrimary = () => {
     container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
     container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
     container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
+    if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
+      // Временно!
+      // В дальнейшем данные будут братся с базы данных
+      const infoHTML = `
+            <div class="object-gallery-info">
+                <span class="object-gallery-info__price title-2">
+                 2 897 000 ₽
+                </span>
+                <span class="object-gallery-info__descr">
+                    1-ком. квартира, 39 м², 12/12 эт.
+                </span>
+                <span class="object-gallery-info__address">
+                    Краснодар, ул.Карла-Маркса., 234
+                </span>
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
+                    Позвонить
+                </button>
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
+                   Написать
+                </button>
+            </div>
+            `;
+      container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
+    }
   });
 };
 
@@ -7212,7 +7236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 // =========================================================================================
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCreative]);
 
 
 
@@ -7265,20 +7289,19 @@ function initSliders() {
     new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
       observer: true,
       observeParents: true,
-      slidesPerView: 1.15,
-      spaceBetween: 16,
+      slidesPerView: 1,
       autoHeight: true,
-      speed: 800,
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: ["-20%", 0, -1]
         },
-        1112: {
-          slidesPerView: 2,
-          spaceBetween: 32
+        next: {
+          translate: ["100%", 0, 0]
         }
       },
+      speed: 800,
       navigation: {
         prevEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--prev'),
         nextEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--next')

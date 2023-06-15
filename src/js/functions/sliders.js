@@ -3,9 +3,10 @@ import Swiper, {
     Navigation,
     Pagination,
     Thumbs,
-    EffectFade
+    EffectFade,
+    EffectCreative
 } from 'swiper';
-Swiper.use([Navigation, Pagination, Thumbs, EffectFade]);
+Swiper.use([Navigation, Pagination, Thumbs, EffectFade, EffectCreative]);
 
 import modal from '../modules/modal';
 import {
@@ -69,20 +70,19 @@ function initSliders() {
         new Swiper(slider, {
             observer: true,
             observeParents: true,
-            slidesPerView: 1.15,
-            spaceBetween: 16,
+            slidesPerView: 1,
             autoHeight: true,
-            speed: 800,
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 24,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: ["-20%", 0, -1],
                 },
-                1112: {
-                    slidesPerView: 2,
-                    spaceBetween: 32,
-                },
+                next: {
+                    translate: ["100%", 0, 0],
+                }
             },
+            speed: 800,
             navigation: {
                 prevEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--prev'),
                 nextEl: slider.closest('.home-banners').querySelector('.nav-arrow-secondary--next'),

@@ -64,5 +64,32 @@ export const galleryPrimary = () => {
         container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
         container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
         container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
+
+        if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
+
+            // Временно!
+            // В дальнейшем данные будут братся с базы данных
+            const infoHTML = `
+            <div class="object-gallery-info">
+                <span class="object-gallery-info__price title-2">
+                 2 897 000 ₽
+                </span>
+                <span class="object-gallery-info__descr">
+                    1-ком. квартира, 39 м², 12/12 эт.
+                </span>
+                <span class="object-gallery-info__address">
+                    Краснодар, ул.Карла-Маркса., 234
+                </span>
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
+                    Позвонить
+                </button>
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
+                   Написать
+                </button>
+            </div>
+            `;
+            container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
+
+        }
     });
 }
