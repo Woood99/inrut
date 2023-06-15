@@ -7290,7 +7290,6 @@ function initSliders() {
       observer: true,
       observeParents: true,
       slidesPerView: 1,
-      autoHeight: true,
       effect: 'creative',
       creativeEffect: {
         prev: {
