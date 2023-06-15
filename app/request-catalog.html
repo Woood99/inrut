@@ -246,11 +246,11 @@
 </header>
 
         <main class="main main-page-gap request-catalog">
-            <div class="request-catalog__body container">
-                <h1 class="request-catalog__title title-1">
+            <div class="request-catalog__body">
+                <h1 class="request-catalog__title title-1 container">
                     1 567 заявок на покупку
                 </h1>
-                <form class="request-catalog__filter filter request-catalog-filter filter--more">
+                <form class="request-catalog__filter filter request-catalog-filter filter--more container">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -513,272 +513,287 @@
                     </div>
                 </form>
                 <div class="request-catalog__table main-table">
-                    <div class="main-table__table">
-                        <div class="main-table__type">
-                            <span>Тип</span>
-                            <span>Параметры</span>
-                            <span>Бюджет</span>
-                            <span>Заявка от</span>
+                    <div class="main-table__inner container">
+                        <div class="main-table__table">
+                            <div class="main-table__type">
+                                <span>Тип</span>
+                                <span>Параметры</span>
+                                <span>Бюджет</span>
+                                <span>Заявка от</span>
+                            </div>
+                            <div class="main-table__list">
+                                <a href="#" class="main-table__item object-info">
+                                    <span class="object-info__type">
+                                        Квартира
+                                    </span>
+                                    <span class="object-info__parameter">
+                                        <span>1-2-комн.</span>
+                                        <span>от 35 м²</span>
+                                    </span>
+                                    <span class="object-info__price">
+                                        3 699 000 ₽
+                                    </span>
+                                    <div class="object-info__tooltips">
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--bank">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#bank"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object-info__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент покупателя
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="#" class="main-table__item object-info">
+                                    <span class="object-info__type">
+                                        Дом
+                                    </span>
+                                    <span class="object-info__parameter">
+                                        <span>1,2-комн.</span>
+                                        <span>от 34 м²</span>
+                                        <span>от 6 сот.</span>
+                                        <span>ИЖС</span>
+                                    </span>
+                                    <span class="object-info__price">
+                                        125 699 000 ₽
+                                    </span>
+                                    <div class="object-info__tooltips">
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#budget"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#dollar"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#bolt"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object-info__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                alt="   Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Александр Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Покупатель
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="#" class="main-table__item object-info">
+                                    <span class="object-info__type">
+                                        Квартира
+                                    </span>
+                                    <span class="object-info__parameter">
+                                        <span>Студия</span>
+                                        <span>1,2-комн.</span>
+                                        <span>от 34 м²</span>
+                                        <span>до 12 эт.</span>
+                                    </span>
+                                    <span class="object-info__price">
+                                        25 000 ₽
+                                    </span>
+                                    <div class="object-info__tooltips">
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--calculator">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#calculator"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object-info__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                alt="Михаил Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Михаил Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент покупателя
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="#" class="main-table__item object-info">
+                                    <span class="object-info__type">
+                                        Дом
+                                    </span>
+                                    <span class="object-info__parameter">
+                                        <span>1,2-комн.</span>
+                                        <span>от 34 м²</span>
+                                        <span>уч. от 6 сот.</span>
+                                        <span>ИЖС</span>
+                                    </span>
+                                    <span class="object-info__price">
+                                        5 699 000 ₽
+                                    </span>
+                                    <div class="object-info__tooltips">
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#budget"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#bolt"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object-info__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                alt="Лев Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Лев Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент покупателя
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="#" class="main-table__item object-info">
+                                    <span class="object-info__type">
+                                        Квартира
+                                    </span>
+                                    <span class="object-info__parameter">
+                                        <span>Студия</span>
+                                        <span>1,2-комн.</span>
+                                        <span>от 34 м²</span>
+                                        <span>до 12 эт.</span>
+                                    </span>
+                                    <span class="object-info__price">
+                                        130 000 000 ₽
+                                    </span>
+                                    <div class="object-info__tooltips">
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--budget">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#budget"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                        <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
+                                            <div class="main-tooltip__target">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#dollar"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="main-tooltip__content">
+                                                В сделке используется сертификат
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object-info__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Покупатель
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="main-table__list">
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    3 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bank">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bank"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Алексей Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент покупателя
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Дом
-                                </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, от 6 сот., ИЖС
-                                </span>
-                                <span class="object-info__price">
-                                    125 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#dollar"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bolt"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="   Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Александр Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Покупатель
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    Студия, 1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    25 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--calculator">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#calculator"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Михаил Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Михаил Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент покупателя
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Дом
-                                </span>
-                                <span class="object-info__parameter">
-                                    1,2-ком., от 34м2, уч. от 6 сот., ИЖС
-                                </span>
-                                <span class="object-info__price">
-                                    5 699 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--bolt">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#bolt"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Лев Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Лев Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент покупателя
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="main-table__item object-info">
-                                <span class="object-info__type">
-                                    Квартира
-                                </span>
-                                <span class="object-info__parameter">
-                                    Студия, 1,2-ком., от 34м2, до 12 эт.
-                                </span>
-                                <span class="object-info__price">
-                                    130 000 000 ₽
-                                </span>
-                                <div class="object-info__tooltips">
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--budget">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#budget"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                    <div class="object-info__tooltip main-tooltip main-tooltip--dollar">
-                                        <div class="main-tooltip__target">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#dollar"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="main-tooltip__content">
-                                            В сделке используется сертификат
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="object-info__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                            alt="Алексей Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Покупатель
-                                    </span>
-                                </div>
-                            </a>
+                        <div class="main-table__next">
+                            <button type="button" class="btn btn-reset btn-secondary">
+                                Следующая страница
+                            </button>
                         </div>
-                    </div>
-                    <div class="main-table__next">
-                        <button type="button" class="btn btn-reset btn-secondary">
-                            Следующая страница
-                        </button>
-                    </div>
-                    <div class="main-table__pagination pagination">
-                        <ul class="pagination__list list-reset">
-                            <li class="pagination__item" disabled>
-                                <a href="#">
-                                    1
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    2
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    3
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    4
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    5
-                                </a>
-                            </li>
-                            <li class="pagination__item dots" tabindex="-1">
-                                ...
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    199
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="main-table__pagination pagination">
+                            <ul class="pagination__list list-reset">
+                                <li class="pagination__item" disabled>
+                                    <a href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        4
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        5
+                                    </a>
+                                </li>
+                                <li class="pagination__item dots" tabindex="-1">
+                                    ...
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        199
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
