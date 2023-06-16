@@ -213,7 +213,8 @@
     border-radius: 12px;
     box-shadow: var(--shadow-primary);
     padding: 24px;
-    transition: transform $transitionSpeed $transitionFunction;
+    transition: transform $transitionSpeed $transitionFunction,
+    box-shadow $transitionSpeed $transitionFunction;
     &__icon {
         width: 40px;
         height: 40px;
@@ -224,7 +225,7 @@
     @media (min-width:$desktop-min){
          &:hover{
             box-shadow: var(--shadow-secondary);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
          } 
     }
 }
