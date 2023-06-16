@@ -47,6 +47,46 @@
         }
     }
 
+    .card-secondary {
+        &__bottom {
+            border-top: 1px solid var(--primary100);
+            display: flex;
+            margin-top: auto;
+            width: calc(100% + 35px);
+            padding-top: 16px;
+            margin-left: -24px;
+            padding-left: 24px;
+        }
+
+        .card-secondary__info--mobile {
+            display: none;
+        }
+
+        &__prices--1 {
+            margin-bottom: 10px;
+        }
+
+        &__prices--2 {
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width:$smallTablet-min) {}
+    }
+
+    @media (min-width:$smallTablet-min) {
+        .control-cards__content--vertical .card-secondary__bottom {
+            border: none;
+            margin: 32px 0 0 0;
+            padding: 0;
+            width: 100%;
+
+            .card-secondary__info--mobile {
+                display: flex;
+            }
+        }
+    }
+
     @media (max-width:$smallTablet-max) {
         margin-bottom: 16px;
     }
@@ -54,20 +94,20 @@
 
 .buy-apartment-filter--building {
     .buy-apartment-filter__row--1 {
-        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243,1080) percent(255,1080);
+        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243, 1080) percent(255, 1080);
     }
 
     .buy-apartment-filter__row--2 {
-        grid-template-columns:  percent(260, 1080) 1fr;
+        grid-template-columns: percent(260, 1080) 1fr;
     }
 }
 
 .buy-apartment-filter--moskow {
     .buy-apartment-filter__row--1 {
-        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243,1080) percent(255,1080);
+        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243, 1080) percent(255, 1080);
     }
 
     .buy-apartment-filter__row--2 {
-        grid-template-columns:  percent(260, 1080) 1fr;
+        grid-template-columns: percent(260, 1080) 1fr;
     }
 }
