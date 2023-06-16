@@ -64,7 +64,8 @@
     }
 
     &__item {
- display: flex;
+        display: flex;
+
         >span {
             font-size: 14px;
             line-height: math.div(18, 14);
@@ -79,13 +80,15 @@
                 color: var(--dark);
                 order: 3;
                 width: max-content;
-                min-width: 35%;
-                @media (max-width:$smallTablet-max){
+                min-width: 45%;
+
+                @media (max-width:$smallTablet-max) {
                     width: 150px;
                     min-width: auto;
                 }
             }
         }
+
         &::after {
             content: '';
             flex: 1 1 0%;
@@ -96,12 +99,14 @@
             order: 2;
             margin: 0 4px;
         }
+
         &--price {
             >div {
                 display: flex;
                 order: 4;
                 width: max-content;
-                min-width: 35%;
+                min-width: 45%;
+
                 >span {
                     white-space: nowrap;
                     color: var(--dark);
@@ -128,7 +133,8 @@
                         display: none;
                     }
                 }
-                @media (max-width:$smallTablet-max){
+
+                @media (max-width:$smallTablet-max) {
                     width: 150px;
                     min-width: auto;
                 }
@@ -189,9 +195,14 @@
     &__user {}
 
     &__messages {
-        margin-top: 32px;
+        margin-top: 16px;
         max-width: none;
         width: 100%;
+
+        background-color: var(--white);
+        box-shadow: var(--shadow-primary);
+        border-radius: 12px;
+        padding: 24px;
 
         .simplebar-primary {
             border: 1px solid var(--primary200);
@@ -209,8 +220,14 @@
             }
         }
 
+        @media (max-width:$desktop) {
+            order: 3;
+            grid-column: 1/-1;
+            margin-top: 0;
+        }
+
         @media (max-width:$smallTablet-max) {
-            padding: 0 16px;
+            padding: 16px;
         }
     }
 
@@ -259,7 +276,11 @@
 
         @media (max-width:$smallTablet-max) {
             margin-top: 24px;
-            height: 154px;
+            height: 250px;
+        }
+
+        @media (max-width:$mobile-max) {
+            height: 215px;
         }
     }
 }

@@ -168,4 +168,15 @@ export const calendarPrimary = (containerSelector, url, edit = false) => {
         }, 500);
     }
 
+    const requestCalendar = calendarEl.closest('.request-calendar');
+    if (requestCalendar) {
+        requestCalendar.querySelector('.tabs__title:nth-child(2)').addEventListener('click', () => {
+            if (!requestCalendar.classList.contains('_calendar-init')) {
+                setTimeout(() => {
+                    calendaryPrimary.render();
+                    requestCalendar.classList.add('_calendar-init');
+                }, 10);
+            }
+        })
+    }
 }

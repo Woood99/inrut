@@ -4,9 +4,10 @@ import Swiper, {
     Pagination,
     Thumbs,
     EffectFade,
-    EffectCreative
+    EffectCreative,
+    Autoplay
 } from 'swiper';
-Swiper.use([Navigation, Pagination, Thumbs, EffectFade, EffectCreative]);
+Swiper.use([Navigation, Pagination, Thumbs, EffectFade, EffectCreative, Autoplay]);
 
 import modal from '../modules/modal';
 import {
@@ -72,6 +73,9 @@ function initSliders() {
             observeParents: true,
             slidesPerView: 1,
             effect: 'creative',
+            autoplay: {
+                delay: 6000,
+            },
             creativeEffect: {
                 prev: {
                     shadow: true,

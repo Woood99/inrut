@@ -4537,6 +4537,17 @@ const calendarPrimary = function (containerSelector, url) {
       });
     }, 500);
   }
+  const requestCalendar = calendarEl.closest('.request-calendar');
+  if (requestCalendar) {
+    requestCalendar.querySelector('.tabs__title:nth-child(2)').addEventListener('click', () => {
+      if (!requestCalendar.classList.contains('_calendar-init')) {
+        setTimeout(() => {
+          calendaryPrimary.render();
+          requestCalendar.classList.add('_calendar-init');
+        }, 10);
+      }
+    });
+  }
 };
 
 /***/ }),
@@ -7236,7 +7247,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 // =========================================================================================
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCreative]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCreative, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
 
 
 
@@ -7291,6 +7302,9 @@ function initSliders() {
       observeParents: true,
       slidesPerView: 1,
       effect: 'creative',
+      autoplay: {
+        delay: 6000
+      },
       creativeEffect: {
         prev: {
           shadow: true,
