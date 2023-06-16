@@ -652,14 +652,14 @@ textarea.input-reset {
 }
 .checkbox-secondary__input.focus-visible + .checkbox-secondary__label::before {
   background-color: var(--primary300);
-  border: 1px solid var(--primary400);
+  border: 2px solid var(--primary400);
 }
-.checkbox-secondary__input:hover + .checkbox-secondary__label::before {
-  border: 1px solid rgba(0, 108, 238, 0.5);
+.checkbox-secondary__input:hover:not(:checked) + .checkbox-secondary__label::before {
+  border: 2px solid rgba(0, 108, 238, 0.5);
 }
 .checkbox-secondary__input:checked + .checkbox-secondary__label::before {
   background-color: var(--blue);
-  border: 1px solid var(--blue);
+  border: 2px solid var(--blue);
 }
 .checkbox-secondary__input:checked + .checkbox-secondary__label::after {
   opacity: 1;
@@ -690,19 +690,19 @@ textarea.input-reset {
 }
 .checkbox-secondary__label::before {
   content: "";
-  width: 15px;
-  height: 15px;
-  background-color: var(--primary100);
-  border: 1px solid var(--primaryTwo);
-  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--white);
+  border: 2px solid #b3bcc5;
+  border-radius: 4px;
   -webkit-transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out;
   -o-transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out;
   transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out;
 }
 .checkbox-secondary__label::after {
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -716,15 +716,15 @@ textarea.input-reset {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   background-image: url("../img/check-mark.svg");
   background-repeat: no-repeat;
-  background-size: 9px 6px;
+  background-size: 10px 7px;
   background-position: center;
 }
 .checkbox-secondary__text {
-  margin-left: 12px;
+  margin-left: 8px;
   color: var(--gray);
   font-size: 14px;
   line-height: 1.2857142857;
-  font-weight: 400;
+  font-weight: 500;
 }
 .checkbox-secondary.agent-reviews__checkbox .checkbox-secondary__content {
   display: -webkit-box;
@@ -3096,7 +3096,19 @@ textarea.input-reset {
 .object-not-popup__form {
   margin-top: 32px;
 }
-.object-not-popup__radio .radio-primary__item:not(:last-child) {
+.object-not-popup__checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+.object-not-popup__checkboxes .checkbox-secondary:not(:last-child) {
   margin-bottom: 24px;
 }
 .object-not-popup__textarea {
@@ -3105,6 +3117,9 @@ textarea.input-reset {
 .object-not-popup__btn {
   margin-top: 32px;
   width: 100%;
+}
+.object-not-popup .object-small-card__title {
+  font-weight: 500;
 }
 
 .construct-progress-popup {
@@ -12985,7 +13000,7 @@ textarea.input-reset {
 }
 .bid-user--grade .bid-user__grade {
   margin-top: 16px;
-  padding-top: 16px;
+  padding-top: 24px;
   border-top: 1px solid var(--primary100);
   text-align: center;
   width: 100%;

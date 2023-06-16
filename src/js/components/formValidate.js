@@ -29,3 +29,35 @@ export const validateRadioPrimary = (formSelector, textareaSelector, btnSelector
         clearForm();
     });
 };
+
+export const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, checkboxesSelector) => {
+    const form = document.querySelector(formSelector);
+    if (!form) return false;
+    const textarea = form.querySelector(textareaSelector);
+    const btn = form.querySelector(btnSelector);
+    const checkboxes = form.querySelectorAll(checkboxesSelector);
+
+    function checkForm() {
+        let flag = false;
+        for (let checkbox of checkboxes) {
+            flag = checkbox.checked ? true : false;
+            if (flag) break;
+        }
+        flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
+    };
+
+    function clearForm() {
+        textarea.value = '';
+        btn.setAttribute('disabled', '');
+        for (let radio of checkboxes) {
+            radio.checked = false;
+        }
+    }
+    form.addEventListener('change', (e) => {
+        if (e.target.type === 'checkbox') checkForm();
+    })
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        clearForm();
+    });
+};

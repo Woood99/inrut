@@ -91,15 +91,17 @@
             +.checkbox-secondary__label {
                 &::before {
                     background-color: var(--primary300);
-                    border: 1px solid var(--primary400);
+                    border: 2px solid var(--primary400);
                 }
             }
         }
 
         &:hover {
-            +.checkbox-secondary__label {
-                &::before {
-                    border: 1px solid rgba(0, 108, 238, 0.5);
+            &:not(:checked) {
+                +.checkbox-secondary__label {
+                    &::before {
+                        border: 2px solid rgba(0, 108, 238, 0.5);
+                    }
                 }
             }
         }
@@ -108,7 +110,7 @@
             +.checkbox-secondary__label {
                 &::before {
                     background-color: var(--blue);
-                    border: 1px solid var(--blue);
+                    border: 2px solid var(--blue);
                 }
 
                 &::after {
@@ -143,19 +145,19 @@
 
         &::before {
             content: '';
-            width: 15px;
-            height: 15px;
-            background-color: var(--primary100);
-            border: 1px solid var(--primaryTwo);
-            border-radius: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--white);
+            border: 2px solid #b3bcc5;
+            border-radius: 4px;
             transition: background-color $transitionSpeed $transitionFunction,
                 border $transitionSpeed $transitionFunction;
         }
 
         &::after {
             content: '';
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             opacity: 0;
             visibility: hidden;
             position: absolute;
@@ -167,18 +169,18 @@
 
             background-image: url('../img/check-mark.svg');
             background-repeat: no-repeat;
-            background-size: 9px 6px;
+            background-size: 10px 7px;
 
             background-position: center;
         }
     }
 
     &__text {
-        margin-left: 12px;
+        margin-left: 8px;
         color: var(--gray);
         font-size: 14px;
         line-height: math.div(18, 14);
-        font-weight: 400;
+        font-weight: 500;
     }
 
     &.agent-reviews__checkbox {

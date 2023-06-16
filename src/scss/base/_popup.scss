@@ -2251,9 +2251,11 @@
         margin-top: 32px;
     }
 
-    &__radio {
-
-        .radio-primary__item {
+    &__checkboxes {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        .checkbox-secondary {
             &:not(:last-child) {
                 margin-bottom: 24px;
             }
@@ -2267,6 +2269,11 @@
     &__btn {
         margin-top: 32px;
         width: 100%;
+    }
+    .object-small-card{
+        &__title{
+            font-weight: 500;
+        }
     }
 }
 

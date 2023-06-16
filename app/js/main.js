@@ -4246,7 +4246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateCheckboxPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
 
   // ==================================================
 
@@ -5663,6 +5663,7 @@ const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
 /* harmony export */   "validateRadioPrimary": () => (/* binding */ validateRadioPrimary)
 /* harmony export */ });
 const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
@@ -5689,6 +5690,36 @@ const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radio
   }
   form.addEventListener('change', e => {
     if (e.target.type === 'radio') checkForm();
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    clearForm();
+  });
+};
+const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, checkboxesSelector) => {
+  const form = document.querySelector(formSelector);
+  if (!form) return false;
+  const textarea = form.querySelector(textareaSelector);
+  const btn = form.querySelector(btnSelector);
+  const checkboxes = form.querySelectorAll(checkboxesSelector);
+  function checkForm() {
+    let flag = false;
+    for (let checkbox of checkboxes) {
+      flag = checkbox.checked ? true : false;
+      if (flag) break;
+    }
+    flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
+  }
+  ;
+  function clearForm() {
+    textarea.value = '';
+    btn.setAttribute('disabled', '');
+    for (let radio of checkboxes) {
+      radio.checked = false;
+    }
+  }
+  form.addEventListener('change', e => {
+    if (e.target.type === 'checkbox') checkForm();
   });
   form.addEventListener('submit', e => {
     e.preventDefault();

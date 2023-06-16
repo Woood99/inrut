@@ -21,7 +21,8 @@ import {
     textareaSecondary
 } from './components/inputs';
 import {
-    validateRadioPrimary
+    validateRadioPrimary,
+    validateCheckboxPrimary
 } from './components/formValidate';
 import {
     calendarPrimary
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     choicesSelect();
 
     // ==================================================
-    
+
     filterControl();
     uiSlider();
     uiSliderOne();
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
     validateRadioPrimary('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
     validateRadioPrimary('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-    validateRadioPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.radio-primary__input');
+    validateCheckboxPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
 
     // ==================================================
 
