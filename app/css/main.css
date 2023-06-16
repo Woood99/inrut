@@ -5125,9 +5125,9 @@ textarea.input-reset {
 }
 
 .cards-list {
-  padding: 24px 32px;
   background-color: var(--stand-bg);
-  border-radius: 23px;
+  padding: 24px 0;
+  border-radius: 16px;
 }
 .cards-list__controls {
   display: -webkit-box;
@@ -5136,6 +5136,11 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+@media (max-width: 1144px) {
+  .cards-list__controls {
+    padding: 0 16px;
+  }
 }
 @media (max-width: 768px) {
   .cards-list__controls {
@@ -5146,7 +5151,7 @@ textarea.input-reset {
   margin-top: 32px;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-row-gap: 24px;
   grid-column-gap: 16px;
 }

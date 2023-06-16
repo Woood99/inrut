@@ -723,13 +723,17 @@
 }
 
 .cards-list {
-    padding: 24px 32px;
     background-color: var(--stand-bg);
-    border-radius: 23px;
+    padding: 24px 0;
+    border-radius: 16px;
 
     &__controls {
         display: flex;
         align-items: center;
+
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
 
         @media (max-width:$smallTablet-max) {
             display: none;
@@ -739,7 +743,7 @@
     &__items {
         margin-top: 32px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         grid-row-gap: 24px;
         grid-column-gap: 16px;
 

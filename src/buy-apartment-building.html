@@ -19,12 +19,12 @@
     <div class="site-container site-container--buy-apartment">
         @include('partials/header.html')
         <main class="main main-page-gap buy-apartment">
-            <div class="buy-apartment__body container">
-                <h1 class="buy-apartment__title title-1">
+            <div class="buy-apartment__body">
+                <h1 class="buy-apartment__title title-1 container">
                     Купить квартиру в Новостройке
                 </h1>
                 <form
-                    class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--building filter--more">
+                    class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--building filter--more container">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -229,7 +229,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="buy-apartment__sort select-sort">
+                <div class="buy-apartment__sort select-sort container">
                     <span class="select-sort__label">Сортировка:</span>
                     <select class="select-sort__body" name="filter-sort">
                         <option value="price">Стоимость</option>
@@ -237,584 +237,594 @@
                     </select>
                 </div>
                 <div class="buy-apartment__cards-list cards-list control-cards">
-                    <div class="cards-list__controls control-cards__btns">
-                        <button type="button"
-                            class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#apps"></use>
-                            </svg>
-                        </button>
-                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#pause"></use>
-                            </svg>
-                        </button>
-                        <button type="button" class="btn btn-reset control-cards__btn--maps" data-mobile-speed
-                            data-popup-path="popup-map_buy-apartment-building">
-                            <span>На карте</span>
-                            <svg>
-                                <use xlink:href="img/sprite.svg#location-fill"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="cards-list__items control-cards__content control-cards__content--horizontal">
-                        <article class="card-secondary">
-                            <a href="#" class="card-secondary__container">
-                                <div class="card-secondary__image ibg">
-                                    <picture>
-                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
-                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                    </picture>
-                                    <div class="card-secondary__info">
-                                        <div class="row">
-                                            <span class="card-secondary__info--mortgage">Ипотека
-                                                0,1%</span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                        </div>
-                                        <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="card-secondary__info--controls dots-dropdown">
-                                                <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#dots-vertical">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <div class="dots-dropdown__dropdown">
-                                                    <button type="button" class="btn btn-reset">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
-                                                        </svg>
-                                                        Заблокировать
-                                                    </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
-                                                            </use>
-                                                        </svg>
-                                                        Пожаловаться
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-secondary__content">
-                                    <h3 class="card-secondary__name">
-                                        ЖК “Элит цветочные поляны экопарк”
-                                    </h3>
-                                    <div class="card-secondary__address">
-                                        Краснодар, ул.Карла-Маркса., 234
-                                    </div>
-                                    <div class="card-secondary__add-info">
-                                        <span>25 квартир от застройщика</span>
-                                        <span>Срок сдачи : 2024 кв. года, есть сданные</span>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--1">
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>Студии</span>
-                                                <span>от 4 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>1-комн.</span>
-                                                <span>от 34 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>2-комн.</span>
-                                                <span>от 40 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>3-комн.</span>
-                                                <span>от 134 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>4-комн.</span>
-                                                <span>от 134 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--2">
-                                        <div class="card-secondary__price-main">
-                                            <span class="card-secondary__price-old">
-                                                <span>
-                                                    <span>3 000 000</span> ₽
-                                                </span>
-                                                <span>-300 000 ₽</span>
-                                            </span>
-                                            <span class="card-secondary__price-new">
-                                                <span class="title-3">от 2 897 000 ₽</span>
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__price">
-                                            <span>В ипотеку </span>
-                                            <span>от 145 350 ₽/мес.</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__bottom">
-                                        <div class="card-secondary__user user-info">
-                                            <div class="user-info__avatar avatar online">
-                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                                    alt="Алексей Г.">
-                                            </div>
-                                            <span class="user-info__name">
-                                                Югстройинвест
-                                            </span>
-                                            <span class="user-info__pos">
-                                                Застройщик
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__info--mobile">
-                                            <span class="card-secondary__info--discount">
-                                                Скидка 32%
-                                            </span>
-                                            <span class="card-secondary__info--mortgage">
-                                                Ипотека 0,1%
-                                            </span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke"></use>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="card-secondary">
-                            <a href="#" class="card-secondary__container">
-                                <div class="card-secondary__image ibg">
-                                    <picture>
-                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
-                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                    </picture>
-                                    <div class="card-secondary__info">
-                                        <div class="row">
-                                            <span class="card-secondary__info--mortgage">Ипотека
-                                                0,1%</span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                        </div>
-                                        <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="card-secondary__info--controls dots-dropdown">
-                                                <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#dots-vertical">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <div class="dots-dropdown__dropdown">
-                                                    <button type="button" class="btn btn-reset">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
-                                                        </svg>
-                                                        Заблокировать
-                                                    </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
-                                                            </use>
-                                                        </svg>
-                                                        Пожаловаться
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-secondary__content">
-                                    <h3 class="card-secondary__name">
-                                        ЖК “Самолет”
-                                    </h3>
-                                    <div class="card-secondary__address">
-                                        Краснодар, ул.Академика Королева., 2, к.3
-                                    </div>
-                                    <div class="card-secondary__add-info">
-                                        <span>25 квартир от застройщика</span>
-                                        <span>Срок сдачи : 2024 кв. года, есть сданные</span>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--1">
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>Студии</span>
-                                                <span>от 4 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>1-комн.</span>
-                                                <span>от 34 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>2-комн.</span>
-                                                <span>от 40 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--2">
-                                        <div class="card-secondary__price-main">
-                                            <span class="card-secondary__price-old">
-                                                <span>
-                                                    <span>3 000 000</span> ₽
-                                                </span>
-                                                <span>-300 000 ₽</span>
-                                            </span>
-                                            <span class="card-secondary__price-new">
-                                                <span class="title-3">от 2 897 000 ₽</span>
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__price">
-                                            <span>В ипотеку </span>
-                                            <span>от 145 350 ₽/мес.</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__bottom">
-                                        <div class="card-secondary__user user-info">
-                                            <div class="user-info__avatar avatar online">
-                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                                    alt="Алексей Г.">
-                                            </div>
-                                            <span class="user-info__name">
-                                                Югстройинвест
-                                            </span>
-                                            <span class="user-info__pos">
-                                                Застройщик
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__info--mobile">
-                                            <span class="card-secondary__info--discount">
-                                                Скидка 32%
-                                            </span>
-                                            <span class="card-secondary__info--mortgage">
-                                                Ипотека 0,1%
-                                            </span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke"></use>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="card-secondary">
-                            <a href="#" class="card-secondary__container">
-                                <div class="card-secondary__image ibg">
-                                    <picture>
-                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
-                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                    </picture>
-                                    <div class="card-secondary__info">
-                                        <div class="row">
-                                            <span class="card-secondary__info--mortgage">Ипотека
-                                                0,1%</span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                        </div>
-                                        <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="card-secondary__info--controls dots-dropdown">
-                                                <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#dots-vertical">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <div class="dots-dropdown__dropdown">
-                                                    <button type="button" class="btn btn-reset">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
-                                                        </svg>
-                                                        Заблокировать
-                                                    </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
-                                                            </use>
-                                                        </svg>
-                                                        Пожаловаться
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-secondary__content">
-                                    <h3 class="card-secondary__name">
-                                        ЖК “Экопарк”
-                                    </h3>
-                                    <div class="card-secondary__address">
-                                        Краснодар, ул.Карла-Маркса., 234
-                                    </div>
-                                    <div class="card-secondary__add-info">
-                                        <span>25 квартир от застройщика</span>
-                                        <span>Срок сдачи : 2024 кв. года, есть сданные</span>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--1">
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>Студии</span>
-                                                <span>от 4 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>1-комн.</span>
-                                                <span>от 34 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>2-комн.</span>
-                                                <span>от 40 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>3-комн.</span>
-                                                <span>от 134 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--2">
-                                        <div class="card-secondary__price-main">
-                                            <span class="card-secondary__price-old">
-                                                <span>
-                                                    <span>3 000 000</span> ₽
-                                                </span>
-                                                <span>-300 000 ₽</span>
-                                            </span>
-                                            <span class="card-secondary__price-new">
-                                                <span class="title-3">от 2 897 000 ₽</span>
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__price">
-                                            <span>В ипотеку </span>
-                                            <span>от 145 350 ₽/мес.</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__bottom">
-                                        <div class="card-secondary__user user-info">
-                                            <div class="user-info__avatar avatar online">
-                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                                    alt="Алексей Г.">
-                                            </div>
-                                            <span class="user-info__name">
-                                                Югстройинвест
-                                            </span>
-                                            <span class="user-info__pos">
-                                                Застройщик
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__info--mobile">
-                                            <span class="card-secondary__info--discount">
-                                                Скидка 32%
-                                            </span>
-                                            <span class="card-secondary__info--mortgage">
-                                                Ипотека 0,1%
-                                            </span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke"></use>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="card-secondary">
-                            <a href="#" class="card-secondary__container">
-                                <div class="card-secondary__image ibg">
-                                    <picture>
-                                        <source srcset="./img/card-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
-                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                    </picture>
-                                    <div class="card-secondary__info">
-                                        <div class="row">
-                                            <span class="card-secondary__info--mortgage">Ипотека
-                                                0,1%</span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                        </div>
-                                        <div class="card-secondary__info--btns-right">
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite"></use>
-                                                </svg>
-                                            </div>
-                                            <div class="card-secondary__info--controls dots-dropdown">
-                                                <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#dots-vertical">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <div class="dots-dropdown__dropdown">
-                                                    <button type="button" class="btn btn-reset">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#prohibit">
-                                                            </use>
-                                                        </svg>
-                                                        Заблокировать
-                                                    </button>
-                                                    <button type="button" class="btn btn-reset"
-                                                        data-popup-path="complaint-object">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#warning">
-                                                            </use>
-                                                        </svg>
-                                                        Пожаловаться
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-secondary__content">
-                                    <h3 class="card-secondary__name">
-                                        ЖК “Экопарк”
-                                    </h3>
-                                    <div class="card-secondary__address">
-                                        Краснодар, ул.Карла-Маркса., 234
-                                    </div>
-                                    <div class="card-secondary__add-info">
-                                        <span>25 квартир от застройщика</span>
-                                        <span>Срок сдачи : 2024 кв. года, есть сданные</span>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--1">
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>Студии</span>
-                                                <span>от 4 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>1-комн.</span>
-                                                <span>от 34 736 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>2-комн.</span>
-                                                <span>от 40 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="card-secondary__price">
-                                                <span>3-комн.</span>
-                                                <span>от 134 736 000 ₽</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__prices card-secondary__prices--2">
-                                        <div class="card-secondary__price-main">
-                                            <span class="card-secondary__price-old">
-                                                <span>
-                                                    <span>3 000 000</span> ₽
-                                                </span>
-                                                <span>-300 000 ₽</span>
-                                            </span>
-                                            <span class="card-secondary__price-new">
-                                                <span class="title-3">от 2 897 000 ₽</span>
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__price">
-                                            <span>В ипотеку </span>
-                                            <span>от 145 350 ₽/мес.</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-secondary__bottom">
-                                        <div class="card-secondary__user user-info">
-                                            <div class="user-info__avatar avatar online">
-                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
-                                                    alt="Алексей Г.">
-                                            </div>
-                                            <span class="user-info__name">
-                                                Югстройинвест
-                                            </span>
-                                            <span class="user-info__pos">
-                                                Застройщик
-                                            </span>
-                                        </div>
-                                        <div class="card-secondary__info--mobile">
-                                            <span class="card-secondary__info--discount">
-                                                Скидка 32%
-                                            </span>
-                                            <span class="card-secondary__info--mortgage">
-                                                Ипотека 0,1%
-                                            </span>
-                                            <span class="card-secondary__info--quantity">+2</span>
-                                            <div class="card-secondary__info--favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke"></use>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <div class="cards-list__banner">
-                            Банер
+                    <div class="container--no-padding">
+                        <div class="cards-list__controls control-cards__btns">
+                            <button type="button"
+                                class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#apps"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#pause"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-mobile-speed
+                                data-popup-path="popup-map_buy-apartment-building">
+                                <span>На карте</span>
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#location-fill"></use>
+                                </svg>
+                            </button>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-reset btn-secondary cards-list__next">
-                        Следующая страница
-                    </button>
-                    <div class="cards-list__pagination pagination">
-                        <ul class="pagination__list list-reset">
-                            <li class="pagination__item" disabled>
-                                <a href="#">
-                                    1
+                        <div class="cards-list__items control-cards__content control-cards__content--horizontal">
+                            <article class="card-secondary">
+                                <a href="#" class="card-secondary__container">
+                                    <div class="card-secondary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                        <div class="card-secondary__info">
+                                            <div class="row">
+                                                <span class="card-secondary__info--mortgage">Ипотека
+                                                    0,1%</span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                            </div>
+                                            <div class="card-secondary__info--btns-right">
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-secondary__info--controls dots-dropdown">
+                                                    <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#dots-vertical">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dots-dropdown__dropdown">
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#prohibit">
+                                                                </use>
+                                                            </svg>
+                                                            Заблокировать
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset"
+                                                            data-popup-path="complaint-object">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#warning">
+                                                                </use>
+                                                            </svg>
+                                                            Пожаловаться
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary__content">
+                                        <h3 class="card-secondary__name">
+                                            ЖК “Элит цветочные поляны экопарк”
+                                        </h3>
+                                        <div class="card-secondary__address">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </div>
+                                        <div class="card-secondary__add-info">
+                                            <span>25 квартир от застройщика</span>
+                                            <span>Срок сдачи : 2024 кв. года, есть сданные</span>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--1">
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>Студии</span>
+                                                    <span>от 4 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>1-комн.</span>
+                                                    <span>от 34 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>2-комн.</span>
+                                                    <span>от 40 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>3-комн.</span>
+                                                    <span>от 134 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>4-комн.</span>
+                                                    <span>от 134 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--2">
+                                            <div class="card-secondary__price-main">
+                                                <span class="card-secondary__price-old">
+                                                    <span>
+                                                        <span>3 000 000</span> ₽
+                                                    </span>
+                                                    <span>-300 000 ₽</span>
+                                                </span>
+                                                <span class="card-secondary__price-new">
+                                                    <span class="title-3">от 2 897 000 ₽</span>
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__price">
+                                                <span>В ипотеку </span>
+                                                <span>от 145 350 ₽/мес.</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__bottom">
+                                            <div class="card-secondary__user user-info">
+                                                <div class="user-info__avatar avatar online">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                        alt="Алексей Г.">
+                                                </div>
+                                                <span class="user-info__name">
+                                                    Югстройинвест
+                                                </span>
+                                                <span class="user-info__pos">
+                                                    Застройщик
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__info--mobile">
+                                                <span class="card-secondary__info--discount">
+                                                    Скидка 32%
+                                                </span>
+                                                <span class="card-secondary__info--mortgage">
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    2
+                            </article>
+                            <article class="card-secondary">
+                                <a href="#" class="card-secondary__container">
+                                    <div class="card-secondary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                        <div class="card-secondary__info">
+                                            <div class="row">
+                                                <span class="card-secondary__info--mortgage">Ипотека
+                                                    0,1%</span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                            </div>
+                                            <div class="card-secondary__info--btns-right">
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-secondary__info--controls dots-dropdown">
+                                                    <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#dots-vertical">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dots-dropdown__dropdown">
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#prohibit">
+                                                                </use>
+                                                            </svg>
+                                                            Заблокировать
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset"
+                                                            data-popup-path="complaint-object">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#warning">
+                                                                </use>
+                                                            </svg>
+                                                            Пожаловаться
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary__content">
+                                        <h3 class="card-secondary__name">
+                                            ЖК “Самолет”
+                                        </h3>
+                                        <div class="card-secondary__address">
+                                            Краснодар, ул.Академика Королева., 2, к.3
+                                        </div>
+                                        <div class="card-secondary__add-info">
+                                            <span>25 квартир от застройщика</span>
+                                            <span>Срок сдачи : 2024 кв. года, есть сданные</span>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--1">
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>Студии</span>
+                                                    <span>от 4 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>1-комн.</span>
+                                                    <span>от 34 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>2-комн.</span>
+                                                    <span>от 40 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--2">
+                                            <div class="card-secondary__price-main">
+                                                <span class="card-secondary__price-old">
+                                                    <span>
+                                                        <span>3 000 000</span> ₽
+                                                    </span>
+                                                    <span>-300 000 ₽</span>
+                                                </span>
+                                                <span class="card-secondary__price-new">
+                                                    <span class="title-3">от 2 897 000 ₽</span>
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__price">
+                                                <span>В ипотеку </span>
+                                                <span>от 145 350 ₽/мес.</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__bottom">
+                                            <div class="card-secondary__user user-info">
+                                                <div class="user-info__avatar avatar online">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                        alt="Алексей Г.">
+                                                </div>
+                                                <span class="user-info__name">
+                                                    Югстройинвест
+                                                </span>
+                                                <span class="user-info__pos">
+                                                    Застройщик
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__info--mobile">
+                                                <span class="card-secondary__info--discount">
+                                                    Скидка 32%
+                                                </span>
+                                                <span class="card-secondary__info--mortgage">
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    3
+                            </article>
+                            <article class="card-secondary">
+                                <a href="#" class="card-secondary__container">
+                                    <div class="card-secondary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                        <div class="card-secondary__info">
+                                            <div class="row">
+                                                <span class="card-secondary__info--mortgage">Ипотека
+                                                    0,1%</span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                            </div>
+                                            <div class="card-secondary__info--btns-right">
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-secondary__info--controls dots-dropdown">
+                                                    <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#dots-vertical">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dots-dropdown__dropdown">
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#prohibit">
+                                                                </use>
+                                                            </svg>
+                                                            Заблокировать
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset"
+                                                            data-popup-path="complaint-object">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#warning">
+                                                                </use>
+                                                            </svg>
+                                                            Пожаловаться
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary__content">
+                                        <h3 class="card-secondary__name">
+                                            ЖК “Экопарк”
+                                        </h3>
+                                        <div class="card-secondary__address">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </div>
+                                        <div class="card-secondary__add-info">
+                                            <span>25 квартир от застройщика</span>
+                                            <span>Срок сдачи : 2024 кв. года, есть сданные</span>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--1">
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>Студии</span>
+                                                    <span>от 4 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>1-комн.</span>
+                                                    <span>от 34 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>2-комн.</span>
+                                                    <span>от 40 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>3-комн.</span>
+                                                    <span>от 134 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--2">
+                                            <div class="card-secondary__price-main">
+                                                <span class="card-secondary__price-old">
+                                                    <span>
+                                                        <span>3 000 000</span> ₽
+                                                    </span>
+                                                    <span>-300 000 ₽</span>
+                                                </span>
+                                                <span class="card-secondary__price-new">
+                                                    <span class="title-3">от 2 897 000 ₽</span>
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__price">
+                                                <span>В ипотеку </span>
+                                                <span>от 145 350 ₽/мес.</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__bottom">
+                                            <div class="card-secondary__user user-info">
+                                                <div class="user-info__avatar avatar online">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                        alt="Алексей Г.">
+                                                </div>
+                                                <span class="user-info__name">
+                                                    Югстройинвест
+                                                </span>
+                                                <span class="user-info__pos">
+                                                    Застройщик
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__info--mobile">
+                                                <span class="card-secondary__info--discount">
+                                                    Скидка 32%
+                                                </span>
+                                                <span class="card-secondary__info--mortgage">
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    4
+                            </article>
+                            <article class="card-secondary">
+                                <a href="#" class="card-secondary__container">
+                                    <div class="card-secondary__image ibg">
+                                        <picture>
+                                            <source srcset="./img/card-1.webp" type="image/webp">
+                                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207"
+                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                        </picture>
+                                        <div class="card-secondary__info">
+                                            <div class="row">
+                                                <span class="card-secondary__info--mortgage">Ипотека
+                                                    0,1%</span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                            </div>
+                                            <div class="card-secondary__info--btns-right">
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-secondary__info--controls dots-dropdown">
+                                                    <button type="button" class="btn btn-reset dots-dropdown__target">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#dots-vertical">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dots-dropdown__dropdown">
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#prohibit">
+                                                                </use>
+                                                            </svg>
+                                                            Заблокировать
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset"
+                                                            data-popup-path="complaint-object">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#warning">
+                                                                </use>
+                                                            </svg>
+                                                            Пожаловаться
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary__content">
+                                        <h3 class="card-secondary__name">
+                                            ЖК “Экопарк”
+                                        </h3>
+                                        <div class="card-secondary__address">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </div>
+                                        <div class="card-secondary__add-info">
+                                            <span>25 квартир от застройщика</span>
+                                            <span>Срок сдачи : 2024 кв. года, есть сданные</span>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--1">
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>Студии</span>
+                                                    <span>от 4 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>1-комн.</span>
+                                                    <span>от 34 736 000 ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>2-комн.</span>
+                                                    <span>от 40 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>3-комн.</span>
+                                                    <span>от 134 736 000 ₽</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--2">
+                                            <div class="card-secondary__price-main">
+                                                <span class="card-secondary__price-old">
+                                                    <span>
+                                                        <span>3 000 000</span> ₽
+                                                    </span>
+                                                    <span>-300 000 ₽</span>
+                                                </span>
+                                                <span class="card-secondary__price-new">
+                                                    <span class="title-3">от 2 897 000 ₽</span>
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__price">
+                                                <span>В ипотеку </span>
+                                                <span>от 145 350 ₽/мес.</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__bottom">
+                                            <div class="card-secondary__user user-info">
+                                                <div class="user-info__avatar avatar online">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40"
+                                                        alt="Алексей Г.">
+                                                </div>
+                                                <span class="user-info__name">
+                                                    Югстройинвест
+                                                </span>
+                                                <span class="user-info__pos">
+                                                    Застройщик
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__info--mobile">
+                                                <span class="card-secondary__info--discount">
+                                                    Скидка 32%
+                                                </span>
+                                                <span class="card-secondary__info--mortgage">
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <span class="card-secondary__info--quantity">+2</span>
+                                                <div class="card-secondary__info--favorite"
+                                                    title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    5
-                                </a>
-                            </li>
-                            <li class="pagination__item dots" tabindex="-1">
-                                ...
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    199
-                                </a>
-                            </li>
-                        </ul>
+                            </article>
+                            <div class="cards-list__banner">
+                                Банер
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-reset btn-secondary cards-list__next">
+                            Следующая страница
+                        </button>
+                        <div class="cards-list__pagination pagination">
+                            <ul class="pagination__list list-reset">
+                                <li class="pagination__item" disabled>
+                                    <a href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        4
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        5
+                                    </a>
+                                </li>
+                                <li class="pagination__item dots" tabindex="-1">
+                                    ...
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        199
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
