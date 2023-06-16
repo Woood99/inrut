@@ -1,4 +1,5 @@
 .home {
+    background-color: var(--stand-bg);
     @media (max-width:$desktop) {
         padding-top: 66px;
     }
@@ -73,7 +74,11 @@
             margin-top: 24px;
         }
     }
+    &__services {
+    }
 }
+
+
 
 .home-banners {
     &.container {
@@ -84,7 +89,8 @@
 
     &__nav {
         position: relative;
-        top: -57px;
+        top: -29px;
+        margin-top: -28px;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -144,6 +150,87 @@
     }
 }
 
+.home-services {
+    margin-top: 48px;
+    padding: 32px 0;
+    &__container{
+        display: grid;
+        grid-template-columns: 1fr 450px;
+        grid-column-gap: 24px;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+    }
+
+    &__login {
+        border-radius: 12px;
+        background-color: var(--white);
+        box-shadow: var(--shadow-primary);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img{
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        @media (max-width:$desktop){
+          padding: 24px;
+        }
+    }
+
+    &__title {
+        transition: color $transitionSpeed $transitionFunction;
+        &:hover{
+            color: var(--blue);
+        }
+    }
+
+    &__descr {
+        margin-top: 32px;
+        font-size: 15px;
+        line-height: math.div(19 , 15);
+        color: var(--dark);
+        flex-grow: 1;
+    }
+
+    &__btn {
+    margin-top: 24px;
+    }
+}
+
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-primary);
+    padding: 24px;
+    transition: transform $transitionSpeed $transitionFunction;
+    &__icon {
+        width: 40px;
+        height: 40px;
+    }
+    &__title{
+        margin-top: 16px;
+    }
+    @media (min-width:$desktop-min){
+         &:hover{
+            box-shadow: var(--shadow-secondary);
+            transform: translateY(-5px);
+         } 
+    }
+}
+
+
+
 .home-sale {
 
     .container {}
@@ -156,7 +243,6 @@
 
     &__container {
         margin-top: 24px;
-        background-color: var(--stand-bg);
         border-radius: 12px;
         padding: 32px 0;
 
@@ -477,7 +563,6 @@
 
     &__container {
         margin-top: 16px;
-        background-color: var(--stand-bg);
         padding: 16px 0 32px;
 
         @media (max-width:$desktop) {
@@ -569,7 +654,6 @@
 
     &__container {
         margin-top: 16px;
-        background-color: var(--stand-bg);
         padding: 16px 0 32px;
 
         @media (max-width:$desktop) {
