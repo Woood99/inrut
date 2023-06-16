@@ -43,7 +43,7 @@ class popup {
                     let speed = clickedElement.dataset.popupSpeed;
                     this.animation = animation ? animation : 'fade';
                     this.speed = speed ? parseInt(speed) : 300;
-                    if (window.innerWidth <= 1112 && !clickedElement.hasAttribute('data-mobile-speed')) {
+                    if (window.innerWidth <= 1144 && !clickedElement.hasAttribute('data-mobile-speed')) {
                         this.speed = 0;
                     }
                     if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {
@@ -71,7 +71,7 @@ class popup {
                         const headerFixed = document.querySelector('.header-fixed');
                         const topHeaderMobile = document.querySelector('.top-page-inner');
                         window.scrollTo({
-                            top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                            top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
                             behavior: 'smooth'
                         })
                     }, 200);

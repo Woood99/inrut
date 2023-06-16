@@ -28,6 +28,7 @@ export const galleryPrimary = () => {
             enableThumbSwipe: true,
             closeOnTap: false,
             appendCounterTo: '.lg-content',
+
         });
         const closeBtnHTML = `
         <button class="btn btn-reset gallery-primary-container__close">

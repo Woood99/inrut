@@ -1,6 +1,6 @@
 .home {
     @media (max-width:$desktop) {
-        padding-top: 74px;
+        padding-top: 66px;
     }
 
     &__title {
@@ -90,9 +90,11 @@
         align-items: center;
         justify-content: end;
         pointer-events: none;
+
         .nav-arrow-secondary {
             border: 1px solid var(--blue);
             pointer-events: all;
+
             svg {
                 fill: var(--blue);
             }
@@ -117,6 +119,7 @@
 
     &__items {
         height: 100%;
+
         .swiper-wrapper {
             min-height: 270px;
             height: 270px;
@@ -130,6 +133,7 @@
 
     .main-banner {
         border-radius: 0;
+
         &__image {
             background-position: bottom right 20%;
         }
@@ -142,9 +146,7 @@
 
 .home-sale {
 
-    .container {
-
-    }
+    .container {}
 
     &__title {
         svg {
@@ -447,7 +449,7 @@
 
         @media (max-width:$smallTablet-max) {
             width: calc(100% - 32px);
-       margin: 16px 16px 0;
+            margin: 16px 16px 0;
         }
     }
 
@@ -455,6 +457,7 @@
         margin-left: 24px;
         display: flex;
         align-items: center;
+
         .nav-arrow-secondary {
             border: 1px solid var(--blue);
 
@@ -556,12 +559,14 @@
             }
         }
     }
-    .container--no-padding{
-        @media (max-width:$smallTablet-max){
+
+    .container--no-padding {
+        @media (max-width:$smallTablet-max) {
             display: flex;
             flex-direction: column;
         }
     }
+
     &__container {
         margin-top: 16px;
         background-color: var(--stand-bg);

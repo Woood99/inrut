@@ -34,7 +34,7 @@ const interestRate2 = new popup({
 const constructProgress = new popup(null, '.popup-primary--construct-progress')
 const genplan = new popup({
     isOpen: () => {
-        if (window.innerWidth > 1112) return;
+        if (window.innerWidth > 1144) return;
         const container = document.querySelector('.genplan');
         const wrapper = container.querySelector('.genplan__wrapper');
         setTimeout(() => {
@@ -48,7 +48,7 @@ const genplan = new popup({
 
     },
     isClose: () => {
-        if (window.innerWidth > 1112) return;
+        if (window.innerWidth > 1144) return;
         const container = document.querySelector('.genplan');
         const mask = container.querySelector('.genplan__mask');
         mask.classList.remove('hidden');

@@ -106,7 +106,7 @@ function initSliders() {
                     slidesPerView: 2,
                     spaceBetween: 24,
                 },
-                1112: {
+                1144: {
                     slidesPerView: 3,
                     spaceBetween: 24,
                 },
@@ -135,7 +135,7 @@ function initSliders() {
                     slidesPerView: 3,
                     spaceBetween: 24,
                 },
-                1112: {
+                1144: {
                     slidesPerView: 4,
                     spaceBetween: 16,
                 },
@@ -250,7 +250,7 @@ function initSliders() {
                             const topGap = window.pageYOffset + el.getBoundingClientRect().top;
                             const headerFixed = document.querySelector('.header-fixed');
                             const topHeaderMobile = document.querySelector('.top-page-inner');
-                            if (window.innerWidth >= 1112) {
+                            if (window.innerWidth >= 1144) {
                                 window.scrollTo({
                                     top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
                                 })
@@ -462,7 +462,7 @@ function initSliders() {
                             const topGap = window.pageYOffset + el.getBoundingClientRect().top;
                             const headerFixed = document.querySelector('.header-fixed');
                             const topHeaderMobile = document.querySelector('.top-page-inner');
-                            if (window.innerWidth >= 1112) {
+                            if (window.innerWidth >= 1144) {
                                 window.scrollTo({
                                     top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
                                 })
@@ -572,7 +572,7 @@ function initSliders() {
                             _slideDown(container, 300);
 
                             const topGap = window.pageYOffset + container.getBoundingClientRect().top;
-                            if (window.innerWidth >= 1112) {
+                            if (window.innerWidth >= 1144) {
                                 window.scrollTo({
                                     top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                                     behavior: 'smooth',
@@ -587,7 +587,7 @@ function initSliders() {
                         } else {
                             _slideUp(container, 300);
                             const topGap = window.pageYOffset + btn.closest('.layouts__item').querySelector('.layouts__item-btn').getBoundingClientRect().top;
-                            if (window.innerWidth >= 1112) {
+                            if (window.innerWidth >= 1144) {
                                 window.scrollTo({
                                     top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                                     behavior: 'smooth',

@@ -4257,12 +4257,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1112);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1112, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1112, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
 });
 
 /***/ }),
@@ -4319,7 +4319,7 @@ const interestRate2 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default
 const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
 const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   isOpen: () => {
-    if (window.innerWidth > 1112) return;
+    if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
     const wrapper = container.querySelector('.genplan__wrapper');
     setTimeout(() => {
@@ -4332,7 +4332,7 @@ const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
     }, 5);
   },
   isClose: () => {
-    if (window.innerWidth > 1112) return;
+    if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
     const mask = container.querySelector('.genplan__mask');
     mask.classList.remove('hidden');
@@ -4678,7 +4678,7 @@ const checkboard = () => {
   if (!container) return;
   const items = container.querySelectorAll('.checkboard__item--free');
   if (items.length === 0) return;
-  const innerWidth = 1112;
+  const innerWidth = 1144;
   if (window.innerWidth > innerWidth) {
     items.forEach(item => {
       let popper;
@@ -5813,7 +5813,7 @@ const genplan = () => {
   if (!container) return;
   const marks = container.querySelectorAll('.genplan__mark');
   const visualInfo = container.querySelectorAll('.visual-info');
-  const innerWidth = 1112;
+  const innerWidth = 1144;
   if (window.innerWidth > innerWidth) {
     marks.forEach(item => {
       const btn = item.querySelector('button');
@@ -5888,7 +5888,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const headerFixed = () => {
   const headerFixed = document.querySelector('.header-fixed');
-  if (!(headerFixed && window.innerWidth >= 1112)) return;
+  if (!(headerFixed && window.innerWidth >= 1144)) return;
   const header = document.querySelector('.header');
   const links = headerFixed.querySelectorAll('.header-fixed__item-link');
   const headerHeight = headerFixed.offsetHeight;
@@ -5898,7 +5898,7 @@ const headerFixed = () => {
   glattScroll();
   showHeader(window.scrollY);
   window.addEventListener('scroll', () => {
-    if (window.innerWidth <= 1112) return;
+    if (window.innerWidth <= 1144) return;
     let scrollDistance = window.scrollY;
     toggleActiveClass(scrollDistance);
     showHeader(scrollDistance);
@@ -6468,7 +6468,7 @@ const maps = () => {
         zoom: 10
       });
       removeControlsPrimary(map, '#popup-map__map');
-      if (innerWidth > 1112) reziseContainer(map);
+      if (innerWidth > 1144) reziseContainer(map);
     }
     ymaps.ready(init);
     const btn = container.querySelector('.popup-map__resize');
@@ -7062,7 +7062,7 @@ class popup {
           let speed = clickedElement.dataset.popupSpeed;
           this.animation = animation ? animation : 'fade';
           this.speed = speed ? parseInt(speed) : 300;
-          if (window.innerWidth <= 1112 && !clickedElement.hasAttribute('data-mobile-speed')) {
+          if (window.innerWidth <= 1144 && !clickedElement.hasAttribute('data-mobile-speed')) {
             this.speed = 0;
           }
           if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {
@@ -7088,7 +7088,7 @@ class popup {
             const headerFixed = document.querySelector('.header-fixed');
             const topHeaderMobile = document.querySelector('.top-page-inner');
             window.scrollTo({
-              top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+              top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
               behavior: 'smooth'
             });
           }, 200);
@@ -7325,7 +7325,7 @@ function initSliders() {
           slidesPerView: 2,
           spaceBetween: 24
         },
-        1112: {
+        1144: {
           slidesPerView: 3,
           spaceBetween: 24
         }
@@ -7354,7 +7354,7 @@ function initSliders() {
           slidesPerView: 3,
           spaceBetween: 24
         },
-        1112: {
+        1144: {
           slidesPerView: 4,
           spaceBetween: 16
         }
@@ -7464,7 +7464,7 @@ function initSliders() {
               const topGap = window.pageYOffset + el.getBoundingClientRect().top;
               const headerFixed = document.querySelector('.header-fixed');
               const topHeaderMobile = document.querySelector('.top-page-inner');
-              if (window.innerWidth >= 1112) {
+              if (window.innerWidth >= 1144) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
                 });
@@ -7671,7 +7671,7 @@ function initSliders() {
               const topGap = window.pageYOffset + el.getBoundingClientRect().top;
               const headerFixed = document.querySelector('.header-fixed');
               const topHeaderMobile = document.querySelector('.top-page-inner');
-              if (window.innerWidth >= 1112) {
+              if (window.innerWidth >= 1144) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
                 });
@@ -7774,7 +7774,7 @@ function initSliders() {
             if (btn.classList.contains('_active')) {
               (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_2__._slideDown)(container, 300);
               const topGap = window.pageYOffset + container.getBoundingClientRect().top;
-              if (window.innerWidth >= 1112) {
+              if (window.innerWidth >= 1144) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                   behavior: 'smooth'
@@ -7788,7 +7788,7 @@ function initSliders() {
             } else {
               (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_2__._slideUp)(container, 300);
               const topGap = window.pageYOffset + btn.closest('.layouts__item').querySelector('.layouts__item-btn').getBoundingClientRect().top;
-              if (window.innerWidth >= 1112) {
+              if (window.innerWidth >= 1144) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                   behavior: 'smooth'
@@ -7962,7 +7962,7 @@ const spollers = () => {
               const topHeaderMobile = document.querySelector('.top-page-inner');
               const topGap = spollerTitle.offsetTop;
               window.scrollTo({
-                top: topGap - (window.innerWidth > 1112 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
                 behavior: 'smooth'
               });
             }, speed);

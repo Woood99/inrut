@@ -10,7 +10,7 @@ const genplan = () => {
     if (!container) return;
     const marks = container.querySelectorAll('.genplan__mark');
     const visualInfo = container.querySelectorAll('.visual-info');
-    const innerWidth = 1112;
+    const innerWidth = 1144;
     if (window.innerWidth > innerWidth) {
         marks.forEach(item => {
             const btn = item.querySelector('button');

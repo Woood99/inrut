@@ -10,7 +10,7 @@ const checkboard = () => {
     if (!container) return;
     const items = container.querySelectorAll('.checkboard__item--free');
     if (items.length === 0) return;
-    const innerWidth = 1112;
+    const innerWidth = 1144;
     if (window.innerWidth > innerWidth) {
         items.forEach(item => {
             let popper;
