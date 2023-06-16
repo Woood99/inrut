@@ -1552,3 +1552,37 @@
         }
     }
 }
+
+.list-empty {
+    text-align: center;
+
+    &__title {}
+
+    &__descr {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        color: var(--dark);
+    }
+
+    &__btn {
+        margin: 32px auto 0;
+        padding: 0 48px;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            margin-right: 10px;
+        }
+
+        @media (max-width:$desktop) {
+            margin-top: 24px;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
