@@ -1,7 +1,9 @@
 .home {
+    margin-top: 0;
     background-color: var(--stand-bg);
+
     @media (max-width:$desktop) {
-        padding-top: 66px;
+        padding-top: 50px;
     }
 
     &__title {
@@ -28,11 +30,7 @@
     }
 
     &__banners {
-        margin-top: 16px;
 
-        @media (max-width:$desktop) {
-            margin-top: 0;
-        }
     }
 
     &__sale {
@@ -74,11 +72,9 @@
             margin-top: 24px;
         }
     }
-    &__services {
-    }
+
+    &__services {}
 }
-
-
 
 .home-banners {
     &.container {
@@ -127,8 +123,8 @@
         height: 100%;
 
         .swiper-wrapper {
-            min-height: 300px;
-            height: 300px;
+            min-height: 315px;
+            height: 315px;
         }
 
         @media (max-width:$smallTablet-max) {
@@ -152,15 +148,16 @@
 
 .home-services {
     margin-top: 48px;
-    padding: 32px 0;
-    &__container{
+
+    &__container {
         display: grid;
         grid-template-columns: 1fr 450px;
         grid-column-gap: 24px;
     }
+
     &__list {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 24px;
         grid-row-gap: 24px;
     }
@@ -172,24 +169,28 @@
         padding: 32px;
         display: flex;
         flex-direction: column;
-        .row{
+
+        .row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            img{
+
+            img {
                 border-radius: 50%;
                 width: 50px;
                 height: 50px;
             }
         }
-        @media (max-width:$desktop){
-          padding: 24px;
+
+        @media (max-width:$desktop) {
+            padding: 24px;
         }
     }
 
     &__title {
         transition: color $transitionSpeed $transitionFunction;
-        &:hover{
+
+        &:hover {
             color: var(--blue);
         }
     }
@@ -197,16 +198,15 @@
     &__descr {
         margin-top: 32px;
         font-size: 15px;
-        line-height: math.div(19 , 15);
+        line-height: math.div(19, 15);
         color: var(--dark);
         flex-grow: 1;
     }
 
     &__btn {
-    margin-top: 24px;
+        margin-top: 24px;
     }
 }
-
 
 .service-card {
     background-color: var(--white);
@@ -214,23 +214,24 @@
     box-shadow: var(--shadow-primary);
     padding: 24px;
     transition: transform $transitionSpeed $transitionFunction,
-    box-shadow $transitionSpeed $transitionFunction;
+        box-shadow $transitionSpeed $transitionFunction;
+
     &__icon {
         width: 40px;
         height: 40px;
     }
-    &__title{
+
+    &__title {
         margin-top: 16px;
     }
-    @media (min-width:$desktop-min){
-         &:hover{
+
+    @media (min-width:$desktop-min) {
+        &:hover {
             box-shadow: var(--shadow-secondary);
             transform: translateY(-3px);
-         } 
+        }
     }
 }
-
-
 
 .home-sale {
 
@@ -244,12 +245,9 @@
 
     &__container {
         margin-top: 24px;
-        border-radius: 12px;
-        padding: 32px 0;
 
         @media (max-width:$desktop) {
             margin-top: 16px;
-            padding: 24px 16px;
         }
     }
 
@@ -564,15 +562,6 @@
 
     &__container {
         margin-top: 16px;
-        padding: 16px 0 32px;
-
-        @media (max-width:$desktop) {
-            padding: 24px;
-        }
-
-        @media (max-width:$smallTablet-max) {
-            padding: 16px 0;
-        }
     }
 
     &__items {
@@ -655,14 +644,8 @@
 
     &__container {
         margin-top: 16px;
-        padding: 16px 0 32px;
-
-        @media (max-width:$desktop) {
-            padding: 24px;
-        }
 
         @media (max-width:$smallTablet-max) {
-            padding: 24px 16px;
             margin-top: 16px;
         }
     }
@@ -689,9 +672,6 @@
         }
     }
 }
-
-
-
 
 .home-links {
     .container {
