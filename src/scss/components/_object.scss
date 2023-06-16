@@ -1,11 +1,7 @@
 .object {
 
     &__body {
-        @media (max-width:$desktop) {
-            padding: 0;
-            background-color: var(--stand-bg);
-            border-radius: 0 0 12px 12px;
-        }
+        background-color: var(--stand-bg);
     }
 
     @media (max-width:$desktop) {
@@ -28,14 +24,12 @@
 
     &__container {
         margin-top: 8px;
-        padding: 32px;
-        background-color: var(--stand-bg);
-        border-radius: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
 
         @media (max-width:$desktop) {
             margin-top: 0;
             padding: 62px 0 16px;
-            background-color: transparent;
         }
     }
 
@@ -718,15 +712,17 @@
     box-shadow: var(--shadow-primary);
     padding: 32px 24px 24px;
     border-radius: 12px;
-    &__time{
+
+    &__time {
         color: var(--primary600);
         font-size: 12px;
-        line-height: math.div(10 , 12);
+        line-height: math.div(10, 12);
         font-weight: 500;
         padding: 7px 9.5px;
         background-color: var(--primary100);
         border-radius: 8px;
     }
+
     &__price {
         margin-top: 24px;
         display: flex;
