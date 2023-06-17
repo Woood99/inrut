@@ -100,11 +100,7 @@
 
         @media (max-width:$smallTablet-max) {
             -ms-overflow-style: none;
-            scrollbar-width: none;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
+            @include hiddenScroll;
         }
 
     }

@@ -414,11 +414,7 @@
         white-space: nowrap;
         overflow-x: auto;
         -ms-overflow-style: none;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        @include hiddenScroll;
 
         >.choices__item {
             white-space: nowrap;

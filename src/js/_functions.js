@@ -58,10 +58,13 @@ const genplan = new popup({
 const checkboard = new popup(null, '.popup-primary--checkboard')
 const map = new popup(null, '.popup-primary--popup-map')
 const searchArea = new popup(null, '.popup-primary--search-area')
+const chatPopup = new popup({
+    isOpen: () => {
+        const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
+        bar.scrollTo({
+            top: bar.querySelector('.simplebar-content').clientHeight
+        })
+    },
+}, '.popup-chat')
 
 // ========================================================================================
-
-
-
-
-

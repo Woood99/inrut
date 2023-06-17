@@ -152,16 +152,14 @@
                     padding: 24px 24px 16px;
                 }
 
-                &__add-info {
-                    display: block;
-                }
+                &__add-info {}
 
                 &__prices {
                     &--1 {
                         margin-top: 16px;
                         margin-bottom: 65px;
                         display: grid;
-                        grid-template-columns: repeat(2, max-content);
+                        grid-template-columns: repeat(2, minmax(275px, max-content));
                         grid-column: 1/-1;
                         grid-column-gap: 24px;
                         width: percent(575, 701);
@@ -174,38 +172,10 @@
                         }
 
                         .card-secondary__price {
-                            display: grid;
-                            grid-template-columns: 23% 55px max-content;
-                            grid-column-gap: 0;
 
                             span {
                                 font-size: 15px;
                                 line-height: 19px;
-
-                                &:nth-child(1) {
-                                    order: 1;
-                                }
-
-                                &:nth-child(2) {
-                                    order: 3;
-                                    font-weight: 400;
-                                }
-                            }
-
-                            &::after {
-                                content: '';
-                                width: 100%;
-                                align-self: end;
-                                position: relative;
-                                top: -3px;
-                                border-bottom: 1px dashed var(--primary200);
-                                height: 1px;
-                                order: 2;
-                                margin: 0 2px;
-                            }
-
-                            @media (max-width:$desktop) {
-                                grid-template-columns: max-content 1fr max-content;
                             }
                         }
 
@@ -314,6 +284,10 @@
                 }
 
                 &__user {}
+
+                &__options {
+                    margin-top: 16px;
+                }
 
                 &__bottom {
                     display: flex;

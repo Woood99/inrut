@@ -4161,6 +4161,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_genplan__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/genplan */ "./src/js/components/genplan.js");
 /* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
 /* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
+/* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
+/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
+
+
 
 
 
@@ -4241,6 +4245,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_genplan__WEBPACK_IMPORTED_MODULE_23__["default"])();
   (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_24__["default"])();
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__["default"])('.stock-developer__content .cards-list__items');
+  (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__["default"])('.chat__tags', 1000);
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4342,6 +4348,14 @@ const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
 const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
 const map = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--popup-map');
 const searchArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--search-area');
+const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
+  isOpen: () => {
+    const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
+    bar.scrollTo({
+      top: bar.querySelector('.simplebar-content').clientHeight
+    });
+  }
+}, '.popup-chat');
 
 // ========================================================================================
 
@@ -6777,6 +6791,38 @@ const reviewModal = () => {
 
 /***/ }),
 
+/***/ "./src/js/components/scrollDrag.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/scrollDrag.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const scrollDrag = (blockSelector, speed) => {
+  let scrollBlock = document.querySelector(blockSelector);
+  let left = 0;
+  let drag = false;
+  let coorX = 0;
+  scrollBlock.addEventListener('mousedown', function (e) {
+    drag = true;
+    coorX = e.pageX - this.offsetLeft;
+  });
+  document.addEventListener('mouseup', function () {
+    drag = false;
+    left = scrollBlock.scrollLeft;
+  });
+  scrollBlock.addEventListener('mousemove', function (e) {
+    if (drag) this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollDrag);
+
+/***/ }),
+
 /***/ "./src/js/components/simplebar.js":
 /*!****************************************!*\
   !*** ./src/js/components/simplebar.js ***!
@@ -6795,6 +6841,40 @@ const simplebar = selector => {
     new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](el);
   });
 };
+
+/***/ }),
+
+/***/ "./src/js/components/tag.js":
+/*!**********************************!*\
+  !*** ./src/js/components/tag.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const tag = () => {
+  const tags = document.querySelectorAll('.tag');
+  const svgIconHTML = `
+        <svg>
+            <use xlink:href="img/sprite.svg#x"></use>
+        </svg>
+    `;
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      if (!tag.classList.contains('_active')) {
+        tag.classList.add('_active');
+        tag.insertAdjacentHTML('beforeend', svgIconHTML);
+      } else {
+        tag.classList.remove('_active');
+        tag.querySelector('svg').remove();
+      }
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tag);
 
 /***/ }),
 

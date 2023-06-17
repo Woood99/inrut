@@ -1,5 +1,6 @@
 .card-secondary {
     box-sizing: border-box;
+
     &__container {
         position: relative;
         z-index: 1;
@@ -10,14 +11,17 @@
 
         display: flex;
         flex-direction: column;
-        &.focus-visible{
+
+        &.focus-visible {
             outline: none;
+
             .card-secondary__image {
                 img {
                     transform: scale(1.02);
                 }
             }
-            .card-secondary__name{
+
+            .card-secondary__name {
                 color: var(--blue);
             }
         }
@@ -158,6 +162,7 @@
                 display: flex;
                 align-items: center;
             }
+
             @media (min-width:$desktop) {
                 &:hover {
                     button {
@@ -224,10 +229,12 @@
 
         &--controls {
             margin-top: 10px;
+
             .dots-dropdown__dropdown {
                 padding: 8px 0;
                 min-width: max-content;
             }
+
             .dots-dropdown__target {
                 background-color: var(--white);
                 width: 20px;
@@ -242,6 +249,7 @@
                 z-index: 999;
 
                 transition: background-color $transitionSpeed $transitionFunction;
+
                 svg {
                     width: 12px;
                     height: 12px;
@@ -251,7 +259,8 @@
                 &:hover {
                     background-color: var(--primary200);
                 }
-                &.focus-visible{
+
+                &.focus-visible {
                     background-color: var(--primary200);
                 }
             }
@@ -288,11 +297,11 @@
     }
 
     &__address {
-        margin-top: 5px;
+        margin-top: 3px;
         font-size: 13px;
         line-height: math.div(16, 13);
         color: var(--primary600);
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
 
@@ -327,6 +336,38 @@
         }
     }
 
+    &__prices--1,
+    &__prices--2 {
+        .card-secondary__price {
+            display: flex;
+            grid-column-gap: 0;
+
+            span {
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    order: 3;
+                    width: max-content;
+                    min-width: 50%;
+                }
+            }
+
+            &::after {
+                content: '';
+                flex: 1 1 0%;
+                position: relative;
+                top: 4px;
+                border-bottom: 1px dashed var(--primary200);
+                height: 1px;
+                order: 2;
+                margin: 0 2px;
+            }
+        }
+    }
+
     &__prices--1 {
         margin-bottom: 16px;
 
@@ -338,12 +379,12 @@
     }
 
     &__add-info {
-        display: none;
+        margin-bottom: 16px;
 
         span {
             display: block;
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: 13px;
+            line-height: math.div(16, 13);
 
             &:nth-child(1) {
                 color: var(--blue);
@@ -366,6 +407,14 @@
                 color: var(--blue);
             }
         }
+    }
+
+    &__options {
+        margin-top: auto;
+
+        font-size: 13px;
+        line-height: math.div(16, 13);
+        color: var(--primaryTwo);
     }
 
     &__bottom {
