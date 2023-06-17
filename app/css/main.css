@@ -654,8 +654,16 @@ textarea.input-reset {
   background-color: var(--primary300);
   border: 2px solid var(--primary400);
 }
-.checkbox-secondary__input:hover:not(:checked) + .checkbox-secondary__label::before {
-  border: 2px solid rgba(0, 108, 238, 0.5);
+@media (min-width: 1145px) {
+  .checkbox-secondary__input:hover:not(:checked) + .checkbox-secondary__label::before {
+    border: 2px solid rgba(0, 108, 238, 0.5);
+  }
+  .checkbox-secondary__input:hover:not(:checked) + .checkbox-secondary__label::after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 108, 238));
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 108, 238));
+  }
 }
 .checkbox-secondary__input:checked + .checkbox-secondary__label::before {
   background-color: var(--blue);
@@ -711,9 +719,11 @@ textarea.input-reset {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, filter 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, filter 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, filter 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
   background-image: url("../img/check-mark.svg");
   background-repeat: no-repeat;
   background-size: 10px 7px;
