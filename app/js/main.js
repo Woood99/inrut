@@ -7390,19 +7390,12 @@ function initSliders() {
     new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main-banners__container', {
       observer: true,
       observeParents: true,
-      slidesPerView: 1.15,
+      slidesPerView: 1,
       spaceBetween: 16,
       autoHeight: true,
       speed: 800,
-      breakpoints: {
-        650: {
-          slidesPerView: 1.4,
-          spaceBetween: 24
-        },
-        950: {
-          slidesPerView: 2,
-          spaceBetween: 32
-        }
+      autoplay: {
+        delay: 6000
       }
     });
   }
