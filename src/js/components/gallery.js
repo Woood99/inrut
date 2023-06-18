@@ -87,6 +87,24 @@ export const galleryPrimary = () => {
                 <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
                    Написать
                 </button>
+                <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike" data-mobile-speed="" data-popup-path="object-not">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#dislike"></use>
+                                        </svg>
+                                        <span data-mobile-text="Не подходит">Объект не подходит</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--like">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#like"></use>
+                                        </svg>
+                                        <span data-mobile-text="На просмотр">Хочу на просмотр</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment" data-mobile-speed="" data-popup-path="chat">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                                        </svg>
+                                        <span>Задать вопрос</span>
+                                    </button>
             </div>
             `;
             container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
