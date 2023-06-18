@@ -17,10 +17,25 @@
 
         &:focus+.radio-primary__label:before {}
 
-        &:checked+.radio-primary__label:before {}
+        @media (min-width:$desktop-min) {
+            &:hover+.radio-primary__label:before {
+                border-color: rgba(0, 108, 238, 0.5);
+            }
+
+            &:hover+.radio-primary__label:after {
+                background-color: rgba(0, 108, 238, 0.5);
+                transform: scale(0.75);
+            }
+        }
+
+        &:checked+.radio-primary__label:before {
+            background-color: var(--blue);
+            border-color: var(--blue);
+        }
 
         &:checked+.radio-primary__label:after {
             transform: scale(1);
+            background-color: var(--white);
         }
     }
 
@@ -30,7 +45,7 @@
         cursor: pointer;
 
         &:before {
-            --size: 15px;
+            --size: 16px;
             content: "";
             align-self: flex-start;
             width: var(--size);
@@ -38,18 +53,20 @@
             flex: 0 0 var(--size);
             border-radius: 50%;
 
-            background-color: #EBF1FB;
-            border: 1px solid #7A7FAA;
+            background-color: var(--white);
+            border: 2px solid rgba(204, 214, 228, .6);
+
+            transition: all $transitionSpeed $transitionFunction;
         }
 
         &:after {
             content: "";
-            transition: all 0.3s ease 0s;
+            transition: all $transitionSpeed $transitionFunction;
             transform: scale(0);
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background-color: #7A7FAA;
+            background-color: var(--white);
             position: absolute;
             left: 4px;
             top: 4px;
@@ -57,12 +74,11 @@
     }
 
     &__text {
-        margin-left: 10px;
-        margin-top: -2px;
-        color: var(--dark);
+        margin-left: 8px;
+        color: var(--gray);
 
-        font-size: 15px;
-        line-height: math.div(19, 15);
-        font-weight: 400;
+        font-size: 14px;
+        line-height: math.div(18, 14);
+        font-weight: 500;
     }
 }
