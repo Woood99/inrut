@@ -1,9 +1,11 @@
 const tag = () => {
     const tags = document.querySelectorAll('.tag');
     const svgIconHTML = `
-        <svg>
-            <use xlink:href="img/sprite.svg#x"></use>
-        </svg>
+        <div>
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+        </div>
     `;
     tags.forEach(tag => {
         tag.addEventListener('click', () => {
@@ -12,7 +14,7 @@ const tag = () => {
                 tag.insertAdjacentHTML('beforeend', svgIconHTML);
             } else {
                 tag.classList.remove('_active');
-                tag.querySelector('svg').remove();
+                tag.querySelector('div').remove();
             }
         })
     })

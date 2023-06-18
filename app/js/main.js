@@ -5016,14 +5016,34 @@ function controlCards() {
         btns.forEach(el => el.classList.remove('_active'));
         btn.classList.add('_active');
         content.classList.remove('control-cards__content--horizontal', 'control-cards__content--vertical');
-        if (btn.classList.contains('control-cards__btn--horizontal')) {
+        if (checkHorizontal(btn)) {
           content.classList.add('control-cards__content--horizontal');
         }
-        if (btn.classList.contains('control-cards__btn--vertical')) {
+        if (checkVertical(btn)) {
           content.classList.add('control-cards__content--vertical');
+        }
+        if (content.querySelectorAll('.card-secondary').length >= 1) {
+          const cardsSecondary = content.querySelectorAll('.card-secondary');
+          cardsSecondary.forEach(card => {
+            const options = card.querySelector('.card-secondary__options');
+            if (options) {
+              if (checkHorizontal(btn)) {
+                card.querySelector('.card-secondary__bottom').insertAdjacentElement('beforebegin', options);
+              }
+              if (checkVertical(btn)) {
+                card.querySelector('.card-secondary__info--mobile').insertAdjacentElement('afterbegin', options);
+              }
+            }
+          });
         }
       });
     });
+    function checkHorizontal(target) {
+      return target.classList.contains('control-cards__btn--horizontal');
+    }
+    function checkVertical(target) {
+      return target.classList.contains('control-cards__btn--vertical');
+    }
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (controlCards);
@@ -5161,6 +5181,9 @@ const filterSum = () => {
       if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
         html = `
                     <div>
+                        ${el.dataset.filterDropdownName}
+                    </div>
+                    <div>
                        от ${convertSum(inputs[0].value)}
                     </div>
                     <div>
@@ -5173,6 +5196,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+                </div>
                     <div>
                        от ${inputs[0].value} м²
                     </div>
@@ -5186,6 +5212,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Этаж') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                        от ${inputs[0].value} эт.
                     </div>
@@ -5201,6 +5230,9 @@ const filterSum = () => {
     } else if (inputs[0].value && inputs[1].value === '') {
       if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${convertSum(inputs[0].value)}
                     </div>
@@ -5214,6 +5246,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${inputs[0].value} м²
                     </div>
@@ -5227,6 +5262,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Этаж') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${inputs[0].value} эт.
                     </div>
@@ -5242,6 +5280,9 @@ const filterSum = () => {
     } else if (inputs[1].value && inputs[0].value === '') {
       if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
                     </div>
@@ -5255,6 +5296,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${itemActive.querySelector('[data-min]').dataset.min} м²
                     </div>
@@ -5268,6 +5312,9 @@ const filterSum = () => {
       }
       if (el.dataset.filterDropdownName === 'Этаж') {
         html = `
+                <div>
+                ${el.dataset.filterDropdownName}
+            </div>
                     <div>
                         от ${itemActive.querySelector('[data-min]').dataset.min} эт.
                     </div>
@@ -6883,9 +6930,11 @@ __webpack_require__.r(__webpack_exports__);
 const tag = () => {
   const tags = document.querySelectorAll('.tag');
   const svgIconHTML = `
-        <svg>
-            <use xlink:href="img/sprite.svg#x"></use>
-        </svg>
+        <div>
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+        </div>
     `;
   tags.forEach(tag => {
     tag.addEventListener('click', () => {
@@ -6894,7 +6943,7 @@ const tag = () => {
         tag.insertAdjacentHTML('beforeend', svgIconHTML);
       } else {
         tag.classList.remove('_active');
-        tag.querySelector('svg').remove();
+        tag.querySelector('div').remove();
       }
     });
   });

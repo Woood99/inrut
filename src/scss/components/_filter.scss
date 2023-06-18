@@ -261,6 +261,7 @@
         margin-right: 8px;
 
         >div {
+            transition: color $transitionSpeed $transitionFunction;
             &:nth-child(2) {
                 opacity: 0.6;
             }
@@ -268,14 +269,16 @@
 
         &._active {
             display: grid;
-            grid-template-columns: repeat(4, max-content);
-            grid-template-columns: max-content max-content 1fr max-content;
+            grid-template-columns: max-content max-content max-content 1fr max-content;
             grid-column-gap: 10px;
             align-items: center;
             justify-content: start;
 
             >div {
                 opacity: 1;
+                &:nth-child(1){
+                    color: #b6d5f8;
+                }
             }
         }
     }

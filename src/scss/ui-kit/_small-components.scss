@@ -835,6 +835,7 @@
             border-radius: 16px;
             color: var(--blue);
             font-size: 12px;
+            font-weight: 500;
             line-height: math.div(15, 12);
             background-color: var(--white);
             border: 1px solid var(--blue);
@@ -1151,7 +1152,7 @@
 
     &__prc {
         margin-left: 5px;
-                                padding: 3px 10px;
+        padding: 3px 10px;
         color: var(--green);
         background: rgba(36, 202, 142, 0.1);
         border-radius: 8px;
@@ -1616,18 +1617,30 @@
     display: flex;
     align-items: center;
 
-    svg {
+    >div {
         margin-left: 8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: var(--white);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    svg {
         fill: none;
-        stroke: var(--white);
+        stroke: var(--dark);
         stroke-width: 2px;
-        width: 12px;
-        height: 12px;
+        width: 8px;
+        height: 8px;
     }
 
     &:hover,
     &.focus-visible {
-        background-color: var(--primary200);
+        background-color: var(--blue);
+        color: var(--white);
     }
 
     &._active {

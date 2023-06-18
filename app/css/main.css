@@ -5385,6 +5385,7 @@ textarea.input-reset {
   border-radius: 16px;
   color: var(--blue);
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.25;
   background-color: var(--white);
   border: 1px solid var(--blue);
@@ -6172,16 +6173,32 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
 }
-.tag svg {
+.tag > div {
   margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.tag svg {
   fill: none;
-  stroke: var(--white);
+  stroke: var(--dark);
   stroke-width: 2px;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
 }
 .tag:hover, .tag.focus-visible {
-  background-color: var(--primary200);
+  background-color: var(--blue);
+  color: var(--white);
 }
 .tag._active {
   background-color: var(--blue);
@@ -9193,7 +9210,7 @@ textarea.input-reset {
   font-size: 13px;
   line-height: 1.2307692308;
   color: var(--primary600);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .card-secondary__price {
   display: -ms-grid;
@@ -9278,7 +9295,7 @@ textarea.input-reset {
   font-weight: 500;
 }
 .card-secondary__add-info span:nth-child(2) {
-  margin-top: 8px;
+  margin-top: 5px;
   font-weight: 400;
   color: var(--primaryTwo);
 }
@@ -11209,20 +11226,21 @@ textarea.input-reset {
   justify-content: space-between;
   margin-right: 8px;
 }
+.filter-dropdown__button-wrapper > div {
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
 .filter-dropdown__button-wrapper > div:nth-child(2) {
   opacity: 0.6;
 }
 .filter-dropdown__button-wrapper._active {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (-webkit-max-content)[4];
-  -ms-grid-columns: (max-content)[4];
-  grid-template-columns: repeat(4, -webkit-max-content);
-  grid-template-columns: repeat(4, max-content);
-  -ms-grid-columns: -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
-  -ms-grid-columns: max-content max-content 1fr max-content;
-  grid-template-columns: -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
-  grid-template-columns: max-content max-content 1fr max-content;
+  -ms-grid-columns: -webkit-max-content -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
+  -ms-grid-columns: max-content max-content max-content 1fr max-content;
+  grid-template-columns: -webkit-max-content -webkit-max-content -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content max-content max-content 1fr max-content;
   grid-column-gap: 10px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -11233,6 +11251,9 @@ textarea.input-reset {
 }
 .filter-dropdown__button-wrapper._active > div {
   opacity: 1;
+}
+.filter-dropdown__button-wrapper._active > div:nth-child(1) {
+  color: #b6d5f8;
 }
 .filter-dropdown.active .filter-dropdown__dropdown {
   opacity: 1;
@@ -13668,12 +13689,6 @@ textarea.input-reset {
     margin-bottom: 0;
   }
 }
-@media (min-width: 769px) {
-  .control-cards__content--vertical .card-secondary__prices--1 .card-secondary__price span {
-    font-size: 15px;
-    line-height: 19px;
-  }
-}
 @media (min-width: 769px) and (max-width: 1144px) {
   .control-cards__content--vertical .card-secondary__prices--1 {
     width: 100%;
@@ -13781,7 +13796,7 @@ textarea.input-reset {
     margin-bottom: 32px;
   }
   .control-cards__content--vertical .card-secondary__options {
-    margin-top: 16px;
+    margin-top: 0;
   }
   .control-cards__content--vertical .card-secondary__bottom {
     display: -webkit-box;
@@ -21986,10 +22001,9 @@ textarea.input-reset {
 }
 @media (min-width: 769px) {
   .buy-apartment .control-cards__content--vertical .card-secondary__bottom {
-    border: none;
-    margin: 32px 0 0 0;
-    padding: 0;
-    width: 100%;
+    margin: 32px 0 0 -24px;
+    padding: 16px 24px 0 24px;
+    width: calc(100% + 48px);
   }
   .buy-apartment .control-cards__content--vertical .card-secondary__bottom .card-secondary__info--mobile {
     display: -webkit-box;
@@ -22004,21 +22018,21 @@ textarea.input-reset {
 }
 
 .buy-apartment-filter--building .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
-  grid-template-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
+  -ms-grid-columns: 25.7407407407% 28.7037037037% 27.7777777778% 17.9856115108%;
+  grid-template-columns: 25.7407407407% 28.7037037037% 27.7777777778% 17.9856115108%;
 }
 .buy-apartment-filter--building .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 24.0740740741% 1fr;
-  grid-template-columns: 24.0740740741% 1fr;
+  -ms-grid-columns: 29.6296296296% 1fr;
+  grid-template-columns: 29.6296296296% 1fr;
 }
 
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
-  grid-template-columns: 25.7407407407% 25.9259259259% 22.5% 23.6111111111%;
+  -ms-grid-columns: 25.7407407407% 28.7037037037% 27.7777777778% 17.9856115108%;
+  grid-template-columns: 25.7407407407% 28.7037037037% 27.7777777778% 17.9856115108%;
 }
 .buy-apartment-filter--moskow .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 24.0740740741% 1fr;
-  grid-template-columns: 24.0740740741% 1fr;
+  -ms-grid-columns: 29.6296296296% 1fr;
+  grid-template-columns: 29.6296296296% 1fr;
 }
 
 .agent-develop .bid-user {
