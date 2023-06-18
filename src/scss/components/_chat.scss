@@ -7,7 +7,7 @@
 
     &__container {
         display: grid;
-        grid-template-columns: 326px 1fr;
+        grid-template-columns: 365px 1fr;
         height: 100%;
     }
 
@@ -31,6 +31,7 @@
     &__messages {
         max-width: none;
         max-height: calc(var(--vh) - 48px - 66px);
+        padding: 8px;
 
         .simplebar-content-wrapper {
             padding-right: 0;
@@ -55,8 +56,11 @@
 
     &__item {
         padding: 12px 16px;
-        border-bottom: 1px solid var(--primary200);
         width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
     }
 
     &__top {
@@ -163,7 +167,7 @@
 
     &__wrapper {
         flex-grow: 1;
-        background-color: #99ba92;
+        background: rgba(203, 226, 255, 0.5);
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -180,7 +184,6 @@
 
         .message-item {
             &__text {
-                margin-top: 8px;
                 background: var(--white);
                 padding: 8px 48px 8px 16px;
                 max-width: 420px;
@@ -188,18 +191,22 @@
 
                 span {
                     position: absolute;
-                    bottom: 8px;
+                    bottom: 5px;
                     right: 8px;
 
                     font-size: 10px;
                     line-height: math.div(10, 10);
                     color: var(--primaryTwo);
                 }
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
             }
 
             &__user {
                 grid-template-columns: 30px 1fr;
                 grid-column-gap: 8px;
+                margin-bottom: 8px;
             }
 
             &__avatar {
@@ -256,7 +263,7 @@
         align-items: start;
 
         &:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 48px;
         }
 
         &--me {
@@ -283,7 +290,6 @@
 
                 &__text {
                     border-radius: 12px 2px 12px 12px;
-                    background-color: var(--stand-bg);
                 }
             }
         }
@@ -291,7 +297,7 @@
 
     &__tags {
         overflow-x: auto;
-        max-width: calc(85vw - 84px - 3px - 326px - 32px);
+        max-width: calc(85vw - 84px - 3px - 365px - 32px);
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
@@ -393,6 +399,19 @@
 
         &-image {
             margin-left: 16px;
+        }
+    }
+
+    &__date {
+        margin: 16px 0;
+        text-align: center;
+        color: var(--primaryTwo);
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        &:first-child{
+            margin-top: 0;
         }
     }
 
