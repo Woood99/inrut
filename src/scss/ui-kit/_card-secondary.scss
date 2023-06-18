@@ -297,7 +297,6 @@
     }
 
     &__address {
-        margin-top: 3px;
         font-size: 13px;
         line-height: math.div(16, 13);
         color: var(--primary600);
@@ -318,7 +317,7 @@
             font-weight: 400;
 
             &:nth-child(1) {
-                color: var(--primaryTwo);
+                color: var(--dark);
             }
 
             &:nth-child(2) {
@@ -379,7 +378,8 @@
     }
 
     &__add-info {
-        margin-bottom: 16px;
+        margin-top: 8px;
+        margin-bottom: 5px;
 
         span {
             display: block;
@@ -392,7 +392,7 @@
             }
 
             &:nth-child(2) {
-                margin-top: 5px;
+                margin-top: 8px;
                 font-weight: 400;
                 color: var(--primaryTwo);
             }
@@ -413,28 +413,25 @@
         margin-top: auto;
         display: flex;
         align-items: center;
-
-        span {
+        span{
             background-color: var(--primary100);
             border-radius: 8px;
             color: var(--dark);
             height: 24px;
             padding: 0 12px;
             font-size: 11px;
-            line-height: math.div(11, 11);
+            line-height: math.div(11 , 11);
 
-            display: inline-flex;
+         display: inline-flex;
             align-items: center;
             justify-content: center;
             white-space: nowrap;
-
-            &:not(:last-child) {
+            &:not(:last-child){
                 margin-right: 6px;
             }
         }
-
-        .secondary-tooltip {
-            &__btn {
+        .secondary-tooltip{
+            &__btn{
                 background-color: var(--primary100);
                 color: var(--dark);
                 border-radius: 18px;
@@ -444,8 +441,7 @@
                 padding: 0 8px;
                 width: max-content;
             }
-
-            &__content {
+            &__content{
                 display: flex;
                 align-items: center;
                 padding: 12px 16px;
