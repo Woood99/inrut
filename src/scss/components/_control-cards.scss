@@ -135,7 +135,13 @@
                 }
 
                 &__info {
-                    display: none;
+                    .card-secondary__info--favorite{
+                        display: none;
+                    }
+                    .card-secondary__info--controls{
+                        display: block !important;
+                        margin-top: 0;
+                    }
                 }
 
                 &__image {
@@ -244,8 +250,8 @@
                             }
 
                             &:nth-child(2) {
-                                margin-left: 4px;
-                                padding: 2px 8px;
+                                margin-left: 5px;
+                                padding: 3px 10px;
                                 color: var(--green);
                                 background: rgba(36, 202, 142, 0.1);
                                 border-radius: 8px;

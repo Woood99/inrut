@@ -5757,6 +5757,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lightgallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightgallery */ "./node_modules/lightgallery/lightgallery.es5.js");
 /* harmony import */ var lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightgallery/plugins/video */ "./node_modules/lightgallery/plugins/video/lg-video.es5.js");
 /* harmony import */ var lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lightgallery/plugins/thumbnail */ "./node_modules/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js");
+/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
+/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
+
+
 
 
 
@@ -5785,12 +5789,21 @@ const galleryPrimary = () => {
       closeOnTap: false,
       appendCounterTo: '.lg-content'
     });
+    gallery.addEventListener('lgAfterOpen', () => {
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    });
+    gallery.addEventListener('lgAfterClose', () => {
+      (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+    });
     const closeBtnHTML = `
         <button class="btn btn-reset gallery-primary-container__close">
             <svg>
                 <use xlink:href="img/sprite.svg#x"></use>
             </svg>
-            <span>Закрыть</span>
         </button>
         `;
     const nextBtnHTML = `
@@ -5832,30 +5845,24 @@ const galleryPrimary = () => {
                 <span class="object-gallery-info__address">
                     Краснодар, ул.Карла-Маркса., 234
                 </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                    Позвонить
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-mobile-speed data-popup-path="object-not">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#dislike"></use>
+                    </svg>
+                    <span data-mobile-text="Не подходит">Объект не подходит</span>
                 </button>
                 <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                   Написать
+                    <svg>
+                        <use xlink:href="img/sprite.svg#like"></use>
+                    </svg>
+                    <span data-mobile-text="На просмотр">Хочу на просмотр</span>
                 </button>
-                <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike" data-mobile-speed="" data-popup-path="object-not">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                        </svg>
-                                        <span data-mobile-text="Не подходит">Объект не подходит</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--like">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#like"></use>
-                                        </svg>
-                                        <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment" data-mobile-speed="" data-popup-path="chat">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
-                                        </svg>
-                                        <span>Задать вопрос</span>
-                                    </button>
+                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-mobile-speed data-popup-path="chat">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                    </svg>
+                    <span>Задать вопрос</span>
+                </button>
             </div>
             `;
       container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
@@ -7292,7 +7299,9 @@ class popup {
       this.popup.classList.remove('is-open');
       this.popupContainer.classList.remove('popup-open');
       if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
-        this.enableScroll();
+        if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
+          this.enableScroll();
+        }
       }
       document.body.style.scrollBehavior = 'auto';
       document.documentElement.style.scrollBehavior = 'auto';
@@ -7405,7 +7414,8 @@ function initSliders() {
     });
   }
   if (document.querySelector('.main-banners__container')) {
-    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main-banners__container', {
+    const slider = document.querySelector('.main-banners__container');
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -7414,6 +7424,10 @@ function initSliders() {
       speed: 800,
       autoplay: {
         delay: 6000
+      },
+      navigation: {
+        prevEl: slider.closest('.main-banners').querySelector('.nav-arrow-secondary--prev'),
+        nextEl: slider.closest('.main-banners').querySelector('.nav-arrow-secondary--next')
       }
     });
   }

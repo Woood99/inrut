@@ -1,7 +1,8 @@
 import lightGallery from 'lightgallery';
 import lgVideo from 'lightgallery/plugins/video';
 import thumbnail from 'lightgallery/plugins/thumbnail';
-
+import disableScroll from '../modules/disableScroll';
+import enableScroll from '../modules/enableScroll';
 export const galleryPrimary = () => {
     const items = document.querySelectorAll('#object-gallery');
     if (items.length === 0) return;
@@ -30,12 +31,21 @@ export const galleryPrimary = () => {
             appendCounterTo: '.lg-content',
 
         });
+        gallery.addEventListener('lgAfterOpen', () => {
+            document.body.style.scrollBehavior = 'auto';
+            document.documentElement.style.scrollBehavior = 'auto';
+            disableScroll();
+        });
+        gallery.addEventListener('lgAfterClose', () => {
+            enableScroll();
+            document.body.style.scrollBehavior = 'auto';
+            document.documentElement.style.scrollBehavior = 'auto';
+        });
         const closeBtnHTML = `
         <button class="btn btn-reset gallery-primary-container__close">
             <svg>
                 <use xlink:href="img/sprite.svg#x"></use>
             </svg>
-            <span>Закрыть</span>
         </button>
         `;
         const nextBtnHTML = `
@@ -81,30 +91,24 @@ export const galleryPrimary = () => {
                 <span class="object-gallery-info__address">
                     Краснодар, ул.Карла-Маркса., 234
                 </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                    Позвонить
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-mobile-speed data-popup-path="object-not">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#dislike"></use>
+                    </svg>
+                    <span data-mobile-text="Не подходит">Объект не подходит</span>
                 </button>
                 <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                   Написать
+                    <svg>
+                        <use xlink:href="img/sprite.svg#like"></use>
+                    </svg>
+                    <span data-mobile-text="На просмотр">Хочу на просмотр</span>
                 </button>
-                <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike" data-mobile-speed="" data-popup-path="object-not">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dislike"></use>
-                                        </svg>
-                                        <span data-mobile-text="Не подходит">Объект не подходит</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--like">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#like"></use>
-                                        </svg>
-                                        <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment" data-mobile-speed="" data-popup-path="chat">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
-                                        </svg>
-                                        <span>Задать вопрос</span>
-                                    </button>
+                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-mobile-speed data-popup-path="chat">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
+                    </svg>
+                    <span>Задать вопрос</span>
+                </button>
             </div>
             `;
             container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);

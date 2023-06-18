@@ -1,11 +1,40 @@
 .main-banners {
-
+    position: relative;
     &__container {
         border-radius: 12px;
     }
 
     &__item {
         height: 100% !important; // Hack! need to be redefined swiper
+    }
+    &__nav{
+        position: absolute;
+        right: calc(24px + 16px);
+        bottom: calc(24px + 16px);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        pointer-events: none;
+        .nav-arrow-secondary {
+            border: 1px solid var(--blue);
+            pointer-events: all;
+
+            svg {
+                fill: var(--blue);
+            }
+
+            &--next {
+                margin-left: 10px;
+            }
+
+            &.swiper-button-disabled {
+                opacity: 0.4;
+            }
+        }
+        @media (max-width:$smallTablet-max){
+             display: none; 
+        }
     }
 }
 
@@ -52,7 +81,7 @@
     }
 
     &__image {
-        background-position: bottom right;
+        background-position: bottom right 20%;
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -101,7 +130,6 @@
             padding: 0 22px;
         }
     }
-
     @media (max-width:$smallTablet-max) {
         padding: 24px 16px;
     }

@@ -150,7 +150,9 @@ class popup {
             this.popupContainer.classList.remove('popup-open');
 
             if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
-                this.enableScroll();
+                if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
+                    this.enableScroll();
+                }
             }
 
             document.body.style.scrollBehavior = 'auto';

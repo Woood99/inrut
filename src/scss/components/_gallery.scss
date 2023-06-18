@@ -123,23 +123,6 @@
         &:hover {
             color: var(--primary500);
         }
-
-        span {
-            font-size: 12px;
-            line-height: math.div(15, 12);
-            font-weight: 500;
-
-            @media (min-width:$desktop-min) {
-                display: none;
-            }
-        }
-
-        @media (max-width:$tablet-max) {
-            width: auto;
-            height: 100%;
-            margin: 0;
-            padding: 0 16px;
-        }
     }
 
     .gallery-primary-container__prev,
@@ -180,7 +163,7 @@
     }
 
     .lg-counter {
-        padding: 6px;
+        padding: 5px 10px 6px;
         position: absolute;
         bottom: 24px;
         left: 50%;
@@ -287,6 +270,27 @@
             width: 100%;
             &:not(:last-child){
                 margin-bottom: 16px;
+            }
+            svg{
+                width: 17px;
+                height: 17px;
+                flex: 0 0 17px;
+                fill: var(--white);
+                margin-right: 16px;
+            }
+            &--chat{
+                border: none;
+                svg{
+                    fill: var(--blue);
+                    transition: fill $transitionSpeed $transitionFunction;
+                }
+               @media (min-width:$desktop-min){
+                &:hover{
+                    svg{
+                        fill: var(--white);
+                    }
+                } 
+               }
             }
         }
     }

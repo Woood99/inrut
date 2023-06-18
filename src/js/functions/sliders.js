@@ -47,7 +47,8 @@ function initSliders() {
         });
     }
     if (document.querySelector('.main-banners__container')) {
-        new Swiper('.main-banners__container', {
+        const slider = document.querySelector('.main-banners__container');
+        new Swiper(slider, {
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -56,6 +57,10 @@ function initSliders() {
             speed: 800,
             autoplay: {
                 delay: 6000,
+            },
+            navigation: {
+                prevEl: slider.closest('.main-banners').querySelector('.nav-arrow-secondary--prev'),
+                nextEl: slider.closest('.main-banners').querySelector('.nav-arrow-secondary--next'),
             },
         });
     }

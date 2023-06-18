@@ -209,7 +209,8 @@
 
         background-color: var(--white);
         border-radius: 50%;
-        transition: box-shadow $transitionSpeed $transitionFunction;
+        transition: box-shadow $transitionSpeed $transitionFunction,
+            transform $transitionSpeed $transitionFunction;
     }
 
     svg {
@@ -226,6 +227,7 @@
 
         .nav-arrow-primary__wrapper {
             box-shadow: 0 7px 14px rgba(11, 31, 53, 0.15);
+            transform: scale(1.2);
         }
     }
 
@@ -321,9 +323,9 @@
     width: auto;
 
     background: rgba(22, 22, 22, 0.7);
-    border-radius: 8px;
+    border-radius: 9px;
 
-    padding: 4px 6px 5px;
+    padding: 4px 10px 5px;
 
     color: var(--white);
     font-size: 12px;
@@ -757,5 +759,3 @@
     }
 
 }
-
-
