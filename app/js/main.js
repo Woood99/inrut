@@ -6876,6 +6876,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const scrollDrag = (blockSelector, speed) => {
   let scrollBlock = document.querySelector(blockSelector);
+  if (!scrollBlock) return;
   let left = 0;
   let drag = false;
   let coorX = 0;

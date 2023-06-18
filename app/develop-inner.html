@@ -24600,8 +24600,9 @@
 
 
 
-<div class="popup popup-chat">
-    <div class="popup__container popup-chat__container" role="dialog" aria-modal="true" data-popup-target="chat">
+<div class="popup popup-chat is-open">
+    <div class="popup__container popup-chat__container popup-open" role="dialog" aria-modal="true"
+        data-popup-target="chat">
         <button class="btn-reset js-popup-close popup__close popup-chat__close" aria-label="Закрыть модальное окно">
             <svg>
                 <use xlink:href="img/sprite.svg#x"></use>
@@ -24835,14 +24836,17 @@
                 <div class="chat__col">
                     <div class="chat__top">
                         <div>
+                            <div class="chat__avatar avatar">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="35" height="35" alt="Марк Петров">
+                            </div>
                             <h3 class="chat__user">
-                                Марк Петров
+                                Марк П.
                             </h3>
-                            <span class="chat__status chat__status--online">
-                                В сети
-                            </span>
+                            <h3 class="chat__pos">
+                                Агент <span>в сети</span>
+                            </h3>
                             <!-- <span class="chat__status chat__status--no-online">
-                                был(а) 2 часа назад
+                                Агент был в сети 2 часа назад
                             </span> -->
                         </div>
                         <div>
@@ -24862,14 +24866,7 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#prohibit"></use>
                                         </svg>
-                                        Заблокировать
-                                    </button>
-                                    <button type="button" class="btn btn-reset" data-mobile-speed
-                                        data-popup-path="complaint-user">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#warning"></use>
-                                        </svg>
-                                        Пожаловаться
+                                        Закрепить
                                     </button>
                                 </div>
                             </div>
@@ -24896,17 +24893,20 @@
                                 <div class="message-item__user">
                                     <div class="message-item__avatar avatar">
                                         <img loading="lazy" src="./img/avatar-2.jpg" width="30" height="30"
-                                            alt="Марк Петров">
+                                            alt="Марк П.">
                                     </div>
-                                    <time class="message-item__time" datetime="09:45">09:45</time>
                                     <span class="message-item__name">
-                                        Марк Петров
+                                        Марк П.
                                     </span>
+                                    <span class="message-item__pos">Агент</span>
                                 </div>
-                                <p class="message-item__text">
-                                    Объект нравится. <br>
-                                    Готов посмотреть объект 18.01 с 09:00 до 19:00
-                                </p>
+                                <div class="message-item__text">
+                                    <p>
+                                        Объект нравится. <br>
+                                        Готов посмотреть объект 18.01 с 09:00 до 19:00
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
                             </div>
                             <div class="message-item chat__message chat__message--me">
                                 <div class="message-item__user">
@@ -24914,19 +24914,24 @@
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="30" height="30"
                                             alt="Марк Петров">
                                     </div>
-                                    <time class="message-item__time" datetime="09:45">09:45</time>
                                     <span class="message-item__name">
                                         Вы
                                     </span>
                                 </div>
-                                <p class="message-item__text">
-                                    Отлично! <br>
-                                    Удобно в 19:00
-                                </p>
-                                <p class="message-item__text">
-                                    просто текст!! просто текст!! просто текст!! просто текст!! просто текст!! просто
+                                <div class="message-item__text">
+                                    <p>
+                                        Отлично! <br>
+                                        Удобно в 19:00
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        просто текст!! просто текст!! просто текст!! просто текст!! просто текст!! просто
                                     текст!!
-                                </p>
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
                             </div>
                             <div class="message-item chat__message">
                                 <div class="message-item__user">
@@ -24934,27 +24939,42 @@
                                         <img loading="lazy" src="./img/avatar-2.jpg" width="30" height="30"
                                             alt="Марк Петров">
                                     </div>
-                                    <time class="message-item__time" datetime="09:45">09:45</time>
                                     <span class="message-item__name">
-                                        Марк Петров
+                                        Марк П.
                                     </span>
+                                    <span class="message-item__pos">Агент</span>
                                 </div>
-                                <p class="message-item__text">
-                                    Объект нравится. <br>
-                                    Готов посмотреть объект 18.01 с 09:00 до 19:00
-                                </p>
-                                <p class="message-item__text">
-                                    Объект нравится.
-                                </p>
-                                <p class="message-item__text">
-                                    :)
-                                </p>
-                                <p class="message-item__text">
-                                    Супер
-                                </p>
-                                <p class="message-item__text">
-                                    asd
-                                </p>
+                                <div class="message-item__text">
+                                    <p>
+                                        Объект нравится. <br>
+                                        Готов посмотреть объект 18.01 с 09:00 до 19:00
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        Объект нравится.
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        :)
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        Супер
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        asd
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
                             </div>
                             <div class="message-item chat__message chat__message--me">
                                 <div class="message-item__user">
@@ -24962,23 +24982,36 @@
                                         <img loading="lazy" src="./img/avatar-1.jpg" width="30" height="30"
                                             alt="Марк Петров">
                                     </div>
-                                    <time class="message-item__time" datetime="09:45">09:45</time>
                                     <span class="message-item__name">
                                         Вы
                                     </span>
                                 </div>
-                                <p class="message-item__text">
-                                    Отлично
-                                </p>
-                                <p class="message-item__text">
-                                    :)
-                                </p>
-                                <p class="message-item__text">
-                                    Супер
-                                </p>
-                                <p class="message-item__text">
-                                    asd
-                                </p>
+                                <div class="message-item__text">
+                                    <p>
+                                        Объект нравится.
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        :)
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                        Супер
+                                    </p>
+                                    <span>09:45</span>
+                                </div>
+                                <div class="message-item__text">
+                                    <p>
+                                      просто текст! просто текст!  просто текст!  просто текст!  просто текст! 
+                                      просто текст! просто текст! просто текст! просто текст! просто текст! просто текст! просто текст! просто текст! 
+                                      просто текст! просто текст! просто текст! просто текст! просто текст! просто текст! просто текст! 
+                                    </p>
+                                    <span>22:00</span>
+                                </div>
                             </div>
                         </div>
                         <div class="chat__tags">
@@ -24987,7 +25020,7 @@
                             <button type="button" class="btn btn-reset">Отлично</button>
                             <button type="button" class="btn btn-reset">Здравствуйте!</button>
                             <button type="button" class="btn btn-reset">Нет,хочу предложить другое</button>
-                        </div>
+                        </div> 
                         <div class="chat__bottom">
                             <textarea class="input-reset chat__textarea" placeholder="Ваше сообщение"></textarea>
                             <div>
