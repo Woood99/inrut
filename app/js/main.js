@@ -4163,6 +4163,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
 /* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
 /* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
+/* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
+
 
 
 
@@ -4247,6 +4249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__["default"])('.stock-developer__content .cards-list__items');
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__["default"])('.chat__tags', 1000);
+  (0,_components_chat__WEBPACK_IMPORTED_MODULE_28__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4350,7 +4353,11 @@ const map = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '
 const searchArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--search-area');
 const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   isOpen: () => {
+    const chat = document.querySelector('.popup-chat');
+    if (!chat) return;
     const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
+    const chatBottom = chat.querySelector('.chat__bottom');
+    chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
     bar.scrollTo({
       top: bar.querySelector('.simplebar-content').clientHeight
     });
@@ -4675,6 +4682,29 @@ const cardStockPopup = containerSelector => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardStockPopup);
+
+/***/ }),
+
+/***/ "./src/js/components/chat.js":
+/*!***********************************!*\
+  !*** ./src/js/components/chat.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const chat = () => {
+  const chat = document.querySelector('.popup-chat');
+  if (!chat) return;
+  const chatBottom = chat.querySelector('.chat__bottom');
+  chatBottom.querySelector('.textarea-secondary__input').addEventListener('input', () => {
+    chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (chat);
 
 /***/ }),
 
@@ -6135,10 +6165,21 @@ const textareaSecondary = () => {
   const textareas = document.querySelectorAll('.textarea-secondary');
   textareas.forEach(textarea => {
     const textareaInput = textarea.querySelector('.textarea-secondary__input');
+    const textareaMinHeight = textarea.dataset.textareaSecondaryMinHeight;
+    const textareaMaxHeight = textarea.hasAttribute('data-textarea-secondary-max-height') ? textarea.dataset.textareaSecondaryMaxHeight : false;
     textareaInput.addEventListener('input', e => {
       toggleActive(e.target, textarea);
-      textarea.style.height = `45px`;
-      textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+      if (textareaMaxHeight) {
+        textarea.style.height = `${textareaMinHeight}px`;
+        if (textareaInput.scrollHeight + 2 <= textareaMaxHeight) {
+          textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+        } else {
+          textarea.style.height = `${textareaMaxHeight}px`;
+        }
+      } else {
+        textarea.style.height = `${textareaMinHeight}px`;
+        textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+      }
     });
   });
   function toggleActive(target, currentTextarea) {

@@ -60,7 +60,11 @@ const map = new popup(null, '.popup-primary--popup-map')
 const searchArea = new popup(null, '.popup-primary--search-area')
 const chatPopup = new popup({
     isOpen: () => {
+        const chat = document.querySelector('.popup-chat');
+        if (!chat) return;
         const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
+        const chatBottom = chat.querySelector('.chat__bottom');
+        chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
         bar.scrollTo({
             top: bar.querySelector('.simplebar-content').clientHeight
         })

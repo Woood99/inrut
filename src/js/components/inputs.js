@@ -37,11 +37,21 @@ export const textareaSecondary = () => {
     const textareas = document.querySelectorAll('.textarea-secondary');
     textareas.forEach(textarea => {
         const textareaInput = textarea.querySelector('.textarea-secondary__input');
+        const textareaMinHeight = textarea.dataset.textareaSecondaryMinHeight;
+        const textareaMaxHeight = textarea.hasAttribute('data-textarea-secondary-max-height') ? textarea.dataset.textareaSecondaryMaxHeight : false;
         textareaInput.addEventListener('input', (e) => {
             toggleActive(e.target, textarea);
-
-            textarea.style.height = `45px`;
-            textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+            if (textareaMaxHeight) {
+                textarea.style.height = `${textareaMinHeight}px`;
+                if (textareaInput.scrollHeight + 2 <= textareaMaxHeight) {
+                    textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+                } else {
+                    textarea.style.height = `${textareaMaxHeight}px`;
+                }
+            } else {
+                textarea.style.height = `${textareaMinHeight}px`;
+                textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
+            }
         });
     });
 
