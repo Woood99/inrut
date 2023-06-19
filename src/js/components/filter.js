@@ -226,6 +226,60 @@ export const filterSum = () => {
         return result.replace('.0', '');
     }
 }
+export const searchSelect = () => {
+    const containers = document.querySelectorAll('.search-select');
+    if (!containers.length >= 1) return;
+    containers.forEach(container => {
+        const btn = container.querySelector('.search-select__button');
+        const body = container.querySelector('.search-select__dropdown');
+        btn.addEventListener('click', () => {
+            containers.forEach(el => {
+                if (el !== container) el.classList.remove('_active')
+            });
+            container.classList.toggle('_active');
+        })
+        document.addEventListener('click', (e) => {
+            if (container.classList.contains('_active') && !e.target.closest('.search-select')) {
+                container.classList.remove('_active');
+            }
+        })
+        const items = body.querySelectorAll('.search-select__item .checkbox-secondary__input');
+        const btnWrapper = btn.querySelector('.search-select__button-wrapper')
+        const btnList = btnWrapper.querySelector('div:nth-child(2)');
+        const arrSelected = [];
+        items.forEach(input => {
+            input.addEventListener('change', () => {
+                const currentElem = input.closest('.search-select__item').querySelector('.checkbox-secondary__text').textContent.trim();
+                if (input.checked) {
+                    arrSelected.push(currentElem);
+                } else {
+                    const index = arrSelected.indexOf(currentElem);
+                    if (index !== -1) {
+                        arrSelected.splice(index, 1);
+                    }
+                }
+                updatePlaceholder()
+            })
+        })
+
+        function updatePlaceholder() {
+            if (arrSelected.length >= 1) {
+                btnList.textContent = '';
+                btnWrapper.classList.add('_active');
+            } else {
+                btnList.textContent = container.dataset.searchSelectSubtitle;
+                btnWrapper.classList.remove('_active');
+            }
+            arrSelected.forEach(el => {
+                btnList.textContent += `${el}, `;
+            });
+
+            if (btnList.textContent !== container.dataset.searchSelectSubtitle) {
+                btnList.textContent = btnList.textContent.slice(0, -2);
+            }
+        }
+    });
+}
 export const uiSlider = () => {
     const items = document.querySelectorAll('.filter-range__inner');
     if (!items.length >= 1) return;

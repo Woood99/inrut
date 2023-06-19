@@ -15,6 +15,7 @@
     .simplebar-content-wrapper {
         padding-right: 50px;
         outline: none;
+
         @media (max-width:$smallTablet-max) {
             padding-right: 36px;
         }
@@ -90,4 +91,55 @@
     }
 
     .simplebar-content-wrapper {}
+}
+
+
+.simplebar-third {
+
+
+    .simplebar-track.simplebar-vertical {
+        background-color: transparent;
+        width: 4px;
+        border-radius: 2px;
+        overflow: visible;
+        pointer-events: all;
+        margin-right: 5px;
+        top: 0;
+        bottom: 0;
+    }
+
+    .simplebar-content-wrapper {
+        padding-right: 0px;
+        outline: none;
+
+        @media (max-width:$smallTablet-max) {
+            padding-right: 36px;
+        }
+    }
+
+    .simplebar-scrollbar {
+        border-radius: 2px;
+        width: 4px;
+        left: 0;
+
+        &::before {
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 1;
+            background-color: #d1d1d1;
+            border-radius: 10px;
+            width: 4px;
+        }
+    }
+
+    .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+        top: 0;
+        bottom: 0;
+    }
+
+    .simplebar-scrollbar.simplebar-visible::before {
+        opacity: 1;
+    }
 }

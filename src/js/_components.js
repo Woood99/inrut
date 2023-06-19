@@ -6,7 +6,8 @@ import {
     filterDropdownChoice,
     filterMobile,
     filterCustomSelectCheckboxes,
-    dropdownDefault
+    dropdownDefault,
+    searchSelect
 } from './components/filter';
 import getHeightBlock from './modules/getHeightBlock'
 import choicesSelect from './components/choices';
@@ -69,11 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     filterMobile();
     filterCustomSelectCheckboxes();
     dropdownDefault('.presentation', '.presentation__btn', '.presentation__dropdown');
+    searchSelect();
 
     // ==================================================
 
     simplebar('.simplebar-primary');
     simplebar('.simplebar-secondary');
+    simplebar('.simplebar-third');
 
     // ==================================================
 
