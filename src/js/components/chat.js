@@ -62,6 +62,7 @@ const chat = () => {
                     currentItem.querySelector('.dots-dropdown').classList.remove('_active');
                     currentNameUser = currentItem.querySelector('.chat-user__name').textContent.trim();
                 } else if (chatTop) {
+                    chatTop.querySelector('.dots-dropdown').classList.remove('_active');
                     currentNameUser = chatTop.querySelector('.chat__user').textContent.trim();
                 }
 
