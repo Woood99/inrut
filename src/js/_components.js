@@ -47,7 +47,6 @@ import genplan from './components/genplan';
 import mapMetro from './components/mapMetro';
 import cardStockPopup from './components/cardStockPopup';
 import tag from './components/tag';
-import scrollDrag from './components/scrollDrag';
 import chat from './components/chat';
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -105,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mapMetro();
     cardStockPopup('.stock-developer__content .cards-list__items');
     tag();
-    scrollDrag('.chat__tags', 1000);
     chat();
     // ==================================================
 

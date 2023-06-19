@@ -4162,9 +4162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
 /* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
 /* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
-/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
-/* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
-
+/* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
 
 
 
@@ -4248,8 +4246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_24__["default"])();
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__["default"])('.stock-developer__content .cards-list__items');
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
-  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_27__["default"])('.chat__tags', 1000);
-  (0,_components_chat__WEBPACK_IMPORTED_MODULE_28__["default"])();
+  (0,_components_chat__WEBPACK_IMPORTED_MODULE_27__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4353,11 +4350,13 @@ const map = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '
 const searchArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--search-area');
 const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   isOpen: () => {
-    const chat = document.querySelector('.popup-chat');
+    const chat = document.querySelector('.chat');
     if (!chat) return;
     const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
     const chatBottom = chat.querySelector('.chat__bottom');
+    const chatTags = chat.querySelector('.chat__tags');
     chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
+    chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
     bar.scrollTo({
       top: bar.querySelector('.simplebar-content').clientHeight
     });
@@ -4696,13 +4695,110 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
 const chat = () => {
-  const chat = document.querySelector('.popup-chat');
+  const chat = document.querySelector('.chat');
   if (!chat) return;
   const chatBottom = chat.querySelector('.chat__bottom');
+  const chatTags = chat.querySelector('.chat__tags');
   chatBottom.querySelector('.textarea-secondary__input').addEventListener('input', () => {
     chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
   });
+  window.addEventListener('resize', chatPosition);
+  chatTags.querySelectorAll('.chat__tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      chatPosition();
+      // ...
+    });
+  });
+
+  chatRename();
+  function chatRename() {
+    chat.addEventListener('click', e => {
+      const target = e.target;
+      if (target.closest('[data-chat-rename]')) {
+        openRename();
+      } else {
+        return;
+      }
+      const chatRename = chat.querySelector('.chat-rename');
+      const input = chatRename.querySelector('.chat-rename__input');
+      const subtitle = chatRename.querySelector('.chat-rename__subtitle div span');
+      input.addEventListener('input', updateSubtitle);
+      const btnCancel = chatRename.querySelector('[data-chat-rename-cancel]');
+      const btnConfirm = chatRename.querySelector('[data-chat-rename-confirm]');
+      btnCancel.addEventListener('click', closeRename);
+      btnConfirm.addEventListener('click', closeRename);
+      chatRename.addEventListener('click', e => {
+        if (!e.target.closest('.chat-rename__container') && chatRename.classList.contains('is-open')) {
+          closeRename();
+        }
+      });
+      function closeRename() {
+        chatRename.classList.remove('is-open');
+        setTimeout(() => {
+          chatRename.remove();
+        }, 500);
+      }
+      ;
+      function openRename() {
+        const currentItem = target.closest('.chat__item');
+        const chatTop = target.closest('.chat__top');
+        let currentNameUser;
+        if (currentItem) {
+          currentItem.classList.remove('_dropdown-active');
+          currentItem.querySelector('.dots-dropdown').classList.remove('_active');
+          currentNameUser = currentItem.querySelector('.chat-user__name').textContent.trim();
+        } else if (chatTop) {
+          currentNameUser = chatTop.querySelector('.chat__user').textContent.trim();
+        }
+        const modalHTML = `
+                <div class="chat__rename chat-rename">
+                <div class="chat-rename__container">
+                    <h2 class="chat-rename__title title-2">Изменить имя чата</h2>
+                    <label class="chat-rename__input input-primary">
+                        <input type="text" name="Имя" class="input-reset input-primary__input"
+                            placeholder="Имя чата" maxlength="50">
+                    </label>
+                    <div class="chat-rename__subtitle">
+                        <div>
+                            <span>0</span>
+                            /
+                            <span>50</span>
+                        </div>
+                        <span>Имя чата видите только вы</span>
+                    </div>
+                    <div class="chat-rename__btns">
+                        <button type="button" class="btn btn-reset btn-secondary chat-rename__btn" data-chat-rename-cancel>
+                            Отмена
+                        </button>
+                        <button type="button" class="btn btn-reset btn-primary chat-rename__btn" data-chat-rename-confirm>
+                            Переименовать
+                        </button>
+                    </div>
+                </div>
+            </div>
+                `;
+        chat.insertAdjacentHTML('beforeend', modalHTML);
+        setTimeout(() => {
+          chat.querySelector('.chat-rename').classList.add('is-open');
+          chat.querySelector('.chat-rename__input input').value = currentNameUser;
+          updateSubtitle();
+        }, 50);
+      }
+      function updateSubtitle() {
+        subtitle.textContent = input.querySelector('input').value.length;
+      }
+    });
+  }
+
+  // cardSecondary.classList.add('_active');
+  // modal(modalHTML, '.stock-popup', 300, cardSecondary);
+
+  function chatPosition() {
+    chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (chat);
 
@@ -6904,39 +7000,6 @@ const reviewModal = () => {
 
 /***/ }),
 
-/***/ "./src/js/components/scrollDrag.js":
-/*!*****************************************!*\
-  !*** ./src/js/components/scrollDrag.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const scrollDrag = (blockSelector, speed) => {
-  let scrollBlock = document.querySelector(blockSelector);
-  if (!scrollBlock) return;
-  let left = 0;
-  let drag = false;
-  let coorX = 0;
-  scrollBlock.addEventListener('mousedown', function (e) {
-    drag = true;
-    coorX = e.pageX - this.offsetLeft;
-  });
-  document.addEventListener('mouseup', function () {
-    drag = false;
-    left = scrollBlock.scrollLeft;
-  });
-  scrollBlock.addEventListener('mousemove', function (e) {
-    if (drag) this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollDrag);
-
-/***/ }),
-
 /***/ "./src/js/components/simplebar.js":
 /*!****************************************!*\
   !*** ./src/js/components/simplebar.js ***!
@@ -8465,15 +8528,29 @@ const dropdown = (containerSelector, targetSelector) => {
   const container = document.querySelectorAll(containerSelector);
   container.forEach(el => {
     const target = el.querySelector(targetSelector);
+    const chatItem = el.closest('.chat__item');
     target.addEventListener('click', e => {
       e.preventDefault();
       container.forEach(el => {
-        if (e.target.closest(containerSelector) !== el) el.classList.remove('_active');
+        if (e.target.closest(containerSelector) !== el) {
+          el.classList.remove('_active');
+          if (el.closest('.chat__item')) {
+            el.closest('.chat__item').classList.remove('_dropdown-active');
+          }
+        }
       });
       el.classList.toggle('_active');
+      if (chatItem) {
+        chatItem.classList.toggle('_dropdown-active');
+      }
     });
     document.addEventListener('click', e => {
-      if (el.classList.contains('_active') && !e.target.closest(containerSelector)) el.classList.remove('_active');
+      if (!e.target.closest(containerSelector)) {
+        if (el.classList.contains('_active')) el.classList.remove('_active');
+        if (chatItem && chatItem.classList.contains('_dropdown-active')) {
+          chatItem.classList.remove('_dropdown-active');
+        }
+      }
     });
   });
 };
