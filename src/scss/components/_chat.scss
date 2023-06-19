@@ -62,14 +62,16 @@
         &:not(:last-child) {
             margin-bottom: 5px;
         }
-        &:nth-last-child(-n+2){
-            .dots-dropdown__dropdown{
+
+        &:nth-last-child(-n+2) {
+            .dots-dropdown__dropdown {
                 top: auto;
                 bottom: 25px;
             }
         }
-        &:nth-child(-n+3){
-            .dots-dropdown__dropdown{
+
+        &:nth-child(-n+3) {
+            .dots-dropdown__dropdown {
                 top: 100%;
                 bottom: auto;
             }
@@ -344,11 +346,12 @@
             background-color: var(--blue);
             color: var(--white);
         }
-        @media (min-width:$desktop-min){
-             &:hover{
+
+        @media (min-width:$desktop-min) {
+            &:hover {
                 background-color: var(--blue);
                 color: var(--white);
-             } 
+            }
         }
     }
 
@@ -469,7 +472,7 @@
 }
 
 
-.chat-rename{
+.chat-rename {
     position: absolute;
     inset: 0;
     z-index: 10;
@@ -483,44 +486,52 @@
     pointer-events: none;
 
     transition: opacity $transitionSpeed $transitionFunction,
-    visibility $transitionSpeed $transitionFunction;
-    &__container{
+        visibility $transitionSpeed $transitionFunction;
+
+    &__container {
         background-color: var(--white);
         box-shadow: var(--shadow-primary);
         min-width: 300px;
         border-radius: 16px;
         padding: 24px 32px;
     }
-    &__input{
+
+    &__input {
         margin-top: 16px;
     }
-    &__subtitle{
+
+    &__subtitle {
         margin-top: 8px;
         display: flex;
         align-items: center;
 
         color: var(--primaryTwo);
         font-size: 12px;
-        line-height: math.div(12 ,12 );
-        >div{
+        line-height: math.div(12, 12);
+
+        >div {
             display: flex;
             align-items: center;
         }
-        >span{
+
+        >span {
             margin-left: 4px;
         }
     }
-    &__btns{
+
+    &__btns {
         margin-top: 24px;
         display: flex;
         align-items: center;
     }
-    &__btn{
-        &:not(:last-child){
+
+    &__btn {
+        &:not(:last-child) {
             margin-right: 16px;
         }
     }
-    &.is-open{
+
+    &.is-open {
         opacity: 1;
         visibility: visible;
         pointer-events: all;
