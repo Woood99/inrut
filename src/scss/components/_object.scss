@@ -1280,6 +1280,7 @@
         background-color: rgba(0, 150, 255, .08);
         outline: none;
         white-space: nowrap;
+
         span {
             margin-left: 8px;
             color: var(--primaryTwo);
@@ -1296,14 +1297,11 @@
             color: var(--dark);
         }
 
-        &--all {
-            background-color: rgba(0, 150, 255, .12);
-            border: 1px solid transparent;
-        }
-
         @media (min-width:$desktop-min) {
-            &:hover,&.focus-visible {
-                background-color: var(--primary200);
+
+            &:hover,
+            &.focus-visible {
+                background-color: rgba(0, 150, 255, .12);
                 color: var(--dark);
             }
         }
