@@ -3809,6 +3809,70 @@ textarea.input-reset {
   right: 16px !important;
   top: 195px !important;
 }
+.map-primary .ymaps-2-1-79-control-popup-parent > ymaps {
+  border-radius: 16px;
+}
+.map-primary .ymaps-2-1-79-control-popup__content {
+  border-radius: 16px;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static {
+  margin-top: -122px;
+  margin-right: 0px;
+  border-radius: 16px;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__title {
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--dark);
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__header {
+  border-bottom: none;
+  text-align: center;
+  padding: 16px 12px 0;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__icon {
+  display: none;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel__inputs {
+  padding: 0 16px 24px;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-types__type {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  border-radius: 4px;
+  background-position: 50% 50%;
+  -webkit-transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-types__type_selected {
+  background-color: var(--hover-primary);
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-input {
+  border-radius: 5px;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-input.ymaps-2-1-79-route-panel-input_focused {
+  -webkit-box-shadow: inset 0 0 0 1px var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-input__icon {
+  top: 10px;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-route-panel-input__location {
+  background-position: 50% 50%;
+}
+.map-primary .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static input.ymaps-2-1-79-route-panel-input__input {
+  height: 38px;
+}
 .map-primary .ymaps-2-1-79-zoom {
   height: auto !important;
   padding: 0;
@@ -3875,7 +3939,11 @@ textarea.input-reset {
     display: none;
   }
 }
-.map-primary .ymaps-2-1-79-controls__control_toolbar {
+.map-primary .ymaps-2-1-79-route-panel-button {
+  right: 40px !important;
+  top: 67px !important;
+}
+.map-primary .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
   position: absolute !important;
   top: 91px;
   right: 16px;
@@ -3886,7 +3954,7 @@ textarea.input-reset {
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 }
-.map-primary .ymaps-2-1-79-controls__control_toolbar .ymaps-2-1-79-float-button {
+.map-primary .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none .ymaps-2-1-79-float-button {
   max-width: none !important;
   width: 44px;
   height: 44px;
@@ -3905,7 +3973,7 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.map-primary .ymaps-2-1-79-controls__control_toolbar .ymaps-2-1-79-float-button .ymaps-2-1-79-float-button-icon {
+.map-primary .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none .ymaps-2-1-79-float-button .ymaps-2-1-79-float-button-icon {
   position: static;
   width: 18px;
   height: 18px;
@@ -3914,7 +3982,7 @@ textarea.input-reset {
   background-image: url("../img/fullscreen-map.svg");
 }
 @media (max-width: 768px) {
-  .map-primary .ymaps-2-1-79-controls__control_toolbar {
+  .map-primary .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
     top: 0px;
   }
 }
@@ -6545,6 +6613,13 @@ textarea.input-reset {
     grid-template-columns: 1fr;
     grid-row-gap: 16px;
   }
+}
+
+.location-routes__btn svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  fill: var(--white);
 }
 
 .room-info {
@@ -20919,20 +20994,39 @@ textarea.input-reset {
 .object-location__maps {
   margin-top: 16px;
   width: 100%;
-  height: 423px;
   background-color: var(--white);
   border-radius: 12px;
+  position: relative;
 }
 @media (max-width: 1144px) {
   .object-location__maps {
     margin-top: 16px;
+  }
+}
+.object-location__maps .map-primary {
+  width: 100%;
+  height: 423px;
+  border-radius: 12px;
+}
+@media (max-width: 1144px) {
+  .object-location__maps .map-primary {
     height: 350px;
   }
 }
 @media (max-width: 768px) {
-  .object-location__maps {
+  .object-location__maps .map-primary {
     height: 227px;
   }
+}
+.object-location__routes {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+}
+.object-location__routes._active {
+  display: block;
 }
 @media (max-width: 1144px) {
   .object-location {

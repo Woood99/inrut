@@ -611,10 +611,23 @@
                                     <button type="button" class="btn btn-reset object-location__btn">
                                         Предложения рядом
                                     </button>
+                                    <button type="button" class="btn btn-reset object-location__btn object-location__btn--routes">
+                                        Маршруты
+                                    </button>
                                 </div>
-                                <div class="object-location__maps map-primary remove-copyrights-pane" id="object-maps">
+                                <div class="object-location__maps">
+                                    <div class="object-location__routes location-routes">
+                                        <button type="button" class="btn btn-reset btn-primary location-routes__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#routes"></use>
+                                            </svg>
+                                            Построить маршрут
+                                        </button>
+                                    </div>
+                                    <div class="map-primary remove-copyrights-pane" id="object-maps">
+                                    </div>
                                 </div>
-                                <div class="object-location__infrastructure _active">
+                                <div class="object-location__infrastructure">
                                     <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
                                         Школы
                                         <span>11</span>

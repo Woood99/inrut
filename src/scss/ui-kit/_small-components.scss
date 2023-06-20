@@ -1879,6 +1879,7 @@
         &:nth-child(2) {
             background-color: rgb(255, 241, 197);
         }
+
         &:nth-child(3) {
             background-color: rgb(232, 255, 255);
         }
@@ -1908,8 +1909,21 @@
     @media (max-width:$desktop) {
         padding: 16px;
     }
-    @media (max-width:$smallTablet-max){
-         grid-template-columns: 1fr;
-         grid-row-gap: 16px; 
+
+    @media (max-width:$smallTablet-max) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 16px;
+    }
+}
+
+
+.location-routes {
+    &__btn {
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            fill: var(--white);
+        }
     }
 }

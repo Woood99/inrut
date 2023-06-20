@@ -26,24 +26,54 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
-            removeControlsPrimary(map, '#object-maps');
-        }
-        const containerSelects = objectMaps.closest('.object-location--select');
-        if (containerSelects) {
-            const btns = containerSelects.querySelectorAll('.object-location__btn');
-            const infrastructure = containerSelects.querySelector('.object-location__infrastructure');
-            btns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btns.forEach(btn => btn.classList.remove('_active'));
-                    btn.classList.toggle('_active');
 
-                    if (btn.classList.contains('object-location__btn--infrastructure')) {
-                        infrastructure.classList.add('_active');
+
+            removeControlsPrimary(map, '#object-maps');
+            const containerSelects = objectMaps.closest('.object-location--select');
+            if (containerSelects) {
+                const btns = containerSelects.querySelectorAll('.object-location__btn');
+                const infrastructure = containerSelects.querySelector('.object-location__infrastructure');
+                const routes = containerSelects.querySelector('.object-location__routes');
+                const locationRoutesBtn = document.querySelector('.location-routes__btn');
+                btns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        btns.forEach(btn => btn.classList.remove('_active'));
+                        btn.classList.toggle('_active');
+                        if (btn.classList.contains('object-location__btn--infrastructure')) {
+                            infrastructure.classList.add('_active');
+                            routes.classList.remove('_active');
+                            locationRoutesBtn.classList.remove('_active');
+                            map.controls.remove('routePanelControl');
+                        } else if (btn.classList.contains('object-location__btn--routes')) {
+                            routes.classList.add('_active');
+                            infrastructure.classList.remove('_active');
+                        } else {
+                            infrastructure.classList.remove('_active');
+                            routes.classList.remove('_active');
+                            locationRoutesBtn.classList.remove('_active');
+                            map.controls.remove('routePanelControl');
+                        }
+                    });
+                })
+                locationRoutesBtn.addEventListener('click', () => {
+                    if (!locationRoutesBtn.classList.contains('_active')) {
+                        locationRoutesBtn.classList.add('_active');
+                        map.controls.add('routePanelControl', {
+                            showHeader: true,
+                            title: 'Построить маршрут',
+                            float: 'right',
+                            maxWidth: '320px',
+                            position: {
+                                left: 0,
+                                top: 0,
+                            }
+                        });
                     } else {
-                        infrastructure.classList.remove('_active');
+                        locationRoutesBtn.classList.remove('_active');
+                        map.controls.remove('routePanelControl');
                     }
                 });
-            })
+            }
         }
         ymaps.ready(init);
     }
