@@ -36,40 +36,14 @@
     &__title {}
 
     &__auto {
-        margin-top: 32px;
-        display: flex;
-        align-items: center;
-        color: var(--blue);
-        transition: color $transitionSpeed $transitionFunction;
-
-        svg {
-            margin-right: 6px;
-            width: 12px;
-            height: 12px;
-            stroke: currentColor;
-            fill: none;
-        }
-
-        span {
-            color: inherit;
-            font-size: 15px;
-            line-height: math.div(19, 15);
-            font-weight: 400;
-        }
-
-        &:hover {
-            color: var(--primary500);
-        }
-
-        @media (max-width:$desktop) {
-            span {
-                font-size: 11px;
-            }
+        margin-top: 24px;
+        .checkbox-secondary__label{
+            justify-content: start;
         }
     }
 
     &__input {
-        margin-top: 16px;
+        margin-top: 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -121,6 +95,10 @@
         flex-grow: 1;
         max-width: 65%;
         border-radius: 8px;
+        &._active{
+            color: var(--white);
+            background-color: var(--blue);
+        }
     }
 
     &__save {

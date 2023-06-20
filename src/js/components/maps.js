@@ -18,12 +18,45 @@ const maps = () => {
         ymaps.ready(init);
     }
     if (document.querySelector('#object-maps')) {
+        const objectMaps = document.querySelector('#object-maps');
+        if (!objectMaps) return;
+
         function init() {
             let map = new ymaps.Map('object-maps', {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
             removeControlsPrimary(map, '#object-maps');
+        }
+        const containerSelects = objectMaps.closest('.object-location--select');
+        if (containerSelects) {
+            const btns = containerSelects.querySelectorAll('.object-location__btn');
+            const infrastructure = containerSelects.querySelector('.object-location__infrastructure');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(btn => btn.classList.remove('_active'));
+                    btn.classList.toggle('_active');
+
+                    if (btn.classList.contains('object-location__btn--infrastructure')) {
+                        infrastructure.classList.add('_active');
+                    } else {
+                        infrastructure.classList.remove('_active');
+                    }
+                });
+            })
+            const btnsInfrastructure = containerSelects.querySelectorAll('.object-location__infrastructure-btn');
+            const btnInfrastructureAll = containerSelects.querySelector('.object-location__infrastructure-btn--all');
+            btnsInfrastructure.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.classList.contains('object-location__infrastructure-btn--all')) {
+                        btnsInfrastructure.forEach(btn => btn.classList.remove('_active'));
+                        btn.classList.add('_active');
+                    } else {
+                        btnInfrastructureAll.classList.remove('_active');
+                        btn.classList.toggle('_active');
+                    }
+                })
+            })
         }
         ymaps.ready(init);
     }

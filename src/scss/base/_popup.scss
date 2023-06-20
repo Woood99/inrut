@@ -214,6 +214,46 @@
         }
     }
 
+    &--online-display {
+
+        text-align: center;
+
+        .popup-primary {
+            &__container {
+                min-height: auto;
+                margin: 50px auto;
+                text-align: left;
+                border-radius: 24px;
+                padding: 65px 40px 48px;
+                max-width: 600px;
+
+                @media (max-width:$smallTablet-max) {
+                    max-width: 100%;
+                    width: calc(100% - 4px);
+                    margin: 50px auto 0;
+                    vertical-align: bottom;
+
+                    padding: 56px 16px 48px;
+
+                    border-radius: 12px 12px 0 0;
+                }
+            }
+        }
+
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
+
     &--complaint-user {
         .popup-primary {
             &__container {
@@ -2069,6 +2109,7 @@
         font-weight: 400;
         position: relative;
         border-radius: 12px;
+
         svg {
             --size: 14px;
             width: var(--size);
@@ -2497,9 +2538,6 @@
 }
 
 
-
-
-
 .checkboard-cst-popup {
 
     --transition-time: 0.3s;
@@ -2609,7 +2647,17 @@
 
 
 
+.online-display-popup {
+    &__title {}
 
+    &__descr {
+        margin-top: 16px;
+
+        font-size: 18px;
+        line-height: math.div(24, 18);
+        color: var(--dark);
+    }
+}
 
 
 .genplan-popup-card {

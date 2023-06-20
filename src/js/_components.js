@@ -49,6 +49,11 @@ import mapMetro from './components/mapMetro';
 import cardStockPopup from './components/cardStockPopup';
 import tag from './components/tag';
 import chat from './components/chat';
+import city from './components/city';
+import scrollDrag from './components/scrollDrag';
+import {
+    cardSecondaryActions
+} from './components/cardActions';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -90,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
+    cardSecondaryActions();
+
+    // ==================================================
+
     maps();
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
@@ -108,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cardStockPopup('.stock-developer__content .cards-list__items');
     tag();
     chat();
+    city();
+    scrollDrag('.object-location__infrastructure', 1000);
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

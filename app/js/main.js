@@ -4163,6 +4163,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
 /* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
 /* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
+/* harmony import */ var _components_city__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/city */ "./src/js/components/city.js");
+/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
+/* harmony import */ var _components_cardActions__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/cardActions */ "./src/js/components/cardActions.js");
+
+
+
 
 
 
@@ -4231,6 +4237,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
+  (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_30__.cardSecondaryActions)();
+
+  // ==================================================
+
   (0,_components_maps__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
@@ -4249,6 +4259,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__["default"])('.stock-developer__content .cards-list__items');
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
   (0,_components_chat__WEBPACK_IMPORTED_MODULE_27__["default"])();
+  (0,_components_city__WEBPACK_IMPORTED_MODULE_28__["default"])();
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__["default"])('.object-location__infrastructure', 1000);
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4364,7 +4376,7 @@ const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
     });
   }
 }, '.popup-chat');
-
+const onlineDisplay = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--online-display');
 // ========================================================================================
 
 /***/ }),
@@ -4570,6 +4582,47 @@ const calendarPrimary = function (containerSelector, url) {
       }
     });
   }
+};
+
+/***/ }),
+
+/***/ "./src/js/components/cardActions.js":
+/*!******************************************!*\
+  !*** ./src/js/components/cardActions.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "cardSecondaryActions": () => (/* binding */ cardSecondaryActions)
+/* harmony export */ });
+const cardSecondaryActions = () => {
+  const cards = document.querySelectorAll('.card-secondary');
+  if (cards.length === 0) return;
+  cards.forEach(card => {
+    let currentProduct = card;
+    const imageSwitchItems = currentProduct.querySelectorAll('.card-secondary__item');
+    const imagePagination = currentProduct.querySelector('.card-secondary__pagination');
+    if (imageSwitchItems.length > 1) {
+      imageSwitchItems.forEach((el, index) => {
+        el.setAttribute('data-index', index);
+        imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+        el.addEventListener('mouseenter', e => {
+          currentProduct.querySelectorAll('.image-pagination__item').forEach(el => {
+            el.classList.remove('image-pagination__item--active');
+          });
+          currentProduct.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
+        });
+        el.addEventListener('mouseleave', e => {
+          currentProduct.querySelectorAll('.image-pagination__item').forEach(el => {
+            el.classList.remove('image-pagination__item--active');
+          });
+          currentProduct.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
+        });
+      });
+    }
+  });
 };
 
 /***/ }),
@@ -5120,6 +5173,58 @@ const choicesSelect = () => {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (choicesSelect);
+
+/***/ }),
+
+/***/ "./src/js/components/city.js":
+/*!***********************************!*\
+  !*** ./src/js/components/city.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const city = () => {
+  const container = document.querySelector('.city-popup');
+  if (!container) return;
+  const input = container.querySelector('.city-popup__input input');
+  const btnSave = container.querySelector('.city-popup__save');
+  container.addEventListener('click', e => {
+    const target = e.target;
+    const btn = target.closest('.city-popup__item');
+    if (btn) {
+      if (!btn.classList.contains('_active')) {
+        const nameCity = btn.textContent.trim();
+        input.value = nameCity;
+        clearAllBtn();
+        btn.classList.add('_active');
+        btnSave.removeAttribute('disabled');
+      } else {
+        clearAllBtn();
+        input.value = '';
+        btnSave.setAttribute('disabled', '');
+      }
+    }
+  });
+  input.addEventListener('input', () => {
+    container.querySelectorAll('.city-popup__item').forEach(item => {
+      if (input.value === item.textContent.trim()) {
+        item.classList.add('_active');
+        btnSave.removeAttribute('disabled');
+      } else {
+        item.classList.remove('_active');
+        btnSave.setAttribute('disabled', '');
+      }
+    });
+  });
+  function clearAllBtn() {
+    container.querySelectorAll('.city-popup__item._active').forEach(item => item.classList.remove('_active'));
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (city);
 
 /***/ }),
 
@@ -6751,12 +6856,43 @@ const maps = () => {
     ymaps.ready(init);
   }
   if (document.querySelector('#object-maps')) {
+    const objectMaps = document.querySelector('#object-maps');
+    if (!objectMaps) return;
     function init() {
       let map = new ymaps.Map('object-maps', {
         center: [55.77171185651524, 37.62811179984117],
         zoom: 10
       });
       removeControlsPrimary(map, '#object-maps');
+    }
+    const containerSelects = objectMaps.closest('.object-location--select');
+    if (containerSelects) {
+      const btns = containerSelects.querySelectorAll('.object-location__btn');
+      const infrastructure = containerSelects.querySelector('.object-location__infrastructure');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(btn => btn.classList.remove('_active'));
+          btn.classList.toggle('_active');
+          if (btn.classList.contains('object-location__btn--infrastructure')) {
+            infrastructure.classList.add('_active');
+          } else {
+            infrastructure.classList.remove('_active');
+          }
+        });
+      });
+      const btnsInfrastructure = containerSelects.querySelectorAll('.object-location__infrastructure-btn');
+      const btnInfrastructureAll = containerSelects.querySelector('.object-location__infrastructure-btn--all');
+      btnsInfrastructure.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.classList.contains('object-location__infrastructure-btn--all')) {
+            btnsInfrastructure.forEach(btn => btn.classList.remove('_active'));
+            btn.classList.add('_active');
+          } else {
+            btnInfrastructureAll.classList.remove('_active');
+            btn.classList.toggle('_active');
+          }
+        });
+      });
     }
     ymaps.ready(init);
   }
@@ -7053,6 +7189,39 @@ const reviewModal = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reviewModal);
+
+/***/ }),
+
+/***/ "./src/js/components/scrollDrag.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/scrollDrag.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const scrollDrag = (blockSelector, speed) => {
+  let scrollBlock = document.querySelector(blockSelector);
+  if (!scrollBlock) return;
+  let left = 0;
+  let drag = false;
+  let coorX = 0;
+  scrollBlock.addEventListener('mousedown', function (e) {
+    drag = true;
+    coorX = e.pageX - this.offsetLeft;
+  });
+  document.addEventListener('mouseup', function () {
+    drag = false;
+    left = scrollBlock.scrollLeft;
+  });
+  scrollBlock.addEventListener('mousemove', function (e) {
+    if (drag) this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollDrag);
 
 /***/ }),
 
