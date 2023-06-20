@@ -3014,9 +3014,9 @@ textarea.input-reset {
   align-items: center;
   padding: 14px 22px;
   color: var(--dark);
-  -webkit-transition: color 0.4s ease-in-out;
-  -o-transition: color 0.4s ease-in-out;
-  transition: color 0.4s ease-in-out;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
   font-size: 14px;
   line-height: 1.2666666667;
   font-weight: 400;
@@ -20789,7 +20789,7 @@ textarea.input-reset {
   }
 }
 .object-location__btns {
-  margin-top: 16px;
+  margin-top: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20803,9 +20803,9 @@ textarea.input-reset {
   }
 }
 .object-location__btn {
-  background-color: var(--stand-bg);
-  border-radius: 12px;
   color: var(--dark);
+  border: 1px solid var(--primary200);
+  border-radius: 12px;
   height: 34px;
   padding: 8px 18px;
   font-size: 14px;
@@ -20824,14 +20824,15 @@ textarea.input-reset {
   margin-right: 8px;
 }
 @media (min-width: 1145px) {
-  .object-location__btn:hover, .object-location__btn.focus-visible {
-    background-color: var(--blue);
-    color: var(--white);
+  .object-location__btn:hover {
+    background-color: var(--primary200);
+    color: var(--dark);
   }
 }
 .object-location__btn._active {
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--primary200);
+  border: 1px solid transparent;
+  color: var(--dark);
 }
 .object-location__infrastructure {
   margin-top: 16px;
@@ -20861,16 +20862,33 @@ textarea.input-reset {
   font-size: 12px;
   line-height: 1;
   padding: 0 24px;
+  color: var(--dark);
+  border: 1px solid var(--primary200);
 }
 .object-location__infrastructure-btn span {
   margin-left: 8px;
+  color: var(--primaryTwo);
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .object-location__infrastructure-btn:not(:last-child) {
   margin-right: 8px;
 }
 .object-location__infrastructure-btn._active {
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--primary200);
+  border: 1px solid transparent;
+  color: var(--dark);
+}
+.object-location__infrastructure-btn--all {
+  background-color: var(--primary100);
+  border: 1px solid transparent;
+}
+@media (min-width: 1145px) {
+  .object-location__infrastructure-btn:hover {
+    background-color: var(--primary200);
+    color: var(--dark);
+  }
 }
 .object-location__maps {
   margin-top: 16px;

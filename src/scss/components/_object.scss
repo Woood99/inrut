@@ -1215,7 +1215,7 @@
     }
 
     &__btns {
-        margin-top: 16px;
+        margin-top: 32px;
         display: flex;
         align-items: center;
 
@@ -1225,12 +1225,11 @@
     }
 
     &__btn {
-        background-color: var(--stand-bg);
-        border-radius: 12px;
         color: var(--dark);
+        border: 1px solid var(--primary200);
+        border-radius: 12px;
         height: 34px;
         padding: 8px 18px;
-
         font-size: 14px;
         line-height: 85%;
         transition: background-color $transitionSpeed $transitionFunction,
@@ -1244,17 +1243,16 @@
         }
 
         @media (min-width:$desktop-min) {
-
-            &:hover,
-            &.focus-visible {
-                background-color: var(--blue);
-                color: var(--white);
+            &:hover {
+                background-color: var(--primary200);
+                color: var(--dark);
             }
         }
 
         &._active {
-            background-color: var(--blue);
-            color: var(--white);
+            background-color: var(--primary200);
+            border: 1px solid transparent;
+            color: var(--dark);
         }
     }
 
@@ -1281,8 +1279,13 @@
         line-height: math.div(12, 12);
         padding: 0 24px;
 
+        color: var(--dark);
+        border: 1px solid var(--primary200);
+
         span {
             margin-left: 8px;
+            color: var(--primaryTwo);
+            transition: color $transitionSpeed $transitionFunction;
         }
 
         &:not(:last-child) {
@@ -1290,8 +1293,21 @@
         }
 
         &._active {
-            background-color: var(--blue);
-            color: var(--white);
+            background-color: var(--primary200);
+            border: 1px solid transparent;
+            color: var(--dark);
+        }
+
+        &--all {
+            background-color: var(--primary100);
+            border: 1px solid transparent;
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                background-color: var(--primary200);
+                color: var(--dark);
+            }
         }
     }
 
