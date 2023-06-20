@@ -6911,19 +6911,6 @@ const maps = () => {
           }
         });
       });
-      const btnsInfrastructure = containerSelects.querySelectorAll('.object-location__infrastructure-btn');
-      const btnInfrastructureAll = containerSelects.querySelector('.object-location__infrastructure-btn--all');
-      btnsInfrastructure.forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (btn.classList.contains('object-location__infrastructure-btn--all')) {
-            btnsInfrastructure.forEach(btn => btn.classList.remove('_active'));
-            btn.classList.add('_active');
-          } else {
-            btnInfrastructureAll.classList.remove('_active');
-            btn.classList.toggle('_active');
-          }
-        });
-      });
     }
     ymaps.ready(init);
   }

@@ -1226,10 +1226,6 @@
 
     &__btn {
         color: var(--dark);
-        border: 1px solid var(--primary200);
-        border-radius: 12px;
-        height: 34px;
-        padding: 8px 18px;
         font-size: 14px;
         line-height: 85%;
         transition: background-color $transitionSpeed $transitionFunction,
@@ -1239,20 +1235,20 @@
         align-items: center;
 
         &:not(:last-child) {
-            margin-right: 8px;
+            margin-right: 24px;
         }
 
+
         @media (min-width:$desktop-min) {
-            &:hover {
-                background-color: var(--primary200);
-                color: var(--dark);
+
+            &:hover,
+            &.focus-visible {
+                color: var(--blue);
             }
         }
 
         &._active {
-            background-color: var(--primary200);
-            border: 1px solid transparent;
-            color: var(--dark);
+            color: var(--blue);
         }
     }
 
@@ -1280,8 +1276,10 @@
         padding: 0 24px;
 
         color: var(--dark);
-        border: 1px solid var(--primary200);
-
+        border: none;
+        background-color: rgba(0, 150, 255, .08);
+        outline: none;
+        white-space: nowrap;
         span {
             margin-left: 8px;
             color: var(--primaryTwo);
@@ -1293,18 +1291,18 @@
         }
 
         &._active {
-            background-color: var(--primary200);
+            background-color: rgba(0, 150, 255, .12);
             border: 1px solid transparent;
             color: var(--dark);
         }
 
         &--all {
-            background-color: var(--primary100);
+            background-color: rgba(0, 150, 255, .12);
             border: 1px solid transparent;
         }
 
         @media (min-width:$desktop-min) {
-            &:hover {
+            &:hover,&.focus-visible {
                 background-color: var(--primary200);
                 color: var(--dark);
             }
@@ -1595,8 +1593,8 @@
 
     &__message {
         svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             fill: var(--blue);
             margin-left: 10px;
             transition: fill $transitionSpeed $transitionFunction;

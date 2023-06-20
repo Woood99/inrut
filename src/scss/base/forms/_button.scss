@@ -81,6 +81,10 @@
 
     white-space: nowrap;
 
+
+    background-color: rgba(0,150,255,.08);
+    border: none;
+
     @media (min-width:$desktop-min) {
         &:hover {
             color: var(--white);
@@ -102,6 +106,14 @@
         color: #F2F2F2;
         pointer-events: none;
         cursor: default;
+    }
+
+    &:hover{
+        background-color: rgba(0,150,255,.12);
+        color: var(--blue);
+        svg{
+            fill: var(--blue) !important;
+        }
     }
     @media (max-width:$desktop) {
         height: 46px;
