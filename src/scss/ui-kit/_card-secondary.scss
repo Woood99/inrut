@@ -56,42 +56,15 @@
             }
         }
 
-        &:hover {
-            .card-secondary__image {
-                opacity: 1;
-                z-index: -1;
+        @media (min-width:$smallTablet-min) {
+            &:hover {
+                .card-secondary__image {
+                    opacity: 1;
+                    z-index: -1;
+                }
             }
         }
     }
-
-    &__pagination {
-        position: absolute;
-        z-index: 3;
-        left: 0;
-        bottom: 24px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        pointer-events: none;
-    }
-
-    .image-pagination__item {
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: var(--primaryTwo);
-
-        &:not(:last-child) {
-            margin-right: 6px;
-        }
-    }
-
-    .image-pagination__item--active {
-        background-color: var(--blue);
-    }
-
-
     &__image {
         border-radius: 12px;
         overflow: hidden;
@@ -121,6 +94,38 @@
             width: 100%;
         }
     }
+    &__pagination {
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        bottom: 24px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
+        }
+    }
+
+    .image-pagination__item {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--primaryTwo);
+
+        &:not(:last-child) {
+            margin-right: 6px;
+        }
+    }
+
+    .image-pagination__item--active {
+        background-color: var(--blue);
+    }
+
+
 
     &__info {
         position: absolute;
@@ -304,11 +309,21 @@
                 height: 18px;
                 fill: var(--white);
                 stroke: transparent;
-                transition: stroke $transitionSpeed $transitionFunction;
+                transition: stroke $transitionSpeed $transitionFunction,
+                    fill $transitionSpeed $transitionFunction;
             }
 
-            &:hover {
-                stroke: var(--blue);
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    stroke: var(--blue);
+                }
+            }
+
+            &._active {
+                svg {
+                    fill: var(--blue);
+                    stroke: var(--white);
+                }
             }
         }
 

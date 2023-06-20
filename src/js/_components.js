@@ -52,7 +52,8 @@ import chat from './components/chat';
 import city from './components/city';
 import scrollDrag from './components/scrollDrag';
 import {
-    cardSecondaryActions
+    cardSecondaryActions,
+    cardPrimaryActions
 } from './components/cardActions';
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     cardSecondaryActions();
+    cardPrimaryActions();
 
     // ==================================================
 

@@ -16,21 +16,103 @@
 
     &__top {
         position: relative;
+        overflow: hidden;
+        display: block;
+        padding-bottom: percent(207, 323);
+        z-index: 20;
     }
 
+    &__images {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    &__item {
+        flex-grow: 1;
+        cursor: pointer;
+
+        &:first-child {
+            .card-primary__image {
+                opacity: 1;
+                z-index: -1;
+            }
+        }
+
+        @media (min-width:$smallTablet-min) {
+            &:hover {
+                .card-primary__image {
+                    opacity: 1;
+                    z-index: -1;
+                }
+            }
+        }
+    }
     &__image {
-        padding-bottom: percent(207, 323);
         border-radius: 12px;
         overflow: hidden;
+
+        position: absolute;
+        left: 50%;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
 
         img {
             border-radius: 12px;
             transition: transform $transitionSpeed $transitionFunction;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__pagination {
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        bottom: 24px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
+        }
+    }
+    .image-pagination__item {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--primaryTwo);
+
+        &:not(:last-child) {
+            margin-right: 6px;
         }
     }
 
+    .image-pagination__item--active {
+        background-color: var(--blue);
+    }
     &__info {
         position: absolute;
+        z-index: 3;
         top: 15px;
         padding: 0 15px;
         width: 100%;
@@ -203,18 +285,28 @@
         &--favorite {
             width: 20px;
             height: 18px;
-
+            position: relative;
+            z-index: 3;
             svg {
                 width: 20px;
                 height: 18px;
                 fill: var(--white);
                 stroke: transparent;
-                transition: stroke $transitionSpeed $transitionFunction;
+                transition: stroke $transitionSpeed $transitionFunction,
+                fill $transitionSpeed $transitionFunction;
             }
 
+         @media (min-width:$desktop-min){
             &:hover {
                 svg {
                     stroke: var(--blue);
+                }
+            } 
+         }
+            &._active {
+                svg {
+                    fill: var(--blue);
+                    stroke: var(--white);
                 }
             }
         }
@@ -238,7 +330,7 @@
                 justify-content: center;
 
                 position: relative;
-                z-index: 999;
+                z-index: 3;
 
                 svg {
                     width: 12px;

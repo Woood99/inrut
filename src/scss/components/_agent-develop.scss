@@ -33,6 +33,46 @@
             width: calc(100% - 32px);
         }
     }
+
+    .card-secondary {
+        &__bottom {
+            border-top: 1px solid var(--primary100);
+            display: flex;
+            width: calc(100% + 35px);
+            padding-top: 16px;
+            margin-top: 16px;
+            margin-left: -24px;
+            padding-left: 24px;
+        }
+
+        .card-secondary__info--mobile {
+            display: none;
+        }
+
+        .card-secondary__info--controls {
+            display: none;
+        }
+
+        &__prices--1 {
+            margin-bottom: 10px;
+        }
+
+        &__prices--2 {
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+    }
+    @media (min-width:$smallTablet-min) {
+        .control-cards__content--vertical .card-secondary__bottom {
+            margin: 32px 0 0 -24px;
+            padding: 16px 24px 0 24px;
+            width: calc(100% + 48px);
+
+            .card-secondary__info--mobile {
+                display: flex;
+            }
+        }
+    }
 }
 
 
@@ -76,10 +116,10 @@
 .agent-object-filter {
 
     &__row--1 {
-        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243,1080) percent(255,1080);
+        grid-template-columns: percent(278, 1080) percent(280, 1080) percent(243, 1080) percent(255, 1080);
     }
 
     &__row--2 {
-        grid-template-columns:  percent(260, 1080) 1fr;
+        grid-template-columns: percent(260, 1080) 1fr;
     }
 }
