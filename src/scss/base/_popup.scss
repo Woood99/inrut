@@ -225,8 +225,8 @@
                 margin: 50px auto;
                 text-align: center;
                 border-radius: 12px;
-                padding: 85px;
-                max-width: 393px;
+                padding: 65px 48px 48px;
+                max-width: 425px;
 
                 @media (max-width:$smallTablet-max) {
                     max-width: 100%;
@@ -490,7 +490,6 @@
     }
 
     &--edit-profile {
-
         text-align: center;
         z-index: 1052;
 
@@ -530,7 +529,6 @@
         }
     }
 }
-
 
 .popup-chat {
     --transition-time: 0.3s;
@@ -930,7 +928,6 @@
     }
 }
 
-
 .popup-secondary {
     --transition-time: 0.3s;
     position: fixed;
@@ -1067,8 +1064,6 @@
     }
 }
 
-
-
 .popup-genplan {
     --transition-time: 0.3s;
     position: fixed;
@@ -1140,9 +1135,6 @@
         }
     }
 }
-
-
-
 
 .calendar-event {
     --transition-time: 0.3s;
@@ -2218,7 +2210,9 @@
         }
 
         @media (min-width:$desktop) {
-            &:hover {
+
+            &:hover,
+            &.focus-visible {
                 background-color: var(--hover-primary);
             }
         }
@@ -3021,6 +3015,63 @@
     }
 }
 
+
+
+.popup-tied {
+
+    &__title {}
+
+    &__descr {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: math.div(19, 14);
+        color: var(--primaryTwo);
+    }
+
+    &__card {
+        margin-top: 24px;
+
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-left: 16px;
+
+            span {
+                color: var(--dark);
+
+                &:nth-child(1) {
+                    margin-bottom: 4px;
+                    font-size: 15px;
+                    line-height: math.div(19, 15);
+                }
+
+                &:nth-child(2) {
+                    margin-bottom: 8px;
+                    font-size: 13px;
+                    line-height: math.div(16, 13);
+                    color: var(--primaryTwo);
+                }
+            }
+
+            button {
+                color: var(--blue);
+
+                &:hover {
+                    color: var(--blue-dark);
+                }
+            }
+        }
+    }
+}
 
 
 

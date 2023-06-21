@@ -4303,7 +4303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
 /* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
-/* harmony import */ var _functions_popup2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup2 */ "./src/js/functions/popup2.js");
+/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
 
 
@@ -4321,25 +4321,24 @@ __webpack_require__.r(__webpack_exports__);
 // ========================================================================================
 
 
-
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'city');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'add');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'personal-area');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'edit-profile');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'share-app');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-user');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-object');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'thanks');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'object-not');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'interest-rate-modal');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'city');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'add');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'personal-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'edit-profile');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'share-app');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-user');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-object');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'thanks');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'object-not');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'interest-rate-modal');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
   isOpen: () => {
     (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
   }
 }, 'interest-rate-modal-two');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'construct-progress-popup');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'construct-progress-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
   isOpen: () => {
     if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
@@ -4361,9 +4360,9 @@ __webpack_require__.r(__webpack_exports__);
     mask.classList.add('_active');
   }
 }, 'popup-genplan');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'popup-map_buy-apartment-building');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'search-area');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'popup-map_buy-apartment-building');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'search-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
   isOpen: () => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
@@ -4377,9 +4376,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 }, 'chat');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'online-display-popup');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
-(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'online-display-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
 
 // ========================================================================================
 
@@ -6225,7 +6224,7 @@ const galleryPrimary = () => {
                 <span class="object-gallery-info__address">
                     Краснодар, ул.Карла-Маркса., 234
                 </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-mobile-speed data-popup-path="object-not">
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-popup-path="object-not">
                     <svg>
                         <use xlink:href="img/sprite.svg#dislike"></use>
                     </svg>
@@ -6237,7 +6236,7 @@ const galleryPrimary = () => {
                     </svg>
                     <span data-mobile-text="На просмотр">Хочу на просмотр</span>
                 </button>
-                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-mobile-speed data-popup-path="chat">
+                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-popup-path="chat">
                     <svg>
                         <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
                     </svg>
@@ -7639,10 +7638,10 @@ window.addEventListener('resize', fixHeight);
 
 /***/ }),
 
-/***/ "./src/js/functions/popup2.js":
-/*!************************************!*\
-  !*** ./src/js/functions/popup2.js ***!
-  \************************************/
+/***/ "./src/js/functions/popup.js":
+/*!***********************************!*\
+  !*** ./src/js/functions/popup.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7650,6 +7649,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+
 const modalActiveList = [];
 const popup = (options, modalName) => {
   const container = document.querySelector(`[data-popup-target=${modalName}]`);
@@ -7664,10 +7665,12 @@ const popup = (options, modalName) => {
     modal,
     container,
     isOpen: false,
-    speed: 300,
+    speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1144 ? 0 : 300,
     animation: 'fade',
     options: Object.assign(defaultOptions, options),
-    fixBlocks: document.querySelectorAll('.fix-block')
+    previousActiveElement: false,
+    fixBlocks: document.querySelectorAll('.fix-block'),
+    focusElements: ['a[href]', 'input', 'select', 'textarea', 'button', 'iframe', '[contenteditable]', '[tabindex]:not([tabindex^="-"])']
   };
   settingsModal.btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -7676,6 +7679,28 @@ const popup = (options, modalName) => {
   });
   modal.querySelectorAll('.js-popup-close').forEach(el => {
     el.addEventListener('click', () => {
+      if (el.closest('.genplan__to-layouts')) {
+        const name = el.closest('[data-layouts]').dataset.layouts;
+        const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
+        const target = currentLayouts.querySelector('.layouts__item-body');
+        if (target.hidden) {
+          document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
+            item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
+            item.querySelector('.layouts__item-body').setAttribute('hidden', '');
+          });
+          target.previousElementSibling.classList.add('_spoller-active');
+          (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideDown)(target, 0);
+        }
+        setTimeout(() => {
+          const topGap = target.previousElementSibling.offsetTop;
+          const headerFixed = document.querySelector('.header-fixed');
+          const topHeaderMobile = document.querySelector('.top-page-inner');
+          window.scrollTo({
+            top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+            behavior: 'smooth'
+          });
+        }, 200);
+      }
       modalClose();
     });
   });
@@ -7686,22 +7711,29 @@ const popup = (options, modalName) => {
     }
   });
   window.addEventListener('keydown', e => {
-    if (e.keyCode == 27 && settingsModal.isOpen) {
+    if (e.keyCode === 27 && settingsModal.isOpen) {
       if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
+        return;
+      }
+      if (document.querySelector('.checkboard-cst-popup') && document.querySelector('.checkboard-cst-popup').classList.contains('is-open') && document.querySelector('.popup-genplan') && document.querySelector('.popup-genplan').classList.contains('is-open')) {
         return;
       }
       if (modalActiveList[modalActiveList.length - 1] !== modalName) return;
       modalClose();
     }
+    if (e.keyCode === 9 && settingsModal.isOpen) {
+      focusCatch(e);
+    }
   });
   function modalOpen() {
+    settingsModal.previousActiveElement = document.activeElement;
     if (settingsModal.isOpen) return;
     settingsModal.container.scrollTo(0, 0);
     settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
     settingsModal.modal.classList.add('is-open');
     document.body.style.scrollBehavior = 'auto';
     document.documentElement.style.scrollBehavior = 'auto';
-    disableScroll();
+    if (modalActiveList.length < 1) disableScroll();
     settingsModal.container.classList.add('popup-open');
     settingsModal.container.classList.add(settingsModal.animation);
     setTimeout(() => {
@@ -7709,6 +7741,7 @@ const popup = (options, modalName) => {
       settingsModal.container.classList.add('animate-open');
       settingsModal.isOpen = true;
       popupLastString(modalName, 'added');
+      focusTrap();
     }, settingsModal.speed);
   }
   function modalClose() {
@@ -7719,12 +7752,17 @@ const popup = (options, modalName) => {
     settingsModal.container.classList.remove('popup-open');
     popupLastString(modalName, 'delete');
     if (modalActiveList.length === 0) {
-      enableScroll();
+      if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
+        if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
+          enableScroll();
+        }
+      }
     }
     document.body.style.scrollBehavior = 'auto';
     document.documentElement.style.scrollBehavior = 'auto';
     settingsModal.options.isClose();
     settingsModal.isOpen = false;
+    focusTrap();
   }
   function disableScroll() {
     let pagePosition = window.scrollY;
@@ -7764,6 +7802,27 @@ const popup = (options, modalName) => {
     if (status === 'delete') {
       const index = modalActiveList.indexOf(modalName);
       if (index > -1) modalActiveList.splice(index, 1);
+    }
+  }
+  function focusCatch(e) {
+    const nodes = settingsModal.container.querySelectorAll(settingsModal.focusElements);
+    const nodesArray = Array.prototype.slice.call(nodes);
+    const focusedItemIndex = nodesArray.indexOf(document.activeElement);
+    if (e.shiftKey && focusedItemIndex === 0) {
+      nodesArray[nodesArray.length - 1].focus();
+      e.preventDefault();
+    }
+    if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+      nodesArray[0].focus();
+      e.preventDefault();
+    }
+  }
+  function focusTrap() {
+    const nodes = settingsModal.container.querySelectorAll(settingsModal.focusElements);
+    if (settingsModal.isOpen) {
+      if (nodes.length) nodes[0].focus();
+    } else {
+      settingsModal.previousActiveElement.focus();
     }
   }
 };

@@ -2,24 +2,27 @@ import {
     _slideUp,
     _slideDown
 } from '../support-modules/slide';
+const modalActiveList = [];
 
-class popup {
-    constructor(options, selector) {
-        let defaultOptions = {
-            isOpen: () => {},
-            isClose: () => {},
-        }
-        this.popupName = selector.slice(1);
-        this.options = Object.assign(defaultOptions, options);
-        this.popup = document.querySelector(selector);
-        this.speed = 300;
-        this.animation = 'fade';
-        this._reOpen = false;
-        this._nextContainer = false;
-        this.popupContainer = false;
-        this.isOpen = false;
-        this.previousActiveElement = false;
-        this._focusElements = [
+const popup = (options, modalName) => {
+    const container = document.querySelector(`[data-popup-target=${modalName}]`);
+    if (!container) return;
+    const modal = container.parentElement;
+    let defaultOptions = {
+        isOpen: () => {},
+        isClose: () => {},
+    }
+    const settingsModal = {
+        btns: document.querySelectorAll(`[data-popup-path=${modalName}]`),
+        modal,
+        container,
+        isOpen: false,
+        speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1144 ? 0 : 300,
+        animation: 'fade',
+        options: Object.assign(defaultOptions, options),
+        previousActiveElement: false,
+        fixBlocks: document.querySelectorAll('.fix-block'),
+        focusElements: [
             'a[href]',
             'input',
             'select',
@@ -28,149 +31,163 @@ class popup {
             'iframe',
             '[contenteditable]',
             '[tabindex]:not([tabindex^="-"])'
-        ];
-        this._fixBlocks = document.querySelectorAll('.fix-block');
-        this.events();
-    }
+        ],
+    };
+    settingsModal.btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modalOpen();
+        })
+    })
+    modal.querySelectorAll('.js-popup-close').forEach(el => {
+        el.addEventListener('click', () => {
 
-    events() {
-        if (this.popup) {
-            document.addEventListener('click', function (e) {
-                const clickedElement = e.target.closest(`[data-popup-path]`);
-                if (clickedElement) {
-                    let target = clickedElement.dataset.popupPath;
-                    let animation = clickedElement.dataset.popupAnimation;
-                    let speed = clickedElement.dataset.popupSpeed;
-                    this.animation = animation ? animation : 'fade';
-                    this.speed = speed ? parseInt(speed) : 300;
-                    if (window.innerWidth <= 1144 && !clickedElement.hasAttribute('data-mobile-speed')) {
-                        this.speed = 0;
-                    }
-                    if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {
-                        this._nextContainer = this.popup.querySelector(`[data-popup-target="${target}"]`);
-                        this.open();
-                        return;
-                    }
-                }
+            if (el.closest('.genplan__to-layouts')) {
+                const name = el.closest('[data-layouts]').dataset.layouts;
+                const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
+                const target = currentLayouts.querySelector('.layouts__item-body');
+                if (target.hidden) {
+                    document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
+                        item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
+                        item.querySelector('.layouts__item-body').setAttribute('hidden', '');
+                    })
 
-                if (e.target.closest('.js-popup-close') && e.target.closest('.genplan__to-layouts')) {
-                    const name = e.target.closest('[data-layouts]').dataset.layouts;
-                    const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
-                    const target = currentLayouts.querySelector('.layouts__item-body');
-                    if (target.hidden) {
-                        document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
-                            item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
-                            item.querySelector('.layouts__item-body').setAttribute('hidden', '');
-                        })
+                    target.previousElementSibling.classList.add('_spoller-active');
+                    _slideDown(target, 0);
+                }
+                setTimeout(() => {
+                    const topGap = target.previousElementSibling.offsetTop;
+                    const headerFixed = document.querySelector('.header-fixed');
+                    const topHeaderMobile = document.querySelector('.top-page-inner');
+                    window.scrollTo({
+                        top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                        behavior: 'smooth'
+                    })
+                }, 200);
+            }
 
-                        target.previousElementSibling.classList.add('_spoller-active');
-                        _slideDown(target, 0);
-                    }
-                    setTimeout(() => {
-                        const topGap = target.previousElementSibling.offsetTop;
-                        const headerFixed = document.querySelector('.header-fixed');
-                        const topHeaderMobile = document.querySelector('.top-page-inner');
-                        window.scrollTo({
-                            top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
-                            behavior: 'smooth'
-                        })
-                    }, 200);
-                    this.close();
-                    return;
-                }
-                if (e.target.closest('.js-popup-close')) {
-                    this.close();
-                    return;
-                }
-            }.bind(this));
+            modalClose()
 
-            window.addEventListener('keydown', function (e) {
-                if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
-                    return;
-                }
-                if (e.keyCode == 27 && this.isOpen) {
-                    this.close();
-                }
 
-                if (e.which == 9 && this.isOpen) {
-                    this.focusCatch(e);
-                    return;
-                }
-            }.bind(this));
-
-            document.addEventListener('click', function (e) {
-                if (e.target.classList.contains(this.popupName) && e.target.classList.contains("is-open")) {
-                    this.close();
-                }
-            }.bind(this));
+        })
+    })
+    modal.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.classList.contains('popup') && target.classList.contains('is-open') && settingsModal.isOpen) {
+            modalClose();
         }
-
-    }
-
-    open(selector) {
-        this.previousActiveElement = document.activeElement;
-        if (this.isOpen) {
-            this.reOpen = true;
-            this.close();
-            return;
+    });
+    window.addEventListener('keydown', (e) => {
+        if (e.keyCode === 27 && settingsModal.isOpen) {
+            if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
+                return;
+            }
+            if (document.querySelector('.checkboard-cst-popup') && document.querySelector('.checkboard-cst-popup').classList.contains('is-open') && document.querySelector('.popup-genplan') && document.querySelector('.popup-genplan').classList.contains('is-open')) {
+                return
+            }
+            if (modalActiveList[modalActiveList.length - 1] !== modalName) return;
+            modalClose();
         }
-
-        this.popupContainer = this._nextContainer;
-
-        if (selector) {
-            this.popupContainer = this.popup.querySelector(`[data-popup-target="${selector}"]`);
+        if (e.keyCode === 9 && settingsModal.isOpen) {
+            focusCatch(e);
         }
+    });
 
-        this.popupContainer.scrollTo(0, 0)
 
-        this.popup.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-        this.popup.classList.add('is-open');
-
+    function modalOpen() {
+        settingsModal.previousActiveElement = document.activeElement;
+        if (settingsModal.isOpen) return;
+        settingsModal.container.scrollTo(0, 0);
+        settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
+        settingsModal.modal.classList.add('is-open');
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';
 
-        this.disableScroll();
+        if (modalActiveList.length < 1) disableScroll();
 
-        this.popupContainer.classList.add('popup-open');
-        this.popupContainer.classList.add(this.animation);
+        settingsModal.container.classList.add('popup-open');
+        settingsModal.container.classList.add(settingsModal.animation);
 
         setTimeout(() => {
-            this.options.isOpen(this);
-            this.popupContainer.classList.add('animate-open');
-            this.isOpen = true;
-            this.focusTrap();
-        }, this.speed);
+            settingsModal.options.isOpen();
+            settingsModal.container.classList.add('animate-open');
+            settingsModal.isOpen = true;
+            popupLastString(modalName, 'added');
+            focusTrap();
+        }, settingsModal.speed);
     }
 
-    close() {
-        if (this.popupContainer) {
-            this.popupContainer.classList.remove('animate-open');
-            this.popupContainer.classList.remove(this.animation);
-            this.popup.classList.remove('is-open');
-            this.popupContainer.classList.remove('popup-open');
+    function modalClose() {
+        if (!settingsModal.isOpen) return;
+
+        settingsModal.container.classList.remove('animate-open');
+        settingsModal.container.classList.remove(settingsModal.animation);
+        settingsModal.modal.classList.remove('is-open');
+        settingsModal.container.classList.remove('popup-open');
+        popupLastString(modalName, 'delete');
+        if (modalActiveList.length === 0) {
 
             if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
                 if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
-                    this.enableScroll();
+                    enableScroll();
                 }
             }
 
-            document.body.style.scrollBehavior = 'auto';
-            document.documentElement.style.scrollBehavior = 'auto';
+        }
+        document.body.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = 'auto';
+        settingsModal.options.isClose();
+        settingsModal.isOpen = false;
+        focusTrap();
+    }
 
-            this.options.isClose(this);
-            this.isOpen = false;
-            this.focusTrap();
+    function disableScroll() {
+        let pagePosition = window.scrollY;
+        lockPadding();
+        document.body.classList.add('dis-scroll');
+        document.body.dataset.position = pagePosition;
+        document.body.style.top = -pagePosition + 'px';
+    }
 
-            if (this.reOpen) {
-                this.reOpen = false;
-                this.open();
-            }
+    function enableScroll() {
+        let pagePosition = parseInt(document.body.dataset.position, 10);
+        unlockPadding();
+        document.body.style.top = 'auto';
+        document.body.classList.remove('dis-scroll');
+        window.scrollTo({
+            top: pagePosition,
+            left: 0
+        });
+        document.body.removeAttribute('data-position');
+    }
+
+    function lockPadding() {
+
+        let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+        settingsModal.fixBlocks.forEach((el) => {
+            el.style.paddingRight = paddingOffset;
+        });
+        document.body.style.paddingRight = paddingOffset;
+    }
+
+    function unlockPadding() {
+        settingsModal.fixBlocks.forEach((el) => {
+            el.style.paddingRight = '0px';
+        });
+        document.body.style.paddingRight = '0px';
+    }
+
+    function popupLastString(modalName, status) {
+        if (status === 'added') {
+            modalActiveList.push(modalName);
+        }
+        if (status === 'delete') {
+            const index = modalActiveList.indexOf(modalName);
+            if (index > -1) modalActiveList.splice(index, 1);
         }
     }
 
-    focusCatch(e) {
-        const nodes = this.popupContainer.querySelectorAll(this._focusElements);
+    function focusCatch(e) {
+        const nodes = settingsModal.container.querySelectorAll(settingsModal.focusElements);
         const nodesArray = Array.prototype.slice.call(nodes);
         const focusedItemIndex = nodesArray.indexOf(document.activeElement)
         if (e.shiftKey && focusedItemIndex === 0) {
@@ -183,49 +200,14 @@ class popup {
         }
     }
 
-    focusTrap() {
-        const nodes = this.popupContainer.querySelectorAll(this._focusElements);
-        if (this.isOpen) {
+    function focusTrap() {
+        const nodes = settingsModal.container.querySelectorAll(settingsModal.focusElements);
+        if (settingsModal.isOpen) {
             if (nodes.length) nodes[0].focus();
         } else {
-            this.previousActiveElement.focus();
+            settingsModal.previousActiveElement.focus();
         }
     }
-
-    disableScroll() {
-        let pagePosition = window.scrollY;
-        this.lockPadding();
-        document.body.classList.add('dis-scroll');
-        document.body.dataset.position = pagePosition;
-        document.body.style.top = -pagePosition + 'px';
-    }
-
-    enableScroll() {
-        let pagePosition = parseInt(document.body.dataset.position, 10);
-        this.unlockPadding();
-        document.body.style.top = 'auto';
-        document.body.classList.remove('dis-scroll');
-        window.scrollTo({
-            top: pagePosition,
-            left: 0
-        });
-        document.body.removeAttribute('data-position');
-    }
-
-    lockPadding() {
-        let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-        this._fixBlocks.forEach((el) => {
-            el.style.paddingRight = paddingOffset;
-        });
-        document.body.style.paddingRight = paddingOffset;
-    }
-
-    unlockPadding() {
-        this._fixBlocks.forEach((el) => {
-            el.style.paddingRight = '0px';
-        });
-        document.body.style.paddingRight = '0px';
-    }
-}
+};
 
 export default popup;

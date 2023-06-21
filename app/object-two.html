@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="header-top__authorization header-authorization">
-                <button type="button" class="btn btn-reset header-authorization__title" data-popup-path="authorization" data-mobile-speed>
+                <button type="button" class="btn btn-reset header-authorization__title" data-popup-path="authorization" >
                     <svg>
                         <use xlink:href="img/sprite.svg#sign-in"></use>
                     </svg>
@@ -256,13 +256,13 @@
                         </svg>
                         <span>В избранное</span>
                     </button>
-                    <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-mobile-speed data-popup-path="share-app" title="Поделиться">
+                    <button type="button" class="btn btn-reset top-page-inner__btn share-btn"  data-popup-path="share-app" title="Поделиться">
                         <svg>
                             <use xlink:href="img/sprite.svg#share"></use>
                         </svg>
                         <span>Поделиться</span>
                     </button>
-                    <button type="button" class="btn btn-reset top-page-inner__btn complain-btn" data-mobile-speed data-popup-path="complaint-object">
+                    <button type="button" class="btn btn-reset top-page-inner__btn complain-btn"  data-popup-path="complaint-object">
                         <svg>
                             <use xlink:href="img/sprite.svg#complain"></use>
                         </svg>
@@ -497,28 +497,28 @@
                                     </svg>
                                 </button>
                                 <div class="online-display">
-                                    <button type="button" class="btn btn-reset online-display__item" data-mobile-speed data-popup-path="online-display-popup">
+                                    <button type="button" class="btn btn-reset online-display__item"  data-popup-path="online-display-popup">
                                         <h4 class="online-display__title title-3">Онлайн-показ</h4>
                                         <p class="online-display__descr">
                                             Можно посмотреть по видеосвязи
                                         </p>
                                         <img loading="lazy" src="img/for-sale-owner.png" width="45" height="45" alt="">
                                     </button>
-                                    <button type="button" class="btn btn-reset online-display__item" data-mobile-speed data-popup-path="online-display-popup">
+                                    <button type="button" class="btn btn-reset online-display__item"  data-popup-path="online-display-popup">
                                         <h4 class="online-display__title title-3">Продаёт собствееник</h4>
                                         <p class="online-display__descr">
                                             Можно посмотреть по видеосвязи
                                         </p>
                                         <img loading="lazy" src="img/for-sale-owner.png" width="45" height="45" alt="">
                                     </button>
-                                    <button type="button" class="btn btn-reset online-display__item" data-mobile-speed data-popup-path="online-display-popup">
+                                    <button type="button" class="btn btn-reset online-display__item"  data-popup-path="online-display-popup">
                                         <h4 class="online-display__title title-3">Без обременений</h4>
                                         <p class="online-display__descr">
                                             Можно посмотреть по видеосвязи
                                         </p>
                                         <img loading="lazy" src="img/for-sale-owner.png" width="45" height="45" alt="">
                                     </button>
-                                    <button type="button" class="btn btn-reset online-display__item" data-mobile-speed data-popup-path="online-display-popup">
+                                    <button type="button" class="btn btn-reset online-display__item"  data-popup-path="online-display-popup">
                                         <h4 class="online-display__title title-3">Сертификат защиты сделки</h4>
                                         <p class="online-display__descr">
                                             Можно посмотреть по видеосвязи
@@ -729,7 +729,7 @@
                                         <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-reset field-static" data-mobile-speed data-popup-path="interest-rate-modal">
+                                    <button type="button" class="btn btn-reset field-static"  data-popup-path="interest-rate-modal">
                                         <span class="field-static__subtitle">
                                             Процентная ставка
                                         </span>
@@ -753,7 +753,7 @@
                                             <use xlink:href="img/sprite.svg#tg"></use>
                                         </svg>
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message" data-mobile-speed data-popup-path="chat">
+                                    <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message"  data-popup-path="chat">
                                         Задать вопрос
                                         <svg>
                                             <use xlink:href="img/sprite.svg#chat"></use>
@@ -1370,7 +1370,7 @@
 </footer>
 
     </div>
-    <div class="popup popup-primary popup-primary--left popup-primary--city">
+    <div class="popup popup-primary popup-primary--left popup-primary--city" data-popup-mobile-fast>
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="city">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
             <svg>
@@ -1946,13 +1946,21 @@
             </svg>
             <span>Закрыть</span>
         </button>
-        <div class="popup__content popup-primary__content sber-tied">
-            <h2 class="sber-tied__title title-2">
+        <div class="popup__content popup-primary__content popup-tied">
+            <h2 class="popup-tied__title title-2">
                 Привязанные аккаунты
             </h2>
-            <p class="sber-tied__descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eveniet excepturi reiciendis, blanditiis eligendi sint delectus quod quasi. Inventore, facilis!
+            <p class="popup-tied__descr">
+                Привязанный аккаунт позволит входить без СМС и пароля, а также заполнять документы без сканов и фото
             </p>
+            <div class="popup-tied__card">
+                <img loading="lazy" src="./img/sber.png" width="32" height="32" class="popup-tied__icon" alt="Сбербанк">
+                <div>
+                    <span>Сбер ID</span>
+                    <span>Вход 21.06.2023</span>
+                    <button type="button" class="btn btn-reset">Отвязать</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -2063,7 +2071,7 @@
                 <label class="complaint-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2158,7 +2166,7 @@
                 <label class="complaint-user-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2221,7 +2229,7 @@
                 <label class="complaint-object-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2301,7 +2309,7 @@
                 <label class="object-not-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>

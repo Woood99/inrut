@@ -1123,8 +1123,8 @@ textarea.input-reset {
   margin: 50px auto;
   text-align: center;
   border-radius: 12px;
-  padding: 85px;
-  max-width: 393px;
+  padding: 65px 48px 48px;
+  max-width: 425px;
 }
 @media (max-width: 768px) {
   .popup-primary--sber-tied .popup-primary__container {
@@ -3121,7 +3121,7 @@ textarea.input-reset {
   fill: var(--blue);
 }
 @media (min-width: 1144px) {
-  .personal-area__btn:hover {
+  .personal-area__btn:hover, .personal-area__btn.focus-visible {
     background-color: var(--hover-primary);
   }
 }
@@ -3915,6 +3915,59 @@ textarea.input-reset {
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 16px;
   grid-row-gap: 8px;
+}
+
+.popup-tied__descr {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.3571428571;
+  color: var(--primaryTwo);
+}
+.popup-tied__card {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.popup-tied__card img {
+  width: 32px;
+  height: 32px;
+}
+.popup-tied__card > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  margin-left: 16px;
+}
+.popup-tied__card > div span {
+  color: var(--dark);
+}
+.popup-tied__card > div span:nth-child(1) {
+  margin-bottom: 4px;
+  font-size: 15px;
+  line-height: 1.2666666667;
+}
+.popup-tied__card > div span:nth-child(2) {
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.2307692308;
+  color: var(--primaryTwo);
+}
+.popup-tied__card > div button {
+  color: var(--blue);
+}
+.popup-tied__card > div button:hover {
+  color: var(--blue-dark);
 }
 
 .fade {

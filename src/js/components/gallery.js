@@ -91,7 +91,7 @@ export const galleryPrimary = () => {
                 <span class="object-gallery-info__address">
                     Краснодар, ул.Карла-Маркса., 234
                 </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-mobile-speed data-popup-path="object-not">
+                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-popup-path="object-not">
                     <svg>
                         <use xlink:href="img/sprite.svg#dislike"></use>
                     </svg>
@@ -103,7 +103,7 @@ export const galleryPrimary = () => {
                     </svg>
                     <span data-mobile-text="На просмотр">Хочу на просмотр</span>
                 </button>
-                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-mobile-speed data-popup-path="chat">
+                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-popup-path="chat">
                     <svg>
                         <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
                     </svg>

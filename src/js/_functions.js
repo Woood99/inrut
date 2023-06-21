@@ -13,8 +13,7 @@ import "./functions/dynamic-adapt";
 import './functions/fix-fullheight';
 
 // ========================================================================================
-
-import popup from './functions/popup2';
+import popup from './functions/popup';
 import inputResize from './modules/inputResize';
 popup(null, 'city');
 popup(null, 'add');

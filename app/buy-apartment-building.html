@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="header-top__personal header-personal">
-                <button type="button" class="btn btn-reset header-personal__title" data-popup-path="personal-area" data-mobile-speed>
+                <button type="button" class="btn btn-reset header-personal__title" data-popup-path="personal-area" >
                     <span class="header-personal__name">
                         Кабинет
                     </span>
@@ -491,7 +491,7 @@
                                     <use xlink:href="img/sprite.svg#pause"></use>
                                 </svg>
                             </button>
-                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-mobile-speed data-popup-path="popup-map_buy-apartment-building">
+                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-popup-path="popup-map_buy-apartment-building">
                                 <span>На карте</span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#location-fill"></use>
@@ -1267,7 +1267,7 @@
 </footer>
 
     </div>
-    <div class="popup popup-primary popup-primary--left popup-primary--city">
+    <div class="popup popup-primary popup-primary--left popup-primary--city" data-popup-mobile-fast>
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="city">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
             <svg>
@@ -1843,13 +1843,21 @@
             </svg>
             <span>Закрыть</span>
         </button>
-        <div class="popup__content popup-primary__content sber-tied">
-            <h2 class="sber-tied__title title-2">
+        <div class="popup__content popup-primary__content popup-tied">
+            <h2 class="popup-tied__title title-2">
                 Привязанные аккаунты
             </h2>
-            <p class="sber-tied__descr">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eveniet excepturi reiciendis, blanditiis eligendi sint delectus quod quasi. Inventore, facilis!
+            <p class="popup-tied__descr">
+                Привязанный аккаунт позволит входить без СМС и пароля, а также заполнять документы без сканов и фото
             </p>
+            <div class="popup-tied__card">
+                <img loading="lazy" src="./img/sber.png" width="32" height="32" class="popup-tied__icon" alt="Сбербанк">
+                <div>
+                    <span>Сбер ID</span>
+                    <span>Вход 21.06.2023</span>
+                    <button type="button" class="btn btn-reset">Отвязать</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1960,7 +1968,7 @@
                 <label class="complaint-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2055,7 +2063,7 @@
                 <label class="complaint-user-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2118,7 +2126,7 @@
                 <label class="complaint-object-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -2198,7 +2206,7 @@
                 <label class="object-not-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close" data-mobile-speed disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"  disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
