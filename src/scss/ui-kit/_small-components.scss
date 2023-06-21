@@ -692,7 +692,7 @@
     align-items: center;
     justify-content: space-between;
 
-    background-color: var(--stand-bg);
+    background-color: transparent;
     border: 1px solid var(--primary200);
     border-radius: 12px;
 
@@ -883,7 +883,7 @@
     grid-template-columns: 1fr 15px;
     align-items: center;
 
-    background-color: var(--stand-bg);
+    background-color: transparent;
     border: 1px solid var(--primary200);
     border-radius: 12px;
     text-align: left;
@@ -1844,11 +1844,7 @@
 
 .online-display {
     width: 100%;
-    padding: 24px;
 
-    background-color: var(--white);
-    box-shadow: var(--shadow-primary);
-    border-radius: 12px;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1919,9 +1915,13 @@
 
 .location-routes {
     &__btn {
+        font-size: 12px;
+        height: 42px;
+        padding: 0 24px;
+
         svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             margin-right: 8px;
             fill: var(--white);
         }

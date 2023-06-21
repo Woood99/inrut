@@ -14,25 +14,26 @@ import './functions/fix-fullheight';
 
 // ========================================================================================
 
-import popup from './functions/popup';
+import popup from './functions/popup2';
 import inputResize from './modules/inputResize';
-const city = new popup(null, '.popup-primary--city');
-const add = new popup(null, '.popup-primary--add');
-const personalArea = new popup(null, '.popup-secondary--personal');
-const shareApp = new popup(null, '.popup-primary--share-app')
-const complaint = new popup(null, '.popup-primary--complaint')
-const complaintUser = new popup(null, '.popup-primary--complaint-user')
-const complaintObject = new popup(null, '.popup-primary--complaint-object')
-const thanks = new popup(null, '.popup-primary--thanks')
-const objectNot = new popup(null, '.popup-primary--object-not')
-const interestRate1 = new popup(null, '.popup-primary--interest-rate-1')
-const interestRate2 = new popup({
-    isOpen: (interestRate2) => {
-        inputResize(interestRate2.popupContainer.querySelector('.filter-range-one__input--w-auto'));
+popup(null, 'city');
+popup(null, 'add');
+popup(null, 'personal-area');
+popup(null, 'edit-profile');
+popup(null, 'share-app');
+popup(null, 'complaint');
+popup(null, 'complaint-user');
+popup(null, 'complaint-object');
+popup(null, 'thanks');
+popup(null, 'object-not');
+popup(null, 'interest-rate-modal');
+popup({
+    isOpen: () => {
+        inputResize(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
     }
-}, '.popup-primary--interest-rate-2')
-const constructProgress = new popup(null, '.popup-primary--construct-progress')
-const genplan = new popup({
+}, 'interest-rate-modal-two');
+popup(null, 'construct-progress-popup');
+popup({
     isOpen: () => {
         if (window.innerWidth > 1144) return;
         const container = document.querySelector('.genplan');
@@ -54,11 +55,11 @@ const genplan = new popup({
         mask.classList.remove('hidden');
         mask.classList.add('_active');
     },
-}, '.popup-genplan')
-const checkboard = new popup(null, '.popup-primary--checkboard')
-const map = new popup(null, '.popup-primary--popup-map')
-const searchArea = new popup(null, '.popup-primary--search-area')
-const chatPopup = new popup({
+}, 'popup-genplan');
+
+popup(null, 'popup-map_buy-apartment-building');
+popup(null, 'search-area');
+popup({
     isOpen: () => {
         const chat = document.querySelector('.chat');
         if (!chat) return;
@@ -68,10 +69,12 @@ const chatPopup = new popup({
         chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
         chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
         bar.scrollTo({
-            top: bar.querySelector('.simplebar-content').clientHeight
+            top: bar.querySelector('.simplebar-content').clientHeight,
         })
     },
-}, '.popup-chat')
-const onlineDisplay = new popup(null, '.popup-primary--online-display')
-const authorization = new popup(null, '.popup-secondary--authorization')
+}, 'chat');
+popup(null, 'online-display-popup');
+popup(null, 'authorization');
+popup(null, 'sber-tied');
+
 // ========================================================================================

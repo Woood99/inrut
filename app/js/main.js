@@ -4303,7 +4303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
 /* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
-/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
+/* harmony import */ var _functions_popup2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup2 */ "./src/js/functions/popup2.js");
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
 
 
@@ -4322,23 +4322,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const city = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--city');
-const add = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--add');
-const personalArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-secondary--personal');
-const shareApp = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--share-app');
-const complaint = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--complaint');
-const complaintUser = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--complaint-user');
-const complaintObject = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--complaint-object');
-const thanks = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--thanks');
-const objectNot = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--object-not');
-const interestRate1 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--interest-rate-1');
-const interestRate2 = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
-  isOpen: interestRate2 => {
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_7__["default"])(interestRate2.popupContainer.querySelector('.filter-range-one__input--w-auto'));
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'city');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'add');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'personal-area');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'edit-profile');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'share-app');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-user');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-object');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'thanks');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'object-not');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'interest-rate-modal');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
+  isOpen: () => {
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
   }
-}, '.popup-primary--interest-rate-2');
-const constructProgress = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--construct-progress');
-const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
+}, 'interest-rate-modal-two');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'construct-progress-popup');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
   isOpen: () => {
     if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
@@ -4359,11 +4360,10 @@ const genplan = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
     mask.classList.remove('hidden');
     mask.classList.add('_active');
   }
-}, '.popup-genplan');
-const checkboard = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--checkboard');
-const map = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--popup-map');
-const searchArea = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--search-area');
-const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
+}, 'popup-genplan');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'popup-map_buy-apartment-building');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'search-area');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])({
   isOpen: () => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
@@ -4376,9 +4376,11 @@ const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
       top: bar.querySelector('.simplebar-content').clientHeight
     });
   }
-}, '.popup-chat');
-const onlineDisplay = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--online-display');
-const authorization = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-secondary--authorization');
+}, 'chat');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'online-display-popup');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
+(0,_functions_popup2__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
+
 // ========================================================================================
 
 /***/ }),
@@ -6922,7 +6924,7 @@ const maps = () => {
               infrastructure.classList.add('_active');
               routes.classList.remove('_active');
               locationRoutesBtn.classList.remove('_active');
-              map.controls.remove('routePanelControl');
+              routeHidden();
             } else if (btn.classList.contains('object-location__btn--routes')) {
               routes.classList.add('_active');
               infrastructure.classList.remove('_active');
@@ -6930,28 +6932,60 @@ const maps = () => {
               infrastructure.classList.remove('_active');
               routes.classList.remove('_active');
               locationRoutesBtn.classList.remove('_active');
-              map.controls.remove('routePanelControl');
+              routeHidden();
             }
           });
         });
         locationRoutesBtn.addEventListener('click', () => {
           if (!locationRoutesBtn.classList.contains('_active')) {
             locationRoutesBtn.classList.add('_active');
-            map.controls.add('routePanelControl', {
-              showHeader: true,
-              title: 'Построить маршрут',
-              float: 'right',
-              maxWidth: '320px',
-              position: {
-                left: 0,
-                top: 0
-              }
-            });
+            routeShow();
           } else {
             locationRoutesBtn.classList.remove('_active');
-            map.controls.remove('routePanelControl');
+            routeHidden();
           }
         });
+        const fullScreenControl = map.controls.get('fullscreenControl');
+        fullScreenControl.events.add('fullscreenenter', function () {
+          const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+          fullscreenElement.classList.add('yandex-map-active-fullscreen');
+          map.behaviors.enable(['scrollZoom']);
+          if (infrastructure.classList.contains('_active')) {
+            fullscreenElement.insertAdjacentElement('beforeend', infrastructure);
+            infrastructure.classList.add('_active-fullscreen');
+          }
+          if (routes.classList.contains('_active')) {
+            fullscreenElement.insertAdjacentElement('beforeend', routes);
+            routes.classList.add('_active-fullscreen');
+          }
+        });
+        fullScreenControl.events.add('fullscreenexit', function () {
+          const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+          if (infrastructure.classList.contains('_active')) {
+            objectMaps.closest('.object-location__maps').insertAdjacentElement('afterend', infrastructure);
+            infrastructure.classList.remove('_active-fullscreen');
+          }
+          if (routes.classList.contains('_active')) {
+            routes.classList.remove('_active-fullscreen');
+          }
+          fullscreenElement.classList.remove('yandex-map-active-fullscreen');
+          map.behaviors.disable(['scrollZoom']);
+        });
+        function routeShow() {
+          map.controls.add('routePanelControl', {
+            showHeader: true,
+            title: 'Построить маршрут',
+            float: 'right',
+            maxWidth: '320px',
+            position: {
+              right: 0,
+              top: 0
+            }
+          });
+        }
+        function routeHidden() {
+          map.controls.remove('routePanelControl');
+        }
       }
     }
     ymaps.ready(init);
@@ -7605,10 +7639,10 @@ window.addEventListener('resize', fixHeight);
 
 /***/ }),
 
-/***/ "./src/js/functions/popup.js":
-/*!***********************************!*\
-  !*** ./src/js/functions/popup.js ***!
-  \***********************************/
+/***/ "./src/js/functions/popup2.js":
+/*!************************************!*\
+  !*** ./src/js/functions/popup2.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7616,174 +7650,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
-
-class popup {
-  constructor(options, selector) {
-    let defaultOptions = {
-      isOpen: () => {},
-      isClose: () => {}
-    };
-    this.popupName = selector.slice(1);
-    this.options = Object.assign(defaultOptions, options);
-    this.popup = document.querySelector(selector);
-    this.speed = 300;
-    this.animation = 'fade';
-    this._reOpen = false;
-    this._nextContainer = false;
-    this.popupContainer = false;
-    this.isOpen = false;
-    this.previousActiveElement = false;
-    this._focusElements = ['a[href]', 'input', 'select', 'textarea', 'button', 'iframe', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
-    this._fixBlocks = document.querySelectorAll('.fix-block');
-    this.events();
-  }
-  events() {
-    if (this.popup) {
-      document.addEventListener('click', function (e) {
-        const clickedElement = e.target.closest(`[data-popup-path]`);
-        if (clickedElement) {
-          let target = clickedElement.dataset.popupPath;
-          let animation = clickedElement.dataset.popupAnimation;
-          let speed = clickedElement.dataset.popupSpeed;
-          this.animation = animation ? animation : 'fade';
-          this.speed = speed ? parseInt(speed) : 300;
-          if (window.innerWidth <= 1144 && !clickedElement.hasAttribute('data-mobile-speed')) {
-            this.speed = 0;
-          }
-          if (this.popup.querySelector(`[data-popup-target="${target}"]`)) {
-            this._nextContainer = this.popup.querySelector(`[data-popup-target="${target}"]`);
-            this.open();
-            return;
-          }
-        }
-        if (e.target.closest('.js-popup-close') && e.target.closest('.genplan__to-layouts')) {
-          const name = e.target.closest('[data-layouts]').dataset.layouts;
-          const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
-          const target = currentLayouts.querySelector('.layouts__item-body');
-          if (target.hidden) {
-            document.querySelector('.layouts').querySelectorAll(`[data-layouts]`).forEach(item => {
-              item.querySelector('.layouts__item-btn').classList.remove('_spoller-active');
-              item.querySelector('.layouts__item-body').setAttribute('hidden', '');
-            });
-            target.previousElementSibling.classList.add('_spoller-active');
-            (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideDown)(target, 0);
-          }
-          setTimeout(() => {
-            const topGap = target.previousElementSibling.offsetTop;
-            const headerFixed = document.querySelector('.header-fixed');
-            const topHeaderMobile = document.querySelector('.top-page-inner');
-            window.scrollTo({
-              top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
-              behavior: 'smooth'
-            });
-          }, 200);
-          this.close();
-          return;
-        }
-        if (e.target.closest('.js-popup-close')) {
-          this.close();
-          return;
-        }
-      }.bind(this));
-      window.addEventListener('keydown', function (e) {
-        if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
-          return;
-        }
-        if (e.keyCode == 27 && this.isOpen) {
-          this.close();
-        }
-        if (e.which == 9 && this.isOpen) {
-          this.focusCatch(e);
-          return;
-        }
-      }.bind(this));
-      document.addEventListener('click', function (e) {
-        if (e.target.classList.contains(this.popupName) && e.target.classList.contains("is-open")) {
-          this.close();
-        }
-      }.bind(this));
+const modalActiveList = [];
+const popup = (options, modalName) => {
+  const container = document.querySelector(`[data-popup-target=${modalName}]`);
+  if (!container) return;
+  const modal = container.parentElement;
+  let defaultOptions = {
+    isOpen: () => {},
+    isClose: () => {}
+  };
+  const settingsModal = {
+    btns: document.querySelectorAll(`[data-popup-path=${modalName}]`),
+    modal,
+    container,
+    isOpen: false,
+    speed: 300,
+    animation: 'fade',
+    options: Object.assign(defaultOptions, options),
+    fixBlocks: document.querySelectorAll('.fix-block')
+  };
+  settingsModal.btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modalOpen();
+    });
+  });
+  modal.querySelectorAll('.js-popup-close').forEach(el => {
+    el.addEventListener('click', () => {
+      modalClose();
+    });
+  });
+  modal.addEventListener('click', e => {
+    const target = e.target;
+    if (target.classList.contains('popup') && target.classList.contains('is-open') && settingsModal.isOpen) {
+      modalClose();
     }
-  }
-  open(selector) {
-    this.previousActiveElement = document.activeElement;
-    if (this.isOpen) {
-      this.reOpen = true;
-      this.close();
-      return;
+  });
+  window.addEventListener('keydown', e => {
+    if (e.keyCode == 27 && settingsModal.isOpen) {
+      if (document.querySelector('.checkboard-popup-card') && document.querySelector('.checkboard-popup-card').classList.contains('is-open')) {
+        return;
+      }
+      if (modalActiveList[modalActiveList.length - 1] !== modalName) return;
+      modalClose();
     }
-    this.popupContainer = this._nextContainer;
-    if (selector) {
-      this.popupContainer = this.popup.querySelector(`[data-popup-target="${selector}"]`);
-    }
-    this.popupContainer.scrollTo(0, 0);
-    this.popup.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-    this.popup.classList.add('is-open');
+  });
+  function modalOpen() {
+    if (settingsModal.isOpen) return;
+    settingsModal.container.scrollTo(0, 0);
+    settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
+    settingsModal.modal.classList.add('is-open');
     document.body.style.scrollBehavior = 'auto';
     document.documentElement.style.scrollBehavior = 'auto';
-    this.disableScroll();
-    this.popupContainer.classList.add('popup-open');
-    this.popupContainer.classList.add(this.animation);
+    disableScroll();
+    settingsModal.container.classList.add('popup-open');
+    settingsModal.container.classList.add(settingsModal.animation);
     setTimeout(() => {
-      this.options.isOpen(this);
-      this.popupContainer.classList.add('animate-open');
-      this.isOpen = true;
-      this.focusTrap();
-    }, this.speed);
+      settingsModal.options.isOpen();
+      settingsModal.container.classList.add('animate-open');
+      settingsModal.isOpen = true;
+      popupLastString(modalName, 'added');
+    }, settingsModal.speed);
   }
-  close() {
-    if (this.popupContainer) {
-      this.popupContainer.classList.remove('animate-open');
-      this.popupContainer.classList.remove(this.animation);
-      this.popup.classList.remove('is-open');
-      this.popupContainer.classList.remove('popup-open');
-      if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
-        if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
-          this.enableScroll();
-        }
-      }
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
-      this.options.isClose(this);
-      this.isOpen = false;
-      this.focusTrap();
-      if (this.reOpen) {
-        this.reOpen = false;
-        this.open();
-      }
+  function modalClose() {
+    if (!settingsModal.isOpen) return;
+    settingsModal.container.classList.remove('animate-open');
+    settingsModal.container.classList.remove(settingsModal.animation);
+    settingsModal.modal.classList.remove('is-open');
+    settingsModal.container.classList.remove('popup-open');
+    popupLastString(modalName, 'delete');
+    if (modalActiveList.length === 0) {
+      enableScroll();
     }
+    document.body.style.scrollBehavior = 'auto';
+    document.documentElement.style.scrollBehavior = 'auto';
+    settingsModal.options.isClose();
+    settingsModal.isOpen = false;
   }
-  focusCatch(e) {
-    const nodes = this.popupContainer.querySelectorAll(this._focusElements);
-    const nodesArray = Array.prototype.slice.call(nodes);
-    const focusedItemIndex = nodesArray.indexOf(document.activeElement);
-    if (e.shiftKey && focusedItemIndex === 0) {
-      nodesArray[nodesArray.length - 1].focus();
-      e.preventDefault();
-    }
-    if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
-      nodesArray[0].focus();
-      e.preventDefault();
-    }
-  }
-  focusTrap() {
-    const nodes = this.popupContainer.querySelectorAll(this._focusElements);
-    if (this.isOpen) {
-      if (nodes.length) nodes[0].focus();
-    } else {
-      this.previousActiveElement.focus();
-    }
-  }
-  disableScroll() {
+  function disableScroll() {
     let pagePosition = window.scrollY;
-    this.lockPadding();
+    lockPadding();
     document.body.classList.add('dis-scroll');
     document.body.dataset.position = pagePosition;
     document.body.style.top = -pagePosition + 'px';
   }
-  enableScroll() {
+  function enableScroll() {
     let pagePosition = parseInt(document.body.dataset.position, 10);
-    this.unlockPadding();
+    unlockPadding();
     document.body.style.top = 'auto';
     document.body.classList.remove('dis-scroll');
     window.scrollTo({
@@ -7792,20 +7744,29 @@ class popup {
     });
     document.body.removeAttribute('data-position');
   }
-  lockPadding() {
+  function lockPadding() {
     let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-    this._fixBlocks.forEach(el => {
+    settingsModal.fixBlocks.forEach(el => {
       el.style.paddingRight = paddingOffset;
     });
     document.body.style.paddingRight = paddingOffset;
   }
-  unlockPadding() {
-    this._fixBlocks.forEach(el => {
+  function unlockPadding() {
+    settingsModal.fixBlocks.forEach(el => {
       el.style.paddingRight = '0px';
     });
     document.body.style.paddingRight = '0px';
   }
-}
+  function popupLastString(modalName, status) {
+    if (status === 'added') {
+      modalActiveList.push(modalName);
+    }
+    if (status === 'delete') {
+      const index = modalActiveList.indexOf(modalName);
+      if (index > -1) modalActiveList.splice(index, 1);
+    }
+  }
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (popup);
 
 /***/ }),

@@ -226,7 +226,7 @@
     &__button {
         height: 45px;
         width: 100%;
-        background-color: var(--stand-bg);
+        background-color: transparent;
         border: 1px solid var(--primary200);
         border-radius: 12px;
         display: flex;
@@ -262,6 +262,7 @@
 
         >div {
             transition: color $transitionSpeed $transitionFunction;
+
             &:nth-child(2) {
                 opacity: 0.6;
             }
@@ -276,7 +277,8 @@
 
             >div {
                 opacity: 1;
-                &:nth-child(1){
+
+                &:nth-child(1) {
                     color: #b6d5f8;
                 }
             }
@@ -758,7 +760,7 @@
 
 .filter-range-one {
     padding: 8px 16px 0;
-    background-color: var(--stand-bg);
+    background-color: transparent;
     border: 1px solid var(--primary200);
     border-radius: 12px;
 
@@ -861,6 +863,7 @@
 
 .search-select {
     position: relative;
+
     &__button {
         height: 45px;
         width: 100%;
@@ -894,18 +897,20 @@
         font-weight: 400;
         flex-grow: 1;
         text-align: left;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
         margin-right: 8px;
+
         >div {
             transition: color $transitionSpeed $transitionFunction;
+
             &:nth-child(2) {
                 margin-left: 16px;
                 opacity: 0.6;
 
                 font-size: 14px;
-                line-height: math.div(18 ,14 );
+                line-height: math.div(18, 14);
                 color: var(--gray);
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -914,19 +919,21 @@
                 white-space: nowrap;
             }
         }
-        &._active{
-           >div{
-            &:nth-child(1){
-                color: #b6d5f8;
+
+        &._active {
+            >div {
+                &:nth-child(1) {
+                    color: #b6d5f8;
+                }
+
+                &:nth-child(2) {
+                    opacity: 1;
+                }
             }
-            &:nth-child(2){
-                opacity: 1;
-            }
-           }
         }
     }
 
-    &__dropdown{
+    &__dropdown {
         position: absolute;
         min-width: 380px;
         z-index: 44;
@@ -960,69 +967,77 @@
             width: calc(100% + 32px);
         }
 
-        .simplebar-track.simplebar-vertical{
+        .simplebar-track.simplebar-vertical {
             margin-right: -24px;
         }
     }
 
-    &__input {
-    }
+    &__input {}
 
     &__wrapper {
         margin-top: 16px;
         max-height: 185px;
     }
-    &__item{
-        .checkbox-secondary{
-            &__input{
-             @media (min-width:$desktop-min){
-                &:hover{
-                    +.checkbox-secondary__label{
-                        .checkbox-secondary__text{
-                            color: var(--primary200);
+
+    &__item {
+        .checkbox-secondary {
+            &__input {
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        +.checkbox-secondary__label {
+                            .checkbox-secondary__text {
+                                color: var(--primary200);
+                            }
                         }
                     }
-                } 
-             }
-                &:checked{
-                    +.checkbox-secondary__label{
-                        .checkbox-secondary__text{
+                }
+
+                &:checked {
+                    +.checkbox-secondary__label {
+                        .checkbox-secondary__text {
                             color: var(--blue);
                         }
                     }
                 }
             }
-            &__label{
+
+            &__label {
                 justify-content: space-between;
-                &::after{
+
+                &::after {
                     left: auto;
                     right: 0;
                 }
             }
-            &__text{
+
+            &__text {
                 flex-grow: 1;
                 margin: 0 8px 0 0;
                 order: -1;
                 display: flex;
                 align-items: center;
                 transition: color $transitionSpeed $transitionFunction;
-                img{
+
+                img {
                     margin-left: auto;
                     height: 22px;
                     max-width: 75px;
                 }
             }
         }
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 16px;
         }
     }
-    &._active{
+
+    &._active {
         .search-select__button {
             svg {
                 transform: rotate(-180deg);
             }
         }
+
         .search-select__dropdown {
             opacity: 1;
             visibility: visible;
@@ -1030,8 +1045,3 @@
         }
     }
 }
-
-
-
-
-

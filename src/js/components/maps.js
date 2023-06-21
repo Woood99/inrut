@@ -6,6 +6,7 @@ const maps = () => {
         map.controls.remove('typeSelector'); // удаляем тип
         map.controls.remove('rulerControl'); // удаляем контрол правил
         map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
     }
     if (document.querySelector('#bid-maps')) {
         function init() {
@@ -27,7 +28,6 @@ const maps = () => {
                 zoom: 10,
             });
 
-
             removeControlsPrimary(map, '#object-maps');
             const containerSelects = objectMaps.closest('.object-location--select');
             if (containerSelects) {
@@ -43,7 +43,7 @@ const maps = () => {
                             infrastructure.classList.add('_active');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
-                            map.controls.remove('routePanelControl');
+                            routeHidden();
                         } else if (btn.classList.contains('object-location__btn--routes')) {
                             routes.classList.add('_active');
                             infrastructure.classList.remove('_active');
@@ -51,28 +51,64 @@ const maps = () => {
                             infrastructure.classList.remove('_active');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
-                            map.controls.remove('routePanelControl');
+                            routeHidden();
                         }
                     });
                 })
                 locationRoutesBtn.addEventListener('click', () => {
                     if (!locationRoutesBtn.classList.contains('_active')) {
                         locationRoutesBtn.classList.add('_active');
-                        map.controls.add('routePanelControl', {
-                            showHeader: true,
-                            title: 'Построить маршрут',
-                            float: 'right',
-                            maxWidth: '320px',
-                            position: {
-                                left: 0,
-                                top: 0,
-                            }
-                        });
+                        routeShow();
                     } else {
                         locationRoutesBtn.classList.remove('_active');
-                        map.controls.remove('routePanelControl');
+                        routeHidden();
                     }
                 });
+
+                const fullScreenControl = map.controls.get('fullscreenControl');
+                fullScreenControl.events.add('fullscreenenter', function () {
+                    const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+                    fullscreenElement.classList.add('yandex-map-active-fullscreen');
+                    map.behaviors.enable(['scrollZoom']);
+                    if (infrastructure.classList.contains('_active')) {
+                        fullscreenElement.insertAdjacentElement('beforeend', infrastructure);
+                        infrastructure.classList.add('_active-fullscreen');
+                    }
+                    if (routes.classList.contains('_active')) {
+                        fullscreenElement.insertAdjacentElement('beforeend', routes);
+                        routes.classList.add('_active-fullscreen');
+                    }
+                });
+
+                fullScreenControl.events.add('fullscreenexit', function () {
+                    const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+                    if (infrastructure.classList.contains('_active')) {
+                        objectMaps.closest('.object-location__maps').insertAdjacentElement('afterend', infrastructure);
+                        infrastructure.classList.remove('_active-fullscreen');
+                    }
+                    if (routes.classList.contains('_active')) {
+                        routes.classList.remove('_active-fullscreen');
+                    }
+                    fullscreenElement.classList.remove('yandex-map-active-fullscreen');
+                    map.behaviors.disable(['scrollZoom']);
+                });
+
+                function routeShow() {
+                    map.controls.add('routePanelControl', {
+                        showHeader: true,
+                        title: 'Построить маршрут',
+                        float: 'right',
+                        maxWidth: '320px',
+                        position: {
+                            right: 0,
+                            top: 0,
+                        }
+                    });
+                }
+
+                function routeHidden() {
+                    map.controls.remove('routePanelControl');
+                }
             }
         }
         ymaps.ready(init);
