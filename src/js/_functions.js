@@ -73,4 +73,5 @@ const chatPopup = new popup({
     },
 }, '.popup-chat')
 const onlineDisplay = new popup(null, '.popup-primary--online-display')
+const authorization = new popup(null, '.popup-secondary--authorization')
 // ========================================================================================

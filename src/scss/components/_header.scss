@@ -87,6 +87,8 @@
         }
     }
 
+    &__authorization {}
+
     @media (max-width:$desktop) {
         background-color: var(--white);
         box-shadow: none;
@@ -181,6 +183,33 @@
     &__name {
         color: inherit;
         margin-right: 10px;
+        font-size: 13px;
+        line-height: math.div(19, 14);
+        font-weight: 400;
+    }
+}
+
+.header-authorization {
+    &__title {
+        display: flex;
+        align-items: center;
+        color: var(--dark);
+        transition: color $transitionSpeed $transitionFunction;
+
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--primaryTwo);
+        }
+
+        &:hover {
+            color: var(--blue);
+        }
+    }
+
+    &__name {
+        color: inherit;
+        margin-left: 10px;
         font-size: 13px;
         line-height: math.div(19, 14);
         font-weight: 400;

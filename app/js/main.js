@@ -4378,6 +4378,7 @@ const chatPopup = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"]({
   }
 }, '.popup-chat');
 const onlineDisplay = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-primary--online-display');
+const authorization = new _functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"](null, '.popup-secondary--authorization');
 // ========================================================================================
 
 /***/ }),

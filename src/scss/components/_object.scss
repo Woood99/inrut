@@ -1361,7 +1361,11 @@
 .object-similar {
     border-radius: 12px;
     padding: 32px;
-
+    .container{
+        @media (max-width:$desktop){
+             padding: 0; 
+        }
+    }
     &__top {
         display: flex;
         align-items: center;
@@ -1369,7 +1373,8 @@
         margin-bottom: 32px;
 
         @media (max-width:$desktop) {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+            padding: 0 16px;
         }
 
         @media (max-width:$smallTablet-max) {
@@ -1417,10 +1422,9 @@
 
     }
 
-    @media (max-width:$smallTablet-max) {
-        padding: 16px 0;
-        background-color: var(--white);
-    }
+   @media (max-width:$desktop){
+  padding: 0;
+   }
 }
 
 
