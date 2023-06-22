@@ -3221,21 +3221,33 @@
     }
 
     &__btn {
+        margin-top: 16px;
         grid-column: 1/-1;
     }
 
     &__choices {
-        margin-top: 32px;
+        margin-top: 16px;
         grid-column: 1/-1;
     }
-
+    &__screen-demonstration{
+        grid-column: 1/-1;   
+        .checkbox-secondary__label{
+            justify-content: start;
+        }
+    }
     &__agents {
         margin-top: 16px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 16px;
-
+        background-color: var(--stand-bg);
+        padding: 32px;
+        width: calc(100% + 96px);
+        margin-left: -48px;
+        margin-bottom: -48px;
+        border-radius: 12px;
         .card-agent {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             border: 1px solid transparent;
             transition: border $transitionSpeed $transitionFunction,

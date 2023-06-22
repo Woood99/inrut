@@ -981,8 +981,8 @@ textarea.input-reset {
 .toggle-checkbox > span {
   margin-top: 6px;
   margin-left: 12px;
-  font-size: 13px;
-  line-height: 1.2307692308;
+  font-size: 15px;
+  line-height: 1.2666666667;
   font-weight: 500;
 }
 
@@ -4193,11 +4193,20 @@ textarea.input-reset {
   grid-row-gap: 16px;
 }
 .book-consultation__btn {
+  margin-top: 16px;
   grid-column: 1/-1;
 }
 .book-consultation__choices {
-  margin-top: 32px;
+  margin-top: 16px;
   grid-column: 1/-1;
+}
+.book-consultation__screen-demonstration {
+  grid-column: 1/-1;
+}
+.book-consultation__screen-demonstration .checkbox-secondary__label {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
 }
 .book-consultation__agents {
   margin-top: 16px;
@@ -4206,6 +4215,12 @@ textarea.input-reset {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 16px;
+  background-color: var(--stand-bg);
+  padding: 32px;
+  width: calc(100% + 96px);
+  margin-left: -48px;
+  margin-bottom: -48px;
+  border-radius: 12px;
   opacity: 0.35;
   pointer-events: none;
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -4213,6 +4228,8 @@ textarea.input-reset {
   transition: opacity 0.4s ease-in-out;
 }
 .book-consultation__agents .card-agent {
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   border: 1px solid transparent;
   -webkit-transition: border 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
@@ -7029,6 +7046,18 @@ textarea.input-reset {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
 }
+.online-display__main-title {
+  grid-column: 1/-1;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--dark);
+}
+@media (max-width: 768px) {
+  .online-display__main-title {
+    margin-bottom: 16px;
+  }
+}
 .online-display__item {
   display: -ms-grid;
   display: grid;
@@ -9485,6 +9514,8 @@ textarea.input-reset {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   cursor: default;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 .select-secondary .choices__list--dropdown.is-active {
   opacity: 1;
@@ -21597,6 +21628,14 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .object-data__purchase-terms {
+    margin-top: 24px;
+  }
+}
+.object-data__online-display {
+  margin-top: 32px;
+}
+@media (max-width: 768px) {
+  .object-data__online-display {
     margin-top: 24px;
   }
 }

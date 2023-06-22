@@ -69,11 +69,6 @@
                 <nav class="header-fixed__nav">
                     <ul class="header-fixed__list list-reset">
                         <li class="header-fixed__item">
-                            <a href="#section-stock" class="header-fixed__item-link">
-                                Акции
-                            </a>
-                        </li>
-                        <li class="header-fixed__item">
                             <a href="#section-filter" class="header-fixed__item-link">
                                 Квартиры
                             </a>
@@ -91,6 +86,11 @@
                         <li class="header-fixed__item">
                             <a href="#section-furnishing-sets" class="header-fixed__item-link">
                                 Комплекты меблировки
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-stock" class="header-fixed__item-link">
+                                Акции
                             </a>
                         </li>
                         <li class="header-fixed__item">
@@ -421,136 +421,44 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="object-body__stock block-stock section-observ" id="section-stock">
-                                <div class="block-stock__top">
-                                    <h2 class="block-stock__title title-2">
-                                        Акции, спецпредложения
+                                <div class="object-data__online-display online-display">
+                                    <h2 class="online-display__main-title">
+                                        Доступные опции
                                     </h2>
-                                    <div class="block-stock__nav">
-                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
+                                    <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                        style="background-color: rgb(232, 255, 255);">
+                                        <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                        <h4 class="online-display__title">Меблировка</h4>
+                                        <p class="online-display__descr">
+                                            От 250 тыс.Р
+                                        </p>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                        style="background-color: rgb(255, 241, 197);">
+                                        <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                        <h4 class="online-display__title">Отделка</h4>
+                                        <p class="online-display__descr">
+                                            Включено
+                                        </p>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                        style="background-color: rgb(255, 241, 197); grid-column: 1/-1;">
+                                        <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                        <h4 class="online-display__title">Сплитсистема</h4>
+                                        <p class="online-display__descr">
+                                            В подарок
+                                        </p>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
                                 </div>
-                                <div class="swiper block-stock__slider">
-                                    <div class="swiper-wrapper block-stock__items">
-                                        <div class="swiper-slide">
-                                            <div class="card-stock">
-                                                <div class="card-stock__title">
-                                                    Скидка 3000 ₽/м²
-                                                </div>
-                                                <p class="card-stock__descr">
-                                                    На неопределенный объем лотов
-                                                </p>
-                                                <div class="card-stock__bottom">
-                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
-                                                        г.</time>
-                                                    <div class="card-stock__tooltip secondary-tooltip">
-                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                            <svg>
-                                                                <use xlink:href="img/sprite.svg#info"></use>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="secondary-tooltip__content">
-                                                            Какой-то текст!!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card-stock">
-                                                <div class="card-stock__title">
-                                                    Метр от самолета
-                                                </div>
-                                                <p class="card-stock__descr">
-                                                    Приобретая сертификат
-                                                    метр от самолета часть
-                                                    квартиры у вас в кармане
-                                                </p>
-                                                <div class="card-stock__bottom">
-                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
-                                                        г.</time>
-                                                    <div class="card-stock__tooltip secondary-tooltip">
-                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                            <svg>
-                                                                <use xlink:href="img/sprite.svg#info"></use>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="secondary-tooltip__content">
-                                                            Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
-                                                            текст!!
-                                                            Какой-то текст!! Какой-то текст!!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card-stock">
-                                                <div class="card-stock__title">
-                                                    Скидка 3000 ₽/м²
-                                                </div>
-                                                <p class="card-stock__descr">
-                                                    На неопределенный объем лотов
-                                                </p>
-                                                <div class="card-stock__bottom">
-                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
-                                                        г.</time>
-                                                    <div class="card-stock__tooltip secondary-tooltip">
-                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                            <svg>
-                                                                <use xlink:href="img/sprite.svg#info"></use>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="secondary-tooltip__content">
-                                                            Какой-то текст!!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="card-stock">
-                                                <div class="card-stock__title">
-                                                    Метр от самолета
-                                                </div>
-                                                <p class="card-stock__descr">
-                                                    Приобретая сертификат
-                                                    метр от самолета часть
-                                                    квартиры у вас в кармане
-                                                </p>
-                                                <div class="card-stock__bottom">
-                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
-                                                        г.</time>
-                                                    <div class="card-stock__tooltip secondary-tooltip">
-                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                            <svg>
-                                                                <use xlink:href="img/sprite.svg#info"></use>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="secondary-tooltip__content">
-                                                            Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
-                                                            текст!!
-                                                            Какой-то текст!! Какой-то текст!!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-reset btn-secondary block-stock__btn">
-                                    Все акции и спецпредложения
-                                </button>
                             </div>
                             <div class="object-plate-bottom plate-bottom">
                                 <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call object-plate-bottom__btn object-plate-bottom__btn--call">
@@ -5799,6 +5707,136 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="object-body__stock block-stock section-observ" id="section-stock">
+                                <div class="block-stock__top">
+                                    <h2 class="block-stock__title title-2">
+                                        Акции, спецпредложения
+                                    </h2>
+                                    <div class="block-stock__nav">
+                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper block-stock__slider">
+                                    <div class="swiper-wrapper block-stock__items">
+                                        <div class="swiper-slide">
+                                            <div class="card-stock">
+                                                <div class="card-stock__title">
+                                                    Скидка 3000 ₽/м²
+                                                </div>
+                                                <p class="card-stock__descr">
+                                                    На неопределенный объем лотов
+                                                </p>
+                                                <div class="card-stock__bottom">
+                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                        г.</time>
+                                                    <div class="card-stock__tooltip secondary-tooltip">
+                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#info"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="secondary-tooltip__content">
+                                                            Какой-то текст!!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="card-stock">
+                                                <div class="card-stock__title">
+                                                    Метр от самолета
+                                                </div>
+                                                <p class="card-stock__descr">
+                                                    Приобретая сертификат
+                                                    метр от самолета часть
+                                                    квартиры у вас в кармане
+                                                </p>
+                                                <div class="card-stock__bottom">
+                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                        г.</time>
+                                                    <div class="card-stock__tooltip secondary-tooltip">
+                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#info"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="secondary-tooltip__content">
+                                                            Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                            текст!!
+                                                            Какой-то текст!! Какой-то текст!!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="card-stock">
+                                                <div class="card-stock__title">
+                                                    Скидка 3000 ₽/м²
+                                                </div>
+                                                <p class="card-stock__descr">
+                                                    На неопределенный объем лотов
+                                                </p>
+                                                <div class="card-stock__bottom">
+                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                        г.</time>
+                                                    <div class="card-stock__tooltip secondary-tooltip">
+                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#info"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="secondary-tooltip__content">
+                                                            Какой-то текст!!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="card-stock">
+                                                <div class="card-stock__title">
+                                                    Метр от самолета
+                                                </div>
+                                                <p class="card-stock__descr">
+                                                    Приобретая сертификат
+                                                    метр от самолета часть
+                                                    квартиры у вас в кармане
+                                                </p>
+                                                <div class="card-stock__bottom">
+                                                    <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                        г.</time>
+                                                    <div class="card-stock__tooltip secondary-tooltip">
+                                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#info"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="secondary-tooltip__content">
+                                                            Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                            текст!!
+                                                            Какой-то текст!! Какой-то текст!!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset btn-secondary block-stock__btn">
+                                    Все акции и спецпредложения
+                                </button>
                             </div>
                             <div class="object-data object-body__descr section-observ" id="section-descr">
                                 <h2 class="object-data__title title-2">

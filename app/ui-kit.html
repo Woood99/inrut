@@ -18837,21 +18837,21 @@
         </button>
         <div class="popup__content popup-primary__content book-consultation">
             <h2 class="book-consultation__title title-2">
-                Оставьте номер телефона
+                Оставьте заявку
             </h2>
             <p class="book-consultation__descr">
-                Вам могут позвонить сегодня.
+                Вам перезвонит специалист отдела продаж застройщика ГК Самолёт
             </p>
             <form action="#" class="book-consultation__form">
                 <label class="input-primary">
-                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Имя">
+                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Ваше имя">
                 </label>
                 <label class="input-primary">
                     <input type="tel" name="Телефон" class="input-reset input-primary__input" placeholder="Номер телефона" data-input-only-number>
                 </label>
                 <div class="select-secondary">
                     <span class="select-secondary__placeholder">
-                        Время
+                        Выберите удобное время
                     </span>
                     <select class="select-secondary__body" name="complex">
                         <option placeholder value="all-room">Любое</option>
@@ -18860,20 +18860,27 @@
                         <option value="room-1">20:00 - 20:00</option>
                     </select>
                 </div>
+                <div class="book-consultation__screen-demonstration checkbox-secondary">
+                    <input id="screen-demonstration" name="screen-demonstration" class="checkbox-secondary__input" type="checkbox" value="true">
+                    <label for="screen-demonstration" class="checkbox-secondary__label">
+                        <span class="checkbox-secondary__text">Консультация с демонстрацией экрана</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-reset btn-primary book-consultation__btn">Оставить заявку</button>
                 <div class="book-consultation__choices">
                     <label class="toggle-checkbox">
                         <input type="checkbox" name="toggle-1">
                         <div aria-hidden="true"></div>
-                        <span>Выбрать агента</span>
+                        <span>Выбрать специалиста отдела продаж застройщика ГК Самолёт</span>
                     </label>
                     <div class="book-consultation__agents">
-                        <article class="card-agent _active">
+                        <article class="card-agent">
                             <div class="card-agent__check" aria-hidden="true">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя" checked>
+                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -18887,7 +18894,7 @@
                                         Алексей Г.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
-                                        Ипотечный брокер был в сети 12.12.2022
+                                        Отдел продаж был в сети 12.12.2022
                                     </time>
                                     <div class="card-agent__rating">
                                         <div class="card-agent__rating-stars">
@@ -18927,7 +18934,7 @@
                                         Алексей Г.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
-                                        Ипотечный брокер был в сети 12.12.2022
+                                        Отдел продаж был в сети 12.12.2022
                                     </time>
                                     <div class="card-agent__rating">
                                         <div class="card-agent__rating-stars">
@@ -18967,7 +18974,7 @@
                                         Алексей Г.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
-                                        Ипотечный брокер был в сети 12.12.2022
+                                        Отдел продаж был в сети 12.12.2022
                                     </time>
                                     <div class="card-agent__rating">
                                         <div class="card-agent__rating-stars">
@@ -18989,7 +18996,6 @@
                         </article>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-reset btn-primary book-consultation__btn">Оставить заявку</button>
             </form>
         </div>
     </div>
