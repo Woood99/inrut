@@ -24,10 +24,8 @@
         &__btns {
             margin-top: 32px;
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
+           display: flex;
+           flex-direction: column;
             width: 100%;
         }
 
@@ -58,6 +56,9 @@
 
             &--message {
                 padding: 0 16px;
+            }
+            &:not(:last-child){
+                margin-bottom: 16px;
             }
         }
 

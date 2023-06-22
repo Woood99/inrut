@@ -2,8 +2,18 @@
     .object-apart-renov__item {
         height: auto;
     }
-
+    .tabs-primary__container{
+        background-color: transparent;
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        &[hidden]{
+            display: none;
+        }
+    }
     &__tabs {
+     grid-column: 1/-1;
         position: relative;
         height: 379px;
 
@@ -21,6 +31,7 @@
     }
 
     &__btns {
+        grid-column: 1/2;
         display: flex;
         align-items: center;
         margin-bottom: 16px;

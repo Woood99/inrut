@@ -37,12 +37,12 @@
     white-space: nowrap;
 
     @media (min-width:$desktop-min) {
+        &.focus-visible{
+            background-color: var(--blue-dark);
+        }
         &:hover {
             background-color: var(--blue-dark);
         }
-    }
-    &.focus-visible{
-        background-color: var(--blue-dark);
     }
     &:active {
         box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
@@ -86,6 +86,10 @@
     border: none;
 
     @media (min-width:$desktop-min) {
+        &.focus-visible{
+            color: var(--white);
+            background-color: var(--blue);
+        }
         &:hover {
             color: var(--white);
             background-color: var(--blue);
@@ -93,10 +97,6 @@
     }
 
     &:active {
-        color: var(--white);
-        background-color: var(--blue);
-    }
-    &.focus-visible{
         color: var(--white);
         background-color: var(--blue);
     }

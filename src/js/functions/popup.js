@@ -206,6 +206,7 @@ const popup = (options, modalName) => {
             if (nodes.length) nodes[0].focus();
         } else {
             settingsModal.previousActiveElement.focus();
+            settingsModal.previousActiveElement.classList.remove('focus-visible');
         }
     }
 };

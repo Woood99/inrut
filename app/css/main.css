@@ -239,12 +239,12 @@ a {
   white-space: nowrap;
 }
 @media (min-width: 1145px) {
+  .btn-primary.focus-visible {
+    background-color: var(--blue-dark);
+  }
   .btn-primary:hover {
     background-color: var(--blue-dark);
   }
-}
-.btn-primary.focus-visible {
-  background-color: var(--blue-dark);
 }
 .btn-primary:active {
   -webkit-box-shadow: 0px 15px 20px rgba(35, 125, 233, 0.28);
@@ -288,16 +288,16 @@ a {
   border: none;
 }
 @media (min-width: 1145px) {
+  .btn-secondary.focus-visible {
+    color: var(--white);
+    background-color: var(--blue);
+  }
   .btn-secondary:hover {
     color: var(--white);
     background-color: var(--blue);
   }
 }
 .btn-secondary:active {
-  color: var(--white);
-  background-color: var(--blue);
-}
-.btn-secondary.focus-visible {
   color: var(--white);
   background-color: var(--blue);
 }
@@ -17889,7 +17889,22 @@ textarea.input-reset {
 .furnishing-sets .object-apart-renov__item {
   height: auto;
 }
+.furnishing-sets .tabs-primary__container {
+  background-color: transparent;
+}
+.furnishing-sets__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr -webkit-max-content;
+  -ms-grid-columns: 1fr max-content;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+.furnishing-sets__item[hidden] {
+  display: none;
+}
 .furnishing-sets__tabs {
+  grid-column: 1/-1;
   position: relative;
   height: 379px;
 }
@@ -17909,6 +17924,9 @@ textarea.input-reset {
   }
 }
 .furnishing-sets__btns {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23961,12 +23979,13 @@ textarea.input-reset {
 }
 .develop-inner .bid-user__btns {
   margin-top: 32px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 @media (max-width: 1144px) {
@@ -23992,6 +24011,9 @@ textarea.input-reset {
 }
 .develop-inner .bid-user__btn--message {
   padding: 0 16px;
+}
+.develop-inner .bid-user__btn:not(:last-child) {
+  margin-bottom: 16px;
 }
 @media (min-width: 1145px) {
   .develop-inner .bid-user._sticky {

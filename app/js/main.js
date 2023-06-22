@@ -7031,7 +7031,9 @@ const maps = () => {
             locationRoutesBtn.classList.add('_active');
             routes.classList.add('_show');
             routeShow();
-            // console.log(map.controls.get('routePanelControl'));
+            const routeControl = map.controls.get('routePanelControl');
+            console.log(routeControl);
+            console.log(routeControl._layout._parentElement);
           } else {
             locationRoutesBtn.classList.remove('_active');
             routes.classList.remove('_show');
@@ -7917,6 +7919,7 @@ const popup = (options, modalName) => {
       if (nodes.length) nodes[0].focus();
     } else {
       settingsModal.previousActiveElement.focus();
+      settingsModal.previousActiveElement.classList.remove('focus-visible');
     }
   }
 };
