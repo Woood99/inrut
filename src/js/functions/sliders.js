@@ -349,8 +349,8 @@ function initSliders() {
                 spaceBetween: 16,
                 speed: 800,
                 navigation: {
-                    prevEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--prev'),
-                    nextEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--next'),
+                    prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
+                    nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next'),
                 },
             });
             const marks = el.querySelectorAll('.object-apart-renov__mark');

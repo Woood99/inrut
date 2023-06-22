@@ -4166,6 +4166,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_city__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/city */ "./src/js/components/city.js");
 /* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
 /* harmony import */ var _components_cardActions__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/cardActions */ "./src/js/components/cardActions.js");
+/* harmony import */ var _components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/furnishingSets */ "./src/js/components/furnishingSets.js");
+
 
 
 
@@ -4261,6 +4263,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
   (0,_components_chat__WEBPACK_IMPORTED_MODULE_27__["default"])();
   (0,_components_city__WEBPACK_IMPORTED_MODULE_28__["default"])();
+  (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__["default"])('.object-location__infrastructure', 1000);
   // ==================================================
 
@@ -6142,6 +6145,42 @@ const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, ch
 
 /***/ }),
 
+/***/ "./src/js/components/furnishingSets.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/furnishingSets.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const furnishingSets = () => {
+  const container = document.querySelector('.furnishing-sets');
+  if (!container) return;
+  container.querySelectorAll('.furnishing-sets__item').forEach(item => {
+    const btns = item.querySelectorAll('.furnishing-sets__btn');
+    const tabs = item.querySelectorAll('.furnishing-sets__tab');
+    btns.forEach((btn, indexBtn) => {
+      btn.addEventListener('click', () => {
+        btns.forEach(btn => btn.classList.remove('_active'));
+        btn.classList.add('_active');
+        tabs.forEach((tab, indexTab) => {
+          if (indexBtn !== indexTab) {
+            tab.setAttribute('hidden', '');
+          } else {
+            tab.removeAttribute('hidden');
+          }
+        });
+      });
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (furnishingSets);
+
+/***/ }),
+
 /***/ "./src/js/components/gallery.js":
 /*!**************************************!*\
   !*** ./src/js/components/gallery.js ***!
@@ -6992,6 +7031,7 @@ const maps = () => {
             locationRoutesBtn.classList.add('_active');
             routes.classList.add('_show');
             routeShow();
+            // console.log(map.controls.get('routePanelControl'));
           } else {
             locationRoutesBtn.classList.remove('_active');
             routes.classList.remove('_show');
@@ -8222,8 +8262,8 @@ function initSliders() {
         spaceBetween: 16,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.object-apart-renov__item').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
+          nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next')
         }
       });
       const marks = el.querySelectorAll('.object-apart-renov__mark');

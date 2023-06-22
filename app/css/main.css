@@ -17886,6 +17886,95 @@ textarea.input-reset {
   pointer-events: all;
 }
 
+.furnishing-sets .object-apart-renov__item {
+  height: auto;
+}
+.furnishing-sets__tabs {
+  position: relative;
+  height: 379px;
+}
+@media (max-width: 1144px) {
+  .furnishing-sets__tabs {
+    height: 420px;
+  }
+}
+@media (max-width: 768px) {
+  .furnishing-sets__tabs {
+    height: 385px;
+  }
+}
+@media (max-width: 576px) {
+  .furnishing-sets__tabs {
+    height: 350px;
+  }
+}
+.furnishing-sets__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.furnishing-sets__btn {
+  min-width: 43px;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 400;
+  height: 43px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  padding: 0 16px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+  border: 1px solid var(--primary200);
+}
+.furnishing-sets__btn:first-child {
+  width: 90px;
+}
+.furnishing-sets__btn._active {
+  background-color: var(--blue);
+  border: 1px solid transparent;
+  color: var(--white);
+}
+@media (min-width: 1145px) {
+  .furnishing-sets__btn._active:hover {
+    color: var(--white);
+    background-color: var(--blue);
+  }
+}
+.furnishing-sets__btn:not(:last-child) {
+  margin-right: 2px;
+}
+@media (min-width: 1144px) {
+  .furnishing-sets__btn:hover {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+  }
+  .furnishing-sets__btn.focus-visible {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+  }
+}
+.furnishing-sets__tab {
+  height: 100%;
+  width: 100%;
+}
+
 .header__main {
   position: relative;
   height: 52px;

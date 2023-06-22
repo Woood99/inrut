@@ -63,6 +63,7 @@ const maps = () => {
                         locationRoutesBtn.classList.add('_active');
                         routes.classList.add('_show');
                         routeShow();
+                        // console.log(map.controls.get('routePanelControl'));
                     } else {
                         locationRoutesBtn.classList.remove('_active');
                         routes.classList.remove('_show');
