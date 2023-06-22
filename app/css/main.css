@@ -1512,36 +1512,18 @@ textarea.input-reset {
   }
 }
 .popup-primary--book-consultation {
-  text-align: center;
   z-index: 1052;
 }
 .popup-primary--book-consultation .popup-primary__container {
-  min-height: auto;
-  margin: 50px auto;
-  text-align: center;
-  border-radius: 12px;
+  border-radius: 12px 0 0 12px;
   padding: 65px 48px 48px;
   width: 850px;
 }
-@media (max-width: 768px) {
-  .popup-primary--book-consultation .popup-primary__container {
-    max-width: 100%;
-    width: calc(100% - 4px);
-    margin: 50px auto 0;
-    vertical-align: bottom;
-    padding: 65px 35px 48px;
-    border-radius: 12px 12px 0 0;
-  }
-}
-.popup-primary--book-consultation::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-}
 @media (max-width: 1144px) {
-  .popup-primary--book-consultation {
-    background-color: rgba(34, 41, 102, 0.4);
+  .popup-primary--book-consultation .popup-primary__container {
+    border-radius: 0;
+    padding: 55px 16px;
+    width: 100%;
   }
 }
 
@@ -4220,7 +4202,7 @@ textarea.input-reset {
   width: calc(100% + 96px);
   margin-left: -48px;
   margin-bottom: -48px;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 12px;
   opacity: 0.35;
   pointer-events: none;
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -7112,11 +7094,6 @@ textarea.input-reset {
   transform: rotate(-90deg);
   -ms-grid-row-align: center;
   align-self: center;
-}
-@media (max-width: 1144px) {
-  .online-display {
-    padding: 16px;
-  }
 }
 @media (max-width: 768px) {
   .online-display {
@@ -18704,7 +18681,7 @@ textarea.input-reset {
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .header-fixed__container {
-  max-width: 1194px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
   padding: 12px 15px 0;
@@ -20767,7 +20744,7 @@ textarea.input-reset {
   }
 }
 .object-body__similar-objects {
-  margin-top: 25px;
+  margin-top: 32px;
 }
 @media (max-width: 768px) {
   .object-body__similar-objects {
@@ -20827,15 +20804,15 @@ textarea.input-reset {
   margin-top: 24px;
 }
 .object-body__other-develop {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 @media (max-width: 1144px) {
   .object-body__other-develop {
-    margin-top: 0;
+    margin-top: 8px;
   }
 }
 .object-body__similar-build {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 @media (max-width: 1144px) {
   .object-body__similar-build {
@@ -22097,10 +22074,6 @@ textarea.input-reset {
   }
 }
 
-.object-similar {
-  border-radius: 12px;
-  padding: 32px;
-}
 @media (max-width: 1144px) {
   .object-similar .container {
     padding: 0;
@@ -22162,11 +22135,6 @@ textarea.input-reset {
 }
 .object-similar__items .card-secondary {
   height: 100%;
-}
-@media (max-width: 1144px) {
-  .object-similar {
-    padding: 0;
-  }
 }
 
 .object-two .object-plate-bottom__btn {

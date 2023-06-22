@@ -1850,13 +1850,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 24px;
     grid-row-gap: 24px;
-    &__main-title{
+
+    &__main-title {
         grid-column: 1/-1;
         font-size: 20px;
         line-height: math.div(25, 20);
         font-weight: 500;
         color: var(--dark);
     }
+
     &__item {
         display: grid;
         grid-template-columns: 35px 1fr 24px;
@@ -1905,10 +1907,6 @@
         height: 20px;
         transform: rotate(-90deg);
         align-self: center;
-    }
-
-    @media (max-width:$desktop) {
-        padding: 16px;
     }
 
     @media (max-width:$smallTablet-max) {
@@ -2002,7 +2000,3 @@
         transform: translateY(0);
     }
 }
-
-
-
-
