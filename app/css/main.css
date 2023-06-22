@@ -1403,6 +1403,39 @@ textarea.input-reset {
     background-color: rgba(34, 41, 102, 0.4);
   }
 }
+.popup-primary--kit-composition {
+  text-align: center;
+  z-index: 1052;
+}
+.popup-primary--kit-composition .popup-primary__container {
+  min-height: auto;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 12px;
+  padding: 65px 48px 48px;
+  width: 850px;
+}
+@media (max-width: 768px) {
+  .popup-primary--kit-composition .popup-primary__container {
+    max-width: 100%;
+    width: calc(100% - 4px);
+    margin: 50px auto 0;
+    vertical-align: bottom;
+    padding: 65px 35px 48px;
+    border-radius: 12px 12px 0 0;
+  }
+}
+.popup-primary--kit-composition::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+@media (max-width: 1144px) {
+  .popup-primary--kit-composition {
+    background-color: rgba(34, 41, 102, 0.4);
+  }
+}
 
 .popup-chat {
   --transition-time: 0.3s;
@@ -3992,6 +4025,31 @@ textarea.input-reset {
 }
 .popup-tied__card > div button:hover {
   color: var(--blue-dark);
+}
+
+.kit-composition {
+  text-align: left;
+}
+.kit-composition__title span {
+  display: block;
+}
+.kit-composition__title span:not(:last-child) {
+  margin-bottom: 8px;
+}
+.kit-composition__list {
+  margin-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (-webkit-max-content)[3];
+  -ms-grid-columns: (max-content)[3];
+  grid-template-columns: repeat(3, -webkit-max-content);
+  grid-template-columns: repeat(3, max-content);
+  grid-column-gap: 58px;
+  grid-row-gap: 16px;
+  padding: 0 0 0 16px;
+}
+.kit-composition__btn {
+  margin-top: 56px;
 }
 
 .fade {
@@ -17995,6 +18053,21 @@ textarea.input-reset {
 .furnishing-sets__tab {
   height: 100%;
   width: 100%;
+}
+.furnishing-sets__price {
+  position: absolute;
+  z-index: 2;
+  bottom: 15px;
+  left: 15px;
+  padding: 5px 16px;
+  color: var(--blue);
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  font-size: 16px;
+  line-height: 1.1875;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
 .header__main {

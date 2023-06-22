@@ -4402,6 +4402,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'online-display-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'kit-composition');
 
 // ========================================================================================
 

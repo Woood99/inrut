@@ -75,5 +75,6 @@ popup({
 popup(null, 'online-display-popup');
 popup(null, 'authorization');
 popup(null, 'sber-tied');
+popup(null, 'kit-composition');
 
 // ========================================================================================
