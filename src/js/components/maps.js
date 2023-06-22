@@ -41,13 +41,16 @@ const maps = () => {
                         btn.classList.toggle('_active');
                         if (btn.classList.contains('object-location__btn--infrastructure')) {
                             infrastructure.classList.add('_active');
+                            objectMaps.classList.remove('_routes');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
                             routeHidden();
                         } else if (btn.classList.contains('object-location__btn--routes')) {
+                            objectMaps.classList.add('_routes');
                             routes.classList.add('_active');
                             infrastructure.classList.remove('_active');
                         } else {
+                            objectMaps.classList.remove('_routes');
                             infrastructure.classList.remove('_active');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
@@ -58,9 +61,11 @@ const maps = () => {
                 locationRoutesBtn.addEventListener('click', () => {
                     if (!locationRoutesBtn.classList.contains('_active')) {
                         locationRoutesBtn.classList.add('_active');
+                        routes.classList.add('_show');
                         routeShow();
                     } else {
                         locationRoutesBtn.classList.remove('_active');
+                        routes.classList.remove('_show');
                         routeHidden();
                     }
                 });

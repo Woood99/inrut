@@ -19,7 +19,8 @@ import linkCopy from './modules/linkCopy';
 import {
     inputText,
     inputOnlyNumber,
-    textareaSecondary
+    textareaSecondary,
+    inputClue
 } from './components/inputs';
 import {
     validateRadioPrimary,
@@ -143,4 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
     emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
     emergingBlockScroll('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
     emergingBlockScroll('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
+
+
+    // ==================================================
+    inputClue('.input-clue', 'clue-primary', `
+    <div class="clue-primary">
+        <div class="clue-primary__close">
+            <svg>
+              <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+        </div>
+        <svg class="clue-primary__icon">
+            <use xlink:href="img/sprite.svg#info"></use>
+        </svg>
+        <h4 class="clue-primary__title title-3">
+            Для вашего профиля редактирование данных недоступно.
+        </h4>
+        <p class="clue-primary__descr">
+            Обратитесь в техподдержку
+        </p>
+    </div>
+    `);
 })

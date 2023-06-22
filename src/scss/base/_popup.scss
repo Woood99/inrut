@@ -697,7 +697,6 @@
             height: 100%;
             width: 100%;
         }
-
         @media (max-width:$desktop) {
             order: 1;
             margin-bottom: 24px;
@@ -2998,15 +2997,20 @@
     }
 
     &__wrapper {
-        margin-top: 24px;
+        margin-top: 32px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
     }
 
+    &__wrapper-subtitle {
+        grid-column: 1/-1;
+        text-align: left;
+    }
+
     &__btns {
-        margin-top: 16px;
+        margin-top: 32px;
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);

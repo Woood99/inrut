@@ -4284,6 +4284,26 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
+
+  // ==================================================
+  (0,_components_inputs__WEBPACK_IMPORTED_MODULE_6__.inputClue)('.input-clue', 'clue-primary', `
+    <div class="clue-primary">
+        <div class="clue-primary__close">
+            <svg>
+              <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+        </div>
+        <svg class="clue-primary__icon">
+            <use xlink:href="img/sprite.svg#info"></use>
+        </svg>
+        <h4 class="clue-primary__title title-3">
+            Для вашего профиля редактирование данных недоступно.
+        </h4>
+        <p class="clue-primary__descr">
+            Обратитесь в техподдержку
+        </p>
+    </div>
+    `);
 });
 
 /***/ }),
@@ -6425,6 +6445,7 @@ const headerFixed = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "inputClue": () => (/* binding */ inputClue),
 /* harmony export */   "inputOnlyNumber": () => (/* binding */ inputOnlyNumber),
 /* harmony export */   "inputText": () => (/* binding */ inputText),
 /* harmony export */   "textareaSecondary": () => (/* binding */ textareaSecondary)
@@ -6486,6 +6507,34 @@ const textareaSecondary = () => {
   });
   function toggleActive(target, currentTextarea) {
     target.value.length >= 1 ? currentTextarea.classList.add('_active') : currentTextarea.classList.remove('_active');
+  }
+};
+const inputClue = (target, name, html) => {
+  const targets = document.querySelectorAll(target);
+  let timeout;
+  targets.forEach(target => {
+    target.addEventListener('click', () => {
+      const container = document.querySelector(`.${name}`);
+      if (container) container.remove();
+      document.body.insertAdjacentHTML('beforeend', html);
+      setTimeout(() => {
+        document.querySelector(`.${name}`).classList.add('is-open');
+      }, 1);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        close();
+      }, 4500);
+      document.querySelector(`.${name} .${name}__close`).addEventListener('click', () => {
+        clearTimeout(timeout);
+        close();
+      });
+    });
+  });
+  function close() {
+    document.querySelector(`.${name}`).classList.remove('is-open');
+    setTimeout(() => {
+      document.querySelector(`.${name}`).remove();
+    }, 300);
   }
 };
 
@@ -6921,13 +6970,16 @@ const maps = () => {
             btn.classList.toggle('_active');
             if (btn.classList.contains('object-location__btn--infrastructure')) {
               infrastructure.classList.add('_active');
+              objectMaps.classList.remove('_routes');
               routes.classList.remove('_active');
               locationRoutesBtn.classList.remove('_active');
               routeHidden();
             } else if (btn.classList.contains('object-location__btn--routes')) {
+              objectMaps.classList.add('_routes');
               routes.classList.add('_active');
               infrastructure.classList.remove('_active');
             } else {
+              objectMaps.classList.remove('_routes');
               infrastructure.classList.remove('_active');
               routes.classList.remove('_active');
               locationRoutesBtn.classList.remove('_active');
@@ -6938,9 +6990,11 @@ const maps = () => {
         locationRoutesBtn.addEventListener('click', () => {
           if (!locationRoutesBtn.classList.contains('_active')) {
             locationRoutesBtn.classList.add('_active');
+            routes.classList.add('_show');
             routeShow();
           } else {
             locationRoutesBtn.classList.remove('_active');
+            routes.classList.remove('_show');
             routeHidden();
           }
         });

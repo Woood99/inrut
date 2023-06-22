@@ -21,7 +21,6 @@ export const inputText = () => {
     }
 }
 
-
 export const inputOnlyNumber = () => {
     const inputs = document.querySelectorAll('[data-input-only-number]');
     if (inputs.length === 0) return;
@@ -57,5 +56,36 @@ export const textareaSecondary = () => {
 
     function toggleActive(target, currentTextarea) {
         target.value.length >= 1 ? currentTextarea.classList.add('_active') : currentTextarea.classList.remove('_active');
+    }
+};
+
+export const inputClue = (target, name, html) => {
+    const targets = document.querySelectorAll(target);
+    let timeout;
+    targets.forEach(target => {
+        target.addEventListener('click', () => {
+            const container = document.querySelector(`.${name}`);
+            if (container) container.remove();
+            document.body.insertAdjacentHTML('beforeend', html);
+            setTimeout(() => {
+                document.querySelector(`.${name}`).classList.add('is-open');
+            }, 1);
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                close();
+            }, 4500);
+
+            document.querySelector(`.${name} .${name}__close`).addEventListener('click', () => {
+                clearTimeout(timeout);
+                close();
+            })
+        });
+    })
+
+    function close() {
+        document.querySelector(`.${name}`).classList.remove('is-open');
+        setTimeout(() => {
+            document.querySelector(`.${name}`).remove();
+        }, 300);
     }
 };

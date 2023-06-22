@@ -1068,21 +1068,49 @@
                     </div>
                 </div>
                 <div class="edit-profile__subtitle">
-                    Имя, фамилия
+                    Фамилия, имя, отчество
                 </div>
                 <div class="edit-profile__name title-2">
-                    Иван Петров
+                    Иван Петров Сергеевич
                 </div>
             </div>
             <div class="edit-profile__wrapper">
-                <label class="input-primary">
-                    <input type="text" name="Имя" class="input-reset input-primary__input" disabled value="Иван" placeholder="Имя">
-                </label>
-                <label class="input-primary">
+                <h4 class="edit-profile__wrapper-subtitle title-3">Личные данные</h4>
+                <label class="input-primary input-clue">
                     <input type="text" name="Фамилия" class="input-reset input-primary__input" disabled value="Петров" placeholder="Фамилия">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
                 </label>
-                <label class="input-primary">
+                <label class="input-primary input-clue">
+                    <input type="text" name="Имя" class="input-reset input-primary__input" disabled value="Иван" placeholder="Имя">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Отчество" class="input-reset input-primary__input" disabled value="Сергеевич" placeholder="Отчество">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="16.02.1982" placeholder="Телефон">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
                     <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="89876543210" placeholder="Телефон">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="address@gmail.com" placeholder="Телефон">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
                 </label>
             </div>
             <div class="edit-profile__btns">
@@ -1226,7 +1254,7 @@
                 <label class="complaint-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close"  disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-popup__btn js-popup-close" disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -1321,7 +1349,7 @@
                 <label class="complaint-user-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close"  disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-user-popup__btn js-popup-close" disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -1384,7 +1412,7 @@
                 <label class="complaint-object-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close"  disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close" disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -1464,7 +1492,7 @@
                 <label class="object-not-popup__textarea textarea-primary">
                     <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                 </label>
-                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close"  disabled data-popup-path="thanks">
+                <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close" disabled data-popup-path="thanks">
                     Отправить
                 </button>
             </form>
@@ -17458,7 +17486,7 @@
             </h2>
             <div class="authorization-popup__list">
                 <a href="#" class="authorization-popup__item">
-                    <img loading="lazy" src="img/passport.svg" width="54" height="54" class="authorization-popup__item-icon" alt="">
+                    <img loading="lazy" src="img/sber.png" width="54" height="54" class="authorization-popup__item-icon" alt="Сбербанк ID">
                     <h3 class="authorization-popup__item-title title-3">
                         Сбербанк ID
                     </h3>
@@ -17470,7 +17498,7 @@
                     </button>
                 </a>
                 <a href="#" class="authorization-popup__item">
-                    <img loading="lazy" src="img/gosusligi.svg" width="54" height="54" class="authorization-popup__item-icon" alt="">
+                    <img loading="lazy" src="img/gosusligi.svg" width="54" height="54" class="authorization-popup__item-icon" alt="Госуслуги">
                     <h3 class="authorization-popup__item-title title-3">
                         Через «Госуслуги»
                     </h3>
@@ -17482,7 +17510,7 @@
                     </button>
                 </a>
                 <a href="#" class="authorization-popup__item">
-                    <img loading="lazy" src="img/tinkoff.svg" width="54" height="54" class="authorization-popup__item-icon" alt="">
+                    <img loading="lazy" src="img/tinkoff.svg" width="54" height="54" class="authorization-popup__item-icon" alt="Tinkoff ID">
                     <h3 class="authorization-popup__item-title title-3">
                         Через Tinkoff ID
                     </h3>
