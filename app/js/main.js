@@ -4167,6 +4167,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
 /* harmony import */ var _components_cardActions__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/cardActions */ "./src/js/components/cardActions.js");
 /* harmony import */ var _components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/furnishingSets */ "./src/js/components/furnishingSets.js");
+/* harmony import */ var _components_bookConsultation__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/bookConsultation */ "./src/js/components/bookConsultation.js");
+
 
 
 
@@ -4264,6 +4266,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_chat__WEBPACK_IMPORTED_MODULE_27__["default"])();
   (0,_components_city__WEBPACK_IMPORTED_MODULE_28__["default"])();
   (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__["default"])();
+  (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_32__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__["default"])('.object-location__infrastructure', 1000);
   // ==================================================
 
@@ -4403,6 +4406,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'kit-composition');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'book-consultation');
 
 // ========================================================================================
 
@@ -4419,6 +4423,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var focus_visible__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! focus-visible */ "./node_modules/focus-visible/dist/focus-visible.js");
 /* harmony import */ var focus_visible__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(focus_visible__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./src/js/components/bookConsultation.js":
+/*!***********************************************!*\
+  !*** ./src/js/components/bookConsultation.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const bookConsultation = () => {
+  const container = document.querySelector('.book-consultation');
+  if (!container) return;
+  const agentToggle = container.querySelector('.toggle-checkbox input');
+  const agentsContainer = container.querySelector('.book-consultation__agents');
+  const agentsList = container.querySelectorAll('.card-agent');
+  agentToggle.addEventListener('input', () => {
+    if (agentToggle.checked) {
+      agentsContainer.classList.add('_active');
+    } else {
+      agentsContainer.classList.remove('_active');
+    }
+  });
+  agentsList.forEach(currentAgent => {
+    currentAgent.addEventListener('input', () => {
+      agentsList.forEach(agent => agent.classList.remove('_active'));
+      currentAgent.classList.add('_active');
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (bookConsultation);
 
 /***/ }),
 

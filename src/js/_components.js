@@ -57,6 +57,7 @@ import {
     cardPrimaryActions
 } from './components/cardActions';
 import furnishingSets from './components/furnishingSets';
+import bookConsultation from './components/bookConsultation';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -123,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chat();
     city();
     furnishingSets();
+    bookConsultation();
     scrollDrag('.object-location__infrastructure', 1000);
     // ==================================================
 

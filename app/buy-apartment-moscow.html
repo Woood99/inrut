@@ -1614,7 +1614,7 @@
                     </svg>
                 </label>
                 <label class="input-primary input-clue">
-                    <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="16.02.1982" placeholder="Телефон">
+                    <input type="text" name="Дата рождения" class="input-reset input-primary__input" disabled value="16.02.1982" placeholder="Телефон">
                     <svg>
                         <use xlink:href="img/sprite.svg#info"></use>
                     </svg>
@@ -1626,7 +1626,7 @@
                     </svg>
                 </label>
                 <label class="input-primary input-clue">
-                    <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="address@gmail.com" placeholder="Телефон">
+                    <input type="text" name="Эл.почта" class="input-reset input-primary__input" disabled value="address@gmail.com" placeholder="Телефон">
                     <svg>
                         <use xlink:href="img/sprite.svg#info"></use>
                     </svg>
@@ -18086,8 +18086,176 @@
                     Двуспальная кровать с матрасом 160 см
                 </li>
             </ul>
+            <a href="./img/avatar.png" download="./img/avatar.png" class="btn btn-reset btn-primary kit-composition__btn">Скачать презентацию</a>
         </div>
-        <a href="./img/avatar.png" download="./img/avatar.png" class="btn btn-reset btn-primary kit-composition__btn">Скачать презентацию</a>
+    </div>
+</div>
+
+<div class="popup popup-primary popup-primary--right popup-primary--book-consultation">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="book-consultation">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content book-consultation">
+            <h2 class="book-consultation__title title-2">
+                Оставьте номер телефона
+            </h2>
+            <p class="book-consultation__descr">
+                Вам могут позвонить сегодня.
+            </p>
+            <form action="#" class="book-consultation__form">
+                <label class="input-primary">
+                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Имя">
+                </label>
+                <label class="input-primary">
+                    <input type="tel" name="Телефон" class="input-reset input-primary__input" placeholder="Номер телефона" data-input-only-number>
+                </label>
+                <div class="select-secondary">
+                    <span class="select-secondary__placeholder">
+                        Время
+                    </span>
+                    <select class="select-secondary__body" name="complex">
+                        <option placeholder value="all-room">Любое</option>
+                        <option value="room-1">17:00 - 18:00</option>
+                        <option value="room-1">18:00 - 19:00</option>
+                        <option value="room-1">20:00 - 20:00</option>
+                    </select>
+                </div>
+                <div class="book-consultation__choices">
+                    <label class="toggle-checkbox">
+                        <input type="checkbox" name="toggle-1">
+                        <div aria-hidden="true"></div>
+                        <span>Выбрать агента</span>
+                    </label>
+                    <div class="book-consultation__agents">
+                        <article class="card-agent _active">
+                            <div class="card-agent__check" aria-hidden="true">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#verif"></use>
+                                </svg>
+                            </div>
+                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя" checked>
+                            <div href="#" class="card-agent__wrapper">
+                                <div class="card-agent__avatar avatar">
+                                    <picture>
+                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                            alt="Алексей Г.">
+                                    </picture>
+                                </div>
+                                <div class="card-agent__content">
+                                    <span class="card-agent__name">
+                                        Алексей Г.
+                                    </span>
+                                    <time class="card-agent__time" datetime="2022-12-12">
+                                        Ипотечный брокер был в сети 12.12.2022
+                                    </time>
+                                    <div class="card-agent__rating">
+                                        <div class="card-agent__rating-stars">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#star"></use>
+                                            </svg>
+                                        </div>
+                                        <span>4.8</span>
+                                        <span>(16 отзыва)</span>
+                                    </div>
+                                </div>
+                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                    Подробнее о специалисте
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="card-agent">
+                            <div class="card-agent__check" aria-hidden="true">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#verif"></use>
+                                </svg>
+                            </div>
+                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <div href="#" class="card-agent__wrapper">
+                                <div class="card-agent__avatar avatar">
+                                    <picture>
+                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                            alt="Алексей Г.">
+                                    </picture>
+                                </div>
+                                <div class="card-agent__content">
+                                    <span class="card-agent__name">
+                                        Алексей Г.
+                                    </span>
+                                    <time class="card-agent__time" datetime="2022-12-12">
+                                        Ипотечный брокер был в сети 12.12.2022
+                                    </time>
+                                    <div class="card-agent__rating">
+                                        <div class="card-agent__rating-stars">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#star"></use>
+                                            </svg>
+                                        </div>
+                                        <span>4.8</span>
+                                        <span>(16 отзыва)</span>
+                                    </div>
+                                </div>
+                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                    Подробнее о специалисте
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="card-agent">
+                            <div class="card-agent__check" aria-hidden="true">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#verif"></use>
+                                </svg>
+                            </div>
+                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <div href="#" class="card-agent__wrapper">
+                                <div class="card-agent__avatar avatar">
+                                    <picture>
+                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
+                                            alt="Алексей Г.">
+                                    </picture>
+                                </div>
+                                <div class="card-agent__content">
+                                    <span class="card-agent__name">
+                                        Алексей Г.
+                                    </span>
+                                    <time class="card-agent__time" datetime="2022-12-12">
+                                        Ипотечный брокер был в сети 12.12.2022
+                                    </time>
+                                    <div class="card-agent__rating">
+                                        <div class="card-agent__rating-stars">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#star"></use>
+                                            </svg>
+                                        </div>
+                                        <span>4.8</span>
+                                        <span>(16 отзыва)</span>
+                                    </div>
+                                </div>
+                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                    Подробнее о специалисте
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-reset btn-primary book-consultation__btn">Оставить заявку</button>
+            </form>
+        </div>
     </div>
 </div>
 
