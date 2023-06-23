@@ -6196,7 +6196,6 @@ const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, ch
 const bookConsultationValidate = () => {
   const form = document.querySelector('.book-consultation__form');
   if (!form) return;
-  let result = true;
   let formEventInput = false;
   const nameLabel = form.querySelector('.book-consultation__form--name');
   const telLabel = form.querySelector('.book-consultation__form--tel');
@@ -6209,6 +6208,7 @@ const bookConsultationValidate = () => {
     });
   });
   function validate() {
+    let result = true;
     formEventInput = true;
     validateRemoveError(telLabel);
     validateRemoveError(nameLabel);
