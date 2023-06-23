@@ -1,3 +1,11 @@
+import Inputmask from "inputmask";
+
+const validateTextMap = {
+    minLength: 'Минимальное кол-во символов:',
+    name: 'Укажите имя',
+    tel: 'Введите корректный номер телефона',
+}
+
 export const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
     const form = document.querySelector(formSelector);
     if (!form) return false;
@@ -61,3 +69,73 @@ export const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelec
         clearForm();
     });
 };
+
+export const bookConsultationValidate = () => {
+    const form = document.querySelector('.book-consultation__form');
+    if (!form) return;
+    let result = true;
+    let formEventInput = false;
+    const nameLabel = form.querySelector('.book-consultation__form--name');
+    const telLabel = form.querySelector('.book-consultation__form--tel');
+    const nameInput = nameLabel.querySelector('input');
+    const telInput = telLabel.querySelector('input');
+
+    inputMask(telInput);
+
+    [nameLabel, telInput].forEach(el => {
+        el.addEventListener('input', () => {
+            if (formEventInput) validate();
+        })
+    })
+
+    function validate() {
+        formEventInput = true;
+        validateRemoveError(telLabel);
+        validateRemoveError(nameLabel);
+        if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+            result = false;
+            validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
+        }
+        if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
+            result = false;
+            validateCreateError(nameLabel, validateTextMap.name);
+        }
+        if (!inputTelValidate(telLabel, telInput)) {
+            result = false;
+            validateCreateError(telLabel, validateTextMap.tel);
+        }
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+};
+
+
+export const inputMask = (input) => {
+    if (!input) return;
+    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    inputMask.mask(input);
+}
+export const inputTelValidate = (label, input) => {
+    if (!label || !input) return;
+    const inputLength = input.inputmask.unmaskedvalue().length
+    return inputLength === 10 ? true : false;
+}
+
+
+function validateCreateError(label, text) {
+    validateRemoveError(label);
+    const errorSpan = document.createElement('span');
+    errorSpan.textContent = text;
+
+    label.append(errorSpan);
+    label.classList.add('_error');
+}
+
+function validateRemoveError(label) {
+    if (!label.classList.contains('_error')) return;
+    label.querySelector('span').remove();
+    label.classList.remove('_error');
+}

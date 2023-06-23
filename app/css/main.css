@@ -397,6 +397,17 @@ textarea.input-reset {
 .input-primary__input:disabled {
   opacity: 0.8;
 }
+.input-primary._error .input-primary__input {
+  border: 1px solid var(--red);
+}
+.input-primary._error > span {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+  margin-left: 8px;
+}
 
 .textarea-primary {
   position: relative;
@@ -4182,6 +4193,19 @@ textarea.input-reset {
   margin-top: 16px;
   grid-column: 1/-1;
 }
+.book-consultation .select-secondary .choices__list.choices__list--dropdown .choices__item.is-selected::before {
+  content: url(../img/check-mark--blue.svg);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 16px;
+  width: 16px;
+  height: 20px;
+}
 .book-consultation__screen-demonstration {
   grid-column: 1/-1;
 }
@@ -7202,12 +7226,6 @@ textarea.input-reset {
 .ymaps-2-1-79-map .ymaps-2-1-79-zoom__scale {
   display: none;
 }
-.ymaps-2-1-79-map .ymaps-2-1-79-controls__control {
-  bottom: auto !important;
-  left: auto !important;
-  right: 16px !important;
-  top: 195px !important;
-}
 .ymaps-2-1-79-map .ymaps-2-1-79-control-popup-parent > ymaps {
   border-radius: 16px;
 }
@@ -7238,9 +7256,9 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
   height: 100%;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
   border-radius: 16px;
 }
 .ymaps-2-1-79-map .ymaps-2-1-79-zoom .ymaps-2-1-79-zoom__minus {
@@ -7280,26 +7298,15 @@ textarea.input-reset {
     display: none;
   }
 }
-.ymaps-2-1-79-map .ymaps-2-1-79-route-panel-button {
-  right: 40px !important;
-  top: 67px !important;
-}
-.ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
-  position: absolute !important;
-  top: 91px;
-  right: 16px;
-  margin-right: 0 !important;
+.ymaps-2-1-79-map .ymaps-2-1-79-float-button {
   background: #FFFFFF;
-  border: 1px solid rgba(93, 112, 134, 0.1);
-  -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(93, 112, 134, 0.1) !important;
+  -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1) !important;
   border-radius: 16px;
-}
-.ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none .ymaps-2-1-79-float-button {
-  max-width: none !important;
+  max-width: none;
   width: 44px;
   height: 44px;
-  border-radius: 16px;
   padding: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -7314,7 +7321,7 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none .ymaps-2-1-79-float-button .ymaps-2-1-79-float-button-icon {
+.ymaps-2-1-79-map .ymaps-2-1-79-float-button .ymaps-2-1-79-float-button-icon {
   position: static;
   width: 18px;
   height: 18px;
@@ -7322,10 +7329,15 @@ textarea.input-reset {
   background-size: cover;
   background-image: url("../img/fullscreen-map.svg");
 }
-@media (max-width: 768px) {
-  .ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
-    top: 0px;
-  }
+.ymaps-2-1-79-map .ymaps-2-1-79-float-button.ymaps__route-close {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+}
+.ymaps-2-1-79-map .ymaps-2-1-79-float-button.ymaps__route-close .ymaps-2-1-79-float-button-text {
+  padding: 0;
+  width: 20px;
+  height: 20px;
 }
 
 .ymaps-2-1-79-gotoymaps__container,
@@ -7334,8 +7346,6 @@ textarea.input-reset {
 }
 
 .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static {
-  margin-top: -180px !important;
-  margin-right: 61px !important;
   border-radius: 16px;
 }
 .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__title {
@@ -7346,7 +7356,7 @@ textarea.input-reset {
 .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__header {
   border-bottom: none;
   text-align: center;
-  padding: 16px 12px 0;
+  padding: 32px 12px 0;
 }
 .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static .ymaps-2-1-79-control-popup__icon {
   display: none;
@@ -7392,23 +7402,22 @@ textarea.input-reset {
   height: 38px;
 }
 
-.yandex-map-active-fullscreen .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static {
-  margin-top: -121px !important;
-  margin-right: 62px !important;
-}
 .yandex-map-active-fullscreen .ymaps-2-1-79-float-button.ymaps-2-1-79-_hidden-text.ymaps-2-1-79-_checked {
   position: relative;
   z-index: 99;
   background-color: #fff;
 }
 
-.ymaps-2-1-79-controls-pane > .ymaps-2-1-79-controls__control:last-child {
-  z-index: -1;
+.ymaps__route-close-wrapper svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary300);
 }
 
 .map-primary._routes .ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
   top: 4px;
 }
+
 .room-info {
   display: -ms-grid;
   display: grid;
@@ -22066,7 +22075,7 @@ textarea.input-reset {
   display: block;
 }
 .object-location__routes._show {
-  z-index: 0;
+  z-index: -1;
 }
 @media (max-width: 1144px) {
   .object-location {

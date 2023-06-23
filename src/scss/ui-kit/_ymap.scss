@@ -6,7 +6,6 @@
 
 .ymaps-2-1-79-map {
 
-
     .ymaps-2-1-79-map {
         border-radius: 12px;
     }
@@ -17,13 +16,6 @@
 
     .ymaps-2-1-79-zoom__scale {
         display: none;
-    }
-
-    .ymaps-2-1-79-controls__control {
-        bottom: auto !important;
-        left: auto !important;
-        right: 16px !important;
-        top: 195px !important;
     }
 
     .ymaps-2-1-79-control-popup-parent>ymaps {
@@ -51,8 +43,8 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            box-shadow: none;
-            border: none;
+            box-shadow: none !important;
+            border: none !important;
             border-radius: 16px;
         }
 
@@ -99,48 +91,44 @@
         }
     }
 
-    .ymaps-2-1-79-route-panel-button {
-        right: 40px !important;
-        top: 67px !important;
-    }
-
-    .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
-        position: absolute !important;
-        top: 91px;
-        right: 16px;
-        margin-right: 0 !important;
+    .ymaps-2-1-79-float-button {
         background: #FFFFFF;
-        border: 1px solid rgba(93, 112, 134, 0.1);
-        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(93, 112, 134, 0.1) !important;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1) !important;
         border-radius: 16px;
+        max-width: none;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        .ymaps-2-1-79-float-button {
-            max-width: none !important;
-            width: 44px;
-            height: 44px;
-            border-radius: 16px;
-            padding: 0;
-            box-shadow: none;
+        .ymaps-2-1-79-float-button-icon {
+            position: static;
+            width: 18px;
+            height: 18px;
             border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .ymaps-2-1-79-float-button-icon {
-                position: static;
-                width: 18px;
-                height: 18px;
-                border: none;
-                background-size: cover;
-                background-image: url('../img/fullscreen-map.svg');
-            }
+            background-size: cover;
+            background-image: url('../img/fullscreen-map.svg');
         }
 
-        @media (max-width:$smallTablet-max) {
-            top: 0px;
+        &.ymaps__route-close {
+            box-shadow: none !important;
+            border: 1px solid transparent !important;
+            .ymaps-2-1-79-float-button-text{
+                padding: 0;
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
+
+
+
 
 .ymaps-2-1-79-gotoymaps__container,
 .ymaps-2-1-79-gototech {
@@ -148,8 +136,6 @@
 }
 
 .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static {
-    margin-top: -180px !important;
-    margin-right: 61px !important;
     border-radius: 16px;
 
     .ymaps-2-1-79-control-popup__title {
@@ -161,7 +147,7 @@
     .ymaps-2-1-79-control-popup__header {
         border-bottom: none;
         text-align: center;
-        padding: 16px 12px 0;
+        padding: 32px 12px 0;
     }
 
     .ymaps-2-1-79-control-popup__layout {}
@@ -212,13 +198,7 @@
     }
 }
 
-
 .yandex-map-active-fullscreen {
-    .ymaps-2-1-79-control-popup.ymaps-2-1-79-control-popup_static {
-        margin-top: -121px !important;
-        margin-right: 62px !important;
-    }
-
     .ymaps-2-1-79-float-button.ymaps-2-1-79-_hidden-text.ymaps-2-1-79-_checked {
         position: relative;
         z-index: 99;
@@ -226,19 +206,18 @@
     }
 }
 
-.ymaps-2-1-79-controls-pane{
-    >.ymaps-2-1-79-controls__control:last-child{
-        z-index: -1;
+.ymaps__route-close-wrapper {
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--primary300);
     }
 }
 
-.map-primary{
-    &._routes{
-        .ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none{
+.map-primary {
+    &._routes {
+        .ymaps-2-1-79-map .ymaps-2-1-79-controls__control_toolbar.ymaps-2-1-79-user-selection-none {
             top: 4px;
-        }
-        .ymaps-2-1-79-map .ymaps-2-1-79-controls__control{
-          
         }
     }
 }

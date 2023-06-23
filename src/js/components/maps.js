@@ -6,7 +6,23 @@ const maps = () => {
         map.controls.remove('typeSelector'); // удаляем тип
         map.controls.remove('rulerControl'); // удаляем контрол правил
         map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+    }
 
+    function positionElement(map) {
+        map.controls.get('fullscreenControl').options.set({
+            position: {
+                top: 16,
+                right: 16
+            },
+            maxWidth: '44'
+        })
+        map.controls.get('zoomControl').options.set({
+            position: {
+                top: 92,
+                right: 16
+            },
+            maxWidth: '44'
+        })
     }
     if (document.querySelector('#bid-maps')) {
         function init() {
@@ -14,6 +30,7 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
+            positionElement(map);
             removeControlsPrimary(map, '#bid-maps');
         }
         ymaps.ready(init);
@@ -27,10 +44,11 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
-
+            positionElement(map);
             removeControlsPrimary(map, '#object-maps');
             const containerSelects = objectMaps.closest('.object-location--select');
             if (containerSelects) {
+                let btnCloseRoute;
                 const btns = containerSelects.querySelectorAll('.object-location__btn');
                 const infrastructure = containerSelects.querySelector('.object-location__infrastructure');
                 const routes = containerSelects.querySelector('.object-location__routes');
@@ -44,6 +62,7 @@ const maps = () => {
                             objectMaps.classList.remove('_routes');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
+                            map.controls.remove(btnCloseRoute);
                             routeHidden();
                         } else if (btn.classList.contains('object-location__btn--routes')) {
                             objectMaps.classList.add('_routes');
@@ -54,6 +73,7 @@ const maps = () => {
                             infrastructure.classList.remove('_active');
                             routes.classList.remove('_active');
                             locationRoutesBtn.classList.remove('_active');
+                            map.controls.remove(btnCloseRoute);
                             routeHidden();
                         }
                     });
@@ -63,12 +83,8 @@ const maps = () => {
                         locationRoutesBtn.classList.add('_active');
                         routes.classList.add('_show');
                         routeShow();
-                         const routeControl = map.controls.get('routePanelControl');
-                         console.log(routeControl);
-                         console.log(routeControl._layout._parentElement);
                     } else {
                         locationRoutesBtn.classList.remove('_active');
-                        routes.classList.remove('_show');
                         routeHidden();
                     }
                 });
@@ -108,14 +124,43 @@ const maps = () => {
                         float: 'right',
                         maxWidth: '320px',
                         position: {
-                            right: 0,
-                            top: 0,
+                            right: 76,
+                            top: 16,
+                        },
+                    });
+                    btnCloseRoute = new ymaps.control.Button({
+                        data: {
+                            content: `
+                            <div class="ymaps__route-close-wrapper">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                            </div>
+                            `,
+                        },
+                        options: {
+                            maxWidth: [30, 100, 150]
                         }
                     });
+                    map.controls.add(btnCloseRoute, {
+                        position: {
+                            right: 92,
+                            top: 24,
+                        }
+                    });
+                    setTimeout(() => {
+                        document.querySelector('.ymaps__route-close-wrapper').closest('.ymaps-2-1-79-float-button').classList.add('ymaps__route-close');
+                    }, 50);
+                    btnCloseRoute.events.add('click', function (e) {
+                        routeHidden();
+                        map.controls.remove(btnCloseRoute);
+                        locationRoutesBtn.classList.remove('_active');
+                    })
                 }
 
                 function routeHidden() {
                     map.controls.remove('routePanelControl');
+                    routes.classList.remove('_show');
                 }
             }
         }
@@ -127,6 +172,7 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
+            positionElement(map);
             removeControlsPrimary(map, '#map-draw');
         }
         ymaps.ready(init);
@@ -137,6 +183,7 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
+            positionElement(map);
             removeControlsPrimary(map, '#place-sale-address-map');
         }
         ymaps.ready(init);
@@ -150,6 +197,7 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
+            positionElement(map);
             removeControlsPrimary(map, '#popup-map__map');
             if (innerWidth > 1144) reziseContainer(map)
         }

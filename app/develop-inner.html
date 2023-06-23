@@ -6657,16 +6657,57 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="object-location section-observ" id="section-location">
+                            <div class="object-body__location object-location object-location--select section-observ" id="section-location">
                                 <h2 class="object-location__title title-2">
                                     Расположение
                                 </h2>
                                 <p class="object-location__descr">
                                     Краснодар, Тополиная улица, 40/1к1
                                 </p>
+                                <div class="object-location__btns">
+                                    <button type="button" class="btn btn-reset object-location__btn object-location__btn--infrastructure _active">
+                                        Инфраструктура
+                                    </button>
+                                    <button type="button" class="btn btn-reset object-location__btn">
+                                        Предложения рядом
+                                    </button>
+                                    <button type="button" class="btn btn-reset object-location__btn object-location__btn--routes">
+                                        Маршруты
+                                    </button>
+                                </div>
                                 <div class="object-location__maps">
+                                    <div class="object-location__routes location-routes">
+                                        <button type="button" class="btn btn-reset btn-primary location-routes__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#routes"></use>
+                                            </svg>
+                                            Построить маршрут
+                                        </button>
+                                    </div>
                                     <div class="map-primary remove-copyrights-pane" id="object-maps">
                                     </div>
+                                </div>
+                                <div class="object-location__infrastructure _active">
+                                    <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                        Школы
+                                        <span>11</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                        Детские сады
+                                        <span>11</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                        Поликлиники
+                                        <span>25</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                        Магазины
+                                        <span>2</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                        Рестораны
+                                        <span>25</span>
+                                    </button>
                                 </div>
                             </div>
                             <div class="object-construct-progress section-observ" id="section-construct-progress">
@@ -26150,21 +26191,21 @@
                 Вам перезвонит специалист отдела продаж застройщика ГК Самолёт
             </p>
             <form action="#" class="book-consultation__form">
-                <label class="input-primary">
+                <label class="book-consultation__form--name input-primary" data-validate-required data-validate-min-length="2">
                     <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Ваше имя">
                 </label>
-                <label class="input-primary">
-                    <input type="tel" name="Телефон" class="input-reset input-primary__input" placeholder="Номер телефона" data-input-only-number>
+                <label class="book-consultation__form--tel input-primary">
+                    <input type="tel" name="Телефон" class="input-reset input-primary__input" placeholder="Номер телефона">
                 </label>
                 <div class="select-secondary">
                     <span class="select-secondary__placeholder">
                         Выберите удобное время
                     </span>
                     <select class="select-secondary__body" name="complex">
-                        <option placeholder value="all-room">Любое</option>
-                        <option value="room-1">17:00 - 18:00</option>
-                        <option value="room-1">18:00 - 19:00</option>
-                        <option value="room-1">20:00 - 20:00</option>
+                        <option placeholder value="timeAll">Любое</option>
+                        <option value="time1">17:00 - 18:00</option>
+                        <option value="time2">18:00 - 19:00</option>
+                        <option value="time3">20:00 - 20:00</option>
                     </select>
                 </div>
                 <div class="book-consultation__screen-demonstration checkbox-secondary">
@@ -26192,8 +26233,7 @@
                                 <div class="card-agent__avatar avatar">
                                     <picture>
                                         <source srcset="./img/avatar-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
-                                            alt="Алексей Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
                                     </picture>
                                 </div>
                                 <div class="card-agent__content">
@@ -26232,8 +26272,7 @@
                                 <div class="card-agent__avatar avatar">
                                     <picture>
                                         <source srcset="./img/avatar-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
-                                            alt="Алексей Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
                                     </picture>
                                 </div>
                                 <div class="card-agent__content">
@@ -26272,8 +26311,7 @@
                                 <div class="card-agent__avatar avatar">
                                     <picture>
                                         <source srcset="./img/avatar-1.webp" type="image/webp">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
-                                            alt="Алексей Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
                                     </picture>
                                 </div>
                                 <div class="card-agent__content">

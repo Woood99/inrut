@@ -24,7 +24,8 @@ import {
 } from './components/inputs';
 import {
     validateRadioPrimary,
-    validateCheckboxPrimary
+    validateCheckboxPrimary,
+    bookConsultationValidate
 } from './components/formValidate';
 import {
     calendarPrimary
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateRadioPrimary('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
     validateRadioPrimary('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
     validateCheckboxPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
-
+    bookConsultationValidate();
     // ==================================================
 
     dropdown('.dots-dropdown', '.dots-dropdown__target');
