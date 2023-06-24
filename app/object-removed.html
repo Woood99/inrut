@@ -577,8 +577,7 @@
                             <div class="object-body__user bid-user bid-user--grade _sticky">
                                 <div class="bid-user__container">
                                     <div class="bid-user__avatar avatar">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95"
-                                            alt="Алексей Г.">
+                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
                                     </div>
                                     <div class="bid-user__content">
                                         <a href="#" class="bid-user__name">
@@ -609,22 +608,20 @@
                                     <h3 class="bid-user__title title-3">
                                         Ваша оценка объекта
                                     </h3>
-                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike"
-                                         data-popup-path="object-not">
-                                        <svg>
+                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--dislike" data-popup-path="object-not" data-main-info-btn>
+                                        <svg style="margin-right:10px;width:17px;height:17px;fill: currentColor;">
                                             <use xlink:href="img/sprite.svg#dislike"></use>
                                         </svg>
                                         <span data-mobile-text="Не подходит">Объект не подходит</span>
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--like">
-                                        <svg>
+                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn--like" data-main-info-btn>
+                                        <svg style="margin-right:10px;width:17px;height:17px;fill: currentColor;">
                                             <use xlink:href="img/sprite.svg#like"></use>
                                         </svg>
                                         <span data-mobile-text="На просмотр">Хочу на просмотр</span>
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment"
-                                         data-popup-path="chat">
-                                        <svg>
+                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn--comment" data-popup-path="chat" data-main-info-btn>
+                                        <svg style="margin-right: 10px; width:17px; height:17px; fill: currentColor;">
                                             <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
                                         </svg>
                                         <span>Задать вопрос</span>
@@ -1256,12 +1253,18 @@
                         <use xlink:href="img/sprite.svg#info"></use>
                     </svg>
                 </label>
-                <label class="input-primary">
-                    <input type="text" name="Телефон" class="input-reset input-primary__input" value="89876543210" placeholder="Телефон">
-                </label>
-                <label class="input-primary">
-                    <input type="text" name="Эл.почта" class="input-reset input-primary__input" value="address@gmail.com" placeholder="Телефон">
-                </label>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="89876543210" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Эл.почта</span>
+                        <input type="text" name="Эл.почта" class="input-reset input-text__input" value="address@gmail.com" placeholder="">
+                    </label>
+                </div>
             </div>
             <div class="edit-profile__btns">
                 <button type="button" class="btn btn-reset btn-secondary edit-profile__delete">Удалить</button>
@@ -17747,7 +17750,7 @@
                 <div class="book-consultation__form--tel input-text input-text--no-exp">
                     <label class="input-text__label">
                         <span>Номер телефона</span>
-                        <input type="tel" name="Телефон" class="input-reset input-text__input" placeholder="">
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" placeholder="">
                     </label>
                 </div>
                 <div class="select-secondary">
@@ -17783,7 +17786,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Алексей Г." class="input-reset" placeholder="">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -17822,7 +17825,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Сергей С." class="input-reset" placeholder="">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -17832,7 +17835,7 @@
                                 </div>
                                 <div class="card-agent__content">
                                     <span class="card-agent__name">
-                                        Алексей Г.
+                                        Сергей С.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
                                         Отдел продаж был в сети 12.12.2022
@@ -17861,7 +17864,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Антон В." class="input-reset" placeholder="Имя">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -17871,7 +17874,7 @@
                                 </div>
                                 <div class="card-agent__content">
                                     <span class="card-agent__name">
-                                        Алексей Г.
+                                        Антон В.    
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
                                         Отдел продаж был в сети 12.12.2022

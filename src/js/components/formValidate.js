@@ -78,11 +78,24 @@ export const bookConsultationValidate = () => {
     const telLabel = form.querySelector('.book-consultation__form--tel');
     const nameInput = nameLabel.querySelector('input');
     const telInput = telLabel.querySelector('input');
-
-    inputMask(telInput);
+    const agentToggle = form.querySelector('.toggle-checkbox input');
+    const agents = form.querySelector('.book-consultation__agents');
+    const cardsAgent = agents.querySelectorAll('.card-agent');
 
     [nameLabel, telInput].forEach(el => {
         el.addEventListener('input', () => {
+            if (formEventInput) validate();
+        })
+    })
+    agentToggle.addEventListener('input', () => {
+        if (!agentToggle.checked) {
+            cardsAgent.forEach(card => {
+                card.classList.remove('_error');
+            })
+        }
+    })
+    cardsAgent.forEach(card => {
+        card.querySelector('input').addEventListener('input', () => {
             if (formEventInput) validate();
         })
     })
@@ -92,6 +105,7 @@ export const bookConsultationValidate = () => {
         formEventInput = true;
         validateRemoveError(telLabel);
         validateRemoveError(nameLabel);
+        cardsAgent.forEach(card => card.classList.remove('_error'));
         if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
             result = false;
             validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
@@ -104,19 +118,23 @@ export const bookConsultationValidate = () => {
             result = false;
             validateCreateError(telLabel, validateTextMap.tel);
         }
+        if (agents.classList.contains('_active') && !agents.querySelector('.card-agent input:checked')) {
+            result = false;
+            cardsAgent.forEach(agent => agent.classList.add('_error'));
+        }
         return result;
     }
 
     form.addEventListener('submit', (e) => {
-         if (!validate()) e.preventDefault();
+        if (!validate()) e.preventDefault();
     })
 };
 
 
-export const inputMask = (input) => {
-    if (!input) return;
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
-    inputMask.mask(input);
+export const inputMask = () => {
+    const inputs = document.querySelectorAll('.input-phone-mask');
+    const inputMask = new Inputmask('+7 999 999-99-99');
+    inputs.forEach(input => inputMask.mask(input));
 }
 export const inputTelValidate = (label, input) => {
     if (!label || !input) return;

@@ -24,15 +24,9 @@
         &__btns {
             margin-top: 32px;
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-column-gap: 16px;
-            grid-row-gap: 24px;
-            width: 100%;
-
-            @media (max-width:$desktop) {
-                grid-row-gap: 16px;
-            }
+            display: flex;
+            flex-direction: column;
+             width: 100%;
         }
 
         &__quantity {
@@ -45,23 +39,15 @@
             width: 100%;
             margin: 0;
 
-            &--online-display {
-                margin-top: 0;
-                grid-column: 1/-1;
-
-                svg {
-                    fill: none;
-                    stroke: var(--white);
-                    stroke-width: 1.5px;
-                }
-            }
-
             &--call {
                 padding: 0 11px;
             }
 
             &--message {
                 padding: 0 16px;
+            }
+            &:not(:last-child){
+                margin-bottom: 16px;
             }
         }
 

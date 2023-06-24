@@ -25,14 +25,12 @@ import {
 import {
     validateRadioPrimary,
     validateCheckboxPrimary,
-    bookConsultationValidate
+    bookConsultationValidate,
+    inputMask
 } from './components/formValidate';
 import {
     calendarPrimary
 } from './components/calendar'
-import {
-    galleryPrimary
-} from './components/gallery';
 import dropdown from './modules/dropdown';
 import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';
@@ -108,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     maps();
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
-    galleryPrimary();
     controlCards();
     videoBlock();
     reviewModal();
@@ -134,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateRadioPrimary('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
     validateCheckboxPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
     bookConsultationValidate();
+    inputMask();
     // ==================================================
 
     dropdown('.dots-dropdown', '.dots-dropdown__target');

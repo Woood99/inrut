@@ -29,7 +29,7 @@
 
     .lg-outer .lg-content {
         height: calc(100% - 116px);
-     width: 70%;
+        width: 70%;
         position: relative;
         overflow: hidden;
 
@@ -54,15 +54,18 @@
                 .lg-video-cont {
                     height: 100% !important;
                     width: auto !important;
-                    &::before{
+
+                    &::before {
                         content: "";
                         display: inline-block;
                         height: 100%;
                         vertical-align: middle;
                     }
+
                     .lg-video-poster {
                         height: 100%;
                         max-width: 85vw;
+
                         @media (max-width:$tablet-max) {
                             height: auto !important;
                             max-width: 100%;
@@ -103,8 +106,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-     width: 32px;
-     height: 32px;
+        width: 32px;
+        height: 32px;
         color: var(--blue);
         background-color: var(--white);
         border-radius: 50%;
@@ -158,8 +161,7 @@
         width: 70%;
         height: 116px;
 
-        @media (max-width:$tablet-max) {
-        }
+        @media (max-width:$tablet-max) {}
     }
 
     .lg-counter {
@@ -243,7 +245,7 @@
         background: rgba(34, 41, 102, 0.4);
     }
 
-    .object-gallery-info{
+    .gallery-info {
         position: fixed;
         right: 16px;
         bottom: 16px;
@@ -253,44 +255,46 @@
         box-shadow: var(--shadow-primary);
         color: var(--white);
         border-radius: 16px;
-        &__price{
-            display: block;
+
+        &__title {
             color: var(--white);
+            margin-bottom: 16px;
         }
-        &__descr{
-                margin-top: 16px;
-                display: block;
+
+        &__price {
+            display: block;
+
+            .object-data__price-new {
+                >span {
+                    &:nth-child(1) {
+                        color: var(--white);
+                    }
+                }
+            }
         }
-        &__address{
+
+        &__address {
             margin-top: 8px;
             margin-bottom: 24px;
             display: block;
+            .object-data__address--two{
+                color: var(--white);
+            }
+            .object-data__address--one{
+                color: var(--white);
+            }
         }
-        &__btn{
+
+        &__btn {
+            margin: 0;
             width: 100%;
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 margin-bottom: 16px;
             }
-            svg{
-                width: 17px;
-                height: 17px;
-                flex: 0 0 17px;
-                fill: var(--white);
-                margin-right: 16px;
-            }
-            &--chat{
-                border: none;
-                svg{
-                    fill: var(--blue);
-                    transition: fill $transitionSpeed $transitionFunction;
-                }
-               @media (min-width:$desktop-min){
-                &:hover{
-                    svg{
-                        fill: var(--white);
-                    }
-                } 
-               }
+
+            svg {
+               
             }
         }
     }

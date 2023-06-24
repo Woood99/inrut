@@ -77,38 +77,29 @@ export const galleryPrimary = () => {
         container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
 
         if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
-
-            // Временно!
-            // В дальнейшем данные будут братся с базы данных
+            const title = document.querySelector('[data-main-info-title]');
+            const address = document.querySelector('[data-main-info-address]');
+            const price = document.querySelector('[data-main-info-price]');
+            const btns = document.querySelectorAll('[data-main-info-btn]');
+            let btnsHTML = '';
+            if (btns.length) {
+                btns.forEach(btn => {
+                    btn.classList.add('gallery-info__btn');
+                    btnsHTML += btn.outerHTML;
+                })
+            }
             const infoHTML = `
-            <div class="object-gallery-info">
-                <span class="object-gallery-info__price title-2">
-                 2 897 000 ₽
-                </span>
-                <span class="object-gallery-info__descr">
-                    1-ком. квартира, 39 м², 12/12 эт.
-                </span>
-                <span class="object-gallery-info__address">
-                    Краснодар, ул.Карла-Маркса., 234
-                </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-popup-path="object-not">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#dislike"></use>
-                    </svg>
-                    <span data-mobile-text="Не подходит">Объект не подходит</span>
-                </button>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#like"></use>
-                    </svg>
-                    <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                </button>
-                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-popup-path="chat">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
-                    </svg>
-                    <span>Задать вопрос</span>
-                </button>
+            <div class="gallery-info">
+                <h2 class="gallery-info__title title-2">
+                    ${title ? title.innerHTML : ''}
+                </h2>
+                <div class="gallery-info__price">
+                    ${price ? price.innerHTML : ''}
+                </div>
+                <div class="gallery-info__address">
+                    ${address ? address.innerHTML : ''}
+                </div>
+                ${btnsHTML}
             </div>
             `;
             container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);

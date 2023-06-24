@@ -4144,31 +4144,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_inputs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/inputs */ "./src/js/components/inputs.js");
 /* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
 /* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
-/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
-/* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
-/* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
-/* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
-/* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
-/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
-/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
-/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/reviewModal */ "./src/js/components/reviewModal.js");
-/* harmony import */ var _components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/placeSaleOptionMore */ "./src/js/components/placeSaleOptionMore.js");
-/* harmony import */ var _components_dropImage__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/dropImage */ "./src/js/components/dropImage.js");
-/* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
-/* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
-/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
-/* harmony import */ var _components_choicePay__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/choicePay */ "./src/js/components/choicePay.js");
-/* harmony import */ var _components_genplan__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/genplan */ "./src/js/components/genplan.js");
-/* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
-/* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
-/* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
-/* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
-/* harmony import */ var _components_city__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/city */ "./src/js/components/city.js");
-/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
-/* harmony import */ var _components_cardActions__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/cardActions */ "./src/js/components/cardActions.js");
-/* harmony import */ var _components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/furnishingSets */ "./src/js/components/furnishingSets.js");
-/* harmony import */ var _components_bookConsultation__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/bookConsultation */ "./src/js/components/bookConsultation.js");
-
+/* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
+/* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
+/* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
+/* harmony import */ var _modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/emergingBlockScroll */ "./src/js/modules/emergingBlockScroll.js");
+/* harmony import */ var _components_controlCards__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/controlCards */ "./src/js/components/controlCards.js");
+/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
+/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/reviewModal */ "./src/js/components/reviewModal.js");
+/* harmony import */ var _components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/placeSaleOptionMore */ "./src/js/components/placeSaleOptionMore.js");
+/* harmony import */ var _components_dropImage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/dropImage */ "./src/js/components/dropImage.js");
+/* harmony import */ var _components_checkboard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/checkboard */ "./src/js/components/checkboard.js");
+/* harmony import */ var _components_headerFixed__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/headerFixed */ "./src/js/components/headerFixed.js");
+/* harmony import */ var _components_mortgage__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/mortgage */ "./src/js/components/mortgage.js");
+/* harmony import */ var _components_choicePay__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/choicePay */ "./src/js/components/choicePay.js");
+/* harmony import */ var _components_genplan__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/genplan */ "./src/js/components/genplan.js");
+/* harmony import */ var _components_mapMetro__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/mapMetro */ "./src/js/components/mapMetro.js");
+/* harmony import */ var _components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/cardStockPopup */ "./src/js/components/cardStockPopup.js");
+/* harmony import */ var _components_tag__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/tag */ "./src/js/components/tag.js");
+/* harmony import */ var _components_chat__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/chat */ "./src/js/components/chat.js");
+/* harmony import */ var _components_city__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/city */ "./src/js/components/city.js");
+/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/scrollDrag */ "./src/js/components/scrollDrag.js");
+/* harmony import */ var _components_cardActions__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/cardActions */ "./src/js/components/cardActions.js");
+/* harmony import */ var _components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/furnishingSets */ "./src/js/components/furnishingSets.js");
+/* harmony import */ var _components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/bookConsultation */ "./src/js/components/bookConsultation.js");
 
 
 
@@ -4241,33 +4239,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_30__.cardSecondaryActions)();
-  (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_30__.cardPrimaryActions)();
+  (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_29__.cardSecondaryActions)();
+  (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_29__.cardPrimaryActions)();
 
   // ==================================================
 
   (0,_components_maps__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
-  (0,_components_gallery__WEBPACK_IMPORTED_MODULE_9__.galleryPrimary)();
-  (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_14__["default"])();
-  (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_15__["default"])();
-  (0,_components_reviewModal__WEBPACK_IMPORTED_MODULE_16__["default"])();
-  (0,_components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_17__["default"])();
-  (0,_components_dropImage__WEBPACK_IMPORTED_MODULE_18__["default"])();
-  (0,_components_checkboard__WEBPACK_IMPORTED_MODULE_19__["default"])();
-  (0,_components_headerFixed__WEBPACK_IMPORTED_MODULE_20__["default"])();
-  (0,_components_mortgage__WEBPACK_IMPORTED_MODULE_21__["default"])();
-  (0,_components_choicePay__WEBPACK_IMPORTED_MODULE_22__["default"])();
-  (0,_components_genplan__WEBPACK_IMPORTED_MODULE_23__["default"])();
-  (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_24__["default"])();
-  (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_25__["default"])('.stock-developer__content .cards-list__items');
-  (0,_components_tag__WEBPACK_IMPORTED_MODULE_26__["default"])();
-  (0,_components_chat__WEBPACK_IMPORTED_MODULE_27__["default"])();
-  (0,_components_city__WEBPACK_IMPORTED_MODULE_28__["default"])();
-  (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_31__["default"])();
-  (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_32__["default"])();
-  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_29__["default"])('.object-location__infrastructure', 1000);
+  (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_13__["default"])();
+  (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_14__["default"])();
+  (0,_components_reviewModal__WEBPACK_IMPORTED_MODULE_15__["default"])();
+  (0,_components_placeSaleOptionMore__WEBPACK_IMPORTED_MODULE_16__["default"])();
+  (0,_components_dropImage__WEBPACK_IMPORTED_MODULE_17__["default"])();
+  (0,_components_checkboard__WEBPACK_IMPORTED_MODULE_18__["default"])();
+  (0,_components_headerFixed__WEBPACK_IMPORTED_MODULE_19__["default"])();
+  (0,_components_mortgage__WEBPACK_IMPORTED_MODULE_20__["default"])();
+  (0,_components_choicePay__WEBPACK_IMPORTED_MODULE_21__["default"])();
+  (0,_components_genplan__WEBPACK_IMPORTED_MODULE_22__["default"])();
+  (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_23__["default"])();
+  (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-developer__content .cards-list__items');
+  (0,_components_tag__WEBPACK_IMPORTED_MODULE_25__["default"])();
+  (0,_components_chat__WEBPACK_IMPORTED_MODULE_26__["default"])();
+  (0,_components_city__WEBPACK_IMPORTED_MODULE_27__["default"])();
+  (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__["default"])();
+  (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000);
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4275,21 +4272,22 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateCheckboxPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.bookConsultationValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.inputMask)();
   // ==================================================
 
-  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_10__["default"])('.dots-dropdown', '.dots-dropdown__target');
-  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_11__["default"])('.your-app-bid__item--dropdown', 'button', 'Меньше');
-  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
-  (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-data__text', '.object-data__more');
+  (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_9__["default"])('.dots-dropdown', '.dots-dropdown__target');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__["default"])('.your-app-bid__item--dropdown', 'button', 'Меньше');
+  (0,_modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__["default"])('.object-characteristics__container', '.object-characteristics__more', 'Меньше');
+  (0,_modules_dropdownDown__WEBPACK_IMPORTED_MODULE_11__["default"])('.object-data__text', '.object-data__more');
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_13__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
 
   // ==================================================
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_6__.inputClue)('.input-clue', 'clue-primary', `
@@ -4325,19 +4323,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/burger */ "./src/js/functions/burger.js");
 /* harmony import */ var _functions_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/tabs */ "./src/js/functions/tabs.js");
 /* harmony import */ var _functions_spollers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions/spollers */ "./src/js/functions/spollers.js");
-/* harmony import */ var _functions_sliders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./functions/sliders */ "./src/js/functions/sliders.js");
-/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
-/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
-/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
-/* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
+/* harmony import */ var _functions_sliders__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/sliders */ "./src/js/functions/sliders.js");
+/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
+/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
+/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
+/* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
+
 
 
 
 (0,_functions_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
 (0,_functions_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_functions_spollers__WEBPACK_IMPORTED_MODULE_2__["default"])();
-
+(0,_components_gallery__WEBPACK_IMPORTED_MODULE_3__.galleryPrimary)();
 // ========================================================================================
 
 
@@ -4347,24 +4347,24 @@ __webpack_require__.r(__webpack_exports__);
 // ========================================================================================
 
 
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'city');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'add');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'personal-area');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'edit-profile');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'share-app');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-user');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'complaint-object');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'thanks');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'object-not');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'interest-rate-modal');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'city');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'add');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'personal-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'edit-profile');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'share-app');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint-user');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint-object');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'thanks');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'object-not');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'interest-rate-modal');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
   isOpen: () => {
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_7__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_8__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
   }
 }, 'interest-rate-modal-two');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'construct-progress-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'construct-progress-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
   isOpen: () => {
     if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
@@ -4386,9 +4386,9 @@ __webpack_require__.r(__webpack_exports__);
     mask.classList.add('_active');
   }
 }, 'popup-genplan');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'popup-map_buy-apartment-building');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'search-area');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'popup-map_buy-apartment-building');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'search-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
   isOpen: () => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
@@ -4402,11 +4402,11 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 }, 'chat');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'online-display-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'authorization');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'sber-tied');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'kit-composition');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_6__["default"])(null, 'book-consultation');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'online-display-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'authorization');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'sber-tied');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'kit-composition');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'book-consultation');
 
 // ========================================================================================
 
@@ -6213,9 +6213,23 @@ const bookConsultationValidate = () => {
   const telLabel = form.querySelector('.book-consultation__form--tel');
   const nameInput = nameLabel.querySelector('input');
   const telInput = telLabel.querySelector('input');
-  inputMask(telInput);
+  const agentToggle = form.querySelector('.toggle-checkbox input');
+  const agents = form.querySelector('.book-consultation__agents');
+  const cardsAgent = agents.querySelectorAll('.card-agent');
   [nameLabel, telInput].forEach(el => {
     el.addEventListener('input', () => {
+      if (formEventInput) validate();
+    });
+  });
+  agentToggle.addEventListener('input', () => {
+    if (!agentToggle.checked) {
+      cardsAgent.forEach(card => {
+        card.classList.remove('_error');
+      });
+    }
+  });
+  cardsAgent.forEach(card => {
+    card.querySelector('input').addEventListener('input', () => {
       if (formEventInput) validate();
     });
   });
@@ -6224,6 +6238,7 @@ const bookConsultationValidate = () => {
     formEventInput = true;
     validateRemoveError(telLabel);
     validateRemoveError(nameLabel);
+    cardsAgent.forEach(card => card.classList.remove('_error'));
     if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
       result = false;
       validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
@@ -6236,16 +6251,20 @@ const bookConsultationValidate = () => {
       result = false;
       validateCreateError(telLabel, validateTextMap.tel);
     }
+    if (agents.classList.contains('_active') && !agents.querySelector('.card-agent input:checked')) {
+      result = false;
+      cardsAgent.forEach(agent => agent.classList.add('_error'));
+    }
     return result;
   }
   form.addEventListener('submit', e => {
     if (!validate()) e.preventDefault();
   });
 };
-const inputMask = input => {
-  if (!input) return;
-  const inputMask = new (inputmask__WEBPACK_IMPORTED_MODULE_0___default())('+7 (999) 999-99-99');
-  inputMask.mask(input);
+const inputMask = () => {
+  const inputs = document.querySelectorAll('.input-phone-mask');
+  const inputMask = new (inputmask__WEBPACK_IMPORTED_MODULE_0___default())('+7 999 999-99-99');
+  inputs.forEach(input => inputMask.mask(input));
 };
 const inputTelValidate = (label, input) => {
   if (!label || !input) return;
@@ -6393,37 +6412,29 @@ const galleryPrimary = () => {
     container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
     container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
     if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
-      // Временно!
-      // В дальнейшем данные будут братся с базы данных
+      const title = document.querySelector('[data-main-info-title]');
+      const address = document.querySelector('[data-main-info-address]');
+      const price = document.querySelector('[data-main-info-price]');
+      const btns = document.querySelectorAll('[data-main-info-btn]');
+      let btnsHTML = '';
+      if (btns.length) {
+        btns.forEach(btn => {
+          btn.classList.add('gallery-info__btn');
+          btnsHTML += btn.outerHTML;
+        });
+      }
       const infoHTML = `
-            <div class="object-gallery-info">
-                <span class="object-gallery-info__price title-2">
-                 2 897 000 ₽
-                </span>
-                <span class="object-gallery-info__descr">
-                    1-ком. квартира, 39 м², 12/12 эт.
-                </span>
-                <span class="object-gallery-info__address">
-                    Краснодар, ул.Карла-Маркса., 234
-                </span>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn" data-popup-path="object-not">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#dislike"></use>
-                    </svg>
-                    <span data-mobile-text="Не подходит">Объект не подходит</span>
-                </button>
-                <button type="button" class="btn btn-reset btn-primary object-gallery-info__btn">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#like"></use>
-                    </svg>
-                    <span data-mobile-text="На просмотр">Хочу на просмотр</span>
-                </button>
-                <button type="button" class="btn btn-reset btn-secondary object-gallery-info__btn object-gallery-info__btn--chat" data-popup-path="chat">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#ChatCircleDots"></use>
-                    </svg>
-                    <span>Задать вопрос</span>
-                </button>
+            <div class="gallery-info">
+                <h2 class="gallery-info__title title-2">
+                    ${title ? title.innerHTML : ''}
+                </h2>
+                <div class="gallery-info__price">
+                    ${price ? price.innerHTML : ''}
+                </div>
+                <div class="gallery-info__address">
+                    ${address ? address.innerHTML : ''}
+                </div>
+                ${btnsHTML}
             </div>
             `;
       container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);

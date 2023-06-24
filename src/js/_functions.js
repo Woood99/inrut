@@ -1,11 +1,13 @@
 import burgerMenu from './functions/burger';
 import tabs from "./functions/tabs";
 import spollers from "./functions/spollers";
-
+import {
+    galleryPrimary
+} from './components/gallery';
 burgerMenu();
 tabs();
 spollers();
-
+galleryPrimary();
 // ========================================================================================
 
 import "./functions/sliders";

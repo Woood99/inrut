@@ -340,15 +340,15 @@
                             </div>
                         </div>
                         <div class="object-body__data object-data">
-                            <h3 class="object-data__name">
+                            <h3 class="object-data__name" data-main-info-title>
                                 1-ком. квартира, 39 м², 12/12 эт.
                             </h3>
-                            <div class="object-data__address">
+                            <div class="object-data__address" data-main-info-address>
                                 <span class="object-data__address--one">
                                     ЖК “Новое Внуково”
                                 </span>
                             </div>
-                            <div class="object-data__price">
+                            <div class="object-data__price" data-main-info-price>
                                 <span class="object-data__price-old">
                                     <span>
                                         <span>3 000 000</span> ₽
@@ -498,37 +498,74 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="object-data__ask ask">
-                                <h3 class="ask__title">
-                                    Спросите у застройщика
-                                </h3>
-                                <p class="ask__descr">
-                                    Застройщик подберет персональные условия и
-                                    ответит на вопросы
-                                </p>
-                                <div class="ask__btns">
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        Какие есть варианты отделки?
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        Есть акции и скидки?
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        Когда сдаётся дом?
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        С каким банками работаете?
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        Может, на других этажах есть квартиры дешевле?
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary ask__btn">
-                                        Другой вопрос
-                                    </button>
-                                </div>
+                            <div class="object-data__online-display online-display">
+                                <h2 class="online-display__main-title">
+                                    Доступные опции
+                                </h2>
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(232, 255, 255);">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Меблировка</h4>
+                                    <p class="online-display__descr">
+                                        От 250 000 ₽
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(255, 241, 197);">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Отделка</h4>
+                                    <p class="online-display__descr">
+                                        Включено
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(255, 241, 197); grid-column: 1/-1;">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Сплитсистема</h4>
+                                    <p class="online-display__descr">
+                                        В подарок
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-
+                        <div class="object-body__ask ask">
+                            <h3 class="title-2 ask__title">
+                                Спросите у застройщика
+                            </h3>
+                            <p class="ask__descr">
+                                Застройщик подберет персональные условия и
+                                ответит на вопросы
+                            </p>
+                            <div class="ask__btns">
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Какие есть варианты отделки?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Есть акции и скидки?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Когда сдаётся дом?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    С каким банками работаете?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Может, на других этажах есть квартиры дешевле?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Другой вопрос
+                                </button>
+                            </div>
+                        </div>
                         <div class="object-body__stock block-stock">
                             <div class="block-stock__top">
                                 <h2 class="block-stock__title title-2">
@@ -1799,23 +1836,23 @@
                                 </div>
                             </div>
                             <div class="bid-user__btns">
-                                <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--online-display">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#VideoCamera"></use>
-                                    </svg>
-                                    Онлайн-показ
-                                </button>
-                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--call">
+                                <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call" data-main-info-btn>
                                     <svg>
                                         <use xlink:href="img/sprite.svg#phone"></use>
                                     </svg>
-                                    Позвонить
+                                    Телефон
                                 </button>
-                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message">
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="chat" data-main-info-btn>
                                     <svg>
                                         <use xlink:href="img/sprite.svg#chat"></use>
                                     </svg>
                                     <span>Задать вопрос</span>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="book-consultation" data-main-info-btn>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Заказать консультацию</span>
                                 </button>
                             </div>
                         </div>
@@ -2433,12 +2470,18 @@
                         <use xlink:href="img/sprite.svg#info"></use>
                     </svg>
                 </label>
-                <label class="input-primary">
-                    <input type="text" name="Телефон" class="input-reset input-primary__input" value="89876543210" placeholder="Телефон">
-                </label>
-                <label class="input-primary">
-                    <input type="text" name="Эл.почта" class="input-reset input-primary__input" value="address@gmail.com" placeholder="Телефон">
-                </label>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="89876543210" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Эл.почта</span>
+                        <input type="text" name="Эл.почта" class="input-reset input-text__input" value="address@gmail.com" placeholder="">
+                    </label>
+                </div>
             </div>
             <div class="edit-profile__btns">
                 <button type="button" class="btn btn-reset btn-secondary edit-profile__delete">Удалить</button>
@@ -18924,7 +18967,7 @@
                 <div class="book-consultation__form--tel input-text input-text--no-exp">
                     <label class="input-text__label">
                         <span>Номер телефона</span>
-                        <input type="tel" name="Телефон" class="input-reset input-text__input" placeholder="">
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" placeholder="">
                     </label>
                 </div>
                 <div class="select-secondary">
@@ -18960,7 +19003,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Алексей Г." class="input-reset" placeholder="">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -18999,7 +19042,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Сергей С." class="input-reset" placeholder="">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -19009,7 +19052,7 @@
                                 </div>
                                 <div class="card-agent__content">
                                     <span class="card-agent__name">
-                                        Алексей Г.
+                                        Сергей С.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
                                         Отдел продаж был в сети 12.12.2022
@@ -19038,7 +19081,7 @@
                                     <use xlink:href="img/sprite.svg#verif"></use>
                                 </svg>
                             </div>
-                            <input type="radio" name="choice-agent" class="input-reset" placeholder="Имя">
+                            <input type="radio" name="choice-agent" value="Антон В." class="input-reset" placeholder="Имя">
                             <div href="#" class="card-agent__wrapper">
                                 <div class="card-agent__avatar avatar">
                                     <picture>
@@ -19048,7 +19091,7 @@
                                 </div>
                                 <div class="card-agent__content">
                                     <span class="card-agent__name">
-                                        Алексей Г.
+                                        Антон В.    
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
                                         Отдел продаж был в сети 12.12.2022
