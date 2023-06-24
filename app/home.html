@@ -2020,17 +2020,11 @@
                         <use xlink:href="img/sprite.svg#info"></use>
                     </svg>
                 </label>
-                <label class="input-primary input-clue">
-                    <input type="text" name="Телефон" class="input-reset input-primary__input" disabled value="89876543210" placeholder="Телефон">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                <label class="input-primary">
+                    <input type="text" name="Телефон" class="input-reset input-primary__input" value="89876543210" placeholder="Телефон">
                 </label>
-                <label class="input-primary input-clue">
-                    <input type="text" name="Эл.почта" class="input-reset input-primary__input" disabled value="address@gmail.com" placeholder="Телефон">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                <label class="input-primary">
+                    <input type="text" name="Эл.почта" class="input-reset input-primary__input" value="address@gmail.com" placeholder="Телефон">
                 </label>
             </div>
             <div class="edit-profile__btns">
@@ -18508,21 +18502,29 @@
                 Вам перезвонит специалист отдела продаж застройщика ГК Самолёт
             </p>
             <form action="#" class="book-consultation__form">
-                <label class="book-consultation__form--name input-primary" data-validate-required data-validate-min-length="2">
-                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Ваше имя">
-                </label>
-                <label class="book-consultation__form--tel input-primary">
-                    <input type="tel" name="Телефон" class="input-reset input-primary__input" placeholder="Номер телефона">
-                </label>
+                <div class="book-consultation__form--name input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
+                    <label class="input-text__label">
+                        <span>Ваше имя</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" placeholder="">
+                    </label>
+                </div>
+                <div class="book-consultation__form--tel input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input" placeholder="">
+                    </label>
+                </div>
                 <div class="select-secondary">
                     <span class="select-secondary__placeholder">
                         Выберите удобное время
                     </span>
                     <select class="select-secondary__body" name="complex">
-                        <option placeholder value="timeAll">Любое</option>
+                        <option placeholder value="timeAll">Как можно скорее</option>
+                        <option value="time1">16:00 - 17:00</option>
                         <option value="time1">17:00 - 18:00</option>
                         <option value="time2">18:00 - 19:00</option>
-                        <option value="time3">20:00 - 20:00</option>
+                        <option value="time3">20:00 - 21:00</option>
+                        <option value="time3">21:00 - 22:00</option>
                     </select>
                 </div>
                 <div class="book-consultation__screen-demonstration checkbox-secondary">

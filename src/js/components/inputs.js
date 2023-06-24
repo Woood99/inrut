@@ -8,8 +8,10 @@ export const inputText = () => {
         inputs.forEach(el => {
             const input = el.querySelector('.input-text__input');
             input.addEventListener('input', () => {
-                input.value = input.value.replace(/\D/g, '');
-                input.value = numberReplace(input.value);
+                if (el.classList.contains('input-text--only-number')) {
+                    input.value = input.value.replace(/\D/g, '');
+                    input.value = numberReplace(input.value);
+                }
                 if (input.value.length >= 1) {
                     el.classList.add('_active')
                 } else {

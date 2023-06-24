@@ -509,11 +509,10 @@ textarea.input-reset {
 .input-text {
   position: relative;
   display: block;
-  height: 45px;
 }
 .input-text__label {
   width: 100%;
-  height: 100%;
+  height: 45px;
   padding: 0 16px;
   color: var(--gray);
   font-size: 14px;
@@ -590,8 +589,28 @@ textarea.input-reset {
 .input-text--no-subtitle .input-text__label {
   display: block;
 }
+.input-text--no-exp .input-text__label {
+  -ms-grid-columns: -webkit-max-content 1fr;
+  -ms-grid-columns: max-content 1fr;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+}
 .input-text._active .input-text__label span {
   color: #b6d5f8;
+}
+.input-text._error .input-text__label {
+  border: 1px solid var(--red);
+}
+.input-text._error .input-text__label > span {
+  color: var(--red);
+}
+.input-text ._error-span {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+  margin-left: 8px;
 }
 
 .input-clue {
@@ -990,7 +1009,7 @@ textarea.input-reset {
   left: 24px;
 }
 .toggle-checkbox > span {
-  margin-top: 6px;
+  margin-top: 4px;
   margin-left: 12px;
   font-size: 15px;
   line-height: 1.2666666667;
@@ -4188,6 +4207,9 @@ textarea.input-reset {
 .book-consultation__btn {
   margin-top: 16px;
   grid-column: 1/-1;
+}
+.book-consultation__btn._moving {
+  margin-top: 48px;
 }
 .book-consultation__choices {
   margin-top: 16px;

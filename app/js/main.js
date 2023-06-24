@@ -4440,14 +4440,18 @@ __webpack_require__.r(__webpack_exports__);
 const bookConsultation = () => {
   const container = document.querySelector('.book-consultation');
   if (!container) return;
+  const form = container.querySelector('.book-consultation__form');
   const agentToggle = container.querySelector('.toggle-checkbox input');
   const agentsContainer = container.querySelector('.book-consultation__agents');
   const agentsList = container.querySelectorAll('.card-agent');
+  const button = container.querySelector('.book-consultation__btn');
   agentToggle.addEventListener('input', () => {
     if (agentToggle.checked) {
       agentsContainer.classList.add('_active');
+      movingButton();
     } else {
       agentsContainer.classList.remove('_active');
+      movingButtonDefault();
     }
   });
   agentsList.forEach(currentAgent => {
@@ -4456,6 +4460,14 @@ const bookConsultation = () => {
       currentAgent.classList.add('_active');
     });
   });
+  function movingButton() {
+    form.insertAdjacentElement('beforeend', button);
+    button.classList.add('_moving');
+  }
+  function movingButtonDefault() {
+    container.querySelector('.book-consultation__screen-demonstration').insertAdjacentElement('afterend', button);
+    button.classList.remove('_moving');
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (bookConsultation);
 
@@ -6227,9 +6239,12 @@ const bookConsultationValidate = () => {
     return result;
   }
   form.addEventListener('submit', e => {
-    if (!validate()) e.preventDefault();
+    validate();
+    e.preventDefault();
+    // if (!validate()) e.preventDefault();
   });
 };
+
 const inputMask = input => {
   if (!input) return;
   const inputMask = new (inputmask__WEBPACK_IMPORTED_MODULE_0___default())('+7 (999) 999-99-99');
@@ -6243,13 +6258,14 @@ const inputTelValidate = (label, input) => {
 function validateCreateError(label, text) {
   validateRemoveError(label);
   const errorSpan = document.createElement('span');
+  errorSpan.classList.add('_error-span');
   errorSpan.textContent = text;
   label.append(errorSpan);
   label.classList.add('_error');
 }
 function validateRemoveError(label) {
   if (!label.classList.contains('_error')) return;
-  label.querySelector('span').remove();
+  label.querySelector('._error-span').remove();
   label.classList.remove('_error');
 }
 
@@ -6611,8 +6627,10 @@ const inputText = () => {
     inputs.forEach(el => {
       const input = el.querySelector('.input-text__input');
       input.addEventListener('input', () => {
-        input.value = input.value.replace(/\D/g, '');
-        input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_2__["default"])(input.value);
+        if (el.classList.contains('input-text--only-number')) {
+          input.value = input.value.replace(/\D/g, '');
+          input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_2__["default"])(input.value);
+        }
         if (input.value.length >= 1) {
           el.classList.add('_active');
         } else {

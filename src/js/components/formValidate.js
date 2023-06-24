@@ -108,7 +108,9 @@ export const bookConsultationValidate = () => {
     }
 
     form.addEventListener('submit', (e) => {
-        if (!validate()) e.preventDefault();
+        validate();
+        e.preventDefault();
+        // if (!validate()) e.preventDefault();
     })
 };
 
@@ -128,6 +130,7 @@ export const inputTelValidate = (label, input) => {
 function validateCreateError(label, text) {
     validateRemoveError(label);
     const errorSpan = document.createElement('span');
+    errorSpan.classList.add('_error-span');
     errorSpan.textContent = text;
 
     label.append(errorSpan);
@@ -136,6 +139,6 @@ function validateCreateError(label, text) {
 
 function validateRemoveError(label) {
     if (!label.classList.contains('_error')) return;
-    label.querySelector('span').remove();
+    label.querySelector('._error-span').remove();
     label.classList.remove('_error');
 }
