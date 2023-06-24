@@ -108,9 +108,7 @@ export const bookConsultationValidate = () => {
     }
 
     form.addEventListener('submit', (e) => {
-        validate();
-        e.preventDefault();
-        // if (!validate()) e.preventDefault();
+         if (!validate()) e.preventDefault();
     })
 };
 

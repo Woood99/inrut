@@ -6239,12 +6239,9 @@ const bookConsultationValidate = () => {
     return result;
   }
   form.addEventListener('submit', e => {
-    validate();
-    e.preventDefault();
-    // if (!validate()) e.preventDefault();
+    if (!validate()) e.preventDefault();
   });
 };
-
 const inputMask = input => {
   if (!input) return;
   const inputMask = new (inputmask__WEBPACK_IMPORTED_MODULE_0___default())('+7 (999) 999-99-99');
