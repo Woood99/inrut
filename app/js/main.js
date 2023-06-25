@@ -4324,12 +4324,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/tabs */ "./src/js/functions/tabs.js");
 /* harmony import */ var _functions_spollers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions/spollers */ "./src/js/functions/spollers.js");
 /* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/gallery */ "./src/js/components/gallery.js");
-/* harmony import */ var _functions_sliders__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/sliders */ "./src/js/functions/sliders.js");
-/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
-/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
-/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
-/* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
+/* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/videoBlock */ "./src/js/components/videoBlock.js");
+/* harmony import */ var _functions_sliders__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/sliders */ "./src/js/functions/sliders.js");
+/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/dynamic-adapt */ "./src/js/functions/dynamic-adapt.js");
+/* harmony import */ var _functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_functions_dynamic_adapt__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
+/* harmony import */ var _functions_popup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./functions/popup */ "./src/js/functions/popup.js");
+/* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/inputResize */ "./src/js/modules/inputResize.js");
+
 
 
 
@@ -4347,24 +4349,24 @@ __webpack_require__.r(__webpack_exports__);
 // ========================================================================================
 
 
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'city');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'add');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'personal-area');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'edit-profile');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'share-app');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint-user');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'complaint-object');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'thanks');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'object-not');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'interest-rate-modal');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'city');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-profile');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'share-app');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-user');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-object');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'thanks');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-not');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'interest-rate-modal');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: () => {
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_8__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_9__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
   }
 }, 'interest-rate-modal-two');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'construct-progress-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'construct-progress-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: () => {
     if (window.innerWidth > 1144) return;
     const container = document.querySelector('.genplan');
@@ -4386,9 +4388,9 @@ __webpack_require__.r(__webpack_exports__);
     mask.classList.add('_active');
   }
 }, 'popup-genplan');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'popup-map_buy-apartment-building');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'search-area');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])({
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'popup-map_buy-apartment-building');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'search-area');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: () => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
@@ -4402,11 +4404,19 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 }, 'chat');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'online-display-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'authorization');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'sber-tied');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'kit-composition');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_7__["default"])(null, 'book-consultation');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'online-display-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'authorization');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'sber-tied');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'kit-composition');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'book-consultation');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  isOpen: settingsModal => {
+    (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_4__["default"])(settingsModal.container.querySelector('.screen-demonstation__video'));
+  },
+  isClose: settingsModal => {
+    settingsModal.container.querySelector('.video-block__video').innerHTML = '';
+  }
+}, 'screen-demonstation-popup');
 
 // ========================================================================================
 
@@ -4440,6 +4450,7 @@ __webpack_require__.r(__webpack_exports__);
 const bookConsultation = () => {
   const container = document.querySelector('.book-consultation');
   if (!container) return;
+  const modal = container.closest('.popup-primary--book-consultation');
   const form = container.querySelector('.book-consultation__form');
   const agentToggle = container.querySelector('.toggle-checkbox input');
   const agentsContainer = container.querySelector('.book-consultation__agents');
@@ -4449,9 +4460,17 @@ const bookConsultation = () => {
     if (agentToggle.checked) {
       agentsContainer.classList.add('_active');
       movingButton();
+      modal.scrollTo({
+        top: modal.scrollHeight,
+        behavior: "smooth"
+      });
     } else {
       agentsContainer.classList.remove('_active');
       movingButtonDefault();
+      modal.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   });
   agentsList.forEach(currentAgent => {
@@ -6225,6 +6244,8 @@ const bookConsultationValidate = () => {
     if (!agentToggle.checked) {
       cardsAgent.forEach(card => {
         card.classList.remove('_error');
+        card.classList.remove('_active');
+        card.querySelector('input').checked = false;
       });
     }
   });
@@ -7667,24 +7688,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function videoBlock() {
+const videoBlock = currentVideoBlock => {
+  if (currentVideoBlock) {
+    const btn = currentVideoBlock.querySelector('.video-block__button');
+    const content = currentVideoBlock.querySelector('.video-block__video');
+    createVideoBlock(btn, content);
+    return;
+  }
   const videos = document.querySelectorAll('.video-block');
   if (!videos) return;
   videos.forEach(video => {
-    const btn = video.querySelector('.video-block__button');
-    const content = video.querySelector('.video-block__video');
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const contentHTML = `
-                <iframe src="${btn.dataset.src}?autoplay=1&mute=0" frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen></iframe>
-                </iframe>
-                `;
-      content.insertAdjacentHTML('beforeend', contentHTML);
-    });
+    if (!video.classList.contains('video-block--auto')) {
+      const btn = video.querySelector('.video-block__button');
+      const content = video.querySelector('.video-block__video');
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        createVideoBlock(btn, content);
+      });
+    }
   });
-}
+  function createVideoBlock(btn, content) {
+    const contentHTML = `
+            <iframe src="${btn.dataset.src}?autoplay=1&mute=0" frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen></iframe>
+            </iframe>
+            `;
+    content.insertAdjacentHTML('beforeend', contentHTML);
+  }
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (videoBlock);
 
 /***/ }),
@@ -8018,7 +8050,7 @@ const popup = (options, modalName) => {
     settingsModal.container.classList.add('popup-open');
     settingsModal.container.classList.add(settingsModal.animation);
     setTimeout(() => {
-      settingsModal.options.isOpen();
+      settingsModal.options.isOpen(settingsModal);
       settingsModal.container.classList.add('animate-open');
       settingsModal.isOpen = true;
       popupLastString(modalName, 'added');
@@ -8041,7 +8073,7 @@ const popup = (options, modalName) => {
     }
     document.body.style.scrollBehavior = 'auto';
     document.documentElement.style.scrollBehavior = 'auto';
-    settingsModal.options.isClose();
+    settingsModal.options.isClose(settingsModal);
     settingsModal.isOpen = false;
     focusTrap();
   }

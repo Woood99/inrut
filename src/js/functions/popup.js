@@ -108,7 +108,7 @@ const popup = (options, modalName) => {
         settingsModal.container.classList.add(settingsModal.animation);
 
         setTimeout(() => {
-            settingsModal.options.isOpen();
+            settingsModal.options.isOpen(settingsModal);
             settingsModal.container.classList.add('animate-open');
             settingsModal.isOpen = true;
             popupLastString(modalName, 'added');
@@ -135,7 +135,7 @@ const popup = (options, modalName) => {
         }
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';
-        settingsModal.options.isClose();
+        settingsModal.options.isClose(settingsModal);
         settingsModal.isOpen = false;
         focusTrap();
     }

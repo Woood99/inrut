@@ -1,6 +1,7 @@
 const bookConsultation = () => {
     const container = document.querySelector('.book-consultation');
     if (!container) return;
+    const modal = container.closest('.popup-primary--book-consultation');
     const form = container.querySelector('.book-consultation__form');
     const agentToggle = container.querySelector('.toggle-checkbox input');
     const agentsContainer = container.querySelector('.book-consultation__agents');
@@ -10,9 +11,17 @@ const bookConsultation = () => {
         if (agentToggle.checked) {
             agentsContainer.classList.add('_active');
             movingButton();
+            modal.scrollTo({
+                top: modal.scrollHeight,
+                behavior: "smooth",
+            });
         } else {
             agentsContainer.classList.remove('_active');
             movingButtonDefault();
+            modal.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
         }
     })
     agentsList.forEach(currentAgent => {

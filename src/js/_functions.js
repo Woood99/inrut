@@ -4,6 +4,7 @@ import spollers from "./functions/spollers";
 import {
     galleryPrimary
 } from './components/gallery';
+import videoBlock from './components/videoBlock';
 burgerMenu();
 tabs();
 spollers();
@@ -79,5 +80,14 @@ popup(null, 'authorization');
 popup(null, 'sber-tied');
 popup(null, 'kit-composition');
 popup(null, 'book-consultation');
+popup({
+    isOpen: (settingsModal) => {
+        videoBlock(settingsModal.container.querySelector('.screen-demonstation__video'));
+    },
+    isClose: (settingsModal) => {
+        settingsModal.container.querySelector('.video-block__video').innerHTML = '';
+    }
+
+}, 'screen-demonstation-popup');
 
 // ========================================================================================

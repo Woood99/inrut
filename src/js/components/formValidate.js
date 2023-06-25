@@ -91,6 +91,8 @@ export const bookConsultationValidate = () => {
         if (!agentToggle.checked) {
             cardsAgent.forEach(card => {
                 card.classList.remove('_error');
+                card.classList.remove('_active');
+                card.querySelector('input').checked = false;
             })
         }
     })

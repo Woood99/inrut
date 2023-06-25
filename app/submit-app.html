@@ -17861,6 +17861,11 @@
                     <label for="screen-demonstration" class="checkbox-secondary__label">
                         <span class="checkbox-secondary__text">Консультация с демонстрацией экрана</span>
                     </label>
+                    <button type="button" class="btn btn-reset" data-popup-path="screen-demonstation-popup">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#info"></use>
+                        </svg>
+                    </button>
                 </div>
                 <button type="submit" class="btn btn-reset btn-primary book-consultation__btn">Оставить заявку</button>
                 <div class="book-consultation__choices">
@@ -17964,7 +17969,7 @@
                                 </div>
                                 <div class="card-agent__content">
                                     <span class="card-agent__name">
-                                        Антон В.    
+                                        Антон В.
                                     </span>
                                     <time class="card-agent__time" datetime="2022-12-12">
                                         Отдел продаж был в сети 12.12.2022
@@ -17994,7 +17999,40 @@
     </div>
 </div>
 
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--screen-demonstation">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="screen-demonstation-popup">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content screen-demonstation">
+            <div class="screen-demonstation__video video-block video-block--auto">
+                <!-- в data-src указываем путь к видео по примеру (embed обязательно) -->
+                <button type="button" class="btn btn-reset video-block__button" data-src="https://www.youtube.com/embed/OaFmmd2Ium8">
+                    <picture>
+                        <source srcset="./img/poster-1.webp" type="image/webp">
+                        <img loading="lazy" src="./img/poster-1.jpg" class="video-block__poster" alt="">
+                    </picture>
+                    <div class="video-block__video">
+
+                    </div>
+                    <div class="video-block__play">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#play"></use>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 
 
 </html>
+  
