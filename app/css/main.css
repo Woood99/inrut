@@ -5701,7 +5701,7 @@ textarea.input-reset {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 32px;
-  grid-row-gap: 8px;
+  grid-row-gap: 32px;
 }
 @media (max-width: 1144px) {
   .purchase-terms__wrapper {
@@ -5723,30 +5723,28 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  padding: 16px;
-  background-color: var(--primary100);
-  border-radius: 12px;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
   text-align: left;
+}
+.purchase-terms__btn svg:first-child {
+  margin-right: 16px;
+  --size: 24px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 var(--size);
+  flex: 0 0 var(--size);
+  width: var(--size);
+  height: var(--size);
+  fill: var(--dark);
 }
 .purchase-terms__btn span {
   font-size: 12px;
   line-height: 1.25;
   font-weight: 500;
-}
-.purchase-terms__btn span:nth-child(1) {
   color: var(--gray);
-  width: 37%;
 }
-.purchase-terms__btn span:nth-child(2) {
+.purchase-terms__btn span:nth-child(3) {
   margin-left: 8px;
-  color: var(--blue);
 }
-.purchase-terms__btn svg {
+.purchase-terms__btn svg:not(:first-child) {
   margin-left: 10px;
   --size: 17px;
   -webkit-box-flex: 0;

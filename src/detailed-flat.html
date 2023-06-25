@@ -254,25 +254,34 @@
                                     Варианты приобретения
                                 </h3>
                                 <div class="purchase-terms__wrapper">
-                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#coin-2"></use>
+                                        </svg>
                                         <span>100% оплата</span>
                                         <span>Скидка до 12%</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#past"></use>
+                                        </svg>
                                         <span>Рассрочка</span>
                                         <span>0-0-24</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#bank-2"></use>
+                                        </svg>
                                         <span>Ипотека</span>
                                         <span>от 0,1%</span>
-                                    </button>
-                                    <button type="button" class="btn btn-reset purchase-terms__btn">
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#refresh"></use>
+                                        </svg>
                                         <span>Trade in</span>
                                         <span>Возможен</span>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check-circle"></use>
-                                        </svg>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="object-data__online-display online-display">
@@ -1561,11 +1570,55 @@
                         </div>
                         <div class="object-body__location object-location">
                             <h2 class="object-location__title title-2">
-                                Вид из окна
+                                Расположение
                             </h2>
+                            <p class="object-location__descr">
+                                Краснодар, Тополиная улица, 40/1к1
+                            </p>
+                            <div class="object-location__btns">
+                                <button type="button" class="btn btn-reset object-location__btn object-location__btn--infrastructure _active">
+                                    Инфраструктура
+                                </button>
+                                <button type="button" class="btn btn-reset object-location__btn">
+                                  Вид из окна
+                                </button>
+                                <button type="button" class="btn btn-reset object-location__btn object-location__btn--routes">
+                                    Маршруты
+                                </button>
+                            </div>
                             <div class="object-location__maps">
+                                <div class="object-location__routes location-routes">
+                                    <button type="button" class="btn btn-reset btn-primary location-routes__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#routes"></use>
+                                        </svg>
+                                        Построить маршрут
+                                    </button>
+                                </div>
                                 <div class="map-primary remove-copyrights-pane" id="object-maps">
                                 </div>
+                            </div>
+                            <div class="object-location__infrastructure _active">
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Школы
+                                    <span>11</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Детские сады
+                                    <span>11</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Поликлиники
+                                    <span>25</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Магазины
+                                    <span>2</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Рестораны
+                                    <span>25</span>
+                                </button>
                             </div>
                         </div>
                         <div class="object-body__tour block-tour">
