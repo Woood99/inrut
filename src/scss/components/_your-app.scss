@@ -126,8 +126,7 @@
             }
 
             &__controls {
-                display: flex;
-                padding: 16px 16px 0;
+              display: flex;
             }
 
             &__control {
@@ -148,16 +147,15 @@
 }
 
 .your-app-bid {
-
-    &__body {
-        padding: 32px;
-        background-color: var(--stand-bg);
-        border-radius: 16px;
-
-        @media (max-width:$desktop) {
-            padding: 0;
-            background-color: transparent;
+    background-color: var(--stand-bg);
+    padding: 32px 0;
+    .container{
+        @media (max-width:$desktop){
+             padding: 0; 
         }
+    }
+    &__body {
+
     }
 
     &__info {
@@ -168,7 +166,7 @@
         border-radius: 12px;
 
         @media (max-width:$desktop) {
-            padding: 16px;
+          padding: 24px;
         }
     }
 
@@ -293,7 +291,7 @@
 
                 @media (max-width:$desktop) {
                     align-items: start;
-                    width: 45%;
+                    width: 30%;
                 }
 
                 @media (max-width:$mobile-max) {
@@ -437,5 +435,7 @@
             align-items: start;
         }
     }
-
+    @media (max-width:$desktop){
+         padding: 24px 0; 
+    }
 }

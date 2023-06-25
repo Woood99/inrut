@@ -440,11 +440,21 @@
     }
 
     &._active {
-        .dots-dropdown {
-            &__dropdown {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0px);
+        .dots-dropdown__dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+        }
+    }
+
+    @media (min-width:$desktop-min) {
+        &._hover {
+            &:hover {
+                .dots-dropdown__dropdown {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0px);
+                }
             }
         }
     }
@@ -522,7 +532,8 @@
         width: 100%;
 
         text-align: left;
-        svg:first-child{
+
+        svg:first-child {
             margin-right: 16px;
             --size: 24px;
             flex: 0 0 var(--size);
@@ -530,6 +541,7 @@
             height: var(--size);
             fill: var(--dark);
         }
+
         span {
             font-size: 12px;
             line-height: math.div(15, 12);
@@ -796,8 +808,21 @@
 }
 
 .control-cards {
+    .container {
+        @media (max-width:$desktop) {
+            padding: 0;
+        }
+    }
 
-    &__btns {}
+    &__btns {
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            padding: 16px 16px 0;
+        }
+    }
 
     &__btn {
         display: flex;

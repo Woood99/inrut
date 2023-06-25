@@ -87,12 +87,15 @@
 
     @media (min-width:$desktop-min) {
         &.focus-visible{
-            color: var(--white);
-            background-color: var(--blue);
+            background-color: rgba(0,150,255,.12);
+            color: var(--blue);
         }
         &:hover {
-            color: var(--white);
-            background-color: var(--blue);
+            background-color: rgba(0,150,255,.12);
+            color: var(--blue);
+            svg{
+                fill: var(--blue) !important;
+            }
         }
     }
 
@@ -106,14 +109,6 @@
         color: #F2F2F2;
         pointer-events: none;
         cursor: default;
-    }
-
-    &:hover{
-        background-color: rgba(0,150,255,.12);
-        color: var(--blue);
-        svg{
-            fill: var(--blue) !important;
-        }
     }
     @media (max-width:$desktop) {
         height: 46px;

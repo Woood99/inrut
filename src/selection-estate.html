@@ -19,7 +19,7 @@
     <div class="site-container site-container--selection-estate">
         @include('partials/header.html')
         <main class="main main-page-gap selection-estate">
-            <div class="selection-estate__body container">
+            <div class="selection-estate__top container">
                 <h1 class="selection-estate__title title-1">
                     Предложения по вашей заявке на покупку
                 </h1>
@@ -62,335 +62,339 @@
                         </div>
                     </div>
                 </form>
-                <div class="selection-estate__table main-table">
-                    <div class="main-table__table">
-                        <div class="main-table__type">
-                            <span>Предложения от</span>
-                            <span>Новые предложения</span>
-                            <span>Всего предложено</span>
+            </div>
+            <div class="selection-estate__body">
+                <div class="container">
+                    <div class="selection-estate__table main-table">
+                        <div class="main-table__table">
+                            <div class="main-table__type">
+                                <span>Предложения от</span>
+                                <span>Новые предложения</span>
+                                <span>Всего предложено</span>
+                            </div>
+                            <div class="main-table__list">
+                                <div class="main-table__item object-info-third">
+                                    <div class="object-info-third__type-mobile">
+                                        <span>Было предложено</span>
+                                        <span>Новые предложения</span>
+                                    </div>
+                                    <div class="object-info-third__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                                alt="Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
+                                    <div class="object-info-third__offers object-info-third__offers--true">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Есть новые</span>
+                                    </div>
+                                    <span class="object-info-third__quantity">
+                                        16 объектов
+                                    </span>
+                                    <div class="object-info-third__controls dots-dropdown _hover">
+                                        <button type="button" class="btn btn-reset dots-dropdown__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="dots-dropdown__dropdown">
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#thumbtack"></use>
+                                                </svg>
+                                                Закрепить
+                                            </button>
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#prohibit"></use>
+                                                </svg>
+                                                Заблокировать
+                                            </button>
+                                            <button type="button" class="btn btn-reset" 
+                                                data-popup-path="complaint-user">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#warning"></use>
+                                                </svg>
+                                                Пожаловаться
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                                </div>
+                                <div class="main-table__item object-info-third">
+                                    <div class="object-info-third__type-mobile">
+                                        <span>Было предложено</span>
+                                        <span>Новые предложения</span>
+                                    </div>
+                                    <div class="object-info-third__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                                alt="Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
+                                    <div class="object-info-third__offers object-info-third__offers--true">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Есть новые</span>
+                                    </div>
+                                    <span class="object-info-third__quantity">
+                                        16 объектов
+                                    </span>
+                                    <div class="object-info-third__controls dots-dropdown _hover">
+                                        <button type="button" class="btn btn-reset dots-dropdown__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="dots-dropdown__dropdown">
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#thumbtack"></use>
+                                                </svg>
+                                                Закрепить
+                                            </button>
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#prohibit"></use>
+                                                </svg>
+                                                Заблокировать
+                                            </button>
+                                            <button type="button" class="btn btn-reset" 
+                                                data-popup-path="complaint-user">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#warning"></use>
+                                                </svg>
+                                                Пожаловаться
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                                </div>
+                                <div class="main-table__item object-info-third">
+                                    <div class="object-info-third__type-mobile">
+                                        <span>Было предложено</span>
+                                        <span>Новые предложения</span>
+                                    </div>
+                                    <div class="object-info-third__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                                alt="Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
+                                    <div class="object-info-third__offers object-info-third__offers--true">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Есть новые</span>
+                                    </div>
+                                    <span class="object-info-third__quantity">
+                                        16 объектов
+                                    </span>
+                                    <div class="object-info-third__controls dots-dropdown _hover">
+                                        <button type="button" class="btn btn-reset dots-dropdown__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="dots-dropdown__dropdown">
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#thumbtack"></use>
+                                                </svg>
+                                                Закрепить
+                                            </button>
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#prohibit"></use>
+                                                </svg>
+                                                Заблокировать
+                                            </button>
+                                            <button type="button" class="btn btn-reset" 
+                                                data-popup-path="complaint-user">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#warning"></use>
+                                                </svg>
+                                                Пожаловаться
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                                </div>
+                                <div class="main-table__item object-info-third">
+                                    <div class="object-info-third__type-mobile">
+                                        <span>Было предложено</span>
+                                        <span>Новые предложения</span>
+                                    </div>
+                                    <div class="object-info-third__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                                alt="Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
+                                    <div class="object-info-third__offers object-info-third__offers--false">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Есть новые</span>
+                                    </div>
+                                    <span class="object-info-third__quantity">
+                                        16 объектов
+                                    </span>
+                                    <div class="object-info-third__controls dots-dropdown _hover">
+                                        <button type="button" class="btn btn-reset dots-dropdown__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="dots-dropdown__dropdown">
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#thumbtack"></use>
+                                                </svg>
+                                                Закрепить
+                                            </button>
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#prohibit"></use>
+                                                </svg>
+                                                Заблокировать
+                                            </button>
+                                            <button type="button" class="btn btn-reset" 
+                                                data-popup-path="complaint-user">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#warning"></use>
+                                                </svg>
+                                                Пожаловаться
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                                </div>
+                                <div class="main-table__item object-info-third">
+                                    <div class="object-info-third__type-mobile">
+                                        <span>Было предложено</span>
+                                        <span>Новые предложения</span>
+                                    </div>
+                                    <div class="object-info-third__from user-info">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
+                                                alt="Александр Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
+                                    <div class="object-info-third__offers object-info-third__offers--false">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Есть новые</span>
+                                    </div>
+                                    <span class="object-info-third__quantity">
+                                        16 объектов
+                                    </span>
+                                    <div class="object-info-third__controls dots-dropdown _hover">
+                                        <button type="button" class="btn btn-reset dots-dropdown__target">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#dots-vertical"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="dots-dropdown__dropdown">
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#thumbtack"></use>
+                                                </svg>
+                                                Закрепить
+                                            </button>
+                                            <button type="button" class="btn btn-reset">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#prohibit"></use>
+                                                </svg>
+                                                Заблокировать
+                                            </button>
+                                            <button type="button" class="btn btn-reset" 
+                                                data-popup-path="complaint-user">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#warning"></use>
+                                                </svg>
+                                                Пожаловаться
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="object-info-third__line-mobile" aria-hidden="true"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="main-table__list">
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Было предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                </div>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" 
-                                            data-popup-path="complaint-user">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Было предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                </div>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" 
-                                            data-popup-path="complaint-user">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Было предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                </div>
-                                <div class="object-info-third__offers object-info-third__offers--true">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" 
-                                            data-popup-path="complaint-user">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Было предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                </div>
-                                <div class="object-info-third__offers object-info-third__offers--false">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" 
-                                            data-popup-path="complaint-user">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
-                            <div class="main-table__item object-info-third">
-                                <div class="object-info-third__type-mobile">
-                                    <span>Было предложено</span>
-                                    <span>Новые предложения</span>
-                                </div>
-                                <div class="object-info-third__from user-info">
-                                    <div class="user-info__avatar avatar online">
-                                        <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45"
-                                            alt="Александр Г.">
-                                    </div>
-                                    <span class="user-info__name">
-                                        Алексей Г.
-                                    </span>
-                                    <span class="user-info__pos">
-                                        Агент
-                                    </span>
-                                </div>
-                                <div class="object-info-third__offers object-info-third__offers--false">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check-circle"></use>
-                                    </svg>
-                                    <span>Есть</span>
-                                </div>
-                                <span class="object-info-third__quantity">
-                                    16 объектов
-                                </span>
-                                <div class="object-info-third__controls dots-dropdown">
-                                    <button type="button" class="btn btn-reset dots-dropdown__target">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#dots-vertical"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="dots-dropdown__dropdown">
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#thumbtack"></use>
-                                            </svg>
-                                            Закрепить
-                                        </button>
-                                        <button type="button" class="btn btn-reset">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#prohibit"></use>
-                                            </svg>
-                                            Заблокировать
-                                        </button>
-                                        <button type="button" class="btn btn-reset" 
-                                            data-popup-path="complaint-user">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#warning"></use>
-                                            </svg>
-                                            Пожаловаться
-                                        </button>
-                                    </div>
-                                </div>
-                                <span class="object-info-third__line-mobile" aria-hidden="true"></span>
-                            </div>
+                        <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                            Следующая страница
+                        </button>
+                        <div class="main-table__pagination pagination">
+                            <ul class="pagination__list list-reset">
+                                <li class="pagination__item" disabled>
+                                    <a href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        4
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        5
+                                    </a>
+                                </li>
+                                <li class="pagination__item dots" tabindex="-1">
+                                    ...
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        199
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-reset btn-secondary main-table__next">
-                        Следующая страница
-                    </button>
-                    <div class="main-table__pagination pagination">
-                        <ul class="pagination__list list-reset">
-                            <li class="pagination__item" disabled>
-                                <a href="#">
-                                    1
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    2
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    3
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    4
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    5
-                                </a>
-                            </li>
-                            <li class="pagination__item dots" tabindex="-1">
-                                ...
-                            </li>
-                            <li class="pagination__item">
-                                <a href="#">
-                                    199
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
