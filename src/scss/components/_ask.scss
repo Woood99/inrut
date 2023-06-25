@@ -1,7 +1,7 @@
 .ask {
 
     &__title {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
     &__descr {
@@ -9,9 +9,16 @@
         font-size: 14px;
         line-height: math.div(18, 14);
     }
-
+    &__user{
+        margin-top: 24px;
+        grid-template-columns: 45px 1fr;
+        .avatar{
+            width: 45px;
+            height: 45px;
+        }
+    }
     &__btns {
-        margin-top: 16px;
+        margin-top: 32px;
 
         display: flex;
         align-items: center;
