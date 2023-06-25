@@ -293,8 +293,13 @@
                 margin-bottom: 16px;
             }
 
-            svg {
-               
+            &.btn-secondary{
+                background-color: var(--white);
+               @media (min-width:$desktop-min){
+                &:hover{
+                    background-color: var(--primary200);
+                } 
+               }
             }
         }
     }

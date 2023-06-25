@@ -265,29 +265,6 @@
                         <span class="header-fixed__rating--number">4.8</span>
                         <span class="header-fixed__rating--quantity">(16 отзывов)</span>
                     </div>
-                    <!-- <div class="header-fixed__btns">
-                        <button type="button"
-                            class="btn btn-reset btn-primary header-fixed__btn header-fixed__btn--online-display">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#VideoCamera"></use>
-                            </svg>
-                            Онлайн-показ
-                        </button>
-                        <button type="button"
-                            class="btn btn-reset btn-secondary header-fixed__btn header-fixed__btn--call">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#phone"></use>
-                            </svg>
-                            Телефон
-                        </button>
-                        <button type="button"
-                            class="btn btn-reset btn-secondary header-fixed__btn header-fixed__btn--message">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#chat"></use>
-                            </svg>
-                            <span>Написать</span>
-                        </button>
-                    </div> -->
                 </div>
                 <nav class="header-fixed__nav">
                     <ul class="header-fixed__list list-reset">
@@ -697,7 +674,7 @@
                                     <svg>
                                         <use xlink:href="img/sprite.svg#phone"></use>
                                     </svg>
-                                    Телефон
+                                    Показать телефон
                                 </button>
                                 <button type="button" class="btn btn-reset btn-secondary object-plate-bottom__btn object-plate-bottom__btn--message" data-popup-path="chat">
                                     <svg>
@@ -732,7 +709,7 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#phone"></use>
                                         </svg>
-                                        Телефон
+                                        Показать телефон
                                     </button>
                                     <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="chat" data-main-info-btn>
                                         <svg>
@@ -7344,7 +7321,7 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#phone"></use>
                                         </svg>
-                                        Телефон
+                                        Показать телефон
                                     </button>
                                     <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="chat">
                                         <svg>
@@ -26230,11 +26207,21 @@
                     <label for="screen-demonstration" class="checkbox-secondary__label">
                         <span class="checkbox-secondary__text">Консультация с демонстрацией экрана</span>
                     </label>
-                    <button type="button" class="btn btn-reset" data-popup-path="screen-demonstation-popup">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#info"></use>
-                        </svg>
-                    </button>
+                    <div class="secondary-tooltip">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#info"></use>
+                            </svg>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Менеджер проведёт консультацию по объекту с демонстрацией экрана, 
+                            для этого вам необходимо быть у экрана компьютера или 
+                            любого устройства с выходом в интернет.
+                            <button type="button" class="btn btn-reset" data-popup-path="screen-demonstation-popup">
+                                Смотреть видео
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-reset btn-primary book-consultation__btn">Оставить заявку</button>
                 <div class="book-consultation__choices">

@@ -80,7 +80,14 @@
             }
         }
     }
-
+    .bid-user{
+        &::before,&::after{
+            height: percent(161,368);
+        }
+        &__content{
+            margin-top: 32px;
+        }
+    }
     .bid__sidebar {
         @media (min-width:$desktop-min) {
             grid-column: 2/3;

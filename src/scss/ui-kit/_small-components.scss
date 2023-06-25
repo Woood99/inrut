@@ -368,11 +368,14 @@
     position: relative;
 
     &__target {
+        padding: 5px 6px;
+        border-radius: 6px;
         svg {
             display: block;
             width: 12px;
             height: 13px;
             fill: var(--gray);
+            transition: fill $transitionSpeed $transitionFunction;
         }
     }
 
@@ -440,20 +443,36 @@
     }
 
     &._active {
-        .dots-dropdown__dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0px);
+        .dots-dropdown{
+            &__target{
+              background-color: var(--primary200);
+              svg{
+                fill: var(--blue-dark);
+              }
+            }
+            &__dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0px);
+            }
         }
     }
 
     @media (min-width:$desktop-min) {
         &._hover {
             &:hover {
-                .dots-dropdown__dropdown {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0px);
+                .dots-dropdown{
+                    &__target{
+                      background-color: var(--primary200);
+                      svg{
+                        fill: var(--blue-dark);
+                      }
+                    }
+                    &__dropdown {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0px);
+                    }
                 }
             }
         }
