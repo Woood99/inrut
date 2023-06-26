@@ -1,7 +1,7 @@
 const scrollDrag = (blockSelector, speed) => {
-    let scrollBlock = document.querySelector(blockSelector);
+    let scrollBlock = typeof blockSelector === 'string' ? document.querySelector(blockSelector) : blockSelector;
     if (!scrollBlock) return;
-    
+
     let left = 0;
     let drag = false;
     let coorX = 0;
@@ -15,7 +15,12 @@ const scrollDrag = (blockSelector, speed) => {
         left = scrollBlock.scrollLeft;
     });
     scrollBlock.addEventListener('mousemove', function (e) {
-        if (drag) this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
+        if (drag) {
+            scrollBlock.classList.add('_drag');
+            this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
+        } else {
+            scrollBlock.classList.remove('_drag');
+        }
     });
 };
 

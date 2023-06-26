@@ -173,7 +173,7 @@ const checkboard = () => {
             const containerSimplebar = checkboard.querySelector('.simplebar-content-wrapper');
             navPrev.addEventListener('click', () => {
                 containerSimplebar.scrollTo({
-                    left: containerSimplebar.scrollRight + 200,
+                    left: containerSimplebar.scrollLeft - 200,
                     behavior: 'smooth',
                 })
             });
