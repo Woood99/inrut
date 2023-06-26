@@ -4557,10 +4557,11 @@ textarea.input-reset {
   display: none;
 }
 .record-day__item {
+  --width: 120px;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 120px;
-  flex: 0 0 120px;
-  width: 120px;
+  -ms-flex: 0 0 var(--width);
+  flex: 0 0 var(--width);
+  width: var(--width);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4593,6 +4594,11 @@ textarea.input-reset {
 @media (min-width: 1145px) {
   .record-day__item:hover {
     border: 1px solid var(--blue);
+  }
+}
+@media (max-width: 1144px) {
+  .record-day__item {
+    --width: 100px;
   }
 }
 .record-day__check {
@@ -4636,16 +4642,33 @@ textarea.input-reset {
   font-size: 13px;
   line-height: 1;
 }
+@media (max-width: 1144px) {
+  .record-day__day-week {
+    font-size: 10px;
+  }
+}
 .record-day__day-month {
   margin-top: 12px;
   font-size: 32px;
   line-height: 1;
   font-weight: 500;
 }
+@media (max-width: 1144px) {
+  .record-day__day-month {
+    margin-top: 8px;
+    font-size: 24px;
+  }
+}
 .record-day__month {
   margin-top: 8px;
   font-size: 13px;
   line-height: 1;
+}
+@media (max-width: 1144px) {
+  .record-day__month {
+    margin-top: 6px;
+    font-size: 10px;
+  }
 }
 
 .record-time__container {

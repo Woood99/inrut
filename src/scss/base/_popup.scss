@@ -3564,8 +3564,9 @@
     }
 
     &__item {
-        flex: 0 0 120px;
-        width: 120px;
+        --width: 120px;
+        flex: 0 0 var(--width);
+        width: var(--width);
 
         display: flex;
         flex-direction: column;
@@ -3594,6 +3595,9 @@
             &:hover {
                 border: 1px solid var(--blue);
             }
+        }
+        @media (max-width:$desktop){
+           --width: 100px;
         }
     }
 
@@ -3636,6 +3640,9 @@
     &__day-week {
         font-size: 13px;
         line-height: 1;
+        @media (max-width:$desktop){
+            font-size: 10px; 
+        }
     }
 
     &__day-month {
@@ -3643,12 +3650,20 @@
         font-size: 32px;
         line-height: math.div(32, 32);
         font-weight: 500;
+        @media (max-width:$desktop){
+             margin-top: 8px;
+             font-size: 24px; 
+        }
     }
 
     &__month {
         margin-top: 8px;
         font-size: 13px;
         line-height: 1;
+        @media (max-width:$desktop){
+             margin-top: 6px;
+             font-size: 10px; 
+        }
     }
 }
 
