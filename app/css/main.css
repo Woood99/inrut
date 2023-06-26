@@ -1592,9 +1592,9 @@ textarea.input-reset {
 }
 .popup-primary--record-viewing .popup-primary__container {
   border-radius: 12px 12px 0 0;
-  padding: 65px 16px 32px;
+  padding: 65px 16px 114px;
   min-height: auto;
-  margin: 50px auto 0;
+  margin: 32px auto 0;
   width: calc(100% - 4px);
   vertical-align: bottom;
   position: relative;
@@ -4503,9 +4503,6 @@ textarea.input-reset {
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.record-viewing__time {
-  margin-bottom: 32px;
-}
 .record-viewing .nav-arrow-secondary {
   position: absolute;
   top: 50%;
@@ -4535,6 +4532,50 @@ textarea.input-reset {
 .record-viewing__btn {
   margin-left: auto;
   padding: 0 70px;
+}
+.record-viewing__bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.1);
+}
+.record-viewing__bottom > div {
+  max-width: 1104px;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.record-viewing__bottom > div .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+.record-viewing__bottom > div .col span:nth-child(2) {
+  margin-top: 8px;
+  font-weight: 500;
+}
+.record-viewing__bottom > div .col:nth-child(1) {
+  width: 200px;
+  margin-right: 76px;
+}
+.record-viewing__bottom > div .col:nth-child(2) {
+  width: 100px;
 }
 
 .record-day__container {
