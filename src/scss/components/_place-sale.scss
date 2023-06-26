@@ -2,21 +2,24 @@
     &__body {
         margin-top: 8px;
 
+        background-color: var(--stand-bg);
+        padding: 24px 0;
+
         @media (max-width:$desktop) {
             margin-top: 0;
-            padding: 78px 0 0;
+            padding: 78px 0 24px;
         }
     }
 
     &__container {
-        background-color: var(--stand-bg);
         border-radius: 16px;
-        padding: 32px;
 
         @media (max-width:$desktop) {
-            padding: 0 0 32px 0;
             margin-top: 16px;
-            background-color: var(--stand-bg);
+
+            &.container {
+                padding: 0;
+            }
         }
     }
 
@@ -72,9 +75,7 @@
 
     &__row-title {}
 
-    &__city {
-       
-    }
+    &__city {}
 
     &__select {
         margin-top: 24px;
@@ -88,7 +89,6 @@
         color: var(--gray);
 
         @media (max-width:$desktop) {
-            margin-top: 24px;
             font-size: 12px;
         }
     }
@@ -168,7 +168,8 @@
                     }
                 }
             }
-            &--6{
+
+            &--6 {
                 grid-template-columns: percent(778, 968) 1fr;
             }
         }

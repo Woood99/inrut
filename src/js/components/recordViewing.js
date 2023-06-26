@@ -24,7 +24,7 @@ const recordViewing = () => {
 
     createDays();
     createTime();
-
+    updateBottom();
     listDays.addEventListener('input', (e) => {
         const target = e.target;
         const rightTarget = target.closest('.record-day__input');

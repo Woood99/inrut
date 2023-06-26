@@ -4,21 +4,24 @@
 
     &__body {
         margin-top: 8px;
+        background-color: var(--stand-bg);
+        padding: 24px 0;
 
         @media (max-width:$desktop) {
             margin-top: 0;
-            padding: 78px 0 0;
+            padding: 78px 0 24px;
         }
     }
 
     &__container {
-        background-color: var(--stand-bg);
         border-radius: 16px;
-        padding: 32px;
 
         @media (max-width:$desktop) {
-            padding: 0 0 32px 0;
             margin-top: 16px;
+
+            &.container {
+                padding: 0;
+            }
         }
     }
 
@@ -86,28 +89,17 @@
         }
 
         &--2 {
-            grid-template-columns: percent(275, 968);
+            grid-template-columns: percent(275, 968) percent(275, 968) percent(275, 968);
         }
 
         &--3 {
-            grid-template-columns: percent(275, 968);
-        }
-
-        &--4 {
-            grid-template-columns: percent(300, 968);
-        }
-
-        &--5 {
-            grid-template-columns: percent(250, 968);
-        }
-
-        &--6 {
-            grid-template-columns: percent(300, 968) percent(300, 968);
+            grid-template-columns: percent(300, 968) percent(300, 968) percent(200, 968);
         }
 
         &--7 {
             grid-template-columns: percent(380, 968) percent(325, 968);
         }
+
         &--8 {
             grid-template-columns: percent(275, 968);
         }
@@ -199,6 +191,7 @@
     @media (max-width:$smallTablet-max) {
         height: 250px;
     }
+
     &__btns {
         position: absolute;
         top: 20px;
@@ -250,6 +243,7 @@
             border-radius: 12px;
         }
     }
+
     #map-draw {
         width: 100%;
         height: 100%;

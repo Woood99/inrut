@@ -1592,7 +1592,7 @@ textarea.input-reset {
 }
 .popup-primary--record-viewing .popup-primary__container {
   border-radius: 12px 12px 0 0;
-  padding: 65px 16px 114px;
+  padding: 65px 16px 130px;
   min-height: auto;
   margin: 32px auto 0;
   width: calc(100% - 4px);
@@ -23827,22 +23827,24 @@ textarea.input-reset {
 
 .submit-app__body {
   margin-top: 8px;
+  background-color: var(--stand-bg);
+  padding: 24px 0;
 }
 @media (max-width: 1144px) {
   .submit-app__body {
     margin-top: 0;
-    padding: 78px 0 0;
+    padding: 78px 0 24px;
   }
 }
 .submit-app__container {
-  background-color: var(--stand-bg);
   border-radius: 16px;
-  padding: 32px;
 }
 @media (max-width: 1144px) {
   .submit-app__container {
-    padding: 0 0 32px 0;
     margin-top: 16px;
+  }
+  .submit-app__container.container {
+    padding: 0;
   }
 }
 .submit-app__row {
@@ -23908,24 +23910,12 @@ textarea.input-reset {
   grid-template-columns: 24.7933884298%;
 }
 .submit-app-options__row--2 {
-  -ms-grid-columns: 28.4090909091%;
-  grid-template-columns: 28.4090909091%;
+  -ms-grid-columns: 28.4090909091% 28.4090909091% 28.4090909091%;
+  grid-template-columns: 28.4090909091% 28.4090909091% 28.4090909091%;
 }
 .submit-app-options__row--3 {
-  -ms-grid-columns: 28.4090909091%;
-  grid-template-columns: 28.4090909091%;
-}
-.submit-app-options__row--4 {
-  -ms-grid-columns: 30.9917355372%;
-  grid-template-columns: 30.9917355372%;
-}
-.submit-app-options__row--5 {
-  -ms-grid-columns: 25.826446281%;
-  grid-template-columns: 25.826446281%;
-}
-.submit-app-options__row--6 {
-  -ms-grid-columns: 30.9917355372% 30.9917355372%;
-  grid-template-columns: 30.9917355372% 30.9917355372%;
+  -ms-grid-columns: 30.9917355372% 30.9917355372% 20.6611570248%;
+  grid-template-columns: 30.9917355372% 30.9917355372% 20.6611570248%;
 }
 .submit-app-options__row--7 {
   -ms-grid-columns: 39.2561983471% 33.5743801653%;
@@ -24069,23 +24059,24 @@ textarea.input-reset {
 
 .place-sale__body {
   margin-top: 8px;
+  background-color: var(--stand-bg);
+  padding: 24px 0;
 }
 @media (max-width: 1144px) {
   .place-sale__body {
     margin-top: 0;
-    padding: 78px 0 0;
+    padding: 78px 0 24px;
   }
 }
 .place-sale__container {
-  background-color: var(--stand-bg);
   border-radius: 16px;
-  padding: 32px;
 }
 @media (max-width: 1144px) {
   .place-sale__container {
-    padding: 0 0 32px 0;
     margin-top: 16px;
-    background-color: var(--stand-bg);
+  }
+  .place-sale__container.container {
+    padding: 0;
   }
 }
 .place-sale__row {
@@ -24152,7 +24143,6 @@ textarea.input-reset {
 }
 @media (max-width: 1144px) {
   .place-sale-address__text {
-    margin-top: 24px;
     font-size: 12px;
   }
 }

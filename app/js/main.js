@@ -7510,6 +7510,7 @@ const recordViewing = () => {
   const btn = container.querySelector('.record-viewing__btn');
   createDays();
   createTime();
+  updateBottom();
   listDays.addEventListener('input', e => {
     const target = e.target;
     const rightTarget = target.closest('.record-day__input');
