@@ -19,11 +19,11 @@
     <div class="site-container site-container--objects-base">
         @include('partials/header.html')
         <main class="main main-page-gap objects-base">
-            <div class="objects-base__body container">
-                <h1 class="objects-base__title title-1">
+            <div class="objects-base__body">
+                <h1 class="objects-base__title title-1 container">
                     База объектов
                 </h1>
-                <form class="objects-base__filter filter objects-base-filter filter--more">
+                <form class="objects-base__filter filter objects-base-filter filter--more container">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="objects-base__sort select-sort">
+                <div class="objects-base__sort select-sort container">
                     <span class="select-sort__label">Сортировка:</span>
                     <select class="select-sort__body" name="filter-sort">
                         <option value="price">Стоимость</option>
@@ -221,6 +221,7 @@
                     </select>
                 </div>
                 <div class="objects-base__cards-list cards-list control-cards">
+                    <div class="control-cards__container container--no-padding">
                     <div class="cards-list__controls control-cards__btns">
                         <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
                             <svg>
@@ -973,6 +974,7 @@
                             </li>
                         </ul>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="objects-base__banners container main-banners">

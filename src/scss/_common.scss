@@ -171,7 +171,8 @@
         pointer-events: none;
         opacity: 0.7;
     }
-    &._disabled{
+
+    &._disabled {
         pointer-events: none;
         opacity: 0.7;
     }
@@ -516,6 +517,7 @@
         transform: translate(0);
     }
 }
+
 @keyframes shake_online-display {
 
     10%,
@@ -576,79 +578,79 @@
         }
     }
 
-    .MetroMap_stop {
-        &.MetroMap_hovered {
-            .MetroMap_circle {
-                stroke-width: 2;
-                r: 8;
+
+
+    &__stop {
+        &.map-metro_hover {
+            .map-metro__circle {
+                stroke-width: 3;
+                r: 11;
             }
         }
 
-        &.MetroMap_select {
-            .MetroMap_circle {
+        &.map-metro_select {
+            .map-metro__circle {
                 fill: var(--white);
                 stroke: var(--blue);
             }
         }
     }
 
-    .MetroMap_station_item {
-        // cursor: pointer;
-
-
-        &.MetroMap_hovered {
-            .MetroMap_text {
+    &__station-item {
+        &.map-metro_hover {
+            .map-metro__text {
                 fill: var(--red);
             }
         }
 
-        &.MetroMap_select {
-            .MetroMap_bg {
+        &.map-metro_select {
+            .map-metro__bg {
                 opacity: 1;
             }
 
-            .MetroMap_text {
+            .map-metro__text {
                 fill: var(--white);
             }
         }
     }
 
-    .MetroMap_bg {
+
+    .map-metro__bg {
         transition: opacity $transitionSpeed $transitionFunction;
     }
 
-    .MetroMap_stop {
+    .map-metro__stop {
         cursor: pointer;
     }
 
-    .MetroMap_station_item .MetroMap_text {
+    .map-metro__station-item .map-metro__text {
         transition: fill $transitionSpeed $transitionFunction;
     }
 
-    .MetroMap_stop .MetroMap_circle {
+    .map-metro__stop .map-metro__circle {
         transition: r $transitionSpeed $transitionFunction,
             stroke-width $transitionSpeed $transitionFunction,
             fill $transitionSpeed $transitionFunction,
             stroke $transitionSpeed $transitionFunction;
     }
 
-    .MetroMap_stop.MetroMap_hovered {
+    .map-metro__stop.map-metro_hover {
         .MetroMap_circle {
-            stroke-width: 2;
-            r: 8;
+            stroke-width: 3;
+            r: 11;
         }
     }
 
-    .MetroMap_transit_group {
-        &.MetroMap_hovered {
-            .MetroMap_circle {
-                stroke-width: 2;
-                r: 8;
+    .map-metro__transit-group {
+        &.map-metro_hover {
+            .map-metro__circle {
+                stroke-width: 3;
+                r: 11;
             }
         }
 
-        &.MetroMap_select {
-            .MetroMap_circle {
+        &.map-metro_select {
+            .map-metro__circle {
                 fill: var(--white);
                 stroke: var(--blue);
             }

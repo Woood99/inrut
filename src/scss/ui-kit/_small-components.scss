@@ -1642,20 +1642,10 @@
 }
 
 .tag {
-    background-color: var(--stand-bg);
-    border-radius: 12px;
-    color: var(--dark);
     height: 34px;
     padding: 8px 18px;
-
-    font-size: 14px;
-    line-height: 85%;
-    transition: background-color $transitionSpeed $transitionFunction,
-        color $transitionSpeed $transitionFunction;
-
-    display: flex;
-    align-items: center;
-
+    color: var(--dark);
+    font-weight: 400;
     >div {
         margin-left: 8px;
         width: 16px;
@@ -1685,6 +1675,10 @@
     &._active {
         background-color: var(--blue);
         color: var(--white);
+    }
+    &.btn-test{
+        border-radius: 12px;
+        border: 1px solid var(--primary200);
     }
 }
 
