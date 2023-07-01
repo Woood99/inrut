@@ -90,5 +90,7 @@ popup({
 
 }, 'screen-demonstation-popup');
 popup(null, 'record-viewing');
+popup(null, 'record-viewing');
+popup(null, 'personal-area-two');
 
 // ========================================================================================

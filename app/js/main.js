@@ -4421,6 +4421,8 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, 'screen-demonstation-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 
 // ========================================================================================
 
