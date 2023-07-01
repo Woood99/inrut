@@ -957,7 +957,41 @@
             margin-top: 24px;
         }
     }
-
+    &__tooltip{
+        margin-left: 32px;
+        display: flex;
+        align-items: center;   
+        .secondary-tooltip{ 
+            width: auto;
+            height: auto;
+            &__btn{
+                svg{
+                    width: 18px;
+                    height: 18px;
+                    stroke: var(--blue);
+                    stroke-width: 1.5px;
+                }
+            }
+            &__content{
+                width: max-content;
+                max-width: 200px;
+                bottom: 24px;
+                left: 0;
+                transform: translate(0); 
+                z-index: 10;
+            }
+        }
+        >span{
+            font-size: 12px;
+            line-height: math.div(15 , 12);
+            color: var(--primaryTwo);
+            margin-left: 5px;
+        }
+        @media (max-width:$smallTablet-max){
+            margin-top: 16px;
+            margin-left: 0; 
+       }
+    }
     &__purchase-terms {
         margin-top: 32px;
 

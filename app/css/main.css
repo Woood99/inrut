@@ -22292,6 +22292,49 @@ textarea.input-reset {
     margin-top: 24px;
   }
 }
+.object-data__tooltip {
+  margin-left: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.object-data__tooltip .secondary-tooltip {
+  width: auto;
+  height: auto;
+}
+.object-data__tooltip .secondary-tooltip__btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--blue);
+  stroke-width: 1.5px;
+}
+.object-data__tooltip .secondary-tooltip__content {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 200px;
+  bottom: 24px;
+  left: 0;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+  z-index: 10;
+}
+.object-data__tooltip > span {
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--primaryTwo);
+  margin-left: 5px;
+}
+@media (max-width: 768px) {
+  .object-data__tooltip {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+}
 .object-data__purchase-terms {
   margin-top: 32px;
 }
