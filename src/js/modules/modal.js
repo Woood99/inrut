@@ -9,6 +9,7 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
         const modalContainerEl = modalEl.querySelector(`${container}__container`);
         const modalCloseEl = modalEl.querySelector(`${container}__close`);
         const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
+        const clientFixedSendReload = modalEl.querySelector('.client-fixed-sent__btn');
         const settingsModal = {
             modal: modalEl,
             container: modalContainerEl,
@@ -27,6 +28,11 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
                 el.addEventListener('click', () => {
                     modalClose(settingsModal);
                 });
+            })
+        }
+        if (clientFixedSendReload) {
+            clientFixedSendReload.addEventListener('click', () => {
+                window.location.reload();
             })
         }
         modalEl.addEventListener('click', (e) => {
@@ -63,11 +69,11 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             }
             if (target && target.classList.contains('card-stock-secondary')) {
                 target.classList.remove('_active');
-              target.querySelector('.card-stock-secondary__container').blur();
+                target.querySelector('.card-stock-secondary__container').blur();
             }
             if (target && target.classList.contains('card-stock-third')) {
                 target.classList.remove('_active');
-              target.querySelector('.card-stock-third__container').blur();
+                target.querySelector('.card-stock-third__container').blur();
             }
         }
     }

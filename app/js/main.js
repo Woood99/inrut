@@ -4425,7 +4425,6 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed-sent');
 
 // ========================================================================================
 
@@ -6168,6 +6167,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/dist/inputmask.js");
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
 
 const validateTextMap = {
   minLength: 'Минимальное кол-во символов:',
@@ -6337,9 +6338,41 @@ const clientFixedValidate = () => {
     }
     return result;
   }
+  const modalHTML = `
+            <div class="client-fixed-sent">
+                    <div class="client-fixed-sent__container" role="dialog" aria-modal="true">
+                    <button class="btn-reset client-fixed-sent__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                    </button>
+                     <div class="client-fixed-sent__content">
+                    <div class="client-fixed-sent__icon">
+                        <img loading="lazy" src="./img/like.png" alt="like">
+                    </div>
+                    <h3 class="client-fixed-sent__title title-3">Заявка на фиксацию отправлена</h3>
+                    <p class="client-fixed-sent__descr">
+                       Менеджер отдела бронирования свяжется с вами для уточнения подробностей фиксации
+                    </p>
+                    <button type="button" class="btn btn-reset btn-primary client-fixed-sent__btn">Вернутся на главную</button>
+                    </div>
+                </div>
+            </div>
+    `;
   form.addEventListener('submit', e => {
     e.preventDefault();
-    validate();
+    if (validate()) {
+      btn.classList.add('_validate');
+      setTimeout(() => {
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(modalHTML, '.client-fixed-sent', 300);
+        form.reset();
+        btn.classList.remove('_validate');
+        formEventInput = false;
+      }, 50);
+    } else {
+      btn.classList.remove('_validate');
+    }
   });
 };
 const inputMask = () => {
@@ -6675,6 +6708,10 @@ const headerFixed = () => {
   function showHeader(scrollDistance) {
     const filterBlock = document.querySelector('.object-body__filter');
     const layoutsTitle = document.querySelectorAll('.tabs__title')[1];
+    if (document.querySelector('.client-fixed__btn') && document.querySelector('.client-fixed__btn').classList.contains('_validate')) {
+      headerFixed.classList.remove('_active');
+      return;
+    }
     if (scrollDistance >= filterBlock.offsetTop - headerHeight / 2 && scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight && layoutsTitle.classList.contains('_tab-active')) {
       headerFixed.classList.remove('_active');
       return;
@@ -8386,6 +8423,12 @@ const popup = (options, modalName) => {
           });
         }, 200);
       }
+      if (el.classList.contains('client-fixed__btn')) {
+        setTimeout(() => {
+          if (el.classList.contains('_validate')) modalClose();
+        }, 1);
+        return;
+      }
       modalClose();
     });
   });
@@ -9819,6 +9862,7 @@ const modal = function (modalHTML, container) {
     const modalContainerEl = modalEl.querySelector(`${container}__container`);
     const modalCloseEl = modalEl.querySelector(`${container}__close`);
     const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
+    const clientFixedSendReload = modalEl.querySelector('.client-fixed-sent__btn');
     const settingsModal = {
       modal: modalEl,
       container: modalContainerEl,
@@ -9837,6 +9881,11 @@ const modal = function (modalHTML, container) {
         el.addEventListener('click', () => {
           modalClose(settingsModal);
         });
+      });
+    }
+    if (clientFixedSendReload) {
+      clientFixedSendReload.addEventListener('click', () => {
+        window.location.reload();
       });
     }
     modalEl.addEventListener('click', e => {

@@ -58,6 +58,10 @@ const headerFixed = () => {
     function showHeader(scrollDistance) {
         const filterBlock = document.querySelector('.object-body__filter');
         const layoutsTitle = document.querySelectorAll('.tabs__title')[1];
+        if (document.querySelector('.client-fixed__btn') && document.querySelector('.client-fixed__btn').classList.contains('_validate')) {
+            headerFixed.classList.remove('_active');
+            return;
+        }
         if (scrollDistance >= filterBlock.offsetTop - (headerHeight / 2) &&
             scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight &&
             layoutsTitle.classList.contains('_tab-active')) {

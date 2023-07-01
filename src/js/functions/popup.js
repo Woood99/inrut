@@ -40,7 +40,6 @@ const popup = (options, modalName) => {
     })
     modal.querySelectorAll('.js-popup-close').forEach(el => {
         el.addEventListener('click', () => {
-
             if (el.closest('.genplan__to-layouts')) {
                 const name = el.closest('[data-layouts]').dataset.layouts;
                 const currentLayouts = document.querySelector('.layouts').querySelector(`[data-layouts=${name}]`);
@@ -64,10 +63,13 @@ const popup = (options, modalName) => {
                     })
                 }, 200);
             }
-
+            if (el.classList.contains('client-fixed__btn')) {
+                setTimeout(() => {
+                    if (el.classList.contains('_validate')) modalClose();
+                }, 1);
+                return;
+            }
             modalClose()
-
-
         })
     })
     modal.addEventListener('click', (e) => {

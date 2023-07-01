@@ -726,22 +726,24 @@
             fill: var(--blue);
         }
     }
-    &__agree{
+
+    &__agree {
         margin-top: 56px;
-        .checkbox-secondary__label{
-        justify-content: start;
+
+        .checkbox-secondary__label {
+            justify-content: start;
         }
-        @media (max-width:$tablet-max){
+
+        @media (max-width:$tablet-max) {
             margin-top: 32px;
         }
     }
-    &__btn{
+
+    &__btn {
         width: 100%;
         margin-top: 24px;
     }
 }
-
-
 
 .popup-chat {
     --transition-time: 0.3s;
@@ -1718,6 +1720,150 @@
         }
     }
 }
+
+.client-fixed-sent {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1051;
+    background-color: rgba(34, 41, 102, 0.4);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &__container {
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        cursor: default;
+        text-align: left;
+        display: none;
+        box-shadow: var(--shadow-primary);
+
+        &.open {
+            display: inline-block !important;
+        }
+
+        margin: auto;
+        border-radius: 12px;
+        padding: 48px;
+        width: 400px;
+        overflow-y: auto;
+
+        @media (max-width:$desktop) {
+            padding: 65px 16px 24px;
+            height: auto;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            padding: 65px 0 24px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: 12px;
+            line-height: math.div(15, 12);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: var(--primary500);
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__icon {
+        width: 90px;
+        height: 90px;
+        background: rgba(0, 108, 238, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    &__title {
+        margin-top: 24px;
+    }
+
+    &__descr {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        color: var(--dark);
+    }
+
+    &__btn {
+        margin-top: 32px;
+        width: 100%;
+    }
+}
+
 
 
 .checkboard-popup-card {

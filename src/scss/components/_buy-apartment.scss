@@ -51,11 +51,12 @@
         &__bottom {
             border-top: 1px solid var(--primary100);
             display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: calc(100% + 35px);
-            padding-top: 16px;
-            margin-top: 16px;
-            margin-left: -24px;
-            padding-left: 24px;
+
+            margin: 16px -24px 0 -24px;
+            padding: 16px 24px 0 24px;
         }
 
         .card-secondary__info--mobile {
@@ -83,15 +84,24 @@
             margin: 32px 0 0 -24px;
             padding: 16px 24px 0 24px;
             width: calc(100% + 48px);
+            justify-content: start;
+
+            .card-secondary__tooltip {
+                align-self: end;
+                padding: 0 16px;
+            }
 
             .card-secondary__info--mobile {
                 display: flex;
+                margin-left: auto;
             }
         }
     }
+
     &__tags {
         margin-top: 24px;
     }
+
     @media (max-width:$smallTablet-max) {
         margin-bottom: 16px;
     }

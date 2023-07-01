@@ -1,5 +1,5 @@
 import Inputmask from "inputmask";
-
+import modal from '../modules/modal';
 const validateTextMap = {
     minLength: 'Минимальное кол-во символов:',
     name: 'Укажите имя',
@@ -184,9 +184,41 @@ export const clientFixedValidate = () => {
     }
 
 
+    const modalHTML = `
+            <div class="client-fixed-sent">
+                    <div class="client-fixed-sent__container" role="dialog" aria-modal="true">
+                    <button class="btn-reset client-fixed-sent__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                    </button>
+                     <div class="client-fixed-sent__content">
+                    <div class="client-fixed-sent__icon">
+                        <img loading="lazy" src="./img/like.png" alt="like">
+                    </div>
+                    <h3 class="client-fixed-sent__title title-3">Заявка на фиксацию отправлена</h3>
+                    <p class="client-fixed-sent__descr">
+                       Менеджер отдела бронирования свяжется с вами для уточнения подробностей фиксации
+                    </p>
+                    <button type="button" class="btn btn-reset btn-primary client-fixed-sent__btn">Вернутся на главную</button>
+                    </div>
+                </div>
+            </div>
+    `;
     form.addEventListener('submit', (e) => {
-       e.preventDefault();
-       validate();
+        e.preventDefault();
+        if (validate()) {
+            btn.classList.add('_validate');
+            setTimeout(() => {
+                modal(modalHTML, '.client-fixed-sent', 300);
+                form.reset();
+                btn.classList.remove('_validate');
+                formEventInput = false;
+            }, 50);
+        } else {
+            btn.classList.remove('_validate');
+        }
     })
 }
 
