@@ -143,6 +143,8 @@ export const clientFixedValidate = () => {
     const surnameInput = surnameLabel.querySelector('input');
     const nameInput = nameLabel.querySelector('input');
     const telInput = telLabel.querySelector('input');
+
+    const btn = form.querySelector('.client-fixed__btn');
     [surnameLabel, nameLabel, telInput].forEach(el => {
         el.addEventListener('input', () => {
             if (formEventInput) validate();
@@ -183,7 +185,8 @@ export const clientFixedValidate = () => {
 
 
     form.addEventListener('submit', (e) => {
-        if (!validate()) e.preventDefault();
+       e.preventDefault();
+       validate();
     })
 }
 

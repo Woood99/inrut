@@ -1195,10 +1195,13 @@
             <span>Закрыть</span>
         </button>
         <div class="popup__content popup-primary__content client-fixed">
+            <h2 class="client-fixed__title title-2">
+                Фиксация клиента
+            </h2>
             <form action="#" class="client-fixed__form">
                 <div class="client-fixed__wrapper">
                     <h3 class="client-fixed__title title-3">
-                        Фиксация клиента
+                        Клиент
                     </h3>
                     <div class="client-fixed__labels">
                         <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
@@ -1232,18 +1235,18 @@
                         Застройщик, ЖК
                     </h3>
                     <div class="client-fixed__labels">
-                        <!-- <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
+                        <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
                             <label class="input-text__label">
                                 <span>Застройщик</span>
-                                <input type="text" name="Имя" class="input-reset input-text__input" value="Самолет" disabled placeholder="">
+                                <input type="text" name="Застройщик" class="input-reset input-text__input" value="Самолет" disabled placeholder="">
                             </label>
-                        </div> -->
-                        <label class="client-fixed__label input-primary">
-                            <input type="text" name="Застройщик" class="input-reset input-primary__input" disabled value="Самолет" placeholder="Застройщик">
-                        </label>
-                        <label class="client-fixed__label input-primary">
-                            <input type="text" name="Жилищный Комплекс" class="input-reset input-primary__input" disabled value="Чистые пруды" placeholder="Жилищный Комплекс">
-                        </label>
+                        </div>
+                        <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
+                            <label class="input-text__label">
+                                <span>Жилищный комплекс</span>
+                                <input type="text" name="Жилищный комплекс" class="input-reset input-text__input" value="Чистые пруды" disabled placeholder="">
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="client-fixed__row">
@@ -1265,14 +1268,15 @@
                         <span>Чат фиксации</span>
                     </button>
                 </div>
-                <div class="client-fixed__btns">
-                    <button type="button" class="btn btn-reset btn-secondary js-popup-close client-fixed__btn">
-                        Отмена
-                    </button>
-                    <button type="submit" class="btn btn-reset btn-primary client-fixed__btn">
-                        Зафиксировать
-                    </button>
+                <div class="checkbox-secondary client-fixed__agree">
+                    <input id="client-fixed-agree" name="client-fixed-agree" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                    <label for="client-fixed-agree" class="checkbox-secondary__label">
+                        <span class="checkbox-secondary__text">Подтверждаю, что клиент согласен на обработку персональных данных</span>
+                    </label>
                 </div>
+                <button type="submit" class="btn btn-reset btn-primary client-fixed__btn js-popup-close" data-popup-path="client-fixed-sent">
+                        Отправить заявку на фиксацию
+                </button>
             </form>
         </div>
     </div>
@@ -1524,6 +1528,25 @@
                 <img loading="lazy" src="./img/like.png" alt="like">
             </div>
             <h3 class="thanks-popup__title title-3">Спасибо!</h3>
+            <p class="thanks-popup__descr">
+                Жалоба принята к рассмотрению
+            </p>
+        </div>
+    </div>
+</div>
+<div class="popup popup-primary popup-primary--right popup-primary--client-fixed-sent">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="client-fixed-sent">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content client-fixed-sent">
+            <div class="thanks-popup__icon">
+                <img loading="lazy" src="./img/like.png" alt="like">
+            </div>
+            <h3 class="thanks-popup__title title-3">Заявка на фиксацию отправлена</h3>
             <p class="thanks-popup__descr">
                 Жалоба принята к рассмотрению
             </p>

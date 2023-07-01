@@ -93,5 +93,6 @@ popup(null, 'record-viewing');
 popup(null, 'record-viewing');
 popup(null, 'personal-area-two');
 popup(null, 'client-fixed');
+popup(null, 'client-fixed-sent');
 
 // ========================================================================================

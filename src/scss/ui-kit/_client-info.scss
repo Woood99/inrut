@@ -1,0 +1,52 @@
+.client-info {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+
+
+    color: var(--dark);
+    display: grid;
+    align-items: center;
+    grid-column-gap: 32px;
+    grid-row-gap: 8px;
+    grid-template-columns: percent(270, 1112) percent(260,1112) percent(220,1112) percent(200,1112)  1fr;
+   padding: 32px 24px;
+
+    -webkit-tap-highlight-color: transparent;
+    transition: box-shadow $transitionSpeed $transitionFunction;
+
+    &__name {
+        color: var(--dark);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: math.div(23 , 18);
+    }
+
+    &__type {
+        color: var(--primary600);
+        font-size: 15px;
+        line-height: math.div(19 , 15);
+    }
+
+    &__phone {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: math.div(23 , 18);
+    }
+
+    &__time {
+        color: var(--primary600);
+        font-size: 15px;
+        line-height: math.div(19 , 15);
+    }
+
+    &__controls {
+        justify-self: end;
+    }
+    @media (min-width:$desktop-min){
+         &:hover{
+            box-shadow: var(--shadow-secondary);
+         } 
+    }
+}

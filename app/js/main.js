@@ -4425,6 +4425,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed-sent');
 
 // ========================================================================================
 
@@ -6302,6 +6303,7 @@ const clientFixedValidate = () => {
   const surnameInput = surnameLabel.querySelector('input');
   const nameInput = nameLabel.querySelector('input');
   const telInput = telLabel.querySelector('input');
+  const btn = form.querySelector('.client-fixed__btn');
   [surnameLabel, nameLabel, telInput].forEach(el => {
     el.addEventListener('input', () => {
       if (formEventInput) validate();
@@ -6336,7 +6338,8 @@ const clientFixedValidate = () => {
     return result;
   }
   form.addEventListener('submit', e => {
-    if (!validate()) e.preventDefault();
+    e.preventDefault();
+    validate();
   });
 };
 const inputMask = () => {

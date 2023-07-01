@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
-    <title>База объекта внутреняя</title>
+    <title>Объект</title>
     <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/vendor.css">
@@ -241,17 +241,22 @@
     </div>
 </header>
 
-        <main class="main main-page-gap object object-base-inner">
+        <main class="main main-page-gap object detailed-flat">
             <div class="object__top top-page-inner container">
                 <a href="#" class="object__back top-page-inner__back back-link">
                     <svg>
                         <use xlink:href="img/sprite.svg#arrow-left"></use>
                     </svg>
-                    <span>К списку объектов</span>
+                    <span>Назад</span>
                 </a>
                 <div class="object__btns top-page-inner__btns">
-                    <button type="button" class="btn btn-reset top-page-inner__btn share-btn"
-                        data-popup-path="share-app" title="Поделиться">
+                    <button type="button" class="btn btn-reset top-page-inner-title__btn favorite-btn" title="Добавить в избранное">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                        </svg>
+                        <span>В избранное</span>
+                    </button>
+                    <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-popup-path="share-app" title="Поделиться">
                         <svg>
                             <use xlink:href="img/sprite.svg#share"></use>
                         </svg>
@@ -262,317 +267,174 @@
             <div class="object__body object-body">
 
                 <div class="object-body__container container">
-                    <div class="object-body__slider object-slider">
-                        <div class="object-slider__body object-slider-body">
-                            <div class="swiper object-slider-body__wrapper">
-                                <div class="swiper-wrapper" id="object-gallery">
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
-                                            data-poster="./img/card-2.webp" class="object-gallery__item">
-                                            <div class="video-play">
-                                                <div class="video-play__icon">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#play"></use>
-                                                    </svg>
-                                                </div>
-                                                <span>Видео</span>
-                                            </div>
-                                            <picture>
-                                                <source srcset="./img/card-2.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-2.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-2.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-2.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-2.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8"
-                                            data-poster="./img/card-1.webp" class="object-gallery__item">
-                                            <div class="video-play">
-                                                <div class="video-play__icon">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#play"></use>
-                                                    </svg>
-                                                </div>
-                                                <span>Видео</span>
-                                            </div>
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="./img/card-1.webp" class="object-gallery__item">
-                                            <picture>
-                                                <source srcset="./img/card-1.webp" type="image/webp">
-                                                <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="button"
-                                class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--prev">
-                                <div class="nav-arrow-primary__wrapper">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                    </svg>
-                                </div>
-                            </button>
-                            <button type="button"
-                                class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--next">
-                                <div class="nav-arrow-primary__wrapper">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="object-slider-body__pagination pagination-primary"></div>
-                        </div>
-                        <div class="object-slider__nav object-slider-nav">
-                            <div class="swiper object-slider-nav__wrapper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="video-play">
-                                            <div class="video-play__icon">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#play"></use>
-                                                </svg>
-                                            </div>
-                                            <span>Видео</span>
+                    <div class="object-body__content">
+                        <div class="object-body__slider object-slider-two">
+                            <div class="object-slider__body object-slider-body">
+                                <div class="swiper object-slider-body__wrapper">
+                                    <div class="swiper-wrapper" id="object-gallery">
+                                        <div class="swiper-slide _fixed-width">
+                                            <a href="./img/card-scheme.png" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-scheme.png" alt="">
+                                                </picture>
+                                            </a>
                                         </div>
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-8.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-8.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-8.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-10.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-10.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="https://www.youtube.com/watch?v=OaFmmd2Ium8" data-poster="./img/card-1.webp" class="object-gallery__item">
+                                                <div class="video-play">
+                                                    <div class="video-play__icon">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#play"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span>Видео</span>
+                                                </div>
+                                                <picture>
+                                                    <source srcset="./img/card-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-1.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="./img/card-1.webp" class="object-gallery__item">
+                                                <picture>
+                                                    <source srcset="./img/card-1.webp" type="image/webp">
+                                                    <img loading="lazy" src="./img/card-1.jpg" alt="">
+                                                </picture>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-2.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-2.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <picture>
-                                            <source srcset="./img/card-1.webp" type="image/webp">
-                                            <img loading="lazy" src="./img/card-1.jpg" alt="">
-                                        </picture>
-                                    </div>
-
                                 </div>
+                                <button type="button" class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--prev">
+                                    <div class="nav-arrow-primary__wrapper">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn btn-reset object-slider-body__navigation nav-arrow-primary nav-arrow-primary--next">
+                                    <div class="nav-arrow-primary__wrapper">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="object-slider-body__pagination pagination-primary"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="object-body__wrapper">
-                        <div class="object-body__content">
-                            <div class="object-body__attention object-attention">
-                                <h2 class="object-attention__title title-2">
-                                    Внимание
-                                </h2>
-                                <div class="object-attention__content">
-                                    Объект соответствует параметрам заявки клиента: <a href="#">Константина
-                                        Константиновича</a>
-                                </div>
-                                <div class="object-attention__btns">
-                                    <button type="button" class="btn btn-reset object-attention__add">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#plus"></use>
-                                        </svg>
-                                        Добавить в заявку
-                                    </button>
-                                    <button type="button" class="btn btn-reset object-attention__no">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#x-two"></use>
-                                        </svg>
-                                        Не подходит
-                                    </button>
-                                </div>
+                        <div class="object-body__data object-data">
+                            <h3 class="object-data__name" data-main-info-title>
+                                1-ком. квартира, 39 м², 12/12 эт.
+                            </h3>
+                            <div class="object-data__address" data-main-info-address>
+                                <span class="object-data__address--one">
+                                    ЖК “Новое Внуково”
+                                </span>
                             </div>
-                            <div class="object-body__data object-data">
-                                <h3 class="object-data__name" data-main-info-title>
-                                    1-ком. квартира, 39 м², 12/12 эт.
-                                </h3>
-                                <div class="object-data__address" data-main-info-adress>
-                                    <span class="object-data__address--two">
-                                        Краснодар, ул.Карла-Маркса., 234
+                            <div class="object-data__price" data-main-info-price>
+                                <span class="object-data__price-old">
+                                    <span>
+                                        <span>3 000 000</span> ₽
                                     </span>
-                                </div>
-                                <div class="object-data__price" data-main-info-price>
-                                    <span class="object-data__price-old">
-                                        <span>
-                                            <span>3 000 000</span> ₽
-                                        </span>
-                                        <span>-300 000 ₽</span>
-                                    </span>
-                                    <span class="object-data__price-new">
-                                        <span class="title-2">2 897 000 ₽</span>
-                                        <span>(94 742 ₽/м²)</span>
-                                    </span>
-                                </div>
-                                <div class="object-data__text">
-                                    <p>
-                                        Уникальна квартира с ремонтом продается в новом доме по
-                                        улице Тополиная это район Петра Метальникова.
+                                    <span>-300 000 ₽</span>
+                                </span>
+                                <span class="object-data__price-new">
+                                    <span class="title-2">2 897 000 ₽</span>
+                                    <span>(94 742 ₽/м²)</span>
+                                </span>
+                            </div>
+                            <div class="object-data__choices choice-pay">
+                                <button type="button" class="btn btn-reset choice-pay__card choice-pay__card--sum _active">
+                                    <div class="row">
+                                        <h4 class="choice-pay__title">
+                                            100% оплата
+                                        </h4>
+                                        <span class="choice-pay__prc">-12%</span>
+                                    </div>
+                                    <p class="choice-pay__descr">
+                                        со скидкой 1 800 000 ₽
                                     </p>
-                                    <p>
-                                        В квартире шикарный, современный ремонт панорамные окна, на
-                                        полу ламинат, шикарный вид на город. Из кухни сделана кухня
-                                        гостиная очень актуально в наше время, при этом квартира см.
-                                        Уникальна квартира с ремонтом продается в новом доме по
-                                        улице Тополиная квартира см. Уникальна квартира с ремонтом
-                                        продается в новом доме по улице Тополиная
+                                    <span class="choice-pay__check" aria-label="Выбрано 100% оплата"></span>
+                                </button>
+                                <button type="button" class="btn btn-reset choice-pay__card choice-pay__card--mortgage">
+                                    <div class="row">
+                                        <h4 class="choice-pay__title">
+                                            Ипотека 6,5%
+                                        </h4>
+                                    </div>
+                                    <p class="choice-pay__descr">
+                                        от 14 350 ₽/мес.
                                     </p>
-                                </div>
-                                <button type="button" class="btn btn-reset object-data__more">
-                                    <span>Показать полностью</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#check"></use>
-                                    </svg>
+                                    <div class="btn btn-reset btn-secondary choice-pay__btn" data-popup-path="interest-rate-modal-two">Выбрать другие программы</div>
+                                    <span class="choice-pay__check"></span>
                                 </button>
                             </div>
-                            <div class="object-plate-bottom plate-bottom">
-                                <button type="button" class="btn btn-reset btn-primary object-plate-bottom__btn">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#phone"></use>
-                                    </svg>
-                                    Позвонить
-                                </button>
-                            </div>
-                            <div class="object-body__characteristics object-characteristics">
-                                <h2 class="object-characteristics__title title-2">
-                                    Характеристики
-                                </h2>
+                            <div class="object-data__characteristics object-characteristics">
                                 <div class="object-characteristics__container">
                                     <ul class="object-characteristics__list list-reset">
                                         <li class="object-characteristics__item">
                                             <span>
-                                                Тип
+                                                Начало строительства
                                             </span>
                                             <span>
-                                                Квартира
-                                            </span>
-                                        </li>
-                                        <li class="object-characteristics__item">
-                                            <span>
-                                                Высота потолков
-                                            </span>
-                                            <span>
-                                                1
+                                                2021, 1 кв.
                                             </span>
                                         </li>
                                         <li class="object-characteristics__item">
                                             <span>
-                                                Общая площадь
+                                                Кол-во квартир
                                             </span>
                                             <span>
-                                                57 м²
-                                            </span>
-                                        </li>
-                                        <li class="object-characteristics__item">
-                                            <span>
-                                                Этаж
-                                            </span>
-                                            <span>
-                                                12/12
+                                                1434
                                             </span>
                                         </li>
                                         <li class="object-characteristics__item">
                                             <span>
-                                                Площадь кухни
+                                                Окончание строительства
                                             </span>
                                             <span>
-                                                39 м²
+                                                2024, 4 кв.
                                             </span>
                                         </li>
                                         <li class="object-characteristics__item">
                                             <span>
-                                                Площадь кухни
+                                                Кол-во квартир
                                             </span>
                                             <span>
-                                                39 м²
+                                                434
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                434
+                                            </span>
+                                        </li>
+                                        <li class="object-characteristics__item">
+                                            <span>
+                                                Кол-во квартир
+                                            </span>
+                                            <span>
+                                                434
                                             </span>
                                         </li>
                                     </ul>
@@ -610,117 +472,1460 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="object-body__history object-history">
-                                <h2 class="object-history__title title-2">
-                                    История изменения цены
-                                </h2>
-                                <ul class="object-history__list list-reset">
-                                    <li class="object-history__item object-history__item--plus">
-                                        <span class="object-history__date" data-mobile-text="3 августа 2020">
-                                            03.08.2020
-                                        </span>
-                                        <div class="object-history__old-price">
-                                            <span>
-                                                <span>3 000 000</span>
-                                                ₽
-                                            </span>
-                                            <span>+300 000 ₽</span>
-                                        </div>
-                                        <span class="object-history__new-price">3 500 000 ₽</span>
-                                    </li>
-                                    <li class="object-history__item object-history__item--minus">
-                                        <span class="object-history__date" data-mobile-text="3 августа 2020">
-                                            03.08.2020
-                                        </span>
-                                        <div class="object-history__old-price">
-                                            <span>
-                                                <span>3 000 000</span>
-                                                ₽
-                                            </span>
-                                            <span>-300 000 ₽</span>
-                                        </div>
-                                        <span class="object-history__new-price">3 500 000 ₽</span>
-                                    </li>
-                                    <li class="object-history__item object-history__item--plus">
-                                        <span class="object-history__date" data-mobile-text="3 августа 2020">
-                                            03.08.2020
-                                        </span>
-                                        <div class="object-history__old-price">
-                                            <span>
-                                                <span>3 000 000</span>
-                                                ₽
-                                            </span>
-                                            <span>+300 000 ₽</span>
-                                        </div>
-                                        <span class="object-history__new-price">3 500 000 ₽</span>
-                                    </li>
-                                    <li class="object-history__item object-history__item--minus">
-                                        <span class="object-history__date" data-mobile-text="3 августа 2020">
-                                            03.08.2020
-                                        </span>
-                                        <div class="object-history__old-price">
-                                            <span>
-                                                <span>3 000 000</span>
-                                                ₽
-                                            </span>
-                                            <span>-300 000 ₽</span>
-                                        </div>
-                                        <span class="object-history__new-price">3 500 000 ₽</span>
-                                    </li>
-                                </ul>
+                            <div class="object-data__purchase-terms purchase-terms">
+                                <h3 class="purchase-terms__title">
+                                    Варианты приобретения
+                                </h3>
+                                <div class="purchase-terms__wrapper">
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#coin-2"></use>
+                                        </svg>
+                                        <span>100% оплата</span>
+                                        <span>Скидка до 12%</span>
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#past"></use>
+                                        </svg>
+                                        <span>Рассрочка</span>
+                                        <span>0-0-24</span>
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#bank-2"></use>
+                                        </svg>
+                                        <span>Ипотека</span>
+                                        <span>от 0,1%</span>
+                                    </div>
+                                    <div class="purchase-terms__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#refresh"></use>
+                                        </svg>
+                                        <span>Trade in</span>
+                                        <span>Возможен</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="object-body__location object-location">
-                                <h2 class="object-location__title title-2">
-                                    Расположение
+                            <div class="object-data__online-display online-display">
+                                <h2 class="online-display__main-title">
+                                    Доступные опции
                                 </h2>
-                                <p class="object-location__descr">
-                                    Краснодар, Тополиная улица, 40/1к1
-                                </p>
-                                <div class="object-location__maps">
-                                    <div class="map-primary remove-copyrights-pane" id="object-maps">
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(232, 255, 255);">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Меблировка</h4>
+                                    <p class="online-display__descr">
+                                        От 250 000 ₽
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(255, 241, 197);">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Отделка</h4>
+                                    <p class="online-display__descr">
+                                        Включено
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
+                                    style="background-color: rgb(255, 241, 197); grid-column: 1/-1;">
+                                    <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
+                                    <h4 class="online-display__title">Сплитсистема</h4>
+                                    <p class="online-display__descr">
+                                        В подарок
+                                    </p>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-body__ask ask">
+                            <h3 class="title-2 ask__title">
+                                Спросите у застройщика
+                            </h3>
+                            <p class="ask__descr">
+                                Застройщик подберет персональные условия и
+                                ответит на вопросы
+                            </p>
+                            <div class="ask__user user-info">
+                                <div class="user-info__avatar avatar online">
+                                    <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Абдурахманраджи Г.">
+                                </div>
+                                <span class="user-info__name">
+                                    Абдурахманраджи Г.
+                                </span>
+                                <span class="user-info__pos">
+                                    Отдел продаж
+                                </span>
+                            </div>
+                            <div class="ask__btns">
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Какие есть варианты отделки?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Есть акции и скидки?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Когда сдаётся дом?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    С каким банками работаете?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Может, на других этажах есть квартиры дешевле?
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary ask__btn">
+                                    Другой вопрос
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-body__stock block-stock">
+                            <div class="block-stock__top">
+                                <h2 class="block-stock__title title-2">
+                                    Акции, спецпредложения
+                                </h2>
+                                <div class="block-stock__nav">
+                                    <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper block-stock__slider">
+                                <div class="swiper-wrapper block-stock__items">
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Скидка 3000 ₽/м²
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                На неопределенный объем лотов
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Метр от самолета
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                Приобретая сертификат
+                                                метр от самолета часть
+                                                квартиры у вас в кармане
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                        текст!!
+                                                        Какой-то текст!! Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Скидка 3000 ₽/м²
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                На неопределенный объем лотов
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-stock">
+                                            <div class="card-stock__title">
+                                                Метр от самолета
+                                            </div>
+                                            <p class="card-stock__descr">
+                                                Приобретая сертификат
+                                                метр от самолета часть
+                                                квартиры у вас в кармане
+                                            </p>
+                                            <div class="card-stock__bottom">
+                                                <time class="card-stock__time" datetime="2022-12-31">До 31.12.2022
+                                                    г.</time>
+                                                <div class="card-stock__tooltip secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то
+                                                        текст!!
+                                                        Какой-то текст!! Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-reset btn-secondary block-stock__btn">
+                                Все акции и спецпредложения
+                            </button>
+                        </div>
+                        <div class="object-apart-renov">
+                            <h2 class="object-apart-renov__title title-2">
+                                Отделка квартир
+                            </h2>
+                            <div class="object-apart-renov__container">
+                                <div class="object-apart-renov__tabs tabs-primary">
+                                    <div data-tabs class="tabs-primary__inner _image-popper">
+                                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                                White box
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                Без стен
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                Дизайнерская отделка
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title">
+                                                Черновая отделка
+                                            </button>
+                                        </nav>
+                                        <div class="tabs-primary__container">
+                                            <div data-tabs-body class="tabs__content tabs-primary__content">
+
+                                                <div class="tabs__body object-apart-renov__item">
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Учтена в цене
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-10.jpg" class="object-apart-renov__image" width="636" height="379"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum due?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsu
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-2.jpg" class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и кориточечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum d
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        ad
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-1.jpg" class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum do
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ip
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-10.jpg" class="object-apart-renov__image" width="636" height="379"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ip
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                        adipisic
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-2.jpg" class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-1.jpg" class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                        adipicumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lore
+                                                                        qui dignissimos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Учтена в цене
+                                                        </li>
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-8.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-8.jpg" class="object-apart-renov__image" width="636" height="379"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor sit amet consectetur
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-10.jpg" class="object-apart-renov__image" width="636" height="379"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ips?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ip
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-1.jpg" class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        officiis ducimus cumque?
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsum dolors.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs__body object-apart-renov__item" hidden>
+                                                    <ul class="object-apart-renov__tags list-reset">
+                                                        <li class="object-apart-renov__tag">
+                                                            Дозаказ + 30 000 ₽/м²
+                                                        </li>
+                                                    </ul>
+                                                    <div class="swiper object-apart-renov__images">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/card-10.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/card-10.jpg" class="object-apart-renov__image" width="636" height="379"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ip
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem i.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-2.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-2.jpg" class="object-apart-renov__image" width="636"
+                                                                        height="379" alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ip
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ip
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <picture>
+                                                                    <source srcset="./img/object-apart-renov-1.webp" type="image/webp">
+                                                                    <img loading="lazy" src="./img/object-apart-renov-1.jpg" class="object-apart-renov__image"
+                                                                        alt="Дизайнерская отделка">
+                                                                </picture>
+                                                                <div class="object-apart-renov__mark" style="top: 20%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 40%; left: 10%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 90%; left: 22%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        В прихожей и коридоре точечные светильники
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 18%; left: 52%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum dolor.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 72%; left: 57%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem, ipsum
+                                                                    </div>
+                                                                </div>
+                                                                <div class="object-apart-renov__mark" style="top: 55%; right: 7%;">
+                                                                    <button type="button" class="btn btn-reset">
+                                                                        <svg>
+                                                                            <use xlink:href="img/sprite.svg#eye">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div>
+                                                                        Lorem ipsum dolor sit amet consectetur
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="object-apart-renov__nav">
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--prev">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="nav-arrow-secondary nav-arrow-secondary--next">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="object-body__sidebar" data-da=".object-body__content,1144,3">
-                            <div class="_sticky">
-                                <div class="object-body__user card-user">
-                                    <a href="#" class="card-user__top">
-                                        Объект с
-                                        <img loading="lazy" src="./img/avito.jpg" width="13" height="13" alt="Avito">
-                                        Avito
-                                    </a>
-                                    <div class="card-user__pos">
-                                        Собственник <a href="#">еще 3 объекта</a>
+                        <div class="object-calc-mort object-calc-mort--add">
+                            <h2 class="object-calc-mort__title title-2">
+                                Рассчитайте ипотеку
+                            </h2>
+                            <div class="object-calc-mort__list">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn _active" data-mortgage-card="1">
+                                    <span>Базовая программа</span>
+                                    <span>от 10,9%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="2">
+                                    <span>Господдержка</span>
+                                    <span>от 7,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="3">
+                                    <span>Ипотека для IT</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="4">
+                                    <span>Военная</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="5">
+                                    <span>Семейная</span>
+                                    <span>от 5,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="6">
+                                    <span>Семейная</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="7">
+                                    <span>Господдержка</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                            </div>
+                            <div class="object-calc-mort__wrapper">
+                                <div class="filter-range-one filter-range-one--term">
+                                    <span class="filter-range-one__subtitle">Срок кредита</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="5">
+                                            <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
+                                            лет
+                                        </div>
                                     </div>
-                                    <div class="card-user__name">
-                                        Алексей Гаврилов
+                                    <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                                </div>
+                                <div class="filter-range-one filter-range-one--contribution">
+                                    <span class="filter-range-one__subtitle">Первоначальный взнос</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="400000">
+                                            <input type="text" maxlength="12" name="Имя" class="input-reset">
+                                        </div>
+                                        <span>15%</span>
                                     </div>
-                                    <button type="button" class="btn btn-reset btn-primary card-user__btn" data-main-info-btn>
+                                    <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
+                                </div>
+                                <div class="filter-range-one">
+                                    <span class="filter-range-one__subtitle">Стоимость объекта</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="2897000">
+                                            <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                        </div>
+                                    </div>
+                                    <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset field-static" data-popup-path="interest-rate-modal-two">
+                                    <span class="field-static__subtitle">
+                                        Процентная ставка
+                                    </span>
+                                    <span class="field-static__text">
+                                        от 10,9%
+                                    </span>
+                                    <div class="field-static__arrow">
                                         <svg>
-                                            <use xlink:href="img/sprite.svg#phone"></use>
+                                            <use xlink:href="img/sprite.svg#check-right"></use>
                                         </svg>
-                                        Позвонить
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="object-calc-mort__info">
+                                Ежемесячный платеж <span>194 000 ₽/мес.</span>
+                            </div>
+                            <div class="object-calc-mort__bottom">
+                                <button type="button" class="btn btn-reset btn-primary object-calc-mort__app">
+                                    Подать заявку
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#tg"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message" data-popup-path="chat">
+                                    Задать вопрос
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-plate-bottom plate-bottom">
+                            <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call object-plate-bottom__btn object-plate-bottom__btn--call">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#phone"></use>
+                                </svg>
+                                Позвонить
+                            </button>
+                            <button type="button" class="btn btn-reset btn-secondary object-plate-bottom__btn object-plate-bottom__btn--message">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#chat"></use>
+                                </svg>
+                                <span>Написать</span>
+                            </button>
+
+                        </div>
+                        <div class="object-body__location object-location--select object-location">
+                            <h2 class="object-location__title title-2">
+                                Расположение
+                            </h2>
+                            <p class="object-location__descr">
+                                Краснодар, Тополиная улица, 40/1к1
+                            </p>
+                            <div class="object-location__btns">
+                                <button type="button" class="btn btn-reset object-location__btn object-location__btn--infrastructure _active">
+                                    Инфраструктура
+                                </button>
+                                <button type="button" class="btn btn-reset object-location__btn">
+                                    Вид из окна
+                                </button>
+                                <button type="button" class="btn btn-reset object-location__btn object-location__btn--routes">
+                                    Маршруты
+                                </button>
+                            </div>
+                            <div class="object-location__maps">
+                                <div class="object-location__routes location-routes">
+                                    <button type="button" class="btn btn-reset btn-primary location-routes__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#routes"></use>
+                                        </svg>
+                                        Построить маршрут
                                     </button>
                                 </div>
-                                <div class="object-base-inner__btns">
-                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#briefcase"></use>
-                                        </svg>
-                                        В свои объекты
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#application"></use>
-                                        </svg>
-                                        Добавить в заявку
-                                    </button>
+                                <div class="map-primary remove-copyrights-pane" id="object-maps">
                                 </div>
+                            </div>
+                            <div class="object-location__infrastructure _active">
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Школы
+                                    <span>11</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Детские сады
+                                    <span>11</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Поликлиники
+                                    <span>25</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Магазины
+                                    <span>2</span>
+                                </button>
+                                <button type="button" class="btn btn-reset tag object-location__infrastructure-btn">
+                                    Рестораны
+                                    <span>25</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="object-body__tour block-tour">
+                            <h2 class="block-tour__title title-2">
+                                Автобусный тур по новостройкам
+                            </h2>
+                            <div class="block-tour__video video-block">
+                                <!-- в data-src указываем путь к видео по примеру (embed обязательно) -->
+                                <button type="button" class="btn btn-reset video-block__button" data-src="https://www.youtube.com/embed/OaFmmd2Ium8">
+                                    <picture>
+                                        <source srcset="./img/poster-1.webp" type="image/webp">
+                                        <img loading="lazy" src="./img/poster-1.jpg" class="video-block__poster" alt="">
+                                    </picture>
+                                    <div class="video-block__video">
+
+                                    </div>
+                                    <div class="video-block__play">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#play"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-reset btn-secondary block-tour__btn">Записаться</button>
+                        </div>
+                    </div>
+                    <div class="object-body__sidebar">
+                        <div class="object-body__user bid-user _sticky" data-da=".object-body__content, 1144,6">
+                            <div class="bid-user__avatar avatar">
+                                <img loading="lazy" src="./img/samolet.png" width="129" height="129" alt="Алексей Г.">
+                            </div>
+                            <div class="bid-user__content">
+                                <a href="#" class="bid-user__name">
+                                    ГК Самолет
+                                </a>
+                                <time class="bid-user__time" datetime="2022-12-12">
+                                    Застройщик был в сети 12.12.2022
+                                </time>
+                                <div class="bid-user__quantity">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#house-building"></use>
+                                    </svg>
+                                    <span>17 строится</span>,&nbsp;
+                                    <span>178 сдано</span>
+                                </div>
+                            </div>
+                            <div class="bid-user__btns">
+                                <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call" data-main-info-btn>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#phone"></use>
+                                    </svg>
+                                    Показать телефон
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="chat" data-main-info-btn>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Задать вопрос</span>
+                                </button>
+                                <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="book-consultation"
+                                    data-main-info-btn>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Заказать консультацию</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
         </main>
         <footer class="footer">
@@ -1425,13 +2630,10 @@
             <span>Закрыть</span>
         </button>
         <div class="popup__content popup-primary__content client-fixed">
-            <h2 class="client-fixed__title title-2">
-                Фиксация клиента
-            </h2>
             <form action="#" class="client-fixed__form">
                 <div class="client-fixed__wrapper">
                     <h3 class="client-fixed__title title-3">
-                        Клиент
+                        Фиксация клиента
                     </h3>
                     <div class="client-fixed__labels">
                         <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
@@ -1465,18 +2667,18 @@
                         Застройщик, ЖК
                     </h3>
                     <div class="client-fixed__labels">
-                        <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
+                        <!-- <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
                             <label class="input-text__label">
                                 <span>Застройщик</span>
-                                <input type="text" name="Застройщик" class="input-reset input-text__input" value="Самолет" disabled placeholder="">
+                                <input type="text" name="Имя" class="input-reset input-text__input" value="Самолет" disabled placeholder="">
                             </label>
-                        </div>
-                        <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
-                            <label class="input-text__label">
-                                <span>Жилищный комплекс</span>
-                                <input type="text" name="Жилищный комплекс" class="input-reset input-text__input" value="Чистые пруды" disabled placeholder="">
-                            </label>
-                        </div>
+                        </div> -->
+                        <label class="client-fixed__label input-primary">
+                            <input type="text" name="Застройщик" class="input-reset input-primary__input" disabled value="Самолет" placeholder="Застройщик">
+                        </label>
+                        <label class="client-fixed__label input-primary">
+                            <input type="text" name="Жилищный Комплекс" class="input-reset input-primary__input" disabled value="Чистые пруды" placeholder="Жилищный Комплекс">
+                        </label>
                     </div>
                 </div>
                 <div class="client-fixed__row">
@@ -1498,15 +2700,14 @@
                         <span>Чат фиксации</span>
                     </button>
                 </div>
-                <div class="checkbox-secondary client-fixed__agree">
-                    <input id="client-fixed-agree" name="client-fixed-agree" class="checkbox-secondary__input" checked type="checkbox" value="true">
-                    <label for="client-fixed-agree" class="checkbox-secondary__label">
-                        <span class="checkbox-secondary__text">Подтверждаю, что клиент согласен на обработку персональных данных</span>
-                    </label>
+                <div class="client-fixed__btns">
+                    <button type="button" class="btn btn-reset btn-secondary js-popup-close client-fixed__btn">
+                        Отмена
+                    </button>
+                    <button type="submit" class="btn btn-reset btn-primary client-fixed__btn">
+                        Зафиксировать
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-reset btn-primary client-fixed__btn js-popup-close" data-popup-path="client-fixed-sent">
-                        Отправить заявку на фиксацию
-                </button>
             </form>
         </div>
     </div>
@@ -1758,25 +2959,6 @@
                 <img loading="lazy" src="./img/like.png" alt="like">
             </div>
             <h3 class="thanks-popup__title title-3">Спасибо!</h3>
-            <p class="thanks-popup__descr">
-                Жалоба принята к рассмотрению
-            </p>
-        </div>
-    </div>
-</div>
-<div class="popup popup-primary popup-primary--right popup-primary--client-fixed-sent">
-    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="client-fixed-sent">
-        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
-            <svg>
-                <use xlink:href="img/sprite.svg#x"></use>
-            </svg>
-            <span>Закрыть</span>
-        </button>
-        <div class="popup__content popup-primary__content client-fixed-sent">
-            <div class="thanks-popup__icon">
-                <img loading="lazy" src="./img/like.png" alt="like">
-            </div>
-            <h3 class="thanks-popup__title title-3">Заявка на фиксацию отправлена</h3>
             <p class="thanks-popup__descr">
                 Жалоба принята к рассмотрению
             </p>
