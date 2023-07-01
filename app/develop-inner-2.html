@@ -705,24 +705,24 @@
                                     </div>
                                 </div>
                                 <div class="bid-user__btns">
-                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--call" data-main-info-btn>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#phone"></use>
-                                        </svg>
-                                        Показать телефон
-                                    </button>
+                                    <button type="button" class="btn btn-reset btn-primary bid-user__btn bid-user__btn--message" data-popup-path="client-fixed"
+                                    data-main-info-btn>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Зафиксировать клиента</span>
+                                </button>
                                     <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="chat" data-main-info-btn>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#chat"></use>
                                         </svg>
                                         <span>Задать вопрос</span>
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--message" data-popup-path="book-consultation"
-                                        data-main-info-btn>
+                                    <button type="button" class="btn btn-reset btn-secondary bid-user__btn bid-user__btn--call" data-main-info-btn>
                                         <svg>
-                                            <use xlink:href="img/sprite.svg#chat"></use>
+                                            <use xlink:href="img/sprite.svg#phone"></use>
                                         </svg>
-                                        <span>Заказать консультацию</span>
+                                        Показать телефон
                                     </button>
                                 </div>
                             </div>
@@ -9620,8 +9620,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="popup popup-secondary popup-secondary--right popup-secondary--personal">
     <div class="popup__container popup-secondary__container" role="dialog" aria-modal="true" data-popup-target="personal-area-two">
         <button class="btn-reset js-popup-close popup__close popup-secondary__close" aria-label="Закрыть модальное окно">
@@ -9772,6 +9770,99 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+    </div>
+</div>
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--client-fixed">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="client-fixed">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content client-fixed">
+            <form action="#" class="client-fixed__form">
+                <div class="client-fixed__wrapper">
+                    <h3 class="client-fixed__title title-3">
+                        Фиксация клиента
+                    </h3>
+                    <div class="client-fixed__labels">
+                        <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
+                            <label class="input-text__label">
+                                <span>Фамилия</span>
+                                <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                            </label>
+                        </div>
+                        <div class="client-fixed__label client-fixed__label--name input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
+                            <label class="input-text__label">
+                                <span>Имя</span>
+                                <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                            </label>
+                        </div>
+                        <div class="client-fixed__label input-text input-text--no-exp">
+                            <label class="input-text__label">
+                                <span>Отчество</span>
+                                <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                            </label>
+                        </div>
+                        <div class="client-fixed__label client-fixed__label--tel input-text input-text--no-exp">
+                            <label class="input-text__label">
+                                <span>Номер телефона</span>
+                                <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-fixed__wrapper">
+                    <h3 class="client-fixed__title title-3">
+                        Застройщик, ЖК
+                    </h3>
+                    <div class="client-fixed__labels">
+                        <!-- <div class="client-fixed__label input-text input-text--no-exp input-text--disabled">
+                            <label class="input-text__label">
+                                <span>Застройщик</span>
+                                <input type="text" name="Имя" class="input-reset input-text__input" value="Самолет" disabled placeholder="">
+                            </label>
+                        </div> -->
+                        <label class="client-fixed__label input-primary">
+                            <input type="text" name="Застройщик" class="input-reset input-primary__input" disabled value="Самолет" placeholder="Застройщик">
+                        </label>
+                        <label class="client-fixed__label input-primary">
+                            <input type="text" name="Жилищный Комплекс" class="input-reset input-primary__input" disabled value="Чистые пруды" placeholder="Жилищный Комплекс">
+                        </label>
+                    </div>
+                </div>
+                <div class="client-fixed__row">
+                    <div class="client-fixed__user user-info-develop">
+                        <div class="user-info-develop__avatar avatar">
+                            <img loading="lazy" src="./img/avatar-1.jpg" width="57" height="57" alt="Алексей Гаврилов">
+                        </div>
+                        <span class="user-info-develop__name">
+                            Алексей Гаврилов
+                        </span>
+                        <span class="user-info-develop__date">
+                            Застройщик был в сети 12.12.2022
+                        </span>
+                    </div>
+                    <button type="button" class="btn btn-reset btn-secondary client-fixed__chat">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#chat"></use>
+                        </svg>
+                        <span>Чат фиксации</span>
+                    </button>
+                </div>
+                <div class="client-fixed__btns">
+                    <button type="button" class="btn btn-reset btn-secondary js-popup-close client-fixed__btn">
+                        Отмена
+                    </button>
+                    <button type="submit" class="btn btn-reset btn-primary client-fixed__btn">
+                        Зафиксировать
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -19292,7 +19383,7 @@
                                                         <label for="mcd-3_5" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Томилоно
+                                                                Томилоно
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19301,7 +19392,7 @@
                                                         <label for="mcd-3_6" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Красково
+                                                                Красково
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19328,7 +19419,7 @@
                                                         <label for="mcd-3_9" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Быково
+                                                                Быково
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19337,7 +19428,7 @@
                                                         <label for="mcd-3_10" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Ильинская
+                                                                Ильинская
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19346,7 +19437,7 @@
                                                         <label for="mcd-3_11" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Отдых
+                                                                Отдых
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19355,7 +19446,7 @@
                                                         <label for="mcd-3_12" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                             Кратово
+                                                                Кратово
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19364,7 +19455,7 @@
                                                         <label for="mcd-3_13" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                            Есининская
+                                                                Есининская
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19373,7 +19464,7 @@
                                                         <label for="mcd-3_14" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                       Фабричная
+                                                                Фабричная
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19382,7 +19473,7 @@
                                                         <label for="mcd-3_15" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                       Ременское
+                                                                Ременское
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19391,7 +19482,7 @@
                                                         <label for="mcd-3_16" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                       Ипподром
+                                                                Ипподром
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19472,7 +19563,7 @@
                                                         <label for="mcd-3_25" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                               Митьково
+                                                                Митьково
                                                             </span>
                                                         </label>
                                                     </div>
@@ -19490,7 +19581,7 @@
                                                         <label for="mcd-3_26" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
                                                                 <span class="checkbox-secondary__circle" aria-hidden="true"></span>
-                                                              Останкино
+                                                                Останкино
                                                             </span>
                                                         </label>
                                                     </div>

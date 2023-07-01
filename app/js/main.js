@@ -4275,6 +4275,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateCheckboxPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.bookConsultationValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.clientFixedValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.inputMask)();
   // ==================================================
 
@@ -4423,6 +4424,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
 
 // ========================================================================================
 
@@ -6157,6 +6159,7 @@ const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "bookConsultationValidate": () => (/* binding */ bookConsultationValidate),
+/* harmony export */   "clientFixedValidate": () => (/* binding */ clientFixedValidate),
 /* harmony export */   "inputMask": () => (/* binding */ inputMask),
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
 /* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
@@ -6168,6 +6171,7 @@ __webpack_require__.r(__webpack_exports__);
 const validateTextMap = {
   minLength: 'Минимальное кол-во символов:',
   name: 'Укажите имя',
+  surname: 'Укажите фамилию',
   tel: 'Введите корректный номер телефона'
 };
 const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
@@ -6281,6 +6285,53 @@ const bookConsultationValidate = () => {
     if (agents.classList.contains('_active') && !agents.querySelector('.card-agent input:checked')) {
       result = false;
       cardsAgent.forEach(agent => agent.classList.add('_error'));
+    }
+    return result;
+  }
+  form.addEventListener('submit', e => {
+    if (!validate()) e.preventDefault();
+  });
+};
+const clientFixedValidate = () => {
+  const form = document.querySelector('.client-fixed__form');
+  if (!form) return;
+  let formEventInput = false;
+  const surnameLabel = form.querySelector('.client-fixed__label--surname');
+  const nameLabel = form.querySelector('.client-fixed__label--name');
+  const telLabel = form.querySelector('.client-fixed__label--tel');
+  const surnameInput = surnameLabel.querySelector('input');
+  const nameInput = nameLabel.querySelector('input');
+  const telInput = telLabel.querySelector('input');
+  [surnameLabel, nameLabel, telInput].forEach(el => {
+    el.addEventListener('input', () => {
+      if (formEventInput) validate();
+    });
+  });
+  function validate() {
+    let result = true;
+    formEventInput = true;
+    validateRemoveError(telLabel);
+    validateRemoveError(surnameLabel);
+    validateRemoveError(nameLabel);
+    if (surnameLabel.hasAttribute('data-validate-min-length') && surnameInput.value.length < surnameLabel.dataset.validateMinLength) {
+      result = false;
+      validateCreateError(surnameLabel, `${validateTextMap.minLength} ${surnameLabel.dataset.validateMinLength}`);
+    }
+    if (surnameLabel.hasAttribute('data-validate-required') && surnameInput.value === '') {
+      result = false;
+      validateCreateError(surnameLabel, validateTextMap.surname);
+    }
+    if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+      result = false;
+      validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
+    }
+    if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
+      result = false;
+      validateCreateError(nameLabel, validateTextMap.name);
+    }
+    if (!inputTelValidate(telLabel, telInput)) {
+      result = false;
+      validateCreateError(telLabel, validateTextMap.tel);
     }
     return result;
   }

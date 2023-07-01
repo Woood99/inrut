@@ -546,9 +546,6 @@ textarea.input-reset {
   width: 100%;
   height: 100%;
 }
-.input-text__input:disabled {
-  opacity: 0.8;
-}
 .input-text__input::-webkit-input-placeholder {
   color: var(--gray);
   opacity: 0.55;
@@ -609,6 +606,10 @@ textarea.input-reset {
   line-height: 1;
   margin-top: 4px;
   margin-left: 8px;
+}
+.input-text--disabled .input-text__label {
+  border: 1px solid transparent;
+  background-color: rgba(220, 221, 221, 0.65);
 }
 
 .input-clue {
@@ -1608,6 +1609,86 @@ textarea.input-reset {
 @media (max-width: 1144px) {
   .popup-primary--record-viewing {
     background-color: rgba(34, 41, 102, 0.4);
+  }
+}
+.popup-primary--client-fixed .popup-primary__container {
+  border-radius: 12px 0 0 12px;
+  padding: 65px 48px;
+  width: 800px;
+}
+@media (max-width: 1144px) {
+  .popup-primary--client-fixed .popup-primary__container {
+    border-radius: 0;
+    padding: 55px 16px;
+    width: 100%;
+  }
+}
+
+.client-fixed__wrapper:not(:first-child) {
+  margin-top: 32px;
+}
+.client-fixed__labels {
+  margin-top: 16px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+@media (max-width: 768px) {
+  .client-fixed__labels {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.client-fixed__row {
+  border-top: 1px solid var(--primary100);
+  margin-top: 24px;
+  padding-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+@media (max-width: 768px) {
+  .client-fixed__row {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.client-fixed .user-info-develop {
+  -ms-grid-columns: 57px 1fr;
+  grid-template-columns: 57px 1fr;
+}
+.client-fixed .user-info-develop__avatar {
+  width: 57px;
+  height: 57px;
+}
+.client-fixed .user-info-develop__date {
+  font-size: 12px;
+}
+.client-fixed__chat svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  fill: var(--blue);
+}
+.client-fixed__btns {
+  margin-top: 56px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+@media (max-width: 768px) {
+  .client-fixed__btns {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 

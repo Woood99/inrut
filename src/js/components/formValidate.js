@@ -3,6 +3,7 @@ import Inputmask from "inputmask";
 const validateTextMap = {
     minLength: 'Минимальное кол-во символов:',
     name: 'Укажите имя',
+    surname: 'Укажите фамилию',
     tel: 'Введите корректный номер телефона',
 }
 
@@ -131,7 +132,60 @@ export const bookConsultationValidate = () => {
         if (!validate()) e.preventDefault();
     })
 };
+export const clientFixedValidate = () => {
+    const form = document.querySelector('.client-fixed__form');
+    if (!form) return;
+    let formEventInput = false;
+    const surnameLabel = form.querySelector('.client-fixed__label--surname');
+    const nameLabel = form.querySelector('.client-fixed__label--name');
+    const telLabel = form.querySelector('.client-fixed__label--tel');
 
+    const surnameInput = surnameLabel.querySelector('input');
+    const nameInput = nameLabel.querySelector('input');
+    const telInput = telLabel.querySelector('input');
+    [surnameLabel, nameLabel, telInput].forEach(el => {
+        el.addEventListener('input', () => {
+            if (formEventInput) validate();
+        })
+    })
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+        validateRemoveError(telLabel);
+        validateRemoveError(surnameLabel);
+        validateRemoveError(nameLabel);
+
+        if (surnameLabel.hasAttribute('data-validate-min-length') && surnameInput.value.length < surnameLabel.dataset.validateMinLength) {
+            result = false;
+            validateCreateError(surnameLabel, `${validateTextMap.minLength} ${surnameLabel.dataset.validateMinLength}`);
+        }
+        if (surnameLabel.hasAttribute('data-validate-required') && surnameInput.value === '') {
+            result = false;
+            validateCreateError(surnameLabel, validateTextMap.surname);
+        }
+
+        if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+            result = false;
+            validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
+        }
+        if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
+            result = false;
+            validateCreateError(nameLabel, validateTextMap.name);
+        }
+
+        if (!inputTelValidate(telLabel, telInput)) {
+            result = false;
+            validateCreateError(telLabel, validateTextMap.tel);
+        }
+        return result;
+    }
+
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+}
 
 export const inputMask = () => {
     const inputs = document.querySelectorAll('.input-phone-mask');
