@@ -145,9 +145,47 @@
 .room-info-card {
     display: grid;
     align-items: center;
-    grid-template-columns: percent(291, 920) percent(265, 920) percent(240, 920) 1fr;
+    grid-template-columns: calc(85px + 8px) percent(271, 920) percent(245, 920) percent(220, 920) 1fr;
     grid-column-gap: 16px;
     padding: 24px 16px;
+
+    &__image {
+        width: 85px;
+        height: 85px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 12px;
+
+        img {
+            border-radius: 12px;
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            background-color: transparent;
+
+            @media (max-width:$desktop) {
+                height: 80px;
+                height: 80px;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #181a1d0a;
+            border-radius: 12px;
+        }
+
+        @media (max-width:$desktop) {
+            margin-bottom: 24px;
+            width: 90px;
+            height: 90px;
+        }
+    }
 
     &__name-term {
         @media (max-width:$desktop) {
@@ -197,6 +235,7 @@
                 line-height: math.div(18, 14);
                 font-weight: 400;
                 margin-left: 5px;
+
                 @media (max-width:$desktop) {
                     font-size: 12px;
                 }
@@ -236,7 +275,7 @@
 
             &:nth-child(2) {
                 margin-left: 5px;
-                                padding: 3px 10px;
+                padding: 3px 10px;
                 color: var(--green);
                 background: rgba(36, 202, 142, 0.1);
                 border-radius: 8px;
