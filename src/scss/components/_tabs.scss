@@ -96,7 +96,8 @@
 
         @media (max-width:$desktop) {
             overflow-x: auto;
-            &.container{
+
+            &.container {
                 padding: 0;
             }
         }
@@ -114,10 +115,11 @@
         border-radius: 16px;
         padding: 24px 0;
 
-        @media (max-width:$smallTablet-max) {
+        @media (max-width:$desktop) {
             margin-top: 24px;
             padding: 0;
-            border-radius: 12px;
+            background-color: transparent;
+            border-radius: 0;
         }
     }
 
@@ -178,11 +180,12 @@
         }
     }
 
-    &__content {
-        margin-top: 32px;
+    &__select {
+        margin-bottom: 24px;
+        max-width: 450px;
 
-        @media (max-width:$desktop) {
-            margin-top: 16px;
+        .choices__list--single {
+            padding: 0 30px 0 120px;
         }
     }
 
@@ -223,7 +226,7 @@
         margin-top: 20px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         grid-column-gap: 16px;
         grid-row-gap: 16px;
 
@@ -241,6 +244,11 @@
     &__next {
         margin-top: 32px;
         width: 100%;
+
+        @media (max-width:$desktop) {
+            margin: 24px auto 0;
+            width: calc(100% - 32px);
+        }
     }
 
     &__pagination {

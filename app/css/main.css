@@ -5844,8 +5844,8 @@ textarea.input-reset {
 }
 @-webkit-keyframes fadeTransformX {
   0% {
-    -webkit-transform: translateX(15%);
-    transform: translateX(15%);
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
   }
   100% {
     -webkit-transform: translate(0);
@@ -5854,8 +5854,8 @@ textarea.input-reset {
 }
 @keyframes fadeTransformX {
   0% {
-    -webkit-transform: translateX(15%);
-    transform: translateX(15%);
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
   }
   100% {
     -webkit-transform: translate(0);
@@ -15239,11 +15239,12 @@ textarea.input-reset {
   border-radius: 16px;
   padding: 24px 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1144px) {
   .tabs-primary__container {
     margin-top: 24px;
     padding: 0;
-    border-radius: 12px;
+    background-color: transparent;
+    border-radius: 0;
   }
 }
 .tabs-primary__controls {
@@ -15305,13 +15306,12 @@ textarea.input-reset {
   background-color: var(--blue);
   color: var(--white);
 }
-.tabs-primary__content {
-  margin-top: 32px;
+.tabs-primary__select {
+  margin-bottom: 24px;
+  max-width: 450px;
 }
-@media (max-width: 1144px) {
-  .tabs-primary__content {
-    margin-top: 16px;
-  }
+.tabs-primary__select .choices__list--single {
+  padding: 0 30px 0 120px;
 }
 .tabs-primary__row:not(:first-child) {
   margin-top: 24px;
@@ -15349,7 +15349,7 @@ textarea.input-reset {
   display: grid;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 }
@@ -15366,6 +15366,12 @@ textarea.input-reset {
 .tabs-primary__next {
   margin-top: 32px;
   width: 100%;
+}
+@media (max-width: 1144px) {
+  .tabs-primary__next {
+    margin: 24px auto 0;
+    width: calc(100% - 32px);
+  }
 }
 .tabs-primary__pagination {
   margin-top: 24px;
@@ -24475,22 +24481,6 @@ textarea.input-reset {
 .agent__tabs .tabs-primary__container {
   padding-bottom: 24px;
 }
-@media (max-width: 1144px) {
-  .agent__tabs .tabs-primary__next {
-    margin-top: 0;
-  }
-}
-@media (max-width: 768px) {
-  .agent__tabs .tabs-primary__next {
-    margin: 0 0 0 16px;
-    width: calc(100% - 32px);
-  }
-}
-@media (max-width: 1144px) {
-  .agent__tabs .tabs-primary__pagination {
-    margin-top: 16px;
-  }
-}
 @media (max-width: 768px) {
   .agent__tabs .tabs__body .tabs-primary__row:first-child {
     padding-top: 0;
@@ -26730,5 +26720,40 @@ textarea.input-reset {
   .wallet-cards__add:hover {
     background-color: var(--hover-primary);
   }
+}
+
+.favorites__empty {
+  padding: 48px 0;
+}
+@media (max-width: 1144px) {
+  .favorites__empty {
+    padding: 48px 16px;
+  }
+}
+@media (max-width: 1144px) {
+  .favorites {
+    background-color: var(--stand-bg);
+    padding: 74px 0 0;
+  }
+}
+
+.favorites-empty__text {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.2666666667;
+  color: var(--primaryTwo);
+}
+.favorites-empty__text svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--red);
+  margin: 0 3px;
+}
+.favorites-empty__text p:not(:last-child) {
+  margin-bottom: 8px;
+}
+.favorites-empty__btn {
+  margin-top: 32px;
+  max-width: 320px;
 }
 /*# sourceMappingURL=main.css.map */

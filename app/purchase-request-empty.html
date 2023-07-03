@@ -499,37 +499,18 @@
 
 
                 <div data-tabs class="tabs-primary__inner">
-                    <nav data-tabs-titles class="tabs-primary__btns tabs__navigation container">
-                        <button type="button" class="btn btn-reset tabs__title _tab-active">
-                            На рассмотрение <span>23</span>
-                        </button>
-                        <button type="button" class="btn btn-reset tabs__title">
-                            Отклоненные <span>23</span>
-                        </button>
-                    </nav>
+                    <div class="container">
+                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                На рассмотрение <span>23</span>
+                            </button>
+                            <button type="button" class="btn btn-reset tabs__title">
+                                Отклоненные <span>23</span>
+                            </button>
+                        </nav>
+                    </div>
                     <div class="tabs-primary__container control-cards">
                         <div class="control-cards__container container--no-padding">
-                            <div class="tabs-primary__controls control-cards__btns">
-                                <button type="button"
-                                    class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#apps"></use>
-                                    </svg>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-reset tabs-primary__control tabs-primary__control--vertical control-cards__btn control-cards__btn--vertical">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#pause"></use>
-                                    </svg>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-reset tabs-primary__control tabs-primary__control--maps">
-                                    <span>На карте</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-fill"></use>
-                                    </svg>
-                                </button>
-                            </div>
                             <div data-tabs-body
                                 class="tabs__content tabs-primary__content control-cards__content control-cards__content--horizontal">
                                 <div class="tabs__body">
@@ -548,7 +529,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="tabs__body">
+                                <div class="tabs__body" hidden>
 
                                     <div class="list-empty">
                                         <h2 class="list-empty__title title-2">

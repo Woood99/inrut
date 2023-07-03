@@ -1,0 +1,45 @@
+.favorites {
+    &__empty {
+        padding: 48px 0;
+
+        @media (max-width:$desktop) {
+            padding: 48px 16px;
+        }
+    }
+
+    @media (max-width:$desktop) {
+        background-color: var(--stand-bg);
+        padding: 74px 0 0;
+    }
+}
+
+
+.favorites-empty {
+
+    &__title {}
+
+    &__text {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        color: var(--primaryTwo);
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--red);
+            margin: 0 3px;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 32px;
+        max-width: 320px;
+    }
+}

@@ -5402,13 +5402,14 @@ function controlCards() {
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(el => el.classList.remove('_active'));
-        btn.classList.add('_active');
         content.classList.remove('control-cards__content--horizontal', 'control-cards__content--vertical');
         if (checkHorizontal(btn)) {
           content.classList.add('control-cards__content--horizontal');
+          container.querySelectorAll('.control-cards__btn--horizontal').forEach(el => el.classList.add('_active'));
         }
         if (checkVertical(btn)) {
           content.classList.add('control-cards__content--vertical');
+          container.querySelectorAll('.control-cards__btn--vertical').forEach(el => el.classList.add('_active'));
         }
         if (content.querySelectorAll('.card-secondary').length >= 1) {
           const cardsSecondary = content.querySelectorAll('.card-secondary');
