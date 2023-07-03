@@ -190,6 +190,41 @@
             display: none;
         }
     }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        border: 1px solid var(--primary200);
+        padding: 0 16px;
+        border-radius: 12px;
+        height: 45px;
+
+        .btn {
+            width: 20px;
+            height: 20px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: var(--primaryTwo);
+            }
+        }
+        input{
+            border: none;
+            flex-grow: 1;
+            padding-left: 16px;
+            padding-right: 16px;
+            color: var(--primaryTwo);
+            font-size: 15px;
+            line-height: math.div(19 , 15);
+            background-color: transparent;
+        }
+        @media (max-width:$desktop){
+             width: 100%; 
+        }
+    }
 }
 
 .filter--more {

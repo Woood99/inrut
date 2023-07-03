@@ -196,7 +196,6 @@
         grid-column-gap: 24px;
         grid-row-gap: 24px;
     }
-
     &__item {
         &--big {
             grid-column: 2 span;
@@ -227,7 +226,12 @@
             padding: 24px;
         }
     }
-
+    &__calendar{
+        border-radius: 12px;
+        background-color: var(--white);
+        box-shadow: var(--shadow-primary);
+        padding: 24px;
+    }
     &__title {
         transition: color $transitionSpeed $transitionFunction;
 
@@ -250,7 +254,7 @@
 
     &.home-services--calendar {
         .home-services__container {
-            grid-template-columns: 1fr 385px;
+            grid-template-columns: 1fr 400px;
         }
     }
 

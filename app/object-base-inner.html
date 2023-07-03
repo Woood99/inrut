@@ -714,6 +714,23 @@
                                         </svg>
                                         Добавить в заявку
                                     </button>
+                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#application"></use>
+                                        </svg>
+                                       В личные списки
+                                    </button>
+                                </div>
+                                <div class="object-base-inner__comment">
+                                    <span>Добавить комментарий</span>
+                                    <label class="textarea-secondary" data-textarea-secondary-min-height="45">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#pencil"></use>
+                                        </svg>
+                                        <span>...</span>
+                                        <textarea class="input-reset textarea-secondary__input" maxlength="250"
+                                            placeholder=""></textarea>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -1387,6 +1404,14 @@
                     <li class="personal-area__item">
                         <button type="button" class="btn btn-reset personal-area__btn">
                             <svg>
+                                <use xlink:href="img/sprite.svg#list"></use>
+                            </svg>
+                            <span>Личные списки</span>
+                        </button>
+                    </li>
+                    <li class="personal-area__item">
+                        <button type="button" class="btn btn-reset personal-area__btn">
+                            <svg>
                                 <use xlink:href="img/sprite.svg#crown"></use>
                             </svg>
                             <span>Сделки</span>
@@ -1541,7 +1566,19 @@
     </div>
 </div>
 
-
+<div class="popup popup-primary popup-primary--right popup-primary--add-card">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="add-card">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content add-card">
+          
+        </div>
+    </div>
+</div>
 
 
 

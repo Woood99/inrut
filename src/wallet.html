@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Кошелёк</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--wallet">
+        @include('partials/header.html')
+        <main class="main main-page-gap wallet">
+            <div class="container">
+                <div class="wallet__items">
+                    <div class="wallet__item wallet-balance">
+                        <svg class="wallet-balance__icon">
+                            <use xlink:href="img/sprite.svg#wallet"></use>
+                        </svg>
+                        <div class="wallet-balance__text">
+                            <h3 class="wallet-balance__title title-3">
+                                Баланс кошелька
+                            </h3>
+                            <span class="title-1">
+                                0 ₽
+                            </span>
+                        </div>
+                        <div class="wallet-balance__label input-text input-text--no-subtitle input-text--only-number">
+                            <label class="input-text__label">
+                                <input type="text" name="Сумма" value="1 000 ₽" maxlength="16" class="input-reset input-text__input" placeholder="">
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-reset btn-primary wallet-balance__btn">Пополнить</button>
+                    </div>
+                    <div class="wallet__item wallet-cards">
+                        <svg class="wallet-cards__icon">
+                            <use xlink:href="img/sprite.svg#bank-card"></use>
+                        </svg>
+                        <h3 class="wallet-cards__title title-3">
+                            Банковские карты
+                        </h3>
+                        <button class="btn btn-reset wallet-cards__add" data-popup-path="add-card">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>

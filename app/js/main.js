@@ -4168,6 +4168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/furnishingSets */ "./src/js/components/furnishingSets.js");
 /* harmony import */ var _components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/bookConsultation */ "./src/js/components/bookConsultation.js");
 /* harmony import */ var _components_recordViewing__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/recordViewing */ "./src/js/components/recordViewing.js");
+/* harmony import */ var _components_wallet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/wallet */ "./src/js/components/wallet.js");
+
 
 
 
@@ -4269,6 +4271,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000);
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__["default"])();
+  (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();
+
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4427,6 +4431,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-card');
 
 // ========================================================================================
 
@@ -8184,6 +8189,43 @@ const videoBlock = currentVideoBlock => {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (videoBlock);
+
+/***/ }),
+
+/***/ "./src/js/components/wallet.js":
+/*!*************************************!*\
+  !*** ./src/js/components/wallet.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const wallet = () => {
+  const container = document.querySelector('.wallet');
+  if (!container) return;
+  const input = container.querySelector('.wallet-balance__label input');
+  const btn = container.querySelector('.wallet-balance__btn');
+  input.addEventListener('input', () => {
+    if (input.value.length >= 2 && input.value[0] === '0') {
+      input.value = input.value.slice(1);
+    }
+    if (input.value !== '' && input.value !== '0') {
+      btn.removeAttribute('disabled');
+    } else {
+      btn.setAttribute('disabled', '');
+    }
+  });
+  input.addEventListener('focusin', () => {
+    input.value = input.value.replace(' ₽', '');
+  });
+  input.addEventListener('focusout', () => {
+    if (input.value !== '' && input.value !== '0') input.value += ' ₽';
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wallet);
 
 /***/ }),
 

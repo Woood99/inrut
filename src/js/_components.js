@@ -59,6 +59,7 @@ import {
 import furnishingSets from './components/furnishingSets';
 import bookConsultation from './components/bookConsultation';
 import recordViewing from './components/recordViewing';
+import wallet from './components/wallet'
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -108,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     maps();
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
-    calendarPrimary('.home-services__calendar .calendar-primary','eventsCalendar.json',false);
+    calendarPrimary('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
     controlCards();
     videoBlock();
     reviewModal();
@@ -128,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bookConsultation();
     scrollDrag('.object-location__infrastructure', 1000);
     recordViewing();
+    wallet();
+    
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
