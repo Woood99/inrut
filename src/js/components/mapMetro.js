@@ -109,6 +109,7 @@ const mapMetro = () => {
                         navBottomUpdate(element.closest('.search-area__item').dataset.searchAreaMetro);
                     })
                 } else {
+                    console.log(currentElementMap);
                     currentElementMap.classList.remove('map-metro_select');
                     circle.classList.remove('map-metro_select');
                     inputs.forEach(input => {

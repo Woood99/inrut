@@ -126,8 +126,9 @@
             padding: 12px 0 0;
             height: 100%;
             top: 100%;
+            left: 0;
             transform: translateY(20px);
-            width: auto;
+            width: 100%;
             min-height: 260px;
             opacity: 0;
             visibility: hidden;
@@ -144,23 +145,23 @@
     }
 
     @media (min-width:$desktop) {
-        &--1 {
-            .nav-dropdown__dropdown-container {
-                left: 5%;
-            }
-        }
+        // &--1 {
+        //     .nav-dropdown__dropdown-container {
+        //         left: 5%;
+        //     }
+        // }
 
-        &--2 {
-            .nav-dropdown__dropdown-container {
-                left: 12%;
-            }
-        }
+        // &--2 {
+        //     .nav-dropdown__dropdown-container {
+        //         left: 12%;
+        //     }
+        // }
 
-        &--3 {
-            .nav-dropdown__dropdown-container {
-                right: 8px;
-            }
-        }
+        // &--3 {
+        //     .nav-dropdown__dropdown-container {
+        //         right: 8px;
+        //     }
+        // }
 
         &:hover {
             .nav__link {
@@ -195,18 +196,17 @@
 
 
 .nav-dropdown-content {
-    padding: 5px 100px 5px 5px;
+    padding: 5px 24px 5px 5px;
     display: flex;
-
-    height: calc(100% + 12px);
     background-color: var(--white);
     border-radius: 24px;
 
     &__card-info {
-        margin-right: 150px;
-        width: 315px;
-        flex: 0 0 315px;
-        min-height: 240px;
+        --width: calc(40% + 24px);
+        margin-right: 24px;
+      width: var(--width);
+        flex: 0 0 var(--width);
+        min-height: 350px;
 
         @media (max-width:$desktop) {
             margin-right: 0;
@@ -218,7 +218,6 @@
     }
 
     &__body {
-
         @media (min-width:$desktop-min) {
             padding: 26px 0;
         }
@@ -231,18 +230,20 @@
     &__col {}
 
     &__item {
-        display: flex;
+        display: grid;
+        grid-template-columns: 50px max-content;
+        grid-column-gap: 16px;
+        grid-row-gap: 4px;
         align-items: center;
         white-space: nowrap;
         padding: 12px 48px 12px 16px;
         border-radius: 12px;
         transition: background-color $transitionSpeed $transitionFunction;
-
-        svg {
-            fill: var(--blue);
-            width: 14px;
-            height: 14px;
-            margin-right: 25px;
+        img{
+            grid-column: 1/2;
+            grid-row: 1/3;
+            width: 50px;
+            height: 50px;
         }
 
         span {
@@ -250,6 +251,9 @@
             font-size: 15px;
             line-height: math.div(19, 15);
             font-weight: 400;
+            &:nth-child(3){
+                color: var(--primaryTwo);
+            }
         }
 
         &:not(:last-child) {
@@ -258,7 +262,7 @@
 
         @media (min-width:$desktop-min) {
             &:hover {
-                background-color: var(--hover-primary);
+                // background-color: var(--hover-primary);
             }
         }
 

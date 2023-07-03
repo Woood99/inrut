@@ -382,125 +382,156 @@
             <span>Закрыть</span>
         </button>
         <div class="popup__content popup-secondary__content personal-area">
-            <h2 class="personal-area__title title-2">
-                Личный кабинет
-            </h2>
-            <div class="personal-area__info">
-                <div class="personal-area__avatar avatar">
-                    <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Иван П.">
-                </div>
-                <span class=" personal-area__name">
-                    Иван П.
-                </span>
-                <button type="button" class="btn btn-reset personal-area__edit" data-popup-path="edit-profile">Редактировать профиль</button>
-            </div>
-            <nav class="personal-area__nav">
-                <ul data-spollers class="personal-area__list list-reset">
-                    <li class="personal-area__item personal-area-dropdown">
-                        <button type="button" data-spoller class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#add"></use>
-                            </svg>
-                            <span>Добавить</span>
-                            <svg class="personal-area-dropdown__arrow">
-                                <use xlink:href="img/sprite.svg#arrow-small"></use>
-                            </svg>
-                        </button>
-                        <div class="personal-area-dropdown__body">
-                            <button type="button" class="btn btn-reset personal-area__btn">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#house"></use>
-                                </svg>
-                                <span>Объявление на продажу</span>
-                            </button>
-                            <button type="button" class="btn btn-reset personal-area__btn">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#tg"></use>
-                                </svg>
-                                <span>Запрос на покупку</span>
-                            </button>
+            <div class="personal-area__container">
+                <div class="col">
+                    <div class="personal-area__elements">
+                       <a href="#" class="personal-area__element personal-area__element--big">
+                            <img loading="lazy" src="./img/prc.svg" alt="">
+                            <span>Рассрочка</span>
+                            <p>Доступна любому покупателю при условии внесения общего взноса</p>
+                        </a>
+                       <a href="#" class="personal-area__element">
+                            <img loading="lazy" src="./img/prc.svg" alt="">
+                            <span>Рассрочка</span>
+                            <p>Доступна любому покупателю при условии внесения общего взноса</p>
+                        </a>
+                       <a href="#" class="personal-area__element">
+                            <img loading="lazy" src="./img/prc.svg" alt="">
+                            <span>Рассрочка</span>
+                            <p>Доступна любому покупателю при условии внесения общего взноса</p>
+                        </a>
+                    </div>
+                    <div class="personal-area__banner card-info">
+                        <span class="card-info__title">
+                            Успейте взять ипотеку
+                            по выгодной ставке
+                        </span>
+                        <div class="card-info__image" style="background-image: url('./img/banner-photo-3.png')">
                         </div>
-                    </li>
-                </ul>
-                <ul class="personal-area__list list-reset">
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#chat"></use>
-                            </svg>
-                            <span>Чат</span>
-                            <span class="personal-area__quantity">
-                                +6
-                            </span>
-                        </button>
-                    </li>
-                </ul>
-                <ul class="personal-area__list list-reset">
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#cart-1"></use>
-                            </svg>
-                            <span>Мои заявки на покупку</span>
-                        </button>
-                    </li>
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#cart-3"></use>
-                            </svg>
-                            <span>Предложения по заявкам</span>
-                            <span class="personal-area__quantity">
-                                +6
-                            </span>
-                        </button>
-                    </li>
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#calendar"></use>
-                            </svg>
-                            <span>Календарь просмотров</span>
-                        </button>
-                    </li>
-                </ul>
-                <ul class="personal-area__list list-reset">
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#favorite"></use>
-                            </svg>
-                            <span>Избранные объекты</span>
-                        </button>
-                    </li>
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#list-check"></use>
-                            </svg>
-                            <span>Мои предложения</span>
-                        </button>
-                    </li>
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#list"></use>
-                            </svg>
-                            <span>Мои объявления</span>
-                        </button>
-                    </li>
-                </ul>
-                <ul class="personal-area__list list-reset">
-                    <li class="personal-area__item">
-                        <button type="button" class="btn btn-reset personal-area__btn">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#sign-in"></use>
-                            </svg>
-                            <span>Выйти</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2 class="personal-area__title title-2">
+                        Личный кабинет
+                    </h2>
+                    <div class="personal-area__info">
+                        <div class="personal-area__avatar avatar">
+                            <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Иван П.">
+                        </div>
+                        <span class=" personal-area__name">
+                            Иван П.
+                        </span>
+                        <button type="button" class="btn btn-reset personal-area__edit" data-popup-path="edit-profile">Редактировать профиль</button>
+                    </div>
+                    <nav class="personal-area__nav">
+                        <ul data-spollers class="personal-area__list list-reset">
+                            <li class="personal-area__item personal-area-dropdown">
+                                <button type="button" data-spoller class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#add"></use>
+                                    </svg>
+                                    <span>Добавить</span>
+                                    <svg class="personal-area-dropdown__arrow">
+                                        <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                    </svg>
+                                </button>
+                                <div class="personal-area-dropdown__body">
+                                    <button type="button" class="btn btn-reset personal-area__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#house"></use>
+                                        </svg>
+                                        <span>Объявление на продажу</span>
+                                    </button>
+                                    <button type="button" class="btn btn-reset personal-area__btn">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#tg"></use>
+                                        </svg>
+                                        <span>Запрос на покупку</span>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="personal-area__list list-reset">
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#chat"></use>
+                                    </svg>
+                                    <span>Чат</span>
+                                    <span class="personal-area__quantity">
+                                        +6
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="personal-area__list list-reset">
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#cart-1"></use>
+                                    </svg>
+                                    <span>Мои заявки на покупку</span>
+                                </button>
+                            </li>
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#cart-3"></use>
+                                    </svg>
+                                    <span>Предложения по заявкам</span>
+                                    <span class="personal-area__quantity">
+                                        +6
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#calendar"></use>
+                                    </svg>
+                                    <span>Календарь просмотров</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="personal-area__list list-reset">
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#favorite"></use>
+                                    </svg>
+                                    <span>Избранные объекты</span>
+                                </button>
+                            </li>
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#list-check"></use>
+                                    </svg>
+                                    <span>Мои предложения</span>
+                                </button>
+                            </li>
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#list"></use>
+                                    </svg>
+                                    <span>Мои объявления</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="personal-area__list list-reset">
+                            <li class="personal-area__item">
+                                <button type="button" class="btn btn-reset personal-area__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#sign-in"></use>
+                                    </svg>
+                                    <span>Выйти</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -6698,7 +6729,7 @@
                                             <div class="spollers__body">
                                                 <div class="search-area__list">
 
-                                                    <div class="checkbox-secondary" data-metro-id-old="270">
+                                                    <div class="checkbox-secondary" data-metro-id="270">
                                                         <input id="zamoskv-line_1" name="zamoskv-line" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="zamoskv-line_1" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9394,7 +9425,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="74">
+                                                    <div class="checkbox-secondary" data-metro-id="74">
                                                         <input id="moscow-сentral-сircle_27" name="moscow-сentral-сircle" class="checkbox-secondary__input" type="checkbox"
                                                             value="true">
                                                         <label for="moscow-сentral-сircle_27" class="checkbox-secondary__label">
@@ -9876,7 +9907,7 @@
                                             </button>
                                             <div class="spollers__body">
                                                 <div class="search-area__list">
-                                                    <div class="checkbox-secondary" data-metro-id-old="20">
+                                                    <div class="checkbox-secondary" data-metro-id="20">
                                                         <input id="mcd-2_1" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_1" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9885,7 +9916,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="23">
+                                                    <div class="checkbox-secondary" data-metro-id="23">
                                                         <input id="mcd-2_2" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_2" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9903,7 +9934,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="19">
+                                                    <div class="checkbox-secondary" data-metro-id="19">
                                                         <input id="mcd-2_4" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_4" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9930,7 +9961,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="18">
+                                                    <div class="checkbox-secondary" data-metro-id="18">
                                                         <input id="mcd-2_7" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_7" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9957,7 +9988,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="3">
+                                                    <div class="checkbox-secondary" data-metro-id="3">
                                                         <input id="mcd-2_10" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_10" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -9975,7 +10006,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="2">
+                                                    <div class="checkbox-secondary" data-metro-id="2">
                                                         <input id="mcd-2_13" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_13" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -10002,7 +10033,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="1">
+                                                    <div class="checkbox-secondary" data-metro-id="1">
                                                         <input id="mcd-2_16" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_16" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -10056,7 +10087,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="21">
+                                                    <div class="checkbox-secondary" data-metro-id="21">
                                                         <input id="mcd-2_22" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_22" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -10128,7 +10159,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="24">
+                                                    <div class="checkbox-secondary" data-metro-id="24">
                                                         <input id="mcd-2_37" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_37" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -10164,7 +10195,7 @@
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox-secondary" data-metro-id-old="22">
+                                                    <div class="checkbox-secondary" data-metro-id="22">
                                                         <input id="mcd-2_34" name="mcd-2" class="checkbox-secondary__input" type="checkbox" value="true">
                                                         <label for="mcd-2_34" class="checkbox-secondary__label">
                                                             <span class="checkbox-secondary__text">
@@ -10475,6 +10506,127 @@
                                                             </span>
                                                         </label>
                                                     </div>
+                                                    <div class="checkbox-secondary" data-metro-id="74">
+                                                        <input id="mcd-3_27" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_27" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Лихоборы
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="checkbox-secondary" data-metro-id="725">
+                                                        <input id="mcd-3_28" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_28" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                        Моссельмаш
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="727">
+                                                        <input id="mcd-3_29" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_29" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Грачёвская
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="270">
+                                                        <input id="mcd-3_30" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_30" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Ховрино
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="730">
+                                                        <input id="mcd-3_31" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_31" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Левобережная
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="732">
+                                                        <input id="mcd-3_32" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_32" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Химки
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="734">
+                                                        <input id="mcd-3_33" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_33" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Молжаниново
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="736">
+                                                        <input id="mcd-3_34" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_34" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Новоподрезково
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
+
+                                                    <div class="checkbox-secondary" data-metro-id="738">
+                                                        <input id="mcd-3_35" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_35" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Подрезково
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="740">
+                                                        <input id="mcd-3_36" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_36" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Сходня
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="742">
+                                                        <input id="mcd-3_37" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_37" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Фирсановская
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="744">
+                                                        <input id="mcd-3_38" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_38" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Малино
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-secondary" data-metro-id="746">
+                                                        <input id="mcd-3_39" name="mcd-3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                        <label for="mcd-3_39" class="checkbox-secondary__label">
+                                                            <span class="checkbox-secondary__text">
+                                                                <span class="checkbox-secondary__circle" aria-hidden="true"></span>
+                                                                Зеленоград (Крюково)
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
                                                 </div>
                                                 <div class="search-area__controls">
                                                     <button type="button" class="btn btn-reset btn-secondary search-area__control">Выбрать
@@ -10583,8 +10735,8 @@
                                                 </svg>
                                             </button>
                                             <div class="dragscroll">
-                                                 @include('./map-metro.html')
-                                                <!-- <div class="map-metro" style="transform: scale(0.9)">
+                                                 <!-- @include('./map-metro.html') -->
+                                                <div class="map-metro" style="transform: scale(0.9)">
                                                     <div class="map-metro__container">
                                                         <div class="map-metro__map">
                                                             <svg height="4493" width="3178" viewBox="0 0 3178 4493" xmlns="http://www.w3.org/2000/svg">
@@ -10592,7 +10744,7 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
