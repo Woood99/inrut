@@ -107,3 +107,59 @@ export const galleryPrimary = () => {
         }
     });
 }
+
+export const galleryStories = () => {
+    const items = document.querySelectorAll('.stories');
+    if (items.length === 0) return;
+    items.forEach(gallery => {
+        const galleryContainer = lightGallery(gallery, {
+            licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+            selector: '.stories__item',
+            addClass: 'gallery-stories-container',
+            speed: 400,
+            mode: 'lg-fade',
+            enableDrag: false,
+            zoomFromOrigin: false,
+            allowMediaOverlap: true,
+
+            download: false,
+            videoMaxSize: 'none',
+            closeOnTap: false,
+            appendCounterTo: '.lg-content',
+        });
+        gallery.addEventListener('lgAfterOpen', () => {
+            document.body.style.scrollBehavior = 'auto';
+            document.documentElement.style.scrollBehavior = 'auto';
+            disableScroll();
+        });
+        gallery.addEventListener('lgAfterClose', () => {
+            enableScroll();
+            document.body.style.scrollBehavior = 'auto';
+            document.documentElement.style.scrollBehavior = 'auto';
+        });
+        const nextBtnHTML = `
+        <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--next gallery-stories-container__next">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+        `;
+        const prevBtnHTML = `
+        <button type="button" class="btn btn-reset nav-arrow-primary nav-arrow-primary--prev gallery-stories-container__prev">
+            <div class="nav-arrow-primary__wrapper">
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrow-right"></use>
+                </svg>
+            </div>
+        </button>
+        `;
+        const container = document.querySelector('.gallery-stories-container');
+
+        container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
+        container.querySelector('.gallery-stories-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
+        container.querySelector('.gallery-stories-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
+        container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
+    });
+}

@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     maps();
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
+    calendarPrimary('.home-services__calendar .calendar-primary','eventsCalendar.json',false);
     controlCards();
     videoBlock();
     reviewModal();

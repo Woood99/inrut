@@ -208,10 +208,6 @@
         display: none;
     }
 
-    .lg-outer .lg-img-wrap {}
-
-    .lg-img-wrap {}
-
     .lg-outer .lg-thumb-item {
         border: 2px solid transparent;
         position: relative;
@@ -277,10 +273,12 @@
             margin-top: 8px;
             margin-bottom: 24px;
             display: block;
-            .object-data__address--two{
+
+            .object-data__address--two {
                 color: var(--white);
             }
-            .object-data__address--one{
+
+            .object-data__address--one {
                 color: var(--white);
             }
         }
@@ -293,14 +291,62 @@
                 margin-bottom: 16px;
             }
 
-            &.btn-secondary{
+            &.btn-secondary {
                 background-color: var(--white);
-               @media (min-width:$desktop-min){
-                &:hover{
-                    background-color: var(--primary200);
-                } 
-               }
+
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        background-color: var(--primary200);
+                    }
+                }
             }
         }
+    }
+}
+
+.gallery-stories-container {
+    .lg-backdrop {
+        background: rgba(34, 41, 102, 0.4);
+    }
+
+    .lg-outer {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 450px;
+        max-height: 700px;
+        height: 100%;
+    }
+
+    .lg-toolbar.lg-group {
+        background-image: none;
+        width: auto;
+        left: auto;
+        right: 0;
+
+        .lg-icon {
+            color: var(--white);
+            font-size: 32px;
+        }
+    }
+
+    .lg-counter {
+        display: none;
+    }
+
+    .lg-next,
+    .lg-prev {
+        display: none;
+    }
+
+    .gallery-stories-container__prev,
+    .gallery-stories-container__next {
+        z-index: 1084;
+    }
+
+    .lg-object.lg-image {
+        border-radius: 16px;
+        height: 90%;
+        width: calc(100% - 48px - 64px - 24px);
     }
 }

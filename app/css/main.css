@@ -14647,6 +14647,96 @@ textarea.input-reset {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.calendar-primary.calendar-primary--mobile-start .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 12px;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-toolbar.fc-header-toolbar .fc-toolbar-chunk .fc-toolbar-title {
+  font-size: 12px;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-day-top {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-col-header-cell.fc-day {
+  text-align: center;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-day .fc-daygrid-day-number {
+  padding: 0;
+  font-weight: 500;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-day-events {
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-popover {
+  margin-top: 0;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-popover .fc-daygrid-event-harness {
+  width: 100% !important;
+  height: 100% !important;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-event {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 5px;
+  border-radius: 0;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border: none;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-event span:nth-child(1) {
+  display: none;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-event span:nth-child(2) {
+  display: none;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-event span.fc-event--circle {
+  display: none;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-day-bottom {
+  display: none;
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-event-harness {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #E9FAF4;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+@media (min-width: 1145px) {
+  .calendar-primary.calendar-primary--mobile-start .fc-daygrid-event-harness:hover {
+    background-color: rgb(210, 240, 229);
+  }
+}
+.calendar-primary.calendar-primary--mobile-start .fc-daygrid-day-frame {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
 
 .calendar-event-simplebar .simplebar-track.simplebar-vertical {
   background-color: var(--primary200);
@@ -16728,6 +16818,46 @@ textarea.input-reset {
   .gallery-primary-container .gallery-info__btn.btn-secondary:hover {
     background-color: var(--primary200);
   }
+}
+
+.gallery-stories-container .lg-backdrop {
+  background: rgba(34, 41, 102, 0.4);
+}
+.gallery-stories-container .lg-outer {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 450px;
+  max-height: 700px;
+  height: 100%;
+}
+.gallery-stories-container .lg-toolbar.lg-group {
+  background-image: none;
+  width: auto;
+  left: auto;
+  right: 0;
+}
+.gallery-stories-container .lg-toolbar.lg-group .lg-icon {
+  color: var(--white);
+  font-size: 32px;
+}
+.gallery-stories-container .lg-counter {
+  display: none;
+}
+.gallery-stories-container .lg-next,
+.gallery-stories-container .lg-prev {
+  display: none;
+}
+.gallery-stories-container .gallery-stories-container__prev,
+.gallery-stories-container .gallery-stories-container__next {
+  z-index: 1084;
+}
+.gallery-stories-container .lg-object.lg-image {
+  border-radius: 16px;
+  height: 90%;
+  width: calc(100% - 48px - 64px - 24px);
 }
 
 .video-block {
@@ -20320,6 +20450,42 @@ textarea.input-reset {
   height: 100% !important;
 }
 
+.home-stories {
+  padding-top: 24px;
+}
+.home-stories__container {
+  position: relative;
+}
+.home-stories__items .swiper-wrapper {
+  min-height: 130px;
+  height: 130px;
+  max-height: 130px;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.home-stories__items .swiper-wrapper .swiper-slide {
+  height: auto;
+  border-radius: 12px;
+}
+.home-stories__items .swiper-wrapper .swiper-slide img {
+  border-radius: 12px;
+  width: 100%;
+  max-height: 100%;
+  -o-object-position: center;
+  object-position: center;
+}
+.home-stories .nav-arrow-primary--prev {
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.home-stories .nav-arrow-primary--next {
+  -webkit-transform: translateY(-50%) translateX(50%);
+  -ms-transform: translateY(-50%) translateX(50%);
+  transform: translateY(-50%) translateX(50%);
+}
+
 .home-services {
   margin-top: 48px;
 }
@@ -20333,10 +20499,13 @@ textarea.input-reset {
 .home-services__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-column-gap: 24px;
   grid-row-gap: 24px;
+}
+.home-services__item--big {
+  -ms-grid-column-span: 2;
+  grid-column: 2 span;
 }
 .home-services__login {
   border-radius: 12px;
@@ -20392,6 +20561,17 @@ textarea.input-reset {
 }
 .home-services__btn {
   margin-top: 24px;
+}
+.home-services.home-services--calendar .home-services__container {
+  -ms-grid-columns: 1fr 385px;
+  grid-template-columns: 1fr 385px;
+}
+.home-services.home-services--services-only .home-services__container {
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+}
+.home-services.home-services--services-only .home-services__list {
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 }
 
 .service-card {

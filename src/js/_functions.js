@@ -2,13 +2,15 @@ import burgerMenu from './functions/burger';
 import tabs from "./functions/tabs";
 import spollers from "./functions/spollers";
 import {
-    galleryPrimary
+    galleryPrimary,
+    galleryStories
 } from './components/gallery';
 import videoBlock from './components/videoBlock';
 burgerMenu();
 tabs();
 spollers();
 galleryPrimary();
+galleryStories();
 // ========================================================================================
 
 import "./functions/sliders";

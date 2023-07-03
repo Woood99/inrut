@@ -364,6 +364,108 @@
             box-shadow: none;
         }
     }
+
+    &.calendar-primary--mobile-start {
+
+        .fc-toolbar.fc-header-toolbar {
+            .fc-toolbar-chunk {
+                .fc-toolbar-title {
+                    font-size: 12px;
+                }
+            }
+
+            margin-bottom: 12px;
+        }
+
+        .fc-daygrid-day-top {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fc-col-header-cell {
+            &.fc-day {
+                text-align: center;
+            }
+        }
+
+        .fc-daygrid-day {
+
+            .fc-daygrid-day-number {
+                padding: 0;
+                font-weight: 500;
+            }
+        }
+
+        .fc-daygrid-day-events {
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+
+        .fc-popover {
+            .fc-daygrid-event-harness {
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            margin-top: 0;
+        }
+
+        .fc-event {
+            span {
+                &:nth-child(1) {
+                    display: none;
+                }
+
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                &.fc-event--circle {
+                    display: none;
+                }
+            }
+
+            width: 100%;
+            height: 100%;
+            margin: 0 !important;
+            padding: 5px;
+            border-radius: 0;
+            background-color: transparent;
+
+            display: flex;
+            justify-content: end;
+            flex-direction: row;
+            border: none;
+           
+        }
+
+        .fc-daygrid-day-bottom {
+            display: none;
+        }
+
+        .fc-daygrid-event-harness {
+
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #E9FAF4;
+            transition: background-color $transitionSpeed $transitionFunction;
+         @media (min-width:$desktop-min){
+             &:hover{
+                background-color: rgb(210, 240, 229);
+             } 
+         }
+        }
+
+        .fc-daygrid-day-frame {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
 
 .calendar-event-simplebar {
@@ -544,4 +646,5 @@
         }
 
     }
+
 }
