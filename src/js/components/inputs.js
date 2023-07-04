@@ -40,8 +40,29 @@ export const textareaSecondary = () => {
         const textareaInput = textarea.querySelector('.textarea-secondary__input');
         const textareaMinHeight = textarea.dataset.textareaSecondaryMinHeight;
         const textareaMaxHeight = textarea.hasAttribute('data-textarea-secondary-max-height') ? textarea.dataset.textareaSecondaryMaxHeight : false;
+        const textareaClear = textarea.querySelector('.textarea-secondary__clear');
         textareaInput.addEventListener('input', (e) => {
+            if (textareaClear) {
+                if (textareaInput.value.length >= 1) {
+                    textareaClear.removeAttribute('hidden');
+                } else {
+                    textareaClear.setAttribute('hidden', '');
+                }
+
+                textareaClear.addEventListener('click', () => {
+                    textareaInput.value = '';
+                    textareaClear.setAttribute('hidden', '');
+                    toggleActive(e.target, textarea);
+                    changeHeight();
+                    objectBaseComment();
+                })
+            }
             toggleActive(e.target, textarea);
+            changeHeight();
+            objectBaseComment();
+        });
+
+        function changeHeight() {
             if (textareaMaxHeight) {
                 textarea.style.height = `${textareaMinHeight}px`;
                 if (textareaInput.scrollHeight + 2 <= textareaMaxHeight) {
@@ -53,7 +74,18 @@ export const textareaSecondary = () => {
                 textarea.style.height = `${textareaMinHeight}px`;
                 textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
             }
-        });
+        }
+
+        function objectBaseComment() {
+            if (textarea.closest('.object-base-inner__comment')) {
+                const saveBtn = textarea.nextElementSibling;
+                if (textareaInput.value.length >= 1) {
+                    saveBtn.removeAttribute('hidden');
+                } else {
+                    saveBtn.setAttribute('hidden', '');
+                }
+            }
+        }
     });
 
     function toggleActive(target, currentTextarea) {

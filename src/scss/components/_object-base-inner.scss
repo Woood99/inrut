@@ -196,33 +196,23 @@
             display: block;
         }
 
+        p {
+            margin-top: 4px;
+            font-size: 12px;
+            line-height: math.div(15, 12);
+        }
+
         .textarea-secondary {
             position: relative;
-
-            svg {
-                width: 20px;
-                height: 20px;
-                stroke: var(--blue);
-                fill: none;
-                stroke-width: 1.5px;
-                position: absolute;
-                top: 12.5px;
-                left: 16px;
-            }
-
-            span {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 28px;
-
-                font-size: 15px;
-                line-height: math.div(19 , 15);
-                color: var(--blue);
-            }
-
+            margin-top: 12px;
+            height: 50px;
             textarea {
-                padding: 12.5px 16px 12.5px 40px;
+                padding: 15px 46px 15px 16px;
+                min-height: 50px;
+            }
+
+            &__clear {
+               top: 16px;
             }
 
             &._active {
@@ -231,18 +221,16 @@
                 }
             }
         }
-        &-create{
+
+        &-save {
+            margin-top: 8px;
             display: block;
             color: var(--blue);
         }
-        &-delete{
+
+        @media (max-width:$desktop) {
             margin-top: 8px;
-            display: block;
-            color: var(--red);
-        }
-        @media (max-width:$desktop){
-             margin-top: 8px; 
-             padding: 16px;
+            padding: 16px;
         }
     }
 }

@@ -60,7 +60,10 @@ import furnishingSets from './components/furnishingSets';
 import bookConsultation from './components/bookConsultation';
 import recordViewing from './components/recordViewing';
 import wallet from './components/wallet';
-import favoritesPage from './components/favorites';
+import {
+    favoritesPage,
+    favoriteChoicePopup
+} from './components/favorites';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -132,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recordViewing();
     wallet();
     favoritesPage();
+    favoriteChoicePopup();
 
     // ==================================================
 

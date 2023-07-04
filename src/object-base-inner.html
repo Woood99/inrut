@@ -465,7 +465,7 @@
                                     <a href="#" class="card-user__top">
                                         Объект с
                                         <img loading="lazy" src="./img/avito.jpg" width="13" height="13" alt="Avito">
-                                        Avito
+                                        <span>Avito</span>
                                     </a>
                                     <div class="card-user__pos">
                                         Собственник <a href="#">еще 3 объекта</a>
@@ -485,33 +485,28 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#briefcase"></use>
                                         </svg>
-                                        В свои объекты
+                                        Взять в работу
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn">
+                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn" data-popup-path="favorite-two">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#application"></use>
                                         </svg>
-                                        Добавить в заявку
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-secondary object-base-inner__btn">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#application"></use>
-                                        </svg>
-                                       В личные списки
+                                       Добавить в избранное
                                     </button>
                                 </div>
                                 <div class="object-base-inner__comment">
-                                    <span>Добавить комментарий</span>
-                                   <label class="textarea-secondary" data-textarea-secondary-min-height="45">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#pencil"></use>
-                                        </svg>
-                                        <span>...</span>
+                                    <h3 class="title-3">Ваша заметка</h3>
+                                    <p>Текст заметки будет виден только вам</p>
+                                   <label class="textarea-secondary" data-textarea-secondary-min-height="50">
                                         <textarea class="input-reset textarea-secondary__input" maxlength="250"
                                             placeholder=""></textarea>
+                                            <svg class="btn btn-reset textarea-secondary__clear" hidden>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
                                     </label>
-                                    <button type="button" class="btn btn-reset object-base-inner__comment-create">Создать заметку</button>
-                                    <button type="button" class="btn btn-reset object-base-inner__comment-delete">Удалить заметку</button>
+                                    <button type="button" class="btn btn-reset object-base-inner__comment-save" hidden>
+                                        Сохранить заметку
+                                    </button>
                                 </div>
                             </div>
                         </div>

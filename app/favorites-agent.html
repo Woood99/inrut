@@ -251,16 +251,15 @@
                                 Мой список <span>23</span>
                             </button>
                             <button type="button" class="btn btn-reset tabs__title">
-                                Жилые комплексы <span>23</span>
+                                Клиенты <span>23</span>
                             </button>
                             <button type="button" class="btn btn-reset tabs__title">
-                                Клиенты <span>23</span>
+                                Жилые комплексы <span>23</span>
                             </button>
                         </nav>
                     </div>
                     <div class="favorites__tabs container">
                         <div class="favorites__tab">
-                            <h3 class="title-3 favorites__subtitle">Выберите список</h3>
                             <div class="tabs-primary__select select-secondary">
                                 <span class="select-secondary__placeholder">
                                     Личный список
@@ -272,12 +271,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="favorites__tab" hidden>
-
-                        </div>
                         <div class="favorites__tab favorites__tab--client" hidden>
                             <div class="favorites__client-wrapper" data-favorite-client-select>
-                                <h3 class="title-3 favorites__subtitle">Выберите контакт</h3>
                                 <div class="tabs-primary__select select-secondary">
                                     <span class="select-secondary__placeholder">
                                         Выбрать клиента
@@ -290,10 +285,9 @@
                                 </div>
                             </div>
                             <div class="favorites__client-wrapper" hidden data-favorite-selection-select>
-                                <h3 class="title-3 favorites__subtitle">Выберите подбор</h3>
                                 <div class="tabs-primary__select select-secondary">
                                     <span class="select-secondary__placeholder">
-                                        Подбор
+                                        Выбрать подбор
                                     </span>
                                     <select class="select-secondary__body" name="complex">
                                         <option placeholder value="all-room">Любой</option>
@@ -302,6 +296,9 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="favorites__tab" hidden>
+
                         </div>
                     </div>
                     <div class="tabs-primary__container control-cards">
@@ -664,24 +661,6 @@
                                                 </a>
                                             </article>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="tabs__body">
-                                    <div class="favorites__empty favorites-empty">
-                                        <h2 class="favorites-empty__title title-2">
-                                            Здесь пока ничего нет
-                                        </h2>
-                                        <div class="favorites-empty__text">
-                                            <p>Найдите подходящий объект недвижимости</p>
-                                            <p>
-                                                Нажмите
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite"></use>
-                                                </svg>
-                                                для добавления в избранное
-                                            </p>
-                                        </div>
-                                        <a href="#" class="btn btn-reset btn-primary favorites-empty__btn">Начать поиск</a>
                                     </div>
                                 </div>
                                 <div class="tabs__body">
@@ -1190,6 +1169,24 @@
                                                 </a>
                                             </li>
                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="tabs__body">
+                                    <div class="favorites__empty favorites-empty">
+                                        <h2 class="favorites-empty__title title-2">
+                                            Здесь пока ничего нет
+                                        </h2>
+                                        <div class="favorites-empty__text">
+                                            <p>Найдите подходящий объект недвижимости</p>
+                                            <p>
+                                                Нажмите
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite"></use>
+                                                </svg>
+                                                для добавления в избранное
+                                            </p>
+                                        </div>
+                                        <a href="#" class="btn btn-reset btn-primary favorites-empty__btn">Начать поиск</a>
                                     </div>
                                 </div>
                             </div>
@@ -2088,7 +2085,7 @@
             </div>
             <div class="select-secondary" data-favorite-client-select>
                 <span class="select-secondary__placeholder">
-                    Клиент
+                    Выбрать клиента
                 </span>
                 <select class="select-secondary__body" name="complex">
                     <option value=""></option>
@@ -2099,7 +2096,7 @@
             </div>
             <div class="select-secondary" hidden data-favorite-selection-select>
                 <span class="select-secondary__placeholder">
-                    Подбор
+                    Выбрать подбор
                 </span>
                 <select class="select-secondary__body" name="complex">
                     <option placeholder value="all-room">Любой</option>

@@ -12,6 +12,17 @@
     &__tabs{
         margin-top: 32px;
     }
+    &__tab{
+        &--client{
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__client-wrapper{
+        &:not(:last-child){
+            margin-right: 16px;
+        }
+    }
     @media (max-width:$desktop) {
         background-color: var(--stand-bg);
         padding: 74px 0 0;

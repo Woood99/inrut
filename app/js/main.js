@@ -4274,7 +4274,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000);
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__["default"])();
   (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();
-  (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__["default"])();
+  (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoritesPage)();
+  (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoriteChoicePopup)();
 
   // ==================================================
 
@@ -4750,37 +4751,6 @@ const cardPrimaryActions = () => {
       });
     }
   });
-  cardPrimaryFavoriteChoice();
-  function cardPrimaryFavoriteChoice() {
-    const container = document.querySelector('.favorite-two');
-    if (!container) return;
-    const myListBtn = container.querySelector('[data-favorite-announcement-btn]');
-    const clientBtn = container.querySelector('[data-favorite-client-btn]');
-    const announcement = container.querySelector('[data-favorite-announcement-select]');
-    const client = container.querySelector('[data-favorite-client-select]');
-    const selection = container.querySelector('[data-favorite-selection-select]');
-    myListBtn.addEventListener('click', () => {
-      clientBtn.classList.remove('_active');
-      myListBtn.classList.add('_active');
-      announcement.removeAttribute('hidden');
-      client.setAttribute('hidden', '');
-      selection.setAttribute('hidden', '');
-    });
-    clientBtn.addEventListener('click', () => {
-      myListBtn.classList.remove('_active');
-      clientBtn.classList.add('_active');
-      announcement.setAttribute('hidden', '');
-      client.removeAttribute('hidden');
-      if (client.classList.contains('_selected')) {
-        selection.removeAttribute('hidden');
-      }
-    });
-    client.addEventListener('change', e => {
-      if (client.classList.contains('_selected')) {
-        selection.removeAttribute('hidden');
-      }
-    });
-  }
 };
 function cardImageSwitch(card, imageSwitchItems, imagePagination) {
   if (window.innerWidth <= 768) return;
@@ -5547,7 +5517,8 @@ const dropImage = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "favoriteChoicePopup": () => (/* binding */ favoriteChoicePopup),
+/* harmony export */   "favoritesPage": () => (/* binding */ favoritesPage)
 /* harmony export */ });
 const favoritesPage = () => {
   const container = document.querySelector('.favorites__tab--client');
@@ -5559,7 +5530,36 @@ const favoritesPage = () => {
     });
   }
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (favoritesPage);
+const favoriteChoicePopup = () => {
+  const container = document.querySelector('.favorite-two');
+  if (!container) return;
+  const myListBtn = container.querySelector('[data-favorite-announcement-btn]');
+  const clientBtn = container.querySelector('[data-favorite-client-btn]');
+  const announcement = container.querySelector('[data-favorite-announcement-select]');
+  const client = container.querySelector('[data-favorite-client-select]');
+  const selection = container.querySelector('[data-favorite-selection-select]');
+  myListBtn.addEventListener('click', () => {
+    clientBtn.classList.remove('_active');
+    myListBtn.classList.add('_active');
+    announcement.removeAttribute('hidden');
+    client.setAttribute('hidden', '');
+    selection.setAttribute('hidden', '');
+  });
+  clientBtn.addEventListener('click', () => {
+    myListBtn.classList.remove('_active');
+    clientBtn.classList.add('_active');
+    announcement.setAttribute('hidden', '');
+    client.removeAttribute('hidden');
+    if (client.classList.contains('_selected')) {
+      selection.removeAttribute('hidden');
+    }
+  });
+  client.addEventListener('change', () => {
+    if (client.classList.contains('_selected')) {
+      selection.removeAttribute('hidden');
+    }
+  });
+};
 
 /***/ }),
 
@@ -6939,8 +6939,27 @@ const textareaSecondary = () => {
     const textareaInput = textarea.querySelector('.textarea-secondary__input');
     const textareaMinHeight = textarea.dataset.textareaSecondaryMinHeight;
     const textareaMaxHeight = textarea.hasAttribute('data-textarea-secondary-max-height') ? textarea.dataset.textareaSecondaryMaxHeight : false;
+    const textareaClear = textarea.querySelector('.textarea-secondary__clear');
     textareaInput.addEventListener('input', e => {
+      if (textareaClear) {
+        if (textareaInput.value.length >= 1) {
+          textareaClear.removeAttribute('hidden');
+        } else {
+          textareaClear.setAttribute('hidden', '');
+        }
+        textareaClear.addEventListener('click', () => {
+          textareaInput.value = '';
+          textareaClear.setAttribute('hidden', '');
+          toggleActive(e.target, textarea);
+          changeHeight();
+          objectBaseComment();
+        });
+      }
       toggleActive(e.target, textarea);
+      changeHeight();
+      objectBaseComment();
+    });
+    function changeHeight() {
       if (textareaMaxHeight) {
         textarea.style.height = `${textareaMinHeight}px`;
         if (textareaInput.scrollHeight + 2 <= textareaMaxHeight) {
@@ -6952,7 +6971,17 @@ const textareaSecondary = () => {
         textarea.style.height = `${textareaMinHeight}px`;
         textarea.style.height = `${textareaInput.scrollHeight + 2}px`;
       }
-    });
+    }
+    function objectBaseComment() {
+      if (textarea.closest('.object-base-inner__comment')) {
+        const saveBtn = textarea.nextElementSibling;
+        if (textareaInput.value.length >= 1) {
+          saveBtn.removeAttribute('hidden');
+        } else {
+          saveBtn.setAttribute('hidden', '');
+        }
+      }
+    }
   });
   function toggleActive(target, currentTextarea) {
     target.value.length >= 1 ? currentTextarea.classList.add('_active') : currentTextarea.classList.remove('_active');

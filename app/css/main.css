@@ -503,6 +503,14 @@ textarea.input-reset {
 .textarea-secondary__input:focus {
   border: 1px solid var(--blue);
 }
+.textarea-secondary__clear {
+  position: absolute;
+  top: 13.5px;
+  right: 16px;
+  width: 18px;
+  height: 18px;
+  fill: var(--primaryTwo);
+}
 
 .input-text {
   position: relative;
@@ -12242,13 +12250,16 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: var(--blue);
+  color: var(--primaryTwo);
   font-size: 12px;
   line-height: 1.25;
   font-weight: 400;
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+}
+.card-user__top span {
+  color: var(--blue);
 }
 .card-user__top img {
   margin-left: 8px;
@@ -15488,8 +15499,7 @@ textarea.input-reset {
   color: var(--white);
 }
 .tabs-primary__select {
-  margin-bottom: 24px;
-  max-width: 450px;
+  width: 450px;
 }
 .tabs-primary__select .choices__list--single {
   padding: 0 30px 0 120px;
@@ -17020,7 +17030,7 @@ textarea.input-reset {
 .gallery-primary-container .gallery-info {
   position: fixed;
   right: 16px;
-  bottom: 16px;
+  top: 70px;
   width: calc(30% - 32px);
   padding: 24px;
   background-color: #2e2e2e;
@@ -26768,44 +26778,30 @@ textarea.input-reset {
   font-weight: 400;
   display: block;
 }
+.object-base-inner__comment p {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.25;
+}
 .object-base-inner__comment .textarea-secondary {
   position: relative;
-}
-.object-base-inner__comment .textarea-secondary svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--blue);
-  fill: none;
-  stroke-width: 1.5px;
-  position: absolute;
-  top: 12.5px;
-  left: 16px;
-}
-.object-base-inner__comment .textarea-secondary span {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 28px;
-  font-size: 15px;
-  line-height: 1.2666666667;
-  color: var(--blue);
+  margin-top: 12px;
+  height: 50px;
 }
 .object-base-inner__comment .textarea-secondary textarea {
-  padding: 12.5px 16px 12.5px 40px;
+  padding: 15px 46px 15px 16px;
+  min-height: 50px;
+}
+.object-base-inner__comment .textarea-secondary__clear {
+  top: 16px;
 }
 .object-base-inner__comment .textarea-secondary._active span {
   display: none;
 }
-.object-base-inner__comment-create {
-  display: block;
-  color: var(--blue);
-}
-.object-base-inner__comment-delete {
+.object-base-inner__comment-save {
   margin-top: 8px;
   display: block;
-  color: var(--red);
+  color: var(--blue);
 }
 @media (max-width: 1144px) {
   .object-base-inner__comment {
@@ -26925,6 +26921,17 @@ textarea.input-reset {
 }
 .favorites__tabs {
   margin-top: 32px;
+}
+.favorites__tab--client {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.favorites__client-wrapper:not(:last-child) {
+  margin-right: 16px;
 }
 @media (max-width: 1144px) {
   .favorites {
