@@ -16,20 +16,69 @@
             width: 100%;
         }
 
-        &__element{
+        &__element {
             margin-top: 16px;
             border-radius: 12px;
             padding: 32px 24px;
             background-color: var(--white);
             box-shadow: var(--shadow-primary);
-        .spollers__title{
-            display: flex;
-            align-items: center;
-            svg{
-                width: 24px;
-                height: 24px;
+
+            .spollers__title {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
             }
-        }
+
+            &--meeting-showing {
+                .main-table__type {
+                    margin: 0 24px;
+                    grid-template-columns: percent(250, 700) percent(205, 700) percent(205, 700);
+                    span{
+                        &:first-child{
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .object-info-secondary {
+                    grid-template-columns: percent(250, 700) percent(205, 700) percent(205, 700);
+                }
+
+                .user-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    &__name {
+                        align-self: auto;
+                    }
+                }
+
+                .object-info-secondary__from {
+                    margin-left: 0;
+                }
+            }
+            &--contact{
+                .main-table__type {
+                    margin: 0 24px;
+                    grid-template-columns: percent(225, 700) percent(185, 700) percent(115, 700) percent(115, 700);
+                    span{
+                        &:first-child{
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .client-info{
+                    grid-template-columns: percent(225, 700) percent(185, 700) percent(115, 700) percent(115, 700);
+                    grid-column-gap: 20px;
+                }
+
+            }
         }
     }
 
@@ -109,8 +158,9 @@
                 white-space: nowrap;
                 background-color: rgba(0, 150, 255, 0.08);
                 border: none;
-                @media (max-width:$desktop){
-                    height: 46px; 
+
+                @media (max-width:$desktop) {
+                    height: 46px;
                 }
             }
         }
