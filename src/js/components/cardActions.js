@@ -50,7 +50,6 @@ export const cardPrimaryActions = () => {
         const client = container.querySelector('[data-favorite-client-select]');
         const selection = container.querySelector('[data-favorite-selection-select]');
         myListBtn.addEventListener('click', () => {
-            console.log('da');
             clientBtn.classList.remove('_active');
             myListBtn.classList.add('_active');
 
