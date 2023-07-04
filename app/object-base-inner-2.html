@@ -287,7 +287,6 @@
                             </div>
                         </div>
                         <button type="button" class="btn btn-reset btn-secondary">Опубликовать в VК</button>
-                        <button type="button" class="btn btn-reset btn-secondary">Отчет для клиента</button>
                         <form action="#" class="presentation">
                             <button type="button" class="btn btn-reset btn-secondary presentation__btn">
                                 Презентация
@@ -580,7 +579,7 @@
                                     <svg>
                                         <use xlink:href="img/sprite.svg#phone"></use>
                                     </svg>
-                                    Позвонить
+                                    Показать телефон
                                 </button>
                             </div>
                             <div class="object-body__characteristics object-characteristics">
@@ -748,17 +747,17 @@
                             <div class="_sticky">
                                 <div class="object-body__user card-user">
                                     <a href="#" class="card-user__top">
-                                        Объект с
+                                        Объект взят
                                         <img loading="lazy" src="./img/avito.jpg" width="13" height="13" alt="Avito">
                                         Avito
                                     </a>
-                                    <div class="card-user__pos">
-                                        Собственник <a href="#">еще 3 объекта</a>
-                                    </div>
                                     <div class="card-user__name">
                                         <a href="#">
                                             Алексей Гаврилов
                                         </a>
+                                    </div>
+                                    <div class="card-user__pos">
+                                        Собственник <a href="#">еще 3 объекта</a>
                                     </div>
                                     <div class="card-user__done">
                                         <svg>
@@ -770,7 +769,7 @@
                                         <svg>
                                             <use xlink:href="img/sprite.svg#phone"></use>
                                         </svg>
-                                        Позвонить
+                                        Показать телефон
                                     </button>
                                 </div>
                                 <div class="object-base-inner__btns">
@@ -782,15 +781,18 @@
                                     </button>
                                 </div>
                                 <div class="object-base-inner__comment">
-                                    <span>Добавить комментарий</span>
-                                    <label class="textarea-secondary" data-textarea-secondary-min-height="45">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#pencil"></use>
-                                        </svg>
-                                        <span>...</span>
+                                    <h3 class="title-3">Ваша заметка</h3>
+                                    <p>Текст заметки будет виден только вам</p>
+                                   <label class="textarea-secondary" data-textarea-secondary-min-height="50">
                                         <textarea class="input-reset textarea-secondary__input" maxlength="250"
                                             placeholder=""></textarea>
+                                            <svg class="btn btn-reset textarea-secondary__clear" hidden>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
                                     </label>
+                                    <button type="button" class="btn btn-reset object-base-inner__comment-save" hidden>
+                                        Сохранить заметку
+                                    </button>
                                 </div>
                             </div>
                         </div>
