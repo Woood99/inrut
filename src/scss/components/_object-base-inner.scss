@@ -76,29 +76,7 @@
                 margin-top: 0;
             }
 
-            &__controls {
-                box-shadow: var(--shadow-primary);
-                background-color: var(--white);
-                border-radius: 12px;
-                padding: 32px 24px;
-                margin-bottom: 24px;
 
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                align-items: center;
-                grid-column-gap: 8px;
-                grid-row-gap: 16px;
-
-                @media (max-width:$desktop) {
-                    grid-template-columns: repeat(2, 1fr);
-                    margin-bottom: 8px;
-                    padding: 16px;
-                }
-
-                @media (max-width:$smallTablet-max) {
-                    grid-template-columns: 1fr;
-                }
-            }
 
             &__btn {
                 height: 48px;
@@ -125,36 +103,6 @@
                     height: 48px;
                     font-size: 14px;
                 }
-
-                .secondary-tooltip {
-                    margin-left: 3px;
-
-                    svg {
-                        stroke: var(--blue);
-                        width: 15px;
-                        height: 15px;
-                        stroke-width: 1.5px;
-                    }
-
-                    &__content {
-                        left: 22px;
-                        max-width: 329px;
-                        width: max-content;
-                        white-space: normal;
-                        font-weight: 400;
-
-                        @media (max-width:$desktop) {
-                            top: 0;
-                            bottom: auto;
-                        }
-
-                        @media (max-width:$smallTablet-max) {
-                            top: 140%;
-                            max-width: 205px;
-                            left: 0;
-                        }
-                    }
-                }
             }
         }
 
@@ -178,6 +126,54 @@
             &__name {}
         }
 
+    }
+
+    &__controls {
+        box-shadow: var(--shadow-primary);
+        background-color: var(--white);
+        border-radius: 12px;
+        padding: 32px 24px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        display: flex;
+        flex-direction: column;
+        grid-column-gap: 8px;
+        grid-row-gap: 16px;
+
+        @media (max-width:$desktop) {
+            padding: 16px;
+        }
+
+        .secondary-tooltip {
+            margin-left: 3px;
+
+            svg {
+                stroke: var(--blue);
+                width: 15px;
+                height: 15px;
+                stroke-width: 1.5px;
+            }
+
+            &__content {
+                max-width: 329px;
+                width: max-content;
+                white-space: normal;
+                font-weight: 400;
+                left: auto;
+                right: 22px;
+                @media (max-width:$desktop) {
+                    top: 0;
+                    bottom: auto;
+                }
+
+                @media (max-width:$smallTablet-max) {
+                    top: 140%;
+                    max-width: 205px;
+                    left: 0;
+                }
+            }
+        }
     }
 
     &__comment {
@@ -206,13 +202,14 @@
             position: relative;
             margin-top: 12px;
             height: 50px;
+
             textarea {
                 padding: 15px 46px 15px 16px;
                 min-height: 50px;
             }
 
             &__clear {
-               top: 16px;
+                top: 16px;
             }
 
             &._active {
