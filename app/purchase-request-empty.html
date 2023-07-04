@@ -1424,19 +1424,14 @@
         </button>
         <div class="popup__content popup-primary__content favorite-two _clients">
             <h2 class="favorite-two__title title-2">Вы можете добавить избранное в свой список или своим клиентам</h2>
-            <button type="button" class="btn btn-reset favorite-two__my-list" data-favorite-announcement-btn>
-                <svg>
-                    <use xlink:href="img/sprite.svg#share"></use>
-                </svg>
-                Мой список 
-            </button>
-            <button type="button" class="btn btn-reset favorite-two__clients _active" data-favorite-client-btn>
-                <svg>
-                    <use xlink:href="img/sprite.svg#application">
-                    </use>
-                </svg>
-                Клиенты
-            </button>
+            <div class="favorite-two__nav">
+                <button type="button" class="btn btn-reset favorite-two__my-list" data-favorite-announcement-btn>
+                    Мой список 
+                </button>
+                <button type="button" class="btn btn-reset favorite-two__clients _active" data-favorite-client-btn>
+                    Клиенты
+                </button>
+            </div>
             <div class="select-secondary" hidden data-favorite-announcement-select>
                 <span class="select-secondary__placeholder">
                     Личный список

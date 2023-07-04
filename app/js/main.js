@@ -4432,7 +4432,12 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-card');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'favorite-two');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  isOpen: settingsModal => {
+    // ... ?
+  },
+  isClose: settingsModal => {}
+}, 'favorite-two');
 
 // ========================================================================================
 
@@ -62077,4 +62082,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=main.js.map                                                                                
