@@ -680,33 +680,15 @@
 
     &__add,
     &__no {
-        display: flex;
-        align-items: center;
-        transition: color $transitionSpeed $transitionFunction;
-
-        svg {
-            margin-right: 10px;
-            width: 11px;
-            height: 11px;
-            fill: currentColor;
-        }
+        padding: 0 48px;
     }
 
     &__add {
-        color: var(--green);
-
-        &:hover {
-            color: var(--green-dark);
-        }
+      
     }
 
     &__no {
         margin-left: 32px;
-        color: var(--red);
-
-        &:hover {
-            color: var(--red-dark);
-        }
 
         @media (max-width:$desktop) {
             margin-left: 16px;
