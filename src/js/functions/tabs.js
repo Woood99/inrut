@@ -93,7 +93,6 @@ const tabs = () => {
             tabsContent.forEach((tabsContentItem, index) => {
                 if (tabsTitles[index].classList.contains('_tab-active')) {
                     tabsContentItem.hidden = false;
-
                     if (tabsBlock.closest('.object-filter__tabs')) {
                         const filter = tabsBlock.closest('.object-filter').querySelector('.filter');
                         const headerFixed = document.querySelector('.header-fixed');
@@ -116,10 +115,23 @@ const tabs = () => {
                             if (!headerFixed.classList.contains('_active')) headerFixed.classList.add('_active');
                         }
                     }
-
+                   
+    
                 } else {
                     tabsContentItem.hidden = true;
                 }
+
+
+                if (tabsBlock.querySelector('.favorites__tabs')) {
+                    const favoritesTabs = tabsBlock.querySelectorAll('.favorites__tab');
+                  
+                    if (tabsTitles[index].classList.contains('_tab-active')) {
+                        favoritesTabs[index].hidden = false;
+                    } else {
+                        favoritesTabs[index].hidden = true;
+                    }
+                }
+         
             });
         }
     }

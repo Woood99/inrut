@@ -59,7 +59,8 @@ import {
 import furnishingSets from './components/furnishingSets';
 import bookConsultation from './components/bookConsultation';
 import recordViewing from './components/recordViewing';
-import wallet from './components/wallet'
+import wallet from './components/wallet';
+import favoritesPage from './components/favorites';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -130,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollDrag('.object-location__infrastructure', 1000);
     recordViewing();
     wallet();
+    favoritesPage();
 
     // ==================================================
 

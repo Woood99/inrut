@@ -248,7 +248,7 @@
                     <div class="container--no-padding">
                         <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                             <button type="button" class="btn btn-reset tabs__title _tab-active">
-                                Объявления <span>23</span>
+                                Мой список <span>23</span>
                             </button>
                             <button type="button" class="btn btn-reset tabs__title">
                                 Жилые комплексы <span>23</span>
@@ -258,21 +258,56 @@
                             </button>
                         </nav>
                     </div>
+                    <div class="favorites__tabs container">
+                        <div class="favorites__tab">
+                            <h3 class="title-3 favorites__subtitle">Выберите список</h3>
+                            <div class="tabs-primary__select select-secondary">
+                                <span class="select-secondary__placeholder">
+                                    Личный список
+                                </span>
+                                <select class="select-secondary__body" name="complex">
+                                    <option placeholder value="all-room">Любой</option>
+                                    <option value="room-1">Стрючков Сергей Сергеевич</option>
+                                    <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="favorites__tab" hidden>
+
+                        </div>
+                        <div class="favorites__tab favorites__tab--client" hidden>
+                            <div class="favorites__client-wrapper" data-favorite-client-select>
+                                <h3 class="title-3 favorites__subtitle">Выберите контакт</h3>
+                                <div class="tabs-primary__select select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Выбрать клиента
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="all-room">Любой</option>
+                                        <option value="room-1">Стрючков Сергей Сергеевич</option>
+                                        <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="favorites__client-wrapper" hidden data-favorite-selection-select>
+                                <h3 class="title-3 favorites__subtitle">Выберите подбор</h3>
+                                <div class="tabs-primary__select select-secondary">
+                                    <span class="select-secondary__placeholder">
+                                        Подбор
+                                    </span>
+                                    <select class="select-secondary__body" name="complex">
+                                        <option placeholder value="all-room">Любой</option>
+                                        <option value="room-1">Стрючков Сергей Сергеевич</option>
+                                        <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="tabs-primary__container control-cards">
                         <div class="container">
                             <div data-tabs-body class="tabs__content tabs-primary__content control-cards__content control-cards__content--horizontal">
                                 <div class="tabs__body">
-                                    <h3 class="title-3 favorites__subtitle">Выберите список</h3>
-                                    <div class="tabs-primary__select select-secondary">
-                                        <span class="select-secondary__placeholder">
-                                            Выберите список
-                                        </span>
-                                        <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Стрючков Сергей Сергеевич</option>
-                                            <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
-                                        </select>
-                                    </div>
                                     <div class="tabs-primary__controls control-cards__btns">
                                         <button type="button"
                                             class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
@@ -650,28 +685,6 @@
                                     </div>
                                 </div>
                                 <div class="tabs__body">
-                                    <h3 class="title-3 favorites__subtitle">Выберите контакт</h3>
-                                    <div class="tabs-primary__select select-secondary">
-                                        <span class="select-secondary__placeholder">
-                                            Выбрать клиента
-                                        </span>
-                                        <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Стрючков Сергей Сергеевич</option>
-                                            <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
-                                        </select>
-                                    </div>
-                                    <h3 class="title-3 favorites__subtitle">Выберите подбор</h3>
-                                    <div class="tabs-primary__select select-secondary">
-                                        <span class="select-secondary__placeholder">
-                                          Подбор
-                                        </span>
-                                        <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Стрючков Сергей Сергеевич</option>
-                                            <option value="room-2">ДлинноеИмя ОченьДлинноеОтчество ОченьДлиннаяФамилия</option>
-                                        </select>
-                                    </div>
                                     <div class="tabs-primary__controls control-cards__btns">
                                         <button type="button"
                                             class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
@@ -1183,8 +1196,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
             </div>
         </main>
