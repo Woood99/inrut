@@ -4432,6 +4432,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-card');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'favorite-two');
 
 // ========================================================================================
 
@@ -4740,13 +4741,39 @@ const cardPrimaryActions = () => {
         favorite.classList.toggle('_active');
       });
     }
-    if (favorite && favorite.classList.contains('card-primary__info--favorite-dropdown')) {
-      card.querySelector('[data-favorite-announcement-btn]').addEventListener('click', e => {
-        e.preventDefault();
-        card.querySelector('[data-favorite-announcement-select]').removeAttribute('hidden');
-      });
-    }
   });
+  cardPrimaryFavoriteChoice();
+  function cardPrimaryFavoriteChoice() {
+    const container = document.querySelector('.favorite-two');
+    if (!container) return;
+    const myListBtn = container.querySelector('[data-favorite-announcement-btn]');
+    const clientBtn = container.querySelector('[data-favorite-client-btn]');
+    const announcement = container.querySelector('[data-favorite-announcement-select]');
+    const client = container.querySelector('[data-favorite-client-select]');
+    const selection = container.querySelector('[data-favorite-selection-select]');
+    myListBtn.addEventListener('click', () => {
+      console.log('da');
+      clientBtn.classList.remove('_active');
+      myListBtn.classList.add('_active');
+      announcement.removeAttribute('hidden');
+      client.setAttribute('hidden', '');
+      selection.setAttribute('hidden', '');
+    });
+    clientBtn.addEventListener('click', () => {
+      myListBtn.classList.remove('_active');
+      clientBtn.classList.add('_active');
+      announcement.setAttribute('hidden', '');
+      client.removeAttribute('hidden');
+      if (client.classList.contains('_selected')) {
+        selection.removeAttribute('hidden');
+      }
+    });
+    client.addEventListener('change', e => {
+      if (client.classList.contains('_selected')) {
+        selection.removeAttribute('hidden');
+      }
+    });
+  }
 };
 function cardImageSwitch(card, imageSwitchItems, imagePagination) {
   if (window.innerWidth <= 768) return;
@@ -9721,7 +9748,6 @@ const dropdown = (containerSelector, targetSelector) => {
   container.forEach(el => {
     const target = el.querySelector(targetSelector);
     const chatItem = el.closest('.chat__item');
-    const cardPrimaryItem = el.closest('.card-primary__info--favorite-dropdown');
     if (!el.classList.contains('_hover')) {
       target.addEventListener('click', e => {
         e.preventDefault();
@@ -9736,15 +9762,6 @@ const dropdown = (containerSelector, targetSelector) => {
         el.classList.toggle('_active');
         if (chatItem) {
           chatItem.classList.toggle('_dropdown-active');
-        }
-        if (cardPrimaryItem && cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target')) {
-          if (el.classList.contains('_active')) {
-            cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.add('_z-index-0');
-          } else {
-            setTimeout(() => {
-              cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.remove('_z-index-0');
-            }, 200);
-          }
         }
       });
     } else {
@@ -9765,13 +9782,6 @@ const dropdown = (containerSelector, targetSelector) => {
         if (el.classList.contains('_active')) el.classList.remove('_active');
         if (chatItem && chatItem.classList.contains('_dropdown-active')) {
           chatItem.classList.remove('_dropdown-active');
-        }
-        if (cardPrimaryItem && cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target')) {
-          if (!el.classList.contains('_active')) {
-            setTimeout(() => {
-              cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.remove('_z-index-0');
-            }, 200);
-          }
         }
       }
     });

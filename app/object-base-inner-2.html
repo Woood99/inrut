@@ -1656,6 +1656,67 @@
 </div>
 
 
+<div class="popup popup-primary popup-primary--favorite-two">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="favorite-two">
+        <button class=" btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+        <svg>
+            <use xlink:href="img/sprite.svg#x"></use>
+        </svg>
+        <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content favorite-two _clients">
+            <h2 class="favorite-two__title title-2">Вы можете добавить избранное в свой список или своим клиентам</h2>
+            <button type="button" class="btn btn-reset favorite-two__my-list" data-favorite-announcement-btn>
+                <svg>
+                    <use xlink:href="img/sprite.svg#share"></use>
+                </svg>
+                Мой список 
+            </button>
+            <button type="button" class="btn btn-reset favorite-two__clients _active" data-favorite-client-btn>
+                <svg>
+                    <use xlink:href="img/sprite.svg#application">
+                    </use>
+                </svg>
+                Клиенты
+            </button>
+            <div class="select-secondary" hidden data-favorite-announcement-select>
+                <span class="select-secondary__placeholder">
+                    Личный список
+                </span>
+                <select class="select-secondary__body" name="complex">
+                    <option placeholder value="all-room">Любой</option>
+                    <option value="room-1">Квартиры1</option>
+                    <option value="room-2">Квартиры2</option>
+                    <option value="room-3">Квартиры3</option>
+                </select>
+            </div>
+            <div class="select-secondary" data-favorite-client-select>
+                <span class="select-secondary__placeholder">
+                    Клиент
+                </span>
+                <select class="select-secondary__body" name="complex">
+                    <option value=""></option>
+                    <option value="room-1">Квартиры1</option>
+                    <option value="room-2">Квартиры2</option>
+                    <option value="room-3">Квартиры3</option>
+                </select>
+            </div>
+            <div class="select-secondary" hidden data-favorite-selection-select>
+                <span class="select-secondary__placeholder">
+                    Подбор
+                </span>
+                <select class="select-secondary__body" name="complex">
+                    <option placeholder value="all-room">Любой</option>
+                    <option value="room-1">Квартиры1</option>
+                    <option value="room-2">Квартиры2</option>
+                    <option value="room-3">Квартиры3</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="popup popup-primary popup-primary--right popup-primary--edit-profile">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="edit-profile">
