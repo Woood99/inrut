@@ -368,7 +368,30 @@
             gap: 10px;
         }
     }
-
+    .card-primary__info--favorite-dropdown{
+        &._active{
+            .dots-dropdown__target{
+                background-color: transparent;
+                svg{
+                    fill: var(--white);
+                }
+            }
+        }
+        .dots-dropdown__target{
+            padding: 0;
+            border-radius: 0;
+        }
+        .dots-dropdown__dropdown{
+            min-width: max-content;
+            width: 300px;
+            padding: 8px 0;
+            .select-secondary{
+                width: calc(100% - 32px);
+                position: relative;
+                z-index: 99;
+            }
+        }
+    }
     &__content {
         padding: 20px 24px 16px;
 

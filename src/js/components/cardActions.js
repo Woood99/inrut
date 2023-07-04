@@ -29,11 +29,17 @@ export const cardPrimaryActions = () => {
 
 
         const favorite = card.querySelector('.card-primary__info--favorite');
-        if (favorite) {
+        if (favorite && !favorite.classList.contains('card-primary__info--favorite-dropdown')) {
             favorite.addEventListener('click', (e) => {
                 e.preventDefault();
                 favorite.classList.toggle('_active');
             })
+        }
+        if (favorite && favorite.classList.contains('card-primary__info--favorite-dropdown')) {
+            card.querySelector('[data-favorite-announcement-btn]').addEventListener('click', (e) => {
+                e.preventDefault();
+                card.querySelector('[data-favorite-announcement-select]').removeAttribute('hidden');
+            });
         }
 
     })

@@ -281,10 +281,45 @@
                                         <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-primary__info">
                                             <div class="card-primary__info--btns-right">
-                                                <div class="card-primary__info--favorite" title="Добавить в избранное">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#favorite"></use>
-                                                    </svg>
+                                                <div class="card-primary__info--favorite card-primary__info--favorite-dropdown dots-dropdown">
+                                                    <button type="button" class="btn btn-reset dots-dropdown__target" title="Добавить в избранное">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#favorite">
+                                                            </use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dots-dropdown__dropdown">
+                                                        <button type="button" class="btn btn-reset" data-favorite-announcement-btn>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#share"></use>
+                                                            </svg>
+                                                            Объявление
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#briefcase"></use>
+                                                            </svg>
+                                                            Жилые комплексы
+                                                        </button>
+                                                        <button type="button" class="btn btn-reset">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#application">
+                                                                </use>
+                                                            </svg>
+                                                            Клиенты
+                                                        </button>
+                                                        <div class="select-secondary" hidden data-favorite-announcement-select>
+                                                            <span class="select-secondary__placeholder">
+                                                                Личный список
+                                                            </span>
+                                                            <select class="select-secondary__body" name="complex">
+                                                                <option placeholder value="all-room">Любой</option>
+                                                                <option value="room-1">Квартиры1</option>
+                                                                <option value="room-2">Квартиры2</option>
+                                                                <option value="room-3">Квартиры3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="card-primary__info--controls dots-dropdown">
                                                     <button type="button" class="btn btn-reset dots-dropdown__target">

@@ -3,6 +3,7 @@ const dropdown = (containerSelector, targetSelector) => {
     container.forEach(el => {
         const target = el.querySelector(targetSelector);
         const chatItem = el.closest('.chat__item');
+        const cardPrimaryItem = el.closest('.card-primary__info--favorite-dropdown');
         if (!el.classList.contains('_hover')) {
             target.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -18,6 +19,15 @@ const dropdown = (containerSelector, targetSelector) => {
 
                 if (chatItem) {
                     chatItem.classList.toggle('_dropdown-active');
+                }
+                if (cardPrimaryItem && cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target')) {
+                    if (el.classList.contains('_active')) {
+                        cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.add('_z-index-0');
+                    } else {
+                        setTimeout(() => {
+                            cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.remove('_z-index-0');
+                        }, 200);
+                    }
                 }
             });
         } else {
@@ -38,6 +48,13 @@ const dropdown = (containerSelector, targetSelector) => {
                 if (el.classList.contains('_active')) el.classList.remove('_active');
                 if (chatItem && chatItem.classList.contains('_dropdown-active')) {
                     chatItem.classList.remove('_dropdown-active');
+                }
+                if (cardPrimaryItem && cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target')) {
+                    if (!el.classList.contains('_active')) {
+                        setTimeout(() => {
+                            cardPrimaryItem.nextElementSibling.querySelector('.dots-dropdown__target').classList.remove('_z-index-0');
+                        }, 200);
+                    }
                 }
             }
         })
