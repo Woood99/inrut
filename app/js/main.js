@@ -6313,10 +6313,29 @@ const clientFixedValidate = () => {
   const nameInput = nameLabel.querySelector('input');
   const telInput = telLabel.querySelector('input');
   const btn = form.querySelector('.client-fixed__btn');
+  const clientList = form.querySelector('.client-fixed__client-btn');
+  const clientListLabel = form.querySelector('.client-fixed__client-select');
+  clientList.addEventListener('click', () => {
+    const label = nameLabel.closest('.client-fixed__labels');
+    if (!form.classList.contains('_client-list')) {
+      form.classList.add('_client-list');
+      clientListLabel.removeAttribute('hidden');
+      label.setAttribute('hidden', '');
+      clientList.textContent = 'Или создайте нового клиента';
+    } else {
+      form.classList.remove('_client-list');
+      clientListLabel.setAttribute('hidden', '');
+      label.removeAttribute('hidden');
+      clientList.textContent = 'Или выберите клиента из списка';
+    }
+  });
   [surnameLabel, nameLabel, telInput].forEach(el => {
     el.addEventListener('input', () => {
       if (formEventInput) validate();
     });
+  });
+  clientListLabel.addEventListener('change', () => {
+    if (formEventInput) validate();
   });
   function validate() {
     let result = true;
@@ -6324,25 +6343,35 @@ const clientFixedValidate = () => {
     validateRemoveError(telLabel);
     validateRemoveError(surnameLabel);
     validateRemoveError(nameLabel);
-    if (surnameLabel.hasAttribute('data-validate-min-length') && surnameInput.value.length < surnameLabel.dataset.validateMinLength) {
-      result = false;
-      validateCreateError(surnameLabel, `${validateTextMap.minLength} ${surnameLabel.dataset.validateMinLength}`);
-    }
-    if (surnameLabel.hasAttribute('data-validate-required') && surnameInput.value === '') {
-      result = false;
-      validateCreateError(surnameLabel, validateTextMap.surname);
-    }
-    if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
-      result = false;
-      validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
-    }
-    if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
-      result = false;
-      validateCreateError(nameLabel, validateTextMap.name);
-    }
-    if (!inputTelValidate(telLabel, telInput)) {
-      result = false;
-      validateCreateError(telLabel, validateTextMap.tel);
+    validateRemoveError(clientListLabel);
+    clientListLabel.querySelector('.select-secondary').classList.remove('_error');
+    if (!form.classList.contains('_client-list')) {
+      if (surnameLabel.hasAttribute('data-validate-min-length') && surnameInput.value.length < surnameLabel.dataset.validateMinLength) {
+        result = false;
+        validateCreateError(surnameLabel, `${validateTextMap.minLength} ${surnameLabel.dataset.validateMinLength}`);
+      }
+      if (surnameLabel.hasAttribute('data-validate-required') && surnameInput.value === '') {
+        result = false;
+        validateCreateError(surnameLabel, validateTextMap.surname);
+      }
+      if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+        result = false;
+        validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
+      }
+      if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
+        result = false;
+        validateCreateError(nameLabel, validateTextMap.name);
+      }
+      if (!inputTelValidate(telLabel, telInput)) {
+        result = false;
+        validateCreateError(telLabel, validateTextMap.tel);
+      }
+    } else {
+      if (!clientListLabel.querySelector('.select-secondary').classList.contains('_selected')) {
+        result = false;
+        validateCreateError(clientListLabel, 'Выберите клиента из списка');
+        clientListLabel.querySelector('.select-secondary').classList.add('_error');
+      }
     }
     return result;
   }

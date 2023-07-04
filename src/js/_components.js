@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollDrag('.object-location__infrastructure', 1000);
     recordViewing();
     wallet();
-    
+
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

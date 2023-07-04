@@ -1651,6 +1651,9 @@ textarea.input-reset {
 .client-fixed__wrapper:not(:first-child) {
   margin-top: 32px;
 }
+.client-fixed__wrapper.client-fixed__client {
+  margin-top: 16px;
+}
 .client-fixed__labels {
   margin-top: 16px;
   display: -ms-grid;
@@ -1659,6 +1662,9 @@ textarea.input-reset {
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
+}
+.client-fixed__labels[hidden] {
+  display: none;
 }
 @media (max-width: 768px) {
   .client-fixed__labels {
@@ -1716,6 +1722,23 @@ textarea.input-reset {
 .client-fixed__btn {
   width: 100%;
   margin-top: 24px;
+}
+.client-fixed__client-select {
+  margin-top: 16px;
+}
+.client-fixed__client-select ._error-span {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+  margin-left: 8px;
+}
+.client-fixed__client-select .choices__placeholder {
+  display: none;
+}
+.client-fixed__client-btn {
+  color: var(--blue);
 }
 
 .popup-chat {
@@ -10372,6 +10395,12 @@ textarea.input-reset {
 }
 .select-secondary .choices.focus-visible {
   border: 1px solid var(--blue);
+}
+.select-secondary._error .choices {
+  border: 1px solid var(--red);
+}
+.select-secondary._error .select-secondary__placeholder {
+  color: var(--red);
 }
 .select-secondary .choices__list--dropdown {
   margin-top: 5px;

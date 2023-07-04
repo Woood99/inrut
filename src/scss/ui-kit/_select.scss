@@ -527,6 +527,16 @@
         }
     }
 
+    &._error {
+        .choices {
+            border: 1px solid var(--red);
+        }
+
+        .select-secondary__placeholder {
+            color: var(--red);
+        }
+    }
+
     .choices__list--dropdown {
         margin-top: 5px;
         left: 0px;
@@ -544,6 +554,7 @@
         cursor: default;
         padding-top: 16px;
         padding-bottom: 16px;
+
         &.is-active {
             opacity: 1;
             transform: translateY(0);
