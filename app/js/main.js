@@ -4170,8 +4170,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_maps__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/maps */ "./src/js/components/maps.js");
 /* harmony import */ var _modules_linkCopy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/linkCopy */ "./src/js/modules/linkCopy.js");
 /* harmony import */ var _components_inputs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/inputs */ "./src/js/components/inputs.js");
-/* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
-/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
+/* harmony import */ var _components_calendar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/calendar */ "./src/js/components/calendar.js");
+/* harmony import */ var _components_formValidate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/formValidate */ "./src/js/components/formValidate.js");
 /* harmony import */ var _modules_dropdown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/dropdown */ "./src/js/modules/dropdown.js");
 /* harmony import */ var _modules_dropdownItems__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/dropdownItems */ "./src/js/modules/dropdownItems.js");
 /* harmony import */ var _modules_dropdownDown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/dropdownDown */ "./src/js/modules/dropdownDown.js");
@@ -4279,10 +4279,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_components_maps__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarPrimary)('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_8__.calendarInput)();
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
+  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarInput)();
   (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_13__["default"])();
   (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_14__["default"])();
   (0,_components_reviewModal__WEBPACK_IMPORTED_MODULE_15__["default"])();
@@ -4308,15 +4308,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.validateCheckboxPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.bookConsultationValidate)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.clientFixedValidate)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.createAgreeValidate)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.addContactValidate)();
-  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_7__.inputMask)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-user-popup__form', '.textarea-primary__input', '.complaint-user-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-object-popup__form', '.textarea-primary__input', '.complaint-object-popup__btn', '.radio-primary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateCheckboxPrimary)('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.bookConsultationValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.clientFixedValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createAgreeValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.addContactValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.inputMask)();
   // ==================================================
 
   (0,_modules_dropdown__WEBPACK_IMPORTED_MODULE_9__["default"])('.dots-dropdown', '.dots-dropdown__target');
@@ -6563,15 +6563,18 @@ const createAgreeValidate = () => {
   let formEventInput = false;
   const dateOne = form.querySelector('.create-agree__form--date-one');
   const dateTwo = form.querySelector('.create-agree__form--date-two');
-  const type = form.querySelector('.create-agree__form--date-type');
-  const btn = form.querySelector('.create-agree__btn');
+  const type = form.querySelector('.create-agree__form--type');
   const dateOneInput = dateOne.querySelector('input');
   const dateTwoInput = dateTwo.querySelector('input');
+  type.addEventListener('change', () => {
+    if (formEventInput) validate();
+  });
   function validate() {
     let result = true;
     formEventInput = true;
     validateRemoveError(dateOne);
     validateRemoveError(dateTwo);
+    validateRemoveError(type);
     if (!dateOneInput.value) {
       result = false;
       validateCreateError(dateOne, 'Укажите дату');
@@ -6586,6 +6589,9 @@ const createAgreeValidate = () => {
         validateCreateError(dateOne, null);
         validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
       }
+    }
+    if (!validateCreeateErrorSelect(type, 'Выберите тип договора')) {
+      result = false;
     }
     return result;
   }

@@ -23,6 +23,10 @@ import {
     inputClue
 } from './components/inputs';
 import {
+    calendarPrimary,
+    calendarInput
+} from './components/calendar';
+import {
     validateRadioPrimary,
     validateCheckboxPrimary,
     bookConsultationValidate,
@@ -31,10 +35,6 @@ import {
     addContactValidate,
     inputMask
 } from './components/formValidate';
-import {
-    calendarPrimary,
-    calendarInput
-} from './components/calendar';
 import dropdown from './modules/dropdown';
 import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';

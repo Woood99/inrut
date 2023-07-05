@@ -285,17 +285,22 @@ export const createAgreeValidate = () => {
     let formEventInput = false;
     const dateOne = form.querySelector('.create-agree__form--date-one');
     const dateTwo = form.querySelector('.create-agree__form--date-two');
-    const type = form.querySelector('.create-agree__form--date-type');
-    const btn = form.querySelector('.create-agree__btn');
+    const type = form.querySelector('.create-agree__form--type');
 
     const dateOneInput = dateOne.querySelector('input');
     const dateTwoInput = dateTwo.querySelector('input');
+
+
+    type.addEventListener('change', () => {
+        if (formEventInput) validate();
+    })
 
     function validate() {
         let result = true;
         formEventInput = true;
         validateRemoveError(dateOne);
         validateRemoveError(dateTwo);
+        validateRemoveError(type);
         if (!dateOneInput.value) {
             result = false;
             validateCreateError(dateOne, 'Укажите дату');
@@ -311,6 +316,9 @@ export const createAgreeValidate = () => {
                 validateCreateError(dateOne, null);
                 validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
             }
+        }
+        if (!validateCreeateErrorSelect(type, 'Выберите тип договора')) {
+            result = false;
         }
         return result;
     }
