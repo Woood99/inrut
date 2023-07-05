@@ -4442,6 +4442,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   isClose: settingsModal => {}
 }, 'favorite-two');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-contact');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-agree');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-document');
 
 // ========================================================================================
 

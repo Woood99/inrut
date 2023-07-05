@@ -2094,16 +2094,16 @@
 <div class="popup popup-primary popup-primary--favorite-two">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="favorite-two">
         <button class=" btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
-        <svg>
-            <use xlink:href="img/sprite.svg#x"></use>
-        </svg>
-        <span>Закрыть</span>
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
         </button>
         <div class="popup__content popup-primary__content favorite-two _clients">
             <h2 class="favorite-two__title title-2">Вы можете добавить избранное в свой список или своим клиентам</h2>
             <div class="favorite-two__nav">
                 <button type="button" class="btn btn-reset favorite-two__my-list" data-favorite-announcement-btn>
-                    Мой список 
+                    Мой список
                 </button>
                 <button type="button" class="btn btn-reset favorite-two__clients _active" data-favorite-client-btn>
                     Клиенты
@@ -2142,6 +2142,149 @@
                     <option value="room-3">Квартиры3</option>
                 </select>
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--add-contact">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="add-contact">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content add-contact">
+            <h2 class="title-2">Дополнительный контакт</h2>
+
+            <div class="client-fixed__labels">
+                <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
+                    <label class="input-text__label">
+                        <span>Фамилия</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="client-fixed__label client-fixed__label--name input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
+                    <label class="input-text__label">
+                        <span>Имя</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="client-fixed__label input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Отчество</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="client-fixed__label client-fixed__label--tel input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="" inputmode="text">
+                    </label>
+                </div>
+            </div>
+
+            <div class="select-secondary">
+                <span class="select-secondary__placeholder">
+                    Тип контакта
+                </span>
+                <select class="select-secondary__body" name="complex">
+                    <option placeholder value="all-room">Любой</option>
+                    <option value="room-1">Собственик</option>
+                    <option value="room-2">Опекун</option>
+                    <option value="room-3">Представитель</option>
+                    <option value="room-3">Риелтор</option>
+                </select>
+            </div>
+            <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
+                <label class="input-text__label">
+                    <span>Доля (если есть)</span>
+                    <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                </label>
+            </div>
+
+
+            <button type="button" class="btn btn-reset btn-primary">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--create-agree">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="create-agree">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content create-agree">
+            <h2 class="title-2">Договор</h2>
+            <span>Дата начала (календарь)</span>
+            <span>Дата окончания (календарь)</span>
+            <div class="select-secondary">
+                <span class="select-secondary__placeholder">
+                    Тип договора
+                </span>
+                <select class="select-secondary__body" name="complex">
+                    <option placeholder value="all-room">Любой</option>
+                    <option value="room-1">Эксклюзивный</option>
+                    <option value="room-2">Стандартный</option>
+                </select>
+            </div>
+            <div class="input-text input-text--no-exp">
+                <label class="input-text__label">
+                    <span>Фиксированная комиссия</span>
+                    <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                </label>
+            </div>
+            <div class="input-text input-text--no-exp">
+                <label class="input-text__label">
+                    <span>Комиссия в %</span>
+                    <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                </label>
+            </div>
+
+
+            (все кроме комисий не обязательно)
+        </div>
+    </div>
+</div>
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--create-document">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="create-document">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content create-document">
+            <h2 class="title-2 create-document__title">Создать документ</h2>
+            <span class="create-document__clue">
+                Возможные форматы: JPG, PNG, JPEG, GIF, PDF, WORD
+            </span>
+            <div class="create-document__input input-text input-text--no-exp">
+                <label class="input-text__label">
+                    <span>Название документа</span>
+                    <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                </label>
+            </div>
+            <div class="create-document__load photo-load">
+                <button type="button" class="btn btn-reset photo-load__wrapper">
+                    <p>
+                        Добавить файл (Размер до 100 Мб)
+                    </p>
+                    <p>
+                        Выберите файл <span>или перетащите в эту область</span>
+                    </p>
+                </button>
+                <input type="file" data-upload-drop="" name="upload" multiple="" accept=".jpg, .png, .jpeg, .gif, .pdf, word" class="input-reset">
+            </div>
+            <button type="button" class="btn btn-reset btn-primary create-document__save">Сохранить</button>
         </div>
     </div>
 </div>

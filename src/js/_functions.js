@@ -104,5 +104,8 @@ popup({
       
     }
 }, 'favorite-two');
+popup(null,'add-contact');
+popup(null,'create-agree');
+popup(null,'create-document');
 
 // ========================================================================================

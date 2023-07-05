@@ -33,15 +33,39 @@
                 }
             }
 
+            .delete-btn {
+                padding: 0;
+
+                svg {
+                    margin: 0;
+                }
+            }
+
+            .edit-btn {
+                padding: 0;
+
+                svg {
+                    margin: 0;
+                }
+            }
+
+            .main-table__type {
+                margin: 0 24px;
+
+                span {
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .client-info {
+                grid-column-gap: 20px;
+            }
+
             &--meeting-showing {
                 .main-table__type {
-                    margin: 0 24px;
                     grid-template-columns: percent(250, 700) percent(205, 700) percent(205, 700);
-                    span{
-                        &:first-child{
-                            margin: 0;
-                        }
-                    }
                 }
 
                 .object-info-secondary {
@@ -62,22 +86,30 @@
                     margin-left: 0;
                 }
             }
-            &--contact{
+
+            &--contact {
                 .main-table__type {
-                    margin: 0 24px;
                     grid-template-columns: percent(225, 700) percent(185, 700) percent(115, 700) percent(115, 700);
-                    span{
-                        &:first-child{
-                            margin: 0;
-                        }
-                    }
                 }
 
-                .client-info{
+                .client-info {
                     grid-template-columns: percent(225, 700) percent(185, 700) percent(115, 700) percent(115, 700);
-                    grid-column-gap: 20px;
+                }
+            }
+
+            &--treaty {
+                .row {
+                    margin-top: 32px;
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
                 }
 
+                .main-table__type {}
+
+                .main-table__item {
+                    grid-template-columns: percent(123, 700);
+                }
             }
         }
     }
