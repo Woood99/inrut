@@ -3,7 +3,6 @@ import {
 } from 'fullcalendar';
 import SimpleBar from 'simplebar';
 import modal from '../modules/modal';
-import AirDatepicker from 'air-datepicker';
 
 
 export const calendarPrimary = (containerSelector, url, edit = false) => {
@@ -180,23 +179,4 @@ export const calendarPrimary = (containerSelector, url, edit = false) => {
             }
         })
     }
-}
-
-export const calendarInput = () => {
-    document.querySelectorAll('.input-calendar').forEach(el => {
-        new AirDatepicker(el, {
-            autoClose: true,
-            isMobile: true,
-            onSelect: (fd) => {
-                const inputText = el.closest('.input-text')
-                if (inputText) {
-                    fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
-                }
-                if (inputText && inputText.classList.contains('_error') && fd.date) {
-                    inputText.classList.remove('_error');
-                    inputText.querySelector('._error-span').remove();
-                }
-            }
-        });
-    });
 }

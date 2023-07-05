@@ -4282,7 +4282,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
-  (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarInput)();
   (0,_components_controlCards__WEBPACK_IMPORTED_MODULE_13__["default"])();
   (0,_components_videoBlock__WEBPACK_IMPORTED_MODULE_14__["default"])();
   (0,_components_reviewModal__WEBPACK_IMPORTED_MODULE_15__["default"])();
@@ -4316,6 +4315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.clientFixedValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createAgreeValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.addContactValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createDealValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.inputMask)();
   // ==================================================
 
@@ -4562,14 +4562,11 @@ const bookConsultation = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "calendarInput": () => (/* binding */ calendarInput),
 /* harmony export */   "calendarPrimary": () => (/* binding */ calendarPrimary)
 /* harmony export */ });
 /* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/index.js");
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
-
 
 
 
@@ -4743,24 +4740,6 @@ const calendarPrimary = function (containerSelector, url) {
       }
     });
   }
-};
-const calendarInput = () => {
-  document.querySelectorAll('.input-calendar').forEach(el => {
-    new air_datepicker__WEBPACK_IMPORTED_MODULE_3__["default"](el, {
-      autoClose: true,
-      isMobile: true,
-      onSelect: fd => {
-        const inputText = el.closest('.input-text');
-        if (inputText) {
-          fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
-        }
-        if (inputText && inputText.classList.contains('_error') && fd.date) {
-          inputText.classList.remove('_error');
-          inputText.querySelector('._error-span').remove();
-        }
-      }
-    });
-  });
 };
 
 /***/ }),
@@ -6292,6 +6271,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "bookConsultationValidate": () => (/* binding */ bookConsultationValidate),
 /* harmony export */   "clientFixedValidate": () => (/* binding */ clientFixedValidate),
 /* harmony export */   "createAgreeValidate": () => (/* binding */ createAgreeValidate),
+/* harmony export */   "createDealValidate": () => (/* binding */ createDealValidate),
 /* harmony export */   "inputMask": () => (/* binding */ inputMask),
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
 /* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
@@ -6300,13 +6280,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/dist/inputmask.js");
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+
 
 
 const validateTextMap = {
   minLength: 'Минимальное кол-во символов:',
   name: 'Укажите имя',
   surname: 'Укажите фамилию',
-  tel: 'Введите корректный номер телефона'
+  tel: 'Введите корректный номер телефона',
+  date: 'Укажите дату'
 };
 const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
   const form = document.querySelector(formSelector);
@@ -6566,6 +6549,17 @@ const createAgreeValidate = () => {
   const type = form.querySelector('.create-agree__form--type');
   const dateOneInput = dateOne.querySelector('input');
   const dateTwoInput = dateTwo.querySelector('input');
+  [dateOneInput, dateTwoInput].forEach(input => {
+    new air_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"](input, {
+      autoClose: true,
+      isMobile: true,
+      onSelect: fd => {
+        const inputText = input.closest('.input-text');
+        fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+        if (formEventInput) validate();
+      }
+    });
+  });
   type.addEventListener('change', () => {
     if (formEventInput) validate();
   });
@@ -6577,11 +6571,11 @@ const createAgreeValidate = () => {
     validateRemoveError(type);
     if (!dateOneInput.value) {
       result = false;
-      validateCreateError(dateOne, 'Укажите дату');
+      validateCreateError(dateOne, validateTextMap.date);
     }
     if (!dateTwoInput.value) {
       result = false;
-      validateCreateError(dateTwo, 'Укажите дату');
+      validateCreateError(dateTwo, validateTextMap.date);
     }
     if (dateOneInput.value && dateTwoInput.value) {
       if (new Date(changeDate(dateOneInput.value)) > new Date(changeDate(dateTwoInput.value))) {
@@ -6602,6 +6596,40 @@ const createAgreeValidate = () => {
     const [day, month, year] = date.split(".");
     return `${year}, ${month - 1}, ${day}`;
   }
+};
+const createDealValidate = () => {
+  const form = document.querySelector('.create-deal__form');
+  if (!form) return;
+  let formEventInput = false;
+  const date = form.querySelector('.create-deal__form--date');
+  const dateInput = date.querySelector('input');
+  new air_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"](dateInput, {
+    autoClose: true,
+    isMobile: true,
+    onSelect: fd => {
+      const inputText = dateInput.closest('.input-text');
+      fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+      if (formEventInput) validate();
+    }
+  });
+
+  // type.addEventListener('change', () => {
+  //     if (formEventInput) validate();
+  // })
+
+  function validate() {
+    let result = true;
+    formEventInput = true;
+    validateRemoveError(date);
+    if (!dateInput.value) {
+      result = false;
+      validateCreateError(date, validateTextMap.date);
+    }
+    return result;
+  }
+  form.addEventListener('submit', e => {
+    if (!validate()) e.preventDefault();
+  });
 };
 const inputMask = () => {
   const inputs = document.querySelectorAll('.input-phone-mask');

@@ -23,8 +23,7 @@ import {
     inputClue
 } from './components/inputs';
 import {
-    calendarPrimary,
-    calendarInput
+    calendarPrimary
 } from './components/calendar';
 import {
     validateRadioPrimary,
@@ -33,6 +32,7 @@ import {
     clientFixedValidate,
     createAgreeValidate,
     addContactValidate,
+    createDealValidate,
     inputMask
 } from './components/formValidate';
 import dropdown from './modules/dropdown';
@@ -117,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
     calendarPrimary('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
-    calendarInput();
     controlCards();
     videoBlock();
     reviewModal();
@@ -151,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clientFixedValidate();
     createAgreeValidate();
     addContactValidate();
+    createDealValidate();
     inputMask();
     // ==================================================
 

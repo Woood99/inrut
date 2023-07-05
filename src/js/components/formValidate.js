@@ -1,10 +1,12 @@
 import Inputmask from "inputmask";
 import modal from '../modules/modal';
+import AirDatepicker from 'air-datepicker';
 const validateTextMap = {
     minLength: 'Минимальное кол-во символов:',
     name: 'Укажите имя',
     surname: 'Укажите фамилию',
     tel: 'Введите корректный номер телефона',
+    date: 'Укажите дату',
 }
 
 export const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
@@ -38,7 +40,6 @@ export const validateRadioPrimary = (formSelector, textareaSelector, btnSelector
         clearForm();
     });
 };
-
 export const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, checkboxesSelector) => {
     const form = document.querySelector(formSelector);
     if (!form) return false;
@@ -70,7 +71,6 @@ export const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelec
         clearForm();
     });
 };
-
 export const bookConsultationValidate = () => {
     const form = document.querySelector('.book-consultation__form');
     if (!form) return;
@@ -277,8 +277,6 @@ export const addContactValidate = () => {
         })
     })
 }
-
-
 export const createAgreeValidate = () => {
     const form = document.querySelector('.create-agree__form');
     if (!form) return;
@@ -289,6 +287,21 @@ export const createAgreeValidate = () => {
 
     const dateOneInput = dateOne.querySelector('input');
     const dateTwoInput = dateTwo.querySelector('input');
+
+
+    [dateOneInput, dateTwoInput].forEach(input => {
+        new AirDatepicker(input, {
+            autoClose: true,
+            isMobile: true,
+            onSelect: (fd) => {
+                const inputText = input.closest('.input-text')
+                fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+                if (formEventInput) validate();
+            }
+        })
+    });
+
+
 
 
     type.addEventListener('change', () => {
@@ -303,11 +316,11 @@ export const createAgreeValidate = () => {
         validateRemoveError(type);
         if (!dateOneInput.value) {
             result = false;
-            validateCreateError(dateOne, 'Укажите дату');
+            validateCreateError(dateOne, validateTextMap.date);
         }
         if (!dateTwoInput.value) {
             result = false;
-            validateCreateError(dateTwo, 'Укажите дату');
+            validateCreateError(dateTwo, validateTextMap.date);
         }
 
         if (dateOneInput.value && dateTwoInput.value) {
@@ -333,8 +346,45 @@ export const createAgreeValidate = () => {
         return `${year}, ${month -1 }, ${day}`;
     }
 };
+export const createDealValidate = () => {
+    const form = document.querySelector('.create-deal__form');
+    if (!form) return;
+    let formEventInput = false;
+    const date = form.querySelector('.create-deal__form--date');
+
+    const dateInput = date.querySelector('input');
 
 
+    new AirDatepicker(dateInput, {
+        autoClose: true,
+        isMobile: true,
+        onSelect: (fd) => {
+            const inputText = dateInput.closest('.input-text')
+            fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+            if (formEventInput) validate();
+        }
+    })
+
+    // type.addEventListener('change', () => {
+    //     if (formEventInput) validate();
+    // })
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+        validateRemoveError(date);
+        if (!dateInput.value) {
+            result = false;
+            validateCreateError(date, validateTextMap.date);
+        }
+
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+}
 export const inputMask = () => {
     const inputs = document.querySelectorAll('.input-phone-mask');
     const inputMask = new Inputmask('+7 999 999-99-99');
