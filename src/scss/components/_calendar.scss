@@ -438,7 +438,7 @@
             justify-content: end;
             flex-direction: row;
             border: none;
-           
+
         }
 
         .fc-daygrid-day-bottom {
@@ -451,11 +451,12 @@
             height: 100% !important;
             background-color: #E9FAF4;
             transition: background-color $transitionSpeed $transitionFunction;
-         @media (min-width:$desktop-min){
-             &:hover{
-                background-color: rgb(210, 240, 229);
-             } 
-         }
+
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    background-color: rgb(210, 240, 229);
+                }
+            }
         }
 
         .fc-daygrid-day-frame {
@@ -647,4 +648,23 @@
 
     }
 
+}
+
+
+.air-datepicker-global-container {
+    z-index: 9999;
+
+    .air-datepicker-cell {
+        &.-selected- {
+            background: var(--blue);
+
+            &.-current- {
+                color: var(--white);
+            }
+        }
+
+        &.-current- {
+            color: var(--blue);
+        }
+    }
 }

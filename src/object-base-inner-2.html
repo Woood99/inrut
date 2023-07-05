@@ -16,8 +16,56 @@
 </head>
 
 <body class="page__body">
-    <div class="site-container site-container--object">
+    <div class="site-container site-container--object site-container--object-base-inner-2">
         @include('partials/header.html')
+        <div class="header-fixed fix-block">
+            <div class="header-fixed__container">
+                <div class="header-fixed__top">
+                    <h3 class="header-fixed__title">
+                        1-ком. квартира, 39 м², 12/12 эт.
+                    </h3>
+                </div>
+                <nav class="header-fixed__nav">
+                    <ul class="header-fixed__list list-reset">
+                        <li class="header-fixed__item">
+                            <a href="#section-characteristics" class="header-fixed__item-link">
+                                Характеристики
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-history-price" class="header-fixed__item-link">
+                                История изменения цены
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-location" class="header-fixed__item-link">
+                                Расположение
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-meeting-showing" class="header-fixed__item-link">
+                                Встреча показ
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-contacts" class="header-fixed__item-link">
+                                Контакт
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-treaty" class="header-fixed__item-link">
+                                Договоры
+                            </a>
+                        </li>
+                        <li class="header-fixed__item">
+                            <a href="#section-deals" class="header-fixed__item-link">
+                                Сделки
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <main class="main main-page-gap object object-base-inner object-base-inner--extended">
             <div class="object__top top-page-inner container">
                 <a href="#" class="object__back top-page-inner__back back-link">
@@ -49,9 +97,6 @@
             </div>
             <div class="object__body object-body">
                 <div class="object-body__container container">
-                    <div class="object-body__controls">
-
-                    </div>
                     <div class="object-body__slider object-slider">
                         <div class="object-slider__body object-slider-body">
                             <div class="swiper object-slider-body__wrapper">
@@ -281,7 +326,7 @@
                                     Показать телефон
                                 </button>
                             </div>
-                            <div class="object-body__characteristics object-characteristics">
+                            <div class="object-body__characteristics object-characteristics section-observ" id="section-characteristics">
                                 <h2 class="object-characteristics__title title-2">
                                     Характеристики
                                 </h2>
@@ -370,7 +415,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="object-body__history object-history">
+                            <div class="object-body__history object-history section-observ" id="section-history-price">
                                 <h2 class="object-history__title title-2">
                                     История изменения цены
                                 </h2>
@@ -429,7 +474,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="object-body__location object-location">
+                            <div class="object-body__location object-location section-observ" id="section-location">
                                 <h2 class="object-location__title title-2">
                                     Расположение
                                 </h2>
@@ -442,8 +487,7 @@
                                 </div>
                             </div>
 
-
-                            <div class="object-body__element object-body__element--meeting-showing">
+                            <div class="object-body__element object-body__element--meeting-showing section-observ" id="section-meeting-showing">
                                 <div data-spollers class="spollers">
                                     <div class="spollers__item">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -550,7 +594,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="object-body__element object-body__element--contact">
+                            <div class="object-body__element object-body__element--contact section-observ" id="section-contacts">
                                 <div data-spollers class="spollers">
                                     <div class="spollers__item">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -620,13 +664,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset btn-primary" data-popup-path="add-contact">Добавить дополнительный контакт</button>
+                                            <button type="button" class="btn btn-reset btn-primary" data-popup-path="add-addit-contact">Добавить дополнительный контакт</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="object-body__element object-body__element--treaty">
+                            <div class="object-body__element object-body__element--treaty section-observ" id="section-treaty">
                                 <div data-spollers class="spollers">
                                     <div class="spollers__item">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -669,7 +712,6 @@
                                                 </div>
                                             </div>
                                             <button type="button" class="btn btn-reset btn-primary" data-popup-path="create-agree">Создать договор</button>
-
                                             <h3 class="title-3" style="margin-top:24px; padding-top: 24px; border-top: 1px solid var(--primary100);">Дополнительный договор</h3>
                                             <div class="main-table">
                                                 <div class="main-table__table">
@@ -707,7 +749,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="object-body__element object-body__element--deals">
+                            <div class="object-body__element object-body__element--deals section-observ" id="section-deals">
                                 <div data-spollers class="spollers">
                                     <div class="spollers__item">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -729,14 +771,14 @@
                                                         <div class="main-table__item object-info-secondary">
                                                             <div class="object-info-secondary__time-geo">
                                                                 Проверка объекта и собственика
-                                                             </div>
-                                                             
+                                                            </div>
+
                                                             <div class="object-info-secondary__time-geo">
                                                                 <span>
                                                                     09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
                                                                 </span>
                                                             </div>
-                                                             <span class="user-info__name" data-user-name-full="Лев Гаврилов">
+                                                            <span class="user-info__name" data-user-name-full="Лев Гаврилов">
                                                                 Лев Г.
                                                             </span>
                                                             <span class="user-info__name" data-user-name-full="Лев Гаврилов">
@@ -746,7 +788,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset btn-primary">Создать сделку</button>
+                                            <button type="button" class="btn btn-reset btn-primary" data-popup-path="create-deal">Создать сделку</button>
                                         </div>
                                     </div>
                                 </div>

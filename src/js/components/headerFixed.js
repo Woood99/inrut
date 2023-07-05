@@ -62,7 +62,7 @@ const headerFixed = () => {
             headerFixed.classList.remove('_active');
             return;
         }
-        if (scrollDistance >= filterBlock.offsetTop - (headerHeight / 2) &&
+        if (filterBlock && scrollDistance >= filterBlock.offsetTop - (headerHeight / 2) &&
             scrollDistance <= filterBlock.offsetTop + filterBlock.offsetHeight - headerHeight &&
             layoutsTitle.classList.contains('_tab-active')) {
 

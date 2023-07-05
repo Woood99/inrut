@@ -109,17 +109,12 @@ export const bookConsultationValidate = () => {
         validateRemoveError(telLabel);
         validateRemoveError(nameLabel);
         cardsAgent.forEach(card => card.classList.remove('_error'));
-        if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+
+        if (!validateCreateErrorName(nameLabel, nameInput)) {
             result = false;
-            validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
         }
-        if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
+        if (!validateCreateErrorTel(telLabel, telInput, validateTextMap.tel)) {
             result = false;
-            validateCreateError(nameLabel, validateTextMap.name);
-        }
-        if (!inputTelValidate(telLabel, telInput)) {
-            result = false;
-            validateCreateError(telLabel, validateTextMap.tel);
         }
         if (agents.classList.contains('_active') && !agents.querySelector('.card-agent input:checked')) {
             result = false;
@@ -179,36 +174,21 @@ export const clientFixedValidate = () => {
         validateRemoveError(surnameLabel);
         validateRemoveError(nameLabel);
         validateRemoveError(clientListLabel);
-        clientListLabel.querySelector('.select-secondary').classList.remove('_error');
+        clientListLabel.classList.remove('_error');
 
         if (!form.classList.contains('_client-list')) {
-            if (surnameLabel.hasAttribute('data-validate-min-length') && surnameInput.value.length < surnameLabel.dataset.validateMinLength) {
+            if (!validateCreateErrorName(surnameLabel, surnameInput)) {
                 result = false;
-                validateCreateError(surnameLabel, `${validateTextMap.minLength} ${surnameLabel.dataset.validateMinLength}`);
             }
-            if (surnameLabel.hasAttribute('data-validate-required') && surnameInput.value === '') {
+            if (!validateCreateErrorName(nameLabel, nameInput)) {
                 result = false;
-                validateCreateError(surnameLabel, validateTextMap.surname);
             }
-
-            if (nameLabel.hasAttribute('data-validate-min-length') && nameInput.value.length < nameLabel.dataset.validateMinLength) {
+            if (!validateCreateErrorTel(telLabel, telInput, validateTextMap.tel)) {
                 result = false;
-                validateCreateError(nameLabel, `${validateTextMap.minLength} ${nameLabel.dataset.validateMinLength}`);
-            }
-            if (nameLabel.hasAttribute('data-validate-required') && nameInput.value === '') {
-                result = false;
-                validateCreateError(nameLabel, validateTextMap.name);
-            }
-
-            if (!inputTelValidate(telLabel, telInput)) {
-                result = false;
-                validateCreateError(telLabel, validateTextMap.tel);
             }
         } else {
-            if (!clientListLabel.querySelector('.select-secondary').classList.contains('_selected')) {
+            if (!validateCreeateErrorSelect(clientListLabel, 'Выберите клиента из списка')) {
                 result = false;
-                validateCreateError(clientListLabel, 'Выберите клиента из списка');
-                clientListLabel.querySelector('.select-secondary').classList.add('_error');
             }
         }
         return result;
@@ -251,7 +231,101 @@ export const clientFixedValidate = () => {
             btn.classList.remove('_validate');
         }
     })
+};
+export const addContactValidate = () => {
+    const forms = document.querySelectorAll('.add-contact__form');
+    if (forms.length === 0) return;
+    forms.forEach(form => {
+        let formEventInput = false;
+        const nameLabel = form.querySelector('.add-contact__label--name');
+        const telLabel = form.querySelector('.add-contact__label--tel');
+        const type = form.querySelector('.add-contact__type');
+
+        const nameInput = nameLabel.querySelector('input');
+        const telInput = telLabel.querySelector('input');
+
+        [nameInput, telInput].forEach(el => {
+            el.addEventListener('input', () => {
+                if (formEventInput) validate();
+            })
+        })
+        type.addEventListener('change', () => {
+            if (formEventInput) validate();
+        })
+
+        function validate() {
+            let result = true;
+            formEventInput = true;
+            validateRemoveError(nameLabel);
+            validateRemoveError(telLabel);
+            validateRemoveError(type);
+
+            if (!validateCreateErrorName(nameLabel, nameInput)) {
+                result = false;
+            }
+            if (!validateCreateErrorTel(telLabel, telInput, validateTextMap.tel)) {
+                result = false;
+            }
+            if (!validateCreeateErrorSelect(type, 'Выберите тип контакта')) {
+                result = false;
+            }
+            return result;
+        }
+
+        form.addEventListener('submit', (e) => {
+            if (!validate()) e.preventDefault();
+        })
+    })
 }
+
+
+export const createAgreeValidate = () => {
+    const form = document.querySelector('.create-agree__form');
+    if (!form) return;
+    let formEventInput = false;
+    const dateOne = form.querySelector('.create-agree__form--date-one');
+    const dateTwo = form.querySelector('.create-agree__form--date-two');
+    const type = form.querySelector('.create-agree__form--date-type');
+    const btn = form.querySelector('.create-agree__btn');
+
+    const dateOneInput = dateOne.querySelector('input');
+    const dateTwoInput = dateTwo.querySelector('input');
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+        validateRemoveError(dateOne);
+        validateRemoveError(dateTwo);
+        if (!dateOneInput.value) {
+            result = false;
+            validateCreateError(dateOne, 'Укажите дату');
+        }
+        if (!dateTwoInput.value) {
+            result = false;
+            validateCreateError(dateTwo, 'Укажите дату');
+        }
+
+        if (dateOneInput.value && dateTwoInput.value) {
+            if (new Date(changeDate(dateOneInput.value)) > new Date(changeDate(dateTwoInput.value))) {
+                result = false;
+                validateCreateError(dateOne, null);
+                validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
+            }
+        }
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+
+
+    function changeDate(date) {
+        const [day, month, year] = date.split(".")
+        return `${year}, ${month -1 }, ${day}`;
+    }
+};
+
 
 export const inputMask = () => {
     const inputs = document.querySelectorAll('.input-phone-mask');
@@ -269,7 +343,7 @@ function validateCreateError(label, text) {
     validateRemoveError(label);
     const errorSpan = document.createElement('span');
     errorSpan.classList.add('_error-span');
-    errorSpan.textContent = text;
+    if (text) errorSpan.textContent = text;
 
     label.append(errorSpan);
     label.classList.add('_error');
@@ -279,4 +353,35 @@ function validateRemoveError(label) {
     if (!label.classList.contains('_error')) return;
     label.querySelector('._error-span').remove();
     label.classList.remove('_error');
+}
+
+function validateCreateErrorName(label, input) {
+    let result = true;
+    if (label.hasAttribute('data-validate-min-length') && input.value.length < label.dataset.validateMinLength) {
+        result = false;
+        validateCreateError(label, `${validateTextMap.minLength} ${label.dataset.validateMinLength}`);
+    }
+    if (label.hasAttribute('data-validate-required') && input.value === '') {
+        result = false;
+        validateCreateError(label, validateTextMap.name);
+    }
+    return result;
+}
+
+function validateCreateErrorTel(label, input, text) {
+    let result = true;
+    if (!inputTelValidate(label, input)) {
+        result = false;
+        validateCreateError(label, text);
+    }
+    return result;
+}
+
+function validateCreeateErrorSelect(container, text) {
+    let result = true;
+    if (!container.classList.contains('_selected')) {
+        result = false;
+        validateCreateError(container, text);
+    }
+    return result;
 }

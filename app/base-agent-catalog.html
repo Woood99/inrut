@@ -259,6 +259,7 @@
                         <div class="filter__inner">
                             <div class="filter__row base-agent-catalog-filter__row--1">
                                 <div class="filter__item base-agent-catalog__select select-secondary select-secondary--city _selected">
+                                  <div class="select-secondary__wrapper">
                                     <span class="select-secondary__placeholder">
                                         Город
                                     </span>
@@ -267,12 +268,14 @@
                                         <option value="apartments2">Волгоград</option>
                                         <option value="apartments3">Москва</option>
                                     </select>
+                                  </div>
                                 </div>
                                 <label class="filter__item filter__item--input base-agent-catalog__input input-primary">
                                     <input type="text" name="Имя" class="input-reset input-primary__input"
                                         placeholder="ФИО агента">
                                 </label>
                                 <div class="filter__item base-agent-catalog__select select-secondary">
+                                    <div class="select-secondary__wrapper">
                                     <span class="select-secondary__placeholder">
                                         Специализация
                                     </span>
@@ -283,7 +286,9 @@
                                         <option value="apartments3">Ипотечный брокер3</option>
                                     </select>
                                 </div>
+                                </div>
                                 <div class="filter__item base-agent-catalog__select select-secondary">
+                                    <div class="select-secondary__wrapper">
                                     <span class="select-secondary__placeholder">
                                         Новостройки
                                     </span>
@@ -293,6 +298,7 @@
                                         <option value="apartments2">Новостройки1</option>
                                         <option value="apartments3">Новостройки2</option>
                                     </select>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -1270,12 +1276,12 @@
             <h2 class="client-fixed__title title-2">
                 Фиксация клиента
             </h2>
-            <form action="#" class="client-fixed__form">
+            <form action="#" class="client-fixed__form _client-list">
                 <div class="client-fixed__wrapper">
                     <h3 class="client-fixed__subtitle title-3">
                         Клиент
                     </h3>
-                    <div class="client-fixed__labels">
+                    <div class="client-fixed__labels" hidden>
                         <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
                             <label class="input-text__label">
                                 <span>Фамилия</span>
@@ -1301,8 +1307,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="client-fixed__client-select" hidden>
-                        <div class="select-secondary">
+                    <div class="select-secondary client-fixed__client-select">
+                        <div class="select-secondary__wrapper">
                             <span class="select-secondary__placeholder">
                                 Выберите клиента
                             </span>
@@ -1315,7 +1321,7 @@
                     </div>
                 </div>
                 <div class="client-fixed__wrapper client-fixed__client">
-                    <button type="button" class="btn btn-reset client-fixed__client-btn">Или выберите клиента из списка</button>
+                    <button type="button" class="btn btn-reset client-fixed__client-btn">Или создайте нового клиента</button>
                 </div>
                 <div class="client-fixed__wrapper">
                     <h3 class="client-fixed__subtitle title-3">
@@ -1403,37 +1409,43 @@
                 </button>
             </div>
             <div class="select-secondary" hidden data-favorite-announcement-select>
-                <span class="select-secondary__placeholder">
-                    Личный список
-                </span>
-                <select class="select-secondary__body" name="complex">
-                    <option placeholder value="all-room">Любой</option>
-                    <option value="room-1">Квартиры1</option>
-                    <option value="room-2">Квартиры2</option>
-                    <option value="room-3">Квартиры3</option>
-                </select>
+                <div class="select-secondary__wrapper">
+                    <span class="select-secondary__placeholder">
+                        Личный список
+                    </span>
+                    <select class="select-secondary__body" name="complex">
+                        <option placeholder value="all-room">Любой</option>
+                        <option value="room-1">Квартиры1</option>
+                        <option value="room-2">Квартиры2</option>
+                        <option value="room-3">Квартиры3</option>
+                    </select>
+                </div>
             </div>
             <div class="select-secondary" data-favorite-client-select>
-                <span class="select-secondary__placeholder">
-                    Выбрать клиента
-                </span>
-                <select class="select-secondary__body" name="complex">
-                    <option value=""></option>
-                    <option value="room-1">Квартиры1</option>
-                    <option value="room-2">Квартиры2</option>
-                    <option value="room-3">Квартиры3</option>
-                </select>
+                <div class="select-secondary__wrapper">
+                    <span class="select-secondary__placeholder">
+                        Выбрать клиента
+                    </span>
+                    <select class="select-secondary__body" name="complex">
+                        <option value=""></option>
+                        <option value="room-1">Квартиры1</option>
+                        <option value="room-2">Квартиры2</option>
+                        <option value="room-3">Квартиры3</option>
+                    </select>
+                </div>
             </div>
             <div class="select-secondary" hidden data-favorite-selection-select>
-                <span class="select-secondary__placeholder">
-                    Выбрать подбор
-                </span>
-                <select class="select-secondary__body" name="complex">
-                    <option placeholder value="all-room">Любой</option>
-                    <option value="room-1">Квартиры1</option>
-                    <option value="room-2">Квартиры2</option>
-                    <option value="room-3">Квартиры3</option>
-                </select>
+                <div class="select-secondary__wrapper">
+                    <span class="select-secondary__placeholder">
+                        Выбрать подбор
+                    </span>
+                    <select class="select-secondary__body" name="complex">
+                        <option placeholder value="all-room">Любой</option>
+                        <option value="room-1">Квартиры1</option>
+                        <option value="room-2">Квартиры2</option>
+                        <option value="room-3">Квартиры3</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
@@ -1450,56 +1462,256 @@
             <span>Закрыть</span>
         </button>
         <div class="popup__content popup-primary__content add-contact">
-            <h2 class="title-2">Дополнительный контакт</h2>
-
-            <div class="client-fixed__labels">
-                <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
+            <h2 class="title-2">Добавить контакт</h2>
+            <form action="#" class="add-contact__form">
+                <div class="input-text input-text--no-exp">
                     <label class="input-text__label">
                         <span>Фамилия</span>
                         <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
                     </label>
                 </div>
-                <div class="client-fixed__label client-fixed__label--name input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
+                <div class="add-contact__label--name input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
                     <label class="input-text__label">
                         <span>Имя</span>
                         <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
                     </label>
                 </div>
-                <div class="client-fixed__label input-text input-text--no-exp">
+                <div class="input-text input-text--no-exp">
                     <label class="input-text__label">
                         <span>Отчество</span>
                         <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
                     </label>
                 </div>
-                <div class="client-fixed__label client-fixed__label--tel input-text input-text--no-exp">
+                <div class="add-contact__label--tel input-text input-text--no-exp">
                     <label class="input-text__label">
                         <span>Номер телефона</span>
                         <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="" inputmode="text">
                     </label>
                 </div>
-            </div>
+                <div class="add-contact__type select-secondary">
+                    <div class="select-secondary__wrapper select-secondary--no-placeholder">
+                        <div class="select-secondary__wrapper">
+                            <span class="select-secondary__placeholder">
+                                Тип контакта
+                            </span>
+                            <select class="select-secondary__body" name="complex">
+                                <option placeholder value="all-room">Любой</option>
+                                <option value="room-1">Собственик</option>
+                                <option value="room-2">Опекун</option>
+                                <option value="room-3">Представитель</option>
+                                <option value="room-3">Риелтор</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-text input-text--only-number input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Доля (если есть)</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value placeholder="">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-reset btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-            <div class="select-secondary">
-                <span class="select-secondary__placeholder">
-                    Тип контакта
-                </span>
-                <select class="select-secondary__body" name="complex">
-                    <option placeholder value="all-room">Любой</option>
-                    <option value="room-1">Собственик</option>
-                    <option value="room-2">Опекун</option>
-                    <option value="room-3">Представитель</option>
-                    <option value="room-3">Риелтор</option>
-                </select>
-            </div>
-            <div class="client-fixed__label client-fixed__label--surname input-text input-text--no-exp" data-validate-required="" data-validate-min-length="2">
-                <label class="input-text__label">
-                    <span>Доля (если есть)</span>
-                    <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+
+<div class="popup popup-primary popup-primary--right popup-primary--add-contact">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="add-addit-contact">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content add-contact">
+            <h2 class="title-2">Добавить дополнительный контакт</h2>
+            <form action="#" class="add-contact__form">
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Фамилия</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="add-contact__label--name input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
+                    <label class="input-text__label">
+                        <span>Имя</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Отчество</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="add-contact__label--tel input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="" inputmode="text">
+                    </label>
+                </div>
+                <div class="add-contact__type select-secondary">
+                    <div class="select-secondary__wrapper select-secondary--no-placeholder">
+                        <div class="select-secondary__wrapper">
+                            <span class="select-secondary__placeholder">
+                                Тип контакта
+                            </span>
+                            <select class="select-secondary__body" name="complex">
+                                <option placeholder value="all-room">Любой</option>
+                                <option value="room-1">Собственик</option>
+                                <option value="room-2">Опекун</option>
+                                <option value="room-3">Представитель</option>
+                                <option value="room-3">Риелтор</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-text input-text--only-number input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Доля (если есть)</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value placeholder="">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-reset btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="popup popup-primary popup-primary--right popup-primary--create-deal">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="create-deal">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content create-deal">
+            <h2 class="title-2">Создать сделку</h2>
+            <form action="#" class="create-deal__form">
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Статус
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Контакт
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Объект
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Второй сотрудник
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Юрист
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Брокер
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Собственик</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Комиссия</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Доп. комиссия</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="select-secondary">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Валюта
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option value="room-1">Российский рубль</option>
+                            <option value="room-2">Опекун</option>
+                            <option value="room-3">Представитель</option>
+                            <option value="room-3">Риелтор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Дата Завершения сделки</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input input-calendar" value="" placeholder="">
+                    </label>
+                </div>
+                <label class="create-deal__textarea textarea-primary">
+                    <textarea class="input-reset textarea-primary__input" placeholder="Информация"></textarea>
                 </label>
-            </div>
-
-
-            <button type="button" class="btn btn-reset btn-primary">Сохранить</button>
+    
+                <button type="button" class="btn btn-reset btn-primary">Сохранить</button>
+            </form>
         </div>
     </div>
 </div>
@@ -1514,34 +1726,46 @@
             <span>Закрыть</span>
         </button>
         <div class="popup__content popup-primary__content create-agree">
-            <h2 class="title-2">Договор</h2>
-            <span>Дата начала (календарь)</span>
-            <span>Дата окончания (календарь)</span>
-            <div class="select-secondary">
-                <span class="select-secondary__placeholder">
-                    Тип договора
-                </span>
-                <select class="select-secondary__body" name="complex">
-                    <option placeholder value="all-room">Любой</option>
-                    <option value="room-1">Эксклюзивный</option>
-                    <option value="room-2">Стандартный</option>
-                </select>
-            </div>
-            <div class="input-text input-text--no-exp">
-                <label class="input-text__label">
-                    <span>Фиксированная комиссия</span>
-                    <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
-                </label>
-            </div>
-            <div class="input-text input-text--no-exp">
-                <label class="input-text__label">
-                    <span>Комиссия в %</span>
-                    <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
-                </label>
-            </div>
-
-
-            (все кроме комисий не обязательно)
+            <h2 class="create-agree__title title-2">Договор</h2>
+            <form action="#" class="create-agree__form">
+                <div class="input-text input-text--no-exp create-agree__form--date-one">
+                    <label class="input-text__label">
+                        <span>Дата начала</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input input-calendar" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp create-agree__form--date-two">
+                    <label class="input-text__label">
+                        <span>Дата окончания</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input input-calendar" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="create-agree__type select-secondary create-agree__form--type">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Тип договора
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="all-room">Любой</option>
+                            <option value="room-1">Эксклюзивный</option>
+                            <option value="room-2">Стандартный</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-text input-text--no-exp input-text--only-number">
+                    <label class="input-text__label">
+                        <span>Фиксированная комиссия</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" maxlength="4" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp input-text--only-number">
+                    <label class="input-text__label">
+                        <span>Комиссия в %</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" maxlength="4" value="" placeholder="">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-reset btn-primary create-agree__btn">Сохранить</button>
+            </form>
         </div>
     </div>
 </div>
@@ -2319,15 +2543,17 @@
                         <div class="filter__inner">
                             <div class="filter__row object-filter__row--1">
                                 <div class="filter__item select-secondary">
-                                    <span class="select-secondary__placeholder">
-                                        Корпус
-                                    </span>
-                                    <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Любой</option>
-                                        <option value="complex">Дом1</option>
-                                        <option value="complex2">Дом2</option>
-                                        <option value="complex3">Дом3</option>
-                                    </select>
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Корпус
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder>Любой</option>
+                                            <option value="complex">Дом1</option>
+                                            <option value="complex2">Дом2</option>
+                                            <option value="complex3">Дом3</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="filter__item filter__item--quantity-selection quantity-selection">
                                     <div class="quantity-selection__inner">
@@ -2444,15 +2670,17 @@
                                     </div>
                                 </div>
                                 <div class="filter__item select-secondary">
-                                    <span class="select-secondary__placeholder">
-                                        Редкие форматы
-                                    </span>
-                                    <select class="select-secondary__body" name="complex">
-                                        <option placeholder>Неважно</option>
-                                        <option value="complex">Редкие форматы1</option>
-                                        <option value="complex2">Редкие форматы2</option>
-                                        <option value="complex3">Редкие форматы3</option>
-                                    </select>
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Редкие форматы
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder>Неважно</option>
+                                            <option value="complex">Редкие форматы1</option>
+                                            <option value="complex2">Редкие форматы2</option>
+                                            <option value="complex3">Редкие форматы3</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="filter__item filter__item--checkboxes">
                                     <div class="checkbox-secondary">
@@ -7215,27 +7443,31 @@
                                             <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Введите название станции">
                                         </label>
                                         <div class="select-secondary">
-                                            <span class="select-secondary__placeholder">
-                                                До метро
-                                            </span>
-                                            <select class="select-secondary__body" name="complex">
-                                                <option placeholder value="all-room">Неважно</option>
-                                                <option value="room-1">Пешком</option>
-                                                <option value="room-2">На транспорте</option>
-                                            </select>
+                                            <div class="select-secondary__wrapper">
+                                                <span class="select-secondary__placeholder">
+                                                    До метро
+                                                </span>
+                                                <select class="select-secondary__body" name="complex">
+                                                    <option placeholder value="all-room">Неважно</option>
+                                                    <option value="room-1">Пешком</option>
+                                                    <option value="room-2">На транспорте</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="select-secondary">
-                                            <span class="select-secondary__placeholder">
-                                                Время
-                                            </span>
-                                            <select class="select-secondary__body" name="complex">
-                                                <option placeholder value="all-room">Неважно</option>
-                                                <option value="5">до 5мин.</option>
-                                                <option value="10">до 10мин.</option>
-                                                <option value="15">до 15мин.</option>
-                                                <option value="20">до 20мин.</option>
-                                                <option value="30">до 30мин.</option>
-                                            </select>
+                                            <div class="select-secondary__wrapper">
+                                                <span class="select-secondary__placeholder">
+                                                    Время
+                                                </span>
+                                                <select class="select-secondary__body" name="complex">
+                                                    <option placeholder value="all-room">Неважно</option>
+                                                    <option value="5">до 5мин.</option>
+                                                    <option value="10">до 10мин.</option>
+                                                    <option value="15">до 15мин.</option>
+                                                    <option value="20">до 20мин.</option>
+                                                    <option value="30">до 30мин.</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div data-spollers data-one-spoller class="search-area__items spollers">
@@ -21693,15 +21925,17 @@
                                     </div>
                                 </div>
                                 <div class="select-secondary">
-                                    <span class="select-secondary__placeholder">
-                                        Комплекс
-                                    </span>
-                                    <select class="select-secondary__body" name="complex">
-                                        <option placeholder value="all-room">Любой</option>
-                                        <option value="room-1">Квартиры1</option>
-                                        <option value="room-2">Квартиры2</option>
-                                        <option value="room-3">Квартиры3</option>
-                                    </select>
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Комплекс
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Квартиры1</option>
+                                            <option value="room-2">Квартиры2</option>
+                                            <option value="room-3">Квартиры3</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -23124,17 +23358,19 @@
                     </label>
                 </div>
                 <div class="select-secondary">
-                    <span class="select-secondary__placeholder">
-                        Выберите удобное время
-                    </span>
-                    <select class="select-secondary__body" name="complex">
-                        <option placeholder value="timeAll">Как можно скорее</option>
-                        <option value="time1">16:00 - 17:00</option>
-                        <option value="time1">17:00 - 18:00</option>
-                        <option value="time2">18:00 - 19:00</option>
-                        <option value="time3">20:00 - 21:00</option>
-                        <option value="time3">21:00 - 22:00</option>
-                    </select>
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Выберите удобное время
+                        </span>
+                        <select class="select-secondary__body" name="complex">
+                            <option placeholder value="timeAll">Как можно скорее</option>
+                            <option value="time1">16:00 - 17:00</option>
+                            <option value="time1">17:00 - 18:00</option>
+                            <option value="time2">18:00 - 19:00</option>
+                            <option value="time3">20:00 - 21:00</option>
+                            <option value="time3">21:00 - 22:00</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="book-consultation__screen-demonstration checkbox-secondary">
                     <input id="screen-demonstration" name="screen-demonstration" class="checkbox-secondary__input" type="checkbox" value="true">

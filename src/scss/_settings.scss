@@ -110,6 +110,20 @@ a {
             }
         }
     }
+
+    &.site-container--object-base-inner-2 {
+        .header-fixed {
+            &__list {
+                justify-content: start;
+            }
+            &__item{
+                &:not(:last-child){
+                    margin-right: 32px;
+                }
+            }
+        }
+    }
+
     @media (max-width:$desktop) {
         overflow: hidden;
     }

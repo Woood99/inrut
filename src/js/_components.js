@@ -27,11 +27,14 @@ import {
     validateCheckboxPrimary,
     bookConsultationValidate,
     clientFixedValidate,
+    createAgreeValidate,
+    addContactValidate,
     inputMask
 } from './components/formValidate';
 import {
-    calendarPrimary
-} from './components/calendar'
+    calendarPrimary,
+    calendarInput
+} from './components/calendar';
 import dropdown from './modules/dropdown';
 import dropdownItems from './modules/dropdownItems';
 import dropdownDown from './modules/dropdownDown';
@@ -114,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
     calendarPrimary('.home-services__calendar .calendar-primary', 'eventsCalendar.json', false);
+    calendarInput();
     controlCards();
     videoBlock();
     reviewModal();
@@ -145,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
     validateCheckboxPrimary('.object-not-popup__form', '.textarea-primary__input', '.object-not-popup__btn', '.checkbox-secondary__input');
     bookConsultationValidate();
     clientFixedValidate();
+    createAgreeValidate();
+    addContactValidate();
     inputMask();
     // ==================================================
 
