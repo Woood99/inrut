@@ -27185,6 +27185,21 @@ textarea.input-reset {
   -ms-flex-order: 3;
   order: 3;
 }
+.client .bid__container {
+  -ms-grid-columns: 1fr 26.9784172662%;
+  grid-template-columns: 1fr 26.9784172662%;
+}
+.client .bid-user {
+  padding: 32px 16px;
+}
+.client .bid-user__avatar {
+  --size: 95px;
+}
+@media (min-width: 1145px) {
+  .client .bid-user::before, .client .bid-user::after {
+    height: 19.875%;
+  }
+}
 .client__element {
   border-radius: 12px;
   padding: 32px 24px;
@@ -27217,9 +27232,55 @@ textarea.input-reset {
   border-radius: 0;
   background-color: transparent;
 }
-.client .bid-user__btn {
-  margin-top: 16px;
+.client__element--sale .main-table__type {
+  margin: 0 24px;
+}
+.client__element--sale .main-table__type span:first-child {
+  margin: 0;
+}
+.client__element--sale .client-info__address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.client__element--sale .client-info__address svg {
+  stroke: var(--primaryTwo);
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke-width: 1.5px;
+}
+.client__element--sale .client-info__name-geo span {
+  display: block;
+}
+.client__element--sale .client-info__name-geo span:nth-child(1) {
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.client__element--sale .client-info__name-geo span:nth-child(2) {
+  color: var(--primary600);
+  font-size: 14px;
+  line-height: 1.2666666667;
+}
+.client__element--sale .client-info__type {
+  background-color: var(--primary200);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+.client .bid-user__btns {
   width: 100%;
+  margin-top: 32px;
+}
+.client .bid-user__btn {
+  margin: 0;
+  width: 100%;
+}
+.client .bid-user__btn:not(:last-child) {
+  margin-bottom: 16px;
 }
 .client .bid__sidebar {
   -ms-grid-column: 2;

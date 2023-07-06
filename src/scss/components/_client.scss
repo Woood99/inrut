@@ -9,6 +9,26 @@
         order: 3;
     }
 
+    .bid__container {
+        grid-template-columns: 1fr percent(300, 1112);
+    }
+
+    .bid-user {
+        padding: 32px 16px;
+
+        &__avatar {
+            --size: 95px;
+        }
+
+        @media (min-width:$desktop-min) {
+
+            &::before,
+            &::after {
+                height: percent(79.5, 400);
+            }
+        }
+    }
+
     &__element {
         border-radius: 12px;
         padding: 32px 24px;
@@ -30,20 +50,77 @@
         }
 
 
-        .spollers__body{
+        .spollers__body {
             margin-top: 24px;
         }
-        .bid__body{
+
+        .bid__body {
             padding: 0;
             box-shadow: none;
             border-radius: 0;
             background-color: transparent;
         }
+
+        &--sale {
+            .main-table__type {
+                margin: 0 24px;
+                span{
+                    &:first-child{
+                        margin: 0;
+                    }
+                }
+            }
+
+            .client-info {
+                &__address {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        stroke: var(--primaryTwo);
+                        width: 14px;
+                        height: 14px;
+                        fill: none;
+                        stroke-width: 1.5px;
+                    }
+                }
+
+                &__name-geo {
+                    span {
+                        display: block;
+                        &:nth-child(1) {
+                            font-weight: 500;
+                            color: var(--dark);
+                            margin-bottom: 8px;
+                        }
+                        &:nth-child(2){
+                            color: var(--primary600);
+                            font-size: 14px;
+                            line-height: 1.2666666667;
+                        }
+                    }
+                }
+                &__type{
+                    background-color: var(--primary200);
+                    padding: 4px 12px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+
+    .bid-user__btns {
+        width: 100%;
+        margin-top: 32px;
     }
 
     .bid-user__btn {
-        margin-top: 16px;
+        margin: 0;
         width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
     }
 
     .bid__sidebar {
