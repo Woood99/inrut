@@ -89,10 +89,24 @@
                 }
             }
             .object-info-secondary{
+                &__name-price{
+                    span{
+                        display: block;
+                        &:nth-child(1){
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                        }
+                        &:nth-child(2){}
+                    }
+                }
                 &__result{
+                    display: flex;
+                    align-items: center;
                     svg{
-                        width: 20px;
-                        height: 20px;
+                        width: 16px;
+                        height: 16px;
+                        fill: var(--gray);
+                        margin-right: 6px;
                     }
                 }
             }
