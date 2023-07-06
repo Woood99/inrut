@@ -12,7 +12,6 @@
     .bid__container {
         grid-template-columns: 1fr percent(300, 1112);
     }
-
     .bid-user {
         padding: 32px 16px;
 
@@ -60,7 +59,19 @@
             border-radius: 0;
             background-color: transparent;
         }
-
+        &--purchase{
+            .tabs-primary{
+                margin-top: 32px;
+                &__container{
+                    padding: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    .main-table{
+                        padding: 0;
+                    }
+                }
+            }
+        }
         &--sale {
             .main-table__type {
                 margin: 0 24px;
@@ -106,6 +117,10 @@
                     border-radius: 8px;
                 }
             }
+        }
+        .bid__list{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
         }
     }
 
