@@ -101,13 +101,14 @@ popup({
         // ... ?
     },
     isClose: (settingsModal) => {
-      
+
     }
 }, 'favorite-two');
-popup(null,'add-contact');
-popup(null,'add-addit-contact');
-popup(null,'create-agree');
-popup(null,'create-document');
-popup(null,'create-deal');
+popup(null, 'add-contact');
+popup(null, 'add-addit-contact');
+popup(null, 'create-agree');
+popup(null, 'create-document');
+popup(null, 'create-deal');
+popup(null, 'edit-user');
 
 // ========================================================================================

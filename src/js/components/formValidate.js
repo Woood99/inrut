@@ -385,6 +385,64 @@ export const createDealValidate = () => {
         if (!validate()) e.preventDefault();
     })
 }
+export const editUserValidate = () => {
+    const form = document.querySelector('.edit-user__form');
+    if (!form) return;
+    let formEventInput = false;
+    const nameLabel = form.querySelector('.edit-user__label--name');
+    const telLabel = form.querySelector('.edit-user__label--tel');
+
+    const type = form.querySelector('.edit-user__type')
+
+    const nameInput = nameLabel.querySelector('input');
+    const telInput = telLabel.querySelector('input');
+
+    [nameInput, telInput].forEach(el => {
+        el.addEventListener('input', () => {
+            if (formEventInput) validate();
+        })
+    })
+    type.addEventListener('change', () => {
+        if (formEventInput) validate();
+    })
+
+    new AirDatepicker(form.querySelector('.edit-user__form--date input'), {
+        autoClose: true,
+        isMobile: true,
+        onSelect: (fd) => {
+            const inputText = dateInput.closest('.input-text')
+            fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+        }
+    })
+
+    // type.addEventListener('change', () => {
+    //     if (formEventInput) validate();
+    // })
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+        validateRemoveError(nameLabel);
+        validateRemoveError(telLabel);
+        validateRemoveError(type);
+
+        if (!validateCreateErrorName(nameLabel, nameInput)) {
+            result = false;
+        }
+        if (!validateCreateErrorTel(telLabel, telInput, validateTextMap.tel)) {
+            result = false;
+        }
+        if (!validateCreeateErrorSelect(type, 'Выберите тип клиента')) {
+            result = false;
+        }
+
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+}
 export const inputMask = () => {
     const inputs = document.querySelectorAll('.input-phone-mask');
     const inputMask = new Inputmask('+7 999 999-99-99');

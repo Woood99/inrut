@@ -2450,6 +2450,111 @@
     </div>
 </div>
 
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--edit-user is-open">
+    <div class="popup__container popup-primary__container popup-open" role="dialog" aria-modal="true" data-popup-target="edit-user">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content edit-user">
+            <h2 class="title-2">Редактировать клиента</h2>
+            <form action="#" class="edit-user__form">
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Фамилия</span>
+                        <input type="text" name="Фамилия" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="edit-user__label--name input-text input-text--no-exp" data-validate-required data-validate-min-length="2">
+                    <label class="input-text__label">
+                        <span>Имя</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Отчество</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="select-secondary select-secondary--city _selected">
+                    <div class="select-secondary__wrapper">
+                        <span class="select-secondary__placeholder">
+                            Город
+                        </span>
+                        <select class="select-secondary__body" name="city">
+                            <option value="apartments">Санкт-Петербург</option>
+                            <option value="apartments2">Волгоград</option>
+                            <option value="apartments3">Москва</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="edit-user__label--tel input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="" inputmode="text">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp">
+                    <label class="input-text__label">
+                        <span>Доп. номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="" inputmode="text">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp edit-user__form--date">
+                    <label class="input-text__label">
+                        <span>Дата рождения</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="edit-user__type select-secondary">
+                    <div class="select-secondary__wrapper select-secondary--no-placeholder">
+                        <div class="select-secondary__wrapper">
+                            <span class="select-secondary__placeholder">
+                                Тип
+                            </span>
+                            <select class="select-secondary__body" name="complex">
+                                <option placeholder value="all-room">Любой</option>
+                                <option value="room-1">Продавец</option>
+                                <option value="room-2">Покупатель</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-user__tags select-multiple">
+                    <span class="select-multiple__main-placeholder">
+                        Теги
+                    </span>
+                    <select class="select-multiple__body" multiple name="tags">
+                        <option placeholder>Неважно</option>
+                        <option value="tags1">
+                            Семейная ипотека
+                        </option>
+                        <option value="tags2">Ипотека с гос.поддержкой</option>
+                        <option value="tags3">Комплекс1</option>
+                        <option value="tags4">Комплекс2</option>
+                        <option value="tags5">Комплекс3</option>
+                        <option value="tags6">Комплекс4</option>
+                        <option value="tags7">Ипотека другая</option>
+                    </select>
+                </div>
+                <label class="edit-user__textarea textarea-primary">
+                    <textarea class="input-reset textarea-primary__input" placeholder="Информация"></textarea>
+                </label>
+                <button type="submit" class="btn btn-reset btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <div class="popup popup-primary popup-primary--right popup-primary--create-deal">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="create-deal">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
@@ -23336,11 +23441,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
 

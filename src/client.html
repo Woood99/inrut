@@ -37,7 +37,7 @@
                             </svg>
                             <span>Удалить</span>
                         </button>
-                        <button type="button" class="btn btn-reset top-page-inner-title__btn edit-btn" title="Редактировать">
+                        <button type="button" class="btn btn-reset top-page-inner-title__btn edit-btn" data-popup-path="edit-user" title="Редактировать">
                             <svg>
                                 <use xlink:href="img/sprite.svg#pencil"></use>
                             </svg>
@@ -74,6 +74,14 @@
                                 <span>Доп. телефон</span>
                                 <span>89062522120</span>
                             </li>
+                            <li class="bid__item">
+                                <span>Город</span>
+                                <span>Волгоград</span>
+                            </li>
+                            <li class="bid__item">
+                                <span>Дата рождения</span>
+                                <span>22.01.2012</span>
+                            </li>
                         </ul>
                         <p class="bid__descr">
                             Ищет 3 ком. квартиру, г. Москва: Инком недвижимость (2011 – 2012) Простор Недвижимость (2015 – 2017) НДВ Супермарке недвижимости (2017 – 2019) ИП
@@ -96,37 +104,50 @@
                                                 <h2 class="bid__title title-2">
                                                     Описание заявки
                                                 </h2>
+                                                <button type="button" class="btn btn-reset top-page-inner-title__btn edit-btn" title="Редактировать">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#pencil"></use>
+                                                    </svg>
+                                                    <span>Редактировать</span>
+                                                </button>
                                             </div>
                                             <ul class="bid__list list-reset">
                                                 <li class="bid__item">
-                                                    <span>Дата заявки</span>
-                                                    <span>10.01.2023г.</span>
-                                                </li>
-                                                <li class="bid__item">
-                                                    <span>Тип объекта</span>
-                                                    <span>Квартира</span>
+                                                    <span>Город</span>
+                                                    <span>Волгоград</span>
                                                 </li>
                                                 <li class="bid__item">
                                                     <span>Бюджет</span>
                                                     <span>3 500 000 ₽ </span>
                                                 </li>
                                                 <li class="bid__item">
-                                                    <span>Вид расчёта</span>
-                                                    <span>12</span>
+                                                    <span>Тип объекта</span>
+                                                    <span>Квартира</span>
+                                                </li>
+                                                <li class="bid__item">
+                                                    <span>Этаж до</span>
+                                                    <span>10</span>
                                                 </li>
                                                 <li class="bid__item">
                                                     <span>Кол-во комнат</span>
                                                     <span>3</span>
                                                 </li>
                                                 <li class="bid__item">
-                                                    <span>Площадь общая от</span>
-                                                    <span>54 м²</span>
+                                                    <span>Этаж от</span>
+                                                    <span>10</span>
                                                 </li>
                                                 <li class="bid__item">
                                                     <span>Площадь кухни от</span>
                                                     <span>54 м²</span>
                                                 </li>
-
+                                                <li class="bid__item">
+                                                    <span>Вид расчёта</span>
+                                                    <span>Наличные</span>
+                                                </li>
+                                                <li class="bid__item">
+                                                    <span>Площадь общая от</span>
+                                                    <span>54 м²</span>
+                                                </li>
                                                 <li class="bid__item">
                                                     <span>ЖК</span>
                                                     <span>
@@ -159,7 +180,7 @@
                                         </div>
                                         <div class="tabs-primary">
                                             <h2 class="tabs-primary__title title-2">
-                                              Подбор недвижимости
+                                                Подбор недвижимости
                                             </h2>
 
                                             <div data-tabs class="tabs-primary__inner">
@@ -177,13 +198,83 @@
 
                                                             <div class="main-table">
                                                                 <div class="main-table__table">
+                                                                    <div class="main-table__type" style="grid-template-columns: 46% 14% 22%;">
+                                                                        <span>Объект</span>
+                                                                        <span>Источник</span>
+                                                                        <span>Результат</span>
+                                                                    </div>
+                                                                    <div class="main-table__list">
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 53% 1fr max-content 35px;">
+                                                                            <div class="object-info-secondary__name-price">
+                                                                                <span>
+                                                                                    1-комн. квартира, &nbsp; 54 м², 12/12
+                                                                                    эт., &nbsp; 3 000 000 ₽
+                                                                                </span>
+                                                                                <span>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <span class="object-info-secondary__source">Своя база</span>
+                                                                            <div class="object-info-secondary__result">
+                                                                                <span>Без результата</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset top-page-inner-title__btn delete-btn" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
+                                                                        </a>
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 53% 1fr max-content 35px;">
+                                                                            <div class="object-info-secondary__name-price">
+                                                                                <span>
+                                                                                    1-комн. квартира, &nbsp; 54 м², 12/12
+                                                                                    эт., &nbsp; 3 000 000 ₽
+                                                                                </span>
+                                                                                <span>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <span class="object-info-secondary__source">Своя база</span>
+                                                                            <div class="object-info-secondary__result">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#like"></use>
+                                                                                </svg>
+                                                                                <span>Хочу на просмотр</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset top-page-inner-title__btn delete-btn" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
+                                                                        </a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="display: flex; gap: 24px;">
+                                                                <button type="button" class="btn btn-reset btn-primary" data-popup-path="share-app" style="margin-top: 24px;">
+                                                                    Ссылка
+                                                                </button>
+                                                                <button type="button" class="btn btn-reset btn-secondary" style="margin-top: 24px;">
+                                                                    Завершить подбор
+                                                                </button>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="tabs__body" hidden>
+                                                            <div class="main-table">
+                                                                <div class="main-table__table">
                                                                     <div class="main-table__type" style="grid-template-columns: 53% 1fr max-content;">
                                                                         <span>Объект</span>
                                                                         <span>Источник</span>
                                                                         <span>Результат</span>
                                                                     </div>
                                                                     <div class="main-table__list">
-                                                                        <a href="#" class="main-table__item object-info-secondary" style="grid-template-columns: 53% 1fr max-content;">
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 53% 1fr max-content;">
                                                                             <div class="object-info-secondary__name-price">
                                                                                 <span>
                                                                                     1-комн. квартира, &nbsp; 54 м², 12/12
@@ -201,7 +292,8 @@
                                                                                 <span>Не подходит</span>
                                                                             </div>
                                                                         </a>
-                                                                        <a href="#" class="main-table__item object-info-secondary" style="grid-template-columns: 53% 1fr max-content;">
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 53% 1fr max-content;">
                                                                             <div class="object-info-secondary__name-price">
                                                                                 <span>
                                                                                     1-комн. квартира, &nbsp; 54 м², 12/12
@@ -219,7 +311,8 @@
                                                                                 <span>Не подходит</span>
                                                                             </div>
                                                                         </a>
-                                                                        <a href="#" class="main-table__item object-info-secondary" style="grid-template-columns: 53% 1fr max-content;">
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 53% 1fr max-content;">
                                                                             <div class="object-info-secondary__name-price">
                                                                                 <span>
                                                                                     1-комн. квартира, &nbsp; 54 м², 12/12
@@ -241,11 +334,6 @@
 
                                                                 </div>
                                                             </div>
-
-
-                                                        </div>
-                                                        <div class="tabs__body" hidden>
-                                                            123
                                                         </div>
                                                     </div>
                                                 </div>

@@ -4316,6 +4316,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createAgreeValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.addContactValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createDealValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.editUserValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.inputMask)();
   // ==================================================
 
@@ -4478,6 +4479,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-agree');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-document');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-deal');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-user');
 
 // ========================================================================================
 
@@ -6272,6 +6274,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clientFixedValidate": () => (/* binding */ clientFixedValidate),
 /* harmony export */   "createAgreeValidate": () => (/* binding */ createAgreeValidate),
 /* harmony export */   "createDealValidate": () => (/* binding */ createDealValidate),
+/* harmony export */   "editUserValidate": () => (/* binding */ editUserValidate),
 /* harmony export */   "inputMask": () => (/* binding */ inputMask),
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
 /* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
@@ -6624,6 +6627,57 @@ const createDealValidate = () => {
     if (!dateInput.value) {
       result = false;
       validateCreateError(date, validateTextMap.date);
+    }
+    return result;
+  }
+  form.addEventListener('submit', e => {
+    if (!validate()) e.preventDefault();
+  });
+};
+const editUserValidate = () => {
+  const form = document.querySelector('.edit-user__form');
+  if (!form) return;
+  let formEventInput = false;
+  const nameLabel = form.querySelector('.edit-user__label--name');
+  const telLabel = form.querySelector('.edit-user__label--tel');
+  const type = form.querySelector('.edit-user__type');
+  const nameInput = nameLabel.querySelector('input');
+  const telInput = telLabel.querySelector('input');
+  [nameInput, telInput].forEach(el => {
+    el.addEventListener('input', () => {
+      if (formEventInput) validate();
+    });
+  });
+  type.addEventListener('change', () => {
+    if (formEventInput) validate();
+  });
+  new air_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"](form.querySelector('.edit-user__form--date input'), {
+    autoClose: true,
+    isMobile: true,
+    onSelect: fd => {
+      const inputText = dateInput.closest('.input-text');
+      fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+    }
+  });
+
+  // type.addEventListener('change', () => {
+  //     if (formEventInput) validate();
+  // })
+
+  function validate() {
+    let result = true;
+    formEventInput = true;
+    validateRemoveError(nameLabel);
+    validateRemoveError(telLabel);
+    validateRemoveError(type);
+    if (!validateCreateErrorName(nameLabel, nameInput)) {
+      result = false;
+    }
+    if (!validateCreateErrorTel(telLabel, telInput, validateTextMap.tel)) {
+      result = false;
+    }
+    if (!validateCreeateErrorSelect(type, 'Выберите тип клиента')) {
+      result = false;
     }
     return result;
   }
