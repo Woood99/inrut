@@ -4198,6 +4198,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_recordViewing__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/recordViewing */ "./src/js/components/recordViewing.js");
 /* harmony import */ var _components_wallet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/wallet */ "./src/js/components/wallet.js");
 /* harmony import */ var _components_favorites__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/favorites */ "./src/js/components/favorites.js");
+/* harmony import */ var _components_clientPage__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/clientPage */ "./src/js/components/clientPage.js");
+
 
 
 
@@ -4304,6 +4306,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoritesPage)();
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoriteChoicePopup)();
+  (0,_components_clientPage__WEBPACK_IMPORTED_MODULE_35__.clientPage)();
 
   // ==================================================
 
@@ -5427,6 +5430,42 @@ const city = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (city);
+
+/***/ }),
+
+/***/ "./src/js/components/clientPage.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/clientPage.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "clientPage": () => (/* binding */ clientPage)
+/* harmony export */ });
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+
+const clientPage = () => {
+  const btnMore = document.querySelector('[data-client-more-btn]');
+  const contentMore = document.querySelectorAll('[data-client-more-content');
+  if (!btnMore || contentMore.length === 0) return;
+  btnMore.addEventListener('click', () => {
+    if (!btnMore.classList.contains('_active')) {
+      contentMore.forEach(el => {
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideDown)(el);
+      });
+      btnMore.classList.add('_active');
+      btnMore.querySelector('span').textContent = 'Скрыть';
+    } else {
+      contentMore.forEach(el => {
+        (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_0__._slideUp)(el);
+      });
+      btnMore.classList.remove('_active');
+      btnMore.querySelector('span').textContent = 'Показать полностью';
+    }
+  });
+};
 
 /***/ }),
 

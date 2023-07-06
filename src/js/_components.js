@@ -68,6 +68,9 @@ import {
     favoritesPage,
     favoriteChoicePopup
 } from './components/favorites';
+import {
+    clientPage
+} from './components/clientPage';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -140,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wallet();
     favoritesPage();
     favoriteChoicePopup();
+    clientPage();
 
     // ==================================================
 

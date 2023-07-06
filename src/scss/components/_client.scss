@@ -1,4 +1,31 @@
 .client {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 238px);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+    &__more{
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        color: var(--blue);
+        svg{
+            width: 20px;
+            height: 17px;
+            fill: currentColor;
+            margin-left: 8px;
+            transition: transform $transitionSpeedFast $transitionFunction;
+        }
+        &._active{
+            svg{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    .bid__import{
+        margin-top: 32px;
+    }
     .bid__body {
         align-self: start;
     }

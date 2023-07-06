@@ -27200,6 +27200,42 @@ textarea.input-reset {
   max-width: 320px;
 }
 
+.client__list {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 238px);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+.client__more {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--blue);
+}
+.client__more svg {
+  width: 20px;
+  height: 17px;
+  fill: currentColor;
+  margin-left: 8px;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.client__more._active svg {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.client .bid__import {
+  margin-top: 32px;
+}
 .client .bid__body {
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
