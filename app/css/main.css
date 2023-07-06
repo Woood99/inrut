@@ -27203,6 +27203,7 @@ textarea.input-reset {
 .client__element {
   background-color: var(--white);
   border-radius: 12px;
+  padding-top: 24px;
 }
 .client__element:not(:last-child) {
   margin-bottom: 16px;
@@ -27211,6 +27212,7 @@ textarea.input-reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -27222,7 +27224,6 @@ textarea.input-reset {
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
-  width: 100%;
 }
 .client__element .spollers__title svg {
   width: 24px;
@@ -27235,6 +27236,8 @@ textarea.input-reset {
 }
 .client__element .spollers__title._spoller-active {
   background-color: var(--stand-bg);
+  margin: 0 24px;
+  width: calc(100% - 48px);
 }
 .client__element .spollers__title._spoller-active svg {
   -webkit-transform: rotate(-180deg);
@@ -27268,6 +27271,9 @@ textarea.input-reset {
 .client__element--purchase .main-table__type span:first-child {
   margin: 0;
 }
+.client__element--purchase .object-info-secondary {
+  font-size: 14px;
+}
 .client__element--purchase .object-info-secondary__name-price span {
   display: block;
 }
@@ -27286,7 +27292,7 @@ textarea.input-reset {
 .client__element--purchase .object-info-secondary__result svg {
   width: 16px;
   height: 16px;
-  fill: var(--gray);
+  fill: var(--blue);
   margin-right: 6px;
 }
 .client__element--sale .main-table__type {
