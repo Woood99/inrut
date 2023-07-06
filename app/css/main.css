@@ -11201,6 +11201,11 @@ textarea.input-reset {
 .card-primary__info--note .secondary-tooltip__content span {
   color: var(--primaryTwo);
 }
+.card-primary__info--delete svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--red);
+}
 .card-primary__info .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27236,6 +27241,12 @@ textarea.input-reset {
 .client .bid__import {
   margin-top: 32px;
 }
+.client .bid__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
 .client .bid__body {
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
@@ -27329,6 +27340,53 @@ textarea.input-reset {
   border-radius: 0;
   background-color: transparent;
 }
+.client__element .card-primary__info--new {
+  right: auto;
+  left: 15px;
+  font-size: 10px;
+}
+.client__element .card-primary__name {
+  font-size: 12px;
+}
+.client__element .card-primary__address-one {
+  font-size: 10px;
+}
+.client__element .card-primary__content {
+  padding: 16px;
+}
+.client__element .card-primary__price-old span:nth-child(1) {
+  font-size: 12px;
+}
+.client__element .card-primary__price-old span:nth-child(2) {
+  font-size: 10px;
+}
+.client__element .card-primary__price-new span:nth-child(1) {
+  font-size: 15px;
+}
+.client__element .card-primary__bottom {
+  margin-top: auto;
+  border-top: 1px solid var(--primary100);
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.client__element .card-primary__bottom > div span {
+  font-size: 12px;
+  display: block;
+}
+.client__element .card-primary__bottom > div span:nth-child(1) {
+  font-weight: 500;
+}
+.client__element .card-primary__bottom > div span:nth-child(2) {
+  color: var(--primaryTwo);
+}
+.client__element .card-primary__bottom > div:not(:last-child) {
+  margin-bottom: 4px;
+}
 .client__element--purchase .tabs-primary {
   margin-top: 32px;
 }
@@ -27339,6 +27397,14 @@ textarea.input-reset {
 }
 .client__element--purchase .tabs-primary__container .main-table {
   padding: 0;
+}
+.client__element--purchase .bid__start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+.client__element--purchase .bid__start .bid__title {
+  margin-right: auto;
 }
 .client__element--purchase .main-table__type {
   margin: 0 24px;
@@ -27376,12 +27442,6 @@ textarea.input-reset {
 .client__element--purchase .object-info-secondary:nth-child(2) {
   font-size: 12px;
 }
-.client__element--sale .main-table__type {
-  margin: 0 24px;
-}
-.client__element--sale .main-table__type span:first-child {
-  margin: 0;
-}
 .client__element--sale .client-info__address {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27415,11 +27475,12 @@ textarea.input-reset {
   padding: 4px 12px;
   border-radius: 8px;
 }
-.client__element .bid__list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+.client__element--sale .edit-btn {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
 }
 .client .bid-user__btns {
   width: 100%;

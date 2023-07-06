@@ -37,12 +37,6 @@
                             </svg>
                             <span>Удалить</span>
                         </button>
-                        <button type="button" class="btn btn-reset top-page-inner-title__btn edit-btn" data-popup-path="edit-user" title="Редактировать">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#pencil"></use>
-                            </svg>
-                            <span>Редактировать</span>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -53,9 +47,12 @@
                             <h2 class="bid__title title-2">
                                 Информация
                             </h2>
-                            <time class="bid__time" datetime="2023-01-10">
-                                Создано 10.01.2023г.
-                            </time>
+                            <button type="button" class="btn btn-reset edit-btn" data-popup-path="edit-user" title="Редактировать">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#pencil"></use>
+                                </svg>
+                                <span>Редактировать</span>
+                            </button>
                         </div>
                         <ul class="bid__list list-reset">
                             <li class="bid__item">
@@ -63,24 +60,24 @@
                                 <span>Покупатель, продавец</span>
                             </li>
                             <li class="bid__item">
-                                <span>ФИО</span>
-                                <span>Иванов Иван Иванович</span>
-                            </li>
-                            <li class="bid__item">
                                 <span>Телефон</span>
                                 <span>89062522121</span>
+                            </li>
+                            <li class="bid__item">
+                                <span>ФИО</span>
+                                <span>Иванов Иван Иванович</span>
                             </li>
                             <li class="bid__item">
                                 <span>Доп. телефон</span>
                                 <span>89062522120</span>
                             </li>
                             <li class="bid__item">
-                                <span>Город</span>
-                                <span>Волгоград</span>
-                            </li>
-                            <li class="bid__item">
                                 <span>Дата рождения</span>
                                 <span>22.01.2012</span>
+                            </li>
+                            <li class="bid__item">
+                                <span>Город</span>
+                                <span>Волгоград</span>
                             </li>
                         </ul>
                         <p class="bid__descr">
@@ -95,7 +92,7 @@
                             <div data-spollers class="spollers">
                                 <div class="spollers__item">
                                     <button type="button" data-spoller class="btn btn-reset spollers__title">
-                                        <span class="title-3">Покупка</span>
+                                        <span class="title-3">Подбор на покупку</span>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
@@ -106,11 +103,23 @@
                                                 <h2 class="bid__title title-2">
                                                     Описание заявки
                                                 </h2>
-                                                <button type="button" class="btn btn-reset top-page-inner-title__btn edit-btn" title="Редактировать">
+                                                <button type="button" class="btn btn-reset edit-btn" title="Редактировать">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#pencil"></use>
                                                     </svg>
                                                     <span>Редактировать</span>
+                                                </button>
+                                                <button type="button" class="btn btn-reset delete-btn" title="Удалить">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#trash"></use>
+                                                    </svg>
+                                                    <span>Удалить</span>
+                                                </button>
+                                                <button type="button" class="btn btn-reset edit-btn" title="Создать новый подбор">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#pencil"></use>
+                                                    </svg>
+                                                    <span>Создать новый подбор</span>
                                                 </button>
                                             </div>
                                             <ul class="bid__list list-reset">
@@ -165,12 +174,6 @@
                                                 материнский
                                                 капитал. Ипотека без первоначальный взноса.
                                             </p>
-                                            <button class="btn btn-reset client__more" data-client-more-btn>
-                                                <span>Показать полностью</span>
-                                                <svg>
-                                                  <use xlink:href="img/sprite.svg#check"></use>
-                                                </svg>
-                                            </button>
                                             <div class="bid__import bid-import" hidden data-client-more-content>
                                                 <h2 class="bid-import__title title-2">
                                                     Важные детали в поиске объекта
@@ -276,12 +279,17 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <button class="btn btn-reset client__more" data-client-more-btn>
+                                                <span>Показать полностью</span>
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#check"></use>
+                                                </svg>
+                                            </button>
                                         </div>
                                         <div class="tabs-primary">
                                             <h2 class="tabs-primary__title title-2">
                                                 Подбор недвижимости
                                             </h2>
-
                                             <div data-tabs class="tabs-primary__inner">
                                                 <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                                                     <button type="button" class="btn btn-reset tabs__title _tab-active">
@@ -330,6 +338,7 @@
                                                                             <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                                                             <div class="card-primary__info">
                                                                                 <span class="card-primary__info--new">Новое</span>
+
                                                                             </div>
                                                                         </div>
                                                                         <div class="card-primary__content">
@@ -355,6 +364,17 @@
                                                                                     <span>(94 742 ₽/м²)</span>
                                                                                 </span>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="card-primary__bottom">
+                                                                            <div>
+                                                                                <span>Источник</span>
+                                                                                <span>Своя база</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
                                                                         </div>
                                                                     </a>
                                                                 </article>
@@ -393,6 +413,11 @@
                                                                             <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                                                             <div class="card-primary__info">
                                                                                 <span class="card-primary__info--new">Новое</span>
+                                                                                <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                    </svg>
+                                                                                </button>
                                                                             </div>
                                                                         </div>
                                                                         <div class="card-primary__content">
@@ -418,6 +443,17 @@
                                                                                     <span>(94 742 ₽/м²)</span>
                                                                                 </span>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="card-primary__bottom">
+                                                                            <div>
+                                                                                <span>Источник</span>
+                                                                                <span>Своя база</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
                                                                         </div>
                                                                     </a>
                                                                 </article>
@@ -456,6 +492,11 @@
                                                                             <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                                                             <div class="card-primary__info">
                                                                                 <span class="card-primary__info--new">Новое</span>
+                                                                                <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                    </svg>
+                                                                                </button>
                                                                             </div>
                                                                         </div>
                                                                         <div class="card-primary__content">
@@ -481,6 +522,17 @@
                                                                                     <span>(94 742 ₽/м²)</span>
                                                                                 </span>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="card-primary__bottom">
+                                                                            <div>
+                                                                                <span>Источник</span>
+                                                                                <span>Своя база</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
                                                                         </div>
                                                                     </a>
                                                                 </article>
@@ -499,130 +551,166 @@
                                                         <div class="tabs__body" hidden>
                                                             <div class="client__list">
                                                                 <article class="card-primary">
-                                                                <a href="#" class="card-primary__container">
-                                                                    <div class="card-primary__top">
-                                                                        <div class="card-primary__images">
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-6.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
+                                                                    <a href="#" class="card-primary__container">
+                                                                        <div class="card-primary__top">
+                                                                            <div class="card-primary__images">
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-6.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-7.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-8.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-7.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-8.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
+                                                                            <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
+                                                                            <div class="card-primary__info">
+                                                                                <div class="row">
+                                                                                    <span class="card-primary__info--dislike">
+                                                                                        <svg>
+                                                                                            <use xlink:href="img/sprite.svg#dislike"></use>
+                                                                                        </svg>
+                                                                                    </span>
+                                                                                    <span class="card-primary__info--comment">
+                                                                                        <svg>
+                                                                                            <use xlink:href="img/sprite.svg#comment"></use>
+                                                                                        </svg>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
-                                                                        <div class="card-primary__info">
-                                                                            <span class="card-primary__info--new">Новое</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-primary__content">
-                                                                        <h3 class="card-primary__name title-4">
-                                                                            1-комн. квартира, 54 м², 12/12 эт.
-                                                                        </h3>
-                                                                        <div class="card-primary__address">
-                                                                            <span class="card-primary__address--one">ЖК
-                                                                                Вознесенский</span>
-                                                                            <span class="card-primary__address--two">
-                                                                                Краснодар, ул.Карла-Маркса., 234
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="card-primary__price">
-                                                                            <span class="card-primary__price-old">
-                                                                                <span>
-                                                                                    <span>3 000 000 ₽</span>
+                                                                        <div class="card-primary__content">
+                                                                            <h3 class="card-primary__name title-4">
+                                                                                1-комн. квартира, 54 м², 12/12 эт.
+                                                                            </h3>
+                                                                            <div class="card-primary__address">
+                                                                                <span class="card-primary__address--two">
+                                                                                    Краснодар,
+                                                                                    ул.Карла-Маркса., 234
                                                                                 </span>
-                                                                                <span>-300 000 ₽</span>
-                                                                            </span>
-                                                                            <span class="card-primary__price-new">
-                                                                                <span class="title-3">2 897 000 ₽</span>
-                                                                                <span>(94 742 ₽/м²)</span>
-                                                                            </span>
+                                                                            </div>
+                                                                            <div class="card-primary__price">
+                                                                                <span class="card-primary__price-old">
+                                                                                    <span>
+                                                                                        <span>3 000 000 ₽</span>
+                                                                                    </span>
+                                                                                    <span>-300 000 ₽</span>
+                                                                                </span>
+                                                                                <span class="card-primary__price-new">
+                                                                                    <span class="title-3">2 897 000 ₽</span>
+                                                                                    <span>(94 742 ₽/м²)</span>
+                                                                                </span>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </a>
+                                                                        <div class="card-primary__bottom">
+                                                                            <div>
+                                                                                <span>Источник</span>
+                                                                                <span>Своя база</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
+                                                                        </div>
+                                                                    </a>
                                                                 </article>
                                                                 <article class="card-primary">
-                                                                <a href="#" class="card-primary__container">
-                                                                    <div class="card-primary__top">
-                                                                        <div class="card-primary__images">
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-6.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
+                                                                    <a href="#" class="card-primary__container">
+                                                                        <div class="card-primary__top">
+                                                                            <div class="card-primary__images">
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-6.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-7.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-primary__item">
+                                                                                    <div class="card-primary__image">
+                                                                                        <picture>
+                                                                                            <source srcset="./img/card-8.webp" type="image/webp">
+                                                                                            <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
+                                                                                                alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                                        </picture>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-7.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-primary__item">
-                                                                                <div class="card-primary__image">
-                                                                                    <picture>
-                                                                                        <source srcset="./img/card-8.webp" type="image/webp">
-                                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                                                    </picture>
+                                                                            <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
+                                                                            <div class="card-primary__info">
+                                                                                <div class="row">
+                                                                                    <span class="card-primary__info--dislike">
+                                                                                        <svg>
+                                                                                            <use xlink:href="img/sprite.svg#dislike"></use>
+                                                                                        </svg>
+                                                                                    </span>
+                                                                                    <span class="card-primary__info--comment">
+                                                                                        <svg>
+                                                                                            <use xlink:href="img/sprite.svg#comment"></use>
+                                                                                        </svg>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
-                                                                        <div class="card-primary__info">
-                                                                            <span class="card-primary__info--new">Новое</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-primary__content">
-                                                                        <h3 class="card-primary__name title-4">
-                                                                            1-комн. квартира, 54 м², 12/12 эт.
-                                                                        </h3>
-                                                                        <div class="card-primary__address">
-                                                                            <span class="card-primary__address--one">ЖК
-                                                                                Вознесенский</span>
-                                                                            <span class="card-primary__address--two">
-                                                                                Краснодар, ул.Карла-Маркса., 234
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="card-primary__price">
-                                                                            <span class="card-primary__price-old">
-                                                                                <span>
-                                                                                    <span>3 000 000 ₽</span>
+                                                                        <div class="card-primary__content">
+                                                                            <h3 class="card-primary__name title-4">
+                                                                                1-комн. квартира, 54 м², 12/12 эт.
+                                                                            </h3>
+                                                                            <div class="card-primary__address">
+                                                                                <span class="card-primary__address--two">
+                                                                                    Краснодар,
+                                                                                    ул.Карла-Маркса., 234
                                                                                 </span>
-                                                                                <span>-300 000 ₽</span>
-                                                                            </span>
-                                                                            <span class="card-primary__price-new">
-                                                                                <span class="title-3">2 897 000 ₽</span>
-                                                                                <span>(94 742 ₽/м²)</span>
-                                                                            </span>
+                                                                            </div>
+                                                                            <div class="card-primary__price">
+                                                                                <span class="card-primary__price-new">
+                                                                                    <span class="title-3">2 897 000 ₽</span>
+                                                                                    <span>(94 742 ₽/м²)</span>
+                                                                                </span>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </a>
+                                                                        <div class="card-primary__bottom">
+                                                                            <div>
+                                                                                <span>Источник</span>
+                                                                                <span>Своя база</span>
+                                                                            </div>
+                                                                            <button type="button" class="btn btn-reset card-primary__info--delete" title="Удалить">
+                                                                                <svg>
+                                                                                    <use xlink:href="img/sprite.svg#trash"></use>
+                                                                                </svg>
+                                                                            </button>
+                                                                        </div>
+                                                                    </a>
                                                                 </article>
                                                             </div>
                                                         </div>
@@ -638,12 +726,18 @@
                             <div data-spollers class="spollers">
                                 <div class="spollers__item">
                                     <button type="button" data-spoller class="btn btn-reset spollers__title">
-                                        <span class="title-3">Продажа</span>
+                                        <span class="title-3">Объект на продажу</span>
                                         <svg>
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
                                     <div class="spollers__body">
+                                        <button type="button" class="btn btn-reset edit-btn" title="Создать новый подбор">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#pencil"></use>
+                                            </svg>
+                                            <span>Создать новый объект</span>
+                                        </button>
                                         <div class="client__list">
                                             <article class="card-primary">
                                                 <a href="#" class="card-primary__container">
@@ -706,8 +800,263 @@
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    <div class="card-primary__bottom">
+                                                        <div>
+                                                            <span>Тип догоора</span>
+                                                            <span>Эксклюзивный</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>Комиссия</span>
+                                                            <span>75 000 ₽</span>
+                                                        </div>
+                                                    </div>
                                                 </a>
                                             </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client__element">
+                            <div data-spollers class="spollers">
+                                <div class="spollers__item">
+                                    <button type="button" data-spoller class="btn btn-reset spollers__title">
+                                        <span class="title-3">Запланированные просмотры</span>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="spollers__body">
+                                        <div class="tabs-primary">
+                                            <div data-tabs class="tabs-primary__inner">
+                                                <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                                                    <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                                        Список
+                                                    </button>
+                                                    <button type="button" class="btn btn-reset tabs__title">
+                                                        Календарь
+                                                    </button>
+                                                </nav>
+                                                <div class="tabs-primary__container">
+                                                    <div data-tabs-body class="tabs__content tabs-primary__content">
+                                                        <div class="tabs__body">
+
+                                                            <div class="main-table">
+                                                                <div class="main-table__table">
+                                                                    <div class="main-table__type">
+                                                                        <span>Время и место</span>
+                                                                        <span>Характеристики и цена</span>
+                                                                        <span>Объект от</span>
+                                                                    </div>
+                                                                    <div class="main-table__list">
+                                                                        <a href="#" class="main-table__item object-info-secondary">
+                                                                            <div class="object-info-secondary__time-geo">
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
+                                                                                    </svg>
+                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
+                                                                                </span>
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#location"></use>
+                                                                                    </svg>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__type-price">
+                                                                                <div>
+                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
+                                                                                        эт.</span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    3 000 000 ₽
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__mobile-price">
+                                                                                3 000 000 ₽
+                                                                            </div>
+                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
+                                                                                <div class=" user-info__avatar avatar online">
+                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                                                </div>
+                                                                                <span class="user-info__name" data-user-name-full="Лев Гаврилов">
+                                                                                    Лев Г.
+                                                                                </span>
+                                                                                <span class="user-info__pos">
+                                                                                    Собственник
+                                                                                </span>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="main-table__item object-info-secondary">
+                                                                            <div class="object-info-secondary__time-geo">
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
+                                                                                    </svg>
+                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
+                                                                                </span>
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#location"></use>
+                                                                                    </svg>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__type-price">
+                                                                                <div>
+                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
+                                                                                        эт.</span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    3 000 000 ₽
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__mobile-price">
+                                                                                3 000 000 ₽
+                                                                            </div>
+                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
+                                                                                <div class=" user-info__avatar avatar online">
+                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                                                </div>
+                                                                                <span class="user-info__name" data-user-name-full="Алексей Гаврилов">
+                                                                                    Алексей Г.
+                                                                                </span>
+                                                                                <span class="user-info__pos">
+                                                                                    Агент
+                                                                                </span>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="main-table__item object-info-secondary">
+                                                                            <div class="object-info-secondary__time-geo">
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
+                                                                                    </svg>
+                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
+                                                                                </span>
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#location"></use>
+                                                                                    </svg>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__type-price">
+                                                                                <div>
+                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
+                                                                                        эт.</span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    3 000 000 ₽
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__mobile-price">
+                                                                                3 000 000 ₽
+                                                                            </div>
+                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
+                                                                                <div class=" user-info__avatar avatar online">
+                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                                                </div>
+                                                                                <span class="user-info__name" data-user-name-full="Лев Гаврилов">
+                                                                                    Лев Г.
+                                                                                </span>
+                                                                                <span class="user-info__pos">
+                                                                                    Собственник
+                                                                                </span>
+                                                                            </div>
+                                                                        </a>
+                                                                        <a href="#" class="main-table__item object-info-secondary">
+                                                                            <div class="object-info-secondary__time-geo">
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
+                                                                                    </svg>
+                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
+                                                                                </span>
+                                                                                <span>
+                                                                                    <svg>
+                                                                                        <use xlink:href="img/sprite.svg#location"></use>
+                                                                                    </svg>
+                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__type-price">
+                                                                                <div>
+                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
+                                                                                        эт.</span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    3 000 000 ₽
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="object-info-secondary__mobile-price">
+                                                                                3 000 000 ₽
+                                                                            </div>
+                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
+                                                                                <div class=" user-info__avatar avatar online">
+                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                                                </div>
+                                                                                <span class="user-info__name" data-user-name-full="Алексей Гаврилов">
+                                                                                    Алексей Г.
+                                                                                </span>
+                                                                                <span class="user-info__pos">
+                                                                                    Агент
+                                                                                </span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                                                                    Следующая страница
+                                                                </button>
+                                                                <div class="main-table__pagination pagination">
+                                                                    <ul class="pagination__list list-reset">
+                                                                        <li class="pagination__item" disabled>
+                                                                            <a href="#">
+                                                                                1
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="pagination__item">
+                                                                            <a href="#">
+                                                                                2
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="pagination__item">
+                                                                            <a href="#">
+                                                                                3
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="pagination__item">
+                                                                            <a href="#">
+                                                                                4
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="pagination__item">
+                                                                            <a href="#">
+                                                                                5
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="pagination__item dots" tabindex="-1">
+                                                                            ...
+                                                                        </li>
+                                                                        <li class="pagination__item">
+                                                                            <a href="#">
+                                                                                199
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="tabs__body" hidden>
+                                                            <div class="calendar-primary"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
