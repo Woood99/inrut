@@ -27203,10 +27203,17 @@ textarea.input-reset {
 .client__element {
   background-color: var(--white);
   border-radius: 12px;
-  padding-top: 24px;
 }
 .client__element:not(:last-child) {
   margin-bottom: 16px;
+}
+.client__element .spollers__item {
+  -webkit-transition: padding-top 0.4s ease-in-out;
+  -o-transition: padding-top 0.4s ease-in-out;
+  transition: padding-top 0.4s ease-in-out;
+}
+.client__element .spollers__item._active {
+  padding-top: 24px;
 }
 .client__element .spollers__title {
   display: -webkit-box;
@@ -27224,6 +27231,9 @@ textarea.input-reset {
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
+  -webkit-transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
 }
 .client__element .spollers__title svg {
   width: 24px;

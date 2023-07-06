@@ -9720,6 +9720,9 @@ const spollers = () => {
             hideSpollersBody(spollersBlock);
           }
           spollerTitle.classList.toggle('_spoller-active');
+          if (spollerTitle.closest('.spollers__item')) {
+            spollerTitle.closest('.spollers__item').classList.toggle('_active');
+          }
           if (el.closest('.layouts__item-btn')) speed = 0;
           (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideToggle)(spollerTitle.nextElementSibling, speed);
           if (spollerTitle.classList.contains('_spoller-active') && el.closest('.layouts__item-btn')) {

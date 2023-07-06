@@ -76,7 +76,9 @@ const spollers = () => {
                         hideSpollersBody(spollersBlock);
                     }
                     spollerTitle.classList.toggle('_spoller-active');
-
+                    if (spollerTitle.closest('.spollers__item')) {
+                        spollerTitle.closest('.spollers__item').classList.toggle('_active');
+                    }
                     if (el.closest('.layouts__item-btn')) speed = 0;
 
                     _slideToggle(spollerTitle.nextElementSibling, speed);
