@@ -344,6 +344,20 @@
                             font-weight: 500;
                             margin-bottom: 8px;
                         }
+                        &:nth-child(2){
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                        }
+                    }
+                }
+                >div{
+                    &:nth-child(3){
+                       svg{
+                        width: 24px;
+                        height: 24px;
+                        fill: var(--green);
+                       }
                     }
                 }
             }
@@ -400,6 +414,10 @@
                 div {
                     &:nth-child(1) {
                         font-weight: 500;
+
+                        display: flex;
+                        flex-direction: column;
+                  align-items: start;
                     }
 
                     &:nth-child(2) {
@@ -413,9 +431,7 @@
                         justify-self: start;
                     }
 
-                    &:nth-child(4) {}
-
-                    &:nth-child(5) {
+                    &:nth-child(4) {
                         justify-self: end;
                         display: flex;
                         flex-direction: column;
@@ -544,5 +560,23 @@
 
     .bid__body {
         grid-column: 1/2;
+    }
+}
+
+
+.info-card-teal{
+    display: inline-block;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--primary200);
+    >div{
+        display: flex;
+        align-items: center;
+        svg{
+            width: 12px;
+            height: 12px;
+            fill: var(--primaryTwo);
+            margin-right: 12px;
+        }
     }
 }
