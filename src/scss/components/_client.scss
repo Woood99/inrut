@@ -313,18 +313,22 @@
         }
 
         &--views {
-            .main-table{
+            .main-table {
                 padding-top: 24px;
                 padding-bottom: 0;
                 border-radius: 0;
+                &__list{
+                    margin-top: 8px;
+                }
             }
+
             .edit-btn {
                 margin-left: auto;
                 display: flex;
             }
 
             .main-table__type {
-            margin: 0;
+                margin: 0;
                 grid-column-gap: 32px;
 
                 >span {
@@ -343,33 +347,33 @@
                 border-radius: 0;
                 box-shadow: none;
                 margin: 0;
+
                 &__name-user {
                     >div {
                         &:nth-child(1) {
                             font-weight: 500;
                             margin-bottom: 8px;
                         }
-                        &:nth-child(2){
+
+                        &:nth-child(2) {
                             display: flex;
                             flex-direction: column;
                             align-items: start;
                         }
                     }
                 }
-                >div{
-                    &:nth-child(3){
-                       svg{
-                        width: 24px;
-                        height: 24px;
-                        fill: var(--green);
-                       }
+
+                >div {
+                    &:nth-child(3) {
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            fill: var(--green);
+                        }
                     }
                 }
-                    border-bottom: 1px solid var(--primary200);
 
-                    &:first-child{
-                        border-top: 1px solid var(--primary200);
-                    }
+                border-bottom: 1px solid var(--primary200);
             }
 
             .tabs-primary__container {
@@ -382,10 +386,11 @@
         }
 
         &--mortgage {
-            .main-table{
+            .main-table {
                 padding-top: 24px;
                 padding-bottom: 0;
             }
+
             .main-table__type {
                 margin: 0 24px;
                 grid-column-gap: 15px;
@@ -395,7 +400,8 @@
                     &:first-child {
                         margin: 0;
                     }
-                    &:last-child{
+
+                    &:last-child {
                         margin-left: 40px;
                     }
                 }
@@ -427,7 +433,7 @@
 
                         display: flex;
                         flex-direction: column;
-                  align-items: start;
+                        align-items: start;
                     }
 
                     &:nth-child(2) {
@@ -456,16 +462,18 @@
                     }
                 }
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     margin-bottom: 16px;
                 }
             }
         }
-        &--deals{
-            .main-table{
+
+        &--deals {
+            .main-table {
                 padding-top: 24px;
                 padding-bottom: 0;
             }
+
             .main-table__type {
                 margin: 0 24px;
                 grid-column-gap: 15px;
@@ -476,7 +484,8 @@
                     &:first-child {
                         margin: 0;
                     }
-                    &:last-child{
+
+                    &:last-child {
                         margin-left: 40px;
                     }
                 }
@@ -506,28 +515,31 @@
                         justify-self: start;
                         font-size: 12px;
                     }
+
                     &:nth-child(2) {
                         display: flex;
                         flex-direction: column;
                         align-items: start;
-                        span{
-                            &:nth-child(1){
+
+                        span {
+                            &:nth-child(1) {
                                 font-weight: 500;
                             }
-                            &:nth-child(1){}
+
+                            &:nth-child(1) {}
                         }
                     }
 
                     &:nth-child(3) {}
-                    &:nth-child(4) {
 
-                    }
+                    &:nth-child(4) {}
 
                     &:nth-child(5) {
                         display: flex;
                         flex-direction: column;
                         align-items: start;
                     }
+
                     &:nth-child(6) {
                         justify-self: end;
                         display: flex;
@@ -542,7 +554,8 @@
                         box-shadow: var(--shadow-primary);
                     }
                 }
-                &:not(:last-child){
+
+                &:not(:last-child) {
                     margin-bottom: 16px;
                 }
             }
@@ -574,15 +587,17 @@
 }
 
 
-.info-card-teal{
+.info-card-teal {
     display: inline-block;
     padding: 16px;
     border-radius: 12px;
     border: 1px solid var(--primary200);
-    >div{
+
+    >div {
         display: flex;
         align-items: center;
-        svg{
+
+        svg {
             width: 12px;
             height: 12px;
             fill: var(--primaryTwo);
