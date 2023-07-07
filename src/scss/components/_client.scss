@@ -311,30 +311,200 @@
                 margin-bottom: 16px;
             }
         }
-        &--views{
-            .edit-btn{
+
+        &--views {
+            .edit-btn {
                 margin-left: auto;
                 display: flex;
             }
-            .main-table__type{
+
+            .main-table__type {
                 margin: 0 24px;
                 grid-column-gap: 32px;
-                >span{
-                    &:nth-child(1){
+
+                >span {
+                    &:nth-child(1) {
                         margin: 0;
                     }
                 }
             }
-            .object-info-secondary{
+
+            .object-info-secondary {
                 font-size: 14px;
                 grid-column-gap: 32px;
-                &__name-user{
-                    >div{
-                        &:nth-child(1){
+
+                &__name-user {
+                    >div {
+                        &:nth-child(1) {
                             font-weight: 500;
                             margin-bottom: 8px;
                         }
                     }
+                }
+            }
+        }
+
+        &--mortgage {
+            .main-table{
+                padding-top: 24px;
+                padding-bottom: 0;
+            }
+            .main-table__type {
+                margin: 0 24px;
+                grid-column-gap: 15px;
+                grid-template-columns: percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(100, 1016);
+
+                span {
+                    &:first-child {
+                        margin: 0;
+                    }
+                    &:last-child{
+                        margin-left: 40px;
+                    }
+                }
+            }
+
+            .object-info-mortgage {
+                background-color: var(--white);
+                box-shadow: var(--shadow-secondary);
+                border-radius: 12px;
+                padding: 24px;
+
+                grid-column-gap: 15px;
+                display: grid;
+                align-items: center;
+                grid-template-columns: percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(100, 1016);
+                justify-content: space-between;
+
+                transition: box-shadow $transitionSpeed $transitionFunction;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    fill: var(--green);
+                }
+
+                div {
+                    &:nth-child(1) {
+                        font-weight: 500;
+                    }
+
+                    &:nth-child(2) {
+                        font-weight: 500;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: var(--primary200);
+                        padding: 4px 8px;
+                        border-radius: 8px;
+                        justify-self: start;
+                    }
+
+                    &:nth-child(4) {}
+
+                    &:nth-child(5) {
+                        justify-self: end;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        font-size: 12px;
+                    }
+                }
+
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        box-shadow: var(--shadow-primary);
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
+            }
+        }
+        &--deals{
+            .main-table{
+                padding-top: 24px;
+                padding-bottom: 0;
+            }
+            .main-table__type {
+                margin: 0 24px;
+                grid-column-gap: 15px;
+                grid-template-columns: percent(145, 1016) percent(250, 1016) percent(145, 1016) percent(145, 1016) percent(145, 1016) percent(100, 1016);
+
+
+                span {
+                    &:first-child {
+                        margin: 0;
+                    }
+                    &:last-child{
+                        margin-left: 40px;
+                    }
+                }
+            }
+
+            .object-info-deal {
+                font-size: 14px;
+                background-color: var(--white);
+                box-shadow: var(--shadow-secondary);
+                border-radius: 12px;
+                padding: 24px;
+
+                grid-column-gap: 15px;
+                display: grid;
+                align-items: center;
+                grid-template-columns: percent(145, 1016) percent(250, 1016) percent(145, 1016) percent(145, 1016) percent(145, 1016) percent(100, 1016);
+                justify-content: space-between;
+
+                transition: box-shadow $transitionSpeed $transitionFunction;
+
+                div {
+                    &:nth-child(1) {
+                        max-width: 119px;
+                        background-color: var(--primary200);
+                        padding: 4px 8px;
+                        border-radius: 8px;
+                        justify-self: start;
+                        font-size: 12px;
+                    }
+                    &:nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        span{
+                            &:nth-child(1){
+                                font-weight: 500;
+                            }
+                            &:nth-child(1){}
+                        }
+                    }
+
+                    &:nth-child(3) {}
+                    &:nth-child(4) {
+
+                    }
+
+                    &:nth-child(5) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                    }
+                    &:nth-child(6) {
+                        justify-self: end;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        font-size: 12px;
+                    }
+                }
+
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        box-shadow: var(--shadow-primary);
+                    }
+                }
+                &:not(:last-child){
+                    margin-bottom: 16px;
                 }
             }
         }
