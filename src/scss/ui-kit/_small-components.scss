@@ -76,7 +76,45 @@
         }
     }
 }
+.advance-pay{
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+ padding: 5px 12px;
+    svg {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
 
+        @media (max-width:$desktop) {
+            width: 12px;
+            height: 12px;
+        }
+    }
+    .secondary-tooltip{
+        margin-left: 4px;
+        width: 17px;
+        height: 17px;
+        &__btn{
+            width: 17px;
+            height: 17px;
+            svg{
+                margin-right: 0;
+                width: 17px;
+                height: 17px;
+            }
+        }
+    }
+    .secondary-tooltip__content{
+        width: max-content;
+        max-width: 300px;
+        top: calc(100% + 8px);
+        left: 0;
+        bottom: auto;
+        z-index: 99;
+    }
+}
 .complain-btn {
     display: inline-flex;
     align-items: center;

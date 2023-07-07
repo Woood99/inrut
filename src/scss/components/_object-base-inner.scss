@@ -70,10 +70,32 @@
 
             .edit-btn {
                 padding: 0;
+                display: flex;
+
+                &:nth-child(1) {
+                    margin-left: auto;
+                }
 
                 svg {
-                    margin: 0;
+                    margin: 0 8px 0 0;
                 }
+            }
+
+            .row {
+                border-top: 1px solid var(--primary100);
+                margin-top: 24px;
+                padding-top: 24px;
+                display: flex;
+
+                .edit-btn {
+                    &:nth-child(2) {
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            .main-table {
+                padding-bottom: 0;
             }
 
             .main-table__type {
@@ -95,7 +117,6 @@
                 border: none;
                 grid-column-gap: 15px;
                 padding: 24px 0;
-                border-bottom: 1px solid var(--primary100);
             }
 
             .object-info-secondary {
@@ -105,7 +126,6 @@
                 border: none;
                 grid-column-gap: 15px;
                 padding: 24px 0;
-                border-bottom: 1px solid var(--primary100);
             }
 
             &--meeting-showing {
@@ -156,10 +176,10 @@
                         }
                     }
                 }
-                .object-info-secondary{
-                    div{
-                        &:nth-child(1){
-                            max-width: 119px;
+
+                .object-info-secondary {
+                    div {
+                        &:nth-child(1) {
                             background-color: var(--primary200);
                             padding: 4px 8px;
                             border-radius: 8px;
@@ -168,6 +188,7 @@
                         }
                     }
                 }
+
                 span {
                     &:last-child {
                         text-align: right;

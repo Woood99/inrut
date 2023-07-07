@@ -6365,6 +6365,53 @@ textarea.input-reset {
   }
 }
 
+.advance-pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--blue);
+  padding: 5px 12px;
+}
+.advance-pay svg {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+@media (max-width: 1144px) {
+  .advance-pay svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+.advance-pay .secondary-tooltip {
+  margin-left: 4px;
+  width: 17px;
+  height: 17px;
+}
+.advance-pay .secondary-tooltip__btn {
+  width: 17px;
+  height: 17px;
+}
+.advance-pay .secondary-tooltip__btn svg {
+  margin-right: 0;
+  width: 17px;
+  height: 17px;
+}
+.advance-pay .secondary-tooltip__content {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  top: calc(100% + 8px);
+  left: 0;
+  bottom: auto;
+  z-index: 99;
+}
+
 .complain-btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -27028,9 +27075,29 @@ textarea.input-reset {
 }
 .object-base-inner .object-body__element .edit-btn {
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.object-base-inner .object-body__element .edit-btn:nth-child(1) {
+  margin-left: auto;
 }
 .object-base-inner .object-body__element .edit-btn svg {
-  margin: 0;
+  margin: 0 8px 0 0;
+}
+.object-base-inner .object-body__element .row {
+  border-top: 1px solid var(--primary100);
+  margin-top: 24px;
+  padding-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.object-base-inner .object-body__element .row .edit-btn:nth-child(2) {
+  margin-left: auto;
+}
+.object-base-inner .object-body__element .main-table {
+  padding-bottom: 0;
 }
 .object-base-inner .object-body__element .main-table__type {
   margin: 0;
@@ -27051,7 +27118,6 @@ textarea.input-reset {
   border: none;
   grid-column-gap: 15px;
   padding: 24px 0;
-  border-bottom: 1px solid var(--primary100);
 }
 .object-base-inner .object-body__element .object-info-secondary {
   background-color: transparent;
@@ -27061,7 +27127,6 @@ textarea.input-reset {
   border: none;
   grid-column-gap: 15px;
   padding: 24px 0;
-  border-bottom: 1px solid var(--primary100);
 }
 .object-base-inner .object-body__element--meeting-showing .main-table {
   padding-top: 24px;
@@ -27114,7 +27179,6 @@ textarea.input-reset {
   justify-self: end;
 }
 .object-base-inner .object-body__element--deals .object-info-secondary div:nth-child(1) {
-  max-width: 119px;
   background-color: var(--primary200);
   padding: 4px 8px;
   border-radius: 8px;
@@ -27936,15 +28000,14 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-grid-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
-  grid-template-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
+  -ms-grid-columns: 23.3957219251% 34.7593582888% 16.0427807487% 9.842519685%;
+  grid-template-columns: 23.3957219251% 34.7593582888% 16.0427807487% 9.842519685%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid var(--primary200);
 }
 .client__element--deals .object-info-deal div:nth-child(1) {
-  max-width: 119px;
   background-color: var(--primary200);
   padding: 4px 8px;
   border-radius: 8px;
