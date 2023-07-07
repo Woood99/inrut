@@ -7,7 +7,8 @@ import {
     filterMobile,
     filterCustomSelectCheckboxes,
     dropdownDefault,
-    searchSelect
+    searchSelect,
+    searchSelectOne
 } from './components/filter';
 import getHeightBlock from './modules/getHeightBlock'
 import choicesSelect from './components/choices';
@@ -34,6 +35,7 @@ import {
     addContactValidate,
     createDealValidate,
     editUserValidate,
+    createMeetingShowValidate,
     inputMask
 } from './components/formValidate';
 import dropdown from './modules/dropdown';
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterCustomSelectCheckboxes();
     dropdownDefault('.presentation', '.presentation__btn', '.presentation__dropdown');
     searchSelect();
+    searchSelectOne();
 
     // ==================================================
 
@@ -157,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addContactValidate();
     createDealValidate();
     editUserValidate();
+    createMeetingShowValidate();
     inputMask();
     // ==================================================
 

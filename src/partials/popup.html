@@ -1117,8 +1117,8 @@
 
 
 
-<div class="popup popup-primary popup-primary--right popup-primary--create-meeting-show">
-    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="create-meeting-show">
+<div class="popup popup-primary popup-primary--right popup-primary--create-meeting-show is-open">
+    <div class="popup__container popup-primary__container popup-open" role="dialog" aria-modal="true" data-popup-target="create-meeting-show">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
             <svg>
                 <use xlink:href="img/sprite.svg#x"></use>
@@ -1128,16 +1128,16 @@
         <div class="popup__content popup-primary__content create-meeting-show">
             <h2 class="title-2">Создать встречу-показ</h2>
             <form action="#" class="create-meeting-show__form">
-                <div class="input-text input-text--no-exp">
+                <div class="input-text input-text--no-exp input-text--disabled">
                     <label class="input-text__label">
-                        <span>Отчество</span>
-                        <input type="text" name="Имя" class="input-reset input-text__input" disabled value="" placeholder="">
+                        <span>Покупатель</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" disabled value="Алексей Г." placeholder="">
                     </label>
                 </div>
                 <div class="select-secondary">
                     <div class="select-secondary__wrapper">
                         <span class="select-secondary__placeholder">
-                            Объект
+                            Статус
                         </span>
                         <select class="select-secondary__body" name="city">
                             <option placeholder value="">Любой</option>
@@ -1147,6 +1147,75 @@
                         </select>
                     </div>
                 </div>
+                <div class="search-select-one create-meeting-show__form--object">
+                    <button type="button" class="btn btn-reset search-select-one__button">
+                        <div class="search-select-one__button-wrapper">
+                            <div>Объект</div>
+                            <div>Не выбрано</div>
+                        </div>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#check"></use>
+                        </svg>
+                    </button>
+                    <div class="search-select-one__dropdown">
+                        <label class="input-primary search-select-one__input">
+                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                        </label>
+                        <div class="search-select-one__wrapper simplebar-third">
+                            <div class="search-select-one__item" data-value="object-1">
+                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                            </div>
+                            <div class="search-select-one__item" data-value="object-2">
+                                Объект 2
+                            </div>
+                            <div class="search-select-one__item" data-value="object-3">
+                                Объект 3
+                            </div>
+                            <div class="search-select-one__item" data-value="object-4">
+                                Объект 4
+                            </div>
+                            <div class="search-select-one__item" data-value="object-5">
+                                Объект 5
+                            </div>
+                            <div class="search-select-one__item" data-value="object-6">
+                                Объект 6
+                            </div>
+                            <div class="search-select-one__item" data-value="object-7">
+                                Объект 7
+                            </div>
+                            <div class="search-select-one__item" data-value="object-8">
+                                Объект 8
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                </div>
+                <div class="input-text input-text--no-exp create-meeting-show__form--date-one">
+                    <label class="input-text__label">
+                        <span>Дата начала</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp create-meeting-show__form--date-two">
+                    <label class="input-text__label">
+                        <span>Дата окончания</span>
+                        <input type="text" name="Имя" class="input-reset input-text__input" value="" placeholder="">
+                    </label>
+                </div>
+                <label class="edit-user__textarea textarea-primary">
+                    <textarea class="input-reset textarea-primary__input" placeholder="Информация"></textarea>
+                </label>
+                <button type="submit" class="btn btn-reset btn-primary">Сохранить</button>
+
+
+
+
+                <!-- обязательные поля
+                 объект
+                 начало кончание -->
+
+
+
             </form>
         </div>
     </div>

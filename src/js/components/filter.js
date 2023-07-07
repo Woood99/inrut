@@ -280,6 +280,48 @@ export const searchSelect = () => {
         }
     });
 }
+export const searchSelectOne = () => {
+    const containers = document.querySelectorAll('.search-select-one');
+    if (!containers.length >= 1) return;
+    containers.forEach(container => {
+        const btn = container.querySelector('.search-select-one__button');
+        const list = container.querySelectorAll('.search-select-one__item');
+        const input = container.querySelector('.search-select-one__input-hidden');
+        const placeholder = container.querySelector('.search-select-one__button-wrapper div:nth-child(2)');
+        btn.addEventListener('click', () => {
+            containers.forEach(el => {
+                if (el !== container) el.classList.remove('_active')
+            });
+            container.classList.toggle('_active');
+        })
+        document.addEventListener('click', (e) => {
+            if (container.classList.contains('_active') && !e.target.closest('.search-select-one')) {
+                container.classList.remove('_active');
+            }
+        })
+        list.forEach(item => {
+            item.addEventListener('click', () => {
+                list.forEach(item => item.classList.remove('_active'));
+
+                input.value = item.dataset.value;
+                item.classList.add('_active');
+                placeholder.textContent = item.textContent;
+
+                container.classList.remove('_active');
+
+                container.classList.add('_selected');
+
+
+                if (container.classList.contains('create-meeting-show__form--object')) {
+                    if (container.classList.contains('_error')) {
+                        container.querySelector('._error-span').remove();
+                        container.classList.remove('_error');
+                    }
+                }
+            })
+        })
+    });
+}
 export const uiSlider = () => {
     const items = document.querySelectorAll('.filter-range__inner');
     if (!items.length >= 1) return;

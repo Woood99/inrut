@@ -4256,6 +4256,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterCustomSelectCheckboxes)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.dropdownDefault)('.presentation', '.presentation__btn', '.presentation__dropdown');
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.searchSelect)();
+  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.searchSelectOne)();
 
   // ==================================================
 
@@ -4320,6 +4321,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.addContactValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createDealValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.editUserValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createMeetingShowValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.inputMask)();
   // ==================================================
 
@@ -5657,6 +5659,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "filterMobile": () => (/* binding */ filterMobile),
 /* harmony export */   "filterSum": () => (/* binding */ filterSum),
 /* harmony export */   "searchSelect": () => (/* binding */ searchSelect),
+/* harmony export */   "searchSelectOne": () => (/* binding */ searchSelectOne),
 /* harmony export */   "uiSlider": () => (/* binding */ uiSlider),
 /* harmony export */   "uiSliderOne": () => (/* binding */ uiSliderOne)
 /* harmony export */ });
@@ -5930,6 +5933,43 @@ const searchSelect = () => {
         btnList.textContent = btnList.textContent.slice(0, -2);
       }
     }
+  });
+};
+const searchSelectOne = () => {
+  const containers = document.querySelectorAll('.search-select-one');
+  if (!containers.length >= 1) return;
+  containers.forEach(container => {
+    const btn = container.querySelector('.search-select-one__button');
+    const list = container.querySelectorAll('.search-select-one__item');
+    const input = container.querySelector('.search-select-one__input-hidden');
+    const placeholder = container.querySelector('.search-select-one__button-wrapper div:nth-child(2)');
+    btn.addEventListener('click', () => {
+      containers.forEach(el => {
+        if (el !== container) el.classList.remove('_active');
+      });
+      container.classList.toggle('_active');
+    });
+    document.addEventListener('click', e => {
+      if (container.classList.contains('_active') && !e.target.closest('.search-select-one')) {
+        container.classList.remove('_active');
+      }
+    });
+    list.forEach(item => {
+      item.addEventListener('click', () => {
+        list.forEach(item => item.classList.remove('_active'));
+        input.value = item.dataset.value;
+        item.classList.add('_active');
+        placeholder.textContent = item.textContent;
+        container.classList.remove('_active');
+        container.classList.add('_selected');
+        if (container.classList.contains('create-meeting-show__form--object')) {
+          if (container.classList.contains('_error')) {
+            container.querySelector('._error-span').remove();
+            container.classList.remove('_error');
+          }
+        }
+      });
+    });
   });
 };
 const uiSlider = () => {
@@ -6314,6 +6354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clientFixedValidate": () => (/* binding */ clientFixedValidate),
 /* harmony export */   "createAgreeValidate": () => (/* binding */ createAgreeValidate),
 /* harmony export */   "createDealValidate": () => (/* binding */ createDealValidate),
+/* harmony export */   "createMeetingShowValidate": () => (/* binding */ createMeetingShowValidate),
 /* harmony export */   "editUserValidate": () => (/* binding */ editUserValidate),
 /* harmony export */   "inputMask": () => (/* binding */ inputMask),
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
@@ -6635,10 +6676,6 @@ const createAgreeValidate = () => {
   form.addEventListener('submit', e => {
     if (!validate()) e.preventDefault();
   });
-  function changeDate(date) {
-    const [day, month, year] = date.split(".");
-    return `${year}, ${month - 1}, ${day}`;
-  }
 };
 const createDealValidate = () => {
   const form = document.querySelector('.create-deal__form');
@@ -6699,11 +6736,6 @@ const editUserValidate = () => {
       fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
     }
   });
-
-  // type.addEventListener('change', () => {
-  //     if (formEventInput) validate();
-  // })
-
   function validate() {
     let result = true;
     formEventInput = true;
@@ -6718,6 +6750,58 @@ const editUserValidate = () => {
     }
     if (!validateCreeateErrorSelect(type, 'Выберите тип клиента')) {
       result = false;
+    }
+    return result;
+  }
+  form.addEventListener('submit', e => {
+    if (!validate()) e.preventDefault();
+  });
+};
+const createMeetingShowValidate = () => {
+  const form = document.querySelector('.create-meeting-show__form');
+  if (!form) return;
+  let formEventInput = false;
+  const dateOne = form.querySelector('.create-meeting-show__form--date-one');
+  const dateTwo = form.querySelector('.create-meeting-show__form--date-two');
+  const object = form.querySelector('.create-meeting-show__form--object');
+  const dateOneInput = dateOne.querySelector('input');
+  const dateTwoInput = dateTwo.querySelector('input');
+  const objectInput = object.querySelector('.search-select-one__input-hidden');
+  [dateOneInput, dateTwoInput].forEach(input => {
+    new air_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"](input, {
+      autoClose: true,
+      isMobile: true,
+      onSelect: fd => {
+        const inputText = input.closest('.input-text');
+        fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+        if (formEventInput) validate();
+      }
+    });
+  });
+  function validate() {
+    let result = true;
+    formEventInput = true;
+    validateRemoveError(dateOne);
+    validateRemoveError(dateTwo);
+    validateRemoveError(object);
+    if (!dateOneInput.value) {
+      result = false;
+      validateCreateError(dateOne, validateTextMap.date);
+    }
+    if (!dateTwoInput.value) {
+      result = false;
+      validateCreateError(dateTwo, validateTextMap.date);
+    }
+    if (!objectInput.value) {
+      result = false;
+      validateCreateError(object, 'Выберите объект');
+    }
+    if (dateOneInput.value && dateTwoInput.value) {
+      if (new Date(changeDate(dateOneInput.value)) > new Date(changeDate(dateTwoInput.value))) {
+        result = false;
+        validateCreateError(dateOne, null);
+        validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
+      }
     }
     return result;
   }
@@ -6775,6 +6859,10 @@ function validateCreeateErrorSelect(container, text) {
     validateCreateError(container, text);
   }
   return result;
+}
+function changeDate(date) {
+  const [day, month, year] = date.split(".");
+  return `${year}, ${month - 1}, ${day}`;
 }
 
 /***/ }),

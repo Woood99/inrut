@@ -339,12 +339,6 @@ export const createAgreeValidate = () => {
     form.addEventListener('submit', (e) => {
         if (!validate()) e.preventDefault();
     })
-
-
-    function changeDate(date) {
-        const [day, month, year] = date.split(".")
-        return `${year}, ${month -1 }, ${day}`;
-    }
 };
 export const createDealValidate = () => {
     const form = document.querySelector('.create-deal__form');
@@ -415,10 +409,6 @@ export const editUserValidate = () => {
         }
     })
 
-    // type.addEventListener('change', () => {
-    //     if (formEventInput) validate();
-    // })
-
     function validate() {
         let result = true;
         formEventInput = true;
@@ -434,6 +424,69 @@ export const editUserValidate = () => {
         }
         if (!validateCreeateErrorSelect(type, 'Выберите тип клиента')) {
             result = false;
+        }
+
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+}
+
+
+
+export const createMeetingShowValidate = () => {
+    const form = document.querySelector('.create-meeting-show__form');
+    if (!form) return;
+    let formEventInput = false;
+
+    const dateOne = form.querySelector('.create-meeting-show__form--date-one');
+    const dateTwo = form.querySelector('.create-meeting-show__form--date-two');
+    const object = form.querySelector('.create-meeting-show__form--object');
+
+    const dateOneInput = dateOne.querySelector('input');
+    const dateTwoInput = dateTwo.querySelector('input');
+    const objectInput = object.querySelector('.search-select-one__input-hidden');
+
+    [dateOneInput, dateTwoInput].forEach(input => {
+        new AirDatepicker(input, {
+            autoClose: true,
+            isMobile: true,
+            onSelect: (fd) => {
+                const inputText = input.closest('.input-text')
+                fd.date ? inputText.classList.add('_active') : inputText.classList.remove('_active');
+                if (formEventInput) validate();
+            }
+        })
+    });
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+
+        validateRemoveError(dateOne);
+        validateRemoveError(dateTwo);
+        validateRemoveError(object);
+        if (!dateOneInput.value) {
+            result = false;
+            validateCreateError(dateOne, validateTextMap.date);
+        }
+        if (!dateTwoInput.value) {
+            result = false;
+            validateCreateError(dateTwo, validateTextMap.date);
+        }
+        if (!objectInput.value) {
+            result = false;
+            validateCreateError(object, 'Выберите объект');
+        }
+
+        if (dateOneInput.value && dateTwoInput.value) {
+            if (new Date(changeDate(dateOneInput.value)) > new Date(changeDate(dateTwoInput.value))) {
+                result = false;
+                validateCreateError(dateOne, null);
+                validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
+            }
         }
 
         return result;
@@ -500,4 +553,9 @@ function validateCreeateErrorSelect(container, text) {
         validateCreateError(container, text);
     }
     return result;
+}
+
+function changeDate(date) {
+    const [day, month, year] = date.split(".")
+    return `${year}, ${month -1 }, ${day}`;
 }
