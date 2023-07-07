@@ -324,7 +324,7 @@
             }
 
             .main-table__type {
-                margin: 0 24px;
+            margin: 0;
                 grid-column-gap: 32px;
 
                 >span {
@@ -337,7 +337,12 @@
             .object-info-secondary {
                 font-size: 14px;
                 grid-column-gap: 32px;
-
+                background-color: transparent;
+                padding: 24px 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                margin: 0;
                 &__name-user {
                     >div {
                         &:nth-child(1) {
@@ -360,6 +365,11 @@
                        }
                     }
                 }
+                    border-bottom: 1px solid var(--primary200);
+
+                    &:first-child{
+                        border-top: 1px solid var(--primary200);
+                    }
             }
 
             .tabs-primary__container {

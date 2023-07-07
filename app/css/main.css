@@ -27698,7 +27698,7 @@ textarea.input-reset {
   display: flex;
 }
 .client__element--views .main-table__type {
-  margin: 0 24px;
+  margin: 0;
   grid-column-gap: 32px;
 }
 .client__element--views .main-table__type > span:nth-child(1) {
@@ -27707,6 +27707,14 @@ textarea.input-reset {
 .client__element--views .object-info-secondary {
   font-size: 14px;
   grid-column-gap: 32px;
+  background-color: transparent;
+  padding: 24px 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  border-bottom: 1px solid var(--primary200);
 }
 .client__element--views .object-info-secondary__name-user > div:nth-child(1) {
   font-weight: 500;
@@ -27728,6 +27736,9 @@ textarea.input-reset {
   width: 24px;
   height: 24px;
   fill: var(--green);
+}
+.client__element--views .object-info-secondary:first-child {
+  border-top: 1px solid var(--primary200);
 }
 .client__element--views .tabs-primary__container {
   background-color: transparent;
