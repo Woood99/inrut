@@ -26977,11 +26977,16 @@ textarea.input-reset {
 }
 .object-base-inner .object-body__element {
   margin-top: 16px;
-  border-radius: 12px;
-  padding: 32px 24px;
   background-color: var(--white);
-  -webkit-box-shadow: var(--shadow-primary);
-  box-shadow: var(--shadow-primary);
+  border-radius: 12px;
+}
+.object-base-inner .object-body__element .spollers__item {
+  -webkit-transition: padding-top 0.4s ease-in-out;
+  -o-transition: padding-top 0.4s ease-in-out;
+  transition: padding-top 0.4s ease-in-out;
+}
+.object-base-inner .object-body__element .spollers__item._active {
+  padding-top: 24px;
 }
 .object-base-inner .object-body__element .spollers__title {
   display: -webkit-box;
@@ -26990,10 +26995,30 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 12px;
+  padding: 32px 24px;
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  -webkit-transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, margin 0.4s ease-in-out;
 }
 .object-base-inner .object-body__element .spollers__title svg {
   width: 24px;
   height: 24px;
+}
+.object-base-inner .object-body__element .spollers__title._spoller-active {
+  background-color: var(--stand-bg);
+  margin: 0 24px;
+  width: calc(100% - 48px);
+}
+.object-base-inner .object-body__element .spollers__body {
+  padding: 24px;
 }
 .object-base-inner .object-body__element .delete-btn {
   padding: 0;
@@ -27008,13 +27033,39 @@ textarea.input-reset {
   margin: 0;
 }
 .object-base-inner .object-body__element .main-table__type {
-  margin: 0 24px;
+  margin: 0;
+  grid-column-gap: 15px;
+  -ms-grid-columns: 39.2857142857% 1fr -webkit-max-content;
+  -ms-grid-columns: 39.2857142857% 1fr max-content;
+  grid-template-columns: 39.2857142857% 1fr -webkit-max-content;
+  grid-template-columns: 39.2857142857% 1fr max-content;
 }
 .object-base-inner .object-body__element .main-table__type span:first-child {
   margin: 0;
 }
 .object-base-inner .object-body__element .client-info {
-  grid-column-gap: 20px;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  grid-column-gap: 15px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--primary100);
+}
+.object-base-inner .object-body__element .object-info-secondary {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  grid-column-gap: 15px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--primary100);
+}
+.object-base-inner .object-body__element--meeting-showing .main-table {
+  padding-top: 24px;
+  padding-bottom: 0;
 }
 .object-base-inner .object-body__element--meeting-showing .main-table__type {
   -ms-grid-columns: 39.2857142857% 1fr -webkit-max-content;
@@ -27058,9 +27109,21 @@ textarea.input-reset {
   align-items: center;
   gap: 16px;
 }
-.object-base-inner .object-body__element--deals .user-info__name {
-  grid-column: auto;
-  grid-row: auto;
+.object-base-inner .object-body__element--deals .main-table__type span:last-child {
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+.object-base-inner .object-body__element--deals .object-info-secondary div:nth-child(1) {
+  max-width: 119px;
+  background-color: var(--primary200);
+  padding: 4px 8px;
+  border-radius: 8px;
+  -ms-grid-column-align: start;
+  justify-self: start;
+  font-size: 10px;
+}
+.object-base-inner .object-body__element--deals span:last-child {
+  text-align: right;
 }
 .object-base-inner__btns {
   margin-top: 24px;
@@ -27781,7 +27844,7 @@ textarea.input-reset {
   -o-transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
-  border-bottom: 1px solid var(--primary200);
+  border-bottom: 1px solid var(--primary100);
 }
 .client__element--mortgage .object-info-mortgage svg {
   width: 24px;
@@ -27887,7 +27950,7 @@ textarea.input-reset {
   border-radius: 8px;
   -ms-grid-column-align: start;
   justify-self: start;
-  font-size: 12px;
+  font-size: 10px;
 }
 .client__element--deals .object-info-deal div:nth-child(2) {
   display: -webkit-box;

@@ -18,19 +18,46 @@
 
         &__element {
             margin-top: 16px;
-            border-radius: 12px;
-            padding: 32px 24px;
             background-color: var(--white);
-            box-shadow: var(--shadow-primary);
+            border-radius: 12px;
+
+            .spollers__item {
+                transition: padding-top $transitionSpeed $transitionFunction;
+
+                &._active {
+                    padding-top: 24px;
+                }
+            }
 
             .spollers__title {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                border-radius: 12px;
+                padding: 32px 24px;
+                background-color: var(--white);
+                box-shadow: var(--shadow-primary);
+
+
+                transition: background-color $transitionSpeed $transitionFunction,
+                    width $transitionSpeed $transitionFunction,
+                    margin $transitionSpeed $transitionFunction;
 
                 svg {
                     width: 24px;
                     height: 24px;
                 }
+
+                &._spoller-active {
+                    background-color: var(--stand-bg);
+                    margin: 0 24px;
+                    width: calc(100% - 48px);
+                }
+            }
+
+            .spollers__body {
+                padding: 24px;
             }
 
             .delete-btn {
@@ -50,7 +77,9 @@
             }
 
             .main-table__type {
-                margin: 0 24px;
+                margin: 0;
+                grid-column-gap: 15px;
+                grid-template-columns: percent(275, 700) 1fr max-content;
 
                 span {
                     &:first-child {
@@ -60,10 +89,31 @@
             }
 
             .client-info {
-                grid-column-gap: 20px;
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+                grid-column-gap: 15px;
+                padding: 24px 0;
+                border-bottom: 1px solid var(--primary100);
+            }
+
+            .object-info-secondary {
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+                grid-column-gap: 15px;
+                padding: 24px 0;
+                border-bottom: 1px solid var(--primary100);
             }
 
             &--meeting-showing {
+                .main-table {
+                    padding-top: 24px;
+                    padding-bottom: 0;
+                }
+
                 .main-table__type {
                     grid-template-columns: percent(275, 700) 1fr max-content;
                 }
@@ -99,9 +149,29 @@
             }
 
             &--deals {
-                .user-info__name {
-                    grid-column: auto;
-                    grid-row: auto;
+                .main-table__type {
+                    span {
+                        &:last-child {
+                            justify-self: end;
+                        }
+                    }
+                }
+                .object-info-secondary{
+                    div{
+                        &:nth-child(1){
+                            max-width: 119px;
+                            background-color: var(--primary200);
+                            padding: 4px 8px;
+                            border-radius: 8px;
+                            justify-self: start;
+                            font-size: 10px;
+                        }
+                    }
+                }
+                span {
+                    &:last-child {
+                        text-align: right;
+                    }
                 }
             }
         }
