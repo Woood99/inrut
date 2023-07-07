@@ -817,7 +817,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="client__element">
+                        <div class="client__element client__element--views">
                             <div data-spollers class="spollers">
                                 <div class="spollers__item">
                                     <button type="button" data-spoller class="btn btn-reset spollers__title">
@@ -827,6 +827,12 @@
                                         </svg>
                                     </button>
                                     <div class="spollers__body">
+                                        <button type="button" class="btn btn-reset edit-btn" data-popup-path="create-meeting-show" title="Создать встречу-показ">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#pencil"></use>
+                                            </svg>
+                                            <span>Создать встречу-показ</span>
+                                        </button>
                                         <div class="tabs-primary">
                                             <div data-tabs class="tabs-primary__inner">
                                                 <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
@@ -843,13 +849,13 @@
 
                                                             <div class="main-table">
                                                                 <div class="main-table__table">
-                                                                    <div class="main-table__type">
+                                                                    <div class="main-table__type" style="grid-template-columns: 42.1428571429% 53.2857142857%;">
                                                                         <span>Время и место</span>
                                                                         <span>Характеристики и цена</span>
-                                                                        <span>Объект от</span>
                                                                     </div>
                                                                     <div class="main-table__list">
-                                                                        <a href="#" class="main-table__item object-info-secondary">
+                                                                        <a href="#" class="main-table__item object-info-secondary"
+                                                                            style="grid-template-columns: 42.1428571429% 53.2857142857%;">
                                                                             <div class="object-info-secondary__time-geo">
                                                                                 <span>
                                                                                     <svg>
@@ -864,145 +870,25 @@
                                                                                     Краснодар, ул.Академика Королева, 8/1, к. 1
                                                                                 </span>
                                                                             </div>
-                                                                            <div class="object-info-secondary__type-price">
+                                                                            <div class="object-info-secondary__name-user">
                                                                                 <div>
-                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
-                                                                                        эт.</span>
+                                                                                    1-комн. квартира, &nbsp; 54 м², 12/12
+                                                                                    эт., &nbsp; 3 000 000 ₽
                                                                                 </div>
-                                                                                <div>
-                                                                                    3 000 000 ₽
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__mobile-price">
-                                                                                3 000 000 ₽
-                                                                            </div>
-                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
-                                                                                <div class=" user-info__avatar avatar online">
-                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                                                                </div>
-                                                                                <span class="user-info__name" data-user-name-full="Лев Гаврилов">
-                                                                                    Лев Г.
-                                                                                </span>
-                                                                                <span class="user-info__pos">
-                                                                                    Собственник
-                                                                                </span>
-                                                                            </div>
-                                                                        </a>
-                                                                        <a href="#" class="main-table__item object-info-secondary">
-                                                                            <div class="object-info-secondary__time-geo">
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
-                                                                                    </svg>
-                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
-                                                                                </span>
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#location"></use>
-                                                                                    </svg>
-                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__type-price">
-                                                                                <div>
-                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
-                                                                                        эт.</span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    3 000 000 ₽
+                                                                                <div class="object-info-secondary__from user-info user-info--small-mobile">
+                                                                                    <div class=" user-info__avatar avatar online">
+                                                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                                                    </div>
+                                                                                    <span class="user-info__name" data-user-name-full="Лев Гаврилов">
+                                                                                        Лев Г.
+                                                                                    </span>
+                                                                                    <span class="user-info__pos">
+                                                                                        Собственник
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="object-info-secondary__mobile-price">
-                                                                                3 000 000 ₽
-                                                                            </div>
-                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
-                                                                                <div class=" user-info__avatar avatar online">
-                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                                                                </div>
-                                                                                <span class="user-info__name" data-user-name-full="Алексей Гаврилов">
-                                                                                    Алексей Г.
-                                                                                </span>
-                                                                                <span class="user-info__pos">
-                                                                                    Агент
-                                                                                </span>
-                                                                            </div>
-                                                                        </a>
-                                                                        <a href="#" class="main-table__item object-info-secondary">
-                                                                            <div class="object-info-secondary__time-geo">
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
-                                                                                    </svg>
-                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
-                                                                                </span>
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#location"></use>
-                                                                                    </svg>
-                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__type-price">
-                                                                                <div>
-                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
-                                                                                        эт.</span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    3 000 000 ₽
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__mobile-price">
-                                                                                3 000 000 ₽
-                                                                            </div>
-                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
-                                                                                <div class=" user-info__avatar avatar online">
-                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                                                                </div>
-                                                                                <span class="user-info__name" data-user-name-full="Лев Гаврилов">
-                                                                                    Лев Г.
-                                                                                </span>
-                                                                                <span class="user-info__pos">
-                                                                                    Собственник
-                                                                                </span>
-                                                                            </div>
-                                                                        </a>
-                                                                        <a href="#" class="main-table__item object-info-secondary">
-                                                                            <div class="object-info-secondary__time-geo">
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#clock"></use>
-                                                                                    </svg>
-                                                                                    09:45 &nbsp;&nbsp;&nbsp; 12.12.2022
-                                                                                </span>
-                                                                                <span>
-                                                                                    <svg>
-                                                                                        <use xlink:href="img/sprite.svg#location"></use>
-                                                                                    </svg>
-                                                                                    Краснодар, ул.Академика Королева, 8/1, к. 1
-                                                                                </span>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__type-price">
-                                                                                <div>
-                                                                                    <span>1-комн. квартира</span> <span>,54 м², 12/12
-                                                                                        эт.</span>
-                                                                                </div>
-                                                                                <div>
-                                                                                    3 000 000 ₽
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="object-info-secondary__mobile-price">
-                                                                                3 000 000 ₽
-                                                                            </div>
-                                                                            <div class="object-info-secondary__from user-info user-info--small-mobile">
-                                                                                <div class=" user-info__avatar avatar online">
-                                                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                                                                </div>
-                                                                                <span class="user-info__name" data-user-name-full="Алексей Гаврилов">
-                                                                                    Алексей Г.
-                                                                                </span>
-                                                                                <span class="user-info__pos">
-                                                                                    Агент
-                                                                                </span>
+                                                                            <div>
+
                                                                             </div>
                                                                         </a>
                                                                     </div>

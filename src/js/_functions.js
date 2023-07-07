@@ -110,5 +110,6 @@ popup(null, 'create-agree');
 popup(null, 'create-document');
 popup(null, 'create-deal');
 popup(null, 'edit-user');
+popup(null, 'create-meeting-show');
 
 // ========================================================================================
