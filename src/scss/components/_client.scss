@@ -317,7 +317,8 @@
                 padding-top: 24px;
                 padding-bottom: 0;
                 border-radius: 0;
-                &__list{
+
+                &__list {
                     margin-top: 8px;
                 }
             }
@@ -392,9 +393,9 @@
             }
 
             .main-table__type {
-                margin: 0 24px;
+                margin: 0;
                 grid-column-gap: 15px;
-                grid-template-columns: percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(100, 1016);
+                grid-template-columns: percent(193, 748) percent(193, 748) percent(193, 748) percent(100, 748);
 
                 span {
                     &:first-child {
@@ -402,21 +403,18 @@
                     }
 
                     &:last-child {
-                        margin-left: 40px;
+                        justify-self: end;
                     }
                 }
             }
 
             .object-info-mortgage {
-                background-color: var(--white);
-                box-shadow: var(--shadow-secondary);
-                border-radius: 12px;
-                padding: 24px;
+                padding: 24px 0;
 
                 grid-column-gap: 15px;
                 display: grid;
                 align-items: center;
-                grid-template-columns: percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(214, 1016) percent(100, 1016);
+                grid-template-columns: percent(193, 748) percent(193, 748) percent(193, 748) percent(100, 748);
                 justify-content: space-between;
 
                 transition: box-shadow $transitionSpeed $transitionFunction;
@@ -434,10 +432,31 @@
                         display: flex;
                         flex-direction: column;
                         align-items: start;
+                        span:nth-child(2){
+                            margin-top: 8px;
+                        }
                     }
 
                     &:nth-child(2) {
-                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: math.div(12, 12);
+
+                        padding: 4px 8px;
+                        background-color: var(--dark);
+                        border-radius: 8px;
+                        justify-self: start;
+
+                        &.object-info-mortgage__sent {
+                            background-color: #CBE2FF;
+                        }
+
+                        &.object-info-mortgage__negative {
+                            background-color: #FA8080B2;
+                        }
+
+                        &.object-info-mortgage__positive {
+                            background-color: #CBFFD0;
+                        }
                     }
 
                     &:nth-child(3) {
@@ -453,18 +472,15 @@
                         flex-direction: column;
                         align-items: start;
                         font-size: 12px;
+                        span{
+                            &:not(:last-child){
+                                margin-bottom: 8px;
+                            }
+                        }
                     }
                 }
 
-                @media (min-width:$desktop-min) {
-                    &:hover {
-                        box-shadow: var(--shadow-primary);
-                    }
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 16px;
-                }
+                border-bottom: 1px solid var(--primary200);
             }
         }
 
@@ -475,10 +491,9 @@
             }
 
             .main-table__type {
-                margin: 0 24px;
+                margin: 0;
                 grid-column-gap: 15px;
-                grid-template-columns: percent(145, 1016) percent(250, 1016) percent(145, 1016) percent(145, 1016) percent(145, 1016) percent(100, 1016);
-
+                grid-template-columns: percent(145, 748) percent(265, 748) percent(145, 748) percent(100, 1016);
 
                 span {
                     &:first-child {
@@ -486,25 +501,20 @@
                     }
 
                     &:last-child {
-                        margin-left: 40px;
+                        justify-self: end;
                     }
                 }
             }
 
             .object-info-deal {
                 font-size: 14px;
-                background-color: var(--white);
-                box-shadow: var(--shadow-secondary);
-                border-radius: 12px;
-                padding: 24px;
+                padding: 24px 0;
 
                 grid-column-gap: 15px;
                 display: grid;
                 align-items: center;
-                grid-template-columns: percent(145, 1016) percent(250, 1016) percent(145, 1016) percent(145, 1016) percent(145, 1016) percent(100, 1016);
+                grid-template-columns: percent(145, 748) percent(265, 748) percent(145, 748) percent(100, 1016);
                 justify-content: space-between;
-
-                transition: box-shadow $transitionSpeed $transitionFunction;
 
                 div {
                     &:nth-child(1) {
@@ -530,34 +540,22 @@
                         }
                     }
 
-                    &:nth-child(3) {}
 
-                    &:nth-child(4) {}
-
-                    &:nth-child(5) {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: start;
-                    }
-
-                    &:nth-child(6) {
+                    &:nth-child(4) {
                         justify-self: end;
                         display: flex;
                         flex-direction: column;
                         align-items: start;
                         font-size: 12px;
+                        span{
+                            &:not(:last-child){
+                                margin-bottom: 8px;
+                            }
+                        }
                     }
                 }
 
-                @media (min-width:$desktop-min) {
-                    &:hover {
-                        box-shadow: var(--shadow-primary);
-                    }
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 16px;
-                }
+                border-bottom: 1px solid var(--primary200);
             }
         }
     }

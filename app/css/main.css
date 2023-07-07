@@ -27751,31 +27751,28 @@ textarea.input-reset {
   padding-bottom: 0;
 }
 .client__element--mortgage .main-table__type {
-  margin: 0 24px;
+  margin: 0;
   grid-column-gap: 15px;
-  -ms-grid-columns: 21.062992126% 21.062992126% 21.062992126% 21.062992126% 9.842519685%;
-  grid-template-columns: 21.062992126% 21.062992126% 21.062992126% 21.062992126% 9.842519685%;
+  -ms-grid-columns: 25.8021390374% 25.8021390374% 25.8021390374% 13.3689839572%;
+  grid-template-columns: 25.8021390374% 25.8021390374% 25.8021390374% 13.3689839572%;
 }
 .client__element--mortgage .main-table__type span:first-child {
   margin: 0;
 }
 .client__element--mortgage .main-table__type span:last-child {
-  margin-left: 40px;
+  -ms-grid-column-align: end;
+  justify-self: end;
 }
 .client__element--mortgage .object-info-mortgage {
-  background-color: var(--white);
-  -webkit-box-shadow: var(--shadow-secondary);
-  box-shadow: var(--shadow-secondary);
-  border-radius: 12px;
-  padding: 24px;
+  padding: 24px 0;
   grid-column-gap: 15px;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-grid-columns: 21.062992126% 21.062992126% 21.062992126% 21.062992126% 9.842519685%;
-  grid-template-columns: 21.062992126% 21.062992126% 21.062992126% 21.062992126% 9.842519685%;
+  -ms-grid-columns: 25.8021390374% 25.8021390374% 25.8021390374% 13.3689839572%;
+  grid-template-columns: 25.8021390374% 25.8021390374% 25.8021390374% 13.3689839572%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -27784,6 +27781,7 @@ textarea.input-reset {
   -o-transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  border-bottom: 1px solid var(--primary200);
 }
 .client__element--mortgage .object-info-mortgage svg {
   width: 24px;
@@ -27803,8 +27801,26 @@ textarea.input-reset {
   -ms-flex-align: start;
   align-items: start;
 }
+.client__element--mortgage .object-info-mortgage div:nth-child(1) span:nth-child(2) {
+  margin-top: 8px;
+}
 .client__element--mortgage .object-info-mortgage div:nth-child(2) {
-  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 8px;
+  background-color: var(--dark);
+  border-radius: 8px;
+  -ms-grid-column-align: start;
+  justify-self: start;
+}
+.client__element--mortgage .object-info-mortgage div:nth-child(2).object-info-mortgage__sent {
+  background-color: #CBE2FF;
+}
+.client__element--mortgage .object-info-mortgage div:nth-child(2).object-info-mortgage__negative {
+  background-color: rgba(250, 128, 128, 0.6980392157);
+}
+.client__element--mortgage .object-info-mortgage div:nth-child(2).object-info-mortgage__positive {
+  background-color: #CBFFD0;
 }
 .client__element--mortgage .object-info-mortgage div:nth-child(3) {
   background-color: var(--primary200);
@@ -27828,54 +27844,41 @@ textarea.input-reset {
   align-items: start;
   font-size: 12px;
 }
-@media (min-width: 1145px) {
-  .client__element--mortgage .object-info-mortgage:hover {
-    -webkit-box-shadow: var(--shadow-primary);
-    box-shadow: var(--shadow-primary);
-  }
-}
-.client__element--mortgage .object-info-mortgage:not(:last-child) {
-  margin-bottom: 16px;
+.client__element--mortgage .object-info-mortgage div:nth-child(4) span:not(:last-child) {
+  margin-bottom: 8px;
 }
 .client__element--deals .main-table {
   padding-top: 24px;
   padding-bottom: 0;
 }
 .client__element--deals .main-table__type {
-  margin: 0 24px;
+  margin: 0;
   grid-column-gap: 15px;
-  -ms-grid-columns: 14.2716535433% 24.6062992126% 14.2716535433% 14.2716535433% 14.2716535433% 9.842519685%;
-  grid-template-columns: 14.2716535433% 24.6062992126% 14.2716535433% 14.2716535433% 14.2716535433% 9.842519685%;
+  -ms-grid-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
+  grid-template-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
 }
 .client__element--deals .main-table__type span:first-child {
   margin: 0;
 }
 .client__element--deals .main-table__type span:last-child {
-  margin-left: 40px;
+  -ms-grid-column-align: end;
+  justify-self: end;
 }
 .client__element--deals .object-info-deal {
   font-size: 14px;
-  background-color: var(--white);
-  -webkit-box-shadow: var(--shadow-secondary);
-  box-shadow: var(--shadow-secondary);
-  border-radius: 12px;
-  padding: 24px;
+  padding: 24px 0;
   grid-column-gap: 15px;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-grid-columns: 14.2716535433% 24.6062992126% 14.2716535433% 14.2716535433% 14.2716535433% 9.842519685%;
-  grid-template-columns: 14.2716535433% 24.6062992126% 14.2716535433% 14.2716535433% 14.2716535433% 9.842519685%;
+  -ms-grid-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
+  grid-template-columns: 19.385026738% 35.4278074866% 19.385026738% 9.842519685%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  border-bottom: 1px solid var(--primary200);
 }
 .client__element--deals .object-info-deal div:nth-child(1) {
   max-width: 119px;
@@ -27901,19 +27904,7 @@ textarea.input-reset {
 .client__element--deals .object-info-deal div:nth-child(2) span:nth-child(1) {
   font-weight: 500;
 }
-.client__element--deals .object-info-deal div:nth-child(5) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
-}
-.client__element--deals .object-info-deal div:nth-child(6) {
+.client__element--deals .object-info-deal div:nth-child(4) {
   -ms-grid-column-align: end;
   justify-self: end;
   display: -webkit-box;
@@ -27928,14 +27919,8 @@ textarea.input-reset {
   align-items: start;
   font-size: 12px;
 }
-@media (min-width: 1145px) {
-  .client__element--deals .object-info-deal:hover {
-    -webkit-box-shadow: var(--shadow-primary);
-    box-shadow: var(--shadow-primary);
-  }
-}
-.client__element--deals .object-info-deal:not(:last-child) {
-  margin-bottom: 16px;
+.client__element--deals .object-info-deal div:nth-child(4) span:not(:last-child) {
+  margin-bottom: 8px;
 }
 .client .bid-user__btns {
   width: 100%;
