@@ -27099,6 +27099,12 @@ textarea.input-reset {
 .object-base-inner .object-body__element .main-table {
   padding-bottom: 0;
 }
+.object-base-inner .object-body__element .main-table__item {
+  margin: 0;
+}
+.object-base-inner .object-body__element .main-table__item:not(:last-child) {
+  border-bottom: 1px solid var(--primary100);
+}
 .object-base-inner .object-body__element .main-table__type {
   margin: 0;
   grid-column-gap: 15px;
@@ -27143,6 +27149,13 @@ textarea.input-reset {
   -ms-grid-columns: 39.2857142857% 1fr max-content;
   grid-template-columns: 39.2857142857% 1fr -webkit-max-content;
   grid-template-columns: 39.2857142857% 1fr max-content;
+}
+.object-base-inner .object-body__element--meeting-showing .object-info-secondary > span:nth-child(2) {
+  -ms-grid-column-align: start;
+  justify-self: start;
+  background-color: var(--primary200);
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 .object-base-inner .object-body__element--meeting-showing .user-info {
   display: -webkit-box;
@@ -27679,6 +27692,16 @@ textarea.input-reset {
 .client__element .card-primary__name {
   font-size: 12px;
 }
+.client__element .card-primary__container {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid var(--primary100);
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+}
 .client__element .card-primary__address-one {
   font-size: 10px;
 }
@@ -27718,6 +27741,12 @@ textarea.input-reset {
 .client__element .card-primary__bottom > div:not(:last-child) {
   margin-bottom: 4px;
 }
+@media (min-width: 1145px) {
+  .client__element .card-primary:hover .card-primary__container {
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
+  }
+}
 .client__element--purchase .tabs-primary {
   margin-top: 32px;
 }
@@ -27728,6 +27757,13 @@ textarea.input-reset {
 }
 .client__element--purchase .tabs-primary__container .main-table {
   padding: 0;
+}
+.client__element--purchase .tabs-primary .edit-btn {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
 }
 .client__element--purchase .bid__start {
   -webkit-box-pack: start;
@@ -27844,7 +27880,6 @@ textarea.input-reset {
   -webkit-box-shadow: none;
   box-shadow: none;
   margin: 0;
-  border-bottom: 1px solid var(--primary200);
 }
 .client__element--views .object-info-secondary__name-user > div:nth-child(1) {
   font-weight: 500;
@@ -27866,6 +27901,9 @@ textarea.input-reset {
   width: 24px;
   height: 24px;
   fill: var(--green);
+}
+.client__element--views .object-info-secondary:not(:last-child) {
+  border-bottom: 1px solid var(--primary100);
 }
 .client__element--views .tabs-primary__container {
   background-color: transparent;
@@ -27908,7 +27946,6 @@ textarea.input-reset {
   -o-transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out;
   transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
-  border-bottom: 1px solid var(--primary100);
 }
 .client__element--mortgage .object-info-mortgage svg {
   width: 24px;
@@ -27974,6 +28011,16 @@ textarea.input-reset {
 .client__element--mortgage .object-info-mortgage div:nth-child(4) span:not(:last-child) {
   margin-bottom: 8px;
 }
+.client__element--mortgage .object-info-mortgage:not(:last-child) {
+  border-bottom: 1px solid var(--primary100);
+}
+.client__element--mortgage .edit-btn {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
+}
 .client__element--deals .main-table {
   padding-top: 24px;
   padding-bottom: 0;
@@ -28005,7 +28052,6 @@ textarea.input-reset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  border-bottom: 1px solid var(--primary200);
 }
 .client__element--deals .object-info-deal div:nth-child(1) {
   background-color: var(--primary200);
@@ -28048,6 +28094,9 @@ textarea.input-reset {
 .client__element--deals .object-info-deal div:nth-child(4) span:not(:last-child) {
   margin-bottom: 8px;
 }
+.client__element--deals .object-info-deal:not(:last-child) {
+  border-bottom: 1px solid var(--primary100);
+}
 .client .bid-user__btns {
   width: 100%;
   margin-top: 32px;
@@ -28077,7 +28126,7 @@ textarea.input-reset {
   display: inline-block;
   padding: 16px;
   border-radius: 12px;
-  border: 1px solid var(--primary200);
+  border: 1px solid var(--primary100);
 }
 .info-card-teal > div {
   display: -webkit-box;

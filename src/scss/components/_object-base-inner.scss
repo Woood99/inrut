@@ -96,6 +96,12 @@
 
             .main-table {
                 padding-bottom: 0;
+                &__item{
+                    margin: 0;
+                    &:not(:last-child){
+                        border-bottom: 1px solid var(--primary100);
+                    }
+                }
             }
 
             .main-table__type {
@@ -140,6 +146,15 @@
 
                 .object-info-secondary {
                     grid-template-columns: percent(275, 700) 1fr max-content;
+
+                    >span{
+                        &:nth-child(2){
+                            justify-self: start;
+                            background-color: var(--primary200);
+                            padding: 4px 8px;
+                            border-radius: 8px;
+                        }
+                    }
                 }
 
                 .user-info {
