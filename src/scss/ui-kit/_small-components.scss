@@ -76,11 +76,13 @@
         }
     }
 }
-.advance-pay{
+
+.advance-pay {
     display: flex;
     align-items: center;
     color: var(--blue);
- padding: 5px 12px;
+    padding: 5px 12px;
+
     svg {
         margin-right: 10px;
         width: 18px;
@@ -92,21 +94,25 @@
             height: 12px;
         }
     }
-    .secondary-tooltip{
+
+    .secondary-tooltip {
         margin-left: 4px;
         width: 17px;
         height: 17px;
-        &__btn{
+
+        &__btn {
             width: 17px;
             height: 17px;
-            svg{
+
+            svg {
                 margin-right: 0;
                 width: 17px;
                 height: 17px;
             }
         }
     }
-    .secondary-tooltip__content{
+
+    .secondary-tooltip__content {
         width: max-content;
         max-width: 300px;
         top: calc(100% + 8px);
@@ -115,6 +121,7 @@
         z-index: 99;
     }
 }
+
 .complain-btn {
     display: inline-flex;
     align-items: center;
@@ -408,6 +415,7 @@
     &__target {
         padding: 5px 6px;
         border-radius: 6px;
+
         svg {
             display: block;
             width: 12px;
@@ -415,7 +423,8 @@
             fill: var(--gray);
             transition: fill $transitionSpeed $transitionFunction;
         }
-        &._z-index-0{
+
+        &._z-index-0 {
             z-index: 0 !important;
         }
     }
@@ -484,13 +493,15 @@
     }
 
     &._active {
-        .dots-dropdown{
-            &__target{
-              background-color: var(--primary200);
-              svg{
-                fill: var(--blue-dark);
-              }
+        .dots-dropdown {
+            &__target {
+                background-color: var(--primary200);
+
+                svg {
+                    fill: var(--blue-dark);
+                }
             }
+
             &__dropdown {
                 opacity: 1;
                 visibility: visible;
@@ -502,13 +513,15 @@
     @media (min-width:$desktop-min) {
         &._hover {
             &:hover {
-                .dots-dropdown{
-                    &__target{
-                      background-color: var(--primary200);
-                      svg{
-                        fill: var(--blue-dark);
-                      }
+                .dots-dropdown {
+                    &__target {
+                        background-color: var(--primary200);
+
+                        svg {
+                            fill: var(--blue-dark);
+                        }
                     }
+
                     &__dropdown {
                         opacity: 1;
                         visibility: visible;
@@ -1687,6 +1700,7 @@
     padding: 8px 18px;
     color: var(--dark);
     font-weight: 400;
+
     >div {
         margin-left: 8px;
         width: 16px;
@@ -1717,7 +1731,8 @@
         background-color: var(--blue);
         color: var(--white);
     }
-    &.btn-test{
+
+    &.btn-test {
         border-radius: 12px;
         border: 1px solid var(--primary200);
     }
@@ -2073,5 +2088,173 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+    }
+}
+
+.requisites {
+    text-align: left;
+
+    &__title {
+        &:not(:first-child) {
+            margin-top: 24px;
+
+        }
+    }
+
+    &__descr {
+        margin-top: 8px;
+        color: var(--primaryTwo);
+
+        font-size: 15px;
+        line-height: math.div(19, 15);
+    }
+
+    &__btns {
+        margin-top: 16px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+
+    &__clue {
+        margin-top: 24px;
+
+        a {
+            color: var(--blue);
+        }
+    }
+
+    &__list {
+        margin-top: 32px;
+    }
+
+    &__item {
+        >div {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            >div {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+            }
+        }
+    }
+
+    &__subtitle {
+        grid-column: 1/-1;
+        margin-bottom: 8px;
+    }
+
+    &__label {
+        &--bank {
+            grid-column: 1/-1;
+        }
+    }
+}
+
+.requisites-item {
+    background-color: var(--white);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 24px 24px;
+    position: relative;
+    border: 1px solid transparent;
+    transition: border $transitionSpeed $transitionFunction,
+        box-shadow $transitionSpeed $transitionFunction;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &__check {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--blue);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction;
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: none;
+            stroke: var(--white);
+            stroke-width: 1.5px;
+        }
+    }
+
+    &__img {
+        width: 45px;
+        height: 45px;
+
+        img {
+            max-height: 100%;
+        }
+    }
+
+    &__title {
+        margin-top: 16px;
+
+        font-size: 18px;
+        line-height: math.div(23, 18);
+        font-weight: 500;
+    }
+
+    &__descr {
+        margin-top: 8px;
+        font-size: 15px;
+        line-height: math.div(19, 15);
+        color: var(--gray);
+    }
+
+    &__tag {
+        margin-top: 16px;
+        padding: 6px 16px;
+        color: var(--dark);
+        font-weight: 400;
+
+        font-size: 12px;
+        line-height: math.div(12, 12);
+        border-radius: 12px;
+        background-color: rgba(0, 150, 255, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.requisites-item__tag--top{
+            margin: 0;
+            background-color: var(--gray);
+            color: var(--white);
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+    }
+
+    &._active {
+        border: 1px solid var(--blue);
+        box-shadow: none;
+
+        .requisites-item__check {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }

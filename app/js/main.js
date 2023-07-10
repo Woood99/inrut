@@ -4199,6 +4199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_wallet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/wallet */ "./src/js/components/wallet.js");
 /* harmony import */ var _components_favorites__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/favorites */ "./src/js/components/favorites.js");
 /* harmony import */ var _components_clientPage__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/clientPage */ "./src/js/components/clientPage.js");
+/* harmony import */ var _components_requisites__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/requisites */ "./src/js/components/requisites.js");
+
 
 
 
@@ -4308,6 +4310,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoritesPage)();
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoriteChoicePopup)();
   (0,_components_clientPage__WEBPACK_IMPORTED_MODULE_35__.clientPage)();
+  (0,_components_requisites__WEBPACK_IMPORTED_MODULE_36__["default"])();
 
   // ==================================================
 
@@ -7277,6 +7280,9 @@ const inputText = () => {
           input.value = input.value.replace(/\D/g, '');
           input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_2__["default"])(input.value);
         }
+        if (el.classList.contains('input-text--only-number-default')) {
+          input.value = input.value.replace(/\D/g, '');
+        }
         if (input.value.length >= 1) {
           el.classList.add('_active');
         } else {
@@ -8430,6 +8436,46 @@ const recordViewing = () => {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (recordViewing);
+
+/***/ }),
+
+/***/ "./src/js/components/requisites.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/requisites.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const requisites = () => {
+  const modal = document.querySelector('.popup-primary--edit-profile');
+  const container = document.querySelector('.requisites');
+  if (!modal || !container) return;
+  const btns = container.querySelectorAll('[data-requisites-btn]');
+  const items = container.querySelectorAll('[data-requisites-content]');
+  container.addEventListener('click', e => {
+    const target = e.target;
+    const btn = target.closest('[data-requisites-btn]');
+    if (btn && !btn.classList.contains('_active')) {
+      const name = btn.dataset.requisitesBtn;
+      btns.forEach(item => item.classList.remove('_active'));
+      items.forEach(item => item.setAttribute('hidden', ''));
+      btn.classList.add('_active');
+      if (name !== 'individual') {
+        const currentItem = container.querySelector(`[data-requisites-content=${name}]`);
+        currentItem.removeAttribute('hidden');
+        modal.scrollTo({
+          top: currentItem.offsetTop,
+          behavior: "smooth"
+        });
+      }
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (requisites);
 
 /***/ }),
 

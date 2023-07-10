@@ -73,6 +73,7 @@ import {
 import {
     clientPage
 } from './components/clientPage';
+import requisites from './components/requisites'
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     favoritesPage();
     favoriteChoicePopup();
     clientPage();
+    requisites();
 
     // ==================================================
 

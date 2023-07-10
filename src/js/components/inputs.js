@@ -12,6 +12,9 @@ export const inputText = () => {
                     input.value = input.value.replace(/\D/g, '');
                     input.value = numberReplace(input.value);
                 }
+                if (el.classList.contains('input-text--only-number-default')) {
+                    input.value = input.value.replace(/\D/g, '');
+                }
                 if (input.value.length >= 1) {
                     el.classList.add('_active')
                 } else {

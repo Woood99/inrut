@@ -3022,15 +3022,6 @@
                 </label>
                 <button type="submit" class="btn btn-reset btn-primary">Сохранить</button>
 
-
-
-
-                <!-- обязательные поля
-                 объект
-                 начало кончание -->
-
-
-
             </form>
         </div>
     </div>
@@ -3276,7 +3267,7 @@
             </svg>
             <span>Закрыть</span>
         </button>
-        <div class="popup__content popup-primary__content edit-profile">
+        <form action="#" class="popup__content popup-primary__content edit-profile">
             <h2 class="edit-profile__title title-2">
                 Настройки личного кабинета
             </h2>
@@ -3349,11 +3340,496 @@
                     </label>
                 </div>
             </div>
+            <div class="edit-profile__requisites requisites">
+                <h4 class="requisites__title title-3">Реквизиты</h4>
+                <p class="requisites__descr">
+                    Укажите реквизиты, по которым мы переведём заработанный вами бонус за закрытые сделки.
+                </p>
+                <h4 class="requisites__title title-4">
+                    Организационная-правовая форма
+                </h4>
+                <div class="requisites__btns">
+                    <div class="requisites__btn requisites-item" data-requisites-btn="self-employed">
+                        <div class="requisites-item__check" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#verif"></use>
+                            </svg>
+                        </div>
+                        <div class="requisites-item__img">
+                            <img src="./img/self-employed.png" alt="Самозанятый">
+                        </div>
+                        <h4 class="requisites-item__title">
+                            Самозанятый
+                        </h4>
+                        <p class="requisites-item__descr">
+                            Зачисление денег на ваш счёт без комиссии. Вы самостоятельно платите государству налог на доход 6%.
+                        </p>
+                        <span class="requisites-item__tag">Самый выгодный</span>
+                    </div>
+                    <div class="requisites__btn requisites-item" data-requisites-btn="individual-entrepreneur">
+                        <div class="requisites-item__check" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#verif"></use>
+                            </svg>
+                        </div>
+                        <div class="requisites-item__img">
+                            <img src="./img/individual-entrepreneur.png" alt="Самозанятый">
+                        </div>
+                        <h4 class="requisites-item__title">
+                            ИП
+                        </h4>
+                        <p class="requisites-item__descr">
+                            Зачисление денег на ваш счёт без комиссии. Вы самостоятельно платите государству налог на доход от 6% и обязательные взносы.
+                        </p>
+                    </div>
+                    <div class="requisites__btn requisites-item" data-requisites-btn="organization">
+                        <div class="requisites-item__check" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#verif"></use>
+                            </svg>
+                        </div>
+                        <div class="requisites-item__img">
+                            <img src="./img/organization.png" alt="Самозанятый">
+                        </div>
+                        <h4 class="requisites-item__title">
+                            Юрлицо
+                        </h4>
+                        <p class="requisites-item__descr">
+                            Зачисление денег на ваш счёт без комиссии. Вы самостоятельно платите государству налог на доход от 6% и обязательные взносы.
+                        </p>
+                    </div>
+                    <div class="requisites__btn requisites-item" data-requisites-btn="individual">
+                        <span class="requisites-item__tag requisites-item__tag--top">Недоступно</span>
+                        <div class="requisites-item__check" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#verif"></use>
+                            </svg>
+                        </div>
+                        <div class="requisites-item__img">
+                            <img src="./img/individual.png" alt="Самозанятый">
+                        </div>
+                        <h4 class="requisites-item__title">
+                            Физлицо
+                        </h4>
+                        <p class="requisites-item__descr">
+                            Solar Staff прекратил свою работу на территории России, и мы пока не можем переводить вам деньги через этот сервис. 
+                            Используйте другие формы занятости. Подробнее в статье — <a href="#">«Как получить бонус».</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="requisites__clue">
+                    Как стать самозанятым, читайте в нашей <a href="#">статье</a>.
+                </p>
+                <div class="requisites__list">
+                    <div class="requisites__item" hidden data-requisites-content="self-employed">
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Персональные данные</h4>
+                            <div>
+                                <div class="input-text input-text--no-exp _active">
+                                    <label class="input-text__label">
+                                        <span>ФИО как в паспорте</span>
+                                        <input type="text" name="ФИО как в паспорте" class="input-reset input-text__input" value="Иван Петров Сергеевич" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>ИНН</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" value="" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
+                            <div>
+                                <div class="requisites__label--bank search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Обслуживающий банк</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>Расчётный счёт</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="requisites__item" hidden data-requisites-content="individual-entrepreneur">
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Индивидуальный предприниматель</h4>
+                            <div>
+                                <div class="requisites__label--name search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Наименование</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>ИНН</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="select-secondary select-secondary--no-placeholder">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Система налогообложения
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Общая (НДС)</option>
+                                            <option value="room-2">Упрощенная (УСН)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
+                            <div>
+                                <div class="requisites__label--bank search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Обслуживающий банк</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>Расчётный счёт</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="requisites__item" hidden data-requisites-content="organization">
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Реквизиты организации</h4>
+                            <div>
+                                <div class="requisites__label--name search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Наименование организации</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="requisites__label--address search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Юридический адрес</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="select-secondary select-secondary--no-placeholder">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Система налогообложения
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Общая (НДС)</option>
+                                            <option value="room-2">Упрощенная (УСН)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>ИНН</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>КПП</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp">
+                                    <label class="input-text__label">
+                                        <span>Генеральный директор</span>
+                                        <input type="text" name="Генеральный директор" class="input-reset input-text__input" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="select-secondary select-secondary--no-placeholder">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Система налогообложения
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Общая (НДС)</option>
+                                            <option value="room-2">Упрощенная (УСН)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
+                            <div>
+                                <div class="requisites__label--bank search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Обслуживающий банк</div>
+                                            <div></div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Объект 2
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Объект 3
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-4">
+                                                Объект 4
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-5">
+                                                Объект 5
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-6">
+                                                Объект 6
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-7">
+                                                Объект 7
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-8">
+                                                Объект 8
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                    <label class="input-text__label">
+                                        <span>Расчётный счёт</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="edit-profile__btns">
                 <button type="button" class="btn btn-reset btn-secondary edit-profile__delete">Удалить</button>
                 <button type="button" class="btn btn-reset btn-primary edit-profile__save">Сохранить</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
