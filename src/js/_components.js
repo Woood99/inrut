@@ -36,6 +36,7 @@ import {
     createDealValidate,
     editUserValidate,
     createMeetingShowValidate,
+    requisitesValidate,
     inputMask
 } from './components/formValidate';
 import dropdown from './modules/dropdown';
@@ -163,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createDealValidate();
     editUserValidate();
     createMeetingShowValidate();
+    requisitesValidate();
     inputMask();
     // ==================================================
 

@@ -1299,7 +1299,7 @@
                         <span class=" personal-area__name">
                             Иван П.
                         </span>
-                        <button type="button" class="btn btn-reset personal-area__edit" data-popup-path="edit-profile">Редактировать профиль</button>
+                        <button type="button" class="btn btn-reset personal-area__edit" data-popup-path="edit-profile_agent">Редактировать профиль</button>
                     </div>
                     <nav class="personal-area__nav">
                         <ul data-spollers class="personal-area__list list-reset">
@@ -1677,7 +1677,7 @@
                                 Тип контакта
                             </span>
                             <select class="select-secondary__body" name="complex">
-                                <option placeholder value="all-room">Любой</option>
+                                <option placeholder></option>
                                 <option value="room-1">Собственик</option>
                                 <option value="room-2">Опекун</option>
                                 <option value="room-3">Представитель</option>
@@ -1741,7 +1741,7 @@
                                 Тип контакта
                             </span>
                             <select class="select-secondary__body" name="complex">
-                                <option placeholder value="all-room">Любой</option>
+                                <option placeholder></option>
                                 <option value="room-1">Собственик</option>
                                 <option value="room-2">Опекун</option>
                                 <option value="room-3">Представитель</option>
@@ -1830,7 +1830,7 @@
                                 Тип
                             </span>
                             <select class="select-secondary__body" name="complex">
-                                <option placeholder value="all-room">Любой</option>
+                                <option placeholder></option>
                                 <option value="room-1">Продавец</option>
                                 <option value="room-2">Покупатель</option>
                             </select>
@@ -2130,7 +2130,7 @@
                             Тип договора
                         </span>
                         <select class="select-secondary__body" name="complex">
-                            <option placeholder value="all-room">Любой</option>
+                            <option placeholder></option>
                             <option value="room-1">Эксклюзивный</option>
                             <option value="room-2">Стандартный</option>
                         </select>
@@ -2192,6 +2192,7 @@
 
 
 
+<!-- Для пользователя -->
 <div class="popup popup-primary popup-primary--right popup-primary--edit-profile">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="edit-profile">
         <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
@@ -2201,6 +2202,97 @@
             <span>Закрыть</span>
         </button>
         <form action="#" class="popup__content popup-primary__content edit-profile">
+            <h2 class="edit-profile__title title-2">
+                Настройки личного кабинета
+            </h2>
+            <div class="edit-profile__tied">
+                <button type="button" class="btn btn-reset edit-profile__tied-btn" data-popup-path="sber-tied">
+                    <img loading="lazy" src="./img/sber.png" width="34" height="34" alt="Сбербанк ID">
+                </button>
+                <button type="button" class="btn btn-reset edit-profile__tied-btn" data-popup-path="sber-tied">
+                    <img loading="lazy" src="./img/sber.png" width="34" height="34" alt="Сбербанк ID">
+                </button>
+                <button type="button" class="btn btn-reset edit-profile__tied-btn" data-popup-path="sber-tied">
+                    <img loading="lazy" src="./img/sber.png" width="34" height="34" alt="Сбербанк ID">
+                </button>
+            </div>
+            <div class="edit-profile__user">
+                <div class="edit-profile__avatar avatar">
+                    <img loading="lazy" src="./img/avatar.png" width="90" height="90" alt="Иван Петров">
+                    <div>
+                        <input type="file" multiple accept=".jpg, .png, .jpeg, .heic" class="input-reset">
+                        <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.02 5.714h5.96c.868 0 1.376.253 1.874.838.026.03.446.552.903 1.116.457.565 1.388.903 2.243.903h.572c2.285 0 4 1.715 4 4.572v8.571c0 2.286-2.286 4.572-5.143 4.572H8.572c-2.858 0-5.143-2.286-5.143-4.572v-8.571c0-2.857 1.714-4.572 4-4.572H8c.855 0 1.786-.338 2.243-.903.457-.564.877-1.086.903-1.116.498-.585 1.006-.838 1.873-.838zM9.885 16.857A6.116 6.116 0 0016 22.971a6.117 6.117 0 006.114-6.114A6.117 6.117 0 0016 10.743a6.116 6.116 0 00-6.114 6.114zm1.828 0a4.285 4.285 0 118.571 0 4.285 4.285 0 01-8.57 0z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="edit-profile__subtitle">
+                    Фамилия, имя, отчество
+                </div>
+                <div class="edit-profile__name title-2">
+                    Иван Петров Сергеевич
+                </div>
+            </div>
+            <div class="edit-profile__wrapper">
+                <h4 class="edit-profile__wrapper-subtitle title-3">Личные данные</h4>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Фамилия" class="input-reset input-primary__input" disabled value="Петров" placeholder="Фамилия">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Имя" class="input-reset input-primary__input" disabled value="Иван" placeholder="Имя">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Отчество" class="input-reset input-primary__input" disabled value="Сергеевич" placeholder="Отчество">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <label class="input-primary input-clue">
+                    <input type="text" name="Дата рождения" class="input-reset input-primary__input" disabled value="16.02.1982" placeholder="Телефон">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#info"></use>
+                    </svg>
+                </label>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Номер телефона</span>
+                        <input type="tel" name="Телефон" class="input-reset input-text__input input-phone-mask" value="89876543210" placeholder="">
+                    </label>
+                </div>
+                <div class="input-text input-text--no-exp _active">
+                    <label class="input-text__label">
+                        <span>Эл.почта</span>
+                        <input type="text" name="Эл.почта" class="input-reset input-text__input" value="address@gmail.com" placeholder="">
+                    </label>
+                </div>
+            </div>
+            <div class="edit-profile__btns">
+                <button type="button" class="btn btn-reset btn-secondary edit-profile__delete">Удалить</button>
+                <button type="submit" class="btn btn-reset btn-primary edit-profile__save">Сохранить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Для агента -->
+<div class="popup popup-primary popup-primary--right popup-primary--edit-profile-agent">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="edit-profile_agent">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <form action="#" class="popup__content popup-primary__content edit-profile edit-profile--requisites container">
             <h2 class="edit-profile__title title-2">
                 Настройки личного кабинета
             </h2>
@@ -2345,7 +2437,7 @@
                             Физлицо
                         </h4>
                         <p class="requisites-item__descr">
-                            Solar Staff прекратил свою работу на территории России, и мы пока не можем переводить вам деньги через этот сервис. 
+                            Solar Staff прекратил свою работу на территории России, и мы пока не можем переводить вам деньги через этот сервис.
                             Используйте другие формы занятости. Подробнее в статье — <a href="#">«Как получить бонус».</a>
                         </p>
                     </div>
@@ -2358,16 +2450,18 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Персональные данные</h4>
                             <div>
-                                <div class="input-text input-text--no-exp _active">
+                                <div class="requisites__label input-text input-text--no-exp _active" data-validate-required data-validate-error="Укажите ФИО">
                                     <label class="input-text__label">
                                         <span>ФИО как в паспорте</span>
-                                        <input type="text" name="ФИО как в паспорте" class="input-reset input-text__input" value="Иван Петров Сергеевич" placeholder="">
+                                        <input type="text" name="ФИО как в паспорте" class="input-reset input-text__input" autocomplete="off" value="Иван Петров Сергеевич"
+                                            placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="12"
+                                    data-validate-error="Должен содержать 12 цифр">
                                     <label class="input-text__label">
                                         <span>ИНН</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="12" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
                             </div>
@@ -2375,59 +2469,24 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
                             <div>
-                                <div class="requisites__label--bank search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Обслуживающий банк</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
-                                </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp" data-validate-required data-validate-error="Укажите банк">
                                     <label class="input-text__label">
-                                        <span>БИК</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                        <span>Обслуживающий банк</span>
+                                        <input type="text" name="Обслуживающий банк" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="9"
+                                    data-validate-error="Должен содержать 9 цифр">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" autocomplete="off" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="20"
+                                    data-validate-error="Должен содержать 20 цифр">
                                     <label class="input-text__label">
                                         <span>Расчётный счёт</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
                             </div>
@@ -2437,62 +2496,27 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Индивидуальный предприниматель</h4>
                             <div>
-                                <div class="requisites__label--name search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Наименование</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
-                                </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label requisites__label--name input-text input-text--no-exp" data-validate-required
+                                    data-validate-error="Укажите наименование организации">
                                     <label class="input-text__label">
-                                        <span>ИНН</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" value="" placeholder="">
+                                        <span>Наименование</span>
+                                        <input type="text" name="Наименование" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="select-secondary select-secondary--no-placeholder">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="12"
+                                    data-validate-error="Должен содержать 12 цифр">
+                                    <label class="input-text__label">
+                                        <span>ИНН</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="12" value="" autocomplete="off" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="requisites__select select-secondary select-secondary--no-placeholder" data-validate-error="Выберите систему налогообложения">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
                                             Система налогообложения
                                         </span>
                                         <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
+                                            <option placeholder></option>
                                             <option value="room-1">Общая (НДС)</option>
                                             <option value="room-2">Упрощенная (УСН)</option>
                                         </select>
@@ -2503,59 +2527,24 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
                             <div>
-                                <div class="requisites__label--bank search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Обслуживающий банк</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
-                                </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp" data-validate-required data-validate-error="Укажите банк">
                                     <label class="input-text__label">
-                                        <span>БИК</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                        <span>Обслуживающий банк</span>
+                                        <input type="text" name="Обслуживающий банк" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="9"
+                                    data-validate-error="Должен содержать 9 цифр">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" autocomplete="off" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="20"
+                                    data-validate-error="Должен содержать 20 цифр">
                                     <label class="input-text__label">
                                         <span>Расчётный счёт</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
                             </div>
@@ -2565,129 +2554,47 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Реквизиты организации</h4>
                             <div>
-                                <div class="requisites__label--name search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Наименование организации</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                <div class="requisites__label requisites__label--name input-text input-text--no-exp" data-validate-required
+                                    data-validate-error="Укажите наименование организации">
+                                    <label class="input-text__label">
+                                        <span>Наименование организации</span>
+                                        <input type="text" name="Наименование организации" class="input-reset input-text__input" autocomplete="off" value="" placeholder="">
+                                    </label>
                                 </div>
-                                <div class="requisites__label--address search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Юридический адрес</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                <div class="requisites__label requisites__label--address input-text input-text--no-exp" data-validate-required
+                                    data-validate-error="Укажите наименование организации">
+                                    <label class="input-text__label">
+                                        <span>Юридический адрес</span>
+                                        <input type="text" name="Юридический адрес" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
+                                    </label>
                                 </div>
-                                <div class="select-secondary select-secondary--no-placeholder">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Система налогообложения
-                                        </span>
-                                        <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Общая (НДС)</option>
-                                            <option value="room-2">Упрощенная (УСН)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="12"
+                                    data-validate-error="Должен содержать 12 цифр">
                                     <label class="input-text__label">
                                         <span>ИНН</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="12" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="9"
+                                    data-validate-error="Должен содержать 9 цифр">
                                     <label class="input-text__label">
                                         <span>КПП</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp">
+                                <div class="requisites__label input-text input-text--no-exp" data-validate-required data-validate-error="Укажите генерального директора">
                                     <label class="input-text__label">
                                         <span>Генеральный директор</span>
-                                        <input type="text" name="Генеральный директор" class="input-reset input-text__input" value="" placeholder="">
+                                        <input type="text" name="Генеральный директор" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="select-secondary select-secondary--no-placeholder">
+                                <div class="requisites__select select-secondary select-secondary--no-placeholder" data-validate-error="Выберите систему налогообложения">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
                                             Система налогообложения
                                         </span>
                                         <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
+                                            <option placeholder></option>
                                             <option value="room-1">Общая (НДС)</option>
                                             <option value="room-2">Упрощенная (УСН)</option>
                                         </select>
@@ -2698,59 +2605,24 @@
                         <div>
                             <h4 class="requisites__subtitle title-4">Банковские реквизиты</h4>
                             <div>
-                                <div class="requisites__label--bank search-select-one">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Обслуживающий банк</div>
-                                            <div></div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown">
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Объект 1 Объект 1Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1 Объект 1
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Объект 2
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Объект 3
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-4">
-                                                Объект 4
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-5">
-                                                Объект 5
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-6">
-                                                Объект 6
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-7">
-                                                Объект 7
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-8">
-                                                Объект 8
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
-                                </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp" data-validate-required data-validate-error="Укажите банк">
                                     <label class="input-text__label">
-                                        <span>БИК</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" placeholder="">
+                                        <span>Обслуживающий банк</span>
+                                        <input type="text" name="Обслуживающий банк" class="input-reset input-text__input" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
-                                <div class="input-text input-text--no-exp input-text--only-number-default">
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="9"
+                                    data-validate-error="Должен содержать 9 цифр">
+                                    <label class="input-text__label">
+                                        <span>БИК</span>
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="9" value="" autocomplete="off" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="requisites__label input-text input-text--no-exp input-text--only-number-default" data-validate-length="20"
+                                    data-validate-error="Должен содержать 20 цифр">
                                     <label class="input-text__label">
                                         <span>Расчётный счёт</span>
-                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" placeholder="">
+                                        <input type="text" name="ИНН" class="input-reset input-text__input" maxlength="20" value="" autocomplete="off" placeholder="">
                                     </label>
                                 </div>
                             </div>
@@ -2760,11 +2632,14 @@
             </div>
             <div class="edit-profile__btns">
                 <button type="button" class="btn btn-reset btn-secondary edit-profile__delete">Удалить</button>
-                <button type="button" class="btn btn-reset btn-primary edit-profile__save">Сохранить</button>
+                <button type="submit" class="btn btn-reset btn-primary edit-profile__save">Сохранить</button>
             </div>
         </form>
     </div>
 </div>
+
+
+
 
 <div class="popup popup-primary popup-primary--right popup-primary--sber-tied">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="sber-tied">

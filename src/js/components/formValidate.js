@@ -3,6 +3,7 @@ import modal from '../modules/modal';
 import AirDatepicker from 'air-datepicker';
 const validateTextMap = {
     minLength: 'Минимальное кол-во символов:',
+    length: 'Должен содержать',
     name: 'Укажите имя',
     surname: 'Укажите фамилию',
     tel: 'Введите корректный номер телефона',
@@ -359,10 +360,6 @@ export const createDealValidate = () => {
         }
     })
 
-    // type.addEventListener('change', () => {
-    //     if (formEventInput) validate();
-    // })
-
     function validate() {
         let result = true;
         formEventInput = true;
@@ -433,9 +430,6 @@ export const editUserValidate = () => {
         if (!validate()) e.preventDefault();
     })
 }
-
-
-
 export const createMeetingShowValidate = () => {
     const form = document.querySelector('.create-meeting-show__form');
     if (!form) return;
@@ -496,6 +490,63 @@ export const createMeetingShowValidate = () => {
         if (!validate()) e.preventDefault();
     })
 }
+
+
+export const requisitesValidate = () => {
+    const form = document.querySelector('.edit-profile--requisites');
+    if (!form) return;
+    let formEventInput = false;
+
+    const itemsLabel = form.querySelectorAll('.requisites__label');
+    const itemsSelect = form.querySelectorAll('.requisites__select');
+
+    itemsLabel.forEach(el => {
+        el.addEventListener('input', () => {
+            if (formEventInput) validate();
+        })
+    })
+    itemsSelect.forEach(el => {
+        el.addEventListener('change', () => {
+            if (formEventInput) validate();
+        })
+    })
+
+    function validate() {
+        let result = true;
+        formEventInput = true;
+        [...itemsLabel, ...itemsSelect].forEach(label => validateRemoveError(label))
+        itemsLabel.forEach(item => validateRemoveError(item));
+        const activeEl = form.querySelector('.requisites__btn._active');
+        if (activeEl) {
+            const currentContent = form.querySelector(`[data-requisites-content=${activeEl.dataset.requisitesBtn}]`)
+            currentContent.querySelectorAll('.requisites__label').forEach(label => {
+
+                if (label.hasAttribute('data-validate-required') && label.querySelector('input').value.length === 0) {
+                    result = false;
+                    validateCreateError(label, `${label.dataset.validateError}`);
+                }
+                if (label.hasAttribute('data-validate-length') && label.querySelector('input').value.length < label.dataset.validateLength) {
+                    result = false;
+                    validateCreateError(label, `${label.dataset.validateError}`);
+                }
+            })
+            currentContent.querySelectorAll('.requisites__select').forEach(select => {
+                if (!validateCreeateErrorSelect(select, select.dataset.validateError)) {
+                    result = false;
+                }
+            })
+        }
+        return result;
+    }
+
+    form.addEventListener('submit', (e) => {
+        if (!validate()) e.preventDefault();
+    })
+}
+
+
+
+
 export const inputMask = () => {
     const inputs = document.querySelectorAll('.input-phone-mask');
     const inputMask = new Inputmask('+7 999 999-99-99');

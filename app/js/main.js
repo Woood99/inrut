@@ -4325,6 +4325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createDealValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.editUserValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.createMeetingShowValidate)();
+  (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.requisitesValidate)();
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.inputMask)();
   // ==================================================
 
@@ -4407,6 +4408,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-profile');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-profile_agent');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'share-app');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-user');
@@ -6361,6 +6363,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "editUserValidate": () => (/* binding */ editUserValidate),
 /* harmony export */   "inputMask": () => (/* binding */ inputMask),
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
+/* harmony export */   "requisitesValidate": () => (/* binding */ requisitesValidate),
 /* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
 /* harmony export */   "validateRadioPrimary": () => (/* binding */ validateRadioPrimary)
 /* harmony export */ });
@@ -6373,6 +6376,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const validateTextMap = {
   minLength: 'Минимальное кол-во символов:',
+  length: 'Должен содержать',
   name: 'Укажите имя',
   surname: 'Укажите фамилию',
   tel: 'Введите корректный номер телефона',
@@ -6695,11 +6699,6 @@ const createDealValidate = () => {
       if (formEventInput) validate();
     }
   });
-
-  // type.addEventListener('change', () => {
-  //     if (formEventInput) validate();
-  // })
-
   function validate() {
     let result = true;
     formEventInput = true;
@@ -6805,6 +6804,52 @@ const createMeetingShowValidate = () => {
         validateCreateError(dateOne, null);
         validateCreateError(dateTwo, 'Дата окончания не должна быть меньше начала');
       }
+    }
+    return result;
+  }
+  form.addEventListener('submit', e => {
+    if (!validate()) e.preventDefault();
+  });
+};
+const requisitesValidate = () => {
+  const form = document.querySelector('.edit-profile--requisites');
+  if (!form) return;
+  let formEventInput = false;
+  const itemsLabel = form.querySelectorAll('.requisites__label');
+  const itemsSelect = form.querySelectorAll('.requisites__select');
+  itemsLabel.forEach(el => {
+    el.addEventListener('input', () => {
+      if (formEventInput) validate();
+    });
+  });
+  itemsSelect.forEach(el => {
+    el.addEventListener('change', () => {
+      if (formEventInput) validate();
+    });
+  });
+  function validate() {
+    let result = true;
+    formEventInput = true;
+    [...itemsLabel, ...itemsSelect].forEach(label => validateRemoveError(label));
+    itemsLabel.forEach(item => validateRemoveError(item));
+    const activeEl = form.querySelector('.requisites__btn._active');
+    if (activeEl) {
+      const currentContent = form.querySelector(`[data-requisites-content=${activeEl.dataset.requisitesBtn}]`);
+      currentContent.querySelectorAll('.requisites__label').forEach(label => {
+        if (label.hasAttribute('data-validate-required') && label.querySelector('input').value.length === 0) {
+          result = false;
+          validateCreateError(label, `${label.dataset.validateError}`);
+        }
+        if (label.hasAttribute('data-validate-length') && label.querySelector('input').value.length < label.dataset.validateLength) {
+          result = false;
+          validateCreateError(label, `${label.dataset.validateError}`);
+        }
+      });
+      currentContent.querySelectorAll('.requisites__select').forEach(select => {
+        if (!validateCreeateErrorSelect(select, select.dataset.validateError)) {
+          result = false;
+        }
+      });
     }
     return result;
   }
@@ -8451,7 +8496,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const requisites = () => {
-  const modal = document.querySelector('.popup-primary--edit-profile');
+  const modal = document.querySelector('.popup-primary--edit-profile-agent');
   const container = document.querySelector('.requisites');
   if (!modal || !container) return;
   const btns = container.querySelectorAll('[data-requisites-btn]');
@@ -8469,6 +8514,12 @@ const requisites = () => {
         currentItem.removeAttribute('hidden');
         modal.scrollTo({
           top: currentItem.offsetTop,
+          behavior: "smooth"
+        });
+      }
+      if (name === 'individual') {
+        modal.scrollTo({
+          top: modal.offsetHeight,
           behavior: "smooth"
         });
       }

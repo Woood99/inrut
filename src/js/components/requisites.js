@@ -1,5 +1,5 @@
 const requisites = () => {
-    const modal = document.querySelector('.popup-primary--edit-profile');
+    const modal = document.querySelector('.popup-primary--edit-profile-agent');
     const container = document.querySelector('.requisites');
     if (!modal || !container) return;
     const btns = container.querySelectorAll('[data-requisites-btn]');
@@ -19,6 +19,12 @@ const requisites = () => {
                 currentItem.removeAttribute('hidden');
                 modal.scrollTo({
                     top: currentItem.offsetTop,
+                    behavior: "smooth",
+                })
+            }
+            if (name === 'individual') {
+                modal.scrollTo({
+                    top: modal.offsetHeight,
                     behavior: "smooth",
                 })
             }

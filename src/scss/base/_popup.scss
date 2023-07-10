@@ -502,16 +502,16 @@
                 padding: 65px 48px 48px;
                 width: 1112px;
 
-             @media (max-width:$desktop){
-                max-width: 100%;
-                width: calc(100% - 4px);
-                margin: 50px auto 0;
-                vertical-align: bottom;
+                @media (max-width:$desktop) {
+                    max-width: 100%;
+                    width: calc(100% - 4px);
+                    margin: 50px auto 0;
+                    vertical-align: bottom;
 
-                padding: 65px 35px 48px;
+                    padding: 65px 35px 48px;
 
-                border-radius: 12px 12px 0 0; 
-             }
+                    border-radius: 12px 12px 0 0;
+                }
             }
         }
 
@@ -523,6 +523,40 @@
             height: 100%
         }
 
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
+
+    &--edit-profile-agent {
+        text-align: center;
+        z-index: 1052;
+
+        .popup-primary {
+            &__container {
+                min-height: auto;
+           
+                margin: 50px auto 0;
+                text-align: center;
+
+                border-radius: 12px 12px 0 0;
+                padding: 65px 48px 48px;
+                width: calc(100% - 4px);
+                vertical-align: bottom;
+
+                @media (max-width:$desktop) {
+                    padding: 65px 35px 48px;
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
 
         @media (max-width:$desktop) {
             background-color: rgba(34, 41, 102, 0.4);
@@ -3818,7 +3852,8 @@
         grid-column-gap: 16px;
         grid-row-gap: 8px;
     }
-    &__requisites{
+
+    &__requisites {
         margin-top: 32px;
     }
 }

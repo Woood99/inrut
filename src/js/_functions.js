@@ -24,6 +24,7 @@ popup(null, 'city');
 popup(null, 'add');
 popup(null, 'personal-area');
 popup(null, 'edit-profile');
+popup(null, 'edit-profile_agent');
 popup(null, 'share-app');
 popup(null, 'complaint');
 popup(null, 'complaint-user');
