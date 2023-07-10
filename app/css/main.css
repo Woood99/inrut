@@ -6844,7 +6844,9 @@ textarea.input-reset {
   flex-direction: column;
 }
 .dots-dropdown__dropdown button {
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9381,7 +9383,7 @@ textarea.input-reset {
   -ms-grid-columns: 14.8109243697% 29.4291338583% max-content 1fr 15.7480314961%;
   grid-template-columns: 14.8109243697% 29.4291338583% -webkit-max-content 1fr 15.7480314961%;
   grid-template-columns: 14.8109243697% 29.4291338583% max-content 1fr 15.7480314961%;
-  padding: 27px 40px 27px 24px;
+  padding: 24px;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
   transition: -webkit-box-shadow 0.4s ease-in-out;
@@ -22171,11 +22173,6 @@ textarea.input-reset {
     background-color: var(--stand-bg);
   }
 }
-@media (max-width: 1144px) {
-  .request-catalog__title {
-    padding: 0 16px;
-  }
-}
 .request-catalog__filter {
   margin-top: 32px;
 }
@@ -28538,6 +28535,83 @@ textarea.input-reset {
   .mortgage-app .object-info-mortgage:hover {
     -webkit-box-shadow: var(--shadow-secondary);
     box-shadow: var(--shadow-secondary);
+  }
+}
+
+@media (max-width: 1144px) {
+  .my-requests__body {
+    padding: 74px 0 16px;
+    background-color: var(--stand-bg);
+  }
+}
+.my-requests__table {
+  margin-top: 32px;
+}
+.my-requests__table .object-info {
+  -ms-grid-columns: 22.4820143885% 35.9712230216% -webkit-max-content 1fr 24px;
+  -ms-grid-columns: 22.4820143885% 35.9712230216% max-content 1fr 24px;
+  grid-template-columns: 22.4820143885% 35.9712230216% -webkit-max-content 1fr 24px;
+  grid-template-columns: 22.4820143885% 35.9712230216% max-content 1fr 24px;
+}
+@media (max-width: 1144px) {
+  .my-requests__table .object-info {
+    -ms-grid-columns: 1fr -webkit-max-content 24px;
+    -ms-grid-columns: 1fr max-content 24px;
+    grid-template-columns: 1fr -webkit-max-content 24px;
+    grid-template-columns: 1fr max-content 24px;
+    grid-column-gap: 32px;
+  }
+}
+.my-requests__table .dots-dropdown__dropdown > button:nth-child(1) {
+  color: var(--red);
+}
+.my-requests__table .dots-dropdown__dropdown > button:nth-child(1) svg {
+  fill: currentColor;
+}
+.my-requests__table .dots-dropdown__dropdown > button:nth-child(2) {
+  color: var(--blue);
+}
+.my-requests__table .dots-dropdown__dropdown > button:nth-child(2) svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5px;
+}
+@media (max-width: 1144px) {
+  .my-requests__table .dots-dropdown__dropdown {
+    right: -12px;
+  }
+}
+@media (max-width: 1144px) {
+  .my-requests__table .dots-dropdown {
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+}
+@media (max-width: 1144px) {
+  .my-requests__table {
+    padding: 0;
+    margin-top: 16px;
+    background-color: transparent;
+  }
+}
+.my-requests__banners {
+  margin-top: 32px;
+}
+@media (max-width: 1144px) {
+  .my-requests__banners {
+    margin-top: 16px;
+  }
+}
+@media (max-width: 1144px) {
+  .my-requests {
+    padding-top: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
