@@ -5,10 +5,9 @@
             background-color: var(--stand-bg);
         }
     }
-
     &__table {
         margin-top: 32px;
-
+        background-color: var(--stand-bg);
         .object-info {
             grid-template-columns: percent(250, 1112) percent(400, 1112) max-content 1fr 24px;
 
@@ -17,7 +16,17 @@
                 grid-column-gap: 32px;
             }
         }
-
+        .main-table__type{
+            grid-template-columns: percent(250, 1112) percent(400, 1112) 1fr;
+            justify-content: start;
+            margin: 0 24px;
+    
+            span {
+                &:first-child {
+                    margin: 0;
+                }
+            }
+        }
         .dots-dropdown {
             &__dropdown {
                 >button {
