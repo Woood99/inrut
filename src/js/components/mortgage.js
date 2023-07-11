@@ -51,6 +51,41 @@ const mortgage = () => {
             });
         })
     }
+
+    if (containerAdd) {
+        const meternalCapital = containerAdd.querySelector('.object-calc-mort__contribution');
+        if (meternalCapital) {
+            const checkbox = meternalCapital.querySelector('.checkbox-secondary__input');
+            const capital = containerAdd.querySelector('.object-calc-mort__capital');
+            const facilities = containerAdd.querySelector('.object-calc-mort__facilities');
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    capital.removeAttribute('hidden');
+                    facilities.removeAttribute('hidden');
+                } else {
+                    capital.setAttribute('hidden', '')
+                    facilities.setAttribute('hidden', '')
+                }
+            })
+
+            const capitalInput = capital.querySelector('.input-text__input');
+            const facilitiesInput = facilities.querySelector('.input-text__input');
+            [capitalInput, facilitiesInput].forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value.length >= 2 && input.value[0] === '0') {
+                        input.value = input.value.slice(1);
+                    }
+                })
+                input.addEventListener('focusin', () => {
+                    input.value = input.value.replace(' ₽', '');
+                })
+                input.addEventListener('focusout', () => {
+                    if (input.value !== '' && input.value !== '0') input.value += ' ₽';
+                })
+            })
+
+        }
+    }
 };
 
 

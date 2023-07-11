@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Ипотека-онлайн</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--purchase-request">
+        @include('partials/header.html')
+        <main class="main main-page-gap purchase-request mortgage">
+            <div class="purchase-request__top top-page-inner-title container">
+                <div class="top-page-inner-title__container">
+                    <h1 class="purchase-request__title top-page-inner-title__title title-1" data-da=".purchase-request__body,1144,first">
+                        Ипотека-онлайн
+                    </h1>
+                    <p class="purchase-request__descr top-page-inner-title__descr">
+                        Рассчитать платеж по кредиту и получить одобрение
+                    </p>
+                </div>
+            </div>
+            <div class="purchase-request__body bid">
+                <div class="bid__container container--no-padding">
+                    <div class="bid__body">
+                        <div class="mortgage__calculator mortgage-calculator object-calc-mort object-calc-mort--add">
+                            <div class="object-calc-mort__list">
+                                <button type="button" class="btn btn-reset object-calc-mort__btn _active" data-mortgage-card="1">
+                                    <span>Базовая программа</span>
+                                    <span>от 10,9%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="2">
+                                    <span>Господдержка</span>
+                                    <span>от 7,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="3">
+                                    <span>Ипотека для IT</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="4">
+                                    <span>Военная</span>
+                                    <span>от 4,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="5">
+                                    <span>Семейная</span>
+                                    <span>от 5,7%</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="6">
+                                    <span>Семейная</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="7">
+                                    <span>Господдержка</span>
+                                    <span>10 лет % пополам</span>
+                                </button>
+                            </div>
+                            <div class="object-calc-mort__wrapper">
+                                <div class="filter-range-one">
+                                    <span class="filter-range-one__subtitle">Стоимость объекта</span>
+                                    <div class="filter-range-one__nav">
+                                        <div data-default="2897000">
+                                            <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                        </div>
+                                    </div>
+                                    <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
+                                    </div>
+                                </div>
+                                <div class="object-calc-mort__contribution">
+                                    <div class="filter-range-one filter-range-one--contribution">
+                                        <span class="filter-range-one__subtitle">Первоначальный взнос</span>
+                                        <div class="filter-range-one__nav">
+                                            <div data-default="400000">
+                                                <input type="text" maxlength="12" name="Имя" class="input-reset">
+                                            </div>
+                                            <span>15%</span>
+                                        </div>
+                                        <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
+                                    </div>
+                                    <div class="checkbox-secondary">
+                                        <input id="test-id_1" name="test-id-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                        <label for="test-id_1" class="checkbox-secondary__label">
+                                            <span class="checkbox-secondary__text">Использовать материнский капитал в первоначальном взносе</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="object-calc-mort__capital input-text input-text--no-exp input-text--only-number" hidden>
+                                    <label class="input-text__label">
+                                        <span>Материнский капитал</span>
+                                        <input type="text" name="Материнский капитал" maxlength="12" class="input-reset input-text__input" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="object-calc-mort__facilities input-text input-text--no-exp input-text--only-number" hidden>
+                                    <label class="input-text__label">
+                                        <span>Личные средства</span>
+                                        <input type="text" name="Личные средства" maxlength="12" class="input-reset input-text__input" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="object-calc-mort__term">
+                                    <div class="filter-range-one filter-range-one--term">
+                                        <span class="filter-range-one__subtitle">Срок кредита</span>
+                                        <div class="filter-range-one__nav">
+                                            <div data-default="5">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
+                                                лет
+                                            </div>
+                                        </div>
+                                        <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-reset field-static" data-popup-path="interest-rate-modal-two">
+                                    <span class="field-static__subtitle">
+                                        Процентная ставка
+                                    </span>
+                                    <span class="field-static__text">
+                                        от 10,9%
+                                    </span>
+                                    <div class="field-static__arrow">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-right"></use>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <div class="select-secondary select-secondary--city _selected">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Город
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option value="apartments">Санкт-Петербург</option>
+                                            <option value="apartments2">Волгоград</option>
+                                            <option value="apartments3">Москва</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object-calc-mort__info">
+                                <span>
+                                    Сумма кредита
+                                    <span>2 897 000 ₽</span>
+                                </span>
+                                <span>
+                                    Процентная ставка
+                                    <span>10,8%</span>
+                                </span>
+                                <span>
+                                    Ежемесячный платеж
+                                    <span>19 000 ₽/мес.</span>
+                                </span>
+                            </div>
+                            <div class="object-calc-mort__bottom">
+                                <button type="button" class="btn btn-reset btn-primary object-calc-mort__app">
+                                    Получить одобрение
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#send"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bid__sidebar">
+                        <div class="bid__user bid-user _sticky">
+                            <div class="bid-user__avatar avatar">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="129" height="129" alt="Алексей Г.">
+                            </div>
+                            <div class="bid-user__content">
+                                <a href="#" class="bid-user__name">
+                                    Алексей Г.
+                                </a>
+                                <time class="bid-user__time" datetime="2022-12-12">
+                                    Агент покупателя был в сети 12.12.2022
+                                </time>
+                                <div class="bid-user__rating">
+                                    <div class="bid-user__rating-stars">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#star"></use>
+                                        </svg>
+                                    </div>
+                                    <span>2.2</span>
+                                    <span>(2 отзыва)</span>
+                                </div>
+                                <div class="bid-user__quantity">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#briefcase"></use>
+                                    </svg>
+                                    <span>10 объектов</span>,&nbsp;
+                                    <span>8 сделок</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-reset btn-primary bid-user__btn" data-popup-path="suggest-object">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#cart-3"></use>
+                                </svg>
+                                Предложить объект
+                            </button>
+                        </div>
+                    </div>
+                    <div class="plate-bottom purchase-request-plate-bottom">
+                        <button type="button" class="btn btn-reset btn-primary purchase-request-plate-bottom__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#cart-3"></use>
+                            </svg>
+                            Предложить объект
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>
