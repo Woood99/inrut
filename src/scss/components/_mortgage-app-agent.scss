@@ -1,10 +1,12 @@
 .mortgage-app-agent {
-    &__filter{
+    &__filter {
         margin-top: 32px;
     }
+
     &__table {
         margin-top: 32px;
         background-color: var(--stand-bg);
+
         @media (max-width:$desktop) {
             padding: 0;
             margin-top: 16px;
@@ -20,44 +22,132 @@
     }
 
     .main-table__type {
-        grid-template-columns: percent(172, 1112) percent(270, 1112) percent(165, 1112) percent(140, 1112) percent(175, 1112) 22px;
+        grid-template-columns: percent(175, 1112) percent(182, 1112) percent(175, 1112) percent(120, 1112) 
+        percent(120, 1112) percent(170, 1112) 22px;
         margin: 0 24px;
         grid-column-gap: 20px;
+
         span {
             &:first-child {
                 margin: 0;
             }
         }
     }
-    .spollers__item{
+
+    .spollers__item {
         background-color: var(--white);
         transition: padding-top $transitionSpeed $transitionFunction;
         border-radius: 12px;
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 16px;
         }
-        &._active{
+
+        &._active {
             padding-top: 24px;
         }
-        .spollers__body{
+
+        .spollers__body {
             margin-top: 24px;
-            .object-info-mortgage{
+
+            .object-info-mortgage {
                 cursor: default;
                 box-shadow: none;
                 border-radius: 0;
                 margin: 0 24px;
                 width: calc(100% - 48px);
-                &:not(:last-child){
+                grid-template-columns: percent(172, 1112) percent(270, 1112) percent(165, 1112) percent(140, 1112) percent(175, 1112) 22px;
+
+                >div {
+                    &:nth-child(1) {
+                        font-size: 15px;
+                        line-height: math.div(19, 15);
+                        color: var(--dark);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+
+                        span {
+                            &:not(:last-child) {
+                                margin-bottom: 8px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+
+                        span {
+                            &:not(:last-child) {
+                                margin-bottom: 8px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        background-color: var(--dark);
+                        color: var(--dark);
+                        padding: 6px;
+
+                        font-size: 15px;
+                        line-height: math.div(19, 15);
+                        font-weight: 400;
+                        border-radius: 8px;
+                        justify-self: start;
+
+                        &.object-info-mortgage__approved {
+                            background-color: rgba(36, 202, 142, 0.2);
+                            color: rgba(36, 202, 142, 1);
+                        }
+
+                        &.object-info-mortgage__refusal {
+                            background-color: rgba(255, 209, 209, 1);
+                            color: rgba(255, 27, 27, 1);
+                        }
+
+                        &.object-info-mortgage__sent {
+                            background-color: rgba(148, 61, 189, 0.2);
+                            color: rgba(148, 61, 189, 1);
+                        }
+
+                        &.object-info-mortgage__under-consider {
+                            background-color: rgba(255, 227, 66, 0.2);
+                            color: rgba(255, 227, 66, 1);
+                        }
+                    }
+
+                    &:nth-child(5) {}
+                }
+
+                >svg:nth-child(4) {
+                    width: 24px;
+                    height: 24px;
+                    fill: var(--green);
+                }
+
+                >svg:nth-child(6) {
+                    width: 22px;
+                    height: 22px;
+                    fill: var(--dark);
+                    transition: transform $transitionSpeedFast $transitionFunction;
+                }
+
+                &:not(:last-child) {
                     border-bottom: 1px solid var(--primary100);
                 }
-                @media (min-width:$desktop-min){
-                     &:hover{
+
+                @media (min-width:$desktop-min) {
+                    &:hover {
                         box-shadow: none;
-                     } 
+                    }
                 }
             }
         }
     }
+
     .object-info-mortgage {
         width: 100%;
         background-color: var(--white);
@@ -68,95 +158,49 @@
         align-items: center;
         grid-column-gap: 20px;
         justify-content: space-between;
-        grid-template-columns: percent(172, 1112) percent(270, 1112) percent(165, 1112) percent(140, 1112) percent(175, 1112) 22px;
+        grid-template-columns: percent(175, 1112) percent(182, 1112) percent(175, 1112) percent(120, 1112) 
+        percent(120, 1112) percent(170, 1112) 22px;
         padding: 24px;
         -webkit-tap-highlight-color: transparent;
         transition: box-shadow $transitionSpeed $transitionFunction,
-        background-color $transitionSpeed $transitionFunction,
-        margin $transitionSpeed $transitionFunction,
-        width $transitionSpeed $transitionFunction;
+            background-color $transitionSpeed $transitionFunction,
+            margin $transitionSpeed $transitionFunction,
+            width $transitionSpeed $transitionFunction;
         cursor: pointer;
         margin: 0;
+
         >div {
             &:nth-child(1) {
                 font-size: 15px;
                 line-height: math.div(19, 15);
                 color: var(--dark);
-
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                span{
-                    &:not(:last-child){
-                        margin-bottom: 8px;
-                    }
-                }
             }
-
             &:nth-child(2) {
                 display: flex;
-                flex-direction: column;
-                align-items: start;
-                span{
-                    &:not(:last-child){
-                        margin-bottom: 8px;
-                    }
+                align-items: center;
+                >span{
+                    margin-right: 12px;
                 }
             }
-
-            &:nth-child(3) {
-                background-color: var(--dark);
-                color: var(--dark);
-                padding: 6px;
-
-                font-size: 15px;
-                line-height: math.div(19, 15);
-                font-weight: 400;
-                border-radius: 8px;
-                justify-self: start;
-
-                &.object-info-mortgage__approved {
-                    background-color: rgba(36, 202, 142, 0.2);
-                    color: rgba(36, 202, 142, 1);
-                }
-
-                &.object-info-mortgage__refusal {
-                    background-color: rgba(255, 209, 209, 1);
-                    color: rgba(255, 27, 27, 1);
-                }
-
-                &.object-info-mortgage__sent {
-                    background-color: rgba(148, 61, 189, 0.2);
-                    color: rgba(148, 61, 189, 1);
-                }
-
-                &.object-info-mortgage__under-consider {
-                    background-color: rgba(255, 227, 66, 0.2);
-                    color: rgba(255, 227, 66, 1);
-                }
+        }
+        >svg{
+            &:nth-child(7){
+                width: 22px;
+                height: 22px;
+                fill: var(--dark);
+                transition: transform $transitionSpeedFast $transitionFunction;
             }
-
-            &:nth-child(5) {}
         }
-        >svg:nth-child(4){
-            width: 24px;
-            height: 24px;
-            fill: var(--green);
-        }
-        >svg:nth-child(6){
-            width: 22px;
-            height: 22px;
-            fill: var(--dark);
-            transition: transform $transitionSpeedFast $transitionFunction;
-        }
-        &._spoller-active{
+        &._spoller-active {
             background-color: var(--stand-bg);
             margin: 0 24px;
             width: calc(100% - 48px);
-            >svg:nth-child(6){
-               transform: rotate(-180deg);
+
+            >svg:nth-child(6) {
+                transform: rotate(-180deg);
             }
         }
+
         @media (min-width:$desktop-min) {
             &:hover {
                 box-shadow: var(--shadow-secondary);
