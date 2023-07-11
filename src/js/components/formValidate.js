@@ -559,7 +559,7 @@ export const inputTelValidate = (label, input) => {
 }
 
 
-function validateCreateError(label, text) {
+export const validateCreateError = (label, text) => {
     validateRemoveError(label);
     const errorSpan = document.createElement('span');
     errorSpan.classList.add('_error-span');
@@ -569,13 +569,13 @@ function validateCreateError(label, text) {
     label.classList.add('_error');
 }
 
-function validateRemoveError(label) {
+export const validateRemoveError = (label) => {
     if (!label.classList.contains('_error')) return;
     label.querySelector('._error-span').remove();
     label.classList.remove('_error');
 }
 
-function validateCreateErrorName(label, input) {
+export const validateCreateErrorName = (label, input) => {
     let result = true;
     if (label.hasAttribute('data-validate-min-length') && input.value.length < label.dataset.validateMinLength) {
         result = false;
@@ -588,7 +588,7 @@ function validateCreateErrorName(label, input) {
     return result;
 }
 
-function validateCreateErrorTel(label, input, text) {
+export const validateCreateErrorTel = (label, input, text) => {
     let result = true;
     if (!inputTelValidate(label, input)) {
         result = false;
@@ -597,7 +597,7 @@ function validateCreateErrorTel(label, input, text) {
     return result;
 }
 
-function validateCreeateErrorSelect(container, text) {
+export const validateCreeateErrorSelect = (container, text) => {
     let result = true;
     if (!container.classList.contains('_selected')) {
         result = false;
@@ -606,7 +606,7 @@ function validateCreeateErrorSelect(container, text) {
     return result;
 }
 
-function changeDate(date) {
+export const changeDate = (date) => {
     const [day, month, year] = date.split(".")
     return `${year}, ${month -1 }, ${day}`;
 }

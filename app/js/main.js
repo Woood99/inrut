@@ -5720,7 +5720,7 @@ const filterSum = () => {
     const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
     let html = ``;
     if (inputs[0].value && inputs[1].value) {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
         html = `
                     <div>
                         ${el.dataset.filterDropdownName}
@@ -5770,7 +5770,7 @@ const filterSum = () => {
       }
       buttonWrapper.classList.add('_active');
     } else if (inputs[0].value && inputs[1].value === '') {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
         html = `
                 <div>
                 ${el.dataset.filterDropdownName}
@@ -5820,7 +5820,7 @@ const filterSum = () => {
       }
       buttonWrapper.classList.add('_active');
     } else if (inputs[1].value && inputs[0].value === '') {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
         html = `
                 <div>
                 ${el.dataset.filterDropdownName}
@@ -6085,31 +6085,10 @@ const uiSliderOne = () => {
     el.noUiSlider.on('update', function (values, handle) {
       inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
-
-      // if (el.closest('.interest-rate--add')) {
-      //     const container = document.querySelector('.object-calc-mort__wrapper');
-      //     if (container) {
-      //         const term = container.querySelector('.filter-range-one--term');
-      //         const contribution = container.querySelector('.filter-range-one--contribution');
-      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
-      //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-      //         }
-      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--contribution')) {
-      //             contribution.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-      //         }
-      //     }
-      // }
-      // if (el.closest('.object-calc-mort__wrapper')) {
-      //     const container = document.querySelector('.interest-rate--add');
-      //     if (container) {
-      //         const term = container.querySelector('.filter-range-one--term');
-      //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
-      //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-      //         }
-      //     }
-      // }
+      if (el.closest('.object-calc-mort__contribution')) {
+        console.log(el);
+      }
     });
-
     inputMax.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
       el.noUiSlider.set([numberString]);
@@ -6357,6 +6336,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addContactValidate": () => (/* binding */ addContactValidate),
 /* harmony export */   "bookConsultationValidate": () => (/* binding */ bookConsultationValidate),
+/* harmony export */   "changeDate": () => (/* binding */ changeDate),
 /* harmony export */   "clientFixedValidate": () => (/* binding */ clientFixedValidate),
 /* harmony export */   "createAgreeValidate": () => (/* binding */ createAgreeValidate),
 /* harmony export */   "createDealValidate": () => (/* binding */ createDealValidate),
@@ -6366,7 +6346,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "inputTelValidate": () => (/* binding */ inputTelValidate),
 /* harmony export */   "requisitesValidate": () => (/* binding */ requisitesValidate),
 /* harmony export */   "validateCheckboxPrimary": () => (/* binding */ validateCheckboxPrimary),
-/* harmony export */   "validateRadioPrimary": () => (/* binding */ validateRadioPrimary)
+/* harmony export */   "validateCreateError": () => (/* binding */ validateCreateError),
+/* harmony export */   "validateCreateErrorName": () => (/* binding */ validateCreateErrorName),
+/* harmony export */   "validateCreateErrorTel": () => (/* binding */ validateCreateErrorTel),
+/* harmony export */   "validateCreeateErrorSelect": () => (/* binding */ validateCreeateErrorSelect),
+/* harmony export */   "validateRadioPrimary": () => (/* binding */ validateRadioPrimary),
+/* harmony export */   "validateRemoveError": () => (/* binding */ validateRemoveError)
 /* harmony export */ });
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/dist/inputmask.js");
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_0__);
@@ -6868,20 +6853,20 @@ const inputTelValidate = (label, input) => {
   const inputLength = input.inputmask.unmaskedvalue().length;
   return inputLength === 10 ? true : false;
 };
-function validateCreateError(label, text) {
+const validateCreateError = (label, text) => {
   validateRemoveError(label);
   const errorSpan = document.createElement('span');
   errorSpan.classList.add('_error-span');
   if (text) errorSpan.textContent = text;
   label.append(errorSpan);
   label.classList.add('_error');
-}
-function validateRemoveError(label) {
+};
+const validateRemoveError = label => {
   if (!label.classList.contains('_error')) return;
   label.querySelector('._error-span').remove();
   label.classList.remove('_error');
-}
-function validateCreateErrorName(label, input) {
+};
+const validateCreateErrorName = (label, input) => {
   let result = true;
   if (label.hasAttribute('data-validate-min-length') && input.value.length < label.dataset.validateMinLength) {
     result = false;
@@ -6892,27 +6877,27 @@ function validateCreateErrorName(label, input) {
     validateCreateError(label, validateTextMap.name);
   }
   return result;
-}
-function validateCreateErrorTel(label, input, text) {
+};
+const validateCreateErrorTel = (label, input, text) => {
   let result = true;
   if (!inputTelValidate(label, input)) {
     result = false;
     validateCreateError(label, text);
   }
   return result;
-}
-function validateCreeateErrorSelect(container, text) {
+};
+const validateCreeateErrorSelect = (container, text) => {
   let result = true;
   if (!container.classList.contains('_selected')) {
     result = false;
     validateCreateError(container, text);
   }
   return result;
-}
-function changeDate(date) {
+};
+const changeDate = date => {
   const [day, month, year] = date.split(".");
   return `${year}, ${month - 1}, ${day}`;
-}
+};
 
 /***/ }),
 
@@ -8080,6 +8065,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _formValidate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./formValidate */ "./src/js/components/formValidate.js");
+/* harmony import */ var _modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/numberReplace */ "./src/js/modules/numberReplace.js");
+
+
 const mortgage = () => {
   const containerOne = document.querySelector('.object-calc-mort--one');
   const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate');
@@ -8129,32 +8118,48 @@ const mortgage = () => {
   if (containerAdd) {
     const meternalCapital = containerAdd.querySelector('.object-calc-mort__contribution');
     if (meternalCapital) {
-      const checkbox = meternalCapital.querySelector('.checkbox-secondary__input');
+      const contributionInput = meternalCapital.querySelector('input');
+      const checkbox = meternalCapital.querySelector('.checkbox-secondary:nth-child(2) .checkbox-secondary__input');
       const capital = containerAdd.querySelector('.object-calc-mort__capital');
       const facilities = containerAdd.querySelector('.object-calc-mort__facilities');
+      const capitalInput = capital.querySelector('.input-text__input');
+      const facilitiesInput = facilities.querySelector('.input-text__input');
+      const maxCapital = Number(capital.dataset.capitalMax);
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
           capital.removeAttribute('hidden');
           facilities.removeAttribute('hidden');
+          meternalCapital.querySelector('.filter-range-one').classList.add('_disabled');
+          const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+          capital.classList.remove('_active');
+          facilities.classList.remove('_active');
+          if (contributionValue > maxCapital) {
+            capital.classList.add('_active');
+            facilities.classList.add('_active');
+            capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(maxCapital));
+            facilitiesInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue - maxCapital));
+          }
+          if (contributionValue < maxCapital) {
+            capital.classList.add('_active');
+            capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue));
+            facilitiesInput.value = '';
+          }
+          if (contributionValue === maxCapital) {
+            capital.classList.add('_active');
+            capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(maxCapital));
+            facilitiesInput.value = '';
+          }
         } else {
           capital.setAttribute('hidden', '');
           facilities.setAttribute('hidden', '');
+          meternalCapital.querySelector('.filter-range-one').classList.remove('_disabled');
         }
       });
-      const capitalInput = capital.querySelector('.input-text__input');
-      const facilitiesInput = facilities.querySelector('.input-text__input');
-      [capitalInput, facilitiesInput].forEach(input => {
-        input.addEventListener('input', () => {
-          if (input.value.length >= 2 && input.value[0] === '0') {
-            input.value = input.value.slice(1);
-          }
-        });
-        input.addEventListener('focusin', () => {
-          input.value = input.value.replace(' ₽', '');
-        });
-        input.addEventListener('focusout', () => {
-          if (input.value !== '' && input.value !== '0') input.value += ' ₽';
-        });
+      capitalInput.addEventListener('input', () => {
+        (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(capital);
+        if (Number(capitalInput.value.replace(/\s/g, '')) > maxCapital) {
+          (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateCreateError)(capital, `${capital.dataset.validateError}`);
+        }
       });
     }
   }

@@ -288,14 +288,85 @@
                                 </button>
                             </div>
                             <div class="object-calc-mort__wrapper">
-                                <div class="filter-range-one">
-                                    <span class="filter-range-one__subtitle">Стоимость объекта</span>
-                                    <div class="filter-range-one__nav">
-                                        <div data-default="2897000">
-                                            <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                <div class="filter-dropdown" data-filter-dropdown-name="Стоимость объекта" data-filter-dropdown-subtitle="Любая">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Стоимость объекта
+                                            </div>
+                                            <div>
+                                                Любая
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <div class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">
+                                                Стоимость недвижимости
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="Стоимость от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="500000" data-max="200000000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="filter-dropdown__item">
+                                            <span class="filter-dropdown__subtitle">
+                                                Размер платежа
+                                            </span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div data-range-start>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="Платёж от">
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div data-range-end>
+                                                        <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="До">
+                                                    </div>
+                                                    <div>
+                                                        ₽
+                                                    </div>
+                                                </div>
+                                                <div class="filter-range__inner" data-min="10000" data-max="1000000">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                            </button>
                                         </div>
                                     </div>
-                                    <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
+                                </div>
+                                <div class="object-calc-mort__term">
+                                    <div class="filter-range-one filter-range-one--term">
+                                        <span class="filter-range-one__subtitle">Срок кредита</span>
+                                        <div class="filter-range-one__nav">
+                                            <div data-default="5">
+                                                <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
+                                                лет
+                                            </div>
+                                        </div>
+                                        <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
                                     </div>
                                 </div>
                                 <div class="object-calc-mort__contribution">
@@ -310,34 +381,16 @@
                                         <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
                                     </div>
                                     <div class="checkbox-secondary">
-                                        <input id="test-id_1" name="test-id-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
-                                        <label for="test-id_1" class="checkbox-secondary__label">
-                                            <span class="checkbox-secondary__text">Использовать материнский капитал в первоначальном взносе</span>
+                                        <input id="mat-capital" name="mat-capital" class="checkbox-secondary__input" type="checkbox" value="true">
+                                        <label for="mat-capital" class="checkbox-secondary__label">
+                                            <span class="checkbox-secondary__text">Использовать мат. капитал в первоначальном взносе</span>
                                         </label>
                                     </div>
-                                </div>
-                                <div class="object-calc-mort__capital input-text input-text--no-exp input-text--only-number" hidden>
-                                    <label class="input-text__label">
-                                        <span>Материнский капитал</span>
-                                        <input type="text" name="Материнский капитал" maxlength="12" class="input-reset input-text__input" placeholder="">
-                                    </label>
-                                </div>
-                                <div class="object-calc-mort__facilities input-text input-text--no-exp input-text--only-number" hidden>
-                                    <label class="input-text__label">
-                                        <span>Личные средства</span>
-                                        <input type="text" name="Личные средства" maxlength="12" class="input-reset input-text__input" placeholder="">
-                                    </label>
-                                </div>
-                                <div class="object-calc-mort__term">
-                                    <div class="filter-range-one filter-range-one--term">
-                                        <span class="filter-range-one__subtitle">Срок кредита</span>
-                                        <div class="filter-range-one__nav">
-                                            <div data-default="5">
-                                                <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
-                                                лет
-                                            </div>
-                                        </div>
-                                        <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                                    <div class="checkbox-secondary">
+                                        <input id="gos-certif" name="gos-certif" class="checkbox-secondary__input" type="checkbox" value="true">
+                                        <label for="gos-certif" class="checkbox-secondary__label">
+                                            <span class="checkbox-secondary__text">Использовать гос. сертификат</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-reset field-static" data-popup-path="interest-rate-modal-two">
@@ -353,15 +406,68 @@
                                         </svg>
                                     </div>
                                 </button>
-                                <div class="select-secondary select-secondary--city _selected">
+                                <div class="object-calc-mort__capital input-text input-text--no-exp input-text--only-number" data-capital-max="775628" 
+                                data-validate-error="Укажите материнский капитал не более 775 628 ₽">
+                                    <label class="input-text__label">
+                                        <span>Материнский капитал</span>
+                                        <input type="text" name="Материнский капитал" maxlength="12" class="input-reset input-text__input" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="object-calc-mort__facilities input-text input-text--no-exp input-text--only-number">
+                                    <label class="input-text__label">
+                                        <span>Личные средства</span>
+                                        <input type="text" name="Личные средства" maxlength="12" class="input-reset input-text__input" placeholder="">
+                                    </label>
+                                </div>
+                                <div class="search-select-one">
+                                    <button type="button" class="btn btn-reset search-select-one__button">
+                                        <div class="search-select-one__button-wrapper">
+                                            <div>Город</div>
+                                            <div>Не выбрано</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select-one__dropdown">
+                                        <label class="input-primary search-select-one__input">
+                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select-one__wrapper simplebar-third">
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Волгоград
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Санкт-Петербург
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-3">
+                                                Москва
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-1">
+                                                Волгоград
+                                            </div>
+                                            <div class="search-select-one__item" data-value="object-2">
+                                                Санкт-Петербург
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
+                                </div>
+                                <div class="select-secondary select-secondary--city">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
-                                            Город
+                                            Цель кредита
                                         </span>
                                         <select class="select-secondary__body" name="complex">
-                                            <option value="apartments">Санкт-Петербург</option>
-                                            <option value="apartments2">Волгоград</option>
-                                            <option value="apartments3">Москва</option>
+                                            <option placeholder value="apartments">Любой</option>
+                                            <option value="apartments">Квартира в новостройке</option>
+                                            <option value="apartments2">Квартира на вторичном рынке</option>
+                                            <option value="apartments3">Дом или пенхаус</option>
+                                            <option value="apartments4">Земельный участок</option>
+                                            <option value="apartments5">Комната</option>
+                                            <option value="apartments6">Коммерческая недвижимость</option>
+                                            <option value="apartments7">Гараж,машино-место или кладовая</option>
+                                            <option value="apartments8">Рефинансирование</option>
                                         </select>
                                     </div>
                                 </div>

@@ -1,3 +1,9 @@
+import {
+    validateRemoveError,
+    validateCreateError
+} from './formValidate';
+import numberReplace from "../modules/numberReplace";
+
 const mortgage = () => {
     const containerOne = document.querySelector('.object-calc-mort--one');
     const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate');
@@ -55,37 +61,58 @@ const mortgage = () => {
     if (containerAdd) {
         const meternalCapital = containerAdd.querySelector('.object-calc-mort__contribution');
         if (meternalCapital) {
-            const checkbox = meternalCapital.querySelector('.checkbox-secondary__input');
+            const contributionInput = meternalCapital.querySelector('input');
+            const checkbox = meternalCapital.querySelector('.checkbox-secondary:nth-child(2) .checkbox-secondary__input');
             const capital = containerAdd.querySelector('.object-calc-mort__capital');
             const facilities = containerAdd.querySelector('.object-calc-mort__facilities');
+
+            const capitalInput = capital.querySelector('.input-text__input');
+            const facilitiesInput = facilities.querySelector('.input-text__input');
+            const maxCapital = Number(capital.dataset.capitalMax);
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {
                     capital.removeAttribute('hidden');
                     facilities.removeAttribute('hidden');
+                    meternalCapital.querySelector('.filter-range-one').classList.add('_disabled');
+                    const contributionValue = Number(contributionInput.value.replace(/\s/g, '')); 
+
+                    capital.classList.remove('_active');
+                    facilities.classList.remove('_active');
+
+                    if (contributionValue > maxCapital) {
+                        capital.classList.add('_active');
+                        facilities.classList.add('_active');
+                        capitalInput.value = numberReplace(String(maxCapital));
+                        facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
+                    } 
+                    if (contributionValue < maxCapital) {
+                        capital.classList.add('_active');
+                        capitalInput.value = numberReplace(String(contributionValue));
+                        facilitiesInput.value = '';
+                    }
+                    if (contributionValue === maxCapital) {
+                        capital.classList.add('_active');
+                        capitalInput.value = numberReplace(String(maxCapital));
+                        facilitiesInput.value = '';
+                    }
                 } else {
-                    capital.setAttribute('hidden', '')
-                    facilities.setAttribute('hidden', '')
+                    capital.setAttribute('hidden', '');
+                    facilities.setAttribute('hidden', '');
+                    meternalCapital.querySelector('.filter-range-one').classList.remove('_disabled');
                 }
             })
 
-            const capitalInput = capital.querySelector('.input-text__input');
-            const facilitiesInput = facilities.querySelector('.input-text__input');
-            [capitalInput, facilitiesInput].forEach(input => {
-                input.addEventListener('input', () => {
-                    if (input.value.length >= 2 && input.value[0] === '0') {
-                        input.value = input.value.slice(1);
-                    }
-                })
-                input.addEventListener('focusin', () => {
-                    input.value = input.value.replace(' ₽', '');
-                })
-                input.addEventListener('focusout', () => {
-                    if (input.value !== '' && input.value !== '0') input.value += ' ₽';
-                })
+            capitalInput.addEventListener('input', () => {
+                validateRemoveError(capital);
+                if (Number(capitalInput.value.replace(/\s/g, '')) > maxCapital) {
+                    validateCreateError(capital, `${capital.dataset.validateError}`);
+                }
             })
 
         }
     }
+
+
 };
 
 

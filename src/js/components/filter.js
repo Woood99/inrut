@@ -49,7 +49,7 @@ export const filterSum = () => {
 
 
         if (inputs[0].value && inputs[1].value) {
-            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                 html = `
                     <div>
                         ${el.dataset.filterDropdownName}
@@ -99,7 +99,7 @@ export const filterSum = () => {
             }
             buttonWrapper.classList.add('_active')
         } else if (inputs[0].value && inputs[1].value === '') {
-            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                 html = `
                 <div>
                 ${el.dataset.filterDropdownName}
@@ -149,7 +149,7 @@ export const filterSum = () => {
             }
             buttonWrapper.classList.add('_active')
         } else if (inputs[1].value && inputs[0].value === '') {
-            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма') {
+            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма'  || el.dataset.filterDropdownName === 'Стоимость объекта') {
                 html = `
                 <div>
                 ${el.dataset.filterDropdownName}
@@ -436,29 +436,9 @@ export const uiSliderOne = () => {
         el.noUiSlider.on('update', function (values, handle) {
             inputMax.value = numberReplace(values[handle])
             inputResize(inputMax);
-
-            // if (el.closest('.interest-rate--add')) {
-            //     const container = document.querySelector('.object-calc-mort__wrapper');
-            //     if (container) {
-            //         const term = container.querySelector('.filter-range-one--term');
-            //         const contribution = container.querySelector('.filter-range-one--contribution');
-            //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
-            //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-            //         }
-            //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--contribution')) {
-            //             contribution.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-            //         }
-            //     }
-            // }
-            // if (el.closest('.object-calc-mort__wrapper')) {
-            //     const container = document.querySelector('.interest-rate--add');
-            //     if (container) {
-            //         const term = container.querySelector('.filter-range-one--term');
-            //         if (el.closest('.filter-range-one').classList.contains('filter-range-one--term')) {
-            //             term.querySelector('.filter-range-one__inner').noUiSlider.set([values[handle]]);
-            //         }
-            //     }
-            // }
+            if (el.closest('.object-calc-mort__contribution')) {
+                console.log(el);
+            }
         });
 
         inputMax.addEventListener('change', function () {

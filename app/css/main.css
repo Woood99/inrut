@@ -14958,6 +14958,22 @@ textarea.input-reset {
 .filter-range-one .noUi-connect {
   background-color: var(--blue);
 }
+.filter-range-one._disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.filter-range-one._disabled .filter-range__subtitle {
+  color: rgba(122, 127, 170, 0.3);
+}
+.filter-range-one._disabled .noUi-connect {
+  background-color: rgba(122, 127, 170, 0.3);
+}
+.filter-range-one._disabled .noUi-target {
+  background-color: rgba(122, 127, 170, 0.3);
+}
+.filter-range-one._disabled .noUi-touch-area {
+  background-color: rgba(122, 127, 170, 0.3);
+}
 
 .search-select {
   position: relative;
@@ -28967,6 +28983,10 @@ textarea.input-reset {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
 }
+.mortgage .bid__container {
+  -ms-grid-columns: 1fr 26.9784172662%;
+  grid-template-columns: 1fr 26.9784172662%;
+}
 .mortgage .object-calc-mort {
   border-radius: 0;
   background-color: transparent;
@@ -29020,15 +29040,12 @@ textarea.input-reset {
   fill: none;
 }
 .mortgage .object-calc-mort__contribution {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 .mortgage .object-calc-mort__contribution .checkbox-secondary {
   position: absolute;
-  top: calc(100% + 16px);
+  top: calc(100% + 12px);
   left: 0;
 }
 .mortgage .object-calc-mort__contribution .checkbox-secondary__text {
@@ -29036,14 +29053,7 @@ textarea.input-reset {
   width: -moz-max-content;
   width: max-content;
 }
-.mortgage .object-calc-mort__capital {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-.mortgage .object-calc-mort__term {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+.mortgage .object-calc-mort__contribution .checkbox-secondary:nth-child(3) {
+  top: calc(100% + 40px);
 }
 /*# sourceMappingURL=main.css.map */

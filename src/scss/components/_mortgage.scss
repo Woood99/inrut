@@ -12,7 +12,9 @@
             grid-row: 2/3;
         }
     }
-
+    .bid__container{
+        grid-template-columns: 1fr percent(300,1112);
+    }
     .object-calc-mort {
         border-radius: 0;
         background-color: transparent;
@@ -66,27 +68,31 @@
         }
 
         &__contribution {
-            grid-column: 1/2;
+         
             position: relative;
-            margin-bottom: 48px;
+            margin-bottom: 56px;
 
             .checkbox-secondary {
                 position: absolute;
-                top: calc(100% + 16px);
+                top: calc(100% + 12px);
                 left: 0;
 
                 &__text {
                     width: max-content;
                 }
+
+                &:nth-child(3){
+                    top: calc(100% + 40px);
+                }
             }
         }
 
         &__capital {
-            grid-column: 1/2;
+        
         }
 
         &__term {
-            grid-column: 1/2;
+        
         }
     }
 }
