@@ -203,22 +203,6 @@
         box-shadow: var(--shadow-primary);
         border-radius: 12px;
         padding: 24px;
-
-        .simplebar-primary {
-            border: 1px solid var(--primary200);
-            border-radius: 2px 12px 12px 12px;
-            margin-top: 16px;
-            max-width: 100%;
-            width: 100%;
-            max-height: 281px;
-            min-height: 50px;
-            padding: 16px;
-
-            @media (max-width:$smallTablet-max) {
-                padding: 16px 12px;
-            }
-        }
-
         @media (max-width:$desktop) {
             order: 3;
             grid-column: 1/-1;
@@ -251,7 +235,66 @@
         }
     }
 }
+.bid-messages{
+    &__wrapper{
+        border: 1px solid var(--primary200);
+        border-radius: 2px 12px 12px 12px;
+        margin-top: 16px;
+    }
+    .simplebar-primary {
+        max-width: 100%;
+        width: 100%;
+        max-height: 281px;
+        min-height: 50px;
+        padding: 16px;
 
+        @media (max-width:$smallTablet-max) {
+            padding: 16px 12px;
+        }
+    }
+    &__bottom{
+  margin: 0 16px 16px;
+        width: calc(100% - 32px);
+        position: relative;
+        height: 83px;
+        min-height: 83px;
+        max-height: 83px;
+        >button{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+          bottom: 10px;
+            right: 16px;
+            svg{
+                width: 100%;
+                height: 100%;
+
+                fill: none;
+                stroke: var(--blue);
+                stroke-width: 1.5px;
+            }
+        }
+        .textarea-secondary{
+            &__input{
+                padding: 12px calc(16px + 22px) 12px 16px;
+            }
+        }
+    }
+
+    &.bid-messages--textarea{
+        .simplebar-primary {
+           border-bottom: 1px solid var(--primary200);
+           margin-bottom: 16px;
+        }
+    }
+ @media (min-width:$desktop-min){
+    &._sticky{
+        position: sticky;
+        top: 16px;
+        width: 100%;
+    } 
+ }
+}
 .bid-import {
     &__title {
         @media (max-width:$smallTablet-max) {

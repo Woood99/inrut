@@ -6775,6 +6775,7 @@ textarea.input-reset {
   font-weight: 400;
 }
 .message-item__text {
+  margin-top: 8px;
   background: var(--primary100);
   border-radius: 2px 12px 12px 12px;
   color: var(--dark);
@@ -6835,9 +6836,9 @@ textarea.input-reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -16553,21 +16554,6 @@ textarea.input-reset {
   border-radius: 12px;
   padding: 24px;
 }
-.bid__messages .simplebar-primary {
-  border: 1px solid var(--primary200);
-  border-radius: 2px 12px 12px 12px;
-  margin-top: 16px;
-  max-width: 100%;
-  width: 100%;
-  max-height: 281px;
-  min-height: 50px;
-  padding: 16px;
-}
-@media (max-width: 768px) {
-  .bid__messages .simplebar-primary {
-    padding: 16px 12px;
-  }
-}
 @media (max-width: 1144px) {
   .bid__messages {
     -webkit-box-ordinal-group: 4;
@@ -16595,6 +16581,60 @@ textarea.input-reset {
 @media (max-width: 768px) {
   .bid__maps .bid__title {
     padding: 0 16px;
+  }
+}
+
+.bid-messages__wrapper {
+  border: 1px solid var(--primary200);
+  border-radius: 2px 12px 12px 12px;
+  margin-top: 16px;
+}
+.bid-messages .simplebar-primary {
+  max-width: 100%;
+  width: 100%;
+  max-height: 281px;
+  min-height: 50px;
+  padding: 16px;
+}
+@media (max-width: 768px) {
+  .bid-messages .simplebar-primary {
+    padding: 16px 12px;
+  }
+}
+.bid-messages__bottom {
+  margin: 0 16px 16px;
+  width: calc(100% - 32px);
+  position: relative;
+  height: 83px;
+  min-height: 83px;
+  max-height: 83px;
+}
+.bid-messages__bottom > button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+}
+.bid-messages__bottom > button svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.5px;
+}
+.bid-messages__bottom .textarea-secondary__input {
+  padding: 12px 38px 12px 16px;
+}
+.bid-messages.bid-messages--textarea .simplebar-primary {
+  border-bottom: 1px solid var(--primary200);
+  margin-bottom: 16px;
+}
+@media (min-width: 1145px) {
+  .bid-messages._sticky {
+    position: sticky;
+    top: 16px;
+    width: 100%;
   }
 }
 
@@ -19961,9 +20001,9 @@ textarea.input-reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
 }
 .chat__user {
   font-size: 15px;
@@ -28612,6 +28652,14 @@ textarea.input-reset {
 @media (max-width: 1144px) {
   .my-requests {
     padding-top: 0;
+  }
+}
+
+@media (max-width: 1144px) {
+  .my-app .bid__sidebar {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
   }
 }
 /*# sourceMappingURL=main.css.map */
