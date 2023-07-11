@@ -354,6 +354,30 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+    &--suggest-object {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 32px;
+                width: 450px;
+
+                flex-direction: column;
+                justify-content: center;
+                &.popup-open{
+                    display: inline-flex !important;
+                }
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
 
     &--interest-rate {
         background-color: rgba(34, 41, 102, 0.4);
@@ -854,7 +878,19 @@
         }
     }
 }
-
+.suggest-object{
+  
+    &__title{
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    &__btn{
+        width: 100%;
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
+}
 .add-contact {
     &__title {}
 

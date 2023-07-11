@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>Ипотечные заявки</title>
+    <link rel="preload" href="fonts/CoFoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/CoFoSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+    <div class="site-container site-container--mortgage-app-agent">
+        @include('partials/header.html')
+        <main class="main main-page-gap mortgage-app-agent">
+            <div class="mortgage-app-agent__body">
+                <h1 class="mortgage-app-agent__title title-1 container">
+                    Ипотечные заявки
+                </h1>
+                <form class="mortgage-app-agent__filter filter container">
+                    <button type="button" class="btn btn-reset btn-secondary filter__btn">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#filter"></use>
+                        </svg>
+                        <span>Фильтр</span>
+                    </button>
+                    <div class="filter__container">
+                        <div class="filter__top">
+                            <span>Фильтры</span>
+                            <button type="button" class="btn btn-reset filter__close">Закрыть</button>
+                        </div>
+                        <div class="filter__inner">
+                            <div class="filter__row request-catalog-filter__row--1">
+                                <div class="filter__item select-secondary">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Статус
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Квартиры1</option>
+                                            <option value="room-2">Квартиры2</option>
+                                            <option value="room-3">Квартиры3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter__item select-secondary">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Клиент
+                                        </span>
+                                        <select class="select-secondary__body" name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Алексей Гаврилов</option>
+                                            <option value="room-2">Квартиры2</option>
+                                            <option value="room-3">Квартиры3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__controls">
+                            <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                            <button type="button" class="btn btn-reset btn-primary filter__go">Показать 1567
+                                заявок</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="mortgage-app-agent__table main-table">
+                    <div class="main-table__inner container">
+                        <div class="main-table__table">
+                            <div class="main-table__type">
+                                <span>Дата</span>
+                                <span>Банк и сумма</span>
+                                <span>Статус</span>
+                                <span>Бонус</span>
+                                <span>Клиент</span>
+                            </div>
+                            <div data-spollers class="main-table__list spollers">
+                                <div class="spollers__item">
+                                    <div data-spoller class="main-table__item object-info-mortgage spollers__title">
+                                        <div>
+                                            <span>14.12.2022</span>
+                                            <span>14.12.2022</span>
+                                        </div>
+                                        <div>
+                                            <span>Райффайзен банк</span>
+                                            <span>333 699 000 ₽</span>
+                                        </div>
+                                        <div class="object-info-mortgage__refusal">Отказ</div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Алексей Николаевич Г.</span>
+                                        <svg>
+                                          <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="spollers__body">
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Райффайзен банк</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__refusal">Отказ</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Райффайзен банк</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__refusal">Отказ</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__approved">Одобрено</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spollers__item">
+                                    <div data-spoller class="main-table__item object-info-mortgage spollers__title">
+                                        <div>
+                                            <span>14.12.2022</span>
+                                            <span>14.12.2022</span>
+                                        </div>
+                                        <div>
+                                            <span>Сбер</span>
+                                            <span>333 699 000 ₽</span>
+                                        </div>
+                                        <div class="object-info-mortgage__approved">Одобрено</div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Алексей Николаевич Г.</span>
+                                        <svg>
+                                          <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="spollers__body">
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__approved">Одобрено</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__approved">Одобрено</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spollers__item">
+                                    <div data-spoller class="main-table__item object-info-mortgage spollers__title">
+                                        <div>
+                                            <span>14.12.2022</span>
+                                            <span>14.12.2022</span>
+                                        </div>
+                                        <div>
+                                            <span>Райффайзен банк</span>
+                                            <span>333 699 000 ₽</span>
+                                        </div>
+                                        <div class="object-info-mortgage__sent">Отправлено</div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Алексей Николаевич Г.</span>
+                                        <svg>
+                                          <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="spollers__body">
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Райффайзен банк</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__refusal">Отказ</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Райффайзен банк</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__refusal">Отказ</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__approved">Одобрено</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spollers__item">
+                                    <div data-spoller class="main-table__item object-info-mortgage spollers__title">
+                                        <div>
+                                            <span>14.12.2022</span>
+                                            <span>14.12.2022</span>
+                                        </div>
+                                        <div>
+                                            <span>Сбер</span>
+                                            <span>333 699 000 ₽</span>
+                                        </div>
+                                        <div class="object-info-mortgage__under-consider">На рассмотрении</div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check-circle"></use>
+                                        </svg>
+                                        <span>Алексей Николаевич Г.</span>
+                                        <svg>
+                                          <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="spollers__body">
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__under-consider">На рассмотрении</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="object-info-mortgage">
+                                            <div>
+                                                <span>14.12.2022</span>
+                                                <span>14.12.2022</span>
+                                            </div>
+                                            <div>
+                                                <span>Сбер</span>
+                                                <span>333 699 000 ₽</span>
+                                            </div>
+                                            <div class="object-info-mortgage__approved">Одобрено</div>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#check-circle"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 
+                            <div class="object-info-mortgage__sent">Отправлено</div>
+                            <div class="object-info-mortgage__under-consider">На рассмотрении</div> -->
+                        </div>
+                        <div class="main-table__next">
+                            <button type="button" class="btn btn-reset btn-secondary">
+                                Следующая страница
+                            </button>
+                        </div>
+                        <div class="main-table__pagination pagination">
+                            <ul class="pagination__list list-reset">
+                                <li class="pagination__item" disabled="">
+                                    <a href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        4
+                                    </a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        5
+                                    </a>
+                                </li>
+                                <li class="pagination__item dots" tabindex="-1">
+                                    ...
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="#">
+                                        199
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>

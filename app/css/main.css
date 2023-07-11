@@ -1387,6 +1387,35 @@ textarea.input-reset {
     background-color: rgba(34, 41, 102, 0.4);
   }
 }
+.popup-primary--suggest-object .popup-primary__container {
+  border-radius: 12px 0 0 12px;
+  padding: 65px 32px;
+  width: 450px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.popup-primary--suggest-object .popup-primary__container.popup-open {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+}
+@media (max-width: 1144px) {
+  .popup-primary--suggest-object .popup-primary__container {
+    border-radius: 0;
+    padding: 55px 16px;
+    width: 100%;
+  }
+}
+@media (max-width: 1144px) {
+  .popup-primary--suggest-object {
+    background-color: rgba(34, 41, 102, 0.4);
+  }
+}
 .popup-primary--interest-rate {
   background-color: rgba(34, 41, 102, 0.4);
 }
@@ -1800,6 +1829,17 @@ textarea.input-reset {
     padding: 32px 16px;
     width: 100%;
   }
+}
+
+.suggest-object__title {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.suggest-object__btn {
+  width: 100%;
+}
+.suggest-object__btn:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 .add-contact__form {
@@ -28573,6 +28613,181 @@ textarea.input-reset {
 }
 @media (min-width: 1145px) {
   .mortgage-app .object-info-mortgage:hover {
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
+  }
+}
+
+.mortgage-app-agent__filter {
+  margin-top: 32px;
+}
+.mortgage-app-agent__table {
+  margin-top: 32px;
+  background-color: var(--stand-bg);
+}
+@media (max-width: 1144px) {
+  .mortgage-app-agent__body {
+    padding: 74px 0 16px;
+    background-color: var(--stand-bg);
+  }
+}
+.mortgage-app-agent .main-table__type {
+  -ms-grid-columns: 15.4676258993% 24.2805755396% 14.8381294964% 12.5899280576% 15.7374100719% 22px;
+  grid-template-columns: 15.4676258993% 24.2805755396% 14.8381294964% 12.5899280576% 15.7374100719% 22px;
+  margin: 0 24px;
+  grid-column-gap: 20px;
+}
+.mortgage-app-agent .main-table__type span:first-child {
+  margin: 0;
+}
+.mortgage-app-agent .spollers__item {
+  background-color: var(--white);
+  -webkit-transition: padding-top 0.4s ease-in-out;
+  -o-transition: padding-top 0.4s ease-in-out;
+  transition: padding-top 0.4s ease-in-out;
+  border-radius: 12px;
+}
+.mortgage-app-agent .spollers__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.mortgage-app-agent .spollers__item._active {
+  padding-top: 24px;
+}
+.mortgage-app-agent .spollers__item .spollers__body {
+  margin-top: 24px;
+}
+.mortgage-app-agent .spollers__item .spollers__body .object-info-mortgage {
+  cursor: default;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0 24px;
+  width: calc(100% - 48px);
+}
+.mortgage-app-agent .spollers__item .spollers__body .object-info-mortgage:not(:last-child) {
+  border-bottom: 1px solid var(--primary100);
+}
+@media (min-width: 1145px) {
+  .mortgage-app-agent .spollers__item .spollers__body .object-info-mortgage:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.mortgage-app-agent .object-info-mortgage {
+  width: 100%;
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  border-radius: 12px;
+  color: var(--dark);
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-column-gap: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-grid-columns: 15.4676258993% 24.2805755396% 14.8381294964% 12.5899280576% 15.7374100719% 22px;
+  grid-template-columns: 15.4676258993% 24.2805755396% 14.8381294964% 12.5899280576% 15.7374100719% 22px;
+  padding: 24px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background-color 0.4s ease-in-out, margin 0.4s ease-in-out, width 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, margin 0.4s ease-in-out, width 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, margin 0.4s ease-in-out, width 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, margin 0.4s ease-in-out, width 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, margin 0.4s ease-in-out, width 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  cursor: pointer;
+  margin: 0;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(1) {
+  font-size: 15px;
+  line-height: 1.2666666667;
+  color: var(--dark);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(1) span:not(:last-child) {
+  margin-bottom: 8px;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(2) span:not(:last-child) {
+  margin-bottom: 8px;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(3) {
+  background-color: var(--dark);
+  color: var(--dark);
+  padding: 6px;
+  font-size: 15px;
+  line-height: 1.2666666667;
+  font-weight: 400;
+  border-radius: 8px;
+  -ms-grid-column-align: start;
+  justify-self: start;
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(3).object-info-mortgage__approved {
+  background-color: rgba(36, 202, 142, 0.2);
+  color: rgb(36, 202, 142);
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(3).object-info-mortgage__refusal {
+  background-color: rgb(255, 209, 209);
+  color: rgb(255, 27, 27);
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(3).object-info-mortgage__sent {
+  background-color: rgba(148, 61, 189, 0.2);
+  color: rgb(148, 61, 189);
+}
+.mortgage-app-agent .object-info-mortgage > div:nth-child(3).object-info-mortgage__under-consider {
+  background-color: rgba(255, 227, 66, 0.2);
+  color: rgb(255, 227, 66);
+}
+.mortgage-app-agent .object-info-mortgage > svg:nth-child(4) {
+  width: 24px;
+  height: 24px;
+  fill: var(--green);
+}
+.mortgage-app-agent .object-info-mortgage > svg:nth-child(6) {
+  width: 22px;
+  height: 22px;
+  fill: var(--dark);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.mortgage-app-agent .object-info-mortgage._spoller-active {
+  background-color: var(--stand-bg);
+  margin: 0 24px;
+  width: calc(100% - 48px);
+}
+.mortgage-app-agent .object-info-mortgage._spoller-active > svg:nth-child(6) {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+@media (min-width: 1145px) {
+  .mortgage-app-agent .object-info-mortgage:hover {
     -webkit-box-shadow: var(--shadow-secondary);
     box-shadow: var(--shadow-secondary);
   }

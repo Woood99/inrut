@@ -4491,6 +4491,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-deal');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-user');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-meeting-show');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
 
 // ========================================================================================
 
