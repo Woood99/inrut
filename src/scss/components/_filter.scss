@@ -489,6 +489,60 @@
         &.active {}
     }
 
+    &--one {
+        .filter-dropdown__button-wrapper._active {
+            grid-template-columns: repeat(2, max-content);
+            justify-content: space-between;
+        }
+
+        .filter-range-one {
+            height: 45px;
+
+            .noUi-target {
+                bottom: -8px;
+            }
+            &__nav{
+                >div{
+                    &:nth-child(2){
+                        font-weight: 500;
+                        margin-left: 16px;
+                    }
+                }
+            }
+        }
+
+        .filter-dropdown__item {
+            &:not(.active) {
+                .filter-dropdown {
+                    &__range {
+                        cursor: default;
+                        pointer-events: none;
+                    }
+                }
+
+                .filter-range-one {
+                    &__nav {
+                        div {
+                            color: rgba(122, 127, 170, 0.3);
+                        }
+                    }
+
+                    .noUi-connect {
+                        background-color: rgba(122, 127, 170, 0.3);
+                    }
+
+                    .noUi-target {
+                        background-color: rgba(122, 127, 170, 0.3);
+                    }
+
+                    .noUi-touch-area {
+                        background-color: rgba(122, 127, 170, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width:$desktop) {
         width: 100%;
     }
@@ -895,12 +949,14 @@
         background-color: var(--blue);
     }
 
-    &._disabled{
+    &._disabled {
         pointer-events: none;
         opacity: 0.6;
+
         .filter-range__subtitle {
             color: rgba(122, 127, 170, 0.3);
         }
+
         .noUi-connect {
             background-color: rgba(122, 127, 170, 0.3);
         }
@@ -1147,6 +1203,7 @@
         >div {
             transition: color $transitionSpeed $transitionFunction;
             white-space: nowrap;
+
             &:nth-child(2) {
                 margin-left: 16px;
                 opacity: 0.6;
@@ -1166,7 +1223,7 @@
             >div {
                 &:nth-child(1) {
                     color: #b6d5f8;
-  
+
                 }
 
                 &:nth-child(2) {
@@ -1271,7 +1328,8 @@
             }
         }
     }
-    ._error-span{
+
+    ._error-span {
         display: block;
         color: var(--red);
         font-size: 12px;
@@ -1279,14 +1337,16 @@
         margin-top: 4px;
         margin-left: 8px;
     }
-    &._error{
-        .search-select-one__button{
+
+    &._error {
+        .search-select-one__button {
             border: 1px solid var(--red);
         }
+
         .search-select-one__button-wrapper {
             >div {
                 &:nth-child(1) {
-                   color: var(--red);
+                    color: var(--red);
                 }
             }
         }

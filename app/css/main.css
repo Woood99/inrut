@@ -623,13 +623,16 @@ textarea.input-reset {
 .input-text._error .input-text__label > span {
   color: var(--red);
 }
-.input-text ._error-span {
+.input-text ._error-span, .input-text ._error-span-90prc, .input-text ._error-span-10prc {
   display: block;
   color: var(--red);
   font-size: 12px;
   line-height: 1;
   margin-top: 4px;
   margin-left: 8px;
+}
+.input-text ._error-span:not(:nth-child(2)), .input-text ._error-span-90prc:not(:nth-child(2)), .input-text ._error-span-10prc:not(:nth-child(2)) {
+  margin-top: 8px;
 }
 .input-text--disabled .input-text__label {
   padding-right: 24px;
@@ -14555,6 +14558,41 @@ textarea.input-reset {
 .filter-dropdown--improved .filter-range__nav span {
   margin-right: 8px;
   display: inline-block;
+}
+.filter-dropdown--one .filter-dropdown__button-wrapper._active {
+  -ms-grid-columns: (-webkit-max-content)[2];
+  -ms-grid-columns: (max-content)[2];
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.filter-dropdown--one .filter-range-one {
+  height: 45px;
+}
+.filter-dropdown--one .filter-range-one .noUi-target {
+  bottom: -8px;
+}
+.filter-dropdown--one .filter-range-one__nav > div:nth-child(2) {
+  font-weight: 500;
+  margin-left: 16px;
+}
+.filter-dropdown--one .filter-dropdown__item:not(.active) .filter-dropdown__range {
+  cursor: default;
+  pointer-events: none;
+}
+.filter-dropdown--one .filter-dropdown__item:not(.active) .filter-range-one__nav div {
+  color: rgba(122, 127, 170, 0.3);
+}
+.filter-dropdown--one .filter-dropdown__item:not(.active) .filter-range-one .noUi-connect {
+  background-color: rgba(122, 127, 170, 0.3);
+}
+.filter-dropdown--one .filter-dropdown__item:not(.active) .filter-range-one .noUi-target {
+  background-color: rgba(122, 127, 170, 0.3);
+}
+.filter-dropdown--one .filter-dropdown__item:not(.active) .filter-range-one .noUi-touch-area {
+  background-color: rgba(122, 127, 170, 0.3);
 }
 @media (max-width: 1144px) {
   .filter-dropdown {
@@ -28995,7 +29033,7 @@ textarea.input-reset {
   padding: 0;
 }
 .mortgage .object-calc-mort__list {
-  margin: 0;
+  margin-top: 24px;
   border-bottom: none;
   padding: 0;
 }
@@ -29020,6 +29058,9 @@ textarea.input-reset {
   margin-top: 10px;
   font-weight: 500;
   color: var(--dark);
+  margin: 0;
+}
+.mortgage .object-calc-mort__wrapper:first-child {
   margin: 0;
 }
 .mortgage .object-calc-mort__bottom {

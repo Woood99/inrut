@@ -20,23 +20,23 @@ export const filterSum = () => {
             });
             el.classList.toggle('active');
             if (!el.classList.contains('active')) {
-                changeTitle(el);
+                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             }
         })
         document.addEventListener('click', (e) => {
             if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
                 el.classList.remove('active');
-                changeTitle(el);
+                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             } else if (e.target.closest('.filter-dropdown')) {
-                changeTitle(el);
+                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             }
         })
         inputs.forEach(input => {
             input.addEventListener('change', () => {
-                changeTitle(el);
+                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             });
             input.addEventListener('input', () => {
-                changeTitle(el);
+                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             });
         })
     })
@@ -46,7 +46,6 @@ export const filterSum = () => {
         const inputs = itemActive.querySelectorAll('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
         let html = ``;
-
 
         if (inputs[0].value && inputs[1].value) {
             if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
@@ -101,9 +100,9 @@ export const filterSum = () => {
         } else if (inputs[0].value && inputs[1].value === '') {
             if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                 html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
+                    <div>
+                    ${el.dataset.filterDropdownName}
+                    </div>
                     <div>
                         от ${convertSum(inputs[0].value)}
                     </div>
@@ -149,7 +148,7 @@ export const filterSum = () => {
             }
             buttonWrapper.classList.add('_active')
         } else if (inputs[1].value && inputs[0].value === '') {
-            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма'  || el.dataset.filterDropdownName === 'Стоимость объекта') {
+            if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                 html = `
                 <div>
                 ${el.dataset.filterDropdownName}
@@ -210,6 +209,28 @@ export const filterSum = () => {
 
     }
 
+    function changeTitleOne(el) {
+        const itemActive = el.querySelector('.filter-dropdown__item.active');
+        const input = itemActive.querySelector('input');
+        const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+        let html = ``;
+        if (input.value) {
+            html = `
+            <div>
+                ${el.dataset.filterDropdownName}
+            </div>
+            <div>
+                ${convertSum(input.value)}
+            </div>
+            `;
+            buttonWrapper.classList.add('_active');
+        } else {
+            buttonWrapper.classList.remove('_active');
+        }
+        el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
+        el.setAttribute('data-value', input.value.replace(/\s/g, ''));
+        buttonWrapper.innerHTML = html;
+    }
 
     function convertSum(number) {
         number = number.replace(/\s/g, "");
@@ -225,7 +246,15 @@ export const filterSum = () => {
             Math.round(Number(number));
         return result.replace('.0', '');
     }
+
+    function checkChangeTitle(container) {
+        return container.classList.contains('filter-dropdown--one');
+    }
 }
+
+
+
+
 export const searchSelect = () => {
     const containers = document.querySelectorAll('.search-select');
     if (!containers.length >= 1) return;
@@ -423,7 +452,8 @@ export const uiSliderOne = () => {
         const maxValue = el.dataset.max;
         const defaultValue = container.querySelector('[data-default]');
 
-        const inputMax = defaultValue.querySelector('input');
+        const input = defaultValue.querySelector('input');
+        const step = el.dataset.step;
         noUiSlider.create(el, {
             start: [Number(defaultValue.dataset.default)],
             connect: 'lower',
@@ -431,27 +461,21 @@ export const uiSliderOne = () => {
                 'min': Number(minValue),
                 'max': Number(maxValue),
             },
-            step: 1,
+            step: step ? Number(step) : 0,
         });
         el.noUiSlider.on('update', function (values, handle) {
-            inputMax.value = numberReplace(values[handle])
-            inputResize(inputMax);
-            if (el.closest('.object-calc-mort__contribution')) {
-                console.log(el);
-            }
+            input.value = numberReplace(values[handle])
+            inputResize(input);
         });
-
-        inputMax.addEventListener('change', function () {
+        input.addEventListener('change', function () {
             const numberString = this.value.replace(/\s/g, "")
             el.noUiSlider.set([numberString]);
-
-            inputResize(inputMax);
+            inputResize(input);
         })
-        inputResize(inputMax);
-        inputMax.addEventListener('input', () => {
-            const val = inputMax.value.replace(/\D/g, '');
-            inputMax.value = numberReplace(val);
-            inputResize(inputMax);
+        input.addEventListener('input', () => {
+            const val = input.value.replace(/\D/g, '');
+            input.value = numberReplace(val);
+            inputResize(input);
         })
     });
 }

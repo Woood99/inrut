@@ -5694,23 +5694,23 @@ const filterSum = () => {
       });
       el.classList.toggle('active');
       if (!el.classList.contains('active')) {
-        changeTitle(el);
+        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       }
     });
     document.addEventListener('click', e => {
       if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
         el.classList.remove('active');
-        changeTitle(el);
+        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       } else if (e.target.closest('.filter-dropdown')) {
-        changeTitle(el);
+        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       }
     });
     inputs.forEach(input => {
       input.addEventListener('change', () => {
-        changeTitle(el);
+        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       });
       input.addEventListener('input', () => {
-        changeTitle(el);
+        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       });
     });
   });
@@ -5772,9 +5772,9 @@ const filterSum = () => {
     } else if (inputs[0].value && inputs[1].value === '') {
       if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
         html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
+                    <div>
+                    ${el.dataset.filterDropdownName}
+                    </div>
                     <div>
                         от ${convertSum(inputs[0].value)}
                     </div>
@@ -5878,6 +5878,28 @@ const filterSum = () => {
     }
     buttonWrapper.innerHTML = html;
   }
+  function changeTitleOne(el) {
+    const itemActive = el.querySelector('.filter-dropdown__item.active');
+    const input = itemActive.querySelector('input');
+    const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+    let html = ``;
+    if (input.value) {
+      html = `
+            <div>
+                ${el.dataset.filterDropdownName}
+            </div>
+            <div>
+                ${convertSum(input.value)}
+            </div>
+            `;
+      buttonWrapper.classList.add('_active');
+    } else {
+      buttonWrapper.classList.remove('_active');
+    }
+    el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
+    el.setAttribute('data-value', input.value.replace(/\s/g, ''));
+    buttonWrapper.innerHTML = html;
+  }
   function convertSum(number) {
     number = number.replace(/\s/g, "");
     let result;
@@ -5887,6 +5909,9 @@ const filterSum = () => {
     }
     result = Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
     return result.replace('.0', '');
+  }
+  function checkChangeTitle(container) {
+    return container.classList.contains('filter-dropdown--one');
   }
 };
 const searchSelect = () => {
@@ -6072,7 +6097,8 @@ const uiSliderOne = () => {
     const minValue = el.dataset.min;
     const maxValue = el.dataset.max;
     const defaultValue = container.querySelector('[data-default]');
-    const inputMax = defaultValue.querySelector('input');
+    const input = defaultValue.querySelector('input');
+    const step = el.dataset.step;
     nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(el, {
       start: [Number(defaultValue.dataset.default)],
       connect: 'lower',
@@ -6080,25 +6106,21 @@ const uiSliderOne = () => {
         'min': Number(minValue),
         'max': Number(maxValue)
       },
-      step: 1
+      step: step ? Number(step) : 0
     });
     el.noUiSlider.on('update', function (values, handle) {
-      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
-      if (el.closest('.object-calc-mort__contribution')) {
-        console.log(el);
-      }
+      input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
     });
-    inputMax.addEventListener('change', function () {
+    input.addEventListener('change', function () {
       const numberString = this.value.replace(/\s/g, "");
       el.noUiSlider.set([numberString]);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
     });
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
-    inputMax.addEventListener('input', () => {
-      const val = inputMax.value.replace(/\D/g, '');
-      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
-      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(inputMax);
+    input.addEventListener('input', () => {
+      const val = input.value.replace(/\D/g, '');
+      input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
+      (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
     });
   });
 };
@@ -8125,6 +8147,35 @@ const mortgage = () => {
       const capitalInput = capital.querySelector('.input-text__input');
       const facilitiesInput = facilities.querySelector('.input-text__input');
       const maxCapital = Number(capital.dataset.capitalMax);
+      const priceObject = containerAdd.querySelector('.filter-dropdown--mortgage-calc');
+      const meternalCapitalSlider = meternalCapital.querySelector('.filter-range-one__inner').noUiSlider;
+      priceObject.querySelectorAll('.filter-range-one__inner').forEach(item => {
+        item.noUiSlider.on('update', values => {
+          if (item.classList.contains('_init')) {
+            const value = parseInt(values[0]);
+            const valueMin = value / 10;
+            const valueMax = value * 90 / 100;
+            meternalCapitalSlider.updateOptions({
+              start: valueMin,
+              range: {
+                min: valueMin,
+                max: valueMax
+              }
+            });
+          }
+        });
+        setTimeout(() => {
+          item.classList.add('_init');
+        }, 1);
+      });
+      meternalCapitalSlider.on('update', values => {
+        const value = parseInt(values[0]);
+        const valueMax = meternalCapitalSlider.options.range.max;
+        const result = value * 90 / valueMax;
+        if (result >= 10) {
+          meternalCapital.querySelector('.filter-range-one__nav > span').textContent = `${Math.floor(result)}%`;
+        }
+      });
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
           capital.removeAttribute('hidden');
@@ -8161,6 +8212,43 @@ const mortgage = () => {
           (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateCreateError)(capital, `${capital.dataset.validateError}`);
         }
       });
+      [capitalInput, facilitiesInput].forEach(input => {
+        input.addEventListener('input', () => {
+          const sum = Number(capitalInput.value.replace(/\s/g, '')) + Number(facilitiesInput.value.replace(/\s/g, ''));
+          if (sum > Number(priceObject.dataset.value) * 90 / 100) {
+            removeError90prc();
+            const errorSpan = document.createElement('span');
+            errorSpan.classList.add('_error-span-90prc');
+            errorSpan.textContent = 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости';
+            capital.append(errorSpan);
+            capital.classList.add('_error-90prc');
+          } else {
+            removeError90prc();
+          }
+          if (sum < Number(priceObject.dataset.value) * 10 / 100) {
+            removeError10prc();
+            const errorSpan = document.createElement('span');
+            errorSpan.classList.add('_error-span-10prc');
+            errorSpan.textContent = 'Первоначальный взнос не может быть меньше 10% от стоимости недвижимости';
+            capital.append(errorSpan);
+            capital.classList.add('_error-10prc');
+          } else {
+            removeError10prc();
+          }
+        });
+      });
+      function removeError90prc() {
+        if (capital.classList.contains('_error-90prc')) {
+          capital.querySelector('._error-span-90prc').remove();
+          capital.classList.remove('_error-90prc');
+        }
+      }
+      function removeError10prc() {
+        if (capital.classList.contains('_error-10prc')) {
+          capital.querySelector('._error-span-10prc').remove();
+          capital.classList.remove('_error-10prc');
+        }
+      }
     }
   }
 };

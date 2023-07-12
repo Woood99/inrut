@@ -22,7 +22,7 @@
         padding: 0;
 
         &__list {
-            margin: 0;
+            margin-top: 24px;
             border-bottom: none;
             padding: 0;
         }
@@ -51,7 +51,11 @@
                 }
             }
         }
-
+        &__wrapper{
+            &:first-child{
+                margin: 0;
+            }
+        }
         &__bottom {
             grid-template-columns: max-content;
             justify-content: end;
