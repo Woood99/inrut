@@ -95,7 +95,7 @@ const mortgage = () => {
             }
 
             const contributionInput = meternalCapital.querySelector('input');
-            const checkbox = meternalCapital.querySelector('.checkbox-secondary:nth-child(2) .checkbox-secondary__input');
+            const checkbox = meternalCapital.querySelector('.toggle-checkbox:nth-child(2) input');
             const capital = containerAdd.querySelector('.object-calc-mort__capital');
             const facilities = containerAdd.querySelector('.object-calc-mort__facilities');
 
