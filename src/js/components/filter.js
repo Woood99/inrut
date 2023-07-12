@@ -14,6 +14,7 @@ export const filterSum = () => {
     container.forEach(el => {
         const btn = el.querySelector('.filter-dropdown__button');
         const inputs = el.querySelectorAll('.filter-range__nav input');
+        const close = el.querySelector('.filter-dropdown__close');
         btn.addEventListener('click', () => {
             container.forEach(elTwo => {
                 if (elTwo !== el) elTwo.classList.remove('active')
@@ -31,6 +32,11 @@ export const filterSum = () => {
                 checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
             }
         })
+        if (close) {
+            close.addEventListener('click',() => {
+                el.classList.remove('active');
+            });
+        }
         inputs.forEach(input => {
             input.addEventListener('change', () => {
                 checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
@@ -210,6 +216,7 @@ export const filterSum = () => {
     }
 
     function changeTitleOne(el) {
+        console.log(el);
         const itemActive = el.querySelector('.filter-dropdown__item.active');
         const input = itemActive.querySelector('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');

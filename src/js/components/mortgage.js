@@ -53,7 +53,6 @@ const mortgage = () => {
                 const prc = item.querySelector('.interest-rate-card__prc--new').textContent;
                 const textPrc = containerOne.querySelector('.field-static__text');
                 textPrc.textContent = prc;
-
             });
         })
     }
@@ -68,9 +67,14 @@ const mortgage = () => {
 
             const capitalInput = capital.querySelector('.input-text__input');
             const facilitiesInput = facilities.querySelector('.input-text__input');
+
             const maxCapital = Number(capital.dataset.capitalMax);
+            const minCapital = Number(capital.dataset.capitalMin);
+
             const priceObject = containerAdd.querySelector('.filter-dropdown--mortgage-calc');
             const meternalCapitalSlider = meternalCapital.querySelector('.filter-range-one__inner').noUiSlider;
+
+            const capitalPrc = meternalCapital.querySelector('.filter-range-one__nav > span');
 
             priceObject.querySelectorAll('.filter-range-one__inner').forEach(item => {
                 item.noUiSlider.on('update', (values) => {
@@ -85,6 +89,7 @@ const mortgage = () => {
                                 max: valueMax
                             }
                         })
+                        updateMatCapital();
                     }
                 });
 
@@ -92,42 +97,27 @@ const mortgage = () => {
                     item.classList.add('_init');
                 }, 1);
             })
-            meternalCapitalSlider.on('update', (values) => {
-                const value = parseInt(values[0]);
+            meternalCapitalSlider.on('update', (value) => {
                 const valueMax = meternalCapitalSlider.options.range.max;
-                const result = value * 90 / valueMax;
+                const result = parseInt(value[0]) * 90 / valueMax;
                 if (result >= 10) {
-                    meternalCapital.querySelector('.filter-range-one__nav > span').textContent = `${Math.floor(result)}%`;
+                    capitalPrc.textContent = `${Math.floor(result)}%`;
                 }
+
+                labelClearBtnUpdate(capitalInput.closest('.input-text'));
+                labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+                updateMatCapital();
             })
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {
-
-
                     capital.removeAttribute('hidden');
                     facilities.removeAttribute('hidden');
                     meternalCapital.querySelector('.filter-range-one').classList.add('_disabled');
-                    const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
 
-                    capital.classList.remove('_active');
-                    facilities.classList.remove('_active');
-
-                    if (contributionValue > maxCapital) {
-                        capital.classList.add('_active');
-                        facilities.classList.add('_active');
-                        capitalInput.value = numberReplace(String(maxCapital));
-                        facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
-                    }
-                    if (contributionValue < maxCapital) {
-                        capital.classList.add('_active');
-                        capitalInput.value = numberReplace(String(contributionValue));
-                        facilitiesInput.value = '';
-                    }
-                    if (contributionValue === maxCapital) {
-                        capital.classList.add('_active');
-                        capitalInput.value = numberReplace(String(maxCapital));
-                        facilitiesInput.value = '';
-                    }
+                    labelClearBtnUpdate(capitalInput.closest('.input-text'));
+                    labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+                    updateMatCapital();
+                    validate();
                 } else {
                     capital.setAttribute('hidden', '');
                     facilities.setAttribute('hidden', '');
@@ -135,56 +125,144 @@ const mortgage = () => {
                 }
             })
 
-
-
             capitalInput.addEventListener('input', () => {
-                validateRemoveError(capital);
-                if (Number(capitalInput.value.replace(/\s/g, '')) > maxCapital) {
-                    validateCreateError(capital, `${capital.dataset.validateError}`);
-                }
+                validate();
             });
             [capitalInput, facilitiesInput].forEach(input => {
                 input.addEventListener('input', () => {
-                    const sum = Number(capitalInput.value.replace(/\s/g, '')) + Number(facilitiesInput.value.replace(/\s/g, ''));
-                    if (sum > Number(priceObject.dataset.value) * 90 / 100) {
-                        removeError90prc();
-                        const errorSpan = document.createElement('span');
-                        errorSpan.classList.add('_error-span-90prc');
-                        errorSpan.textContent = 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости';
-
-                        capital.append(errorSpan);
-                        capital.classList.add('_error-90prc');
-                    } else {
-                        removeError90prc();
-                    }
-                    if (sum < Number(priceObject.dataset.value) * 10 / 100) {
-                        removeError10prc();
-                        const errorSpan = document.createElement('span');
-                        errorSpan.classList.add('_error-span-10prc');
-                        errorSpan.textContent = 'Первоначальный взнос не может быть меньше 10% от стоимости недвижимости';
-
-                        capital.append(errorSpan);
-                        capital.classList.add('_error-10prc');
-                    } else {
-                        removeError10prc();
-                    }
+                    labelClearBtnUpdate(input.closest('.input-text'));
+                    validate();
                 })
+
+                const clearBtn = input.closest('.input-text__label').querySelector('.input-text__clear')
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => {
+                        if (!clearBtn.hasAttribute('hidden')) {
+                            input.value = '';
+                            clearBtn.setAttribute('hidden', '');
+                            labelClearBtnUpdate(input.closest('.input-text'));
+                            validate();
+                        }
+                    })
+                }
             });
 
+            function labelClearBtnUpdate(label) {
+                const input = label.querySelector('.input-text__input');
+                const btn = label.querySelector('.input-text__clear');
+                if (input.value === '') {
+                    btn.setAttribute('hidden', '');
+                    label.classList.remove('_clear-btn');
 
-            function removeError90prc() {
-                if (capital.classList.contains('_error-90prc')) {
-                    capital.querySelector('._error-span-90prc').remove();
-                    capital.classList.remove('_error-90prc');
+                    label.classList.remove('_active');
+                } else {
+                    btn.removeAttribute('hidden');
+                    label.classList.add('_clear-btn');
                 }
             }
 
-            function removeError10prc() {
-                if (capital.classList.contains('_error-10prc')) {
-                    capital.querySelector('._error-span-10prc').remove();
-                    capital.classList.remove('_error-10prc');
+            function updateMatCapital() {
+                validateRemoveError(capital);
+                validateRemoveError(facilities);
+                const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+                capital.classList.remove('_active');
+                facilities.classList.remove('_active');
+
+                if (contributionValue > maxCapital) {
+                    capital.classList.add('_active');
+                    facilities.classList.add('_active');
+                    capitalInput.value = numberReplace(String(maxCapital));
+                    facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
+                    return;
+                }
+                if (contributionValue < minCapital) {
+                    facilities.classList.add('_active');
+                    capitalInput.value = '';
+                    facilitiesInput.value = numberReplace(String(contributionValue));
+                    return;
+                }
+                if (contributionValue < maxCapital) {
+                    capital.classList.add('_active');
+                    capitalInput.value = numberReplace(String(contributionValue));
+                    facilitiesInput.value = '';
+                    return;
+                }
+                if (contributionValue === maxCapital) {
+                    capital.classList.add('_active');
+                    capitalInput.value = numberReplace(String(maxCapital));
+                    facilitiesInput.value = '';
+                    return;
                 }
             }
+
+            function validate() {
+                let result = true;
+
+                validateRemoveError(capital);
+                validateRemoveError(facilities);
+
+                if (Number(capitalInput.value.replace(/\s/g, '')) > maxCapital) {
+                    validateCreateError(capital, `${capital.dataset.errorCapitalMax}`);
+                }
+                if (Number(capitalInput.value.replace(/\s/g, '')) < minCapital) {
+                    validateCreateError(capital, `${capital.dataset.errorCapitalMin}`);
+                }
+
+                const sum = Number(capitalInput.value.replace(/\s/g, '')) + Number(facilitiesInput.value.replace(/\s/g, ''));
+                if (sum > Number(priceObject.dataset.value) * 90 / 100) {
+                    validateCreateError(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
+                    result = false;
+                }
+                if (sum < Number(priceObject.dataset.value) * 10 / 100) {
+                    validateCreateError(facilities, 'Первоначальный взнос не может быть меньше 10% от стоимости недвижимости');
+                    result = false;
+                }
+
+                return result;
+            }
+
+            const targetCredit = containerAdd.querySelector('.object-calc-mort__target-credit');
+            const targetCreditMap = {
+                'Квартира в новостройке': [
+                    [1, 2, 3, 4, 5],
+                    [5]
+                ],
+                'Квартира на вторичном рынке': [
+                    [1, 4],
+                    [1]
+                ],
+            };
+            targetCredit.addEventListener('change', () => {
+                const name = targetCredit.querySelector('.choices__item.choices__item--selectable').textContent.trim();
+                const list = containerAdd.querySelector('.object-calc-mort__list')
+                const cards = containerAdd.querySelectorAll('.object-calc-mort__btn');
+                cards.forEach(card => card.setAttribute('hidden', ''));
+                cards.forEach(card => card.classList.remove('_active'));
+                for (let key in targetCreditMap) {
+                    if (key === name) {
+                        const currentKey = targetCreditMap[key];
+                        cards.forEach(card => {
+                            const id = card.dataset.mortgageCard;
+                            if (currentKey[0].includes(+id)) {
+                                card.removeAttribute('hidden');
+                            }
+                            if (currentKey[1].includes(+id)) {
+                                card.classList.add('_active');
+                            }
+                        });
+                    }
+                }
+
+
+                let listValue = true;
+                for (let key of cards) {
+                    if (key.classList.contains('_active')) {
+                        listValue = false;
+                        break;
+                    }
+                }
+                listValue ? list.setAttribute('hidden', '') : list.removeAttribute('hidden');
+            })
 
         }
     }
