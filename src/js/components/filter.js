@@ -216,7 +216,6 @@ export const filterSum = () => {
     }
 
     function changeTitleOne(el) {
-        console.log(el);
         const itemActive = el.querySelector('.filter-dropdown__item.active');
         const input = itemActive.querySelector('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
@@ -234,8 +233,6 @@ export const filterSum = () => {
         } else {
             buttonWrapper.classList.remove('_active');
         }
-        el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
-        el.setAttribute('data-value', input.value.replace(/\s/g, ''));
         buttonWrapper.innerHTML = html;
     }
 

@@ -14615,6 +14615,20 @@ textarea.input-reset {
 .filter-dropdown--one .filter-dropdown__item:not(.active) .filter-range-one .noUi-touch-area {
   background-color: rgba(122, 127, 170, 0.3);
 }
+.filter-dropdown._error .filter-dropdown__button {
+  border: 1px solid var(--red);
+}
+.filter-dropdown._error .filter-dropdown__button-wrapper > div:nth-child(1) {
+  color: var(--red);
+}
+.filter-dropdown._error ._error-span {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+  margin-left: 8px;
+}
 @media (max-width: 1144px) {
   .filter-dropdown {
     width: 100%;

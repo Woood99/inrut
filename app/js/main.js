@@ -5900,7 +5900,6 @@ const filterSum = () => {
     buttonWrapper.innerHTML = html;
   }
   function changeTitleOne(el) {
-    console.log(el);
     const itemActive = el.querySelector('.filter-dropdown__item.active');
     const input = itemActive.querySelector('input');
     const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
@@ -5918,8 +5917,6 @@ const filterSum = () => {
     } else {
       buttonWrapper.classList.remove('_active');
     }
-    el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
-    el.setAttribute('data-value', input.value.replace(/\s/g, ''));
     buttonWrapper.innerHTML = html;
   }
   function convertSum(number) {
@@ -8204,34 +8201,50 @@ const mortgage = () => {
         item.noUiSlider.on('update', values => {
           if (item.classList.contains('_init')) {
             const value = parseInt(values[0]);
-            const valueMin = value / 10;
             const valueMax = value * 90 / 100;
             meternalCapitalSlider.updateOptions({
-              start: valueMin,
+              start: 0,
               range: {
-                min: valueMin,
+                min: 0,
                 max: valueMax
               }
             });
+            priceObject.setAttribute('data-value', value);
             updateMatCapital();
+            if (checkbox.checked) {
+              updateFee();
+            }
+            validateObjectPrice();
           }
         });
         setTimeout(() => {
           item.classList.add('_init');
-        }, 1);
+          (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(priceObject);
+        }, 2);
       });
       meternalCapitalSlider.on('update', value => {
-        const valueMax = meternalCapitalSlider.options.range.max;
-        const result = parseInt(value[0]) * 90 / valueMax;
-        if (result >= 10) {
+        if (priceObject.classList.contains('_init')) {
+          if (!validateObjectPrice()) {
+            return;
+          }
+          ;
+          const valueMax = meternalCapitalSlider.options.range.max;
+          const result = parseInt(value[0]) * 90 / valueMax;
           capitalPrc.textContent = `${Math.floor(result)}%`;
+          labelClearBtnUpdate(capitalInput.closest('.input-text'));
+          labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+          resultMortgage();
         }
-        labelClearBtnUpdate(capitalInput.closest('.input-text'));
-        labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
-        updateMatCapital();
-        resultMortgage();
       });
+      meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'none';
+      setTimeout(() => {
+        priceObject.classList.add('_init');
+      }, 2);
       checkbox.addEventListener('change', () => {
+        if (!validateObjectPrice()) {
+          checkbox.checked = false;
+          return;
+        }
         if (checkbox.checked) {
           capital.removeAttribute('hidden');
           facilities.removeAttribute('hidden');
@@ -8244,6 +8257,9 @@ const mortgage = () => {
         labelClearBtnUpdate(capitalInput.closest('.input-text'));
         labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
         updateMatCapital();
+        if (checkbox.checked) {
+          updateFee();
+        }
         validate();
         resultMortgage();
       });
@@ -8252,7 +8268,9 @@ const mortgage = () => {
       });
       [capitalInput, facilitiesInput].forEach(input => {
         input.addEventListener('input', () => {
+          if (!validateObjectPrice()) return;
           labelClearBtnUpdate(input.closest('.input-text'));
+          updateFee();
           validate();
           resultMortgage();
         });
@@ -8260,10 +8278,11 @@ const mortgage = () => {
         if (clearBtn) {
           clearBtn.addEventListener('click', () => {
             if (!clearBtn.hasAttribute('hidden')) {
-              input.value = '';
               clearBtn.setAttribute('hidden', '');
-              labelClearBtnUpdate(input.closest('.input-text'));
+              updateFee();
               validate();
+              input.value = '';
+              labelClearBtnUpdate(input.closest('.input-text'));
               resultMortgage();
             }
           });
@@ -8287,34 +8306,51 @@ const mortgage = () => {
         const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
         capital.classList.remove('_active');
         facilities.classList.remove('_active');
-        if (contributionValue === 0) {
-          return;
-        }
-        if (contributionValue > maxCapital) {
-          capital.classList.add('_active');
-          facilities.classList.add('_active');
-          capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(maxCapital));
-          facilitiesInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue - maxCapital));
-          return;
-        }
         if (contributionValue < minCapital) {
+          capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(minCapital));
+          capital.classList.add('_active');
+          return;
+        }
+        if (contributionValue >= minCapital) {
+          capital.classList.add('_active');
           facilities.classList.add('_active');
-          capitalInput.value = '';
-          facilitiesInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue));
+          capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(minCapital));
+          facilitiesInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue - minCapital));
           return;
         }
-        if (contributionValue < maxCapital) {
-          capital.classList.add('_active');
-          capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue));
-          facilitiesInput.value = '';
-          return;
-        }
-        if (contributionValue === maxCapital) {
-          capital.classList.add('_active');
-          capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(maxCapital));
-          facilitiesInput.value = '';
-          return;
-        }
+        // if (contributionValue > maxCapital) {
+        // capital.classList.add('_active');
+        // facilities.classList.add('_active');
+        // capitalInput.value = numberReplace(String(maxCapital));
+        // facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
+        // return;
+        // }
+        // if (contributionValue < minCapital) {
+        //     facilities.classList.add('_active');
+        //     capitalInput.value = '';
+        //     facilitiesInput.value = numberReplace(String(contributionValue));
+        //     return;
+        // }
+        // if (contributionValue < maxCapital) {
+        //     capital.classList.add('_active');
+        //     capitalInput.value = numberReplace(String(contributionValue));
+        //     facilitiesInput.value = '';
+        //     return;
+        // }
+        // if (contributionValue === maxCapital) {
+        //     capital.classList.add('_active');
+        //     capitalInput.value = numberReplace(String(maxCapital));
+        //     facilitiesInput.value = '';
+        //     return;
+        // }
+      }
+
+      function updateFee() {
+        setTimeout(() => {
+          const capitalValue = capitalInput.value.replace(/\s/g, '');
+          const facilitiesValue = facilitiesInput.value.replace(/\s/g, '');
+          meternalCapitalSlider.set(+capitalValue + +facilitiesValue);
+        }, 100);
       }
       function validate() {
         let result = true;
@@ -8331,11 +8367,23 @@ const mortgage = () => {
           (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateCreateError)(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
           result = false;
         }
-        if (sum < Number(priceObject.dataset.value) * 10 / 100) {
-          (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateCreateError)(facilities, 'Первоначальный взнос не может быть меньше 10% от стоимости недвижимости');
-          result = false;
-        }
+        // if (sum < Number(priceObject.dataset.value)) {
+        //     validateCreateError(facilities, 'Первоначальный взнос не может быть меньше стоимости недвижимости');
+        //     result = false;
+        // }
+
         return result;
+      }
+      function validateObjectPrice() {
+        (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(priceObject);
+        if (priceObject.dataset.value < 200000) {
+          (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateCreateError)(priceObject, 'Стоимость не может быть меньше 200 000 Р');
+          meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'none';
+          return false;
+        } else {
+          meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'all';
+          return true;
+        }
       }
       const targetCredit = containerAdd.querySelector('.object-calc-mort__target-credit');
       const targetCreditMap = {
