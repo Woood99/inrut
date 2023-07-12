@@ -81,7 +81,6 @@
                                             <option value="apartments5">Комната</option>
                                             <option value="apartments6">Коммерческая недвижимость</option>
                                             <option value="apartments7">Гараж,машино-место или кладовая</option>
-                                            <option value="apartments8">Рефинансирование</option>
                                         </select>
                                     </div>
                                 </div>
@@ -107,17 +106,21 @@
                                     <span>Семейная</span>
                                     <span>от 5,7%</span>
                                 </button>
+                                <button type="button" class="btn btn-reset object-calc-mort__btn" data-mortgage-card="6">
+                                    <span>Сельская</span>
+                                    <span>от 4,8%</span>
+                                </button>
                             </div>
                             <div class="object-calc-mort__wrapper">
                                 <div class="filter-dropdown filter-dropdown--one filter-dropdown--mortgage-calc" data-filter-dropdown-name="Стоимость объекта"
-                                    data-filter-dropdown-subtitle="Любая" data-name="Стоимость недвижимости" data-value="200000">
+                                    data-filter-dropdown-subtitle="Любая" data-name="Стоимость недвижимости" data-value="0">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper _active">
                                             <div>
                                                 Стоимость объекта
                                             </div>
                                             <div>
-                                                200 тыс.
+                                                0
                                             </div>
                                         </div>
                                         <svg>
@@ -136,14 +139,14 @@
                                             </span>
                                             <div class="filter-dropdown__range filter-range-one">
                                                 <div class="filter-range-one__nav">
-                                                    <div data-default="20000">
+                                                    <div data-default="0">
                                                         <input type="text" maxlength="12" name="Имя" class="input-reset" placeholder="Стоимость">
                                                     </div>
                                                     <div>
                                                         ₽
                                                     </div>
                                                 </div>
-                                                <div class="filter-range-one__inner" data-min="200000" data-max="50000000" data-step="10000"></div>
+                                                <div class="filter-range-one__inner" data-min="0" data-max="50000000" data-step="10000"></div>
                                             </div>
                                             <button type="button" class="btn btn-reset filter-dropdown__choice">
                                                 <svg>
@@ -183,19 +186,19 @@
                                                 лет
                                             </div>
                                         </div>
-                                        <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
+                                        <div class="filter-range-one__inner" data-min="1" data-max="30"></div>
                                     </div>
                                 </div>
                                 <div class="object-calc-mort__contribution">
                                     <div class="filter-range-one filter-range-one--contribution">
                                         <span class="filter-range-one__subtitle">Первоначальный взнос</span>
                                         <div class="filter-range-one__nav">
-                                            <div data-default="20000">
+                                            <div data-default="5000">
                                                 <input type="text" maxlength="12" name="Имя" class="input-reset">
                                             </div>
-                                            <span>10%</span>
+                                            <span>0%</span>
                                         </div>
-                                        <div class="filter-range-one__inner" data-min="20000" data-max="180000" data-step="10000"></div>
+                                        <div class="filter-range-one__inner" data-min="" data-max="" data-step="10000"></div>
                                     </div>
                                     <div class="checkbox-secondary">
                                         <input id="mat-capital" name="mat-capital" class="checkbox-secondary__input" type="checkbox" value="true">
@@ -206,7 +209,7 @@
                                     <div class="checkbox-secondary">
                                         <input id="gos-certif" name="gos-certif" class="checkbox-secondary__input" type="checkbox" value="true">
                                         <label for="gos-certif" class="checkbox-secondary__label">
-                                            <span class="checkbox-secondary__text">Использовать гос. сертификат</span>
+                                            <span class="checkbox-secondary__text">Есть гос. сертификат</span>
                                         </label>
                                     </div>
                                 </div>
@@ -252,15 +255,15 @@
                             <div class="object-calc-mort__info">
                                 <span>
                                     Сумма кредита
-                                    <span>2 897 000 ₽</span>
+                                    <span>0 ₽</span>
                                 </span>
                                 <span>
                                     Процентная ставка
-                                    <span>10,8%</span>
+                                    <span>5,7%</span>
                                 </span>
                                 <span>
                                     Ежемесячный платеж
-                                    <span>19 000 ₽/мес.</span>
+                                    <span>0 ₽/мес.</span>
                                 </span>
                             </div>
                             <div class="object-calc-mort__bottom">

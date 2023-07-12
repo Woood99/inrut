@@ -4417,9 +4417,25 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-not');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'interest-rate-modal');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: () => {
-    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_9__["default"])(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
-  }
+  isOpen: settingsModal => {
+    (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_9__["default"])(settingsModal.container.querySelector('.filter-range-one__input--w-auto'));
+    if (document.body.querySelector('.main').classList.contains('mortgage')) {
+      const itemsBody = document.querySelectorAll('.object-calc-mort__btn');
+      const itemsModal = settingsModal.container.querySelectorAll('[data-mortgage-card]');
+      itemsBody.forEach(itemBody => {
+        itemsModal.forEach(itemModal => {
+          if (itemBody.dataset.mortgageCard === itemModal.dataset.mortgageCard) {
+            if (itemBody.classList.contains('_active')) {
+              itemModal.classList.add('_active');
+            } else {
+              itemModal.classList.remove('_active');
+            }
+          }
+        });
+      });
+    }
+  },
+  isClose: () => {}
 }, 'interest-rate-modal-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'construct-progress-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
@@ -4473,7 +4489,6 @@ __webpack_require__.r(__webpack_exports__);
     settingsModal.container.querySelector('.video-block__video').innerHTML = '';
   }
 }, 'screen-demonstation-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
@@ -8099,6 +8114,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const mortgage = () => {
+  let resultMortgage;
   const containerOne = document.querySelector('.object-calc-mort--one');
   const popupContainerOne = document.querySelector('.popup-primary--interest-rate-1 .interest-rate');
   const containerAdd = document.querySelector('.object-calc-mort--add');
@@ -8130,6 +8146,9 @@ const mortgage = () => {
           textPrc.textContent = prc;
         }
       });
+      if (containerAdd.querySelector('.object-calc-mort__contribution')) {
+        resultMortgage();
+      }
     }
   }
   if (containerOne && popupContainerOne) {
@@ -8147,6 +8166,29 @@ const mortgage = () => {
   if (containerAdd) {
     const meternalCapital = containerAdd.querySelector('.object-calc-mort__contribution');
     if (meternalCapital) {
+      resultMortgage = () => {
+        setTimeout(() => {
+          const priceObject = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
+          const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
+          const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
+          const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
+          const bottom = containerAdd.querySelector('.object-calc-mort__info');
+          const bottomSum = bottom.querySelector('span:nth-child(1) span');
+          const bottomPrc = bottom.querySelector('span:nth-child(2) span');
+          const bottomMonth = bottom.querySelector('span:nth-child(3) span');
+          bottomSum.textContent = `${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(priceObject - initialFee))} ₽`;
+          bottomPrc.textContent = prc.replace('от ', '');
+          const prcValue = prc.replace('от ', '').replace('%', '').replace(',', '.').trim();
+          bottomMonth.textContent = `${getPayment(priceObject, initialFee, term, prcValue)} ₽/мес.`;
+        }, 1000);
+        function getPayment(priceObject, initialFee, period, rate) {
+          const month = rate / 12 / 100;
+          const koef = month * Math.pow(1 + month, period * 12) / (Math.pow(1 + month, period * 12) - 1);
+          const result = (priceObject - initialFee) * koef;
+          return (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(result.toFixed());
+        }
+        ;
+      };
       const contributionInput = meternalCapital.querySelector('input');
       const checkbox = meternalCapital.querySelector('.checkbox-secondary:nth-child(2) .checkbox-secondary__input');
       const capital = containerAdd.querySelector('.object-calc-mort__capital');
@@ -8187,21 +8229,23 @@ const mortgage = () => {
         labelClearBtnUpdate(capitalInput.closest('.input-text'));
         labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
         updateMatCapital();
+        resultMortgage();
       });
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
           capital.removeAttribute('hidden');
           facilities.removeAttribute('hidden');
           meternalCapital.querySelector('.filter-range-one').classList.add('_disabled');
-          labelClearBtnUpdate(capitalInput.closest('.input-text'));
-          labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
-          updateMatCapital();
-          validate();
         } else {
           capital.setAttribute('hidden', '');
           facilities.setAttribute('hidden', '');
           meternalCapital.querySelector('.filter-range-one').classList.remove('_disabled');
         }
+        labelClearBtnUpdate(capitalInput.closest('.input-text'));
+        labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+        updateMatCapital();
+        validate();
+        resultMortgage();
       });
       capitalInput.addEventListener('input', () => {
         validate();
@@ -8210,6 +8254,7 @@ const mortgage = () => {
         input.addEventListener('input', () => {
           labelClearBtnUpdate(input.closest('.input-text'));
           validate();
+          resultMortgage();
         });
         const clearBtn = input.closest('.input-text__label').querySelector('.input-text__clear');
         if (clearBtn) {
@@ -8219,6 +8264,7 @@ const mortgage = () => {
               clearBtn.setAttribute('hidden', '');
               labelClearBtnUpdate(input.closest('.input-text'));
               validate();
+              resultMortgage();
             }
           });
         }
@@ -8241,6 +8287,9 @@ const mortgage = () => {
         const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
         capital.classList.remove('_active');
         facilities.classList.remove('_active');
+        if (contributionValue === 0) {
+          return;
+        }
         if (contributionValue > maxCapital) {
           capital.classList.add('_active');
           facilities.classList.add('_active');
@@ -8291,7 +8340,12 @@ const mortgage = () => {
       const targetCredit = containerAdd.querySelector('.object-calc-mort__target-credit');
       const targetCreditMap = {
         'Квартира в новостройке': [[1, 2, 3, 4, 5], [5]],
-        'Квартира на вторичном рынке': [[1, 4], [1]]
+        'Квартира на вторичном рынке': [[1, 4], [1]],
+        'Дом или пенхаус': [[2, 4, 3, 5, 6], [5]],
+        'Земельный участок': [[2, 4, 3, 5, 6], [5]],
+        'Комната': [[1], [1]],
+        'Коммерческая недвижимость': [[1], [1]],
+        'Гараж,машино-место или кладовая': [[1], [1]]
       };
       targetCredit.addEventListener('change', () => {
         const name = targetCredit.querySelector('.choices__item.choices__item--selectable').textContent.trim();
@@ -8321,6 +8375,17 @@ const mortgage = () => {
           }
         }
         listValue ? list.setAttribute('hidden', '') : list.removeAttribute('hidden');
+        cards.forEach(card => {
+          if (!card.hasAttribute('hidden') && card.classList.contains('_active')) {
+            const textPrc = containerAdd.querySelector('.field-static__text');
+            textPrc.textContent = card.querySelector('span:nth-child(2)').textContent.trim();
+          }
+        });
+        resultMortgage();
+      });
+      const term = containerAdd.querySelector('.object-calc-mort__term');
+      term.querySelector('.filter-range-one__inner').noUiSlider.on('update', value => {
+        resultMortgage();
       });
     }
   }

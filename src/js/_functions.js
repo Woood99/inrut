@@ -33,8 +33,26 @@ popup(null, 'thanks');
 popup(null, 'object-not');
 popup(null, 'interest-rate-modal');
 popup({
-    isOpen: () => {
-        inputResize(document.querySelector('.popup-primary--interest-rate-2 .filter-range-one__input--w-auto'));
+    isOpen: (settingsModal) => {
+        inputResize(settingsModal.container.querySelector('.filter-range-one__input--w-auto'));
+        if (document.body.querySelector('.main').classList.contains('mortgage')) {
+            const itemsBody = document.querySelectorAll('.object-calc-mort__btn');
+            const itemsModal = settingsModal.container.querySelectorAll('[data-mortgage-card]');
+            itemsBody.forEach(itemBody => {
+                itemsModal.forEach(itemModal => {
+                    if (itemBody.dataset.mortgageCard === itemModal.dataset.mortgageCard) {
+                        if (itemBody.classList.contains('_active')) {
+                            itemModal.classList.add('_active');
+                        } else {
+                            itemModal.classList.remove('_active');
+                        }
+                    }
+                })
+            })
+        }
+    },
+    isClose: () => {
+
     }
 }, 'interest-rate-modal-two');
 popup(null, 'construct-progress-popup');
@@ -92,7 +110,6 @@ popup({
     }
 
 }, 'screen-demonstation-popup');
-popup(null, 'record-viewing');
 popup(null, 'record-viewing');
 popup(null, 'personal-area-two');
 popup(null, 'client-fixed');
