@@ -69,30 +69,70 @@ const mortgage = () => {
             resultMortgage = () => {
                 setTimeout(() => {
 
-                    const priceObject = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
+                    const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
+                    const priceObjectName = containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.name;
                     const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
                     const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
                     const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
                     const bottom = containerAdd.querySelector('.object-calc-mort__info');
-                    const bottomSum = bottom.querySelector('span:nth-child(1) span');
-                    const bottomPrc = bottom.querySelector('span:nth-child(2) span');
-                    const bottomMonth = bottom.querySelector('span:nth-child(3) span');
-                    bottomSum.textContent = `${numberReplace(String(priceObject - initialFee))} ₽`;
-                    bottomPrc.textContent = prc.replace('от ', '');
+                    const bottomSum = bottom.querySelector('span:nth-child(1)');
+                    const bottomPrc = bottom.querySelector('span:nth-child(2)');
+                    const bottomMonth = bottom.querySelector('span:nth-child(3)');
 
-                    const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
-                    bottomMonth.textContent = `${getPayment(priceObject,initialFee, term, prcValue)} ₽/мес.`;
+                    if (priceObjectName === 'Стоимость недвижимости') {
+                        bottomSum.innerHTML = `
+                            Сумма кредита
+                            <span>${numberReplace(String(priceObjectValue - initialFee))} ₽</span>
+                        `;
+                        bottomPrc.innerHTML = `
+                            Процентная ставка
+                            <span>${prc.replace('от ', '')}</span>
+                        `;
+                        const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
+                        bottomMonth.innerHTML = `
+                            Ежемесячный платеж
+                            <span>${getPayment(priceObjectValue,initialFee, term, prcValue)} ₽/мес.</span>
+                        `;
+                    }
+                    if (priceObjectName === 'Размер платежа') {
+                        const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
+                        bottomSum.innerHTML = `
+                            Сумма кредита
+                            <span>${numberReplace(String(priceObjectValue * (term * 12)))} ₽</span>
+                        `;
+                        bottomPrc.innerHTML = `
+                            Процентная ставка
+                            <span>${prc.replace('от ', '')}</span>
+                        `;
+                        bottomMonth.innerHTML = `
+                        Стоимость недвижимости
+                            <span>${getPayment2(priceObjectValue,initialFee,term,prcValue)} ₽</span>
+                    `;
+                    }
                 }, 1000);
-
-                function getPayment(priceObject, initialFee, period, rate) {
-                    const month = (rate / 12) / 100;
-                    const koef = (month * (Math.pow(1 + month, period * 12))) / (Math.pow(1 + month, period * 12) - 1);
-
-                    const result = (priceObject - initialFee) * koef;
-
-                    return numberReplace(result.toFixed());
-                };
             }
+            function getPayment(priceObject, initialFee, period, rate) {
+                const month = (rate / 12) / 100;
+                const koef = (month * (Math.pow(1 + month, period * 12))) / (Math.pow(1 + month, period * 12) - 1);
+                const result = (priceObject - initialFee) * koef;
+
+                return numberReplace(result.toFixed());
+            };
+
+
+            function getPayment2(priceMonth, initialFee, period, rate) {
+                var MonthlyPaymentAmount = priceMonth;
+                var APR = rate / 100;
+                var InterestRate = (APR / 12);
+                let result = 0;
+                for (var nMonths = 12; nMonths <= (period * 12); nMonths += 12) {
+                    const TotalAmountOfCredit = (MonthlyPaymentAmount / InterestRate) * (1 - Math.pow((1 + InterestRate), (-nMonths)));
+                    result = TotalAmountOfCredit;
+                }
+                result += +initialFee;
+                return numberReplace(String(parseInt(result)));
+            }
+
 
             const contributionInput = meternalCapital.querySelector('input');
             const checkbox = meternalCapital.querySelector('.toggle-checkbox:nth-child(2) input');
@@ -104,7 +144,6 @@ const mortgage = () => {
 
             const maxCapital = Number(capital.dataset.capitalMax);
             const minCapital = Number(capital.dataset.capitalMin);
-
             const priceObject = containerAdd.querySelector('.filter-dropdown--mortgage-calc');
             const meternalCapitalSlider = meternalCapital.querySelector('.filter-range-one__inner').noUiSlider;
 
@@ -124,7 +163,7 @@ const mortgage = () => {
                         })
                         priceObject.setAttribute('data-value', value);
                         updateMatCapital();
-                        if (checkbox.checked){
+                        if (checkbox.checked) {
                             updateFee();
                         }
                         validateObjectPrice();
@@ -225,7 +264,22 @@ const mortgage = () => {
             function updateMatCapital() {
                 validateRemoveError(capital);
                 validateRemoveError(facilities);
-                const contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+                console.log(contributionInput);
+                let contributionValue = 0;
+                if (priceObject.dataset.name === 'Стоимость недвижимости') {
+                    contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+                }
+                if (priceObject.dataset.name === 'Размер платежа') {
+
+                    const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
+                    const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
+                    const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
+                    const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
+                    const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
+                    console.log(getPayment2(priceObjectValue,initialFee,term,prcValue));
+                    contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+                }
+
                 capital.classList.remove('_active');
                 facilities.classList.remove('_active');
                 if (contributionValue < minCapital) {
@@ -241,11 +295,11 @@ const mortgage = () => {
                     return;
                 }
                 // if (contributionValue > maxCapital) {
-                    // capital.classList.add('_active');
-                    // facilities.classList.add('_active');
-                    // capitalInput.value = numberReplace(String(maxCapital));
-                    // facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
-                    // return;
+                // capital.classList.add('_active');
+                // facilities.classList.add('_active');
+                // capitalInput.value = numberReplace(String(maxCapital));
+                // facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
+                // return;
                 // }
                 // if (contributionValue < minCapital) {
                 //     facilities.classList.add('_active');
@@ -268,11 +322,11 @@ const mortgage = () => {
             }
 
             function updateFee() {
-              setTimeout(() => {
-                const capitalValue = capitalInput.value.replace(/\s/g, '');
-                const facilitiesValue = facilitiesInput.value.replace(/\s/g, '');
-                meternalCapitalSlider.set(+capitalValue + +facilitiesValue);
-              }, 100);
+                setTimeout(() => {
+                    const capitalValue = capitalInput.value.replace(/\s/g, '');
+                    const facilitiesValue = facilitiesInput.value.replace(/\s/g, '');
+                    meternalCapitalSlider.set(+capitalValue + +facilitiesValue);
+                }, 100);
             }
 
             function validate() {
@@ -293,23 +347,31 @@ const mortgage = () => {
                     validateCreateError(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
                     result = false;
                 }
-                // if (sum < Number(priceObject.dataset.value)) {
-                //     validateCreateError(facilities, 'Первоначальный взнос не может быть меньше стоимости недвижимости');
-                //     result = false;
-                // }
 
                 return result;
             }
 
             function validateObjectPrice() {
                 validateRemoveError(priceObject);
-                if (priceObject.dataset.value < 200000) {
-                    validateCreateError(priceObject, 'Стоимость не может быть меньше 200 000 Р');
-                    meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'none';
-                    return false;
-                } else {
-                    meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'all';
-                    return true;
+                if (priceObject.dataset.name === 'Стоимость недвижимости') {
+                    if (priceObject.dataset.value < 200000) {
+                        validateCreateError(priceObject, 'Стоимость не может быть меньше 200 000 ₽');
+                        meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'none';
+                        return false;
+                    } else {
+                        meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'all';
+                        return true;
+                    }
+                }
+                if (priceObject.dataset.name === 'Размер платежа') {
+                    if (priceObject.dataset.value < 15000) {
+                        validateCreateError(priceObject, 'Размер платежа не может быть меньше 15 000 ₽');
+                        meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'none';
+                        return false;
+                    } else {
+                        meternalCapital.querySelector('.filter-range-one').style.pointerEvents = 'all';
+                        return true;
+                    }
                 }
             }
             const targetCredit = containerAdd.querySelector('.object-calc-mort__target-credit');

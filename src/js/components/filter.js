@@ -230,6 +230,7 @@ export const filterSum = () => {
             </div>
             `;
             buttonWrapper.classList.add('_active');
+            el.setAttribute('data-name',itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
         } else {
             buttonWrapper.classList.remove('_active');
         }
