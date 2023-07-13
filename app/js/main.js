@@ -5904,6 +5904,7 @@ const filterSum = () => {
     const input = itemActive.querySelector('input');
     const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
     let html = ``;
+    console.log(input);
     if (input.value) {
       html = `
             <div>
@@ -8193,8 +8194,8 @@ const mortgage = () => {
           if (priceObjectName === 'Размер платежа') {
             const prcValue = prc.replace('от ', '').replace('%', '').replace(',', '.').trim();
             bottomSum.innerHTML = `
-                            Сумма кредита
-                            <span>${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(priceObjectValue * (term * 12)))} ₽</span>
+                            Ежемесячный платеж
+                            <span>${(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(priceObjectValue))} ₽</span>
                         `;
             bottomPrc.innerHTML = `
                             Процентная ставка
@@ -8241,14 +8242,32 @@ const mortgage = () => {
         item.noUiSlider.on('update', values => {
           if (item.classList.contains('_init')) {
             const value = parseInt(values[0]);
-            const valueMax = value * 90 / 100;
-            meternalCapitalSlider.updateOptions({
-              start: 0,
-              range: {
-                min: 0,
-                max: valueMax
-              }
-            });
+            if (priceObject.dataset.name === 'Стоимость недвижимости') {
+              const valueMax = value * 90 / 100;
+              meternalCapitalSlider.updateOptions({
+                start: 0,
+                range: {
+                  min: 0,
+                  max: valueMax
+                }
+              });
+            }
+            if (priceObject.dataset.name === 'Размер платежа') {
+              const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc .filter-dropdown__item.active input').value.replace(/\s/g, '');
+              const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
+              const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
+              const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
+              const prcValue = prc.replace('от ', '').replace('%', '').replace(',', '.').trim();
+              const value = Number(getPayment2(priceObjectValue, initialFee, term, prcValue).replace(/\s/g, ''));
+              const valueMax = value * 90 / 100;
+              meternalCapitalSlider.updateOptions({
+                start: 0,
+                range: {
+                  min: 0,
+                  max: valueMax
+                }
+              });
+            }
             priceObject.setAttribute('data-value', value);
             updateMatCapital();
             if (checkbox.checked) {
@@ -8261,6 +8280,16 @@ const mortgage = () => {
           item.classList.add('_init');
           (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(priceObject);
         }, 2);
+      });
+      priceObject.querySelectorAll('.filter-dropdown__choice').forEach(item => {
+        item.addEventListener('click', () => {
+          labelClearBtnUpdate(capitalInput.closest('.input-text'));
+          labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+          updateMatCapital();
+          updateFee();
+          validate();
+          resultMortgage();
+        });
       });
       meternalCapitalSlider.on('update', value => {
         if (priceObject.classList.contains('_init')) {
@@ -8299,6 +8328,8 @@ const mortgage = () => {
         updateMatCapital();
         if (checkbox.checked) {
           updateFee();
+        } else {
+          meternalCapital.querySelector('.filter-range-one__inner').noUiSlider.set(0);
         }
         validate();
         resultMortgage();
@@ -8343,7 +8374,6 @@ const mortgage = () => {
       function updateMatCapital() {
         (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(capital);
         (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(facilities);
-        console.log(contributionInput);
         let contributionValue = 0;
         if (priceObject.dataset.name === 'Стоимость недвижимости') {
           contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
@@ -8354,8 +8384,7 @@ const mortgage = () => {
           const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
           const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
           const prcValue = prc.replace('от ', '').replace('%', '').replace(',', '.').trim();
-          console.log(getPayment2(priceObjectValue, initialFee, term, prcValue));
-          contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
+          contributionValue = Number(getPayment2(priceObjectValue, initialFee, term, prcValue).replace(/\s/g, ''));
         }
         capital.classList.remove('_active');
         facilities.classList.remove('_active');
@@ -8368,36 +8397,11 @@ const mortgage = () => {
           capital.classList.add('_active');
           facilities.classList.add('_active');
           capitalInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(minCapital));
+          console.log('da');
           facilitiesInput.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_1__["default"])(String(contributionValue - minCapital));
           return;
         }
-        // if (contributionValue > maxCapital) {
-        // capital.classList.add('_active');
-        // facilities.classList.add('_active');
-        // capitalInput.value = numberReplace(String(maxCapital));
-        // facilitiesInput.value = numberReplace(String(contributionValue - maxCapital));
-        // return;
-        // }
-        // if (contributionValue < minCapital) {
-        //     facilities.classList.add('_active');
-        //     capitalInput.value = '';
-        //     facilitiesInput.value = numberReplace(String(contributionValue));
-        //     return;
-        // }
-        // if (contributionValue < maxCapital) {
-        //     capital.classList.add('_active');
-        //     capitalInput.value = numberReplace(String(contributionValue));
-        //     facilitiesInput.value = '';
-        //     return;
-        // }
-        // if (contributionValue === maxCapital) {
-        //     capital.classList.add('_active');
-        //     capitalInput.value = numberReplace(String(maxCapital));
-        //     facilitiesInput.value = '';
-        //     return;
-        // }
       }
-
       function updateFee() {
         setTimeout(() => {
           const capitalValue = capitalInput.value.replace(/\s/g, '');
@@ -8493,6 +8497,14 @@ const mortgage = () => {
       });
       const term = containerAdd.querySelector('.object-calc-mort__term');
       term.querySelector('.filter-range-one__inner').noUiSlider.on('update', value => {
+        if (!priceObject.classList.contains('_init')) {
+          return;
+        }
+        labelClearBtnUpdate(capitalInput.closest('.input-text'));
+        labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
+        updateMatCapital();
+        updateFee();
+        validate();
         resultMortgage();
       });
     }

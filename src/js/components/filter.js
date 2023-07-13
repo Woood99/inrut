@@ -220,6 +220,7 @@ export const filterSum = () => {
         const input = itemActive.querySelector('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
         let html = ``;
+        console.log(input);
         if (input.value) {
             html = `
             <div>
