@@ -33,7 +33,7 @@ export const filterSum = () => {
             }
         })
         if (close) {
-            close.addEventListener('click',() => {
+            close.addEventListener('click', () => {
                 el.classList.remove('active');
             });
         }
@@ -220,7 +220,7 @@ export const filterSum = () => {
         const input = itemActive.querySelector('input');
         const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
         let html = ``;
-        console.log(input);
+
         if (input.value) {
             html = `
             <div>
@@ -231,8 +231,16 @@ export const filterSum = () => {
             </div>
             `;
             buttonWrapper.classList.add('_active');
-            el.setAttribute('data-name',itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
+            el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
         } else {
+            html = `
+            <div>
+                ${el.dataset.filterDropdownName}
+            </div>
+            <div>
+                0
+            </div>
+            `;
             buttonWrapper.classList.remove('_active');
         }
         buttonWrapper.innerHTML = html;

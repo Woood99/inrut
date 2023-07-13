@@ -133,7 +133,7 @@ const mortgage = () => {
                 return numberReplace(String(parseInt(result)));
             }
 
-    
+
 
             const contributionInput = meternalCapital.querySelector('input');
             const checkbox = meternalCapital.querySelector('.toggle-checkbox:nth-child(2) input');
@@ -189,7 +189,7 @@ const mortgage = () => {
                         validateObjectPrice();
                     }
                 });
-
+                const input = item.closest('.filter-dropdown__item').querySelector('input');
                 setTimeout(() => {
                     item.classList.add('_init');
                     validateRemoveError(priceObject);
@@ -197,11 +197,10 @@ const mortgage = () => {
             })
 
             priceObject.querySelectorAll('.filter-dropdown__choice').forEach(item => {
-                item.addEventListener('click',() => {
+                item.addEventListener('click', () => {
                     labelClearBtnUpdate(capitalInput.closest('.input-text'));
                     labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
-                    updateMatCapital();
-                    updateFee();
+                    priceObject.setAttribute('data-value', item.closest('.filter-dropdown__item').querySelector('input').value.replace(/\s/g, ''));
                     validate();
                     resultMortgage();
                 })
@@ -252,11 +251,8 @@ const mortgage = () => {
                 }
                 validate();
                 resultMortgage();
-            })
-
-            capitalInput.addEventListener('input', () => {
-                validate();
             });
+
             [capitalInput, facilitiesInput].forEach(input => {
                 input.addEventListener('input', () => {
                     if (!validateObjectPrice()) return;
@@ -271,10 +267,10 @@ const mortgage = () => {
                     clearBtn.addEventListener('click', () => {
                         if (!clearBtn.hasAttribute('hidden')) {
                             clearBtn.setAttribute('hidden', '');
-                            updateFee();
-                            validate();
                             input.value = '';
                             labelClearBtnUpdate(input.closest('.input-text'));
+                            updateFee();
+                            validate();
                             resultMortgage();
                         }
                     })
@@ -298,19 +294,7 @@ const mortgage = () => {
             function updateMatCapital() {
                 validateRemoveError(capital);
                 validateRemoveError(facilities);
-                let contributionValue = 0;
-                if (priceObject.dataset.name === 'Стоимость недвижимости') {
-                    contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
-                }
-                if (priceObject.dataset.name === 'Размер платежа') {
-                    const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
-                    const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
-                    const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
-                    const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
-                    const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
-                    contributionValue = Number(getPayment2(priceObjectValue, initialFee, term, prcValue).replace(/\s/g, ''));
-                }
-
+                let contributionValue = Number(contributionInput.value.replace(/\s/g, ''));
                 capital.classList.remove('_active');
                 facilities.classList.remove('_active');
                 if (contributionValue < minCapital) {
@@ -322,7 +306,6 @@ const mortgage = () => {
                     capital.classList.add('_active');
                     facilities.classList.add('_active');
                     capitalInput.value = numberReplace(String(minCapital));
-                    console.log('da');
                     facilitiesInput.value = numberReplace(String(contributionValue - minCapital));
                     return;
                 }
@@ -350,9 +333,23 @@ const mortgage = () => {
                 }
 
                 const sum = Number(capitalInput.value.replace(/\s/g, '')) + Number(facilitiesInput.value.replace(/\s/g, ''));
-                if (sum > Number(priceObject.dataset.value) * 90 / 100) {
-                    validateCreateError(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
-                    result = false;
+                if (priceObject.dataset.name === 'Стоимость недвижимости') {
+                    if (sum > Number(priceObject.dataset.value) * 90 / 100) {
+                        validateCreateError(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
+                        result = false;
+                    }
+                }
+                if (priceObject.dataset.name === 'Размер платежа') {
+                    const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc').dataset.value;
+                    const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
+                    const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
+                    const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
+                    const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
+                    const value = Number(getPayment2(priceObjectValue, initialFee, term, prcValue).replace(/\s/g, ''));
+                    if (sum > value * 90 / 100) {
+                        validateCreateError(facilities, 'Первоначальный взнос не может быть больше 90% от стоимости недвижимости');
+                        result = false;
+                    }
                 }
 
                 return result;
@@ -457,12 +454,34 @@ const mortgage = () => {
                 if (!priceObject.classList.contains('_init')) {
                     return;
                 }
-                labelClearBtnUpdate(capitalInput.closest('.input-text'));
-                labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
-                updateMatCapital();
-                updateFee();
-                validate();
-                resultMortgage();
+
+                if (priceObject.dataset.name === 'Стоимость недвижимости') {
+                    const valueMax = priceObject.dataset.value * 90 / 100;
+                    meternalCapitalSlider.updateOptions({
+                        start: 0,
+                        range: {
+                            min: 0,
+                            max: valueMax
+                        }
+                    })
+                }
+                if (priceObject.dataset.name === 'Размер платежа') {
+                    const priceObjectValue = +containerAdd.querySelector('.filter-dropdown--mortgage-calc .filter-dropdown__item.active input').value.replace(/\s/g, '');
+                    const term = +containerAdd.querySelector('.object-calc-mort__term .filter-range-one__nav input').value.trim();
+                    const initialFee = containerAdd.querySelector('.object-calc-mort__contribution .filter-range-one__nav input').value.trim().replace(/\s/g, '');
+                    const prc = containerAdd.querySelector('.field-static .field-static__text').textContent;
+                    const prcValue = (prc.replace('от ', '').replace('%', '').replace(',', '.').trim());
+                    const value = Number(getPayment2(priceObjectValue, initialFee, term, prcValue).replace(/\s/g, ''));
+
+                    const valueMax = value * 90 / 100;
+                    meternalCapitalSlider.updateOptions({
+                        start: 0,
+                        range: {
+                            min: 0,
+                            max: valueMax
+                        }
+                    })
+                }
             })
         }
     }
