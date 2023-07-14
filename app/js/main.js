@@ -5691,6 +5691,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const filterDropdownChoice = () => {
+  const items = document.querySelectorAll('.filter-dropdown__dropdown');
+  if (!items.length >= 1) return;
+  items.forEach(item => {
+    item.querySelectorAll('.filter-dropdown__checkbox').forEach(el => {
+      el.addEventListener('change', () => {
+        if (!el.closest('.filter-dropdown__item').classList.contains('active')) {
+          item.querySelectorAll('.filter-dropdown__item').forEach(itemTwo => {
+            itemTwo.classList.remove('active');
+            itemTwo.querySelector('.filter-dropdown__checkbox input').checked = false;
+          });
+          el.querySelector('input').checked = true;
+          el.closest('.filter-dropdown__item').classList.add('active');
+        } else {
+          el.querySelector('input').checked = true;
+        }
+      });
+    });
+  });
+};
 const filterSum = () => {
   const container = document.querySelectorAll('.filter-dropdown');
   if (!container.length >= 1) return;
@@ -5730,13 +5750,14 @@ const filterSum = () => {
     });
   });
   function changeTitle(el) {
-    const itemActive = el.querySelector('.filter-dropdown__item.active');
-    const inputs = itemActive.querySelectorAll('input');
-    const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
-    let html = ``;
-    if (inputs[0].value && inputs[1].value) {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
-        html = `
+    setTimeout(() => {
+      const itemActive = el.querySelector('.filter-dropdown__item.active');
+      const inputs = itemActive.querySelectorAll('.filter-range__nav input');
+      const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+      let html = ``;
+      if (inputs[0].value && inputs[1].value) {
+        if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
+          html = `
                     <div>
                         ${el.dataset.filterDropdownName}
                     </div>
@@ -5750,9 +5771,9 @@ const filterSum = () => {
                     до ${convertSum(inputs[1].value)}
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
                 </div>
@@ -5766,9 +5787,9 @@ const filterSum = () => {
                         до ${inputs[1].value} м²
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Этаж') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Этаж') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5782,11 +5803,11 @@ const filterSum = () => {
                         до ${inputs[1].value} эт.
                     </div>
                 `;
-      }
-      buttonWrapper.classList.add('_active');
-    } else if (inputs[0].value && inputs[1].value === '') {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
-        html = `
+        }
+        buttonWrapper.classList.add('_active');
+      } else if (inputs[0].value && inputs[1].value === '') {
+        if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
+          html = `
                     <div>
                     ${el.dataset.filterDropdownName}
                     </div>
@@ -5800,9 +5821,9 @@ const filterSum = () => {
                         до ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5816,9 +5837,9 @@ const filterSum = () => {
                         до ${itemActive.querySelector('[data-max]').dataset.max} м²
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Этаж') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Этаж') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5832,11 +5853,11 @@ const filterSum = () => {
                         до ${itemActive.querySelector('[data-max]').dataset.max} эт.
                     </div>
                 `;
-      }
-      buttonWrapper.classList.add('_active');
-    } else if (inputs[1].value && inputs[0].value === '') {
-      if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
-        html = `
+        }
+        buttonWrapper.classList.add('_active');
+      } else if (inputs[1].value && inputs[0].value === '') {
+        if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5850,9 +5871,9 @@ const filterSum = () => {
                         до ${convertSum(inputs[1].value)}
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5866,9 +5887,9 @@ const filterSum = () => {
                         до ${inputs[1].value} м²
                     </div>
                 `;
-      }
-      if (el.dataset.filterDropdownName === 'Этаж') {
-        html = `
+        }
+        if (el.dataset.filterDropdownName === 'Этаж') {
+          html = `
                 <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5882,24 +5903,26 @@ const filterSum = () => {
                         до ${inputs[1].value} эт.
                     </div>
                 `;
-      }
-      buttonWrapper.classList.add('_active');
-    } else {
-      html = `
+        }
+        buttonWrapper.classList.add('_active');
+      } else {
+        html = `
                 <div>${el.dataset.filterDropdownName}</div>
                 <div>${el.dataset.filterDropdownSubtitle}</div>
                 `;
-      buttonWrapper.classList.remove('_active');
-    }
-    buttonWrapper.innerHTML = html;
+        buttonWrapper.classList.remove('_active');
+      }
+      buttonWrapper.innerHTML = html;
+    }, 0);
   }
   function changeTitleOne(el) {
-    const itemActive = el.querySelector('.filter-dropdown__item.active');
-    const input = itemActive.querySelector('input');
-    const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
-    let html = ``;
-    if (input.value) {
-      html = `
+    setTimeout(() => {
+      const itemActive = el.querySelector('.filter-dropdown__item.active');
+      const input = itemActive.querySelector('.filter-range-one__nav input');
+      const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+      let html = ``;
+      if (input.value) {
+        html = `
             <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5907,10 +5930,10 @@ const filterSum = () => {
                 ${convertSum(input.value)}
             </div>
             `;
-      buttonWrapper.classList.add('_active');
-      el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
-    } else {
-      html = `
+        buttonWrapper.classList.add('_active');
+        el.setAttribute('data-name', itemActive.querySelector('.filter-dropdown__subtitle').textContent.trim());
+      } else {
+        html = `
             <div>
                 ${el.dataset.filterDropdownName}
             </div>
@@ -5918,9 +5941,10 @@ const filterSum = () => {
                 0
             </div>
             `;
-      buttonWrapper.classList.remove('_active');
-    }
-    buttonWrapper.innerHTML = html;
+        buttonWrapper.classList.remove('_active');
+      }
+      buttonWrapper.innerHTML = html;
+    }, 0);
   }
   function convertSum(number) {
     number = number.replace(/\s/g, "");
@@ -6143,20 +6167,6 @@ const uiSliderOne = () => {
       const val = input.value.replace(/\D/g, '');
       input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
       (0,_modules_inputResize__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
-    });
-  });
-};
-const filterDropdownChoice = () => {
-  const items = document.querySelectorAll('.filter-dropdown__dropdown');
-  if (!items.length >= 1) return;
-  items.forEach(item => {
-    item.querySelectorAll('.filter-dropdown__choice').forEach(el => {
-      el.addEventListener('click', () => {
-        if (!el.closest('.filter-dropdown__item').classList.contains('active')) {
-          item.querySelectorAll('.filter-dropdown__item').forEach(el => el.classList.remove('active'));
-          el.closest('.filter-dropdown__item').classList.add('active');
-        }
-      });
     });
   });
 };
@@ -8283,7 +8293,7 @@ const mortgage = () => {
           (0,_formValidate__WEBPACK_IMPORTED_MODULE_0__.validateRemoveError)(priceObject);
         }, 2);
       });
-      priceObject.querySelectorAll('.filter-dropdown__choice').forEach(item => {
+      priceObject.querySelectorAll('.filter-dropdown__checkbox').forEach(item => {
         item.addEventListener('click', () => {
           labelClearBtnUpdate(capitalInput.closest('.input-text'));
           labelClearBtnUpdate(facilitiesInput.closest('.input-text'));

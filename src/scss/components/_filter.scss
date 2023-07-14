@@ -41,7 +41,8 @@
 
         span {
             color: var(--dark);
-            font-size: var(--little-big-fz);;
+            font-size: var(--little-big-fz);
+            ;
             line-height: var(--little-big-lh);
             font-weight: 500;
         }
@@ -449,30 +450,8 @@
     }
 
 
-
-    &__choice {
-
-        flex: 0 0 15px;
-        width: 15px;
-        height: 15px;
-
-        background-color: var(--red);
-        border: 1px solid var(--red);
-        border-radius: 50%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        transition: background-color $transitionSpeed $transitionFunction,
-            border $transitionSpeed $transitionFunction;
-
-        svg {
-            width: 8px;
-            height: 8px;
-            stroke: var(--white);
-            transition: stroke $transitionSpeed $transitionFunction;
-        }
+    &__checkbox {
+        flex: 0 0 16px;
     }
 
     &__range {
@@ -591,7 +570,7 @@
         grid-column-gap: 8px;
         align-items: center;
         text-align: left;
-        background-color: var(--stand-bg);
+        background-color: transparent;
         border: 1px solid var(--primary200);
         padding: 0 16px;
         border-radius: 12px;
@@ -652,7 +631,7 @@
         flex-direction: column;
         align-items: start;
 
-        padding: 16px 32px 16px 16px;
+        padding: 24px 32px 24px 24px;
         width: 100%;
 
         opacity: 0;
@@ -1013,7 +992,7 @@
     &__button {
         height: 48px;
         width: 100%;
-        background-color: var(--stand-bg);
+        background-color: transparent;
         border: 1px solid var(--primary200);
         border-radius: 12px;
         display: flex;

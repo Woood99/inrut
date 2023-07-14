@@ -314,17 +314,94 @@
                                         <use xlink:href="img/sprite.svg#location-two"></use>
                                     </svg>
                                 </button>
-                                <div class="filter__item select-secondary">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Комплекс
-                                        </span>
-                                        <select class="select-secondary__body" name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Квартиры1</option>
-                                            <option value="room-2">Квартиры2</option>
-                                            <option value="room-3">Квартиры3</option>
-                                        </select>
+                                <div class="filter__item search-select" data-search-select-subtitle="Любой">
+                                    <button type="button" class="btn btn-reset search-select__button">
+                                        <div class="search-select__button-wrapper">
+                                            <div>Застройщик</div>
+                                            <div>Любой</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select__dropdown">
+                                        <label class="input-primary search-select__input">
+                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select__wrapper simplebar-third">
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_1" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ПИК</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_2" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Самолет</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_3" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК "А101"</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_4" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК МИЦ</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_5" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ЛСР</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_6" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>MR GROUP</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_7" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК ДОНСТРОЙ</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_8" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Эталон</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -430,11 +507,11 @@
                                                 <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="request-catalog_sum-1" name="request-catalog_sum" checked class="checkbox-secondary__input" type="checkbox">
+                                                <label for="request-catalog_sum-1" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="filter-dropdown__item">
                                             <span class="filter-dropdown__subtitle">
@@ -456,11 +533,11 @@
                                                 <div class="filter-range__inner" data-min="10000" data-max="1000000">
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="request-catalog_sum-2" name="request-catalog_sum" class="checkbox-secondary__input" type="checkbox">
+                                                <label for="request-catalog_sum-2" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -494,7 +571,7 @@
                                         Квартира
                                     </span>
                                     <span class="object-info__parameter">
-                                        <span>1-2-комн.</span>
+                                        <span>1,2-комн. </span>
                                         <span>от 35 м²</span>
                                     </span>
                                     <span class="object-info__price">
@@ -529,9 +606,9 @@
                                         Дом
                                     </span>
                                     <span class="object-info__parameter">
-                                        <span>1,2-комн.</span>
+                                        <span>1,2-комн. </span>
                                         <span>от 34 м²</span>
-                                        <span>от 6 сот.</span>
+                                        <span>уч. от 6 сот.</span>
                                         <span>ИЖС</span>
                                     </span>
                                     <span class="object-info__price">
@@ -586,8 +663,7 @@
                                         Квартира
                                     </span>
                                     <span class="object-info__parameter">
-                                        <span>Студия</span>
-                                        <span>1,2-комн.</span>
+                                        <span>Студия, 1,2-комн. </span>
                                         <span>от 34 м²</span>
                                         <span>до 12 эт.</span>
                                     </span>
@@ -623,7 +699,7 @@
                                         Дом
                                     </span>
                                     <span class="object-info__parameter">
-                                        <span>1,2-комн.</span>
+                                        <span>1,2-комн. </span>
                                         <span>от 34 м²</span>
                                         <span>уч. от 6 сот.</span>
                                         <span>ИЖС</span>
@@ -670,8 +746,7 @@
                                         Квартира
                                     </span>
                                     <span class="object-info__parameter">
-                                        <span>Студия</span>
-                                        <span>1,2-комн.</span>
+                                        <span>Студия, 1,2-комн. </span>
                                         <span>от 34 м²</span>
                                         <span>до 12 эт.</span>
                                     </span>
@@ -22715,11 +22790,11 @@
                                                 <div class="filter-range__inner" data-min="500000" data-max="200000000">
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="buy-apart-buld-1" name="request-catalog_sum" checked class="checkbox-secondary__input" type="checkbox">
+                                                <label for="buy-apart-buld-1" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="filter-dropdown__item">
                                             <span class="filter-dropdown__subtitle">
@@ -22741,11 +22816,11 @@
                                                 <div class="filter-range__inner" data-min="10000" data-max="1000000">
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-reset filter-dropdown__choice">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#close"></use>
-                                                </svg>
-                                            </button>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="buy-apart-buld-2" name="request-catalog_sum" class="checkbox-secondary__input" type="checkbox">
+                                                <label for="buy-apart-buld-2" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

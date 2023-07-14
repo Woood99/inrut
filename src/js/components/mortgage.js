@@ -195,8 +195,7 @@ const mortgage = () => {
                     validateRemoveError(priceObject);
                 }, 2);
             })
-
-            priceObject.querySelectorAll('.filter-dropdown__choice').forEach(item => {
+            priceObject.querySelectorAll('.filter-dropdown__checkbox').forEach(item => {
                 item.addEventListener('click', () => {
                     labelClearBtnUpdate(capitalInput.closest('.input-text'));
                     labelClearBtnUpdate(facilitiesInput.closest('.input-text'));
