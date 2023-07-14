@@ -82,6 +82,7 @@ popup({
 
 popup(null, 'popup-map_buy-apartment-building');
 popup(null, 'search-area');
+popup(null, 'search-area-two');
 popup({
     isOpen: () => {
         const chat = document.querySelector('.chat');

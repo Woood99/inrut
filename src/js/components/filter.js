@@ -313,7 +313,7 @@ export const searchSelect = () => {
         const arrSelected = [];
         items.forEach(input => {
             input.addEventListener('change', () => {
-                const currentElem = input.closest('.search-select__item').querySelector('.checkbox-secondary__text').textContent.trim();
+                const currentElem = input.closest('.search-select__item').querySelector('.checkbox-secondary__text span:nth-child(1)').textContent.trim();
                 if (input.checked) {
                     arrSelected.push(currentElem);
                 } else {
@@ -325,6 +325,33 @@ export const searchSelect = () => {
                 updatePlaceholder()
             })
         })
+
+        const btnAll = container.querySelector('.search-select__all');
+        const btnClear = container.querySelector('.search-select__clear');
+
+        btnAll.addEventListener('click', () => {
+            selectAll();
+        });
+        btnClear.addEventListener('click', () => {
+            clearAll();
+        });
+
+        function clearAll() {
+            items.forEach(input => input.checked = false);
+            arrSelected.splice(0, arrSelected.length);
+            updatePlaceholder()
+        }
+
+        function selectAll() {
+            items.forEach(input => {
+                const currentElem = input.closest('.search-select__item').querySelector('.checkbox-secondary__text span:nth-child(1)').textContent.trim();
+                if (arrSelected.indexOf(currentElem) === -1) {
+                    arrSelected.push(currentElem);
+                    input.checked = true;
+                }
+            });
+            updatePlaceholder()
+        }
 
         function updatePlaceholder() {
             if (arrSelected.length >= 1) {
@@ -593,7 +620,7 @@ export const filterCustomSelectCheckboxes = () => {
                 item.classList.remove('_active');
             }
         })
-        const dropdownContainer = item.querySelector('.select-dropdown-checkbox__dropdown');
+        const dropdownContainerList = item.querySelector('.select-dropdown-checkbox__dropdown div');
         const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
         const cash = item.querySelector('[data-name="cash"]');
         const mortgageYesBank = item.querySelector('[data-name="mortgage_yes-bank"]');
@@ -728,7 +755,7 @@ export const filterCustomSelectCheckboxes = () => {
         })
 
         function movingCheckbox(index, element) {
-            dropdownContainer.children[index].insertAdjacentElement('beforebegin', element.closest('.checkbox-secondary'));
+            dropdownContainerList.children[index].insertAdjacentElement('beforebegin', element.closest('.checkbox-secondary'));
         }
 
         function movingCheckboxDefault() {

@@ -177,6 +177,17 @@ const maps = () => {
         }
         ymaps.ready(init);
     }
+    if (document.querySelector('#map-draw--2')) {
+        function init() {
+            let map = new ymaps.Map('map-draw--2', {
+                center: [55.77171185651524, 37.62811179984117],
+                zoom: 10,
+            });
+            positionElement(map);
+            removeControlsPrimary(map, '#map-draw--2');
+        }
+        ymaps.ready(init);
+    }
     if (document.querySelector('#place-sale-address-map')) {
         function init() {
             let map = new ymaps.Map('place-sale-address-map', {

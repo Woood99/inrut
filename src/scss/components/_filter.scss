@@ -641,13 +641,15 @@
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction,
             transform $transitionSpeed $transitionFunction;
-        >p{
+
+        >p {
             font-size: var(--small-fz);
             line-height: var(--small-lh);
             color: var(--primaryTwo);
             display: block;
             margin-bottom: 16px;
         }
+
         .checkbox-secondary {
             animation-name: fade;
             animation-duration: 0.6s;
@@ -1106,9 +1108,30 @@
 
     &__input {}
 
+    &__control {
+        margin-top: 16px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__all,
+    &__clear {
+        height: 26px;
+        padding: 0 16px;
+        font-size: var(--very-small-fz);
+        line-height: var(--very-small-lh);
+    }
+
+    &__all {}
+
+    &__clear {
+        margin-left: 16px;
+    }
+
     &__wrapper {
         margin-top: 16px;
-        max-height: 185px;
+        max-height: 245px;
     }
 
     &__item {
@@ -1160,6 +1183,25 @@
 
         &:not(:last-child) {
             margin-bottom: 16px;
+        }
+    }
+
+    &--only-text {
+        .search-select__item {
+            .checkbox-secondary {
+
+                &__text {
+                    flex-direction: column;
+                    align-items: start;
+                    span{
+                        &:nth-child(2){
+                            color: var(--primaryTwo);
+                            font-size: var(--small-fz);
+                            line-height: var(--small-lh);
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -390,7 +390,7 @@
                                             <option value="room-2">Квартиры2</option>
                                             <option value="room-3">Квартиры3</option>
                                         </select>
-                                        </div>
+                                    </div>
                                 </div>
                                 <div class="filter__item search-select" data-search-select-subtitle="Любой">
                                     <button type="button" class="btn btn-reset search-select__button">
@@ -406,6 +406,10 @@
                                         <label class="input-primary search-select__input">
                                             <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
                                         </label>
+                                        <div class="search-select__control">
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                        </div>
                                         <div class="search-select__wrapper simplebar-third">
                                             <div class="search-select__item checkbox-secondary">
                                                 <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
@@ -22860,14 +22864,52 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
 </div>
-
+<div class="popup popup-primary popup-primary--search-area-two">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="search-area-two">
+        <div class="popup__content popup-primary__content search-area container">
+            <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+                <svg>
+                    <use xlink:href="img/sprite.svg#x"></use>
+                </svg>
+                <span>Закрыть</span>
+            </button>
+            <h2 class="search-area__title title-2">
+                Район на карте
+            </h2>
+            <div class="search-area__container">
+                <div class="map-draw search-area__map">
+                    <div class="map-draw__btns">
+                        <button type="button" class="btn btn-reset map-draw__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#path"></use>
+                            </svg>
+                            <span>Нарисовать область </span>
+                        </button>
+                        <button type="button" class="btn btn-reset map-draw__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#plus"></use>
+                            </svg>
+                            <span>Добавить ещё область</span>
+                        </button>
+                        <button type="button" class="btn btn-reset map-draw__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#trash"></use>
+                            </svg>
+                            <span>Очистить</span>
+                        </button>
+                    </div>
+                    <button type="button" class="btn btn-reset btn-primary search-area__map-btn">Показать 1234
+                        объявлений</button>
+                    <div id="map-draw--2" class="map-primary remove-copyrights-pane"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
