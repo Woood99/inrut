@@ -9445,7 +9445,7 @@ textarea.input-reset {
   -ms-grid-columns: 14.8109243697% 29.4291338583% max-content 1fr 15.7480314961%;
   grid-template-columns: 14.8109243697% 29.4291338583% -webkit-max-content 1fr 15.7480314961%;
   grid-template-columns: 14.8109243697% 29.4291338583% max-content 1fr 15.7480314961%;
-  padding: 40px 24px;
+  padding: 32px 24px;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
   transition: -webkit-box-shadow 0.4s ease-in-out;
@@ -15098,6 +15098,9 @@ textarea.input-reset {
   align-items: center;
 }
 .search-select__all, .search-select__clear {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   height: 26px;
   padding: 0 16px;
   font-size: var(--very-small-fz);
@@ -16398,7 +16401,7 @@ textarea.input-reset {
 }
 .bid__container {
   border-radius: 16px;
-  padding: 16px 0;
+  padding: 24px 0;
   grid-column-gap: 16px;
   display: -ms-grid;
   display: grid;
@@ -16492,10 +16495,16 @@ textarea.input-reset {
   -webkit-box-ordinal-group: 4;
   -ms-flex-order: 3;
   order: 3;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
   min-width: 50%;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 @media (max-width: 768px) {
   .bid__item > span:nth-child(2) {
@@ -16657,7 +16666,7 @@ textarea.input-reset {
 .bid-messages__wrapper {
   border: 1px solid var(--primary200);
   border-radius: 2px 12px 12px 12px;
-  margin-top: 16px;
+  margin-top: 24px;
 }
 .bid-messages .simplebar-primary {
   max-width: 100%;
@@ -16714,11 +16723,11 @@ textarea.input-reset {
   }
 }
 .bid-import .bid__descr {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .bid-maps__container {
-  margin-top: 16px;
+  margin-top: 24px;
   width: 100%;
   height: 379px;
   background-color: var(--primary100);
