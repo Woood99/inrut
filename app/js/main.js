@@ -4967,8 +4967,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
-
 const chat = () => {
   const chat = document.querySelector('.chat');
   if (!chat) return;
@@ -5065,10 +5063,6 @@ const chat = () => {
       }
     });
   }
-
-  // cardSecondary.classList.add('_active');
-  // modal(modalHTML, '.stock-popup', 300, cardSecondary);
-
   function chatPosition() {
     chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
   }

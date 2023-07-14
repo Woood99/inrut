@@ -113,7 +113,8 @@
     &__control {
         height: 25px;
         padding: 0 16px;
-        font-size: 10px;
+        font-size: var(--very-small-fz);
+        line-height: var(--very-small-lh);
 
         &:not(:last-child) {
             margin-right: 16px;
@@ -139,8 +140,8 @@
         .spollers__title {
             display: flex;
             align-items: center;
-            font-size: 16px;
-            line-height: math.div(21, 16);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             color: var(--primaryTwo);
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
@@ -155,7 +156,7 @@
                 span {
                     color: var(--white);
                     font-size: 9px;
-                    line-height: 100%;
+                    line-height: 1;
                     position: absolute;
                     left: 0;
                     top: 1px;
@@ -546,8 +547,8 @@
             &:nth-child(1) {
                 display: flex;
                 align-items: center;
-                font-size: 12px;
-                line-height: 1.3125;
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 color: var(--primaryTwo);
                 font-weight: 500;
                 white-space: nowrap;
@@ -562,7 +563,7 @@
                     span {
                         color: var(--white);
                         font-size: 8px;
-                        line-height: 100%;
+                        line-height: 1;
                         position: absolute;
                         left: 0;
                         top: 0px;
@@ -594,8 +595,8 @@
                 div {
                     display: flex;
                     align-items: center;
-                    font-size: 12px;
-                    line-height: math.div(15, 12);
+                    font-size: var(--small-fz);
+                    line-height: var(--small-lh);
 
                     button {
                         margin-left: 4px;
@@ -757,8 +758,8 @@
         display: none;
 
         margin-left: 8px;
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         background-color: var(--blue);
         padding: 4px 8px;
         color: var(--white);

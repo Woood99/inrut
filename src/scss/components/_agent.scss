@@ -153,8 +153,8 @@
         span {
             color: var(--primaryTwo);
             font-weight: 500;
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
         }
 
         @media (max-width:$desktop) {
@@ -180,8 +180,8 @@
         >div {
             display: flex;
             align-items: center;
-            font-size: 36px;
-            line-height: math.div(45, 36);
+            font-size: var(--very-big-fz);
+            line-height: var(--very-big-lh);
             font-weight: 500;
         }
 
@@ -193,8 +193,8 @@
         }
 
         >span {
-            font-size: 14px;
-            line-height: math.div(19, 14);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             margin-right: 16px;
             font-weight: 500;
         }
@@ -269,8 +269,8 @@
 
         span {
             color: var(--primary600);
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             margin-left: 4px;
 
             &:nth-child(2) {
@@ -286,8 +286,8 @@
     &__time {
         margin-top: 8px;
         color: var(--primaryTwo);
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         font-weight: 400;
     }
 
@@ -306,8 +306,8 @@
     &__descr {
         margin-top: 16px;
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
     }
 
@@ -343,8 +343,8 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                     color: var(--white);
-                    font-size: 24px;
-                    line-height: math.div(30, 24);
+                    font-size: var(--big-fz);
+                    line-height: var(--big-lh);
                     font-weight: 500;
                 }
             }
@@ -374,8 +374,8 @@
 
         p {
             color: var(--dark);
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 400;
         }
     }
@@ -387,8 +387,8 @@
 
         >span {
             color: var(--primary600);
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
         }
 
         >button {
@@ -399,8 +399,8 @@
             backdrop-filter: blur(2px);
             border-radius: 8px;
 
-            font-size: 12px;
-            line-height: 100%;
+            font-size: var(--small-fz);
+            line-height: 1;
 
             color: var(--primary600);
 
@@ -426,8 +426,8 @@
 
             &__stage {
                 align-self: start;
-                font-size: 12px;
-                line-height: math.div(12, 12);
+                font-size: var(--small-fz);
+             line-height: 1;
                 padding: 5px 10px;
                 background-color: var(--primary200);
                 border-radius: 6px;

@@ -50,9 +50,8 @@
 
     &__time {
         color: var(--primaryTwo);
-        // font-size: 12px; asd
-        font-size: 13px;
-        line-height: math.div(15, 12);
+        font-size: var(--little-small-fz);
+        line-height: var(--little-small-lh);
         font-weight: 400;
     }
 
@@ -68,9 +67,8 @@
         display: flex;
 
         >span {
-            // font-size: 14px; asd
-            font-size: 15px;
-            line-height: math.div(18, 14);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 400;
 
             &:nth-child(1) {
@@ -167,9 +165,8 @@
 
     &__descr {
         margin-top: 32px;
-        // font-size: 15px; asd
-        font-size: 16px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
         color: var(--dark);
 
@@ -416,17 +413,15 @@
         margin-top: 5px;
         margin-bottom: 16px;
         color: var(--primaryTwo);
-        // font-size: 10px; asd
-        font-size: 11px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         font-weight: 400;
     }
 
     &__name {
         color: var(--dark);
-        // font-size: 18px; asd
-        font-size: 19px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
 
@@ -436,7 +431,6 @@
 
         @media (max-width:$smallTablet-max) {
             margin-top: 2px;
-            font-size: 15px;
         }
     }
 
@@ -446,9 +440,8 @@
         align-items: center;
 
         span {
-            // font-size: 12px; asd
-            font-size: 13px;
-            line-height: math.div(15, 12);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             color: var(--primary600);
 
             &:nth-child(2) {
@@ -463,10 +456,6 @@
             &:nth-child(3) {
                 margin-left: 4px;
                 font-weight: 400;
-
-                @media (max-width:$smallTablet-max) {
-                    font-size: 10px;
-                }
             }
         }
 
@@ -510,9 +499,8 @@
 
         span {
             color: inherit;
-            // font-size: 12px; asd
-            font-size: 13px;
-            line-height: math.div(15, 12);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             font-weight: 500;
         }
 
@@ -524,9 +512,8 @@
     }
     &__descr{
         color: var(--primaryTwo);
-        // font-size: 12px; asd
-        font-size: 13px;
-        line-height: math.div(15 , 12);
+        font-size: var(--little-small-fz);
+        line-height: var(--little-small-lh);
         font-weight: 500;
     }
     &__btn {
@@ -582,11 +569,8 @@
             }
 
             &__time {
-                font-size: 12px;
-
-                @media (max-width:$smallTablet-max) {
-                    font-size: 10px;
-                }
+                font-size: var(--small-fz);
+            line-height: var(--small-lh);
             }
 
             &__content {
@@ -597,7 +581,8 @@
             }
 
             &__name {
-                font-size: 15px;
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
 
                 @media (max-width:$smallTablet-max) {
                     font-weight: 400;
@@ -678,10 +663,6 @@
                 @media (max-width:$desktop) {
                     grid-column: 1/-1;
                 }
-
-                @media (max-width:$smallTablet-max) {
-                    font-size: 15px;
-                }
             }
 
             &__avatar {
@@ -743,7 +724,7 @@
 
                             &::before {
                                 content: attr(data-mobile-text);
-                                font-size: 12px;
+                                font-size: var(--small-fz);
                             }
                         }
                     }

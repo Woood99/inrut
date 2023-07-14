@@ -13,16 +13,15 @@
 
     color: var(--dark);
 
-    font-size: 15px;
-    line-height: math.div(19, 15);
+    font-size: var(--default-fz);
+    line-height: var(--default-lh);
 
     &__name {
-        font-size: 18px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         font-weight: 500;
 
         @media (max-width:$desktop) {
-            font-size: 15px;
             order: 1;
         }
     }

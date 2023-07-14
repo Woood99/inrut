@@ -84,13 +84,9 @@
 
     &__text {
         font-weight: 400;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--gray);
-
-        @media (max-width:$desktop) {
-            font-size: 12px;
-        }
     }
 
     &__checkbox {
@@ -191,8 +187,8 @@
     &__more {
         padding: 8px 0;
         color: var(--blue);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         font-weight: 400;
 
         display: flex;
@@ -292,14 +288,10 @@
     &__title {}
 
     &__descr {
-        font-size: 15px;
-        line-height: math.div(23, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--primaryTwo);
         font-weight: 400;
-
-        @media (max-width:$desktop) {
-            font-size: 12px;
-        }
     }
 
     &__field {
@@ -416,13 +408,9 @@
 
     &__descr {
         color: var(--primaryTwo);
-        font-size: 15px;
-        line-height: math.div(23, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
-
-        @media (max-width:$desktop) {
-            font-size: 12px;
-        }
     }
 
     &__wrapper {

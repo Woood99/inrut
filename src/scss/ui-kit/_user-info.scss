@@ -14,9 +14,8 @@
     &__pos {
         grid-column: 2/3;
         grid-row: 2/3;
-        // font-size: 12px; asd
-        font-size: 13px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         color: var(--primaryTwo);
         white-space: nowrap;
         align-self: start;
@@ -25,10 +24,9 @@
     &__name {
         grid-column: 2/3;
         grid-row: 1/2;
-        // font-size: 15px; asd
-        font-size: 16px;
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
-        line-height: math.div(19, 15);
         align-self: end;
         white-space: nowrap;
     }
@@ -42,14 +40,6 @@
                 &__avatar {
                     width: 35px;
                     height: 35px;
-                }
-
-                &__pos {
-                    font-size: 10px;
-                }
-
-                &__name {
-                    font-size: 12px;
                 }
             }
         }
@@ -72,8 +62,8 @@
     &__name {
         grid-column: 2/3;
         grid-row: 1/2;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+            line-height: var(--default-lh);
         align-self: end;
         white-space: nowrap;
         font-weight: 500;
@@ -94,8 +84,8 @@
 
         span {
             color: var(--primary600);
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
 
             &:nth-child(2) {
                 font-weight: 500;
@@ -128,15 +118,11 @@
     }
 
     &__name {
-        font-size: 18px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         align-self: end;
         white-space: nowrap;
         font-weight: 500;
-
-        @media (max-width:$smallTablet-max) {
-            font-size: 15px;
-        }
     }
 
     &__date {
@@ -144,13 +130,9 @@
 
         color: var(--primaryTwo);
         font-weight: 400;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         white-space: nowrap;
-
-        @media (max-width:$smallTablet-max) {
-            font-size: 12px;
-        }
     }
 
     @media (max-width:$smallTablet-max) {
@@ -177,14 +159,14 @@
         align-self: end;
         color: var(--primaryTwo);
         font-weight: 400;
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         white-space: nowrap;
     }
 
     &__name {
-        font-size: 18px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         align-self: start;
         white-space: nowrap;
         font-weight: 500;
@@ -205,8 +187,8 @@
         grid-row: 1/2;
 
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
     }
 
@@ -215,8 +197,8 @@
         grid-column: 1/2;
 
         color: var(--primaryTwo);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+   font-size: var(--small-fz);
+   line-height: var(--small-lh);
 
         span {
             color: var(--blue);

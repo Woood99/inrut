@@ -79,8 +79,8 @@
     }
 
     &__user {
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--dark);
         font-weight: 500;
         align-self: end;
@@ -95,8 +95,8 @@
 
     &__pos {
         color: var(--primaryTwo);
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         font-weight: 400;
 
         &--online {
@@ -192,8 +192,8 @@
                     bottom: 5px;
                     right: 8px;
 
-                    font-size: 10px;
-                    line-height: math.div(10, 10);
+                    font-size: var(--very-small-fz);
+                    line-height: 1;
                     color: var(--primaryTwo);
                 }
 
@@ -221,16 +221,16 @@
             }
 
             &__pos {
-                font-size: 10px;
-                line-height: 100%;
+                font-size: var(--very-small-fz);
+        line-height: 1;
                 color: var(--primaryTwo);
                 align-self: start;
             }
 
             &__name {
                 align-self: end;
-                font-size: 12px;
-                line-height: math.div(15, 12);
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 grid-row: 1/2;
             }
         }
@@ -294,7 +294,7 @@
         border-radius: 12px;
         height: 34px;
         padding: 8px 18px;
-        font-size: 15px;
+        font-size: var(--default-fz);
         line-height: 85%;
         transition: background-color $transitionSpeed $transitionFunction,
             color $transitionSpeed $transitionFunction;
@@ -402,8 +402,8 @@
         color: var(--primaryTwo);
         display: block;
         width: 100%;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         &:first-child {
             margin-top: 0;
@@ -466,8 +466,8 @@
         align-items: center;
 
         color: var(--primaryTwo);
-        font-size: 12px;
-        line-height: math.div(12, 12);
+        font-size: var(--small-fz);
+      line-height: 1;
 
         >div {
             display: flex;

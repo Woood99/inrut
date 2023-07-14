@@ -1,48 +1,28 @@
 .title-1 {
     font-weight: 500;
-    // font-size: 32px; asd
-    font-size: 33px;
-    line-height: math.div(40, 32);
+    font-size: var(--very-big-fz);
+    line-height: var(--very-big-lh);
     color: var(--dark);
-
-    @media (max-width:$desktop) {
-        font-size: 26px;
-    }
-
-    @media (max-width:$smallTablet-max) {
-        font-size: 20px;
-    }
 }
 
 .title-2 {
     font-weight: 500;
-    // font-size: 24px; asd
-    font-size: 25px;
-    line-height: math.div(30, 24);
+    font-size: var(--big-fz);
+    line-height: var(--big-lh);
     color: var(--dark);
-
-    @media (max-width:$desktop) {
-        font-size: 21px;
-    }
-
-    @media (max-width:$smallTablet-max) {
-        font-size: 18px;
-    }
 }
 
 .title-3 {
     font-weight: 500;
-    // font-size: 18px; asd
-    font-size: 19px;
-    line-height: math.div(23, 18);
+    font-size: var(--little-big-fz);
+    line-height: var(--little-big-lh);
     color: var(--dark);
 }
 
 .title-4 {
     font-weight: 500;
-    // font-size: 15px; asd
-    font-size: 16px;
-    line-height: math.div(19, 15);
+    font-size: var(--default-fz);
+    line-height: var(--default-lh);
     color: var(--dark);
 }
 
@@ -208,16 +188,13 @@
     padding: 4px 10px 5px;
 
     color: var(--white);
-    font-size: 12px;
-    line-height: math.div(15, 12);
+    font-size: var(--small-fz);
+    line-height: var(--small-lh);
     font-weight: 500;
 
 
     display: flex;
     align-items: center;
-
-    .swiper-pagination-current,
-    .swiper-pagination-total {}
 }
 
 
@@ -266,79 +243,14 @@
     span {
         margin-top: 5px;
 
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         font-weight: 500;
         color: var(--white);
         position: relative;
         z-index: 1;
     }
 }
-
-
-
-
-.object-small-card {
-    --size-image: 45px;
-    display: grid;
-    grid-template-columns: var(--size-image) 1fr;
-    align-items: center;
-    grid-column-gap: 12px;
-    grid-row-gap: 4px;
-
-    &__image {
-        grid-column: 1/2;
-        grid-row: 1/3;
-        width: var(--size-image);
-        height: var(--size-image);
-        border-radius: 8px;
-
-        img {
-            border-radius: 8px;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    &__title {
-        grid-column: 2/3;
-        grid-row: 1/2;
-
-        color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
-        font-weight: 500;
-
-        align-self: end;
-
-        @media (max-width:$smallTablet-max) {
-            font-size: 12px;
-        }
-    }
-
-    &__descr {
-        grid-column: 2/3;
-        grid-row: 2/3;
-
-        color: var(--primary600);
-        font-size: 12px;
-        line-height: math.div(15, 12);
-        font-weight: 400;
-
-        align-self: start;
-
-        @media (max-width:$smallTablet-max) {
-            font-size: 10px;
-        }
-    }
-
-    @media (max-width:$smallTablet-max) {
-        grid-column-gap: 10px;
-    }
-}
-
-
-
 
 
 .top-page-inner-title {
@@ -496,8 +408,8 @@
 
     span {
         font-weight: 500;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         color: var(--white);
         position: relative;
         z-index: 1;

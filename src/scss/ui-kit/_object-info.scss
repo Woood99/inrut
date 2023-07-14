@@ -9,14 +9,13 @@
     grid-column-gap: 20px;
     justify-content: space-between;
     grid-template-columns: percent(141, 952) percent(299, 1016) max-content 1fr percent(160, 1016);
-padding: 24px;
+padding: 32px 24px;
     -webkit-tap-highlight-color: transparent;
     transition: box-shadow $transitionSpeed $transitionFunction;
 
     &__type {
-        // font-size: 18px; asd
-        font-size: 19px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         font-weight: 500;
 
         @media (max-width:$desktop) {
@@ -26,9 +25,8 @@ padding: 24px;
     }
 
     &__parameter {
-        // font-size: 15px; asd
-        font-size: 16px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
 
         span {
@@ -55,15 +53,13 @@ padding: 24px;
         }
 
         @media (max-width:$smallTablet-max) {
-            font-size: 13px;
             max-width: 110px;
         }
     }
 
     &__price {
-        // font-size: 18px; asd
-        font-size: 19px;
-        line-height: math.div(23, 18);
+        font-size: var(--little-big-fz);;
+        line-height: var(--little-big-lh);
         font-weight: 500;
         white-space: nowrap;
 
@@ -153,9 +149,8 @@ padding: 24px;
             display: flex;
             align-items: center;
             color: var(--primary600);
-            // font-size: 14px; asd
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-fz);
 
             svg {
                 width: 18px;
@@ -200,10 +195,6 @@ padding: 24px;
                 svg {
                     stroke-width: 1.5px;
                 }
-
-                @media (max-width:$desktop) {
-                    font-size: 12px;
-                }
             }
         }
 
@@ -218,8 +209,8 @@ padding: 24px;
             display: flex;
             align-items: center;
             color: var(--dark);
-            font-size: 16px;
-            line-height: math.div(23, 18);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 500;
 
             &:not(:last-child) {
@@ -229,8 +220,8 @@ padding: 24px;
             &:nth-child(1) {
                 span {
                     &:nth-child(2) {
-                        font-size: 15px;
-                        line-height: math.div(19, 15);
+                        font-size: var(--default-fz);
+                        line-height: var(--default-lh);
                         font-weight: 400;
                         transform: translateY(0) translateX(0px);
                         display: inline-block;
@@ -268,8 +259,8 @@ padding: 24px;
         order: 3;
 
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(29, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
 
         @media (min-width:$desktop-min) {
@@ -293,14 +284,15 @@ padding: 24px;
 
                     &::before {
                         content: attr(data-user-name-full);
-                        font-size: 15px;
+                        font-size: var(--little-small-fz);
                     }
                 }
             }
         }
 
         .user-info__name {
-            font-size: 14px;
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
         }
     }
 
@@ -345,8 +337,8 @@ padding: 24px;
 
         span {
             color: var(--primaryTwo);
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
         }
 
         @media (min-width:$smallTablet-min) {
@@ -385,24 +377,16 @@ padding: 24px;
                 }
 
                 &__pos {
-                    font-size: 15px;
-                    line-height: math.div(19, 15);
+                    font-size: var(--default-fz);
+                    line-height: var(--default-lh);
                     color: var(--primaryTwo);
-
-                    @media (max-width:$smallTablet-max) {
-                        font-size: 12px;
-                    }
                 }
 
                 &__name {
                     color: var(--dark);
-                    font-size: 18px;
-                    line-height: math.div(23, 18);
+                    font-size: var(--little-big-fz);;
+                    line-height: var(--little-big-lh);
                     font-weight: 500;
-
-                    @media (max-width:$smallTablet-max) {
-                        font-size: 15px;
-                    }
                 }
             }
 
@@ -420,12 +404,11 @@ padding: 24px;
     &__quantity {
         text-align: center;
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
 
         @media (max-width:$smallTablet-max) {
-            font-size: 18px;
             font-weight: 400;
             order: 2;
             text-align: left;
@@ -452,13 +435,9 @@ padding: 24px;
 
         span {
             color: inherit;
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 400;
-
-            @media (max-width:$smallTablet-max) {
-                font-size: 12px;
-            }
         }
 
         &--true {}
@@ -518,22 +497,14 @@ padding: 24px;
             }
 
             &__pos {
-                font-size: 15px;
-                line-height: math.div(19, 15);
-
-                @media (max-width:$desktop) {
-                    font-size: 12px;
-                }
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
             }
 
             &__name {
                 font-weight: 500;
-                font-size: 18px;
-                line-height: math.div(23, 18);
-
-                @media (max-width:$desktop) {
-                    font-size: 15px;
-                }
+                font-size: var(--little-big-fz);;
+                line-height: var(--little-big-lh);
             }
         }
 
@@ -543,13 +514,12 @@ padding: 24px;
     }
 
     &__quantity {
-        font-size: 14px;
-        line-height: math.div(18, 14);
+        font-size: var(--little-small-fz);
+        line-height: var(--little-small-lh);
         color: var(--dark);
         font-weight: 500;
 
         @media (max-width:$desktop) {
-            font-size: 12px;
             justify-self: end;
         }
 
@@ -579,25 +549,17 @@ padding: 24px;
             margin-left: 4px;
 
             color: var(--dark);
-            font-size: 14px;
-            line-height: math.div(18, 14);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             font-weight: 500;
-
-            @media (max-width:$desktop) {
-                font-size: 12px;
-            }
         }
 
         &--quantity {
             margin-left: 4px;
 
             color: var(--dark);
-            font-size: 14px;
-            line-height: math.div(18, 14);
-
-            @media (max-width:$desktop) {
-                font-size: 12px;
-            }
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
         }
 
         @media (max-width:$desktop) {
@@ -663,13 +625,13 @@ padding: 24px;
     &__quantity {
         color: var(--primary600);
         font-weight: 500;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         span {
             margin-bottom: 8px;
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             font-weight: 400;
             color: var(--primaryTwo);
             display: block;

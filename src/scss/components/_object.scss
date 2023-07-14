@@ -315,7 +315,7 @@
 
             &::before {
                 content: 'Свернуть';
-                font-size: 14px;
+                font-size: var(--little-small-fz);
             }
         }
     }
@@ -379,8 +379,8 @@
 
     &__date {
         color: var(--primaryTwo);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         font-weight: 500;
 
         @media (max-width:$desktop) {
@@ -549,8 +549,8 @@
         }
 
         span {
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 400;
 
             &:nth-child(1) {
@@ -586,8 +586,8 @@
         align-items: center;
         margin-top: 16px;
         color: var(--blue);
-        font-size: 12px;
-        line-height: 100%;
+        font-size: var(--small-fz);
+        line-height: 1;
 
         svg {
             margin-left: 5px;
@@ -624,8 +624,8 @@
 
     &__descr {
         margin-top: 24px;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--dark);
 
         @media (max-width:$desktop) {
@@ -648,15 +648,15 @@
 
     &__content {
         margin-top: 1px;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--dark);
         font-weight: 400;
 
         a {
             color: var(--blue);
-            font-size: 18px;
-            line-height: math.div(23, 18);
+            font-size: var(--little-big-fz);;
+            line-height: var(--little-big-lh);
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
 
@@ -706,8 +706,8 @@
 
     &__time {
         color: var(--primary600);
-        font-size: 12px;
-        line-height: math.div(10, 12);
+        font-size: var(--small-fz);
+        line-height: 1;
         font-weight: 500;
         padding: 7px 9.5px;
         background-color: var(--primary100);
@@ -723,23 +723,16 @@
     &__price-new {
         span {
             &:nth-child(1) {
-                font-size: 20px;
-
-                @media (max-width:$desktop) {
-                    font-size: 18px;
-                }
+                font-size: var(--big-small-fz);
+                line-height: var(--big-small-lh);
             }
 
             &:nth-child(2) {
                 color: var(--primaryTwo);
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
                 font-weight: 400;
                 margin-left: 5px;
-
-                @media (max-width:$desktop) {
-                    font-size: 12px;
-                }
             }
         }
     }
@@ -753,8 +746,8 @@
         span {
             &:nth-child(1) {
                 color: var(--primaryTwo);
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
                 font-weight: 400;
 
                 span {
@@ -769,10 +762,6 @@
                         transform: rotate(-5deg);
                     }
                 }
-
-                @media (max-width:$desktop) {
-                    font-size: 12px;
-                }
             }
 
             &:nth-child(2) {
@@ -781,8 +770,8 @@
                 color: var(--green);
                 background: rgba(36, 202, 142, 0.1);
                 border-radius: 8px;
-                font-size: 12px;
-                line-height: math.div(15, 12);
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 font-weight: 400;
             }
         }
@@ -790,20 +779,16 @@
 
 
     &__name {
-        font-size: 24px;
-        line-height: math.div(31, 24);
+        font-size: var(--big-fz);
+        line-height: var(--big-lh);
         font-weight: 500;
         color: var(--dark);
-
-        @media (max-width:$desktop) {
-            font-size: 18px;
-        }
     }
 
     &__address {
         margin-top: 5px;
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         &--one {
             display: block;
@@ -821,7 +806,6 @@
         }
 
         @media (max-width:$desktop) {
-            font-size: 12px;
             margin-top: 4px;
         }
     }
@@ -830,8 +814,8 @@
         margin-left: 32px;
         margin-top: 2px;
         color: var(--primaryTwo);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
 
         span {
@@ -857,8 +841,8 @@
 
         p {
             color: var(--dark);
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
         }
 
         &._active {
@@ -882,8 +866,8 @@
         color: var(--blue);
 
         span {
-            font-size: 12px;
-            line-height: 100%;
+            font-size: var(--small-fz);
+            line-height: 1;
         }
 
         svg {
@@ -968,8 +952,8 @@
         }
 
         >span {
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             color: var(--primaryTwo);
             margin-left: 5px;
         }
@@ -1028,8 +1012,8 @@
 
         >span {
             color: var(--primary600);
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             margin-left: 4px;
 
             &:nth-child(2) {
@@ -1145,8 +1129,8 @@
 
     &__date {
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         @media (max-width:$smallTablet-max) {
             grid-column: 1/-1;
@@ -1156,7 +1140,7 @@
 
                 &::before {
                     content: attr(data-mobile-text);
-                    font-size: 12px;
+                    font-size: var(--small-fz);
                 }
             }
         }
@@ -1170,8 +1154,8 @@
         span {
             &:nth-child(1) {
                 color: var(--primaryTwo);
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
                 font-weight: 400;
 
                 span {
@@ -1192,8 +1176,8 @@
                 margin-left: 8px;
                 padding: 3px 10px;
                 border-radius: 8px;
-                font-size: 12px;
-                line-height: math.div(15, 12);
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 font-weight: 400;
 
                 @media (max-width:$smallTablet-max) {
@@ -1208,8 +1192,8 @@
     }
 
     &__new-price {
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         color: var(--dark);
 
         @media (max-width:$smallTablet-max) {
@@ -1237,8 +1221,8 @@
     &__descr {
         margin-top: 20px;
         color: var(--primary600);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         @media (max-width:$desktop) {
             margin-top: 16px;
@@ -1262,8 +1246,8 @@
 
     &__btn {
         color: var(--primaryTwo);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         transition: background-color $transitionSpeed $transitionFunction,
             color $transitionSpeed $transitionFunction;
         padding: 9px 20px;
@@ -1298,7 +1282,6 @@
         @media (max-width:$desktop) {
             flex-grow: 1;
             justify-content: center;
-            font-size: 12px;
             padding: 5px 16px 4px;
             white-space: nowrap;
         }
@@ -1349,8 +1332,8 @@
     &__infrastructure-btn {
         height: 34px;
         border-radius: 10px;
-        font-size: 12px;
-        line-height: math.div(12, 12);
+        font-size: var(--small-fz);
+        line-height: 1;
         padding: 0 24px;
 
         color: var(--dark);
@@ -1617,8 +1600,8 @@
         border: none;
         background-color: var(--primary100);
         span {
-            font-size: 10px;
-            line-height: math.div(15, 12);
+            font-size: var(--very-small-fz);
+            line-height: var(--very-small-lh);
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
 
@@ -1655,8 +1638,8 @@
         margin-top: 24px;
 
         color: var(--primaryTwo);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 400;
 
         display: flex;
@@ -1857,8 +1840,8 @@
     }
 
     &__tag {
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         color: var(--blue);
         font-weight: 500;
         padding: 6.5px 8px;
@@ -1903,8 +1886,8 @@
             border-radius: 12px;
             color: var(--dark);
             padding: 16px;
-            font-size: 12px;
-            line-height: 100%;
+            font-size: var(--small-fz);
+            line-height: 1;
             position: absolute;
             opacity: 0;
             visibility: hidden;

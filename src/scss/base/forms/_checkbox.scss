@@ -69,7 +69,7 @@
 
     &__text {
         color: var(--gray);
-        font-size: 14px;
+        font-size: var(--little-small-fz);
         line-height: 1;
         font-weight: 400;
         transition: color $transitionSpeed $transitionFunction;
@@ -186,8 +186,8 @@
     &__text {
         margin-left: 8px;
         color: var(--gray);
-        font-size: 14px;
-        line-height: math.div(18, 14);
+        font-size: var(--little-small-fz);
+        line-height: var(--little-small-lh);
         font-weight: 500;
     }
 
@@ -220,8 +220,8 @@
                 >span {
                     margin-left: 12px;
                     color: var(--gray);
-                    font-size: 16px;
-                    line-height: math.div(20, 16);
+                    font-size: var(--default-fz);
+    line-height: var(--default-lh);
                     font-weight: 400;
 
                     @media (max-width:$mobile-max) {

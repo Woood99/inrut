@@ -9,8 +9,8 @@
         top: 8.5px;
         left: 16px;
         color: var(--primaryTwo);
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         font-weight: 400;
 
         @media (max-width:$desktop) {
@@ -81,8 +81,8 @@
         }
 
         .choices__item {
-            font-size: 13px;
-            line-height: math.div(16, 13);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             padding: 8.5px 16px;
 
             &.is-selected {
@@ -103,8 +103,8 @@
 
     .choices__list--single {
         padding: 0;
-        font-size: 16px;
-        line-height: 100%;
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
 
         width: calc(100% - 30px);
 
@@ -125,14 +125,10 @@
 
     &__label {
         color: var(--primary600);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         font-weight: 400;
         margin-right: 8px;
-
-        @media (max-width:$desktop) {
-            font-size: 13px;
-        }
     }
 
     .choices {
@@ -198,8 +194,8 @@
         .choices__item {
             padding: 12px 16px;
             color: var(--dark);
-            font-size: 14px;
-            line-height: math.div(18, 14);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             font-weight: 400;
 
             &.is-selected {
@@ -231,13 +227,9 @@
         border: none;
         border-radius: 0;
         vertical-align: middle;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+            line-height: var(--small-lh);
         color: var(--blue);
-
-        @media (max-width:$desktop) {
-            font-size: 13px;
-        }
     }
 }
 
@@ -254,8 +246,8 @@
     &__body {}
 
     &__placeholder {
-        font-size: 14px;
-        line-height: 100%;
+        font-size: var(--little-small-fz);
+        line-height: 1;
         color: var(--gray);
         opacity: 0.6;
     }
@@ -267,15 +259,15 @@
         left: 16px;
         opacity: 1;
         z-index: 1;
-        font-size: 14px;
+        font-size: var(--little-small-fz);
         line-height: 1;
         pointer-events: none;
         transition: color $transitionSpeed $transitionFunction;
     }
 
     .choices__list--single {
-        font-size: 14px;
-        line-height: 100%;
+        font-size: var(--little-small-fz);
+        line-height: 1;
         width: 100%;
         text-align: right;
     }
@@ -349,8 +341,8 @@
         }
 
         .choices__item {
-            font-size: 14px;
-            line-height: math.div(16, 14);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             padding: 12px 16px;
 
             &.is-selected {
@@ -377,8 +369,8 @@
     .choices__list--multiple .choices__item {
         border-radius: 0;
         padding: 0;
-        font-size: 14px;
-        line-height: 100%;
+        font-size: var(--little-small-fz);
+        line-height: 1;
         font-weight: 400;
         margin: 0;
         background-color: transparent;
@@ -469,7 +461,7 @@
         opacity: 1;
         z-index: 1;
 
-        font-size: 14px;
+        font-size: var(--little-small-fz);
         line-height: 1;
 
         pointer-events: none;
@@ -540,7 +532,7 @@
         ._error-span{
             display: block;
     color: var(--red);
-    font-size: 12px;
+    font-size: var(--small-fz);
     line-height: 1;
     margin-top: 4px;
     margin-left: 8px;
@@ -575,8 +567,8 @@
         }
 
         .choices__item {
-            font-size: 14px;
-            line-height: math.div(16, 14);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             padding: 12px 16px;
 
             &.is-selected {
@@ -601,8 +593,8 @@
 
     .choices__list--single {
         padding: 0 30px 0 95px;
-        font-size: 14px;
-        line-height: 100%;
+        font-size: var(--little-small-fz);
+        line-height: 1;
         width: 100%;
         text-align: right;
 

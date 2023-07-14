@@ -140,8 +140,8 @@
         }
 
         >span {
-            font-size: 11px;
-            line-height: math.div(15, 12);
+            font-size: var(--very-small-fz);
+            line-height: var(--very-small-lh);
             color: var(--primaryTwo);
             margin-left: 5px;
         }
@@ -175,8 +175,8 @@
         align-items: center;
 
         &--new {
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             color: var(--white);
             font-weight: 500;
             background-color: var(--blue);
@@ -268,8 +268,8 @@
                 margin-left: 2px;
 
                 color: var(--blue);
-                font-size: 12px;
-                line-height: math.div(15, 12);
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 font-weight: 400;
                 padding-right: 5px;
                 z-index: 5;
@@ -320,8 +320,8 @@
         &--quantity,
         &--discount {
             color: var(--blue);
-            font-size: 12px;
-            line-height: 100%;
+            font-size: var(--small-fz);
+            line-height: 1;
             height: 23px;
             padding: 0 8px;
             font-weight: 500;
@@ -427,16 +427,16 @@
     }
 
     &__name {
-        font-size: 16px;
-        line-height: math.div(20, 16);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
         color: var(--dark);
         transition: color $transitionSpeed $transitionFunction;
     }
 
     &__address {
-        font-size: 13px;
-        line-height: math.div(16, 13);
+        font-size: var(--little-small-fz);
+        line-height: var(--little-small-lh);
         color: var(--primary600);
         margin-bottom: 24px;
     }
@@ -450,8 +450,8 @@
 
         span {
             white-space: nowrap;
-            font-size: 13px;
-            line-height: math.div(16, 13);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
             font-weight: 400;
 
             &:nth-child(1) {
@@ -521,8 +521,8 @@
 
         span {
             display: block;
-            font-size: 13px;
-            line-height: math.div(16, 13);
+            font-size: var(--little-small-fz);
+            line-height: var(--little-small-lh);
 
             &:nth-child(1) {
                 color: var(--blue);
@@ -558,8 +558,8 @@
             color: var(--dark);
             height: 24px;
             padding: 0 12px;
-            font-size: 11px;
-            line-height: math.div(11, 11);
+            font-size: var(--very-small-fz);
+            line-height: 1;
 
             display: inline-flex;
             align-items: center;
@@ -576,7 +576,8 @@
                 background-color: var(--primary100);
                 color: var(--dark);
                 border-radius: 18px;
-                font-size: 12px;
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
                 height: 24px;
                 min-width: 32px;
                 padding: 0 8px;

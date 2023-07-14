@@ -6,8 +6,8 @@
 
     &__descr {
         color: var(--primary600);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         margin-bottom: 16px;
 
         a {
@@ -64,8 +64,8 @@
                     &:nth-child(2) {
                         margin-top: 4px;
                         color: var(--primaryTwo);
-                        font-size: 12px;
-                        line-height: math.div(15, 12);
+                        font-size: var(--small-fz);
+                        line-height: var(--small-lh);
                     }
                 }
             }
@@ -112,15 +112,15 @@
     }
 
     &__item-title {
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         transition: color $transitionSpeed $transitionFunction;
     }
 
     &__item-info {
         margin-top: 8px;
-        font-size: 12px;
-        line-height: math.div(12, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
     }
 
     &__pagination {

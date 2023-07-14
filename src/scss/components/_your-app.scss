@@ -180,8 +180,8 @@
         display: flex;
         color: var(--blue);
         transition: color $transitionSpeed $transitionFunction;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
 
         span {
             margin-top: 1px;
@@ -222,8 +222,8 @@
         align-items: center;
 
         >span {
-            font-size: 15px;
-            line-height: math.div(19, 15);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
 
             &:nth-child(1) {
                 color: var(--primaryTwo);
@@ -243,8 +243,8 @@
             align-items: start;
 
             span {
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
 
                 &:not([hidden]) {
                     display: block;
@@ -265,8 +265,8 @@
                     color: var(--blue);
 
                     span {
-                        font-size: 10px;
-                        line-height: math.div(13, 10);
+                        font-size: var(--very-small-fz);
+                        line-height: var(--very-small-lh);
                     }
 
                     svg {
@@ -316,7 +316,7 @@
 
                         &::before {
                             content: attr(data-mobile-text);
-                            font-size: 15px;
+                            font-size: var(--little-small-fz);
                         }
                     }
                 }
@@ -416,7 +416,8 @@
             }
 
             &__content {
-                font-size: 12px;
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
             }
 
             @media (max-width:$desktop) {

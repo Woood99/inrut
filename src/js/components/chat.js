@@ -1,5 +1,3 @@
-import modal from "../modules/modal";
-
 const chat = () => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
@@ -106,18 +104,6 @@ const chat = () => {
             }
         });
     }
-
-
-
-
-
-
-    // cardSecondary.classList.add('_active');
-    // modal(modalHTML, '.stock-popup', 300, cardSecondary);
-
-
-
-
 
     function chatPosition() {
         chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);

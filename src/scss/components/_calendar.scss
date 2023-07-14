@@ -24,13 +24,9 @@
         .fc-toolbar-chunk {
             .fc-toolbar-title {
                 color: var(--primaryTwo);
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
                 text-transform: capitalize;
-
-                @media (max-width:$desktop) {
-                    font-size: 12px;
-                }
             }
 
             .fc-today-button.fc-button {
@@ -66,8 +62,8 @@
         &.fc-day {
             padding: 0 !important;
             color: var(--primaryTwo) !important;
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             font-weight: 400;
             text-align: left;
 
@@ -93,8 +89,8 @@
 
         .fc-daygrid-day-number {
             padding: 8px 8px 0 8px;
-            font-size: 12px;
-            line-height: math.div(15, 12);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
             color: var(--dark);
 
             @media (max-width:$desktop) {
@@ -169,16 +165,16 @@
                 color: var(--primary600);
 
                 &:nth-child(1) {
-                    font-size: 10px;
-                    line-height: 100%;
+                    font-size: var(--very-small-fz);
+                    line-height: 1;
                     font-weight: 500;
                 }
 
                 &:nth-child(2) {
                     display: block;
                     margin-top: 2px;
-                    font-size: 12px;
-                    line-height: math.div(15, 12);
+                    font-size: var(--small-fz);
+                    line-height: var(--small-lh);
                 }
             }
         }
@@ -219,8 +215,8 @@
         span {
 
             &:nth-child(1) {
-                font-size: 10px;
-                line-height: 100%;
+                font-size: var(--very-small-fz);
+                line-height: 1;
                 color: var(--primary600);
                 font-weight: 500;
                 margin: 0;
@@ -234,8 +230,8 @@
             &:nth-child(2) {
                 margin-top: 2px;
                 color: var(--primary600);
-                font-size: 11px;
-                line-height: math.div(15, 12);
+                font-size: var(--very-small-fz);
+                line-height: var(--very-small-lh);
                 font-weight: 400;
                 word-wrap: break-word;
                 display: block;
@@ -285,8 +281,8 @@
     }
 
     .fc-daygrid-day-bottom {
-        font-size: 10px;
-        line-height: 100%;
+        font-size: var(--very-small-fz);
+        line-height: 1;
         margin: auto 11px 0;
         color: var(--blue);
 
@@ -370,7 +366,8 @@
         .fc-toolbar.fc-header-toolbar {
             .fc-toolbar-chunk {
                 .fc-toolbar-title {
-                    font-size: 12px;
+                    font-size: var(--small-fz);
+                    line-height: var(--small-lh);
                 }
             }
 
@@ -534,8 +531,8 @@
             align-items: center;
 
             span {
-                font-size: 15px;
-                line-height: math.div(19, 15);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
                 color: var(--primary600);
 
                 &:nth-child(1) {}
@@ -550,8 +547,8 @@
     &__title {
         margin-top: 24px;
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
     }
 
@@ -560,8 +557,8 @@
         display: flex;
         align-items: center;
         color: var(--primary600);
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
 
         svg {
             margin-right: 8px;
@@ -577,8 +574,8 @@
         display: block;
         margin-top: 12px;
         color: var(--dark);
-        font-size: 15px;
-        line-height: math.div(19, 15);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
     }
 
@@ -612,8 +609,8 @@
     &__edit {
         display: flex;
         align-items: center;
-        font-size: 12px;
-        line-height: math.div(15, 12);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         color: var(--primaryTwo);
 
         svg {
