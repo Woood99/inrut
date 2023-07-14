@@ -631,7 +631,7 @@
         flex-direction: column;
         align-items: start;
 
-        padding: 24px 32px 24px 24px;
+        padding: 24px 32px 16px 24px;
         width: 100%;
 
         opacity: 0;
@@ -641,7 +641,13 @@
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction,
             transform $transitionSpeed $transitionFunction;
-
+        >p{
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
+            color: var(--primaryTwo);
+            display: block;
+            margin-bottom: 16px;
+        }
         .checkbox-secondary {
             animation-name: fade;
             animation-duration: 0.6s;
