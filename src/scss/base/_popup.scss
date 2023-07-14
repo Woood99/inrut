@@ -215,7 +215,6 @@
     }
 
     &--sber-tied {
-
         text-align: center;
         z-index: 1053;
 
@@ -911,6 +910,33 @@
             }
         }
     }
+    &--history-changes {
+
+        z-index: 1053;
+
+        .popup-primary {
+            &__container {
+                border-radius: 12px 12px 0 0;
+                padding: 65px 16px calc(48px + 82px);
+                min-height: auto;
+                margin: 32px auto 0;
+                width: calc(100% - 4px);
+                vertical-align: bottom;
+                position: relative;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
 }
 .suggest-object{
   
@@ -952,7 +978,13 @@
         }
     }
 }
-
+.history-changes{
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 32px;
+    }
+}
 .edit-user {
     &__title {}
 

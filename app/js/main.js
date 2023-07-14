@@ -4508,6 +4508,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'edit-user');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-meeting-show');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
 
 // ========================================================================================
 
@@ -7914,15 +7915,17 @@ const maps = () => {
     });
   }
   if (document.querySelector('#bid-maps')) {
-    function init() {
-      let map = new ymaps.Map('bid-maps', {
-        center: [55.77171185651524, 37.62811179984117],
-        zoom: 10
-      });
-      positionElement(map);
-      removeControlsPrimary(map, '#bid-maps');
-    }
-    ymaps.ready(init);
+    document.querySelectorAll('#bid-maps').forEach(item => {
+      function init() {
+        let map = new ymaps.Map(item, {
+          center: [55.77171185651524, 37.62811179984117],
+          zoom: 10
+        });
+        positionElement(map);
+        removeControlsPrimary(map, '#bid-maps');
+      }
+      ymaps.ready(init);
+    });
   }
   if (document.querySelector('#object-maps')) {
     const objectMaps = document.querySelector('#object-maps');

@@ -25,15 +25,17 @@ const maps = () => {
         })
     }
     if (document.querySelector('#bid-maps')) {
-        function init() {
-            let map = new ymaps.Map('bid-maps', {
-                center: [55.77171185651524, 37.62811179984117],
-                zoom: 10,
-            });
-            positionElement(map);
-            removeControlsPrimary(map, '#bid-maps');
-        }
-        ymaps.ready(init);
+        document.querySelectorAll('#bid-maps').forEach(item => {
+            function init() {
+                let map = new ymaps.Map(item, {
+                    center: [55.77171185651524, 37.62811179984117],
+                    zoom: 10,
+                });
+                positionElement(map);
+                removeControlsPrimary(map, '#bid-maps');
+            }
+            ymaps.ready(init);
+        });
     }
     if (document.querySelector('#object-maps')) {
         const objectMaps = document.querySelector('#object-maps');

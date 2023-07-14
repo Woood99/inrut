@@ -131,5 +131,6 @@ popup(null, 'create-deal');
 popup(null, 'edit-user');
 popup(null, 'create-meeting-show');
 popup(null, 'suggest-object');
+popup(null, 'history-changes');
 
 // ========================================================================================
