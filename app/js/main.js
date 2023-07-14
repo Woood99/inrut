@@ -9144,6 +9144,11 @@ __webpack_require__.r(__webpack_exports__);
 const simplebar = selector => {
   document.querySelectorAll(selector).forEach(el => {
     new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](el);
+    if (el.parentElement.classList.contains('bid-messages__wrapper')) {
+      el.querySelector('.simplebar-content-wrapper').scrollTo({
+        top: el.querySelector('.simplebar-content').clientHeight
+      });
+    }
   });
 };
 
