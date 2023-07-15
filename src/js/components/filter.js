@@ -296,6 +296,7 @@ export const searchSelect = () => {
     containers.forEach(container => {
         const btn = container.querySelector('.search-select__button');
         const body = container.querySelector('.search-select__dropdown');
+        const close = container.querySelector('.search-select__close');
         btn.addEventListener('click', () => {
             containers.forEach(el => {
                 if (el !== container) el.classList.remove('_active')
@@ -307,6 +308,11 @@ export const searchSelect = () => {
                 container.classList.remove('_active');
             }
         })
+        if (close) {
+            close.addEventListener('click', () => {
+                container.classList.remove('_active');
+            });
+        }
         const items = body.querySelectorAll('.search-select__item .checkbox-secondary__input');
         const btnWrapper = btn.querySelector('.search-select__button-wrapper')
         const btnList = btnWrapper.querySelector('div:nth-child(2)');
@@ -379,6 +385,7 @@ export const searchSelectOne = () => {
         const list = container.querySelectorAll('.search-select-one__item');
         const input = container.querySelector('.search-select-one__input-hidden');
         const placeholder = container.querySelector('.search-select-one__button-wrapper div:nth-child(2)');
+        const close = container.querySelector('.search-select-one__close');
         btn.addEventListener('click', () => {
             containers.forEach(el => {
                 if (el !== container) el.classList.remove('_active')
@@ -390,6 +397,11 @@ export const searchSelectOne = () => {
                 container.classList.remove('_active');
             }
         })
+        if (close) {
+            close.addEventListener('click', () => {
+                container.classList.remove('_active');
+            });
+        }
         list.forEach(item => {
             item.addEventListener('click', () => {
                 list.forEach(item => item.classList.remove('_active'));
@@ -612,6 +624,7 @@ export const filterCustomSelectCheckboxes = () => {
     items.forEach(item => {
         const btn = item.querySelector('.select-dropdown-checkbox__button');
         const title = item.querySelector('.select-dropdown-checkbox__title');
+        const close = item.querySelector('.select-dropdown-checkbox__close');
         btn.addEventListener('click', () => {
             item.classList.toggle('_active');
         });
@@ -620,6 +633,11 @@ export const filterCustomSelectCheckboxes = () => {
                 item.classList.remove('_active');
             }
         })
+        if (close) {
+            close.addEventListener('click', () => {
+                item.classList.remove('_active');
+            });
+        }
         const dropdownContainerList = item.querySelector('.select-dropdown-checkbox__dropdown div');
         const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
         const cash = item.querySelector('[data-name="cash"]');
