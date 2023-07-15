@@ -14621,7 +14621,7 @@ textarea.input-reset {
 }
 .filter-dropdown__dropdown {
   position: absolute;
-  min-width: 400px;
+  min-width: 430px;
   z-index: 44;
   top: 100%;
   right: 0;
@@ -14882,7 +14882,7 @@ textarea.input-reset {
   padding: 12px;
 }
 @media (min-width: 1213px) {
-  .select-dropdown-checkbox__dropdown .checkbox-secondary:hover .checkbox-secondary__text {
+  .select-dropdown-checkbox__dropdown .checkbox-secondary:hover .checkbox-secondary__input:not(:disabled) + .checkbox-secondary__label .checkbox-secondary__text {
     color: var(--primary200);
   }
 }
@@ -14998,6 +14998,14 @@ textarea.input-reset {
 .filter-range .filter-range__nav > div:nth-child(4),
 .filter-range .filter-range__nav label:nth-child(4) {
   font-weight: 500;
+}
+.filter-range .input-text__label {
+  border: none;
+  padding: 0;
+  grid-column-gap: 10px;
+}
+.filter-range .input-text__label > span {
+  margin-right: 0;
 }
 .filter-range .noUi-target {
   border: none;
@@ -26876,12 +26884,12 @@ textarea.input-reset {
 }
 
 .buy-apartment-filter--building .buy-apartment-filter__row--1 {
-  -ms-grid-columns: 23.5593220339% 28.3898305085% 28.813559322% 17.2033898305%;
-  grid-template-columns: 23.5593220339% 28.3898305085% 28.813559322% 17.2033898305%;
+  -ms-grid-columns: 23.5593220339% 30.7627118644% 26.6949152542% 16.9491525424%;
+  grid-template-columns: 23.5593220339% 30.7627118644% 26.6949152542% 16.9491525424%;
 }
 .buy-apartment-filter--building .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 37.037037037% 1fr;
-  grid-template-columns: 37.037037037% 1fr;
+  -ms-grid-columns: 33.8983050847% 1fr;
+  grid-template-columns: 33.8983050847% 1fr;
 }
 
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {

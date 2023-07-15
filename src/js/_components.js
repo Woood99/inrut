@@ -1,6 +1,5 @@
 import {
     filterControl,
-    uiSlider,
     uiSliderOne,
     filterSum,
     filterDropdownChoice,
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================================================
 
     filterControl();
-    uiSlider();
     uiSliderOne();
     filterSum();
     filterDropdownChoice();

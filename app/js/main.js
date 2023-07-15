@@ -4252,7 +4252,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================================================
 
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterControl)();
-  (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSlider)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.uiSliderOne)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterSum)();
   (0,_components_filter__WEBPACK_IMPORTED_MODULE_0__.filterDropdownChoice)();
@@ -5742,7 +5741,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "filterSum": () => (/* binding */ filterSum),
 /* harmony export */   "searchSelect": () => (/* binding */ searchSelect),
 /* harmony export */   "searchSelectOne": () => (/* binding */ searchSelectOne),
-/* harmony export */   "uiSlider": () => (/* binding */ uiSlider),
 /* harmony export */   "uiSliderOne": () => (/* binding */ uiSliderOne)
 /* harmony export */ });
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/dist/nouislider.js");
@@ -5812,6 +5810,7 @@ const filterSum = () => {
         checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       });
       input.addEventListener('input', () => {
+        input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(input.value);
         checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
       });
     });
@@ -5862,106 +5861,6 @@ const filterSum = () => {
             </div>
                     <div>
                        от ${inputs[0].value} эт.
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} эт.
-                    </div>
-                `;
-        }
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[0].value && inputs[1].value === '') {
-        if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
-          html = `
-                    <div>
-                    ${el.dataset.filterDropdownName}
-                    </div>
-                    <div>
-                        от ${convertSum(inputs[0].value)}
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${convertSum(itemActive.querySelector('[data-max]').dataset.max)}
-                    </div>
-                `;
-        }
-        if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
-          html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
-                    <div>
-                        от ${inputs[0].value} м²
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${itemActive.querySelector('[data-max]').dataset.max} м²
-                    </div>
-                `;
-        }
-        if (el.dataset.filterDropdownName === 'Этаж') {
-          html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
-                    <div>
-                        от ${inputs[0].value} эт.
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${itemActive.querySelector('[data-max]').dataset.max} эт.
-                    </div>
-                `;
-        }
-        buttonWrapper.classList.add('_active');
-      } else if (inputs[1].value && inputs[0].value === '') {
-        if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
-          html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
-                    <div>
-                        от ${convertSum(itemActive.querySelector('[data-min]').dataset.min)}
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${convertSum(inputs[1].value)}
-                    </div>
-                `;
-        }
-        if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
-          html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
-                    <div>
-                        от ${itemActive.querySelector('[data-min]').dataset.min} м²
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} м²
-                    </div>
-                `;
-        }
-        if (el.dataset.filterDropdownName === 'Этаж') {
-          html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
-                    <div>
-                        от ${itemActive.querySelector('[data-min]').dataset.min} эт.
                     </div>
                     <div>
                         -
@@ -6148,92 +6047,6 @@ const searchSelectOne = () => {
           }
         }
       });
-    });
-  });
-};
-const uiSlider = () => {
-  const items = document.querySelectorAll('.filter-range__inner');
-  if (!items.length >= 1) return;
-  items.forEach(el => {
-    const container = el.closest('.filter-range');
-    const minValue = el.dataset.min;
-    const maxValue = el.dataset.max;
-    const defaultStart = container.querySelector('[data-range-start]');
-    const defaultEnd = container.querySelector('[data-range-end]');
-    const inputMin = defaultStart.querySelector('input');
-    const inputMax = defaultEnd.querySelector('input');
-    const inputs = [inputMin, inputMax];
-    nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(el, {
-      start: [Number(minValue), Number(maxValue)],
-      connect: true,
-      range: {
-        'min': Number(minValue),
-        'max': Number(maxValue)
-      },
-      step: 1
-    });
-    inputMin.value = '';
-    inputMax.value = '';
-    el.noUiSlider.on('update', function (values, handle) {
-      if (container.classList.contains('filter-range--improved')) {
-        if (inputs[0].value === '' && +(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[0]).replace(/\s/g, '') === Number(minValue) && inputs[1].value === '' && +(0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[1]).replace(/\s/g, '') === Number(maxValue)) {
-          container.classList.remove('_selected');
-          return;
-        } else {
-          container.classList.add('_selected');
-        }
-      }
-      inputs[handle].value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(values[handle]);
-    });
-    inputMin.value = '';
-    inputMax.value = '';
-    inputMin.addEventListener('change', function () {
-      const numberString = this.value.replace(/\s/g, "");
-      if (inputMax.value === '') {
-        if (inputMin.value === '') {
-          el.noUiSlider.set([Number(minValue), null]);
-          inputMin.value = '';
-          inputMax.value = '';
-        } else {
-          el.noUiSlider.set([numberString, null]);
-          inputMax.value = '';
-        }
-      } else {
-        if (inputMin.value === '') {
-          el.noUiSlider.set([Number(minValue), null]);
-          inputMin.value = '';
-        } else {
-          el.noUiSlider.set([numberString, null]);
-        }
-      }
-    });
-    inputMax.addEventListener('change', function () {
-      const numberString = this.value.replace(/\s/g, "");
-      if (inputMin.value === '') {
-        if (inputMax.value === '') {
-          el.noUiSlider.set([null, Number(maxValue)]);
-          inputMax.value = '';
-          inputMin.value = '';
-        } else {
-          el.noUiSlider.set([null, numberString]);
-          inputMin.value = '';
-        }
-      } else {
-        if (inputMax.value === '') {
-          el.noUiSlider.set([null, Number(maxValue)]);
-          inputMax.value = '';
-        } else {
-          el.noUiSlider.set([null, numberString]);
-        }
-      }
-    });
-    inputMin.addEventListener('input', () => {
-      const val = inputMin.value.replace(/\D/g, '');
-      inputMin.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
-    });
-    inputMax.addEventListener('input', () => {
-      const val = inputMax.value.replace(/\D/g, '');
-      inputMax.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(val);
     });
   });
 };
