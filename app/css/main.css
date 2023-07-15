@@ -14631,7 +14631,7 @@ textarea.input-reset {
   -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
   border-radius: 12px;
-  padding: 32px 24px 46px 24px;
+  padding: 48px 32px 48px 32px;
   -webkit-transform: translateY(10px);
   -ms-transform: translateY(10px);
   transform: translateY(10px);
@@ -14825,7 +14825,7 @@ textarea.input-reset {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: start;
-  padding: 48px 32px 32px 24px;
+  padding: 48px 32px 32px 32px;
   width: 100%;
   opacity: 0;
   visibility: hidden;
@@ -14860,6 +14860,12 @@ textarea.input-reset {
 .select-dropdown-checkbox__dropdown .checkbox-secondary__text {
   font-size: var(--default-fz);
   line-height: var(--default-lh);
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.select-dropdown-checkbox__dropdown .checkbox-secondary__input:checked + .checkbox-secondary__label .checkbox-secondary__text {
+  color: var(--blue);
 }
 .select-dropdown-checkbox__dropdown .checkbox-secondary .secondary-tooltip {
   margin-left: 6px;
@@ -14874,6 +14880,11 @@ textarea.input-reset {
   min-width: 85px;
   left: 20px;
   padding: 12px;
+}
+@media (min-width: 1213px) {
+  .select-dropdown-checkbox__dropdown .checkbox-secondary:hover .checkbox-secondary__text {
+    color: var(--primary200);
+  }
 }
 .select-dropdown-checkbox__dropdown .checkbox-secondary:not(:last-child) {
   margin-bottom: 16px;
@@ -14915,7 +14926,7 @@ textarea.input-reset {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: var(--stand-bg);
+  background-color: transparent;
   border: 1px solid var(--primary200);
   border-radius: 12px;
   height: 48px;
