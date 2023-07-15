@@ -68,6 +68,21 @@ function initSliders() {
             },
         });
     }
+    if (document.querySelector('.history-changes__items')) {
+        const slider = document.querySelector('.history-changes__items');
+        new Swiper(slider, {
+            observer: true,
+            observeParents: true,
+            allowTouchMove: false,
+            slidesPerView: 2,
+            spaceBetween: 32,
+            speed: 800,
+            navigation: {
+                prevEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--prev'),
+                nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--next'),
+            },
+        });
+    }
     if (document.querySelector('.main-banners__container')) {
         const slider = document.querySelector('.main-banners__container');
         new Swiper(slider, {

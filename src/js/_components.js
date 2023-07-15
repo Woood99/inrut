@@ -75,6 +75,7 @@ import {
     clientPage
 } from './components/clientPage';
 import requisites from './components/requisites'
+import navDropdown from './components/navDropdown';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -121,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardPrimaryActions();
 
     // ==================================================
-
+    navDropdown();
     maps();
     calendarPrimary('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
     calendarPrimary('.calendar-page .calendar-primary', 'eventsCalendar.json', true);

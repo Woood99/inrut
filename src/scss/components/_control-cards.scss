@@ -21,18 +21,18 @@
             .card-primary {
                 width: 100%;
                 animation-name: fadeTransformX;
-                animation-duration: 0.6s;
+                animation-duration: 0.5s;
 
                 &:nth-child(1) {
-                    animation-duration: 0.6s;
+                    animation-duration: 0.5s;
                 }
 
                 &:nth-child(2) {
-                    animation-duration: 1s;
+                    animation-duration: 0.8s;
                 }
 
                 &:nth-child(3) {
-                    animation-duration: 1.4s;
+                    animation-duration: 1.1s;
                 }
 
                 &__container {
@@ -115,18 +115,18 @@
             .card-secondary {
                 width: 100%;
                 animation-name: fadeTransformX;
-                animation-duration: 0.6s;
+                animation-duration: 0.5s;
 
                 &:nth-child(1) {
-                    animation-duration: 0.6s;
+                    animation-duration: 0.5s;
                 }
 
                 &:nth-child(2) {
-                    animation-duration: 1s;
+                    animation-duration: 0.8s;
                 }
 
                 &:nth-child(3) {
-                    animation-duration: 1.4s;
+                    animation-duration: 1.1s;
                 }
 
                 &__container {
@@ -135,10 +135,11 @@
                 }
 
                 &__info {
-                    .card-secondary__info--favorite{
+                    .card-secondary__info--favorite {
                         display: none;
                     }
-                    .card-secondary__info--controls{
+
+                    .card-secondary__info--controls {
                         display: block !important;
                         margin-top: 0;
                     }
@@ -165,10 +166,10 @@
                         margin-top: 16px;
                         margin-bottom: 65px;
                         display: grid;
-                        grid-template-columns: repeat(2, minmax(275px, max-content));
-                        grid-column: 1/-1;
+                        grid-template-columns: repeat(2, minmax(250px, max-content));
+                        grid-column: 1/2;
                         grid-column-gap: 24px;
-                        width: percent(575, 701);
+
                         justify-content: space-between;
 
                         @media (min-width:$desktop-min) {
@@ -177,9 +178,7 @@
                             }
                         }
 
-                        .card-secondary__price {
-
-                        }
+                        .card-secondary__price {}
 
                         @media (max-width:$desktop) {
                             width: 100%;
@@ -288,7 +287,7 @@
                 &__user {}
 
                 &__options {
-                   margin-top: 0;
+                    margin-top: 0;
                 }
 
                 &__bottom {
@@ -329,6 +328,27 @@
                             }
                         }
                     }
+                }
+            }
+        }
+
+        &__content--horizontal {
+
+            .card-primary,
+            .card-secondary {
+                animation-name: fadeTransformY;
+                animation-duration: 0.5s;
+
+                &:nth-child(1) {
+                    animation-duration: 0.5s;
+                }
+
+                &:nth-child(2) {
+                    animation-duration: 0.8s;
+                }
+
+                &:nth-child(3) {
+                    animation-duration: 1.1s;
                 }
             }
         }

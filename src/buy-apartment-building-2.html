@@ -86,6 +86,11 @@
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <button type="button" class="btn btn-reset filter-dropdown__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
                                         <div class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по стоимости, руб.
@@ -155,6 +160,11 @@
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <button type="button" class="btn btn-reset filter-dropdown__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
                                         <label class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
                                             <div class="filter-dropdown__range filter-range">
@@ -217,44 +227,44 @@
                 </form>
                 <div class="buy-apartment__sort select-sort container">
                     <span class="select-sort__label">Сортировка:</span>
-                    <select class="select-sort__body" name="filter-sort">
+                    <select class="select-sort__body" hidden name="filter-sort">
                         <option value="price">Стоимость</option>
                         <option value="rating">Рейтинг</option>
                     </select>
                 </div>
                 <div class="buy-apartment__tags tags container">
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        Ипотека с гос. поддержкой
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        Нужен ремоент
                     </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        Ипотека без первоначального взноса
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        Семейная ипотека
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        С большой кухней
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        С парковкой
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        С мебелью
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        В рассрочку
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        Без ремонта
-                    </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
                         С современным ремонтом
                     </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        Апартаменты
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С парковкой
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С большой кухней
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
                         С высокими потолками
                     </button>
-                    <button type="button" class="btn btn-reset btn-secondary buy-apartment__tag tags__item tag">
-                        Апартаменты
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С мебелью
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С видео
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С сохраняемой территорией
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        Ипотека без первоначального взноса
+                    </button>
+                    <button type="button" class="btn btn-reset btn-test buy-apartment__tag tags__item tag">
+                        С панорамными окнами
                     </button>
                 </div>
                 <div class="buy-apartment__cards-list cards-list control-cards">
@@ -378,25 +388,25 @@
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>Студии</span>
-                                                    <span>от 4 736 000 ₽</span>
+                                                    <span>от 4,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>1-комн.</span>
-                                                    <span>от 34 736 000 ₽</span>
+                                                    <span>от 34,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>2-комн.</span>
-                                                    <span>от 40 736 000 ₽</span>
+                                                    <span>от 40,7 млн ₽</span>
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>3-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>4-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -551,25 +561,25 @@
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>Студии</span>
-                                                    <span>от 4 736 000 ₽</span>
+                                                    <span>от 4,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>1-комн.</span>
-                                                    <span>от 34 736 000 ₽</span>
+                                                    <span>от 34,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>2-комн.</span>
-                                                    <span>от 40 736 000 ₽</span>
+                                                    <span>от 40,7 млн ₽</span>
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>3-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>4-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -724,25 +734,25 @@
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>Студии</span>
-                                                    <span>от 4 736 000 ₽</span>
+                                                    <span>от 4,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>1-комн.</span>
-                                                    <span>от 34 736 000 ₽</span>
+                                                    <span>от 34,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>2-комн.</span>
-                                                    <span>от 40 736 000 ₽</span>
+                                                    <span>от 40,7 млн ₽</span>
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>3-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>4-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -897,25 +907,25 @@
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>Студии</span>
-                                                    <span>от 4 736 000 ₽</span>
+                                                    <span>от 4,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>1-комн.</span>
-                                                    <span>от 34 736 000 ₽</span>
+                                                    <span>от 34,7 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>2-комн.</span>
-                                                    <span>от 40 736 000 ₽</span>
+                                                    <span>от 40,7 млн ₽</span>
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="card-secondary__price">
                                                     <span>3-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                                 <div class="card-secondary__price">
                                                     <span>4-комн.</span>
-                                                    <span>от 134 736 000 ₽</span>
+                                                    <span>от 134 млн ₽</span>
                                                 </div>
                                             </div>
                                         </div>

@@ -86,6 +86,11 @@
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <button type="button" class="btn btn-reset filter-dropdown__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
                                         <div class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по стоимости, руб.
@@ -155,6 +160,11 @@
                                         </svg>
                                     </button>
                                     <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <button type="button" class="btn btn-reset filter-dropdown__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
                                         <label class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
                                             <div class="filter-dropdown__range filter-range">
@@ -225,7 +235,7 @@
                 </form>
                 <div class="objects-base__sort select-sort container">
                     <span class="select-sort__label">Сортировка:</span>
-                    <select class="select-sort__body" name="filter-sort">
+                    <select class="select-sort__body" hidden name="filter-sort">
                         <option value="price">Стоимость</option>
                         <option value="rating">Рейтинг</option>
                     </select>

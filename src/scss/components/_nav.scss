@@ -91,37 +91,7 @@
         }
     }
 
-    &__dropdown {
-        @media (min-width:$desktop) {
-            pointer-events: none;
-
-
-            &::after {
-                content: '';
-                position: fixed;
-                width: 100%;
-                height: calc(var(--vh) * 2);
-                top: var(--header-height);
-                right: 0;
-
-                background-color: rgba(0, 0, 0, 0.25);
-                backdrop-filter: blur(7.5px);
-                z-index: -1;
-
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity $transitionSpeed $transitionFunction,
-                    visibility $transitionSpeed $transitionFunction;
-            }
-
-            .card-info {
-                border-radius: 24px;
-            }
-        }
-    }
-
-    &__dropdown-container {
-
+    &__container {
         @media (min-width:$desktop-min) {
             padding: 12px 0 0;
             height: 100%;
@@ -145,27 +115,24 @@
     }
 
     @media (min-width:$desktop) {
+        &._active {
+            .nav-dropdown__container {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
         &:hover {
             .nav__link {
                 color: var(--blue);
-
-                &::before {
-                    width: 125%;
-                }
             }
 
-            .nav-dropdown__dropdown {
-                &::after {
-                    opacity: 1;
-                    visibility: visible;
-                    z-index: -1;
-                }
-
-                &-container {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                    pointer-events: all;
+            &._active {
+                .nav__link {
+                    &::before {
+                        width: 125%;
+                    }
                 }
             }
         }
@@ -173,54 +140,65 @@
         &--1 {
             .nav-dropdown-content__body {
                 grid-template-columns: repeat(2, max-content);
-                grid-template-rows: repeat(3,max-content);
+                grid-template-rows: repeat(3, max-content);
+
                 .nav-dropdown-content__item {
-                    &:nth-child(1){
+                    &:nth-child(1) {
                         grid-column: 1/2;
                     }
+
                     &:nth-child(2),
                     &:nth-child(3) {
                         grid-column: 1/-1;
                     }
-                    &:nth-child(4){
+
+                    &:nth-child(4) {
                         grid-column: 2/3;
                         grid-row: 1/2;
                     }
                 }
             }
         }
+
         &--2 {
             .nav-dropdown-content__body {
                 grid-template-columns: repeat(2, max-content);
-                grid-template-rows: repeat(2,max-content);
+                grid-template-rows: repeat(2, max-content);
+
                 .nav-dropdown-content__item {
-                    &:nth-child(1){
+                    &:nth-child(1) {
                         grid-column: 1/2;
                     }
-                    &:nth-child(2){
+
+                    &:nth-child(2) {
                         grid-column: 2/3;
                         grid-row: 1/2;
                     }
-                    &:nth-child(3){
+
+                    &:nth-child(3) {
                         grid-column: 2/3;
                         grid-row: 2/3;
                     }
                 }
             }
         }
+
         &--3 {
             .nav-dropdown-content__body {
                 grid-template-columns: repeat(2, max-content);
-                grid-template-rows: repeat(3,max-content);
+                grid-template-rows: repeat(3, max-content);
+
                 .nav-dropdown-content__item {
-                    &:nth-child(1){
+                    &:nth-child(1) {
                         grid-column: 1/2;
                     }
+
                     &:nth-child(2),
                     &:nth-child(3) {
                         grid-column: 1/-1;
                     }
-                    &:nth-child(4){
+
+                    &:nth-child(4) {
                         grid-column: 2/3;
                         grid-row: 1/2;
                     }
@@ -258,7 +236,7 @@
 
     &__body {
         @media (min-width:$desktop-min) {
-      padding: 24px;
+            padding: 24px;
             background-color: var(--white);
             flex-grow: 1;
             border-radius: 24px;

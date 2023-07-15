@@ -4200,6 +4200,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_favorites__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/favorites */ "./src/js/components/favorites.js");
 /* harmony import */ var _components_clientPage__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/clientPage */ "./src/js/components/clientPage.js");
 /* harmony import */ var _components_requisites__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/requisites */ "./src/js/components/requisites.js");
+/* harmony import */ var _components_navDropdown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/navDropdown */ "./src/js/components/navDropdown.js");
+
 
 
 
@@ -4282,7 +4284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_cardActions__WEBPACK_IMPORTED_MODULE_29__.cardPrimaryActions)();
 
   // ==================================================
-
+  (0,_components_navDropdown__WEBPACK_IMPORTED_MODULE_37__["default"])();
   (0,_components_maps__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.request-calendar .calendar-primary', 'eventsCalendar.json', false);
   (0,_components_calendar__WEBPACK_IMPORTED_MODULE_7__.calendarPrimary)('.calendar-page .calendar-primary', 'eventsCalendar.json', true);
@@ -8582,6 +8584,56 @@ const mortgage = () => {
 
 /***/ }),
 
+/***/ "./src/js/components/navDropdown.js":
+/*!******************************************!*\
+  !*** ./src/js/components/navDropdown.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const navDropdown = () => {
+  const container = document.querySelector('.header-main__nav');
+  if (!container) return;
+  const items = container.querySelectorAll('.nav-dropdown');
+  let time;
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth <= 1180) return;
+      removeActiveNav();
+      if (!item.classList.contains('_active')) {
+        time = setTimeout(() => {
+          item.classList.add('_active');
+          toggleMask();
+        }, 400);
+      }
+    });
+    item.addEventListener('mouseleave', () => {
+      if (window.innerWidth <= 1180) return;
+      clearTimeout(time);
+      removeActiveNav();
+      setTimeout(() => {
+        toggleMask();
+      }, 400);
+    });
+  });
+  function toggleMask() {
+    const activeItem = container.querySelector('.nav-dropdown._active');
+    const body = document.body;
+    activeItem ? body.classList.add('_nav-active-mask') : body.classList.remove('_nav-active-mask');
+  }
+  function removeActiveNav() {
+    const activeItem = container.querySelector('.nav-dropdown._active');
+    if (activeItem) activeItem.classList.remove('_active');
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (navDropdown);
+
+/***/ }),
+
 /***/ "./src/js/components/placeSaleOptionMore.js":
 /*!**************************************************!*\
   !*** ./src/js/components/placeSaleOptionMore.js ***!
@@ -9762,6 +9814,21 @@ function initSliders() {
           slidesPerView: 2,
           spaceBetween: 32
         }
+      }
+    });
+  }
+  if (document.querySelector('.history-changes__items')) {
+    const slider = document.querySelector('.history-changes__items');
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      observer: true,
+      observeParents: true,
+      allowTouchMove: false,
+      slidesPerView: 2,
+      spaceBetween: 32,
+      speed: 800,
+      navigation: {
+        prevEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--prev'),
+        nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--next')
       }
     });
   }

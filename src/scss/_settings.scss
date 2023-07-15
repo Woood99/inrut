@@ -36,6 +36,31 @@ p {
     line-height: var(--default-lh);
     background-color: $bodyColor;
     color: $mainColor;
+
+    &::after {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+
+        background-color: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(7.5px);
+        z-index: 98;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction;
+    }
+
+    &._nav-active-mask {
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 
 img {
@@ -124,6 +149,7 @@ a {
             }
         }
     }
+
     &.site-container--client {
         @media (max-width:$desktop) {
             .header {
@@ -135,6 +161,7 @@ a {
             }
         }
     }
+
     @media (max-width:$desktop) {
         overflow: hidden;
     }
