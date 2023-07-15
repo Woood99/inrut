@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     genplan();
     mapMetro();
     cardStockPopup('.stock-developer__content .cards-list__items');
+    cardStockPopup('.block-stock .block-stock__slider');
     tag();
     chat();
     city();

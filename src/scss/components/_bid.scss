@@ -224,6 +224,23 @@
         @media (max-width:$smallTablet-max) {
             padding: 16px;
         }
+        .message-item{
+            &__text{
+                border-radius: 2px 12px 2px 12px;
+                &::after{
+                    content: '';
+                    background-image: url('../img/message-check.svg');
+                    height: 20px;
+                    width: 9px;
+                    position: absolute;
+                    bottom: -3px;
+                    right: -7px;
+                    background-size: 9px 20px;
+                    background-repeat: no-repeat;
+
+                }
+            }
+        }
     }
 
     &__message {
