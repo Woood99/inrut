@@ -42,19 +42,25 @@
                         </span>
                     </button>
                 </div>
-                <div class="header-top__action header-action header-action--calendar">
-                    <button type="button" class="btn btn-reset header-action__title">
+                <div class="header-top__action header-action header-action--calendar secondary-tooltip secondary-tooltip--dark secondary-tooltip--bottom">
+                    <button type="button" class="btn btn-reset header-action__title secondary-tooltip__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#calendar"></use>
                         </svg>
                     </button>
+                    <div class="secondary-tooltip__content">
+                        Календарь
+                    </div>
                 </div>
-                <div class="header-top__action header-action header-action--chat">
-                    <button type="button" class="btn btn-reset header-action__title">
+                <div class="header-top__action header-action header-action--chat secondary-tooltip secondary-tooltip--dark secondary-tooltip--bottom">
+                    <button type="button" class="btn btn-reset header-action__title secondary-tooltip__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#chat"></use>
                         </svg>
                     </button>
+                    <div class="secondary-tooltip__content">
+                        Чат
+                    </div>
                 </div>
             </div>
             <div class="header-top__personal header-personal">
@@ -650,8 +656,8 @@
                 <button type="button" class="btn btn-reset btn-secondary city-popup__item">Нижний-Новгород</button>
             </div>
             <div class="checkbox-secondary city-popup__auto">
-                <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
-                <label for="developer_1" class="checkbox-secondary__label">
+                <input id="city-auto" name="city-auto" class="checkbox-secondary__input" type="checkbox" value="true">
+                <label for="city-auto" class="checkbox-secondary__label">
                     <span class="checkbox-secondary__text">
                         Определить автоматически
                     </span>

@@ -6,8 +6,8 @@
         align-items: center;
 
         svg {
-            width: 11px;
-            height: 13px;
+            width: 14px;
+            height: 16px;
             margin-right: 8px;
             fill: var(--primaryTwo);
         }
@@ -22,10 +22,16 @@
     }
 
     &__name {
-        color: inherit;
+        color: var(--primaryTwo);
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
-        font-weight: 400;
+        font-weight: 500;
+        transition: color $transitionSpeed $transitionFunction;
+        @media (min-width:$desktop-min){
+             &:hover{
+                color: var(--blue);
+             } 
+        }
     }
 }
 
@@ -52,6 +58,7 @@
         padding: 0 16px;
         border-radius: 12px;
         height: 48px;
+        transition: border $transitionSpeed $transitionFunction;
         input {
             border: none;
             flex-grow: 1;
@@ -61,7 +68,7 @@
             font-size: var(--default-fz);
             line-height: var(--default-lh);
             background-color: transparent;
-
+            height: 100%;
             &::placeholder {
                 color: inherit;
             }
@@ -76,6 +83,14 @@
                 height: 100%;
                 fill: var(--primaryTwo);
             }
+        }
+        @media (min-width:$desktop-min){
+             &:hover{
+                border: 1px solid var(--blue);
+             }
+        }
+        &:focus{
+            border: 1px solid var(--blue);
         }
     }
 

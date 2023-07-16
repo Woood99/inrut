@@ -1,5 +1,6 @@
 .header {
-
+    position: relative;
+    z-index: 99;
     &__top {}
 
     &__main {
@@ -29,8 +30,6 @@
 .header-top {
     height: 50px;
     background-color: #f7f9fd; // stand-bg
-    position: relative;
-    z-index: 99;
 
     &__container {
         display: flex;
@@ -114,22 +113,23 @@
     &--chat {
         .header-action__title {
             svg {
-                width: 12px;
-                height: 12px;
+                width: 16px;
+                height: 16px;
             }
         }
     }
 
     &__title {
-        color: var(--dark);
+        color: var(--primaryTwo);
         display: flex;
         align-items: center;
         position: relative;
-
+        transition: color $transitionSpeed $transitionFunction;
         svg {
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             fill: var(--primaryTwo);
+         stroke: none;
         }
     }
 
@@ -137,7 +137,14 @@
         margin-left: 10px;
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
-        font-weight: 400;
+        color: var(--primaryTwo);
+        font-weight: 500;
+        transition: color $transitionSpeed $transitionFunction;
+        @media (min-width:$desktop-min){
+             &:hover{
+                color: var(--blue);
+             } 
+        }
     }
 
     &__quantity {
@@ -184,11 +191,17 @@
     }
 
     &__name {
-        color: inherit;
+        color: var(--primaryTwo);
         margin-right: 10px;
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
-        font-weight: 400;
+        transition: color $transitionSpeed $transitionFunction;
+        font-weight: 500;
+        @media (min-width:$desktop-min){
+             &:hover{
+                color: var(--blue);
+             } 
+        }
     }
 }
 
