@@ -466,6 +466,13 @@
 
     &__checkbox {
         flex: 0 0 16px;
+        @media (min-width:$desktop-min){
+             &:hover{
+                +.filter-dropdown__range{
+                    border: 1px solid var(--blue);
+                }
+             } 
+        }
     }
 
     &__range {
