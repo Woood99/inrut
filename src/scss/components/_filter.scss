@@ -1231,7 +1231,6 @@
     &__item {
         .checkbox-secondary {
             &__input {
-
                 &:checked {
                     +.checkbox-secondary__label {
                         .checkbox-secondary__text {
@@ -1243,17 +1242,12 @@
 
             &__label {
                 justify-content: space-between;
-
-                &::after {
-                    left: auto;
-                    right: 0;
-                }
             }
 
             &__text {
                 flex-grow: 1;
-                margin: 0 8px 0 0;
-                order: -1;
+                margin: 0 0 0 8px;
+                order: 1;
                 display: flex;
                 align-items: center;
                 transition: color $transitionSpeed $transitionFunction;
