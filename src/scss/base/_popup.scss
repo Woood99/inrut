@@ -3938,8 +3938,17 @@
         }
 
         .secondary-tooltip {
-            width: 34px;
-            height: 34px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--white);
+            box-shadow: var(--shadow-primary);
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: box-shadow $transitionSpeed $transitionFunction,
+                transform $transitionSpeed $transitionFunction, ;
 
             &__btn {
                 width: 100%;
@@ -3949,13 +3958,20 @@
             &__content {
                 max-width: 250px;
                 width: max-content;
-                left: 46px;
+                left: 84px;
                 bottom: -6px;
             }
 
             img {
-                width: 100%;
-                height: 100%;
+                width: 34px;
+                height: 34px;
+            }
+
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    box-shadow: var(--shadow-secondary);
+                    transform: translateY(-3px);
+                }
             }
         }
     }
@@ -4043,6 +4059,32 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
+
+        .input-primary {
+            position: relative;
+            overflow: visible;
+
+            .secondary-tooltip {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 16px;
+                z-index: 99;
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    stroke: var(--primaryTwo);
+                    stroke-width: 1.2px;
+                    fill: none;
+                }
+
+                &__content {
+                    width: max-content;
+                    max-width: 210px;
+                    text-align: left;
+                }
+            }
+        }
     }
 
     &__wrapper-subtitle {
