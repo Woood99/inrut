@@ -17,6 +17,17 @@
         &:last-child {
             padding-right: 0;
         }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                .nav__link {
+                    color: var(--blue);
+    
+                    &::before {
+                        width: 125%;
+                    }
+                }
+            }
+        }
     }
 
     &__link {
@@ -43,16 +54,6 @@
             transition: width $transitionSpeed $transitionFunction;
         }
 
-        @media (min-width:$desktop-min) {
-            &:hover {
-                color: var(--blue);
-
-                &::before {
-                    width: 125%;
-                }
-            }
-        }
-
         &-icon {
             width: 12px;
             height: 12px;
@@ -74,16 +75,13 @@
                 display: none;
             }
         }
+
     }
 }
 
 
 .nav-dropdown {
     .nav__link {
-
-        &:hover {
-            color: var(--primaryTwo);
-        }
 
         @media (max-width:$desktop) {
             height: auto;
@@ -125,12 +123,6 @@
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
-            }
-        }
-
-        &:hover {
-            .nav__link {
-                color: var(--blue);
             }
         }
 

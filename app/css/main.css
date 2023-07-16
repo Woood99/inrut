@@ -13750,6 +13750,14 @@ textarea.input-reset {
 .nav__item:last-child {
   padding-right: 0;
 }
+@media (min-width: 1213px) {
+  .nav__item:hover .nav__link {
+    color: var(--blue);
+  }
+  .nav__item:hover .nav__link::before {
+    width: 125%;
+  }
+}
 .nav__link {
   color: var(--primaryTwo);
   font-weight: 500;
@@ -13782,14 +13790,6 @@ textarea.input-reset {
   -o-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
-@media (min-width: 1213px) {
-  .nav__link:hover {
-    color: var(--blue);
-  }
-  .nav__link:hover::before {
-    width: 125%;
-  }
-}
 .nav__link-icon {
   width: 12px;
   height: 12px;
@@ -13813,9 +13813,6 @@ textarea.input-reset {
   }
 }
 
-.nav-dropdown .nav__link:hover {
-  color: var(--primaryTwo);
-}
 @media (max-width: 1212px) {
   .nav-dropdown .nav__link {
     height: auto;
@@ -13860,9 +13857,6 @@ textarea.input-reset {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
-  }
-  .nav-dropdown:hover .nav__link {
-    color: var(--blue);
   }
   .nav-dropdown--1 .nav-dropdown-content__body {
     -ms-grid-columns: (-webkit-max-content)[2];
