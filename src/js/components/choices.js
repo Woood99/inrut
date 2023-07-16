@@ -1,6 +1,6 @@
 import Choices from 'choices.js';
 
-const choicesSelect  = () => {
+const choicesSelect = () => {
     const selectPrimary = document.querySelectorAll('.select-primary__body');
     if (selectPrimary.length >= 1) {
         selectPrimary.forEach(el => {
@@ -23,7 +23,7 @@ const choicesSelect  = () => {
             })
         });
     }
-    
+
     const selectMultiple = document.querySelectorAll('.select-multiple__body');
     if (selectMultiple.length >= 1) {
         selectMultiple.forEach(el => {
@@ -57,12 +57,12 @@ const choicesSelect  = () => {
                     el.closest('.select-multiple').classList.remove('_selected');
                 }
             })
-    
+
         });
     }
-    
-    
-    
+
+
+
     const selectSecondary = document.querySelectorAll('.select-secondary__body');
     if (selectSecondary.length >= 1) {
         selectSecondary.forEach(el => {
@@ -73,16 +73,26 @@ const choicesSelect  = () => {
                 position: 'bottom',
                 placeholder: true,
             })
+            const wrapper = el.closest('.select-secondary');
             el.addEventListener('change', () => {
                 if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
                     el.closest('.select-secondary').classList.add('_selected');
+                    wrapper.classList.remove('_hover');
                 } else {
                     el.closest('.select-secondary').classList.remove('_selected');
                 }
             })
+            wrapper.addEventListener('mouseover', (e) => {
+                if (!e.target.closest('.choices__list.choices__list--dropdown')) {
+                    wrapper.classList.add('_hover');
+                }
+            })
+            wrapper.addEventListener('mouseout', () => {
+                wrapper.classList.remove('_hover');
+            })
         });
     }
-    
+
 };
 
 export default choicesSelect;

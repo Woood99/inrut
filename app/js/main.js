@@ -5439,12 +5439,22 @@ const choicesSelect = () => {
         position: 'bottom',
         placeholder: true
       });
+      const wrapper = el.closest('.select-secondary');
       el.addEventListener('change', () => {
         if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
           el.closest('.select-secondary').classList.add('_selected');
+          wrapper.classList.remove('_hover');
         } else {
           el.closest('.select-secondary').classList.remove('_selected');
         }
+      });
+      wrapper.addEventListener('mouseover', e => {
+        if (!e.target.closest('.choices__list.choices__list--dropdown')) {
+          wrapper.classList.add('_hover');
+        }
+      });
+      wrapper.addEventListener('mouseout', () => {
+        wrapper.classList.remove('_hover');
       });
     });
   }

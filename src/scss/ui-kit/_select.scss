@@ -634,4 +634,16 @@
     @media (max-width:$desktop) {
         width: 100%;
     }
+
+    @media (min-width:$desktop-min) {
+        &._hover{
+            .choices {
+                border: 1px solid var(--blue);
+            }
+
+            .select-secondary__placeholder {
+                color: var(--blue);
+            }
+        }
+    }
 }
