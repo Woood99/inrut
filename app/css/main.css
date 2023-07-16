@@ -13758,9 +13758,37 @@ textarea.input-reset {
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-.nav__link:hover {
-  color: var(--blue);
+.nav__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  -webkit-transition: width 0.4s ease-in-out;
+  -o-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+@media (min-width: 1213px) {
+  .nav__link:hover {
+    color: var(--blue);
+  }
+  .nav__link:hover::before {
+    width: 125%;
+  }
 }
 .nav__link-icon {
   width: 12px;
@@ -13785,34 +13813,6 @@ textarea.input-reset {
   }
 }
 
-.nav-dropdown .nav__link {
-  -webkit-transition: border-bottom 0.4s ease-in-out;
-  -o-transition: border-bottom 0.4s ease-in-out;
-  transition: border-bottom 0.4s ease-in-out;
-  height: 100%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.nav-dropdown .nav__link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: var(--blue);
-  -webkit-transition: width 0.4s ease-in-out;
-  -o-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
 .nav-dropdown .nav__link:hover {
   color: var(--primaryTwo);
 }
@@ -13863,9 +13863,6 @@ textarea.input-reset {
   }
   .nav-dropdown:hover .nav__link {
     color: var(--blue);
-  }
-  .nav-dropdown:hover._active .nav__link::before {
-    width: 125%;
   }
   .nav-dropdown--1 .nav-dropdown-content__body {
     -ms-grid-columns: (-webkit-max-content)[2];

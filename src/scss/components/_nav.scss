@@ -25,9 +25,32 @@
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
         transition: color $transitionSpeed $transitionFunction;
+        height: 100%;
+        position: relative;
 
-        &:hover {
-            color: var(--blue);
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--blue);
+            transition: width $transitionSpeed $transitionFunction;
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                color: var(--blue);
+
+                &::before {
+                    width: 125%;
+                }
+            }
         }
 
         &-icon {
@@ -57,24 +80,6 @@
 
 .nav-dropdown {
     .nav__link {
-        transition: border-bottom $transitionSpeed $transitionFunction;
-        height: 100%;
-        position: relative;
-
-        display: flex;
-        align-items: center;
-
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: var(--blue);
-            transition: width $transitionSpeed $transitionFunction;
-        }
 
         &:hover {
             color: var(--primaryTwo);
@@ -126,14 +131,6 @@
         &:hover {
             .nav__link {
                 color: var(--blue);
-            }
-
-            &._active {
-                .nav__link {
-                    &::before {
-                        width: 125%;
-                    }
-                }
             }
         }
 
