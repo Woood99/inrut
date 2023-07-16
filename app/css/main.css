@@ -1046,7 +1046,7 @@ textarea.input-reset {
   color: var(--gray);
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .toggle-checkbox {
@@ -2053,7 +2053,7 @@ textarea.input-reset {
 .history-changes .bid .bid-import__title span {
   margin-left: 6px;
   color: var(--primaryTwo);
-  font-weight: 400;
+  font-weight: 500;
   font-size: var(--very-small-fz);
   line-height: 1;
   margin-top: 2px;
@@ -9915,11 +9915,11 @@ textarea.input-reset {
   grid-template-columns: 38.7396694215% max-content 1fr;
   padding: 32px 24px;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .object-info-secondary__time-geo span {
   display: -webkit-box;
@@ -10083,6 +10083,9 @@ textarea.input-reset {
   .object-info-secondary:hover {
     -webkit-box-shadow: var(--shadow-primary);
     box-shadow: var(--shadow-primary);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
 }
 @media (max-width: 1212px) {
@@ -17042,7 +17045,7 @@ textarea.input-reset {
   }
 }
 .bid__messages .message-item__text {
-  border-radius: 2px 12px 2px 12px;
+  border-radius: 12px 12px 2px 12px;
 }
 .bid__messages .message-item__text::after {
   content: "";
@@ -17078,7 +17081,7 @@ textarea.input-reset {
 
 .bid-messages__wrapper {
   border: 1px solid var(--primary200);
-  border-radius: 2px 12px 12px 12px;
+  border-radius: 12px;
   margin-top: 24px;
 }
 .bid-messages .simplebar-primary {
@@ -17671,7 +17674,9 @@ textarea.input-reset {
   .control-cards__content--vertical .card-primary__text {
     margin-top: 32px;
     display: -webkit-box;
-    grid-column: 1/-1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
   }
   .control-cards__content--vertical .card-primary__price {
     margin-top: 0;
@@ -17702,7 +17707,6 @@ textarea.input-reset {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
-    border-top: none;
   }
   .control-cards__content--vertical .card-primary--improved .card-primary__user {
     max-width: -webkit-max-content;

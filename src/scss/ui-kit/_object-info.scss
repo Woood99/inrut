@@ -144,7 +144,8 @@ padding: 32px 24px;
     padding: 32px 24px;
 
     -webkit-tap-highlight-color: transparent;
-    transition: box-shadow $transitionSpeed $transitionFunction;
+    transition: box-shadow $transitionSpeed $transitionFunction,
+    transform $transitionSpeed $transitionFunction;
 
     &__time-geo {
         span {
@@ -301,6 +302,7 @@ padding: 32px 24px;
     @media (min-width:$desktop) {
         &:hover {
             box-shadow: var(--shadow-primary);
+            transform: translateY(-3px);
         }
     }
 
