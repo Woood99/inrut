@@ -7,6 +7,7 @@ const bookConsultation = () => {
     const agentsContainer = container.querySelector('.book-consultation__agents');
     const agentsList = container.querySelectorAll('.card-agent');
     const button = container.querySelector('.book-consultation__btn');
+    const navArrows = container.querySelectorAll('.book-consultation__nav .nav-arrow-secondary');
     agentToggle.addEventListener('input', () => {
         if (agentToggle.checked) {
             agentsContainer.classList.add('_active');
@@ -15,6 +16,7 @@ const bookConsultation = () => {
                 top: modal.scrollHeight,
                 behavior: "smooth",
             });
+            navArrows.forEach(arrow => arrow.classList.remove('_disabled'));
         } else {
             agentsContainer.classList.remove('_active');
             movingButtonDefault();
@@ -22,6 +24,7 @@ const bookConsultation = () => {
                 top: 0,
                 behavior: "smooth",
             });
+            navArrows.forEach(arrow => arrow.classList.add('_disabled'));
         }
     })
     agentsList.forEach(currentAgent => {

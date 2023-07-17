@@ -89,6 +89,9 @@ export const bookConsultationValidate = () => {
             if (formEventInput) validate();
         })
     })
+    nameInput.addEventListener('input', () => {
+        nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+    })
     agentToggle.addEventListener('input', () => {
         if (!agentToggle.checked) {
             cardsAgent.forEach(card => {

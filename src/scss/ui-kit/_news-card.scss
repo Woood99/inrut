@@ -1,0 +1,50 @@
+.news-card {
+    display: flex;
+    flex-direction: column;
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__tags {
+        display: flex;
+        align-items: center;
+    }
+
+    &__tag {
+        font-size: var(--small-fz);
+    line-height: var(--small-lh);
+    color: var(--white);
+    font-weight: 500;
+    background-color: var(--blue);
+    padding: 4px 8px;
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+        &:not(:first-child){
+            margin-left: 8px;
+        }
+    }
+
+    &__time {
+        margin-left: 16px;
+        color: var(--primaryTwo);
+        font-size: var(--small-fz);
+        line-height: var(--small-fz);
+        font-weight: 400;
+    }
+
+    &__title {
+        margin-top: 16px;
+    }
+
+    &__descr {
+        margin-top: 16px;
+        flex-grow: 1;
+    }
+
+    &__user {
+        margin-top: 16px;
+    }
+}
+

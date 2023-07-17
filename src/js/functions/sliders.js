@@ -25,6 +25,21 @@ import {
 
 
 function initSliders() {
+    if (document.querySelector('.book-consultation__agents')) {
+        const slider = document.querySelector('.book-consultation__agents');
+        new Swiper(slider, {
+            observer: true,
+            observeParents: true,
+            autoHeight: true,
+            slidesPerView: 3,
+            spaceBetween: 16,
+            speed: 800,
+            navigation: {
+                prevEl: slider.closest('.book-consultation').querySelector('.nav-arrow-secondary--prev'),
+                nextEl: slider.closest('.book-consultation').querySelector('.nav-arrow-secondary--next'),
+            },
+        });
+    }
     if (document.querySelector('.home-stories__items')) {
         const slider = document.querySelector('.home-stories__items');
         new Swiper(slider, {

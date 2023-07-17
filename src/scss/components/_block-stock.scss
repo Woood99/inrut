@@ -8,11 +8,19 @@
     }
 
     &__title {}
-
+    .tabs-primary{
+        &__container{
+            margin-top: 32px;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+    }
     &__nav {
         display: flex;
         align-items: center;
-
+        justify-content: end;
+        margin-bottom: 24px;
         .nav-arrow-secondary--next {
             margin-left: 10px;
         }
@@ -78,7 +86,17 @@
             }
         }
     }
-
+    &__ribbon{
+        &-btn{
+            margin-left: auto;
+            margin-bottom: 24px;
+        }
+        &-items{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-column-gap: 32px;
+        }
+    }
     &__btn {
         margin-top: 24px;
         width: 100%;

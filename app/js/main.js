@@ -4511,6 +4511,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-meeting-show');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'newsline');
 
 // ========================================================================================
 
@@ -4550,6 +4551,7 @@ const bookConsultation = () => {
   const agentsContainer = container.querySelector('.book-consultation__agents');
   const agentsList = container.querySelectorAll('.card-agent');
   const button = container.querySelector('.book-consultation__btn');
+  const navArrows = container.querySelectorAll('.book-consultation__nav .nav-arrow-secondary');
   agentToggle.addEventListener('input', () => {
     if (agentToggle.checked) {
       agentsContainer.classList.add('_active');
@@ -4558,6 +4560,7 @@ const bookConsultation = () => {
         top: modal.scrollHeight,
         behavior: "smooth"
       });
+      navArrows.forEach(arrow => arrow.classList.remove('_disabled'));
     } else {
       agentsContainer.classList.remove('_active');
       movingButtonDefault();
@@ -4565,6 +4568,7 @@ const bookConsultation = () => {
         top: 0,
         behavior: "smooth"
       });
+      navArrows.forEach(arrow => arrow.classList.add('_disabled'));
     }
   });
   agentsList.forEach(currentAgent => {
@@ -4893,7 +4897,7 @@ const cardStockPopup = containerSelector => {
                         ${cardSecondary.querySelector('.card-stock-secondary__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
-                        <a href="#" class="stock-popup__link">Смотреть</a>
+                    <a href="${cardSecondary.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                             ${cardSecondary.querySelector('.card-stock-secondary__user').innerHTML}
                         </div>
@@ -4941,7 +4945,7 @@ const cardStockPopup = containerSelector => {
                         ${cardThird.querySelector('.card-stock-third__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
-                        <a href="#" class="stock-popup__link">Смотреть</a>
+                    <a href="${cardThird.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                         ${cardThird.querySelector('.card-stock-third__user').innerHTML}
                         </div>
@@ -4990,7 +4994,7 @@ const cardStockPopup = containerSelector => {
                          ${cardStock.dataset.stockDescr}
                      </div>
                      <div class="stock-popup__row-bottom">
-                         <a href="#" class="stock-popup__link">Смотреть</a>
+                         <a href="${cardStock.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                          <div class="stock-popup__user user-info">
                             ${cardStock.querySelector('.user-info').innerHTML}
                          </div>
@@ -6428,6 +6432,9 @@ const bookConsultationValidate = () => {
     el.addEventListener('input', () => {
       if (formEventInput) validate();
     });
+  });
+  nameInput.addEventListener('input', () => {
+    nameInput.value = nameInput.value.replace(/[0-9]/g, '');
   });
   agentToggle.addEventListener('input', () => {
     if (!agentToggle.checked) {
@@ -9678,6 +9685,21 @@ swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 // =========================================================================================
 
 function initSliders() {
+  if (document.querySelector('.book-consultation__agents')) {
+    const slider = document.querySelector('.book-consultation__agents');
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      observer: true,
+      observeParents: true,
+      autoHeight: true,
+      slidesPerView: 3,
+      spaceBetween: 16,
+      speed: 800,
+      navigation: {
+        prevEl: slider.closest('.book-consultation').querySelector('.nav-arrow-secondary--prev'),
+        nextEl: slider.closest('.book-consultation').querySelector('.nav-arrow-secondary--next')
+      }
+    });
+  }
   if (document.querySelector('.home-stories__items')) {
     const slider = document.querySelector('.home-stories__items');
     new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
