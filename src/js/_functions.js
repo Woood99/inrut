@@ -134,6 +134,67 @@ popup(null, 'suggest-object');
 popup(null, 'history-changes');
 popup({
     isOpen: (settingsModal) => {
+        const container = settingsModal.container;
+        const images = container.querySelectorAll('.furnishing-sets__tabs');
+        images.forEach(image => {
+            let height = 0;
+            const title = container.querySelector('.object-apart-renov__title');
+            const btns = container.querySelector('.furnishing-sets__btns');
+            const descr = image.querySelector('.furnishing-sets__descr');
+            const nav = container.querySelector('.tabs-primary__btns');
+            if (title) {
+                height += title.offsetHeight;
+                height += 16;
+            }
+            if (btns) {
+                height += btns.offsetHeight;
+                height += 16;
+            }
+            if (descr) {
+                height += descr.offsetHeight;
+                height += 16;
+            }
+            if (nav) {
+                height += nav.offsetHeight;
+                height += 24;
+            }
+            const padding = 48 + 32;
+            const bottomPadding = 32;
+            height += (padding + 17 + bottomPadding);
+                image.style.height = `calc(100vh - ${height}px)`;
+        });
+    }
+}, 'furnishing-sets-popup');
+popup({
+    isOpen: (settingsModal) => {
+        const container = settingsModal.container;
+        const images = container.querySelectorAll('.object-apart-renov__item');
+        images.forEach(image => {
+            let height = 0;
+            const title = container.querySelector('.object-apart-renov__title');
+            const nav = container.querySelector('.tabs-primary__btns');
+            const descr = image.querySelector('.object-apart-renov__descr');
+            if (title) {
+                height += title.offsetHeight;
+                height += 16;
+            }
+            if (nav) {
+                height += nav.offsetHeight;
+                height += 24;
+            }
+            if (descr) {
+                height += descr.offsetHeight;
+                height += 16;
+            }
+            const padding = 48 + 32;
+            const bottomPadding = 32;
+            height += (padding + 17 + bottomPadding);
+                image.style.height = `calc(100vh - ${height}px)`;
+        })
+    }
+}, 'object-apart-renov-popup');
+popup({
+    isOpen: (settingsModal) => {
         if (settingsModal.currentBtn.closest('.news-card')) {
             const currentId = settingsModal.currentBtn.closest('.news-card').dataset.newslineId;
             const modalCards = settingsModal.container.querySelectorAll('.news-card');

@@ -4513,6 +4513,67 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: settingsModal => {
+    const container = settingsModal.container;
+    const images = container.querySelectorAll('.furnishing-sets__tabs');
+    images.forEach(image => {
+      let height = 0;
+      const title = container.querySelector('.object-apart-renov__title');
+      const btns = container.querySelector('.furnishing-sets__btns');
+      const descr = image.querySelector('.furnishing-sets__descr');
+      const nav = container.querySelector('.tabs-primary__btns');
+      if (title) {
+        height += title.offsetHeight;
+        height += 16;
+      }
+      if (btns) {
+        height += btns.offsetHeight;
+        height += 16;
+      }
+      if (descr) {
+        height += descr.offsetHeight;
+        height += 16;
+      }
+      if (nav) {
+        height += nav.offsetHeight;
+        height += 24;
+      }
+      const padding = 48 + 32;
+      const bottomPadding = 32;
+      height += padding + 17 + bottomPadding;
+      image.style.height = `calc(100vh - ${height}px)`;
+    });
+  }
+}, 'furnishing-sets-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  isOpen: settingsModal => {
+    const container = settingsModal.container;
+    const images = container.querySelectorAll('.object-apart-renov__item');
+    images.forEach(image => {
+      let height = 0;
+      const title = container.querySelector('.object-apart-renov__title');
+      const nav = container.querySelector('.tabs-primary__btns');
+      const descr = image.querySelector('.object-apart-renov__descr');
+      if (title) {
+        height += title.offsetHeight;
+        height += 16;
+      }
+      if (nav) {
+        height += nav.offsetHeight;
+        height += 24;
+      }
+      if (descr) {
+        height += descr.offsetHeight;
+        height += 16;
+      }
+      const padding = 48 + 32;
+      const bottomPadding = 32;
+      height += padding + 17 + bottomPadding;
+      image.style.height = `calc(100vh - ${height}px)`;
+    });
+  }
+}, 'object-apart-renov-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  isOpen: settingsModal => {
     if (settingsModal.currentBtn.closest('.news-card')) {
       const currentId = settingsModal.currentBtn.closest('.news-card').dataset.newslineId;
       const modalCards = settingsModal.container.querySelectorAll('.news-card');
@@ -6922,21 +6983,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const furnishingSets = () => {
-  const container = document.querySelector('.furnishing-sets');
-  if (!container) return;
-  container.querySelectorAll('.furnishing-sets__item').forEach(item => {
-    const btns = item.querySelectorAll('.furnishing-sets__btn');
-    const tabs = item.querySelectorAll('.furnishing-sets__tab');
-    btns.forEach((btn, indexBtn) => {
-      btn.addEventListener('click', () => {
-        btns.forEach(btn => btn.classList.remove('_active'));
-        btn.classList.add('_active');
-        tabs.forEach((tab, indexTab) => {
-          if (indexBtn !== indexTab) {
-            tab.setAttribute('hidden', '');
-          } else {
-            tab.removeAttribute('hidden');
-          }
+  const containers = document.querySelectorAll('.furnishing-sets');
+  if (!containers) return;
+  containers.forEach(container => {
+    container.querySelectorAll('.furnishing-sets__item').forEach(item => {
+      const btns = item.querySelectorAll('.furnishing-sets__btn');
+      const tabs = item.querySelectorAll('.furnishing-sets__tab');
+      btns.forEach((btn, indexBtn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach(btn => btn.classList.remove('_active'));
+          btn.classList.add('_active');
+          tabs.forEach((tab, indexTab) => {
+            if (indexBtn !== indexTab) {
+              tab.setAttribute('hidden', '');
+            } else {
+              tab.removeAttribute('hidden');
+            }
+          });
         });
       });
     });
