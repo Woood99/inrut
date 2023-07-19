@@ -28,7 +28,20 @@
             margin-left: 8px;
         }
     }
-
+    &__images{
+        margin-top: 16px;
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     grid-column-gap: 16px;
+     grid-row-gap: 16px;
+    }
+    &__image{
+        border-radius: 12px;
+        padding-bottom: percent(195, 292);
+        img{
+            border-radius: 12px;
+        }
+    }
     &__time {
         margin-left: 16px;
         color: var(--primaryTwo);

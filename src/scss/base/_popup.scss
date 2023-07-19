@@ -446,10 +446,10 @@
                 width: 100%;
                 min-height: calc(var(--vh) - 50px);
                 margin-top: 50px;
-                @media (max-width:$smallTablet-max) {
+                @media (max-width:$desktop){
                     margin-top: 0;
                     border-radius: 0;
-                    padding: 65px 0 32px;
+                    padding: 65px 0 32px; 
                 }
             }
         }
@@ -703,7 +703,7 @@
             &__container {
                 border-radius: 12px 0 0 12px;
                 padding: 65px;
-                width: 500px;
+                width: 750px;
 
                 @media (max-width:$desktop) {
                     border-radius: 0;
@@ -3717,6 +3717,12 @@
     }
      .furnishing-sets__tabs{
         min-height: 700px;
+        @media (max-width:$desktop){
+             min-height: 500px; 
+        }
+        @media (max-width:$smallTablet-max){
+             min-height: 400px; 
+        }
      }
 }
 .object-apart-renov-popup{
@@ -3739,6 +3745,12 @@
         }
         &__item{
             min-height: 700px;
+            @media (max-width:$desktop){
+                min-height: 500px; 
+           }
+           @media (max-width:$smallTablet-max){
+            min-height: 400px; 
+       }
         }
     }
 }
