@@ -4201,6 +4201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_clientPage__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/clientPage */ "./src/js/components/clientPage.js");
 /* harmony import */ var _components_requisites__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/requisites */ "./src/js/components/requisites.js");
 /* harmony import */ var _components_navDropdown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/navDropdown */ "./src/js/components/navDropdown.js");
+/* harmony import */ var _components_videoModal__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/videoModal */ "./src/js/components/videoModal.js");
+
 
 
 
@@ -4313,7 +4315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoriteChoicePopup)();
   (0,_components_clientPage__WEBPACK_IMPORTED_MODULE_35__.clientPage)();
   (0,_components_requisites__WEBPACK_IMPORTED_MODULE_36__["default"])();
-
+  (0,_components_videoModal__WEBPACK_IMPORTED_MODULE_38__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4570,6 +4572,22 @@ __webpack_require__.r(__webpack_exports__);
       height += padding + 17 + bottomPadding;
       image.style.height = `calc(100vh - ${height}px)`;
     });
+    const currentItem = settingsModal.currentBtn.closest('.object-apart-renov__item');
+    const currentIndex = [...currentItem.parentNode.children].indexOf(currentItem);
+    container.querySelectorAll('.tabs-primary__btns .tabs__title').forEach((title, index) => {
+      if (index === currentIndex) {
+        title.classList.add('_tab-active');
+      } else {
+        title.classList.remove('_tab-active');
+      }
+    });
+    container.querySelectorAll('.tabs__content .tabs__body').forEach((content, index) => {
+      if (index === currentIndex) {
+        content.removeAttribute('hidden');
+      } else {
+        content.setAttribute('hidden', '');
+      }
+    });
   }
 }, 'object-apart-renov-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
@@ -4590,6 +4608,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 }, 'newsline');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'videos-popup');
 
 // ========================================================================================
 
@@ -9277,6 +9296,63 @@ const videoBlock = currentVideoBlock => {
 
 /***/ }),
 
+/***/ "./src/js/components/videoModal.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/videoModal.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _videoBlock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./videoBlock */ "./src/js/components/videoBlock.js");
+
+
+const videoModal = () => {
+  const targets = document.querySelectorAll('[data-video-modal]');
+  if (targets.length === 0) return;
+  targets.forEach(target => {
+    target.addEventListener('click', () => {
+      const modalHTML = `
+            <div class="video-modal">
+            <div class="video-modal__container">
+                <button class="btn-reset video-modal__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="video-modal__content review-modal-content">
+                 <div class="video-block video-block--auto">
+                 <button type="button" class="btn btn-reset video-block__button" data-src="${target.dataset.videoModal}">
+                     ${target.querySelector('.video-card__image').innerHTML}
+                     <div class="video-block__video">
+ 
+                     </div>
+                     <div class="video-block__play">
+                         <svg>
+                             <use xlink:href="img/sprite.svg#play"></use>
+                         </svg>
+                     </div>
+                 </button>
+             </div>
+                 </div>
+            </div>
+            </div>
+            `;
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.video-modal', 300);
+      document.querySelector('.video-modal .video-block img').classList.add('video-block__poster');
+      (0,_videoBlock__WEBPACK_IMPORTED_MODULE_1__["default"])(document.querySelector('.video-modal .video-block'));
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (videoModal);
+
+/***/ }),
+
 /***/ "./src/js/components/wallet.js":
 /*!*************************************!*\
   !*** ./src/js/components/wallet.js ***!
@@ -11154,6 +11230,15 @@ const modal = function (modalHTML, container) {
       settingsModal.modal.classList.remove('is-open');
       settingsModal.container.classList.remove('open');
       if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
+        if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
+          if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
+            enableScrollClose();
+          }
+        } else {
+          enableScrollClose();
+        }
+      }
+      function enableScrollClose() {
         (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';

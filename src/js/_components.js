@@ -75,6 +75,7 @@ import {
 } from './components/clientPage';
 import requisites from './components/requisites'
 import navDropdown from './components/navDropdown';
+import videoModal from './components/videoModal';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -150,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     favoriteChoicePopup();
     clientPage();
     requisites();
-
+    videoModal();
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

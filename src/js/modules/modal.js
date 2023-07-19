@@ -54,10 +54,21 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             settingsModal.modal.classList.remove('is-open');
             settingsModal.container.classList.remove('open');
             if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
+                if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
+                    if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
+                        enableScrollClose();
+                    }
+                } else {
+                    enableScrollClose();
+                }
+            }
+
+            function enableScrollClose() {
                 enableScroll();
                 document.body.style.scrollBehavior = 'auto';
                 document.documentElement.style.scrollBehavior = 'auto';
             }
+
             setTimeout(() => {
                 settingsModal.modal.remove();
             }, settingsModal.speed);

@@ -6037,11 +6037,14 @@
                                 <div class="block-stock__tabs tabs-primary">
                                     <div data-tabs class="tabs-primary__inner">
                                         <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
-                                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                            <button type="button" class="btn btn-reset tabs__title">
                                                 Акции, спецпредложения
                                             </button>
                                             <button type="button" class="btn btn-reset tabs__title">
                                                 Лента
+                                            </button>
+                                            <button type="button" class="btn btn-reset tabs__title  _tab-active">
+                                            Видео
                                             </button>
                                         </nav>
                                         <div class="tabs-primary__container">
@@ -6389,6 +6392,37 @@
                                                             Смотреть все
                                                         </button>
                                                     </div>
+                                                </div>
+                                                <div class="tabs__body" hidden>
+                                                    <div class="block-stock__video">
+                                                        <div class="block-stock__video-items">
+                                                            <article class="video-card" data-video-modal="https://www.youtube.com/embed/OaFmmd2Ium8">
+                                                                <div class="video-card__image ibg">
+                                                                    <picture>
+                                                                        <source srcset="./img/card-1.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                                <h3 class="video-card__title">
+                                                                    БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                                                                </h3>
+                                                            </article>
+                                                            <article class="video-card" data-video-modal="https://www.youtube.com/embed/PTAxkodULFE">
+                                                                <div class="video-card__image ibg">
+                                                                    <picture>
+                                                                        <source srcset="./img/card-6.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                                <h3 class="video-card__title">
+                                                                    БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                                                                </h3>
+                                                            </article>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-reset btn-secondary block-stock__btn" data-popup-path="videos-popup">
+                                                        Смотреть все
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -36680,7 +36714,109 @@
         </div>
     </div>
 </div>
-
+<div class="popup popup-primary popup-primary--right popup-primary--videos-popup">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="videos-popup">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content videos-popup">
+            <h2 class="videos-popup__title title-2">Видео</h2>
+            <div class="videos-popup__items">
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/OaFmmd2Ium8">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-1.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/PTAxkodULFE">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-6.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article> 
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/OaFmmd2Ium8">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-1.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/PTAxkodULFE">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-6.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/OaFmmd2Ium8">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-1.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/PTAxkodULFE">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-6.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article> 
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/OaFmmd2Ium8">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-1.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+                <article class="video-card" data-video-modal="https://www.youtube.com/embed/PTAxkodULFE">
+                    <div class="video-card__image ibg">
+                        <picture>
+                            <source srcset="./img/card-6.webp" type="image/webp">
+                            <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                        </picture>
+                    </div>
+                    <h3 class="video-card__title">
+                        БАРН ХАУЗ! Интервью с собственником! СТИЛЬНЫЙ ДОМ В СОЧИ!
+                    </h3>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="popup popup-primary popup-primary--right popup-primary--screen-demonstation">
