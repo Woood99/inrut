@@ -13175,6 +13175,7 @@ textarea.input-reset {
   background-color: var(--primary100);
   border-radius: 12px;
   padding: 16px;
+  min-height: 200px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
@@ -13841,6 +13842,9 @@ textarea.input-reset {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding: 16px;
+  border: 1px solid var(--primary100);
+  border-radius: 12px;
 }
 .news-card__top {
   display: -webkit-box;
@@ -13891,8 +13895,17 @@ textarea.input-reset {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+.news-card__more {
+  margin-top: 12px;
+  color: var(--blue);
+  text-align: start;
+}
 .news-card__user {
+  border-top: 1px solid var(--primary100);
+  width: calc(100% + 32px);
+  margin-left: -16px;
   margin-top: 16px;
+  padding: 16px 16px 0;
 }
 
 .logo {
@@ -20544,7 +20557,7 @@ textarea.input-reset {
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 32px;
+  grid-column-gap: 16px;
 }
 .block-stock__btn {
   margin-top: 24px;
@@ -21093,6 +21106,9 @@ textarea.input-reset {
   .furnishing-sets__tabs {
     height: 350px;
   }
+}
+.furnishing-sets__more {
+  color: var(--blue);
 }
 .furnishing-sets__btns {
   -ms-grid-column: 1;
@@ -25588,28 +25604,21 @@ textarea.input-reset {
 .object-apart-renov__tags {
   position: absolute;
   z-index: 2;
-  top: 15px;
-  right: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  bottom: 16px;
+  left: 16px;
 }
 .object-apart-renov__tag {
-  font-size: var(--small-fz);
-  line-height: var(--small-lh);
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
   color: var(--blue);
   font-weight: 500;
   padding: 6.5px 8px;
   background-color: var(--white);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
-  border-radius: 8px;
-}
-.object-apart-renov__tag:not(:last-child) {
-  margin-right: 5px;
+  border-radius: 10px;
 }
 .object-apart-renov__mark {
   position: absolute;

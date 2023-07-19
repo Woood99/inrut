@@ -4511,7 +4511,24 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-meeting-show');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'newsline');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  isOpen: settingsModal => {
+    if (settingsModal.currentBtn.closest('.news-card')) {
+      const currentId = settingsModal.currentBtn.closest('.news-card').dataset.newslineId;
+      const modalCards = settingsModal.container.querySelectorAll('.news-card');
+      modalCards.forEach(card => {
+        if (card.hasAttribute('data-newsline-id') && card.dataset.newslineId === currentId) {
+          setTimeout(() => {
+            settingsModal.modal.scrollTo({
+              top: card.offsetTop - 16,
+              behavior: 'smooth'
+            });
+          }, 1);
+        }
+      });
+    }
+  }
+}, 'newsline');
 
 // ========================================================================================
 
@@ -9499,8 +9516,8 @@ const popup = (options, modalName) => {
     focusElements: ['a[href]', 'input', 'select', 'textarea', 'button', 'iframe', '[contenteditable]', '[tabindex]:not([tabindex^="-"])']
   };
   settingsModal.btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      modalOpen();
+    btn.addEventListener('click', e => {
+      modalOpen(e.target);
     });
   });
   modal.querySelectorAll('.js-popup-close').forEach(el => {
@@ -9557,8 +9574,8 @@ const popup = (options, modalName) => {
       focusCatch(e);
     }
   });
-  function modalOpen() {
-    settingsModal.previousActiveElement = document.activeElement;
+  function modalOpen(target) {
+    settingsModal.currentBtn = target, settingsModal.previousActiveElement = document.activeElement;
     if (settingsModal.isOpen) return;
     settingsModal.container.scrollTo(0, 0);
     settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);

@@ -1,6 +1,9 @@
 .news-card {
     display: flex;
     flex-direction: column;
+    padding: 16px;
+    border: 1px solid var(--primary100);
+    border-radius: 12px;
     &__top {
         display: flex;
         align-items: center;
@@ -42,9 +45,17 @@
         margin-top: 16px;
         flex-grow: 1;
     }
-
+    &__more{
+        margin-top: 12px;
+        color: var(--blue);
+   text-align: start;
+    }
     &__user {
+        border-top: 1px solid var(--primary100);
+        width: calc(100% + 32px);
+        margin-left: -16px;
         margin-top: 16px;
+        padding: 16px 16px 0;
     }
 }
 

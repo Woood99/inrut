@@ -34,8 +34,8 @@ const popup = (options, modalName) => {
         ],
     };
     settingsModal.btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modalOpen();
+        btn.addEventListener('click', (e) => {
+            modalOpen(e.target);
         })
     })
     modal.querySelectorAll('.js-popup-close').forEach(el => {
@@ -95,7 +95,8 @@ const popup = (options, modalName) => {
     });
 
 
-    function modalOpen() {
+    function modalOpen(target) {
+       settingsModal.currentBtn = target,
         settingsModal.previousActiveElement = document.activeElement;
         if (settingsModal.isOpen) return;
         settingsModal.container.scrollTo(0, 0);
