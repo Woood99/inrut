@@ -13100,6 +13100,9 @@ textarea.input-reset {
 }
 .card-scheme__content {
   padding: 12px 16px 24px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 .card-scheme__price {
   margin-top: 16px;
@@ -13161,6 +13164,37 @@ textarea.input-reset {
 .card-scheme__mortgage span {
   font-weight: 500;
   color: var(--blue);
+}
+.card-scheme__tags {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.card-scheme__tags span {
+  background-color: var(--primary100);
+  border-radius: 8px;
+  color: var(--dark);
+  height: 24px;
+  padding: 0 12px;
+  font-size: var(--very-small-fz);
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 .card-scheme__favorite {
   position: absolute;
@@ -19334,9 +19368,18 @@ textarea.input-reset {
   padding: 15px;
   margin: -15px;
 }
+.room-body__items .swiper-wrapper {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.room-body__items .swiper-slide {
+  height: auto;
+}
 .room-body__items .card-scheme {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%;
 }
 .room-body__items .card-scheme__container {
   width: 100%;
@@ -20052,6 +20095,8 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .genplan-mark__tags span {
