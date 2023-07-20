@@ -6996,14 +6996,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const galleryPrimary = () => {
-  const items = document.querySelectorAll('#object-gallery');
-  if (items.length === 0) return;
-  items.forEach(gallery => {
+  const objectGalleryItems = document.querySelectorAll('.object-gallery');
+  const defaultGalleryItems = document.querySelectorAll('.default-gallery');
+  if (objectGalleryItems.length >= 1 && document.querySelector('main').classList.contains('object')) {
+    objectGalleryItems.forEach((gallery, index) => objectGallery(gallery, index));
+  }
+  if (defaultGalleryItems.length >= 1) {
+    defaultGalleryItems.forEach((gallery, index) => createGallery(gallery, `gallery-primary-container--default-${index + 1}`, 'default-gallery__item'));
+  }
+  function objectGallery(gallery, index) {
+    const container = createGallery(gallery, `gallery-primary-container--object-${index + 1}`, 'object-gallery__item');
+    const title = document.querySelector('[data-main-info-title]');
+    const address = document.querySelector('[data-main-info-address]');
+    const price = document.querySelector('[data-main-info-price]');
+    const btns = document.querySelectorAll('[data-main-info-btn]');
+    let btnsHTML = '';
+    if (btns.length) {
+      btns.forEach(btn => {
+        btn.classList.add('gallery-info__btn');
+        btnsHTML += btn.outerHTML;
+      });
+    }
+    let infoHTML = `
+            <div class="gallery-info">
+                <h2 class="gallery-info__title title-2">
+                    ${title ? title.innerHTML : ''}
+                </h2>
+                <div class="gallery-info__price">
+                    ${price ? price.innerHTML : ''}
+                </div>
+                <div class="gallery-info__address">
+                    ${address ? address.innerHTML : ''}
+                </div>
+                ${btnsHTML}
+            </div>
+            `;
+    container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
+    container.querySelectorAll('[data-main-info-btn]').forEach(btn => btn.removeAttribute('data-main-info-btn'));
+  }
+  function createGallery(gallery, containerEl, itemEl) {
     const galleryContainer = (0,lightgallery__WEBPACK_IMPORTED_MODULE_0__["default"])(gallery, {
       plugins: [lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_1__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"]],
       licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-      selector: '.object-gallery__item',
-      addClass: 'gallery-primary-container gallery-primary-container--object',
+      selector: `.${itemEl}`,
+      addClass: `gallery-primary-container ${containerEl}`,
       speed: 400,
       thumbnail: true,
       animateThumb: true,
@@ -7055,42 +7091,15 @@ const galleryPrimary = () => {
             </div>
         </button>
         `;
-    const container = document.querySelector('.gallery-primary-container--object');
+    const container = document.querySelector(`.${containerEl}`);
     container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
     container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
     container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
     container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
     container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
     container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
-    if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
-      const title = document.querySelector('[data-main-info-title]');
-      const address = document.querySelector('[data-main-info-address]');
-      const price = document.querySelector('[data-main-info-price]');
-      const btns = document.querySelectorAll('[data-main-info-btn]');
-      let btnsHTML = '';
-      if (btns.length) {
-        btns.forEach(btn => {
-          btn.classList.add('gallery-info__btn');
-          btnsHTML += btn.outerHTML;
-        });
-      }
-      const infoHTML = `
-            <div class="gallery-info">
-                <h2 class="gallery-info__title title-2">
-                    ${title ? title.innerHTML : ''}
-                </h2>
-                <div class="gallery-info__price">
-                    ${price ? price.innerHTML : ''}
-                </div>
-                <div class="gallery-info__address">
-                    ${address ? address.innerHTML : ''}
-                </div>
-                ${btnsHTML}
-            </div>
-            `;
-      container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
-    }
-  });
+    return itemEl === 'object-gallery__item' ? container : undefined;
+  }
 };
 const galleryStories = () => {
   const items = document.querySelectorAll('.stories');
@@ -9259,37 +9268,39 @@ const videoModal = () => {
   const targets = document.querySelectorAll('[data-video-modal]');
   if (targets.length === 0) return;
   targets.forEach(target => {
-    target.addEventListener('click', () => {
-      const modalHTML = `
-            <div class="video-modal">
-            <div class="video-modal__container">
-                <button class="btn-reset video-modal__close" aria-label="Закрыть модальное окно">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#x"></use>
-                    </svg>
-                    <span>Закрыть</span>
-                </button>
-                 <div class="video-modal__content review-modal-content">
-                 <div class="video-block video-block--auto">
-                 <button type="button" class="btn btn-reset video-block__button" data-src="${target.dataset.videoModal}">
-                     ${target.querySelector('.video-card__image').innerHTML}
-                     <div class="video-block__video">
- 
-                     </div>
-                     <div class="video-block__play">
-                         <svg>
-                             <use xlink:href="img/sprite.svg#play"></use>
-                         </svg>
-                     </div>
-                 </button>
-             </div>
+    target.addEventListener('click', e => {
+      if (!e.target.closest('.dots-dropdown')) {
+        const modalHTML = `
+                <div class="video-modal">
+                <div class="video-modal__container">
+                    <button class="btn-reset video-modal__close" aria-label="Закрыть модальное окно">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#x"></use>
+                        </svg>
+                        <span>Закрыть</span>
+                    </button>
+                     <div class="video-modal__content review-modal-content">
+                     <div class="video-block video-block--auto">
+                     <button type="button" class="btn btn-reset video-block__button" data-src="${target.dataset.videoModal}">
+                         ${target.querySelector('.video-card__image').innerHTML}
+                         <div class="video-block__video">
+     
+                         </div>
+                         <div class="video-block__play">
+                             <svg>
+                                 <use xlink:href="img/sprite.svg#play"></use>
+                             </svg>
+                         </div>
+                     </button>
                  </div>
-            </div>
-            </div>
-            `;
-      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.video-modal', 300);
-      document.querySelector('.video-modal .video-block img').classList.add('video-block__poster');
-      (0,_videoBlock__WEBPACK_IMPORTED_MODULE_1__["default"])(document.querySelector('.video-modal .video-block'));
+                     </div>
+                </div>
+                </div>
+                `;
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.video-modal', 300);
+        document.querySelector('.video-modal .video-block img').classList.add('video-block__poster');
+        (0,_videoBlock__WEBPACK_IMPORTED_MODULE_1__["default"])(document.querySelector('.video-modal .video-block'));
+      }
     });
   });
 };

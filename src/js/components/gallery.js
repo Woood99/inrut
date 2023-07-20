@@ -4,14 +4,53 @@ import thumbnail from 'lightgallery/plugins/thumbnail';
 import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 export const galleryPrimary = () => {
-    const items = document.querySelectorAll('#object-gallery');
-    if (items.length === 0) return;
-    items.forEach(gallery => {
+    const objectGalleryItems = document.querySelectorAll('.object-gallery');
+    const defaultGalleryItems = document.querySelectorAll('.default-gallery');
+    if (objectGalleryItems.length >= 1 && document.querySelector('main').classList.contains('object')) {
+        objectGalleryItems.forEach((gallery, index) => objectGallery(gallery, index));
+    }
+    if (defaultGalleryItems.length >= 1) {
+        defaultGalleryItems.forEach((gallery, index) => createGallery(gallery, `gallery-primary-container--default-${index+1}`,'default-gallery__item'));
+    }
+
+    function objectGallery(gallery, index) {
+        const container = createGallery(gallery, `gallery-primary-container--object-${index+1}`,'object-gallery__item');
+        const title = document.querySelector('[data-main-info-title]');
+        const address = document.querySelector('[data-main-info-address]');
+        const price = document.querySelector('[data-main-info-price]');
+        const btns = document.querySelectorAll('[data-main-info-btn]');
+        let btnsHTML = '';
+        if (btns.length) {
+            btns.forEach(btn => {
+                btn.classList.add('gallery-info__btn');
+                btnsHTML += btn.outerHTML;
+            })
+        }
+        let infoHTML = `
+            <div class="gallery-info">
+                <h2 class="gallery-info__title title-2">
+                    ${title ? title.innerHTML : ''}
+                </h2>
+                <div class="gallery-info__price">
+                    ${price ? price.innerHTML : ''}
+                </div>
+                <div class="gallery-info__address">
+                    ${address ? address.innerHTML : ''}
+                </div>
+                ${btnsHTML}
+            </div>
+            `;
+        container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
+        container.querySelectorAll('[data-main-info-btn]').forEach(btn => btn.removeAttribute('data-main-info-btn'));
+    }
+
+
+    function createGallery(gallery, containerEl,itemEl) {
         const galleryContainer = lightGallery(gallery, {
             plugins: [lgVideo, thumbnail],
             licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-            selector: '.object-gallery__item',
-            addClass: 'gallery-primary-container gallery-primary-container--object',
+            selector: `.${itemEl}`,
+            addClass: `gallery-primary-container ${containerEl}`,
             speed: 400,
             thumbnail: true,
 
@@ -66,7 +105,7 @@ export const galleryPrimary = () => {
             </div>
         </button>
         `;
-        const container = document.querySelector('.gallery-primary-container--object');
+        const container = document.querySelector(`.${containerEl}`);
 
         container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
         container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
@@ -75,39 +114,9 @@ export const galleryPrimary = () => {
         container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
         container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
         container.querySelector('.gallery-primary-container__next').addEventListener('click', () => galleryContainer.goToNextSlide());
-
-        if (container.closest('.page__body').querySelector('.main').classList.contains('object')) {
-            const title = document.querySelector('[data-main-info-title]');
-            const address = document.querySelector('[data-main-info-address]');
-            const price = document.querySelector('[data-main-info-price]');
-            const btns = document.querySelectorAll('[data-main-info-btn]');
-            let btnsHTML = '';
-            if (btns.length) {
-                btns.forEach(btn => {
-                    btn.classList.add('gallery-info__btn');
-                    btnsHTML += btn.outerHTML;
-                })
-            }
-            const infoHTML = `
-            <div class="gallery-info">
-                <h2 class="gallery-info__title title-2">
-                    ${title ? title.innerHTML : ''}
-                </h2>
-                <div class="gallery-info__price">
-                    ${price ? price.innerHTML : ''}
-                </div>
-                <div class="gallery-info__address">
-                    ${address ? address.innerHTML : ''}
-                </div>
-                ${btnsHTML}
-            </div>
-            `;
-            container.querySelector('.lg-outer').insertAdjacentHTML('beforeend', infoHTML);
-
-        }
-    });
+        return itemEl === 'object-gallery__item' ? container : undefined;
+    }
 }
-
 export const galleryStories = () => {
     const items = document.querySelectorAll('.stories');
     if (items.length === 0) return;
