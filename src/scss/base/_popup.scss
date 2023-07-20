@@ -3922,21 +3922,24 @@
         background-color: transparent;
     }
 
-    .object-apart-renov__descr {
-        margin-bottom: 16px;
-    }
-
     .object-apart-renov {
         &__container {
             width: 100%;
         }
-
         &__item {
             height: 650px;
         @media (max-width:$desktop){
              height: 550px; 
         }
         }
+    }
+    .object-apart-renov__tabs{
+        .tabs-primary__container{
+            cursor: default;
+        }
+    }
+    .object-apart-renov__item{
+        cursor: pointer;
     }
 }
 

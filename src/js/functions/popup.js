@@ -35,7 +35,9 @@ const popup = (options, modalName) => {
     };
     settingsModal.btns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            modalOpen(e.target);
+            if (!e.target.closest('.nav-arrow-secondary')) {
+                modalOpen(e.target);
+            }
         })
     })
     modal.querySelectorAll('.js-popup-close').forEach(el => {
