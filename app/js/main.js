@@ -4513,65 +4513,10 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-meeting-show');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'furnishing-sets-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: settingsModal => {
     const container = settingsModal.container;
-    const images = container.querySelectorAll('.furnishing-sets__tabs');
-    images.forEach(image => {
-      let height = 0;
-      const title = container.querySelector('.object-apart-renov__title');
-      const btns = container.querySelector('.furnishing-sets__btns');
-      const descr = image.querySelector('.furnishing-sets__descr');
-      const nav = container.querySelector('.tabs-primary__btns');
-      if (title) {
-        height += title.offsetHeight;
-        height += 16;
-      }
-      if (btns) {
-        height += btns.offsetHeight;
-        height += 16;
-      }
-      if (descr) {
-        height += descr.offsetHeight;
-        height += 16;
-      }
-      if (nav) {
-        height += nav.offsetHeight;
-        height += 24;
-      }
-      const padding = 48 + 32;
-      const bottomPadding = 32;
-      height += padding + 17 + bottomPadding;
-      image.style.height = `calc(100vh - ${height}px)`;
-    });
-  }
-}, 'furnishing-sets-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: settingsModal => {
-    const container = settingsModal.container;
-    const images = container.querySelectorAll('.object-apart-renov__item');
-    images.forEach(image => {
-      let height = 0;
-      const title = container.querySelector('.object-apart-renov__title');
-      const nav = container.querySelector('.tabs-primary__btns');
-      const descr = image.querySelector('.object-apart-renov__descr');
-      if (title) {
-        height += title.offsetHeight;
-        height += 16;
-      }
-      if (nav) {
-        height += nav.offsetHeight;
-        height += 24;
-      }
-      if (descr) {
-        height += descr.offsetHeight;
-        height += 16;
-      }
-      const padding = 48 + 32;
-      const bottomPadding = 32;
-      height += padding + 17 + bottomPadding;
-      image.style.height = `calc(100vh - ${height}px)`;
-    });
     const currentItem = settingsModal.currentBtn.closest('.object-apart-renov__item');
     const currentIndex = [...currentItem.parentNode.children].indexOf(currentItem);
     container.querySelectorAll('.tabs-primary__btns .tabs__title').forEach((title, index) => {

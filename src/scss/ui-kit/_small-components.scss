@@ -629,17 +629,19 @@
             flex: 0 0 var(--size);
             width: var(--size);
             height: var(--size);
-            fill: var(--dark);
+            fill: var(--primaryTwo);
         }
 
         span {
             font-size: var(--small-fz);
             line-height: var(--small-lh);
             font-weight: 500;
-            color: var(--gray);
-
+            &:nth-child(2){
+            color: var(--primaryTwo);
+            }
             &:nth-child(3) {
                 margin-left: 8px;
+                color: var(--dark);
             }
         }
 
