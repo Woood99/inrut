@@ -130,7 +130,16 @@
             margin-top: 8px;
         }
     }
-
+    &__similar-city{
+        margin-top: 32px;
+        .search-select-one{
+            max-width: 400px;
+            margin-bottom: 24px;
+        }
+        @media (max-width:$smallTablet-max) {
+            margin-top: 8px;
+        }
+    }
     &__stock {
         margin-top: 25px;
         background-color: var(--white);
@@ -215,6 +224,11 @@
         .tabs-primary__container{
             background-color: transparent;
             padding: 0;
+        }
+        .object-similar{
+            &__top{
+                justify-content: end;
+            }
         }
     }
 }
@@ -1068,7 +1082,9 @@
     background-color: var(--white);
     box-shadow: var(--shadow-primary);
     border-radius: 12px;
-
+    .main-banner{
+        padding: 32px;
+    }
     @media (max-width:$desktop) {
         padding: 16px;
     }
@@ -1461,7 +1477,7 @@
     &__top {
         display: flex;
         align-items: center;
-        justify-content: end;
+       justify-content: space-between;
         margin-bottom: 32px;
 
         @media (max-width:$desktop) {
