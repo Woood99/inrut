@@ -149,6 +149,27 @@
                                         </label>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn" data-popup-path="search-area">
+                                    <span>Район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter__row buy-apartment-filter__row--2" hidden>
+                                <div class="filter__item select-secondary">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Комплекс
+                                        </span>
+                                        <select class="select-secondary__body" hidden name="complex">
+                                            <option placeholder value="all-room">Любой</option>
+                                            <option value="room-1">Квартиры1</option>
+                                            <option value="room-2">Квартиры2</option>
+                                            <option value="room-3">Квартиры3</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь кухни" data-filter-dropdown-subtitle="Любая">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper">
@@ -165,7 +186,7 @@
                                     </button>
                                     <div class="filter__item filter-dropdown__dropdown filter-dropdown__dropdown--left">
                                         <label class="filter-dropdown__item active">
-                                            <span class="filter-dropdown__subtitle">Площадь объекта, м²</span>
+                                            <span class="filter-dropdown__subtitle">Площадь кухни, м²</span>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
@@ -189,28 +210,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-reset filter__item select-map-btn" data-popup-path="search-area">
-                                    <span>Район поиска</span>
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#location-two"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="filter__row buy-apartment-filter__row--2" hidden>
-                                <div class="filter__item select-secondary">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Комплекс
-                                        </span>
-                                        <select class="select-secondary__body" hidden name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Квартиры1</option>
-                                            <option value="room-2">Квартиры2</option>
-                                            <option value="room-3">Квартиры3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="place-sale-options__item select-secondary">
+                                <div class="filter__item place-sale-options__item select-secondary">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
                                             Ремонт
@@ -218,7 +218,66 @@
                                         <select class="select-secondary__body" hidden name="repair">
                                             <option placeholder>Неважно</option>
                                             <option value="repair1">Косметический</option>
-                                            <option value="repair2">Косметический2</option>
+                                            <option value="repair2">Дизайнерский</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__row buy-apartment-filter__row--3" hidden>
+                                <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Этаж" data-filter-dropdown-subtitle="Любой">
+                                    <button type="button" class="btn btn-reset filter-dropdown__button">
+                                        <div class="filter-dropdown__button-wrapper">
+                                            <div>
+                                                Этаж
+                                            </div>
+                                            <div>
+                                                Любой
+                                            </div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                        <button type="button" class="btn btn-reset filter-dropdown__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
+                                        <label class="filter-dropdown__item active">
+                                            <span class="filter-dropdown__subtitle">Этаж</span>
+                                            <div class="filter-dropdown__range filter-range">
+                                                <div class="filter-range__nav">
+                                                    <div class="input-text input-text--only-number">
+                                                        <label class="input-text__label">
+                                                            <span>От</span>
+                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
+                                                        </label>
+                                                    </div>
+                                                    <div>–</div>
+                                                    <div class="input-text input-text--only-number">
+                                                        <label class="input-text__label">
+                                                            <span>До</span>
+                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        м²
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter__item select-secondary">
+                                    <div class="select-secondary__wrapper">
+                                        <span class="select-secondary__placeholder">
+                                            Парковка
+                                        </span>
+                                        <select class="select-secondary__body" hidden name="complex">
+                                            <option placeholder value="all-room">Любая</option>
+                                            <option value="room-1">Во дворе</option>
+                                            <option value="room-2">Подземная</option>
                                         </select>
                                     </div>
                                 </div>
@@ -301,7 +360,7 @@
                             </button>
                         </div>
                         <div class="cards-list__items control-cards__content control-cards__content--horizontal">
-                            <article class="card-primary card-primary--no-user">
+                            <article class="card-primary">
                                 <a href="#" class="card-primary__container">
                                     <div class="card-primary__top">
                                         <div class="card-primary__images">
@@ -407,9 +466,20 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="card-primary__user user-info user-info--small-mobile">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
                                 </a>
                             </article>
-                            <article class="card-primary card-primary--no-user">
+                            <article class="card-primary">
                                 <a href="#" class="card-primary__container">
                                     <div class="card-primary__top">
                                         <div class="card-primary__images">
@@ -509,9 +579,20 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="card-primary__user user-info user-info--small-mobile">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
                                 </a>
                             </article>
-                            <article class="card-primary card-primary--no-user">
+                            <article class="card-primary">
                                 <a href="#" class="card-primary__container">
                                     <div class="card-primary__top">
                                         <div class="card-primary__images">
@@ -605,9 +686,20 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="card-primary__user user-info user-info--small-mobile">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
+                                    </div>
                                 </a>
                             </article>
-                            <article class="card-primary card-primary--no-user">
+                            <article class="card-primary">
                                 <a href="#" class="card-primary__container">
                                     <div class="card-primary__top">
                                         <div class="card-primary__images">
@@ -700,6 +792,17 @@
                                                 продается в новом доме по улице Тополиная
                                             </p>
                                         </div>
+                                    </div>
+                                    <div class="card-primary__user user-info user-info--small-mobile">
+                                        <div class="user-info__avatar avatar online">
+                                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                        </div>
+                                        <span class="user-info__name">
+                                            Алексей Г.
+                                        </span>
+                                        <span class="user-info__pos">
+                                            Агент
+                                        </span>
                                     </div>
                                 </a>
                             </article>
