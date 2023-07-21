@@ -1,10 +1,10 @@
 .detailed-flat {
     .bid-user {
-        padding: 16px;
+        padding: 32px 24px;
 
         &::before,
         &::after {
-            height: percent(127, 442);
+            height: percent(79.5, 425);
         }
 
         &__avatar {
@@ -15,9 +15,6 @@
             @media (max-width:$smallTablet-max) {
                 --size: 57px;
             }
-        }
-        &__content{
-            margin-top: 32px;
         }
 
         &__btns {
@@ -38,6 +35,17 @@
             width: 100%;
             margin: 0;
 
+            &--online-display {
+                margin-top: 0;
+                grid-column: 1/-1;
+
+                svg {
+                    fill: none;
+                    stroke: var(--white);
+                    stroke-width: 1.5px;
+                }
+            }
+
             &--call {
                 padding: 0 11px;
             }
@@ -45,7 +53,8 @@
             &--message {
                 padding: 0 16px;
             }
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 margin-bottom: 16px;
             }
         }
@@ -87,7 +96,7 @@
             margin-top: 16px;
             display: grid;
             justify-content: space-between;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 350px;
             grid-column-gap: 16px;
 
             @media (max-width:$desktop) {

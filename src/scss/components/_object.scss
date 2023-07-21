@@ -166,7 +166,7 @@
     &__cols {
         margin-top: 24px;
         display: grid;
-        grid-template-columns: percent(700, 1016) 1fr;
+        grid-template-columns: 1fr 350px;
         grid-column-gap: 16px;
 
         @media (max-width:$desktop) {
@@ -176,6 +176,7 @@
     }
 
     &__col {
+        min-width: 0;
         display: grid;
         grid-row-gap: 24px;
         grid-template-columns: 100%;
@@ -208,6 +209,14 @@
     }
 
     &__tour {}
+
+    &__other{
+        margin-top: 32px;
+        .tabs-primary__container{
+            background-color: transparent;
+            padding: 0;
+        }
+    }
 }
 
 
@@ -1440,6 +1449,9 @@
 
 
 .object-similar {
+    .filter{
+        margin-bottom: 32px;
+    }
     .container {
         @media (max-width:$desktop) {
             padding: 0;
@@ -1449,7 +1461,7 @@
     &__top {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: end;
         margin-bottom: 32px;
 
         @media (max-width:$desktop) {
