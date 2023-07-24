@@ -222,6 +222,9 @@
         display: flex;
         flex-direction: column;
 
+        transition: transform .3s $transitionFunction,
+            box-shadow .3s $transitionFunction;
+
         .row {
             display: flex;
             align-items: center;
@@ -229,8 +232,22 @@
 
             img {
                 border-radius: 50%;
-                width: 50px;
-                height: 50px;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-secondary);
+
+                .row {
+                    img {
+                        animation: updown .6s ease-out;
+                        animation-iteration-count: 1;
+                    }
+                }
             }
         }
 
@@ -255,11 +272,12 @@
     }
 
     &__descr {
-        margin-top: 32px;
+        margin-top: 24px;
         font-size: var(--default-fz);
         line-height: var(--default-lh);
         color: var(--dark);
         flex-grow: 1;
+        max-width: calc(100% - 80px - 12px);
     }
 
     &__btn {
@@ -354,7 +372,8 @@
     }
 
     &__subtitle {
-        font-size: var(--little-big-fz);;
+        font-size: var(--little-big-fz);
+        ;
         line-height: var(--little-big-lh);
         font-weight: 500;
         color: var(--primary600);
@@ -502,6 +521,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 48px 32px;
+
         @media (max-width:$desktop) {
             align-items: stretch;
             padding: 24px 16px;
@@ -588,7 +608,8 @@
             grid-row-gap: 0;
         }
     }
-    &__bottom-btn{
+
+    &__bottom-btn {
         width: 100%;
         margin-top: 24px;
         padding: 0 16px;
@@ -676,6 +697,12 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 24px;
+    }
+
+    &__title {
+        svg {
+            fill: var(--yellow);
+        }
     }
 
     &__more {
