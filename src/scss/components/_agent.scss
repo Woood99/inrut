@@ -363,20 +363,24 @@
 
     &__answer {
         margin-top: 24px;
-        background: var(--primary100);
-        border-radius: 2px 12px 12px 12px;
-        padding: 16px;
-        cursor: pointer;
-
+        pointer-events: none;
         .review-item__user {
             margin-bottom: 16px;
+            pointer-events: all;
+            cursor: pointer;
         }
-
-        p {
-            color: var(--dark);
-            font-size: var(--default-fz);
-            line-height: var(--default-lh);
-            font-weight: 400;
+        >div:nth-child(2){
+            pointer-events: all;
+            background: var(--primary100);
+            border-radius: 2px 12px 12px 12px;
+            padding: 16px;
+            cursor: pointer;
+            p {
+                color: var(--dark);
+                font-size: var(--default-fz);
+                line-height: var(--default-lh);
+                font-weight: 400;
+            }
         }
     }
 

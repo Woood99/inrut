@@ -9074,7 +9074,7 @@ const reviewModal = () => {
                      </h2>
                      <div class="review-modal-content__container ${sliderItems.length >= 1 ? '' : '_no-slider'}">
                          <div class="review-modal-content__body">
-                            ${item.innerHTML}
+                            ${item.outerHTML}
                          </div>
                             ${sliderItems.length >= 1 ? sliderHTML : ''}
                          <div class="review-modal-content__mobile">

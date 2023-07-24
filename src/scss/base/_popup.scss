@@ -1011,8 +1011,6 @@
         .news-card {
             &:not(:last-child) {
                 margin-bottom: 24px;
-                padding-bottom: 24px;
-                border-bottom: 1px solid rgba(122, 127, 170, 0.2);
             }
         }
     }
@@ -2432,6 +2430,9 @@
         }
 
         .review-item {
+            padding: 0;
+            border-radius: 0;
+            border: none;
             &__ratings {
                 grid-column: 1/2;
             }
@@ -2446,7 +2447,9 @@
         }
 
         .review-item__answer {
-            cursor: default;
+            >div{
+                cursor: default;
+            }
         }
 
         &__slider {
@@ -3267,21 +3270,19 @@
         justify-content: space-between;
         flex-grow: 1;
 
-        >.col {
-            background-color: var(--white);
-            border-radius: 24px;
+        background-color: var(--white);
+        border-radius: 24px;
 
-            &:nth-child(1) {
-                padding: 65px 32px;
-                margin-right: 12px;
-                max-width: 60%;
-                width: 100%;
-            }
+        &:nth-child(1) {
+            padding: 65px 32px;
+            margin-right: 12px;
+            max-width: 60%;
+            width: 100%;
+        }
 
-            &:nth-child(2) {
-                flex-grow: 1;
-                padding: 65px 32px;
-            }
+        &:nth-child(2) {
+            flex-grow: 1;
+            padding: 65px 32px;
         }
     }
 
@@ -4214,20 +4215,19 @@
         margin-top: 32px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     &__tied {
         display: flex;
         align-items: center;
-
+        margin-left: 32px;
         &:not(:last-child) {
             margin-right: 24px;
         }
 
         .secondary-tooltip {
-            width: 70px;
-            height: 70px;
+            width: 55px;
+            height: 55px;
             background-color: var(--white);
             box-shadow: var(--shadow-primary);
             border-radius: 16px;
@@ -4252,8 +4252,8 @@
             }
 
             img {
-                width: 34px;
-                height: 34px;
+                width: 24px;
+                height: 24px;
             }
 
             @media (min-width:$desktop-min) {
