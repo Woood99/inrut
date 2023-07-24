@@ -9700,7 +9700,7 @@ const popup = (options, modalName) => {
     popupLastString(modalName, 'delete');
     if (modalActiveList.length === 0) {
       if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
-        if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
+        if (!document.querySelector('.lg-container.gallery-primary-container.lg-show')) {
           enableScroll();
         }
       }

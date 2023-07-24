@@ -98,8 +98,8 @@ const popup = (options, modalName) => {
 
 
     function modalOpen(target) {
-       settingsModal.currentBtn = target,
-        settingsModal.previousActiveElement = document.activeElement;
+        settingsModal.currentBtn = target,
+            settingsModal.previousActiveElement = document.activeElement;
         if (settingsModal.isOpen) return;
         settingsModal.container.scrollTo(0, 0);
         settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
@@ -130,9 +130,8 @@ const popup = (options, modalName) => {
         settingsModal.container.classList.remove('popup-open');
         popupLastString(modalName, 'delete');
         if (modalActiveList.length === 0) {
-
             if (!document.querySelector('[data-menu]').classList.contains('menu--active')) {
-                if (!(document.querySelector('.gallery-primary-container--object') && document.querySelector('.gallery-primary-container--object').classList.contains('lg-show'))) {
+                if (!document.querySelector('.lg-container.gallery-primary-container.lg-show')) {
                     enableScroll();
                 }
             }
