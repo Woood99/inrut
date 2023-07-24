@@ -90,9 +90,11 @@ textarea.input-reset {
     }
     @media (min-width:$desktop-min){
          &:hover{
-            .input-primary{
-                &__input{
-                    border: 1px solid var(--blue);
+            &:not(.input-primary--disabled){
+                .input-primary{
+                    &__input{
+                        border: 1px solid var(--blue);
+                    }
                 }
             }
          } 
