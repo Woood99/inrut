@@ -1809,6 +1809,7 @@
                 border-radius: 0;
                 padding: 0;
                 cursor: pointer;
+                position: relative;
             }
 
             &__inner {
@@ -1839,7 +1840,27 @@
             border-radius: 0;
         }
     }
+    &__fullscreen{
+        width: 44px;
+        height: 44px;
 
+        background-color: var(--white);
+        border: 1px solid rgba(93, 112, 134, 0.1);
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        z-index: 2;
+        top: 16px;
+        right: 16px;
+     img{
+        width: 18px;
+        height: 18px;
+     }
+    }
     &__item {
         position: relative;
         height: 420px;

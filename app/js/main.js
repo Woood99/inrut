@@ -4516,23 +4516,25 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'furnishing-sets-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: settingsModal => {
-    const container = settingsModal.container;
-    const currentItem = settingsModal.currentBtn.closest('.object-apart-renov__item');
-    const currentIndex = [...currentItem.parentNode.children].indexOf(currentItem);
-    container.querySelectorAll('.tabs-primary__btns .tabs__title').forEach((title, index) => {
-      if (index === currentIndex) {
-        title.classList.add('_tab-active');
-      } else {
-        title.classList.remove('_tab-active');
-      }
-    });
-    container.querySelectorAll('.tabs__content .tabs__body').forEach((content, index) => {
-      if (index === currentIndex) {
-        content.removeAttribute('hidden');
-      } else {
-        content.setAttribute('hidden', '');
-      }
-    });
+    // const container = settingsModal.container;
+
+    // const currentItem = settingsModal.currentBtn.closest('.object-apart-renov__item');
+    // const currentIndex = [...currentItem.parentNode.children].indexOf(currentItem);
+
+    // container.querySelectorAll('.tabs-primary__btns .tabs__title').forEach((title, index) => {
+    //     if (index === currentIndex) {
+    //         title.classList.add('_tab-active');
+    //     } else {
+    //         title.classList.remove('_tab-active');
+    //     }
+    // })
+    // container.querySelectorAll('.tabs__content .tabs__body').forEach((content, index) => {
+    //     if (index === currentIndex) {
+    //         content.removeAttribute('hidden');
+    //     } else {
+    //         content.setAttribute('hidden', '');
+    //     }
+    // })
   }
 }, 'object-apart-renov-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
