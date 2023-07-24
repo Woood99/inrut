@@ -7977,7 +7977,7 @@ const maps = () => {
             showHeader: true,
             title: 'Построить маршрут',
             float: 'right',
-            maxWidth: '320px',
+            maxWidth: '400px',
             position: {
               right: 76,
               top: 16
