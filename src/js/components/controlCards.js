@@ -24,6 +24,8 @@ function controlCards() {
 
                     cardsSecondary.forEach(card => {
                         const options = card.querySelector('.card-secondary__options');
+                        const favorite = card.querySelector('.card-secondary__info--favorite');
+                        const bottom = card.querySelector('.card-secondary__bottom');
                         if (options) {
 
                             if (checkHorizontal(btn)) {
@@ -34,6 +36,20 @@ function controlCards() {
                             }
 
                         }
+                        if (favorite) {
+                            if (checkVertical(btn)) {
+                                bottom.classList.add('_vertical-active');
+                                if (!card.querySelector('.card-secondary__bottom .card-secondary__info--favorite')) {
+                                    const clone = favorite.cloneNode(true);
+                                    bottom.appendChild(clone);
+                                }
+                                bottom.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
+                            }
+                            if (checkHorizontal(btn)) {
+                                bottom.classList.remove('_vertical-active');
+                                bottom.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
+                            }
+                        }
                     })
                 }
 
@@ -43,6 +59,7 @@ function controlCards() {
                     cardsPrimary.forEach(card => {
                         const dislike = card.querySelector('.card-primary__info--dislike');
                         const comment = card.querySelector('.card-primary__info--comment');
+                        const favorite = card.querySelector('.card-primary__info--favorite');
                         const bottom = card.querySelector('.card-primary__bottom');
                         if (dislike) {
                             if (checkVertical(btn)) {
@@ -70,6 +87,21 @@ function controlCards() {
                             if (checkHorizontal(btn)) {
                                 bottom.classList.remove('_vertical-active');
                                 bottom.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
+                            }
+                        }
+
+                        if (favorite) {
+                            if (checkVertical(btn)) {
+                                bottom.classList.add('_vertical-active');
+                                if (!card.querySelector('.card-primary__bottom .card-primary__info--favorite')) {
+                                    const clone = favorite.cloneNode(true);
+                                    bottom.appendChild(clone);
+                                }
+                                bottom.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
+                            }
+                            if (checkHorizontal(btn)) {
+                                bottom.classList.remove('_vertical-active');
+                                bottom.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
                             }
                         }
                     })

@@ -304,32 +304,36 @@
         &--quantity {}
 
         &--favorite {
-            width: 20px;
-            height: 18px;
-            position: relative;
-            z-index: 3;
+            width: 30px;
+            height: 30px;
+            background-color: var(--white);
 
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: background-color $transitionSpeed $transitionFunction;
             svg {
-                width: 20px;
-                height: 18px;
-                fill: var(--white);
-                stroke: transparent;
-                transition: stroke $transitionSpeed $transitionFunction,
+                width: 15px;
+                height: 15px;
+                fill: var(--blue);
+                stroke: none;
+                transition:
                     fill $transitionSpeed $transitionFunction;
             }
 
             @media (min-width:$desktop-min) {
                 &:hover {
-                    svg {
-                        stroke: var(--blue);
-                    }
+                    stroke: var(--blue);
                 }
             }
 
             &._active {
+                background-color: var(--blue) !important;
                 svg {
-                    fill: var(--blue);
-                    stroke: var(--white);
+                    fill: var(--white) !important;
                 }
             }
         }
@@ -587,7 +591,6 @@
 
         .user-info {
             grid-template-columns: 40px 1fr 32px;
-
             &__img {
                 width: 32px;
                 height: 32px;
@@ -596,9 +599,14 @@
                 border-radius: 50%;
             }
         }
-
-        .user-info-improved {
+        .card-primary__bottom{
             padding: 18px 24px;
+        }
+        .user-info-improved {
+
+            padding: 0;
+            border-top: none;
+            margin: 0;
         }
 
         .dots-dropdown__dropdown {

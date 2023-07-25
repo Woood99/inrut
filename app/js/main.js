@@ -4340,12 +4340,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1212, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1212, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1212, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1212, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1212, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1212, true);
 
   // ==================================================
   (0,_components_inputs__WEBPACK_IMPORTED_MODULE_6__.inputClue)('.input-clue', 'clue-primary', `
@@ -4444,7 +4444,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'construct-progress-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: () => {
-    if (window.innerWidth > 1144) return;
+    if (window.innerWidth > 1212) return;
     const container = document.querySelector('.genplan');
     const wrapper = container.querySelector('.genplan__wrapper');
     setTimeout(() => {
@@ -4457,7 +4457,7 @@ __webpack_require__.r(__webpack_exports__);
     }, 5);
   },
   isClose: () => {
-    if (window.innerWidth > 1144) return;
+    if (window.innerWidth > 1212) return;
     const container = document.querySelector('.genplan');
     const mask = container.querySelector('.genplan__mask');
     mask.classList.remove('hidden');
@@ -4844,13 +4844,13 @@ const cardSecondaryActions = () => {
     const imageSwitchItems = card.querySelectorAll('.card-secondary__item');
     const imagePagination = card.querySelector('.card-secondary__pagination');
     cardImageSwitch(card, imageSwitchItems, imagePagination);
-    const favorite = card.querySelector('.card-secondary__info--favorite');
-    if (favorite) {
-      favorite.addEventListener('click', e => {
+    card.addEventListener('click', e => {
+      const favorite = e.target.closest('.card-secondary__info--favorite');
+      if (favorite) {
         e.preventDefault();
-        favorite.classList.toggle('_active');
-      });
-    }
+        card.querySelectorAll('.card-secondary__info--favorite').forEach(el => el.classList.toggle('_active'));
+      }
+    });
   });
 };
 const cardPrimaryActions = () => {
@@ -4860,13 +4860,13 @@ const cardPrimaryActions = () => {
     const imageSwitchItems = card.querySelectorAll('.card-primary__item');
     const imagePagination = card.querySelector('.card-primary__pagination');
     cardImageSwitch(card, imageSwitchItems, imagePagination);
-    const favorite = card.querySelector('.card-primary__info--favorite');
-    if (favorite && !favorite.classList.contains('card-primary__info--favorite-dropdown')) {
-      favorite.addEventListener('click', e => {
+    card.addEventListener('click', e => {
+      const favorite = e.target.closest('.card-primary__info--favorite');
+      if (favorite) {
         e.preventDefault();
-        favorite.classList.toggle('_active');
-      });
-    }
+        card.querySelectorAll('.card-primary__info--favorite').forEach(el => el.classList.toggle('_active'));
+      }
+    });
   });
 };
 function cardImageSwitch(card, imageSwitchItems, imagePagination) {
@@ -5210,57 +5210,55 @@ const checkboard = () => {
   if (!container) return;
   const items = container.querySelectorAll('.checkboard__item--free');
   if (items.length === 0) return;
-  const innerWidth = 1144;
-  if (window.innerWidth > innerWidth) {
-    items.forEach(item => {
-      let popper;
-      item.addEventListener('mouseenter', () => {
-        item.classList.add('_active');
-        const btn = item.querySelector('.checkboard__link');
-        const content = item.querySelector('.checkboard__card');
-        popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(btn, content, {
-          placement: 'bottom-start'
-        });
-      });
-      item.addEventListener('mouseleave', () => {
-        item.classList.remove('_active');
-        setTimeout(() => {
-          if (!item.classList.contains('_active')) popper.destroy();
-        }, 500);
+  const innerWidth = 1212;
+  items.forEach(item => {
+    let popper;
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth <= innerWidth) return;
+      item.classList.add('_active');
+      const btn = item.querySelector('.checkboard__link');
+      const content = item.querySelector('.checkboard__card');
+      popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(btn, content, {
+        placement: 'bottom-start'
       });
     });
-  } else {
-    items.forEach(item => {
-      item.addEventListener('click', e => {
-        e.preventDefault();
-        const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
-        const favorite = item.querySelector('.card-scheme__favorite');
-        const href = item.querySelector('.checkboard__link').getAttribute('href');
-        const modalHTML = `
-                <div class="checkboard-popup-card">
-                <div class="checkboard-popup-card__container">
-                    <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#x"></use>
-                        </svg>
-                        <span>Закрыть</span>
-                    </button>
-                     <div class="checkboard-popup-card__content">
-                        <article class="card-scheme">
-                            <div class="card-scheme__container">
-                                ${favorite.outerHTML}
-                                ${cardContainer.innerHTML}
-                            </div>
-                        </article>
-                        <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
-                     </div>
-                </div>
-                </div>
-                `;
-        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.checkboard-popup-card', 300);
-      });
+    item.addEventListener('mouseleave', () => {
+      if (window.innerWidth <= innerWidth) return;
+      item.classList.remove('_active');
+      setTimeout(() => {
+        if (!item.classList.contains('_active')) popper.destroy();
+      }, 500);
     });
-  }
+    item.addEventListener('click', e => {
+      if (window.innerWidth > innerWidth) return;
+      e.preventDefault();
+      const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
+      const favorite = item.querySelector('.card-scheme__favorite');
+      const href = item.querySelector('.checkboard__link').getAttribute('href');
+      const modalHTML = `
+            <div class="checkboard-popup-card">
+            <div class="checkboard-popup-card__container">
+                <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="checkboard-popup-card__content">
+                    <article class="card-scheme">
+                        <div class="card-scheme__container">
+                            ${favorite.outerHTML}
+                            ${cardContainer.innerHTML}
+                        </div>
+                    </article>
+                    <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
+                 </div>
+            </div>
+            </div>
+            `;
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.checkboard-popup-card', 300);
+    });
+  });
   function checkboardPopup() {
     const popup = document.querySelector('.checkboard-cst-popup');
     if (!popup) return;
@@ -5644,12 +5642,28 @@ function controlCards() {
           const cardsSecondary = content.querySelectorAll('.card-secondary');
           cardsSecondary.forEach(card => {
             const options = card.querySelector('.card-secondary__options');
+            const favorite = card.querySelector('.card-secondary__info--favorite');
+            const bottom = card.querySelector('.card-secondary__bottom');
             if (options) {
               if (checkHorizontal(btn)) {
                 card.querySelector('.card-secondary__bottom').insertAdjacentElement('beforebegin', options);
               }
               if (checkVertical(btn)) {
                 card.querySelector('.card-secondary__info--mobile').insertAdjacentElement('afterbegin', options);
+              }
+            }
+            if (favorite) {
+              if (checkVertical(btn)) {
+                bottom.classList.add('_vertical-active');
+                if (!card.querySelector('.card-secondary__bottom .card-secondary__info--favorite')) {
+                  const clone = favorite.cloneNode(true);
+                  bottom.appendChild(clone);
+                }
+                bottom.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
+              }
+              if (checkHorizontal(btn)) {
+                bottom.classList.remove('_vertical-active');
+                bottom.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
               }
             }
           });
@@ -5659,6 +5673,7 @@ function controlCards() {
           cardsPrimary.forEach(card => {
             const dislike = card.querySelector('.card-primary__info--dislike');
             const comment = card.querySelector('.card-primary__info--comment');
+            const favorite = card.querySelector('.card-primary__info--favorite');
             const bottom = card.querySelector('.card-primary__bottom');
             if (dislike) {
               if (checkVertical(btn)) {
@@ -5686,6 +5701,20 @@ function controlCards() {
               if (checkHorizontal(btn)) {
                 bottom.classList.remove('_vertical-active');
                 bottom.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
+              }
+            }
+            if (favorite) {
+              if (checkVertical(btn)) {
+                bottom.classList.add('_vertical-active');
+                if (!card.querySelector('.card-primary__bottom .card-primary__info--favorite')) {
+                  const clone = favorite.cloneNode(true);
+                  bottom.appendChild(clone);
+                }
+                bottom.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
+              }
+              if (checkHorizontal(btn)) {
+                bottom.classList.remove('_vertical-active');
+                bottom.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
               }
             }
           });
@@ -7217,7 +7246,7 @@ const genplan = () => {
   if (!container) return;
   const marks = container.querySelectorAll('.genplan__mark');
   const visualInfo = container.querySelectorAll('.visual-info');
-  const innerWidth = 1144;
+  const innerWidth = 1212;
   if (window.innerWidth > innerWidth) {
     marks.forEach(item => {
       const btn = item.querySelector('button');
@@ -7292,7 +7321,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const headerFixed = () => {
   const headerFixed = document.querySelector('.header-fixed');
-  if (!(headerFixed && window.innerWidth >= 1144)) return;
+  if (!(headerFixed && window.innerWidth >= 1212)) return;
   const header = document.querySelector('.header');
   const links = headerFixed.querySelectorAll('.header-fixed__item-link');
   const headerHeight = headerFixed.offsetHeight;
@@ -7302,7 +7331,7 @@ const headerFixed = () => {
   glattScroll();
   showHeader(window.scrollY);
   window.addEventListener('scroll', () => {
-    if (window.innerWidth <= 1144) return;
+    if (window.innerWidth <= 1212) return;
     let scrollDistance = window.scrollY;
     toggleActiveClass(scrollDistance);
     showHeader(scrollDistance);
@@ -8099,7 +8128,7 @@ const maps = () => {
       });
       positionElement(map);
       removeControlsPrimary(map, '#popup-map__map');
-      if (innerWidth > 1144) reziseContainer(map);
+      if (innerWidth > 1212) reziseContainer(map);
     }
     ymaps.ready(init);
     const btn = container.querySelector('.popup-map__resize');
@@ -8765,7 +8794,7 @@ const recordViewing = () => {
             `;
       listDays.insertAdjacentHTML('beforeend', item);
     }
-    if (window.innerWidth <= 1144) {
+    if (window.innerWidth <= 1212) {
       (0,_scrollDrag__WEBPACK_IMPORTED_MODULE_0__["default"])(listDays, 1000);
     }
     slider(listDays, listDays.querySelector('.record-day__item'), container.querySelector('.record-day__prev'), container.querySelector('.record-day__next'));
@@ -8927,7 +8956,7 @@ const recordViewing = () => {
         `;
     slider(time.querySelector('.record-time__list'), time.querySelector('.record-time__item'), time.querySelector('.record-time__prev'), time.querySelector('.record-time__next'));
     validate();
-    if (window.innerWidth <= 1144) {
+    if (window.innerWidth <= 1212) {
       (0,_scrollDrag__WEBPACK_IMPORTED_MODULE_0__["default"])(time.querySelector('.record-time__list'), 1000);
     }
   }
@@ -9641,7 +9670,7 @@ const popup = (options, modalName) => {
     modal,
     container,
     isOpen: false,
-    speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1144 ? 0 : 300,
+    speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1212 ? 0 : 300,
     animation: 'fade',
     options: Object.assign(defaultOptions, options),
     previousActiveElement: false,
@@ -9674,7 +9703,7 @@ const popup = (options, modalName) => {
           const headerFixed = document.querySelector('.header-fixed');
           const topHeaderMobile = document.querySelector('.top-page-inner');
           window.scrollTo({
-            top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+            top: topGap - (window.innerWidth > 1212 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
             behavior: 'smooth'
           });
         }, 200);
@@ -9972,7 +10001,7 @@ function initSliders() {
           slidesPerView: 2,
           spaceBetween: 16
         },
-        1144: {
+        1212: {
           slidesPerView: 3,
           spaceBetween: 24
         }
@@ -10001,7 +10030,7 @@ function initSliders() {
           slidesPerView: 3,
           spaceBetween: 24
         },
-        1144: {
+        1212: {
           slidesPerView: 4,
           spaceBetween: 16
         }
@@ -10109,7 +10138,7 @@ function initSliders() {
             const topGap = window.pageYOffset + el.getBoundingClientRect().top;
             const headerFixed = document.querySelector('.header-fixed');
             const topHeaderMobile = document.querySelector('.top-page-inner');
-            if (window.innerWidth >= 1144) {
+            if (window.innerWidth >= 1212) {
               window.scrollTo({
                 top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
               });
@@ -10343,7 +10372,7 @@ function initSliders() {
               const topGap = window.pageYOffset + el.getBoundingClientRect().top;
               const headerFixed = document.querySelector('.header-fixed');
               const topHeaderMobile = document.querySelector('.top-page-inner');
-              if (window.innerWidth >= 1144) {
+              if (window.innerWidth >= 1212) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
                 });
@@ -10446,7 +10475,7 @@ function initSliders() {
             if (btn.classList.contains('_active')) {
               (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_2__._slideDown)(container, 300);
               const topGap = window.pageYOffset + container.getBoundingClientRect().top;
-              if (window.innerWidth >= 1144) {
+              if (window.innerWidth >= 1212) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                   behavior: 'smooth'
@@ -10460,7 +10489,7 @@ function initSliders() {
             } else {
               (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_2__._slideUp)(container, 300);
               const topGap = window.pageYOffset + btn.closest('.layouts__item').querySelector('.layouts__item-btn').getBoundingClientRect().top;
-              if (window.innerWidth >= 1144) {
+              if (window.innerWidth >= 1212) {
                 window.scrollTo({
                   top: headerFixed ? topGap - headerFixed.offsetHeight : topGap,
                   behavior: 'smooth'
@@ -10637,7 +10666,7 @@ const spollers = () => {
               const topHeaderMobile = document.querySelector('.top-page-inner');
               const topGap = spollerTitle.offsetTop;
               window.scrollTo({
-                top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                top: topGap - (window.innerWidth > 1212 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
                 behavior: 'smooth'
               });
             }, speed);
@@ -10926,7 +10955,7 @@ const dropdown = (containerSelector, targetSelector) => {
       });
     } else {
       target.addEventListener('click', e => {
-        if (window.innerWidth <= 1144) {
+        if (window.innerWidth <= 1212) {
           e.preventDefault();
           container.forEach(el => {
             if (e.target.closest(containerSelector) !== el) {

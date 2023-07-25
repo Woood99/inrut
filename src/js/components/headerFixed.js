@@ -1,6 +1,6 @@
 const headerFixed = () => {
     const headerFixed = document.querySelector('.header-fixed');
-    if (!(headerFixed && window.innerWidth >= 1144)) return;
+    if (!(headerFixed && window.innerWidth >= 1212)) return;
     const header = document.querySelector('.header');
     const links = headerFixed.querySelectorAll('.header-fixed__item-link');
     const headerHeight = headerFixed.offsetHeight;
@@ -11,7 +11,7 @@ const headerFixed = () => {
     glattScroll();
     showHeader(window.scrollY);
     window.addEventListener('scroll', () => {
-        if (window.innerWidth <= 1144) return;
+        if (window.innerWidth <= 1212) return;
         let scrollDistance = window.scrollY;
         toggleActiveClass(scrollDistance);
         showHeader(scrollDistance);

@@ -58,7 +58,7 @@ popup({
 popup(null, 'construct-progress-popup');
 popup({
     isOpen: () => {
-        if (window.innerWidth > 1144) return;
+        if (window.innerWidth > 1212) return;
         const container = document.querySelector('.genplan');
         const wrapper = container.querySelector('.genplan__wrapper');
         setTimeout(() => {
@@ -72,7 +72,7 @@ popup({
 
     },
     isClose: () => {
-        if (window.innerWidth > 1144) return;
+        if (window.innerWidth > 1212) return;
         const container = document.querySelector('.genplan');
         const mask = container.querySelector('.genplan__mask');
         mask.classList.remove('hidden');

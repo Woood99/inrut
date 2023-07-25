@@ -85,7 +85,7 @@ const recordViewing = () => {
             `;
             listDays.insertAdjacentHTML('beforeend', item);
         }
-        if (window.innerWidth <= 1144) {
+        if (window.innerWidth <= 1212) {
             scrollDrag(listDays, 1000);
         }
         slider(listDays, listDays.querySelector('.record-day__item'), container.querySelector('.record-day__prev'), container.querySelector('.record-day__next'));
@@ -248,7 +248,7 @@ const recordViewing = () => {
         `;
         slider(time.querySelector('.record-time__list'), time.querySelector('.record-time__item'), time.querySelector('.record-time__prev'), time.querySelector('.record-time__next'));
         validate();
-        if (window.innerWidth <= 1144) {
+        if (window.innerWidth <= 1212) {
             scrollDrag(time.querySelector('.record-time__list'), 1000);
         }
     }

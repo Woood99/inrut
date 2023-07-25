@@ -10,59 +10,56 @@ const checkboard = () => {
     if (!container) return;
     const items = container.querySelectorAll('.checkboard__item--free');
     if (items.length === 0) return;
-    const innerWidth = 1144;
-    if (window.innerWidth > innerWidth) {
-        items.forEach(item => {
-            let popper;
-            item.addEventListener('mouseenter', () => {
-                item.classList.add('_active');
-                const btn = item.querySelector('.checkboard__link');
-                const content = item.querySelector('.checkboard__card');
-                popper = createPopper(btn, content, {
-                    placement: 'bottom-start',
-                });
-            });
-            item.addEventListener('mouseleave', () => {
-                item.classList.remove('_active');
-                setTimeout(() => {
-                    if (!item.classList.contains('_active')) popper.destroy();
-                }, 500);
+    const innerWidth = 1212;
+    items.forEach(item => {
+        let popper;
+        item.addEventListener('mouseenter', () => {
+            if (window.innerWidth <= innerWidth) return;
+            item.classList.add('_active');
+            const btn = item.querySelector('.checkboard__link');
+            const content = item.querySelector('.checkboard__card');
+            popper = createPopper(btn, content, {
+                placement: 'bottom-start',
             });
         });
-    } else {
-        items.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
-                const favorite = item.querySelector('.card-scheme__favorite');
-                const href = item.querySelector('.checkboard__link').getAttribute('href');
-                const modalHTML = `
-                <div class="checkboard-popup-card">
-                <div class="checkboard-popup-card__container">
-                    <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#x"></use>
-                        </svg>
-                        <span>Закрыть</span>
-                    </button>
-                     <div class="checkboard-popup-card__content">
-                        <article class="card-scheme">
-                            <div class="card-scheme__container">
-                                ${favorite.outerHTML}
-                                ${cardContainer.innerHTML}
-                            </div>
-                        </article>
-                        <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
-                     </div>
-                </div>
-                </div>
-                `;
-
-                modal(modalHTML, '.checkboard-popup-card', 300);
-            });
+        item.addEventListener('mouseleave', () => {
+            if (window.innerWidth <= innerWidth) return;
+            item.classList.remove('_active');
+            setTimeout(() => {
+                if (!item.classList.contains('_active')) popper.destroy();
+            }, 500);
         });
-    }
+        item.addEventListener('click', (e) => {
+            if (window.innerWidth > innerWidth) return;
+            e.preventDefault();
+            const cardContainer = item.querySelector('.checkboard__card').querySelector('.card-scheme__container');
+            const favorite = item.querySelector('.card-scheme__favorite');
+            const href = item.querySelector('.checkboard__link').getAttribute('href');
+            const modalHTML = `
+            <div class="checkboard-popup-card">
+            <div class="checkboard-popup-card__container">
+                <button class="btn-reset checkboard-popup-card__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="checkboard-popup-card__content">
+                    <article class="card-scheme">
+                        <div class="card-scheme__container">
+                            ${favorite.outerHTML}
+                            ${cardContainer.innerHTML}
+                        </div>
+                    </article>
+                    <a href="${href}" class="btn btn-reset btn-primary checkboard-popup-card__link">Перейти на страницу квартиры</a>
+                 </div>
+            </div>
+            </div>
+            `;
 
+            modal(modalHTML, '.checkboard-popup-card', 300);
+        });
+    });
 
     function checkboardPopup() {
         const popup = document.querySelector('.checkboard-cst-popup');

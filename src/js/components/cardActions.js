@@ -7,15 +7,13 @@ export const cardSecondaryActions = () => {
         const imagePagination = card.querySelector('.card-secondary__pagination');
         cardImageSwitch(card, imageSwitchItems, imagePagination);
 
-
-        const favorite = card.querySelector('.card-secondary__info--favorite');
-        if (favorite) {
-            favorite.addEventListener('click', (e) => {
+        card.addEventListener('click',(e) => {
+            const favorite = e.target.closest('.card-secondary__info--favorite');
+            if (favorite) {
                 e.preventDefault();
-                favorite.classList.toggle('_active');
-            })
-        }
-
+                card.querySelectorAll('.card-secondary__info--favorite').forEach(el => el.classList.toggle('_active'));
+            }
+        })
     })
 };
 export const cardPrimaryActions = () => {
@@ -27,14 +25,13 @@ export const cardPrimaryActions = () => {
         const imagePagination = card.querySelector('.card-primary__pagination');
         cardImageSwitch(card, imageSwitchItems, imagePagination);
 
-
-        const favorite = card.querySelector('.card-primary__info--favorite');
-        if (favorite && !favorite.classList.contains('card-primary__info--favorite-dropdown')) {
-            favorite.addEventListener('click', (e) => {
+        card.addEventListener('click',(e) => {
+            const favorite = e.target.closest('.card-primary__info--favorite');
+            if (favorite) {
                 e.preventDefault();
-                favorite.classList.toggle('_active');
-            })
-        }
+                card.querySelectorAll('.card-primary__info--favorite').forEach(el => el.classList.toggle('_active'));
+            }
+        })
 
     })
 };

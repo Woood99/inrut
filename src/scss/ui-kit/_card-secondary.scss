@@ -348,7 +348,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
+            transition: background-color $transitionSpeed $transitionFunction;
             svg {
                 width: 15px;
                 height: 15px;
@@ -365,9 +365,9 @@
             }
 
             &._active {
+                background-color: var(--blue) !important;
                 svg {
-                    fill: var(--blue);
-                    stroke: var(--white);
+                    fill: var(--white) !important;
                 }
             }
         }

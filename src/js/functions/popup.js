@@ -17,7 +17,7 @@ const popup = (options, modalName) => {
         modal,
         container,
         isOpen: false,
-        speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1144 ? 0 : 300,
+        speed: modal.hasAttribute('data-popup-mobile-fast') && window.innerWidth <= 1212 ? 0 : 300,
         animation: 'fade',
         options: Object.assign(defaultOptions, options),
         previousActiveElement: false,
@@ -60,7 +60,7 @@ const popup = (options, modalName) => {
                     const headerFixed = document.querySelector('.header-fixed');
                     const topHeaderMobile = document.querySelector('.top-page-inner');
                     window.scrollTo({
-                        top: topGap - (window.innerWidth > 1144 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
+                        top: topGap - (window.innerWidth > 1212 ? headerFixed.offsetHeight : topHeaderMobile.offsetHeight) - 16,
                         behavior: 'smooth'
                     })
                 }, 200);

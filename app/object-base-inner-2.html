@@ -23,7 +23,7 @@
             <button class="header-top__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
                 <span class="burger__line"></span>
             </button>
-            <div class="header-top__city city" data-da=".header-main__nav,1144,3">
+            <div class="header-top__city city" data-da=".header-main__nav,1212,3">
                 <button type="button" class="btn btn-reset city__title" data-popup-path="city">
                     <svg>
                         <use xlink:href="img/sprite.svg#location-fill"></use>
@@ -77,13 +77,13 @@
     </div>
     <div class="header__main header-main">
         <div class="header-main__container container">
-            <a href="#" class="header-main__logo logo" data-da=".header-top__container,1144,1">
+            <a href="#" class="header-main__logo logo" data-da=".header-top__container,1212,1">
                 <img loading="lazy" src="./img/logo.svg" width="238" height="32" class="logo__img" alt="Продам.Онлайн">
             </a>
             <nav class="header-main__nav nav" data-menu>
                 <button type="button" class="btn btn-reset header-main__close">Закрыть</button>
                 <div class="header-main__title">Меню</div>
-                <ul class="nav__list list-reset" data-spollers="1144,max" data-one-spoller>
+                <ul class="nav__list list-reset" data-spollers="1212,max" data-one-spoller>
                     <li class="nav__item nav-dropdown nav-dropdown--1">
                         <span class="nav__link" data-spoller>
                             <svg class="nav__link-icon">
@@ -96,7 +96,7 @@
                         </span>
                         <div class="nav-dropdown__container container">
                             <div class="nav-dropdown-content">
-                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--1,1144,1">
+                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--1,1212,1">
                                     <span class="card-info__title">
                                         Успейте взять ипотеку
                                         по выгодной ставке
@@ -141,7 +141,7 @@
                         </span>
                         <div class="nav-dropdown__container container">
                             <div class="nav-dropdown-content">
-                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--2,1144,2">
+                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--2,1212,2">
                                     <span class="card-info__title">
                                         Успейте взять ипотеку
                                         по выгодной ставке
@@ -187,7 +187,7 @@
                         </span>
                         <div class="nav-dropdown__container container">
                             <div class="nav-dropdown-content">
-                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--2,1144,2">
+                                <a href="#" class="nav-dropdown-content__card-info card-info" data-da=".header-main__banners-slide--2,1212,2">
                                     <span class="card-info__title">
                                         Успейте взять ипотеку
                                         по выгодной ставке
@@ -1073,7 +1073,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="object-body__sidebar" data-da=".object-body__content,1144,3">
+                        <div class="object-body__sidebar" data-da=".object-body__content,1212,3">
                             <div class="_sticky">
                                 <div class="object-body__user card-user">
                                     <a href="#" class="card-user__top">
@@ -6603,7 +6603,10 @@
 <div class="popup popup-genplan">
     <div class="popup__container popup-genplan__container" role="dialog" aria-modal="true" data-popup-target="popup-genplan">
         <button class="btn-reset js-popup-close popup__close popup-genplan__close" aria-label="Закрыть модальное окно">
-            Закрыть
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
         </button>
         <div class="popup__content popup-genplan__content">
             <div class="genplan">
@@ -6637,8 +6640,7 @@
                                     <div class="spollers__item" data-layouts="studios">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
                                             <span>Студии</span>
-                                            <span>25</span>
-                                            <span>от 4 736 000 ₽</span>
+                                            <span>от 4,7 млн ₽</span>
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#check"></use>
                                             </svg>
@@ -6657,8 +6659,7 @@
                                     <div class="spollers__item" data-layouts="one-room">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
                                             <span>1-комн.</span>
-                                            <span>15</span>
-                                            <span>от 34 736 000 ₽</span>
+                                            <span>от 34,7 млн ₽</span>
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#check"></use>
                                             </svg>
@@ -6677,8 +6678,7 @@
                                     <div class="spollers__item" data-layouts="two-room">
                                         <button type="button" data-spoller class="btn btn-reset spollers__title">
                                             <span>2-комн.</span>
-                                            <span>30</span>
-                                            <span>от 40 736 000 ₽</span>
+                                            <span>от 40,7 млн ₽</span>
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#check"></use>
                                             </svg>
@@ -6844,13 +6844,15 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="Цена от">
+                                                            <span>Цена от</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="До">
+                                                            <span>До</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>
@@ -6877,7 +6879,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter-dropdown__dropdown">
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
                                         <button type="button" class="btn btn-reset filter-dropdown__close">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#x"></use>
@@ -6973,12 +6975,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7037,12 +7039,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7131,12 +7133,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7195,12 +7197,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7259,12 +7261,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7328,12 +7330,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7392,12 +7394,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7456,12 +7458,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7643,12 +7645,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -7702,506 +7704,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        45 эт.
-                                    </span>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        44 эт.
-                                    </span>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        46 эт.
-                                    </span>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        44 эт.
-                                    </span>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </article>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        46 эт.
-                                    </span>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </article>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="checkboard__row">
-                                    <span class="checkboard__subtitle">
-                                        46 эт.
-                                    </span>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
-                                                    </use>
-                                                </svg>
-                                            </button>
-                                            <a href="https://www.youtube.com/" class="card-scheme__container">
-                                                <div class="card-scheme__image">
-                                                    <div class="ibg">
-                                                        <picture>
-                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
-                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                        </picture>
-                                                    </div>
-                                                </div>
-                                                <div class="card-scheme__content">
-                                                    <h3 class="card-scheme__name title-4">
-                                                        1-комн. квартира, 54 м², 12/12 эт.
-                                                    </h3>
-                                                    <span class="card-scheme__term">
-                                                        Срок сдачи дома 4 кв. 2024г.
-                                                    </span>
-                                                    <div class="card-scheme__price">
-                                                        <span class="card-scheme__price-old">
-                                                            <span>
-                                                                <span>3 000 000</span> ₽
-                                                            </span>
-                                                            <span>-300 000 ₽</span>
-                                                        </span>
-                                                        <span class="card-scheme__price-new">
-                                                            <span class="title-3">2 897 000
-                                                                ₽</span>
-                                                            <span>(94 742 ₽/м²)</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="card-scheme__mortgage">
-                                                        В ипотеку <span>от 14 350
-                                                            ₽/мес.</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </article>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item">
-                                        <div>
-                                            <span>34</span>
-                                        </div>
-                                    </div>
-                                    <div class="checkboard__item checkboard__item--free">
-                                        <a href="https://www.youtube.com/" class="checkboard__link">
-                                            <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
-                                        </a>
-                                        <article class="checkboard__card card-scheme">
-                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8285,12 +7793,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8338,12 +7846,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8397,12 +7905,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8462,12 +7970,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8516,12 +8024,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8576,12 +8084,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8631,12 +8139,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8690,12 +8198,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8779,12 +8287,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8832,12 +8340,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8891,12 +8399,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -8956,12 +8464,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9010,12 +8518,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9070,12 +8578,506 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        46 эт.
+                                    </span>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        45 эт.
+                                    </span>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        44 эт.
+                                    </span>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        46 эт.
+                                    </span>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        44 эт.
+                                    </span>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkboard__row">
+                                    <span class="checkboard__subtitle">
+                                        46 эт.
+                                    </span>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
+                                                    </use>
+                                                </svg>
+                                            </button>
+                                            <a href="https://www.youtube.com/" class="card-scheme__container">
+                                                <div class="card-scheme__image">
+                                                    <div class="ibg">
+                                                        <picture>
+                                                            <source srcset="./img/card-scheme.webp" type="image/webp">
+                                                            <img loading="lazy" src="./img/card-scheme.png" width="171" height="171" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                        </picture>
+                                                    </div>
+                                                </div>
+                                                <div class="card-scheme__content">
+                                                    <h3 class="card-scheme__name title-4">
+                                                        1-комн. квартира, 54 м², 12/12 эт.
+                                                    </h3>
+                                                    <span class="card-scheme__term">
+                                                        Срок сдачи дома 4 кв. 2024г.
+                                                    </span>
+                                                    <div class="card-scheme__price">
+                                                        <span class="card-scheme__price-old">
+                                                            <span>
+                                                                <span>3 000 000</span> ₽
+                                                            </span>
+                                                            <span>-300 000 ₽</span>
+                                                        </span>
+                                                        <span class="card-scheme__price-new">
+                                                            <span class="title-3">2 897 000
+                                                                ₽</span>
+                                                            <span>(94 742 ₽/м²)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="card-scheme__mortgage">
+                                                        В ипотеку <span>от 14 350
+                                                            ₽/мес.</span>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item">
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                    <div class="checkboard__item checkboard__item--free">
+                                        <a href="https://www.youtube.com/" class="checkboard__link">
+                                            <span>2-ком.кв.</span>
+                                            <span>7,2 млн ₽</span>
+                                        </a>
+                                        <article class="checkboard__card card-scheme">
+                                            <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9132,12 +9134,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9187,12 +9189,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9237,12 +9239,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9292,12 +9294,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9347,12 +9349,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9397,12 +9399,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9452,12 +9454,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9507,12 +9509,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9557,12 +9559,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9612,12 +9614,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9667,12 +9669,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9717,12 +9719,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9772,12 +9774,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9827,12 +9829,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9877,12 +9879,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9932,12 +9934,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -9987,12 +9989,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10037,12 +10039,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10092,12 +10094,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10147,12 +10149,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10197,12 +10199,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10252,12 +10254,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10307,12 +10309,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10357,12 +10359,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10412,12 +10414,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10467,12 +10469,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10517,12 +10519,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10572,12 +10574,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10627,12 +10629,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10677,12 +10679,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10739,12 +10741,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10798,12 +10800,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10887,12 +10889,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10940,12 +10942,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -10999,12 +11001,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11064,12 +11066,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11118,12 +11120,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11178,12 +11180,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11358,12 +11360,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11417,12 +11419,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11482,12 +11484,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11535,12 +11537,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -11594,12 +11596,12 @@
                                     <div class="checkboard__item checkboard__item--free">
                                         <a href="https://www.youtube.com/" class="checkboard__link">
                                             <span>2-ком.кв.</span>
-                                            <span>7 223 800 ₽</span>
+                                            <span>7,2 млн ₽</span>
                                         </a>
                                         <article class="checkboard__card card-scheme">
                                             <button type="button" class="btn btn-reset card-scheme__favorite" title="Добавить в избранное">
                                                 <svg>
-                                                    <use xlink:href="img/sprite.svg#favorite-stroke">
+                                                    <use xlink:href="img/sprite.svg#favorite">
                                                     </use>
                                                 </svg>
                                             </button>
@@ -27697,56 +27699,60 @@
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по стоимости, руб.
                                             </span>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="buy-apart-buld-1" name="request-catalog_sum" checked class="checkbox-secondary__input" type="checkbox">
+                                                <label for="buy-apart-buld-1" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="Цена от">
+                                                            <span>Цена от</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="До">
+                                                            <span>До</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>
                                                         ₽
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="filter-dropdown__checkbox checkbox-secondary">
-                                                <input id="buy-apart-buld-1" name="request-catalog_sum" checked class="checkbox-secondary__input" type="checkbox">
-                                                <label for="buy-apart-buld-1" class="checkbox-secondary__label">
-                                                </label>
                                             </div>
                                         </div>
                                         <div class="filter-dropdown__item">
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по ежемесячному платежу, руб.
                                             </span>
+                                            <div class="filter-dropdown__checkbox checkbox-secondary">
+                                                <input id="buy-apart-buld-2" name="request-catalog_sum" class="checkbox-secondary__input" type="checkbox">
+                                                <label for="buy-apart-buld-2" class="checkbox-secondary__label">
+                                                </label>
+                                            </div>
                                             <div class="filter-dropdown__range filter-range">
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="Цена от">
+                                                            <span>Цена от</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="До">
+                                                            <span>До</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>
                                                         ₽
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="filter-dropdown__checkbox checkbox-secondary">
-                                                <input id="buy-apart-buld-2" name="request-catalog_sum" class="checkbox-secondary__input" type="checkbox">
-                                                <label for="buy-apart-buld-2" class="checkbox-secondary__label">
-                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -27939,7 +27945,7 @@
                                         <span class="card-secondary__info--quantity">+2</span>
                                         <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                <use xlink:href="img/sprite.svg#favorite"></use>
                                             </svg>
                                         </div>
                                     </div>
@@ -28063,7 +28069,7 @@
                                         <span class="card-secondary__info--quantity">+2</span>
                                         <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                <use xlink:href="img/sprite.svg#favorite"></use>
                                             </svg>
                                         </div>
                                     </div>
@@ -28187,7 +28193,7 @@
                                         <span class="card-secondary__info--quantity">+2</span>
                                         <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                <use xlink:href="img/sprite.svg#favorite"></use>
                                             </svg>
                                         </div>
                                     </div>
@@ -28311,7 +28317,7 @@
                                         <span class="card-secondary__info--quantity">+2</span>
                                         <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
-                                                <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                <use xlink:href="img/sprite.svg#favorite"></use>
                                             </svg>
                                         </div>
                                     </div>

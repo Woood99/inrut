@@ -323,12 +323,15 @@ textarea.input-reset {
 
   @media (min-width:$desktop-min){
     &:hover{
-        .input-text__label{
-            border: 1px solid var(--blue);
-            >span{
-                color: var(--blue);
+        &:not(.input-text--disabled){
+            .input-text__label{
+                border: 1px solid var(--blue);
+                >span{
+                    color: var(--blue);
+                }
             }
         }
+
      }  
   }
 }

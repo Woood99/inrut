@@ -212,7 +212,7 @@ const maps = () => {
             });
             positionElement(map);
             removeControlsPrimary(map, '#popup-map__map');
-            if (innerWidth > 1144) reziseContainer(map)
+            if (innerWidth > 1212) reziseContainer(map)
         }
         ymaps.ready(init);
 

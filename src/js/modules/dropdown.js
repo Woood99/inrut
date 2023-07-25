@@ -22,7 +22,7 @@ const dropdown = (containerSelector, targetSelector) => {
             });
         } else {
             target.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1144) {
+                if (window.innerWidth <= 1212) {
                     e.preventDefault();
                     container.forEach(el => {
                         if (e.target.closest(containerSelector) !== el) {
