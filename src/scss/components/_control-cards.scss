@@ -43,6 +43,11 @@
                 &__top {
                     grid-row: 1/3;
                     grid-column: 1/2;
+
+                    .card-primary__info--comment,
+                    .card-primary__info--dislike {
+                        display: none;
+                    }
                 }
 
                 &__image {
@@ -82,10 +87,37 @@
                     grid-column: 1/2;
                 }
 
-                &__user {
-                    margin-top: 66px;
+                &__bottom {
+                    margin-top: 48px;
                     grid-column: 2/3;
+
+                    &._vertical-active {
+                        display: flex;
+                        align-items: center;
+
+                        .card-primary__info--dislike {
+                            margin-left: auto;
+                        }
+
+                        .card-primary__info--comment {
+                            margin-left: 16px;
+                        }
+
+                        .card-primary__info--dislike,
+                        .card-primary__info--comment {
+                            border: 1px solid var(--blue);
+
+                            .secondary-tooltip__content {
+                                right: 0;
+                                left: auto;
+                                top: auto;
+                                bottom: 36px;
+                            }
+                        }
+                    }
                 }
+
+                &__user {}
 
             }
 
@@ -350,24 +382,29 @@
                     animation-duration: 1.1s;
                 }
             }
-            .card-secondary{
-                &__add-info{
-                    span:nth-child(1){
+
+            .card-secondary {
+                &__add-info {
+                    span:nth-child(1) {
                         font-size: var(--small-fz);
                     }
-                    span:nth-child(2){
+
+                    span:nth-child(2) {
                         font-size: var(--small-fz);
                     }
                 }
-                &__address{
+
+                &__address {
                     font-size: var(--small-fz);
                 }
-                .card-secondary__prices--1{
+
+                .card-secondary__prices--1 {
                     margin-bottom: 24px;
                 }
-                .card-secondary__prices--2{
-                    .card-secondary__price{
-                        >span{
+
+                .card-secondary__prices--2 {
+                    .card-secondary__price {
+                        >span {
                             font-size: var(--small-fz);
                         }
                     }

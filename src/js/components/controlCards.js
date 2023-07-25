@@ -36,6 +36,44 @@ function controlCards() {
                         }
                     })
                 }
+
+                if (content.querySelectorAll('.card-primary').length >= 1) {
+                    const cardsPrimary = content.querySelectorAll('.card-primary');
+
+                    cardsPrimary.forEach(card => {
+                        const dislike = card.querySelector('.card-primary__info--dislike');
+                        const comment = card.querySelector('.card-primary__info--comment');
+                        const bottom = card.querySelector('.card-primary__bottom');
+                        if (dislike) {
+                            if (checkVertical(btn)) {
+                                bottom.classList.add('_vertical-active');
+                                if (!card.querySelector('.card-primary__bottom .card-primary__info--dislike')) {
+                                    const clone = dislike.cloneNode(true);
+                                    bottom.appendChild(clone);
+                                }
+                                bottom.querySelector('.card-primary__info--dislike').removeAttribute('hidden');
+                            }
+                            if (checkHorizontal(btn)) {
+                                bottom.classList.remove('_vertical-active');
+                                bottom.querySelector('.card-primary__info--dislike').setAttribute('hidden', '');
+                            }
+                        }
+                        if (comment) {
+                            if (checkVertical(btn)) {
+                                bottom.classList.add('_vertical-active');
+                                if (!card.querySelector('.card-primary__bottom .card-primary__info--comment')) {
+                                    const clone = comment.cloneNode(true);
+                                    bottom.appendChild(clone);
+                                }
+                                bottom.querySelector('.card-primary__info--comment').removeAttribute('hidden');
+                            }
+                            if (checkHorizontal(btn)) {
+                                bottom.classList.remove('_vertical-active');
+                                bottom.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
+                            }
+                        }
+                    })
+                }
             });
         })
 
