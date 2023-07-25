@@ -126,9 +126,9 @@
     &__similar-objects {
         margin-top: 32px;
 
-        @media (max-width:$smallTablet-max) {
-            margin-top: 8px;
-        }
+       @media (max-width:$desktop){
+        margin-top: 8px; 
+       }
     }
 
     &__similar-city {
@@ -137,11 +137,14 @@
         .search-select-one {
             max-width: 400px;
             margin-bottom: 24px;
+            @media (max-width:$desktop){
+                 margin: 0 16px 16px; 
+            }
         }
 
-        @media (max-width:$smallTablet-max) {
-            margin-top: 8px;
-        }
+     @media (max-width:$desktop){
+        margin-top: 24px; 
+     }
     }
 
     &__stock {
@@ -694,9 +697,11 @@
             font-weight: 500;
             transition: color $transitionSpeed $transitionFunction;
 
+          @media (min-width:$desktop-min){
             &:hover {
                 color: var(--blue-dark);
-            }
+            } 
+          }
         }
     }
 
@@ -1096,7 +1101,7 @@
     }
 
     @media (max-width:$desktop) {
-        padding: 16px;
+        padding: 16px 0;
     }
 }
 
@@ -1764,11 +1769,13 @@
             transition: fill $transitionSpeed $transitionFunction;
         }
 
+       @media (min-width:$desktop-min){
         &:hover {
             svg {
                 fill: var(--white);
             }
-        }
+        } 
+       }
     }
 
     @media (max-width:$desktop) {

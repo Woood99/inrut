@@ -465,9 +465,11 @@
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
 
+     @media (min-width:$desktop-min){
         &:hover {
             color: var(--blue);
-        }
+        } 
+     }
 
         @media (max-width:$smallTablet-max) {
             margin-top: 2px;

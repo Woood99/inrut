@@ -147,18 +147,18 @@ function initSliders() {
         new Swiper(slider, {
             observer: true,
             observeParents: true,
-            slidesPerView: 1.15,
-            spaceBetween: 10,
+            slidesPerView: 1.1,
+            spaceBetween: 16,
             autoHeight: true,
             speed: 800,
             breakpoints: {
                 576: {
                     slidesPerView: 1.6,
-                    spaceBetween: 24,
+                    spaceBetween: 16,
                 },
                 768: {
                     slidesPerView: 2,
-                    spaceBetween: 24,
+                    spaceBetween: 16,
                 },
                 1144: {
                     slidesPerView: 3,

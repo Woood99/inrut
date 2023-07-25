@@ -35,7 +35,7 @@
         margin-top: 48px;
 
         @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
+            margin-top: 32px;
         }
     }
 
@@ -43,7 +43,7 @@
         margin-top: 48px;
 
         @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
+            margin-top: 32px;
         }
     }
 
@@ -51,7 +51,7 @@
         margin-top: 48px;
 
         @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
+            margin-top: 32px;
         }
     }
 
@@ -59,7 +59,7 @@
         margin-top: 48px;
 
         @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
+            margin-top: 32px;
         }
     }
 
@@ -67,11 +67,16 @@
         margin-top: 48px;
 
         @media (max-width:$smallTablet-max) {
-            margin-top: 24px;
+            margin-top: 32px;
         }
     }
 
-    &__services {}
+    &__services {
+        margin-top: 48px;
+        @media (max-width:$smallTablet-max) {
+            margin-top: 32px;
+        }
+    }
 
     &--agent {
         .home-purchase {
@@ -193,12 +198,16 @@
 }
 
 .home-services {
-    margin-top: 48px;
+ 
 
     &__container {
         display: grid;
         grid-template-columns: 1fr 450px;
         grid-column-gap: 24px;
+        grid-row-gap: 16px;
+        @media (max-width:$desktop){
+             grid-template-columns: 1fr; 
+        }
     }
 
     &__list {
@@ -206,6 +215,10 @@
         grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
         grid-column-gap: 24px;
         grid-row-gap: 24px;
+        @media (max-width:$desktop){
+            grid-column-gap: 16px;
+            grid-row-gap: 16px; 
+        }
     }
 
     &__item {
@@ -232,8 +245,12 @@
 
             img {
                 border-radius: 50%;
-                width: 80px;
-                height: 80px;
+                --size: 80px;
+                width: var(--size);
+                height: var(--size);
+                @media (max-width:$smallTablet-max){
+                     --size: 50px; 
+                }
             }
         }
 
@@ -266,9 +283,11 @@
     &__title {
         transition: color $transitionSpeed $transitionFunction;
 
+      @media (min-width:$desktop-min){
         &:hover {
             color: var(--blue);
-        }
+        } 
+      }
     }
 
     &__descr {
@@ -278,6 +297,9 @@
         color: var(--dark);
         flex-grow: 1;
         max-width: calc(100% - 80px - 12px);
+        @media (max-width:$desktop){
+             max-width: calc(100% - 50px - 12px); 
+        }
     }
 
     &__btn {
@@ -405,9 +427,11 @@
             fill: currentColor;
         }
 
+      @media (min-width:$desktop-min){
         &:hover {
             color: var(--primary600);
-        }
+        } 
+      }
     }
 
     &__form {
@@ -613,18 +637,29 @@
         width: 100%;
         margin-top: 24px;
         padding: 0 16px;
+        @media (max-width:$smallTablet-max){
+             margin: 16px 16px 0;
+             width: calc(100% - 32px); 
+        }
     }
 }
 
 .home-price {
 
-    &__title {}
+    &__title {
+        @media (max-width:$smallTablet-max){
+             padding: 0; 
+        }
+    }
 
     &__top {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 24px;
+        @media (max-width:$smallTablet-max){
+             margin-bottom: 16px; 
+        }
     }
 
     &__more {
@@ -697,11 +732,17 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 24px;
+        @media (max-width:$smallTablet-max){
+             margin-bottom: 16px; 
+        }
     }
 
     &__title {
         svg {
             fill: var(--yellow);
+        }
+        @media (max-width:$smallTablet-max){
+             padding: 0; 
         }
     }
 
@@ -709,9 +750,10 @@
         margin-top: 24px;
         padding: 0 16px;
 
-        @media (max-width:$smallTablet-max) {
-            margin-top: 16px;
-        }
+        @media (max-width:$smallTablet-max){
+            margin: 16px 16px 0;
+            width: calc(100% - 32px); 
+       }
     }
 
     &__nav {

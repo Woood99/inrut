@@ -105,12 +105,14 @@
         }
     }
 
+ @media (min-width:$desktop-min){
     &:hover {
         .main-tooltip__content {
             opacity: 1;
             visibility: visible;
         }
-    }
+    } 
+ }
 
     &.main-tooltip--tablet-visible {
         @media (max-width:$desktop) {
@@ -256,12 +258,14 @@
             transform: translateX(-50%);
         }
     }
+ @media (min-width:$desktop-min){
     &:hover {
         .secondary-tooltip__content {
             opacity: 1;
             visibility: visible;
         }
-    }
+    } 
+ }
     &--dark{
         .secondary-tooltip__content{
             border: none;

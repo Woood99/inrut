@@ -9,6 +9,7 @@ const tag = () => {
     `;
     tags.forEach(tag => {
         tag.addEventListener('click', () => {
+            if (tag.closest('._drag')) return;
             if (!tag.classList.contains('_active')) {
                 tag.classList.add('_active');
                 tag.insertAdjacentHTML('beforeend', svgIconHTML);

@@ -120,11 +120,13 @@
             transition: fill $transitionSpeed $transitionFunction;
         }
 
+       @media (min-width:$desktop-min){
         &:hover {
             svg {
                 fill: var(--white);
             }
-        }
+        } 
+       }
     }
 
     &__btn--call {}

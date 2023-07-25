@@ -287,9 +287,11 @@
         color: var(--blue);
 
         .fc-daygrid-more-link {
+           @media (min-width:$desktop-min){
             &:hover {
                 background-color: transparent;
-            }
+            } 
+           }
         }
 
         @media (max-width:$desktop) {
@@ -349,12 +351,14 @@
             }
         }
 
+     @media (min-width:$desktop-min){
         &:hover {
             color: var(--blue);
             background: transparent;
             border-color: currentColor;
             box-shadow: none;
-        }
+        } 
+     }
 
         &:focus {
             box-shadow: none;

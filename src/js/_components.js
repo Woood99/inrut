@@ -176,9 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
 
-    emergingBlockScroll('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144);
-    emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144);
-    emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1144);
+    emergingBlockScroll('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144, true);
+    emergingBlockScroll('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144, true);
+    emergingBlockScroll('.agent .bid-user__btn', '.agent-plate-bottom', 1144, true);
     emergingBlockScroll('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
     emergingBlockScroll('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
     emergingBlockScroll('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);

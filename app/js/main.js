@@ -4340,9 +4340,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==================================================
 
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144);
-  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-body__user .bid-user__btn--message', '.object-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.purchase-request .bid-user__btn', '.purchase-request-plate-bottom', 1144, true);
+  (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.agent .bid-user__btn', '.agent-plate-bottom', 1144, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.develop-inner .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.detailed-flat .object-body__user .bid-user__btn', '.object-plate-bottom', 1144, true);
   (0,_modules_emergingBlockScroll__WEBPACK_IMPORTED_MODULE_12__["default"])('.object-base-inner .object-body__user .card-user__btn', '.object-plate-bottom', 1144, true);
@@ -9193,6 +9193,7 @@ const tag = () => {
     `;
   tags.forEach(tag => {
     tag.addEventListener('click', () => {
+      if (tag.closest('._drag')) return;
       if (!tag.classList.contains('_active')) {
         tag.classList.add('_active');
         tag.insertAdjacentHTML('beforeend', svgIconHTML);
@@ -9922,18 +9923,18 @@ function initSliders() {
     new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
       observer: true,
       observeParents: true,
-      slidesPerView: 1.15,
-      spaceBetween: 10,
+      slidesPerView: 1.1,
+      spaceBetween: 16,
       autoHeight: true,
       speed: 800,
       breakpoints: {
         576: {
           slidesPerView: 1.6,
-          spaceBetween: 24
+          spaceBetween: 16
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 24
+          spaceBetween: 16
         },
         1144: {
           slidesPerView: 3,

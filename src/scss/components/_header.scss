@@ -49,9 +49,9 @@
             padding: 0 16px;
 
             svg {
-                width: 10px;
-                height: 12px;
-                margin-right: 26px;
+                width: 14px;
+                height: 16px;
+                margin-right: 16px;
             }
 
             .city {
@@ -101,11 +101,13 @@
 
 .header-action {
     &--add {
+      @media (min-width:$desktop-min){
         &:hover {
             .header-action__title {
                 color: var(--blue);
             }
-        }
+        } 
+      }
     }
 
     &--calendar {}
@@ -185,9 +187,11 @@
             fill: var(--primaryTwo);
         }
 
+      @media (min-width:$desktop-min){
         &:hover {
             color: var(--blue);
-        }
+        } 
+      }
     }
 
     &__name {
@@ -218,9 +222,11 @@
             fill: var(--primaryTwo);
         }
 
+       @media (min-width:$desktop-min){
         &:hover {
             color: var(--blue);
-        }
+        } 
+       }
     }
 
     &__name {

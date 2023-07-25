@@ -126,6 +126,11 @@
                 margin-bottom: 24px;
             }
         }
+        @media (max-width:$smallTablet-max){
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
     }
 
     &__controls {
@@ -1202,14 +1207,17 @@
 
         @media (max-width:$smallTablet-max) {
             min-width: 320px;
-            padding: 16px 16px 32px 16px;
+            padding: 48px 16px 16px 16px;
             left: -16px;
             right: auto;
-            width: calc(100% + 32px);
+            width: calc(100% + 16px);
         }
 
         .simplebar-track.simplebar-vertical {
             margin-right: -24px;
+            @media (max-width:$smallTablet-max){
+                 margin-right: -12px; 
+            }
         }
     }
 
@@ -1311,6 +1319,9 @@
             visibility: visible;
             transform: translateY(4px);
         }
+    }
+    @media (max-width:$desktop){
+         width: 100%; 
     }
 }
 

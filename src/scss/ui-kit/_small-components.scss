@@ -493,10 +493,12 @@
                 fill: var(--blue);
             }
 
+          @media (min-width:$desktop-min){
             &:hover {
                 background-color: var(--primary100);
             }
-
+ 
+          }
             @media (max-width:$smallTablet-max) {
                 padding: 10px 12px;
 
@@ -1011,16 +1013,20 @@
                 background-color: var(--blue);
             }
 
+           @media (min-width:$desktop-min){
             &:hover {
                 background-color: var(--blue);
                 color: var(--white);
-            }
+            } 
+           }
         }
 
+     @media (min-width:$desktop-min){
         &:hover {
             background-color: var(--blue);
             color: var(--white);
-        }
+        } 
+     }
 
         &.focus-visible {
             background-color: var(--blue);
@@ -1783,11 +1789,13 @@
         height: 8px;
     }
 
+  @media (min-width:$desktop-min){
     &:hover,
     &.focus-visible {
         background-color: var(--blue);
         color: var(--white);
-    }
+    } 
+  }
 
     &._active {
         background-color: var(--blue);
