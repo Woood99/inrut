@@ -8045,6 +8045,7 @@ textarea.input-reset {
   line-height: var(--big-small-lh);
   font-weight: 500;
   min-height: 200px;
+  grid-column: 1/-1;
 }
 .cards-list__next {
   margin-top: 32px;
@@ -12842,17 +12843,28 @@ textarea.input-reset {
   backdrop-filter: blur(2px);
 }
 .card-secondary__info--favorite {
-  width: 20px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .card-secondary__info--favorite svg {
-  width: 20px;
-  height: 18px;
-  fill: var(--white);
-  stroke: transparent;
-  -webkit-transition: stroke 0.4s ease-in-out, fill 0.4s ease-in-out;
-  -o-transition: stroke 0.4s ease-in-out, fill 0.4s ease-in-out;
-  transition: stroke 0.4s ease-in-out, fill 0.4s ease-in-out;
+  width: 15px;
+  height: 15px;
+  fill: var(--blue);
+  stroke: none;
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
 }
 @media (min-width: 1213px) {
   .card-secondary__info--favorite:hover {
@@ -13027,15 +13039,11 @@ textarea.input-reset {
   display: block;
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
-}
-.card-secondary__add-info span:nth-child(1) {
-  color: var(--blue);
-  font-weight: 500;
+  color: var(--primaryTwo);
+  font-weight: 400;
 }
 .card-secondary__add-info span:nth-child(2) {
   margin-top: 5px;
-  font-weight: 400;
-  color: var(--primaryTwo);
 }
 .card-secondary__prices--2 {
   margin-top: auto;
@@ -13094,13 +13102,18 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 12px 16px;
+  padding: 16px;
   left: 0;
   bottom: 32px;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   border-radius: 16px;
+  background-color: var(--dark);
+  border: none;
+}
+.card-secondary__options .secondary-tooltip__content span {
+  background-color: var(--white);
 }
 .card-secondary__bottom {
   display: none;
@@ -15282,6 +15295,15 @@ textarea.input-reset {
   transform: rotate(-180deg);
   width: 100%;
   height: 100%;
+  fill: var(--primary300);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+@media (min-width: 1213px) {
+  .filter-dropdown__close:hover svg {
+    fill: var(--primary500);
+  }
 }
 .filter-dropdown__button {
   height: 48px;
@@ -15616,6 +15638,15 @@ textarea.input-reset {
   transform: rotate(-180deg);
   width: 100%;
   height: 100%;
+  fill: var(--primary300);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+@media (min-width: 1213px) {
+  .select-dropdown-checkbox__close:hover svg {
+    fill: var(--primary500);
+  }
 }
 .select-dropdown-checkbox__placeholder {
   font-size: var(--default-fz);
@@ -16128,6 +16159,15 @@ textarea.input-reset {
   transform: rotate(-180deg);
   width: 100%;
   height: 100%;
+  fill: var(--primary300);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+@media (min-width: 1213px) {
+  .search-select__close:hover svg {
+    fill: var(--primary500);
+  }
 }
 .search-select__dropdown {
   position: absolute;
@@ -16365,6 +16405,15 @@ textarea.input-reset {
   transform: rotate(-180deg);
   width: 100%;
   height: 100%;
+  fill: var(--primary300);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+@media (min-width: 1213px) {
+  .search-select-one__close:hover svg {
+    fill: var(--primary500);
+  }
 }
 .search-select-one__dropdown {
   position: absolute;
@@ -18591,6 +18640,8 @@ textarea.input-reset {
   .control-cards__content--vertical .card-secondary__prices--2 .card-secondary__price span {
     color: var(--blue);
     font-weight: 500;
+    font-size: var(--small-fz);
+    line-height: var(--small-lh);
   }
   .control-cards__content--vertical .card-secondary__prices--2 .card-secondary__price span:not(:last-child) {
     margin-right: 3px;
@@ -18652,6 +18703,8 @@ textarea.input-reset {
     grid-column: 1/2;
     -ms-grid-row-align: start;
     align-self: start;
+    font-size: var(--little-big-fz);
+    line-height: var(--little-big-lh);
   }
   .control-cards__content--vertical .card-secondary__address {
     -ms-grid-column: 1;

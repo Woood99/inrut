@@ -276,6 +276,15 @@
             transform: rotate(-180deg);
             width: 100%;
             height: 100%;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+        @media (min-width:$desktop-min){
+             &:hover{
+                svg{
+                    fill: var(--primary500);
+                }
+             } 
         }
     }
 
@@ -639,7 +648,16 @@
             transform: rotate(-180deg);
             width: 100%;
             height: 100%;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
         }
+        @media (min-width:$desktop-min){
+            &:hover{
+               svg{
+                   fill: var(--primary500);
+               }
+            } 
+       }
     }
 
     &__placeholder {
@@ -1176,7 +1194,16 @@
             transform: rotate(-180deg);
             width: 100%;
             height: 100%;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
         }
+        @media (min-width:$desktop-min){
+            &:hover{
+               svg{
+                   fill: var(--primary500);
+               }
+            } 
+       }
     }
 
     &__dropdown {
@@ -1413,7 +1440,16 @@
             transform: rotate(-180deg);
             width: 100%;
             height: 100%;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
         }
+        @media (min-width:$desktop-min){
+            &:hover{
+               svg{
+                   fill: var(--primary500);
+               }
+            } 
+       }
     }
 
     &__dropdown {

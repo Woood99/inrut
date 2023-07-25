@@ -339,15 +339,22 @@
         &--quantity {}
 
         &--favorite {
-            width: 20px;
-            height: 18px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             svg {
-                width: 20px;
-                height: 18px;
-                fill: var(--white);
-                stroke: transparent;
-                transition: stroke $transitionSpeed $transitionFunction,
+                width: 15px;
+                height: 15px;
+                fill: var(--blue);
+                stroke: none;
+                transition:
                     fill $transitionSpeed $transitionFunction;
             }
 
@@ -394,11 +401,11 @@
                     fill: var(--gray);
                 }
 
-              @media (min-width:$desktop-min){
-                &:hover {
-                    background-color: var(--primary200);
-                } 
-              }
+                @media (min-width:$desktop-min) {
+                    &:hover {
+                        background-color: var(--primary200);
+                    }
+                }
 
                 &.focus-visible {
                     background-color: var(--primary200);
@@ -525,16 +532,13 @@
             display: block;
             font-size: var(--default-fz);
             line-height: var(--little-small-lh);
-
+            color: var(--primaryTwo);
+            font-weight: 400;
             &:nth-child(1) {
-                color: var(--blue);
-                font-weight: 500;
             }
 
             &:nth-child(2) {
                 margin-top: 5px;
-                font-weight: 400;
-                color: var(--primaryTwo);
             }
         }
     }
@@ -589,11 +593,18 @@
             &__content {
                 display: flex;
                 align-items: center;
-                padding: 12px 16px;
+              padding: 16px;
                 left: 0;
                 bottom: 32px;
                 transform: translateX(-50%);
                 border-radius: 16px;
+
+                background-color: var(--dark);
+                border: none;
+
+                span{
+                    background-color: var(--white);
+                }
             }
         }
     }
@@ -603,13 +614,13 @@
         align-items: center;
     }
 
-  @media (min-width:$desktop-min){
-    &:hover {
-        .card-secondary__image {
-            img {
-                transform: scale(1.02);
+    @media (min-width:$desktop-min) {
+        &:hover {
+            .card-secondary__image {
+                img {
+                    transform: scale(1.02);
+                }
             }
         }
-    } 
-  }
+    }
 }
