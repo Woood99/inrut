@@ -133,7 +133,31 @@
                 grid-column-gap: 15px;
                 padding: 24px 0;
             }
+            &--advertist-copy{
+                .main-table {
+                    padding-top: 24px;
+                    padding-bottom: 0;
+                }
 
+                .main-table__type {
+                    grid-template-columns: percent(275, 700) 1fr percent(85,700);
+                }
+
+                .object-info-secondary {
+                    grid-template-columns: percent(275, 700) 1fr max-content;
+                    &__from{
+                        margin: 0;
+                    }
+                    >span{
+                        &:nth-child(2){
+                            justify-self: start;
+                            background-color: var(--primary200);
+                            padding: 4px 8px;
+                            border-radius: 8px;
+                        }
+                    }
+                }
+            }
             &--meeting-showing {
                 .main-table {
                     padding-top: 24px;
@@ -299,21 +323,18 @@
 
         .object-data {
             position: relative;
-
+            &__right{
+                position: absolute;
+              top: 16px;
+                right: 16px;
+            }
             &__time {
                 width: 280px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                @media (min-width:$smallTablet-min) {
-                    position: absolute;
-                    top: 16px;
-                    right: 16px;
-                }
 
-                @media (max-width:$smallTablet-max) {
-                    margin-bottom: 16px;
-                }
+                margin-bottom: 8px;
 
                 span{
                     &:not(:last-child){
@@ -322,9 +343,7 @@
                 }
             }
             &__statistics{
-                position: absolute;
-                top: calc(16px + 30px + 24px);
-                right: 16px;
+                margin-top: 16px;
             }
             &__name {}
         }

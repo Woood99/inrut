@@ -80,10 +80,7 @@
 .advance-pay {
     display: flex;
     align-items: center;
-    color: var(--blue);
-    padding: 5px 12px;
-    margin-right: 10px;
-    transition: color $transitionSpeed $transitionFunction;
+width: 100%;
     svg {
         margin-right: 10px;
         width: 18px;
@@ -109,6 +106,7 @@
                 margin-right: 0;
                 width: 17px;
                 height: 17px;
+                fill: none !important;
             }
         }
     }
@@ -116,18 +114,16 @@
     .secondary-tooltip__content {
         width: max-content;
         max-width: 300px;
-        top: calc(100% + 8px);
-        left: 0;
+        white-space: normal;
+        top: calc(100% + 12px);
+      right: -40px;
+      left: auto;
         bottom: auto;
         z-index: 99;
     }
-    @media (min-width:$desktop-min){
-         &:hover{
-            color: var(--green);
-         } 
-    }
+
     &._active{
-        color: var(--green);
+        // color: var(--green);
     }
 }
 
