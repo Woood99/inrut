@@ -2829,35 +2829,22 @@
                     </select>
                 </div>
             </div>
-            <div class="search-select-one" hidden data-favorite-selection-select-two>
-                <button type="button" class="btn btn-reset search-select-one__button">
-                    <div class="search-select-one__button-wrapper">
-                        <div>Выбрать клиента</div>
-                        <div></div>
-                    </div>
-                    <svg>
-                        <use xlink:href="img/sprite.svg#check"></use>
-                    </svg>
-                </button>
-                <div class="search-select-one__dropdown">
-                    <button type="button" class="btn btn-reset search-select-one__close">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#x"></use>
-                        </svg>
-                    </button>
-                    <label class="input-primary search-select-one__input">
-                        <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по имени">
-                    </label>
-                    <div class="search-select-one__wrapper simplebar-third">
-                        <div class="search-select-one__item" data-value="object-1">
-                            Стрючков Сергей Сергеевич
-                        </div>
-                        <div class="search-select-one__item" data-value="object-2">
-                            Алексей Иванников Александрович
-                        </div>
-                    </div>
+            <div class="select-secondary" hidden data-favorite-selection-select-two>
+                <div class="select-secondary__wrapper">
+                    <span class="select-secondary__placeholder">
+                        Выбрать подбор
+                    </span>
+                    <select class="select-secondary__body" hidden name="complex">
+                        <option placeholder value="all-room">Любой</option>
+                        <option value="room-1">
+                            Тип объекта: Квартира, Кол-во комнат: 3, Сумма: 3 500 000 ₽, Этаж до: 12, Площадь общая от: 54 м², Площадь кухни от: 54 м²
+                            Семья из 3 человек ищет квартиру до 3,5 млн рублей, в ипотеку, в сделке используется материнский капитал. Ипотека без первоначальный взноса.
+                        </option>
+                        <option value="room-1">
+                            Тип объекта: Квартира, Кол-во комнат: 3, Сумма: 3 500 000 ₽, Этаж до: 12, Площадь общая от: 54 м²,
+                        </option>
+                    </select>
                 </div>
-                <input type="text" name="object" value="" class="search-select-one__input-hidden" hidden>
             </div>
             <div class="favorite-two__btns">
                 <button type="button" class="btn btn-reset btn-primary favorite-two__btn">
@@ -3598,29 +3585,57 @@
             </div>
             <div class="edit-profile__wrapper">
                 <h4 class="edit-profile__wrapper-subtitle title-3">Личные данные</h4>
-                <label class="input-primary input-clue">
+                <label class="input-primary input-primary--disabled">
                     <input type="text" name="Фамилия" class="input-reset input-primary__input" disabled value="Петров" placeholder="Фамилия">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                    <div class="secondary-tooltip secondary-tooltip--dark secondary-tooltip--top-center">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#info"></use>
+                            </svg>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Для вашего профиля редактирование данных недоступно.
+                        </div>
+                    </div>
                 </label>
-                <label class="input-primary input-clue">
+                <label class="input-primary input-primary--disabled">
                     <input type="text" name="Имя" class="input-reset input-primary__input" disabled value="Иван" placeholder="Имя">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                    <div class="secondary-tooltip secondary-tooltip--dark">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#info"></use>
+                            </svg>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Для вашего профиля редактирование данных недоступно.
+                        </div>
+                    </div>
                 </label>
-                <label class="input-primary input-clue">
+                <label class="input-primary input-primary--disabled">
                     <input type="text" name="Отчество" class="input-reset input-primary__input" disabled value="Сергеевич" placeholder="Отчество">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                    <div class="secondary-tooltip secondary-tooltip--dark secondary-tooltip--top-center">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#info"></use>
+                            </svg>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Для вашего профиля редактирование данных недоступно.
+                        </div>
+                    </div>
                 </label>
-                <label class="input-primary input-clue">
+                <label class="input-primary input-primary--disabled">
                     <input type="text" name="Дата рождения" class="input-reset input-primary__input" disabled value="16.02.1982" placeholder="Телефон">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#info"></use>
-                    </svg>
+                    <div class="secondary-tooltip secondary-tooltip--dark">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#info"></use>
+                            </svg>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Для вашего профиля редактирование данных недоступно.
+                        </div>
+                    </div>
                 </label>
                 <div class="input-text input-text--no-exp _active">
                     <label class="input-text__label">
