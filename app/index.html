@@ -16,61 +16,71 @@
 
 <body class="page__body">
     <div class="site-container">
-        <div class="block">
-            <h2>Готовые страницы:</h2>
-            <ol>
-                <li>
-                    <ol>
-                        <li>
-                            <a href="./buy-apartment-moscow.html">Купить квартиру в Москве</a>
-                        </li>
-                        <li>
-                            <a href="./object-two.html">Купить квартиру в Москве объект</a>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <ol>
-                        <li>
-                            <a href="./request-catalog.html">Запрос на покупку каталог </a>
-                        </li>
-                        <li>
-                            <a href="./purchase-request.html">Запрос на покупку внутреняя</a>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <ol>
-                        <li>
-                            <a href="./selection-estate.html">Подбор недвижимости</a>
-                        </li>
-                        <li>
-                            <a href="./selection-estate-inner.html">Подбор недвижимости внутренняя</a>
-                        </li>
-                        <li>
-                            <a href="./object.html">Подбор недвижимости внутренняя объект</a>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    <ol>
-                        <li>
-                            <a href="./base-agent-catalog.html">База агентов каталог</a>
-                        </li>
-                        <li>
-                            <a href="./agent.html">Агент</a>
-                        </li>
-                    </ol>
-                </li>
-            </ol>
-        </div>
-        <div class="block">
-            <h2>Ui-Kit</h2>
-            <ol>
-                <li>
-                    <a href="./ui-kit.html">Ссылка</a>
-                </li>
-            </ol>
+        <div class="row" style="display: flex; gap: 132px;">
+            <div class="block">
+                <h2>Пользователь:</h2>
+                <ol>
+                    <li>
+                        <a href="./home.html">Главная</a>
+                    </li>
+                    <li>
+                        <a href="./request-catalog.html">Запрос на покупку каталог </a>
+                    </li>
+                    <li>
+                        <a href="./purchase-request.html">Запрос на покупку</a>
+                    </li>
+                    <li>
+                        <a href="./buy-apartment-building.html">Купить квартиру в Новостройке</a>
+                    </li>
+                    <li>
+                        <a href="./develop-inner.html">Застройщик внутреняя</a>
+                    </li>
+                    <li>
+                        <a href="./detailed-flat.html">Застройщик детальная страница квартиры</a>
+                    </li>
+                    <li>
+                        <a href="./selection-estate.html">Подбор недвижимости</a>
+                    </li>
+                    <li>
+                        <a href="./selection-estate-inner.html">Подбор недвижимости внутренняя</a>
+                    </li>
+                    <li>
+                        <a href="./object.html">Объект</a>
+                    </li>
+                    <li>
+                        <a href="./buy-apartment-moscow.html">Купить квартиру в Москве</a>
+                    </li>
+                    <li>
+                        <a href="./object-two.html">Объект 2</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="block">
+                <h2>Агент:</h2>
+                <ol>
+                    <li>
+                        <a href="./home-agent.html">Главная для агента</a>
+                    </li>
+                    <li>
+                        <a href="./buy-apartment-building-2.html">Купить квартиру в Новостройке для агента</a>
+                    </li>
+                    <li>
+                        <a href="./develop-inner-2.html">Застройщик внутреняя для агента</a>
+                    </li>
+                    <li>
+                        <a href="./detailed-flat-2.html">Застройщик детальная страница квартиры для агента</a>
+                    </li>
+                    <li>
+                        <a href="./objects-base.html">База объектов</a>
+                    </li>
+                    <li>
+                        <a href="./object-base-inner.html">База объекта внутреняя</a>
+                    </li>
+                    <li>
+                        <a href="./object-base-inner-2.html">База объекта внутреняя 2</a>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
 
@@ -96,32 +106,11 @@
         }
 
         ol {
-            /* need hack :( */
             margin-top: 15px !important;
-            counter-reset: item
-        }
-
-        li {
-            display: block;
-        }
-
-        li ol {
-            /* need hack :( */
-            margin-top: 5px !important;
-            padding-left: 15px;
-        }
-
-        li ol li:not(:last-child) {
-            margin-bottom: 8px;
-        }
-
-        li:before {
-            content: counters(item, ".") ".";
-            counter-increment: item;
         }
 
         ol li:not(:last-child) {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         a {
@@ -133,10 +122,6 @@
 
         a:hover {
             color: red;
-        }
-
-        ol {
-            list-style-type: decimal-leading-zero;
         }
 
     </style>

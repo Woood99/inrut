@@ -322,6 +322,13 @@ export const searchSelectOne = () => {
                         container.classList.remove('_error');
                     }
                 }
+
+                const favoriteTwo = container.closest('.favorite-two');
+                if (container.hasAttribute('data-favorite-client-select')) {
+                    if (container.classList.contains('_selected')) {
+                        favoriteTwo.querySelector('[data-favorite-selection-select]').removeAttribute('hidden');
+                    }
+                }
             })
         })
     });

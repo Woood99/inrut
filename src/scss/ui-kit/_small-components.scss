@@ -178,37 +178,21 @@
     display: inline-flex;
     align-items: center;
     transition: color $transitionSpeed $transitionFunction;
-
-    &.secondary-tooltip {
-        width: auto;
-        height: auto;
-        padding: 5px 12px;
+    padding: 5px 12px;
+    color: var(--blue);
+    svg {
+        margin-right: 10px;
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+        stroke: none;
     }
-
-    .secondary-tooltip__btn {
-        width: auto;
-        height: auto;
-        color: var(--blue);
-
-        svg {
-            margin-right: 10px;
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
-            stroke: none;
-        }
-        span {
-            color: inherit;
-            font-size: var(--default-fz);
-            line-height: var(--default-lh);
-            font-weight: 400;
-        }
+    span {
+        color: inherit;
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
+        font-weight: 400;
     }
-    .secondary-tooltip__content{
-        max-width: 250px;
-        width: max-content;
-    }
-
     @media (min-width:$desktop-min) {
         &:hover {
             .secondary-tooltip__btn{
@@ -236,9 +220,7 @@
         }
     }
     &._active{
-        .secondary-tooltip__btn {
-            color: var(--red);
-        }
+        color: var(--red);
     }
 }
 

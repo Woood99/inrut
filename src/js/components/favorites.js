@@ -44,12 +44,6 @@ export const favoriteChoicePopup = () => {
             selection.removeAttribute('hidden');
         }
     })
-
-    client.addEventListener('change', () => {
-        if (client.classList.contains('_selected')) {
-            selection.removeAttribute('hidden');
-        }
-    });
     announcement.addEventListener('change', () => {
         if (announcement.classList.contains('_selected')) {
             selectionTwo.removeAttribute('hidden');

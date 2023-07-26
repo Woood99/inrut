@@ -1324,13 +1324,20 @@
     &__btns{
         margin-top: 32px;
     }
+    [data-favorite-selection-select],
+    [data-favorite-selection-select-two]{
+        .choices__list--single{
+            padding: 0 30px 0 132px;
+        }
+    }
     &__btn{
         width: 100%;
         &:not(:last-child){
             margin-bottom: 16px;
         }
     }
-    .select-secondary {
+    .select-secondary,
+    .search-select-one {
         &:not(:last-child) {
             margin-bottom: 16px;
         }

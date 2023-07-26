@@ -4512,29 +4512,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'suggest-object');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'furnishing-sets-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: settingsModal => {
-    // const container = settingsModal.container;
-
-    // const currentItem = settingsModal.currentBtn.closest('.object-apart-renov__item');
-    // const currentIndex = [...currentItem.parentNode.children].indexOf(currentItem);
-
-    // container.querySelectorAll('.tabs-primary__btns .tabs__title').forEach((title, index) => {
-    //     if (index === currentIndex) {
-    //         title.classList.add('_tab-active');
-    //     } else {
-    //         title.classList.remove('_tab-active');
-    //     }
-    // })
-    // container.querySelectorAll('.tabs__content .tabs__body').forEach((content, index) => {
-    //     if (index === currentIndex) {
-    //         content.removeAttribute('hidden');
-    //     } else {
-    //         content.setAttribute('hidden', '');
-    //     }
-    // })
-  }
-}, 'object-apart-renov-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-apart-renov-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: settingsModal => {
     if (settingsModal.currentBtn.closest('.news-card')) {
@@ -5845,13 +5823,12 @@ const favoriteBtn = () => {
   const btns = document.querySelectorAll('.favorite-btn');
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const title = btn.querySelector('.secondary-tooltip__content');
       if (!btn.classList.contains('_active')) {
         btn.classList.add('_active');
-        if (title) title.textContent = 'Удалить с подбора';
+        btn.setAttribute('title', 'Удалить с подбора');
       } else {
         btn.classList.remove('_active');
-        title.textContent = 'Добавить в подбор';
+        btn.setAttribute('title', 'Добавить в подбор');
       }
     });
   });
@@ -5907,11 +5884,6 @@ const favoriteChoicePopup = () => {
     announcement.setAttribute('hidden', '');
     selectionTwo.setAttribute('hidden', '');
     client.removeAttribute('hidden');
-    if (client.classList.contains('_selected')) {
-      selection.removeAttribute('hidden');
-    }
-  });
-  client.addEventListener('change', () => {
     if (client.classList.contains('_selected')) {
       selection.removeAttribute('hidden');
     }
@@ -6245,6 +6217,12 @@ const searchSelectOne = () => {
           if (container.classList.contains('_error')) {
             container.querySelector('._error-span').remove();
             container.classList.remove('_error');
+          }
+        }
+        const favoriteTwo = container.closest('.favorite-two');
+        if (container.hasAttribute('data-favorite-client-select')) {
+          if (container.classList.contains('_selected')) {
+            favoriteTwo.querySelector('[data-favorite-selection-select]').removeAttribute('hidden');
           }
         }
       });
