@@ -1949,7 +1949,7 @@ textarea.input-reset {
   text-align: center;
   border-radius: 12px;
   padding: 65px 48px 48px;
-  max-width: 500px;
+  max-width: 600px;
 }
 @media (max-width: 768px) {
   .popup-primary--favorite-two .popup-primary__container {
@@ -2322,6 +2322,15 @@ textarea.input-reset {
 }
 .favorite-two__my-list._active::before, .favorite-two__clients._active::before {
   width: 100%;
+}
+.favorite-two__btns {
+  margin-top: 32px;
+}
+.favorite-two__btn {
+  width: 100%;
+}
+.favorite-two__btn:not(:last-child) {
+  margin-bottom: 16px;
 }
 .favorite-two .select-secondary:not(:last-child) {
   margin-bottom: 16px;
@@ -12642,7 +12651,6 @@ textarea.input-reset {
 .card-primary.card-primary--improved .user-info-improved {
   padding: 0;
   border-top: none;
-  margin: 0;
 }
 .card-primary.card-primary--improved .dots-dropdown__dropdown button svg {
   width: 15px;
@@ -12791,6 +12799,9 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
 }
 .card-secondary__tooltip .secondary-tooltip {
   width: auto;
@@ -12799,7 +12810,7 @@ textarea.input-reset {
 .card-secondary__tooltip .secondary-tooltip__btn svg {
   width: 16px;
   height: 16px;
-  stroke: var(--blue);
+  stroke: var(--primaryTwo);
   stroke-width: 1.5px;
 }
 .card-secondary__tooltip .secondary-tooltip__content {
@@ -18811,6 +18822,7 @@ textarea.input-reset {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
+    margin-bottom: 0 !important;
   }
   .control-cards__content--vertical .card-secondary__prices--2 .card-secondary__price {
     display: -webkit-box;
@@ -18910,7 +18922,15 @@ textarea.input-reset {
     margin-right: auto;
   }
   .control-cards__content--vertical .card-secondary__options {
+    -ms-grid-row-align: start;
+    align-self: start;
     margin-top: 0;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
   }
   .control-cards__content--vertical .card-secondary__bottom {
     display: -webkit-box;
@@ -23085,11 +23105,6 @@ textarea.input-reset {
     margin-top: 32px;
   }
 }
-.home--agent .home-purchase__container::before {
-  background-image: none;
-  background: -o-linear-gradient(345.13deg, #98d8ff 0, #958eff 41.69%, #9586ff 50.39%, #9888ff 59.59%, #b199ff 100%, #b5a0ff 100%);
-  background: linear-gradient(104.87deg, #98d8ff 0, #958eff 41.69%, #9586ff 50.39%, #9888ff 59.59%, #b199ff 100%, #b5a0ff 100%);
-}
 
 @media (max-width: 768px) {
   .home-banners.container {
@@ -23349,6 +23364,22 @@ textarea.input-reset {
 }
 .service-card__title {
   margin-top: 16px;
+}
+.service-card--small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.service-card--small .service-card__icon {
+  width: 30px;
+  height: 30px;
+}
+.service-card--small .service-card__title {
+  margin-top: 0;
+  margin-right: 16px;
 }
 @media (min-width: 1213px) {
   .service-card:hover {
@@ -28358,10 +28389,10 @@ textarea.input-reset {
     justify-content: start;
   }
   .buy-apartment .control-cards__content--vertical .card-secondary__bottom .card-secondary__tooltip {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
-    align-self: end;
-    padding: 0 16px;
+    padding: 0 8px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
 }
 .buy-apartment__tags {

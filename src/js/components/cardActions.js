@@ -9,7 +9,7 @@ export const cardSecondaryActions = () => {
 
         card.addEventListener('click', (e) => {
             const favorite = e.target.closest('.card-secondary__info--favorite');
-            if (favorite) {
+            if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
                 e.preventDefault();
                 card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
                     if (!el.classList.contains('_active')) {
@@ -35,7 +35,7 @@ export const cardPrimaryActions = () => {
 
         card.addEventListener('click', (e) => {
             const favorite = e.target.closest('.card-primary__info--favorite');
-            if (favorite) {
+            if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
                 e.preventDefault();
                 card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
                     if (!el.classList.contains('_active')) {

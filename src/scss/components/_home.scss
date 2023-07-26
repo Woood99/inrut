@@ -77,17 +77,6 @@
             margin-top: 32px;
         }
     }
-
-    &--agent {
-        .home-purchase {
-            &__container {
-                &::before {
-                    background-image: none;
-                    background: linear-gradient(104.87deg, #98d8ff 0, #958eff 41.69%, #9586ff 50.39%, #9888ff 59.59%, #b199ff 100%, #b5a0ff 100%);
-                }
-            }
-        }
-    }
 }
 
 .home-banners {
@@ -341,7 +330,20 @@
     &__title {
         margin-top: 16px;
     }
-
+    &--small{
+        display: flex;
+        align-items: center;
+        .service-card{
+            &__icon{
+                width: 30px;
+                height: 30px;
+            }
+            &__title{
+                margin-top: 0;
+             margin-right: 16px;
+            }
+        }
+    }
     @media (min-width:$desktop-min) {
         &:hover {
             box-shadow: var(--shadow-secondary);

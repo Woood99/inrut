@@ -115,14 +115,7 @@ popup(null, 'record-viewing');
 popup(null, 'personal-area-two');
 popup(null, 'client-fixed');
 popup(null, 'add-card');
-popup({
-    isOpen: (settingsModal) => {
-        // ... ?
-    },
-    isClose: (settingsModal) => {
-
-    }
-}, 'favorite-two');
+popup(null, 'favorite-two');
 popup(null, 'add-contact');
 popup(null, 'add-addit-contact');
 popup(null, 'create-agree');

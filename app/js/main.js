@@ -4501,12 +4501,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-card');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: settingsModal => {
-    // ... ?
-  },
-  isClose: settingsModal => {}
-}, 'favorite-two');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'favorite-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-contact');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-addit-contact');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'create-agree');
@@ -4849,7 +4844,7 @@ const cardSecondaryActions = () => {
     cardImageSwitch(card, imageSwitchItems, imagePagination);
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-secondary__info--favorite');
-      if (favorite) {
+      if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
         e.preventDefault();
         card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
           if (!el.classList.contains('_active')) {
@@ -4873,7 +4868,7 @@ const cardPrimaryActions = () => {
     cardImageSwitch(card, imageSwitchItems, imagePagination);
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-primary__info--favorite');
-      if (favorite) {
+      if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
         e.preventDefault();
         card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
           if (!el.classList.contains('_active')) {
@@ -5658,28 +5653,27 @@ function controlCards() {
         if (content.querySelectorAll('.card-secondary').length >= 1) {
           const cardsSecondary = content.querySelectorAll('.card-secondary');
           cardsSecondary.forEach(card => {
-            const options = card.querySelector('.card-secondary__options');
             const favorite = card.querySelector('.card-secondary__info--favorite');
             const bottom = card.querySelector('.card-secondary__bottom');
             const bottomMobile = bottom.querySelector('.card-secondary__info--mobile');
-            if (options) {
-              if (checkHorizontal(btn)) {
-                card.querySelector('.card-secondary__bottom').insertAdjacentElement('beforebegin', options);
-              }
-              if (checkVertical(btn)) {
-                card.querySelector('.card-secondary__info--mobile').insertAdjacentElement('afterbegin', options);
-              }
-            }
             if (favorite) {
               if (checkVertical(btn)) {
                 if (!bottomMobile.querySelector('.card-secondary__info--favorite')) {
-                  const clone = favorite.cloneNode(true);
-                  bottomMobile.appendChild(clone);
+                  if (!favorite.hasAttribute('data-popup-path')) {
+                    const clone = favorite.cloneNode(true);
+                    bottomMobile.appendChild(clone);
+                  } else {
+                    bottomMobile.insertAdjacentElement('afterbegin', favorite);
+                  }
                 }
                 bottomMobile.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
                 bottomMobile.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
+                if (favorite.hasAttribute('data-popup-path')) {
+                  card.querySelector('.card-secondary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
+                  favorite.removeAttribute('hidden');
+                }
               }
             }
             if (checkVertical(btn)) {
@@ -5738,13 +5732,21 @@ function controlCards() {
             if (favorite) {
               if (checkVertical(btn)) {
                 if (!bottomMobile.querySelector('.card-primary__info--favorite')) {
-                  const clone = favorite.cloneNode(true);
-                  bottomMobile.appendChild(clone);
+                  if (!favorite.hasAttribute('data-popup-path')) {
+                    const clone = favorite.cloneNode(true);
+                    bottomMobile.appendChild(clone);
+                  } else {
+                    bottomMobile.insertAdjacentElement('afterbegin', favorite);
+                  }
                 }
                 bottomMobile.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
                 bottomMobile.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
+                if (favorite.hasAttribute('data-popup-path')) {
+                  card.querySelector('.card-primary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
+                  favorite.removeAttribute('hidden');
+                }
               }
             }
             if (checkVertical(btn)) {
@@ -5888,17 +5890,22 @@ const favoriteChoicePopup = () => {
   const announcement = container.querySelector('[data-favorite-announcement-select]');
   const client = container.querySelector('[data-favorite-client-select]');
   const selection = container.querySelector('[data-favorite-selection-select]');
+  const selectionTwo = container.querySelector('[data-favorite-selection-select-two]');
   myListBtn.addEventListener('click', () => {
     clientBtn.classList.remove('_active');
     myListBtn.classList.add('_active');
     announcement.removeAttribute('hidden');
     client.setAttribute('hidden', '');
     selection.setAttribute('hidden', '');
+    if (announcement.classList.contains('_selected')) {
+      selectionTwo.removeAttribute('hidden');
+    }
   });
   clientBtn.addEventListener('click', () => {
     myListBtn.classList.remove('_active');
     clientBtn.classList.add('_active');
     announcement.setAttribute('hidden', '');
+    selectionTwo.setAttribute('hidden', '');
     client.removeAttribute('hidden');
     if (client.classList.contains('_selected')) {
       selection.removeAttribute('hidden');
@@ -5907,6 +5914,11 @@ const favoriteChoicePopup = () => {
   client.addEventListener('change', () => {
     if (client.classList.contains('_selected')) {
       selection.removeAttribute('hidden');
+    }
+  });
+  announcement.addEventListener('change', () => {
+    if (announcement.classList.contains('_selected')) {
+      selectionTwo.removeAttribute('hidden');
     }
   });
 };

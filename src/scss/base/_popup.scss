@@ -884,7 +884,7 @@
                 text-align: center;
                 border-radius: 12px;
                 padding: 65px 48px 48px;
-                max-width: 500px;
+                max-width: 600px;
 
                 @media (max-width:$smallTablet-max) {
                     max-width: 100%;
@@ -1321,7 +1321,15 @@
     &__my-list {}
 
     &__clients {}
-
+    &__btns{
+        margin-top: 32px;
+    }
+    &__btn{
+        width: 100%;
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
     .select-secondary {
         &:not(:last-child) {
             margin-bottom: 16px;

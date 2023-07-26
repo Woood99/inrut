@@ -23,29 +23,27 @@ function controlCards() {
                     const cardsSecondary = content.querySelectorAll('.card-secondary');
 
                     cardsSecondary.forEach(card => {
-                        const options = card.querySelector('.card-secondary__options');
                         const favorite = card.querySelector('.card-secondary__info--favorite');
                         const bottom = card.querySelector('.card-secondary__bottom');
                         const bottomMobile = bottom.querySelector('.card-secondary__info--mobile')
-                        if (options) {
-                            if (checkHorizontal(btn)) {
-                                card.querySelector('.card-secondary__bottom').insertAdjacentElement('beforebegin', options);
-                            }
-                            if (checkVertical(btn)) {
-                                card.querySelector('.card-secondary__info--mobile').insertAdjacentElement('afterbegin', options);
-                            }
-
-                        }
                         if (favorite) {
                             if (checkVertical(btn)) {
                                 if (!bottomMobile.querySelector('.card-secondary__info--favorite')) {
-                                    const clone = favorite.cloneNode(true);
-                                    bottomMobile.appendChild(clone);
+                                    if (!favorite.hasAttribute('data-popup-path')) {
+                                        const clone = favorite.cloneNode(true);
+                                        bottomMobile.appendChild(clone);
+                                    } else {
+                                        bottomMobile.insertAdjacentElement('afterbegin', favorite);
+                                    }
                                 }
                                 bottomMobile.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
                             }
                             if (checkHorizontal(btn)) {
                                 bottomMobile.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
+                                if (favorite.hasAttribute('data-popup-path')) {
+                                    card.querySelector('.card-secondary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
+                                    favorite.removeAttribute('hidden');
+                                } 
                             }
                         }
 
@@ -107,13 +105,21 @@ function controlCards() {
                         if (favorite) {
                             if (checkVertical(btn)) {
                                 if (!bottomMobile.querySelector('.card-primary__info--favorite')) {
-                                    const clone = favorite.cloneNode(true);
-                                    bottomMobile.appendChild(clone);
+                                    if (!favorite.hasAttribute('data-popup-path')) {
+                                        const clone = favorite.cloneNode(true);
+                                        bottomMobile.appendChild(clone);
+                                    } else {
+                                        bottomMobile.insertAdjacentElement('afterbegin', favorite);
+                                    }
                                 }
                                 bottomMobile.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
                             }
                             if (checkHorizontal(btn)) {
                                 bottomMobile.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
+                                if (favorite.hasAttribute('data-popup-path')) {
+                                    card.querySelector('.card-primary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
+                                    favorite.removeAttribute('hidden');
+                                } 
                             }
                         }
 

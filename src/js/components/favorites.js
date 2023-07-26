@@ -20,6 +20,7 @@ export const favoriteChoicePopup = () => {
     const announcement = container.querySelector('[data-favorite-announcement-select]');
     const client = container.querySelector('[data-favorite-client-select]');
     const selection = container.querySelector('[data-favorite-selection-select]');
+    const selectionTwo = container.querySelector('[data-favorite-selection-select-two]');
     myListBtn.addEventListener('click', () => {
         clientBtn.classList.remove('_active');
         myListBtn.classList.add('_active');
@@ -27,12 +28,17 @@ export const favoriteChoicePopup = () => {
         announcement.removeAttribute('hidden');
         client.setAttribute('hidden', '');
         selection.setAttribute('hidden', '');
+
+        if (announcement.classList.contains('_selected')) {
+            selectionTwo.removeAttribute('hidden');
+        }
     })
     clientBtn.addEventListener('click', () => {
         myListBtn.classList.remove('_active');
         clientBtn.classList.add('_active');
 
         announcement.setAttribute('hidden', '');
+        selectionTwo.setAttribute('hidden','');
         client.removeAttribute('hidden');
         if (client.classList.contains('_selected')) {
             selection.removeAttribute('hidden');
@@ -42,6 +48,11 @@ export const favoriteChoicePopup = () => {
     client.addEventListener('change', () => {
         if (client.classList.contains('_selected')) {
             selection.removeAttribute('hidden');
+        }
+    });
+    announcement.addEventListener('change', () => {
+        if (announcement.classList.contains('_selected')) {
+            selectionTwo.removeAttribute('hidden');
         }
     });
 }

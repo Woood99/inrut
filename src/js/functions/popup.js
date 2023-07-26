@@ -40,6 +40,7 @@ const popup = (options, modalName) => {
             }
         })
     })
+
     modal.querySelectorAll('.js-popup-close').forEach(el => {
         el.addEventListener('click', () => {
             if (el.closest('.genplan__to-layouts')) {

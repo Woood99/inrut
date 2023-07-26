@@ -133,29 +133,32 @@
             <section class="home__services home-services home-services--services-only">
                 <div class="home-services__container container">
                     <div class="home-services__list">
-                        <a href="#" class="home-services__item service-card">
-                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Избранное">
+                        <a href="#" class="home-services__item service-card service-card--small">
                             <h3 class="service-card__title title-3">
                                 Избранное
                             </h3>
+                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Избранное">
+
                         </a>
-                        <a href="#" class="home-services__item service-card">
-                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Сделки">
+                        <a href="#" class="home-services__item service-card service-card--small">
                             <h3 class="service-card__title title-3">
                                 Сделки
                             </h3>
+                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Сделки">
+
                         </a>
-                        <a href="#" class="home-services__item service-card">
-                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Шаблоны документов">
+                        <a href="#" class="home-services__item service-card service-card--small">
                             <h3 class="service-card__title title-3">
                                 Шаблоны документов
                             </h3>
+                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Шаблоны документов">
                         </a>
-                        <a href="#" class="home-services__item service-card">
-                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Кошелёк">
+                        <a href="#" class="home-services__item service-card service-card--small">
                             <h3 class="service-card__title title-3">
                                 Кошелёк
                             </h3>
+                            <img loading="lazy" src="./img/service-3.png" width="40" height="40" class="service-card__icon" alt="Кошелёк">
+
                         </a>
                     </div>
                 </div>
@@ -211,7 +214,7 @@
                         <div class="swiper home-price__items">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -242,40 +245,25 @@
                                                 </div>
                                                 <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                                 <div class="card-primary__info">
-                                                    <div class="row">
-                                                        <span class="card-primary__info--mortgage">Ипотека
-                                                            0,1%</span>
-                                                        <span class="card-primary__info--quantity">+2</span>
+                                                    <div class="row card-primary__info--tags">
+                                                        <span>
+                                                            Ипотека 0,1%
+                                                        </span>
+                                                        <div class="secondary-tooltip">
+                                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                                +2
+                                                            </button>
+                                                            <div class="secondary-tooltip__content">
+                                                                <span>Скидка до 15%</span>
+                                                                <span>С кухней</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="card-primary__info--btns-right">
                                                         <div class="card-primary__info--favorite" title="Добавить в подбор">
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -303,11 +291,24 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </a>
                                     </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -343,30 +344,6 @@
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -391,11 +368,24 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </a>
                                     </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -431,30 +421,6 @@
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -475,11 +441,24 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </a>
                                     </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -515,30 +494,6 @@
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -563,11 +518,24 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </a>
                                     </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -603,30 +571,6 @@
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -651,11 +595,24 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </a>
                                     </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <article class="card-primary card-primary--no-user">
+                                    <article class="card-primary">
                                         <a href="#" class="card-primary__container">
                                             <div class="card-primary__top">
                                                 <div class="card-primary__images">
@@ -691,30 +648,6 @@
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#favorite"></use>
                                                             </svg>
-                                                        </div>
-                                                        <div class="card-primary__info--controls dots-dropdown">
-                                                            <button type="button" class="btn btn-reset dots-dropdown__target">
-                                                                <svg>
-                                                                    <use xlink:href="img/sprite.svg#dots-vertical">
-                                                                    </use>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dots-dropdown__dropdown">
-                                                                <button type="button" class="btn btn-reset">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#prohibit">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Заблокировать
-                                                                </button>
-                                                                <button type="button" class="btn btn-reset" data-popup-path="complaint-object">
-                                                                    <svg>
-                                                                        <use xlink:href="img/sprite.svg#warning">
-                                                                        </use>
-                                                                    </svg>
-                                                                    Пожаловаться
-                                                                </button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -732,6 +665,19 @@
                                                     <span class="card-primary__price-new">
                                                         <span class="title-3">2 897 000 ₽</span>
                                                         <span>(94 742 ₽/м²)</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="card-primary__bottom">
+                                                <div class="card-primary__user user-info user-info--small-mobile">
+                                                    <div class="user-info__avatar avatar online">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                    </div>
+                                                    <span class="user-info__name">
+                                                        Алексей Г.
+                                                    </span>
+                                                    <span class="user-info__pos">
+                                                        Агент
                                                     </span>
                                                 </div>
                                             </div>
