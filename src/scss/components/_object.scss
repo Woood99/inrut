@@ -741,7 +741,46 @@
     box-shadow: var(--shadow-primary);
     padding: 32px 24px 24px;
     border-radius: 12px;
+    &__statistics{
 
+    }
+    &__statistics-item{
+        display: flex;
+        align-items: center;
+        width: 280px;
+
+        font-size: var(--small-fz);
+        line-height: var(--smal-lh);
+        svg{
+            width: 14px;
+            height: 14px;
+            fill: var(--dark);
+        }
+        >div{
+            width: 65px;
+            display: flex;
+            align-items: center;
+            color: var(--dark);
+            span{
+                margin-left: 8px;
+            }
+            &:not(:last-child){
+                margin-right: 16px;
+            }
+        }
+        >span{
+            &:first-child{
+                margin-right: 24px;
+                width: 140px;
+
+                color: var(--primaryTwo);
+            }
+        }
+
+        &:not(:last-child){
+            margin-bottom: 8px;
+        }
+    }
     &__time {
         color: var(--primary600);
         font-size: var(--small-fz);

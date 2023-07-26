@@ -301,23 +301,20 @@
                     <span>К списку объектов</span>
                 </a>
                 <div class="object__btns top-page-inner__btns">
-                    <div class="top-page-inner__btn advance-pay">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#share"></use>
-                        </svg>
+                    <button type="button" class="btn btn-reset top-page-inner__btn advance-pay">
                         <span>Задаток/аванс</span>
-                        <div class="secondary-tooltip">
-                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                        <div class="secondary-tooltip secondary-tooltip--dark secondary-tooltip--bottom-center">
+                            <div class="btn btn-reset secondary-tooltip__btn">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#info"></use>
                                 </svg>
-                            </button>
+                            </div>
                             <div class="secondary-tooltip__content">
                                 Отмеченный объект больше не учавствует в подборах и удаляется из уже существующих
                                 списков
                             </div>
                         </div>
-                    </div>
+                    </button>
                     <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-popup-path="share-app" title="Поделиться">
                         <svg>
                             <use xlink:href="img/sprite.svg#share"></use>
@@ -524,8 +521,45 @@
                         <div class="object-body__content">
                             <div class="object-body__data object-data">
                                 <time datetime="2022-12-25T09:40" class="object-data__time">
-                                    Создано 25.12.2022 09:40
+                                    <span>Создано</span>
+                                    <span>09:40 &nbsp; 25.12.2022</span>
                                 </time>
+                                <div class="object-data__statistics">
+                                    <div class="object-data__statistics-item">
+                                        <span>
+                                            За всё время
+                                        </span>
+                                        <div>
+                                            <svg>
+                                              <use xlink:href="img/sprite.svg#eye-stroke"></use>
+                                            </svg>
+                                            <span>931</span>
+                                        </div>
+                                        <div>
+                                            <svg>
+                                              <use xlink:href="img/sprite.svg#favorite"></use>
+                                            </svg>
+                                            <span>7</span>
+                                        </div>
+                                    </div>
+                                    <div class="object-data__statistics-item">
+                                        <span>
+                                            За последние 5 дней
+                                        </span>
+                                        <div>
+                                            <svg>
+                                              <use xlink:href="img/sprite.svg#eye-stroke"></use>
+                                            </svg>
+                                            <span>44</span>
+                                        </div>
+                                        <div>
+                                            <svg>
+                                              <use xlink:href="img/sprite.svg#favorite"></use>
+                                            </svg>
+                                            <span>3</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <h3 class="object-data__name" data-main-info-title>
                                     1-ком. квартира, 39 м², 12/12 эт.
                                 </h3>
@@ -1077,9 +1111,9 @@
                             <div class="_sticky">
                                 <div class="object-body__user card-user">
                                     <a href="#" class="card-user__top">
-                                        Объект взят
+                                        Объект с
                                         <img loading="lazy" src="./img/avito.jpg" width="13" height="13" alt="Avito">
-                                        Avito
+                                        <span>Avito</span>
                                     </a>
                                     <div class="card-user__name">
                                         <a href="#">
@@ -1101,7 +1135,7 @@
                                         </svg>
                                         Показать телефон
                                     </button>
-                                    <button type="button" class="btn btn-reset btn-secondary card-user__btn" data-main-info-btn>
+                                    <button type="button" class="btn btn-reset btn-secondary card-user__btn" data-main-info-btn data-popup-path="favorite-two">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#favorite"></use>
                                         </svg>

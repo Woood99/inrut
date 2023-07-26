@@ -7211,6 +7211,10 @@ textarea.input-reset {
   align-items: center;
   color: var(--blue);
   padding: 5px 12px;
+  margin-right: 10px;
+  -webkit-transition: color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 .advance-pay svg {
   margin-right: 10px;
@@ -7247,6 +7251,14 @@ textarea.input-reset {
   left: 0;
   bottom: auto;
   z-index: 99;
+}
+@media (min-width: 1213px) {
+  .advance-pay:hover {
+    color: var(--green);
+  }
+}
+.advance-pay._active {
+  color: var(--green);
 }
 
 .complain-btn {
@@ -13801,7 +13813,7 @@ textarea.input-reset {
   color: var(--green);
   font-size: var(--default-fz);
   line-height: var(--default-lh);
-  font-weight: 500;
+  font-weight: 400;
   background: rgba(36, 202, 142, 0.1);
   border-radius: 8px;
   display: -webkit-inline-box;
@@ -25636,6 +25648,46 @@ textarea.input-reset {
   padding: 32px 24px 24px;
   border-radius: 12px;
 }
+.object-data__statistics-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 280px;
+  font-size: var(--small-fz);
+  line-height: var(--smal-lh);
+}
+.object-data__statistics-item svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--dark);
+}
+.object-data__statistics-item > div {
+  width: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--dark);
+}
+.object-data__statistics-item > div span {
+  margin-left: 8px;
+}
+.object-data__statistics-item > div:not(:last-child) {
+  margin-right: 16px;
+}
+.object-data__statistics-item > span:first-child {
+  margin-right: 24px;
+  width: 140px;
+  color: var(--primaryTwo);
+}
+.object-data__statistics-item:not(:last-child) {
+  margin-bottom: 8px;
+}
 .object-data__time {
   color: var(--primary600);
   font-size: var(--small-fz);
@@ -29482,7 +29534,16 @@ textarea.input-reset {
   position: relative;
 }
 .object-base-inner--extended .object-data__time {
-  display: inline-block;
+  width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 @media (min-width: 769px) {
   .object-base-inner--extended .object-data__time {
@@ -29495,6 +29556,14 @@ textarea.input-reset {
   .object-base-inner--extended .object-data__time {
     margin-bottom: 16px;
   }
+}
+.object-base-inner--extended .object-data__time span:not(:last-child) {
+  margin-right: 16px;
+}
+.object-base-inner--extended .object-data__statistics {
+  position: absolute;
+  top: 70px;
+  right: 16px;
 }
 .object-base-inner__controls {
   -webkit-box-shadow: var(--shadow-primary);

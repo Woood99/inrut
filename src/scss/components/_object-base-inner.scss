@@ -301,8 +301,10 @@
             position: relative;
 
             &__time {
-                display: inline-block;
-
+                width: 280px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 @media (min-width:$smallTablet-min) {
                     position: absolute;
                     top: 16px;
@@ -312,8 +314,18 @@
                 @media (max-width:$smallTablet-max) {
                     margin-bottom: 16px;
                 }
-            }
 
+                span{
+                    &:not(:last-child){
+                        margin-right: 16px;
+                    }
+                }
+            }
+            &__statistics{
+                position: absolute;
+                top: calc(16px + 30px + 24px);
+                right: 16px;
+            }
             &__name {}
         }
 

@@ -4203,6 +4203,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navDropdown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/navDropdown */ "./src/js/components/navDropdown.js");
 /* harmony import */ var _components_videoModal__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/videoModal */ "./src/js/components/videoModal.js");
 /* harmony import */ var _components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/favoriteBtn */ "./src/js/components/favoriteBtn.js");
+/* harmony import */ var _components_advancePayment__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/advancePayment */ "./src/js/components/advancePayment.js");
+
 
 
 
@@ -4319,6 +4321,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_requisites__WEBPACK_IMPORTED_MODULE_36__["default"])();
   (0,_components_videoModal__WEBPACK_IMPORTED_MODULE_38__["default"])();
   (0,_components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__["default"])();
+  (0,_components_advancePayment__WEBPACK_IMPORTED_MODULE_40__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4548,6 +4551,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var focus_visible__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! focus-visible */ "./node_modules/focus-visible/dist/focus-visible.js");
 /* harmony import */ var focus_visible__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(focus_visible__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./src/js/components/advancePayment.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/advancePayment.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const advancePayment = () => {
+  const items = document.querySelectorAll('.advance-pay');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('_active');
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (advancePayment);
 
 /***/ }),
 

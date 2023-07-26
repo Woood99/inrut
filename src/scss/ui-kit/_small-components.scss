@@ -82,7 +82,8 @@
     align-items: center;
     color: var(--blue);
     padding: 5px 12px;
-
+    margin-right: 10px;
+    transition: color $transitionSpeed $transitionFunction;
     svg {
         margin-right: 10px;
         width: 18px;
@@ -119,6 +120,14 @@
         left: 0;
         bottom: auto;
         z-index: 99;
+    }
+    @media (min-width:$desktop-min){
+         &:hover{
+            color: var(--green);
+         } 
+    }
+    &._active{
+        color: var(--green);
     }
 }
 
