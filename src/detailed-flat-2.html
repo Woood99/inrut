@@ -27,7 +27,7 @@
                     <span>Назад</span>
                 </a>
                 <div class="object__btns top-page-inner__btns">
-                    <button type="button" class="btn btn-reset top-page-inner__btn favorite-btn" title="Добавить в подбор">
+                    <button type="button" class="btn btn-reset top-page-inner__btn favorite-btn" title="Добавить в подбор" data-popup-path="favorite-two">
                         <svg>
                             <use xlink:href="img/sprite.svg#favorite"></use>
                         </svg>
@@ -117,9 +117,25 @@
                             </div>
                         </div>
                         <div class="object-body__data object-data">
-                            <h3 class="object-data__name" data-main-info-title>
-                                1-ком. квартира, 39 м², 12/12 эт.
-                            </h3>
+                            <div class="row">
+                                <h3 class="object-data__name" data-main-info-title>
+                                    1-ком. квартира, 39 м², 12/12 эт.
+                                </h3>
+                                <div class="object-data__tooltip">
+                                    <div class="secondary-tooltip secondary-tooltip--dark">
+                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#info"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="secondary-tooltip__content">
+                                            Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
+                                            Какой-то текст!! Какой-то текст!!
+                                        </div>
+                                    </div>
+                                    <span>Комиссия от 5% + подарок</span>
+                                </div>
+                            </div>
                             <div class="object-data__address" data-main-info-address>
                                 <span class="object-data__address--one">
                                     ЖК “Новое Внуково”

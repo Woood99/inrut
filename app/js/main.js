@@ -5668,6 +5668,7 @@ function controlCards() {
             const dislike = card.querySelector('.card-primary__info--dislike');
             const comment = card.querySelector('.card-primary__info--comment');
             const favorite = card.querySelector('.card-primary__info--favorite');
+            const note = card.querySelector('.card-primary__info--note');
             const tags = card.querySelector('.card-primary__info--tags');
             const bottom = card.querySelector('.card-primary__bottom');
             const bottomMobile = bottom.querySelector('.card-primary__info--mobile');
@@ -5725,6 +5726,19 @@ function controlCards() {
                   card.querySelector('.card-primary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
                   favorite.removeAttribute('hidden');
                 }
+              }
+            }
+            if (note) {
+              console.log(note);
+              if (checkVertical(btn)) {
+                if (!bottomMobile.querySelector('.card-primary__info--note')) {
+                  const clone = note.cloneNode(true);
+                  bottomMobile.appendChild(clone);
+                }
+                bottomMobile.querySelector('.card-primary__info--note').removeAttribute('hidden');
+              }
+              if (checkHorizontal(btn)) {
+                bottomMobile.querySelector('.card-primary__info--note').setAttribute('hidden', '');
               }
             }
             if (checkVertical(btn)) {
@@ -5823,6 +5837,7 @@ const favoriteBtn = () => {
   const btns = document.querySelectorAll('.favorite-btn');
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (btn.hasAttribute('data-popup-path')) return;
       if (!btn.classList.contains('_active')) {
         btn.classList.add('_active');
         btn.setAttribute('title', 'Удалить с подбора');

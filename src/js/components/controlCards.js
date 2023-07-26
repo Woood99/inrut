@@ -63,6 +63,7 @@ function controlCards() {
                         const dislike = card.querySelector('.card-primary__info--dislike');
                         const comment = card.querySelector('.card-primary__info--comment');
                         const favorite = card.querySelector('.card-primary__info--favorite');
+                        const note = card.querySelector('.card-primary__info--note');
                         const tags = card.querySelector('.card-primary__info--tags');
                         const bottom = card.querySelector('.card-primary__bottom');
                         const bottomMobile = bottom.querySelector('.card-primary__info--mobile')
@@ -122,7 +123,19 @@ function controlCards() {
                                 } 
                             }
                         }
-
+                        if (note) {
+                            console.log(note);
+                            if (checkVertical(btn)) {
+                                if (!bottomMobile.querySelector('.card-primary__info--note')) {
+                                    const clone = note.cloneNode(true);
+                                    bottomMobile.appendChild(clone);
+                                }
+                                bottomMobile.querySelector('.card-primary__info--note').removeAttribute('hidden');
+                            }
+                            if (checkHorizontal(btn)) {
+                                bottomMobile.querySelector('.card-primary__info--note').setAttribute('hidden', '');
+                            }
+                        }
                         if (checkVertical(btn)) {
                             bottom.classList.add('_vertical-active');
                         }

@@ -184,8 +184,9 @@
         margin-right: 10px;
         width: 14px;
         height: 14px;
-        fill: currentColor;
+        fill: var(--blue);
         stroke: none;
+        transition: fill $transitionSpeed $transitionFunction;
     }
     span {
         color: inherit;
@@ -220,7 +221,9 @@
         }
     }
     &._active{
-        color: var(--red);
+        svg{
+            fill: var(--red);
+        }
     }
 }
 

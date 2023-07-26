@@ -45,6 +45,7 @@
                     grid-column: 1/2;
 
                     .card-primary__info--comment,
+                    .card-primary__info--note,
                     .card-primary__info--dislike {
                         display: none;
                     }
@@ -98,13 +99,20 @@
                         .card-primary__info--dislike {
                             margin-left: auto;
                         }
+                        .card-primary__info--note{
+                            order: -1;
+                            margin-top: 0;
 
+                            width: 28px;
+                            height: 28px;
+                        }
                         .card-primary__info--comment {
                             margin-left: 16px;
                         }
 
                         .card-primary__info--dislike,
-                        .card-primary__info--comment {
+                        .card-primary__info--comment,
+                        .card-primary__info--note {
                             border: 1px solid var(--blue);
 
                             .secondary-tooltip__content {
@@ -122,7 +130,7 @@
                             width: 28px;
                             border: 1px solid var(--blue);
                             border-radius: 8px;
-                            margin-left: 24px;
+                            margin-left: 16px;
 
                             display: flex;
                             align-items: center;
