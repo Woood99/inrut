@@ -27,12 +27,17 @@
                     <span>К списку заявок</span>
                 </a>
                 <div class="object__btns top-page-inner__btns">
-                    <button type="button" class="btn btn-reset top-page-inner-title__btn favorite-btn" title="Добавить в подобранное">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#favorite"></use>
-                        </svg>
-                        <span>В подобранное</span>
-                    </button>
+                    <div class="top-page-inner-title__btn favorite-btn secondary-tooltip secondary-tooltip--dark secondary-tooltip--bottom-center">
+                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#favorite"></use>
+                            </svg>
+                            <span>В подобранное</span>
+                        </button>
+                        <div class="secondary-tooltip__content">
+                            Добавить в подобранное
+                        </div>
+                    </div>
                     <button type="button" class="btn btn-reset top-page-inner__btn share-btn" data-popup-path="share-app" title="Поделиться">
                         <svg>
                             <use xlink:href="img/sprite.svg#share"></use>

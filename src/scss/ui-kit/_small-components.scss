@@ -177,27 +177,43 @@
 .favorite-btn {
     display: inline-flex;
     align-items: center;
-    color: var(--blue);
     transition: color $transitionSpeed $transitionFunction;
-    padding: 5px 12px;
 
-    svg {
-        margin-right: 10px;
-        width: 14px;
-        height: 14px;
-        fill: currentColor;
+    &.secondary-tooltip {
+        width: auto;
+        height: auto;
+        padding: 5px 12px;
     }
 
-    span {
-        color: inherit;
-        font-size: var(--default-fz);
-        line-height: var(--little-small-lh);
-        font-weight: 400;
+    .secondary-tooltip__btn {
+        width: auto;
+        height: auto;
+        color: var(--blue);
+
+        svg {
+            margin-right: 10px;
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            stroke: none;
+        }
+        span {
+            color: inherit;
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
+            font-weight: 400;
+        }
+    }
+    .secondary-tooltip__content{
+        max-width: 250px;
+        width: max-content;
     }
 
     @media (min-width:$desktop-min) {
         &:hover {
+            .secondary-tooltip__btn{
             color: var(--primary500);
+            }
         }
     }
 
@@ -354,13 +370,14 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+
     &__user {
         display: grid;
         grid-template-columns: 30px 1fr;
         align-items: center;
         grid-column-gap: 8px;
         grid-row-gap: 4px;
-    margin-bottom: 8px;
+        margin-bottom: 8px;
     }
 
     &__avatar {
@@ -379,12 +396,14 @@
         font-size: var(--default-fz);
         line-height: var(--default-lh);
     }
-    &__pos{
+
+    &__pos {
         font-size: var(--very-small-fz);
         line-height: 1;
         color: var(--primaryTwo);
         align-self: start;
     }
+
     &__name {
         grid-column: 2/3;
         grid-row: 1/2;
@@ -392,8 +411,8 @@
 
         color: var(--dark);
         align-self: end;
-    font-size: var(--small-fz);
-    line-height: var(--small-lh);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
         font-weight: 400;
     }
 
@@ -422,7 +441,8 @@
             line-height: 1;
             color: var(--primaryTwo);
         }
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 16px;
         }
     }
@@ -430,6 +450,7 @@
 
 .dots-dropdown {
     position: relative;
+
     &__target {
         padding: 5px 6px;
         border-radius: 6px;
@@ -469,7 +490,7 @@
         box-shadow: var(--shadow-primary);
         border-radius: 12px;
         display: flex;
-       align-items: start;
+        align-items: start;
         flex-direction: column;
 
         button {
@@ -490,12 +511,13 @@
                 fill: var(--blue);
             }
 
-          @media (min-width:$desktop-min){
-            &:hover {
-                background-color: var(--primary100);
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    background-color: var(--primary100);
+                }
+
             }
- 
-          }
+
             @media (max-width:$smallTablet-max) {
                 padding: 10px 12px;
 
@@ -634,9 +656,11 @@
             font-size: var(--small-fz);
             line-height: var(--small-lh);
             font-weight: 500;
-            &:nth-child(2){
-            color: var(--primaryTwo);
+
+            &:nth-child(2) {
+                color: var(--primaryTwo);
             }
+
             &:nth-child(3) {
                 margin-left: 8px;
                 color: var(--dark);
@@ -794,7 +818,7 @@
     padding: 0 16px;
 
     transition: border $transitionSpeed $transitionFunction,
-    color $transitionSpeed $transitionFunction;
+        color $transitionSpeed $transitionFunction;
 
     svg {
         width: 18px;
@@ -806,16 +830,19 @@
     &.focus-visible {
         border: 1px solid var(--blue);
     }
-    @media (min-width:$desktop-min){
-         &:hover{
+
+    @media (min-width:$desktop-min) {
+        &:hover {
             border: 1px solid var(--blue);
             color: var(--blue);
-         } 
+        }
     }
+
     @media (max-width:$desktop) {
         width: 100%;
     }
 }
+
 .object-small-card {
     --size-image: 45px;
     display: grid;
@@ -843,8 +870,8 @@
         grid-row: 1/2;
 
         color: var(--dark);
-   font-size: var(--default-fz);
-   line-height: var(--default-lh);
+        font-size: var(--default-fz);
+        line-height: var(--default-lh);
         font-weight: 500;
 
         align-self: end;
@@ -866,6 +893,7 @@
         grid-column-gap: 10px;
     }
 }
+
 .cards-list {
     background-color: var(--stand-bg);
     padding: 24px 0;
@@ -996,7 +1024,7 @@
             line-height: var(--small-lh);
             font-weight: 500;
             background-color: var(--white);
-             border: 1px solid var(--blue);
+            border: 1px solid var(--blue);
 
 
             svg {
@@ -1011,20 +1039,20 @@
                 background-color: var(--blue);
             }
 
-           @media (min-width:$desktop-min){
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    background-color: var(--blue);
+                    color: var(--white);
+                }
+            }
+        }
+
+        @media (min-width:$desktop-min) {
             &:hover {
                 background-color: var(--blue);
                 color: var(--white);
-            } 
-           }
+            }
         }
-
-     @media (min-width:$desktop-min){
-        &:hover {
-            background-color: var(--blue);
-            color: var(--white);
-        } 
-     }
 
         &.focus-visible {
             background-color: var(--blue);
@@ -1419,7 +1447,8 @@
     &__name {
         margin-top: 16px;
         color: var(--dark);
-        font-size: var(--little-big-fz);;
+        font-size: var(--little-big-fz);
+        ;
         line-height: var(--little-big-lh);
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
@@ -1489,7 +1518,7 @@
         span {
             color: inherit;
             font-size: var(--small-fz);
-   line-height: var(--small-lh);
+            line-height: var(--small-lh);
             font-weight: 500;
         }
     }
@@ -1767,6 +1796,7 @@
     border-radius: 12px;
     border: 1px solid var(--primary200);
     white-space: nowrap;
+
     >div {
         margin-left: 8px;
         width: 16px;
@@ -1787,13 +1817,14 @@
         height: 8px;
     }
 
-  @media (min-width:$desktop-min){
-    &:hover,
-    &.focus-visible {
-        background-color: var(--blue);
-        color: var(--white);
-    } 
-  }
+    @media (min-width:$desktop-min) {
+
+        &:hover,
+        &.focus-visible {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+    }
 
     &._active {
         background-color: var(--blue);
@@ -2268,7 +2299,8 @@
     &__title {
         margin-top: 16px;
 
-        font-size: var(--little-big-fz);;
+        font-size: var(--little-big-fz);
+        ;
         line-height: var(--little-big-lh);
         font-weight: 500;
     }
@@ -2286,7 +2318,7 @@
         color: var(--dark);
         font-weight: 400;
         font-size: var(--small-fz);
-line-height: 1;
+        line-height: 1;
         border-radius: 12px;
         background-color: rgba(0, 150, 255, 0.2);
 

@@ -7290,26 +7290,41 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: var(--blue);
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+}
+.favorite-btn.secondary-tooltip {
+  width: auto;
+  height: auto;
   padding: 5px 12px;
 }
-.favorite-btn svg {
+.favorite-btn .secondary-tooltip__btn {
+  width: auto;
+  height: auto;
+  color: var(--blue);
+}
+.favorite-btn .secondary-tooltip__btn svg {
   margin-right: 10px;
   width: 14px;
   height: 14px;
   fill: currentColor;
+  stroke: none;
 }
-.favorite-btn span {
+.favorite-btn .secondary-tooltip__btn span {
   color: inherit;
   font-size: var(--default-fz);
-  line-height: var(--little-small-lh);
+  line-height: var(--default-lh);
   font-weight: 400;
 }
+.favorite-btn .secondary-tooltip__content {
+  max-width: 250px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
 @media (min-width: 1213px) {
-  .favorite-btn:hover {
+  .favorite-btn:hover .secondary-tooltip__btn {
     color: var(--primary500);
   }
 }
@@ -10228,6 +10243,16 @@ textarea.input-reset {
   top: calc(100% + 12px);
   z-index: 999;
   left: 0;
+  bottom: auto;
+  padding: 8px 16px;
+}
+.secondary-tooltip--bottom-center .secondary-tooltip__content {
+  top: calc(100% + 12px);
+  z-index: 999;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   bottom: auto;
   padding: 8px 16px;
 }
