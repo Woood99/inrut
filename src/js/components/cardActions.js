@@ -7,11 +7,19 @@ export const cardSecondaryActions = () => {
         const imagePagination = card.querySelector('.card-secondary__pagination');
         cardImageSwitch(card, imageSwitchItems, imagePagination);
 
-        card.addEventListener('click',(e) => {
+        card.addEventListener('click', (e) => {
             const favorite = e.target.closest('.card-secondary__info--favorite');
             if (favorite) {
                 e.preventDefault();
-                card.querySelectorAll('.card-secondary__info--favorite').forEach(el => el.classList.toggle('_active'));
+                card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
+                    if (!el.classList.contains('_active')) {
+                        el.classList.add('_active');
+                        el.setAttribute('title', 'Удалить с подбора');
+                    } else {
+                        el.classList.remove('_active');
+                        el.setAttribute('title', 'Добавить в подбор');
+                    }
+                });
             }
         })
     })
@@ -25,11 +33,19 @@ export const cardPrimaryActions = () => {
         const imagePagination = card.querySelector('.card-primary__pagination');
         cardImageSwitch(card, imageSwitchItems, imagePagination);
 
-        card.addEventListener('click',(e) => {
+        card.addEventListener('click', (e) => {
             const favorite = e.target.closest('.card-primary__info--favorite');
             if (favorite) {
                 e.preventDefault();
-                card.querySelectorAll('.card-primary__info--favorite').forEach(el => el.classList.toggle('_active'));
+                card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
+                    if (!el.classList.contains('_active')) {
+                        el.classList.add('_active');
+                        el.setAttribute('title', 'Удалить с подбора');
+                    } else {
+                        el.classList.remove('_active');
+                        el.setAttribute('title', 'Добавить в подбор');
+                    }
+                });
             }
         })
 

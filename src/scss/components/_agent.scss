@@ -41,7 +41,7 @@
         }
 
         .bid-user {
-            padding: 40px 24px 0;
+           padding-bottom: 0;
 
             &__content {}
 
@@ -237,16 +237,14 @@
 
 .review-item {
     border: 1px solid var(--primary200);
-    border-radius: 2px 12px 12px 12px;
+   border-radius: 12px;
     padding: 16px;
 
     &__top {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: 16px;
         margin-bottom: 16px;
-        border-bottom: 1px dashed var(--primary200);
     }
 
     &__user {}
@@ -292,19 +290,13 @@
     }
 
     &__ratings {
-        max-width: 75%;
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-
-        @media (max-width:$desktop) {
-            display: grid;
-            grid-template-columns: max-content
-        }
+        gap: 16px;
     }
 
     &__descr {
-        margin-top: 16px;
+        margin-top: 24px;
         color: var(--dark);
         font-size: var(--default-fz);
         line-height: var(--default-lh);
@@ -362,7 +354,9 @@
     }
 
     &__answer {
+        border-top: 1px dashed var(--primary200);
         margin-top: 24px;
+        padding-top: 24px;
         pointer-events: none;
         .review-item__user {
             margin-bottom: 16px;

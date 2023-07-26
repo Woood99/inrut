@@ -115,9 +115,68 @@
                             }
                         }
                     }
+
+                    .card-primary__info {
+                        &--favorite {
+                            height: 28px;
+                            width: 28px;
+                            border: 1px solid var(--blue);
+                            border-radius: 8px;
+                            margin-left: 24px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            svg {
+                                fill: var(--blue);
+                                width: 16px;
+                                height: 14px;
+                            }
+                        }
+                    }
+                    .card-primary__info--tags {
+                        >span {
+                            border: 1px solid var(--blue);
+                            border-radius: 8px;
+                            height: 28px;
+
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+                        }
+                        .secondary-tooltip{
+                            &__btn{
+                                border: 1px solid var(--blue);
+                                border-radius: 8px;
+                                height: 28px;
+                            }
+                            &__content{
+                                bottom: 38px;
+                                top: auto;
+                            }
+                        }
+                    }
                 }
 
-                &__user {}
+                &__info {
+                    .card-primary__info--favorite {
+                        display: none;
+                    }
+
+                    .card-primary__info--tags {
+                        display: none;
+                    }
+
+                    .card-primary__info--controls {
+                        display: block !important;
+                        margin-top: 0;
+                    }
+                }
+
+                &__user {
+                    margin-right: auto;
+                }
 
             }
 
@@ -237,6 +296,7 @@
                                 font-weight: 500;
                                 font-size: var(--small-fz);
                                 line-height: var(--small-lh);
+
                                 &:not(:last-child) {
                                     margin-right: 3px;
                                 }
@@ -318,7 +378,9 @@
                     margin-bottom: 32px;
                 }
 
-                &__user {}
+                &__user {
+                    margin-right: auto;
+                }
 
                 &__options {
                     margin-top: 0;
@@ -331,19 +393,6 @@
                     grid-column: 1/-1;
 
                     .card-secondary__info {
-
-                        &--discount,
-                        &--mortgage,
-                        &--quantity {
-                            border: 1px solid var(--blue);
-                            border-radius: 8px;
-                            height: 28px;
-
-                            &:not(:first-child) {
-                                margin-left: 10px;
-                            }
-                        }
-
                         &--favorite {
                             height: 28px;
                             width: 28px;
@@ -359,6 +408,24 @@
                                 fill: var(--blue);
                                 width: 16px;
                                 height: 14px;
+                            }
+                        }
+                    }
+                    .card-secondary__info--tags {
+                        >span {
+                            border: 1px solid var(--blue);
+                            border-radius: 8px;
+                            height: 28px;
+
+                            &:not(:first-child) {
+                                margin-left: 10px;
+                            }
+                        }
+                        .secondary-tooltip{
+                            &__btn{
+                                border: 1px solid var(--blue);
+                                border-radius: 8px;
+                                height: 28px;
                             }
                         }
                     }
@@ -413,6 +480,7 @@
                     }
                 }
             }
+
         }
     }
 }

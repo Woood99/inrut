@@ -367,7 +367,7 @@
     box-shadow: var(--shadow-primary);
 
     border-radius: 12px;
-    padding: 24px;
+    padding: 32px 24px;
     text-align: center;
 
     overflow: hidden;
@@ -379,26 +379,6 @@
     position: relative;
 
     @media (min-width:$desktop-min) {
-
-        &::before,
-        &::after {
-            content: '';
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: percent(112, 402);
-        }
-
-        &::before {
-            background-color: #303E57;
-        }
-
-        &::after {
-            background-image: url('../img/banner-blur.png');
-            background-size: cover;
-            z-index: 0;
-        }
 
         &._sticky {
             position: sticky;
@@ -659,19 +639,6 @@
     }
 
     &--grade {
-        padding: 16px 16px;
-
-        @media (min-width:$desktop) {
-
-            &::before,
-            &::after {
-                height: percent(127, 562);
-            }
-        }
-
-        @media (max-width:$desktop) {
-            padding: 24px 0 16px;
-        }
 
         .bid-user {
 
@@ -679,7 +646,7 @@
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                padding: 0 61px;
+                padding: 0 32px;
 
                 @media (max-width:$desktop) {
                     flex-direction: row;
@@ -689,11 +656,9 @@
             }
 
             &__content {
-                margin-top: 48px;
 
                 @media (max-width:$desktop) {
                     align-items: start;
-                    margin-top: 0;
                     margin-left: 16px;
                 }
             }

@@ -4202,6 +4202,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_requisites__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/requisites */ "./src/js/components/requisites.js");
 /* harmony import */ var _components_navDropdown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/navDropdown */ "./src/js/components/navDropdown.js");
 /* harmony import */ var _components_videoModal__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/videoModal */ "./src/js/components/videoModal.js");
+/* harmony import */ var _components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/favoriteBtn */ "./src/js/components/favoriteBtn.js");
+
 
 
 
@@ -4316,6 +4318,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_clientPage__WEBPACK_IMPORTED_MODULE_35__.clientPage)();
   (0,_components_requisites__WEBPACK_IMPORTED_MODULE_36__["default"])();
   (0,_components_videoModal__WEBPACK_IMPORTED_MODULE_38__["default"])();
+  (0,_components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4848,7 +4851,15 @@ const cardSecondaryActions = () => {
       const favorite = e.target.closest('.card-secondary__info--favorite');
       if (favorite) {
         e.preventDefault();
-        card.querySelectorAll('.card-secondary__info--favorite').forEach(el => el.classList.toggle('_active'));
+        card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
+          if (!el.classList.contains('_active')) {
+            el.classList.add('_active');
+            el.setAttribute('title', 'Удалить с подбора');
+          } else {
+            el.classList.remove('_active');
+            el.setAttribute('title', 'Добавить в подбор');
+          }
+        });
       }
     });
   });
@@ -4864,7 +4875,15 @@ const cardPrimaryActions = () => {
       const favorite = e.target.closest('.card-primary__info--favorite');
       if (favorite) {
         e.preventDefault();
-        card.querySelectorAll('.card-primary__info--favorite').forEach(el => el.classList.toggle('_active'));
+        card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
+          if (!el.classList.contains('_active')) {
+            el.classList.add('_active');
+            el.setAttribute('title', 'Удалить с подбора');
+          } else {
+            el.classList.remove('_active');
+            el.setAttribute('title', 'Добавить в подбор');
+          }
+        });
       }
     });
   });
@@ -4941,7 +4960,6 @@ const cardStockPopup = containerSelector => {
                         ${cardSecondary.querySelector('.card-stock-secondary__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
-                    <a href="${cardSecondary.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                             ${cardSecondary.querySelector('.card-stock-secondary__user').innerHTML}
                         </div>
@@ -4989,7 +5007,6 @@ const cardStockPopup = containerSelector => {
                         ${cardThird.querySelector('.card-stock-third__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
-                    <a href="${cardThird.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                         ${cardThird.querySelector('.card-stock-third__user').innerHTML}
                         </div>
@@ -5644,6 +5661,7 @@ function controlCards() {
             const options = card.querySelector('.card-secondary__options');
             const favorite = card.querySelector('.card-secondary__info--favorite');
             const bottom = card.querySelector('.card-secondary__bottom');
+            const bottomMobile = bottom.querySelector('.card-secondary__info--mobile');
             if (options) {
               if (checkHorizontal(btn)) {
                 card.querySelector('.card-secondary__bottom').insertAdjacentElement('beforebegin', options);
@@ -5654,17 +5672,21 @@ function controlCards() {
             }
             if (favorite) {
               if (checkVertical(btn)) {
-                bottom.classList.add('_vertical-active');
-                if (!card.querySelector('.card-secondary__bottom .card-secondary__info--favorite')) {
+                if (!bottomMobile.querySelector('.card-secondary__info--favorite')) {
                   const clone = favorite.cloneNode(true);
-                  bottom.appendChild(clone);
+                  bottomMobile.appendChild(clone);
                 }
-                bottom.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
+                bottomMobile.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
-                bottom.classList.remove('_vertical-active');
-                bottom.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
+                bottomMobile.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
               }
+            }
+            if (checkVertical(btn)) {
+              bottom.classList.add('_vertical-active');
+            }
+            if (checkHorizontal(btn)) {
+              bottom.classList.remove('_vertical-active');
             }
           });
         }
@@ -5674,48 +5696,62 @@ function controlCards() {
             const dislike = card.querySelector('.card-primary__info--dislike');
             const comment = card.querySelector('.card-primary__info--comment');
             const favorite = card.querySelector('.card-primary__info--favorite');
+            const tags = card.querySelector('.card-primary__info--tags');
             const bottom = card.querySelector('.card-primary__bottom');
+            const bottomMobile = bottom.querySelector('.card-primary__info--mobile');
             if (dislike) {
               if (checkVertical(btn)) {
-                bottom.classList.add('_vertical-active');
-                if (!card.querySelector('.card-primary__bottom .card-primary__info--dislike')) {
+                if (!bottomMobile.querySelector('.card-primary__info--dislike')) {
                   const clone = dislike.cloneNode(true);
-                  bottom.appendChild(clone);
+                  bottomMobile.appendChild(clone);
                 }
-                bottom.querySelector('.card-primary__info--dislike').removeAttribute('hidden');
+                bottomMobile.querySelector('.card-primary__info--dislike').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
-                bottom.classList.remove('_vertical-active');
-                bottom.querySelector('.card-primary__info--dislike').setAttribute('hidden', '');
+                bottomMobile.querySelector('.card-primary__info--dislike').setAttribute('hidden', '');
               }
             }
             if (comment) {
               if (checkVertical(btn)) {
-                bottom.classList.add('_vertical-active');
-                if (!card.querySelector('.card-primary__bottom .card-primary__info--comment')) {
+                if (!bottomMobile.querySelector('.card-primary__info--comment')) {
                   const clone = comment.cloneNode(true);
-                  bottom.appendChild(clone);
+                  bottomMobile.appendChild(clone);
                 }
-                bottom.querySelector('.card-primary__info--comment').removeAttribute('hidden');
+                bottomMobile.querySelector('.card-primary__info--comment').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
-                bottom.classList.remove('_vertical-active');
-                bottom.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
+                bottomMobile.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
+              }
+            }
+            if (tags) {
+              if (checkVertical(btn)) {
+                if (!bottomMobile.querySelector('.card-primary__info--tags')) {
+                  const clone = tags.cloneNode(true);
+                  bottomMobile.appendChild(clone);
+                }
+                bottomMobile.querySelector('.card-primary__info--tags').removeAttribute('hidden');
+              }
+              if (checkHorizontal(btn)) {
+                bottomMobile.querySelector('.card-primary__info--tags').setAttribute('hidden', '');
               }
             }
             if (favorite) {
               if (checkVertical(btn)) {
-                bottom.classList.add('_vertical-active');
-                if (!card.querySelector('.card-primary__bottom .card-primary__info--favorite')) {
+                if (!bottomMobile.querySelector('.card-primary__info--favorite')) {
                   const clone = favorite.cloneNode(true);
-                  bottom.appendChild(clone);
+                  bottomMobile.appendChild(clone);
                 }
-                bottom.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
+                bottomMobile.querySelector('.card-primary__info--favorite').removeAttribute('hidden');
               }
               if (checkHorizontal(btn)) {
-                bottom.classList.remove('_vertical-active');
-                bottom.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
+                bottomMobile.querySelector('.card-primary__info--favorite').setAttribute('hidden', '');
               }
+            }
+            if (checkVertical(btn)) {
+              bottom.classList.add('_vertical-active');
+            }
+            if (checkHorizontal(btn)) {
+              bottom.classList.remove('_vertical-active');
             }
           });
         }
@@ -5789,6 +5825,36 @@ const dropImage = () => {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropImage);
+
+/***/ }),
+
+/***/ "./src/js/components/favoriteBtn.js":
+/*!******************************************!*\
+  !*** ./src/js/components/favoriteBtn.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const favoriteBtn = () => {
+  const btns = document.querySelectorAll('.favorite-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const title = btn.querySelector('.secondary-tooltip__content');
+      if (!btn.classList.contains('_active')) {
+        btn.classList.add('_active');
+        if (title) title.textContent = 'Удалить с подбора';
+      } else {
+        btn.classList.remove('_active');
+        title.textContent = 'Добавить в подбор';
+      }
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (favoriteBtn);
 
 /***/ }),
 
