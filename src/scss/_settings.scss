@@ -26,6 +26,27 @@ p {
     height: 100%;
     font-family: $fontFamily, sans-serif;
     -webkit-text-size-adjust: 100%;
+
+    &.page--scrollY {
+        &::-webkit-scrollbar{
+            height: 4px;
+            width: 4px;
+            background: gray;
+        }
+        
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+        }
+         
+        &::-webkit-scrollbar-thumb {
+          background: var(--primaryTwo); 
+        }
+        
+        &::-webkit-scrollbar-thumb:vertical{
+            background-color: #d1d1d1;
+            border-radius: 10px;
+        }
+    }
 }
 
 .page__body {

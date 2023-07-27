@@ -2,8 +2,7 @@
     .lg-media-overlap .lg-toolbar {
         background-image: none;
 
-        @media (max-width:$tablet-max) {
-            height: 65px;
+        @media (max-width:$desktop) {
             display: flex;
             align-items: center;
             justify-content: end;
@@ -21,9 +20,10 @@
         bottom: 0;
         top: auto;
 
-        @media (max-width:$tablet-max) {
+        @media (max-width:$desktop) {
             height: 100%;
             border-radius: 0;
+            overflow-y: auto;
         }
     }
 
@@ -45,7 +45,7 @@
                     height: 100%;
                     max-width: 85vw;
 
-                    @media (max-width:$tablet-max) {
+                    @media (max-width:$desktop) {
                         height: auto;
                         max-width: 100%;
                     }
@@ -66,7 +66,7 @@
                         height: 100%;
                         max-width: 85vw;
 
-                        @media (max-width:$tablet-max) {
+                        @media (max-width:$desktop) {
                             height: auto !important;
                             max-width: 100%;
                         }
@@ -80,13 +80,13 @@
                     }
                 }
 
-                @media (max-width:$tablet-max) {
+                @media (max-width:$desktop) {
                     width: 100%;
                 }
             }
         }
 
-        @media (max-width:$tablet-max) {
+        @media (max-width:$desktop) {
             width: 100%;
             height: calc(100% - 181px);
         }
@@ -98,6 +98,9 @@
 
     .lg-components {
         position: static;
+        @media (max-width:$desktop){
+             height: 116px; 
+        }
     }
 
     .gallery-primary-container__close {
@@ -117,17 +120,12 @@
             width: 18px;
             height: 18px;
             fill: rgba(22, 22, 22, 0.5);
-
-            @media (max-width:$tablet-max) {
-                display: none;
+        }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                color: var(--primary500);
             }
         }
-
-       @media (min-width:$desktop-min){
-        &:hover {
-            color: var(--primary500);
-        } 
-       }
     }
 
     .gallery-primary-container__prev,
@@ -145,7 +143,7 @@
     .gallery-primary-container__prev {
         left: 16px;
 
-        @media (max-width:$tablet-max) {
+        @media (max-width:$desktop) {
             left: 8px;
         }
     }
@@ -153,7 +151,7 @@
     .gallery-primary-container__next {
         right: 16px;
 
-        @media (max-width:$tablet-max) {
+        @media (max-width:$desktop) {
             right: 8px;
         }
     }
@@ -163,7 +161,9 @@
         width: 70%;
         height: 116px;
 
-        @media (max-width:$tablet-max) {}
+        @media (max-width:$desktop) {
+            width: 100%;
+        }
     }
 
     .lg-counter {
@@ -200,7 +200,7 @@
             margin: 0;
         }
 
-        @media (max-width:$tablet-max) {
+        @media (max-width:$desktop) {
             padding: 0 12px;
         }
     }
@@ -232,13 +232,13 @@
             border: 2px solid var(--blue);
         }
 
-      @media (min-width:$desktop-min){
-        &:hover {
-            &::before {
-                opacity: 1;
+        @media (min-width:$desktop-min) {
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
             }
-        } 
-      }
+        }
     }
 
     .lg-backdrop {
@@ -248,7 +248,7 @@
     .gallery-info {
         position: fixed;
         right: 16px;
-       top: 70px;
+        top: 70px;
         width: calc(30% - 32px);
         padding: 24px;
         background-color: #2e2e2e;
@@ -305,13 +305,22 @@
                 }
             }
         }
+
+        @media (max-width:$desktop) {
+            position: static;
+            width: 100%;
+            max-width: 500px;
+         margin-top: 24px;
+         margin-bottom: 24px;
+        }
     }
 
-    &[class*="gallery-primary-container--default"]{
-        .lg-outer .lg-content{
+    &[class*="gallery-primary-container--default"] {
+        .lg-outer .lg-content {
             width: 85%;
         }
-        .lg-outer .lg-thumb-outer{
+
+        .lg-outer .lg-thumb-outer {
             width: 85%;
         }
     }

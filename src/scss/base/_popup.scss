@@ -453,10 +453,20 @@
                     padding: 65px 0 32px;
                 }
             }
-            &__close{
+
+            &__close {
                 margin-top: -48px;
                 transform: translateX(32px);
+
+                @media (max-width:$desktop) {
+                    margin: 0;
+                    transform: translateX(0);
+                }
             }
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
         }
     }
 
@@ -476,21 +486,34 @@
                 @media (max-width:$desktop) {
                     margin-top: 0;
                     border-radius: 0;
+                    width: 100%;
+                    min-height: 100vh;
                     padding: 65px 0 32px;
                 }
             }
-            &__close{
+
+            &__close {
                 margin-top: -48px;
                 transform: translateX(32px);
+
+                @media (max-width:$desktop) {
+                    margin: 0;
+                    transform: translateX(0);
+                }
+            }
+            .object-apart-renov{
+                
             }
         }
 
+    @media (min-width:$desktop-min){
         &::before {
             content: "";
             display: inline-block;
             vertical-align: middle;
             height: 100%;
-        }
+        } 
+    }
     }
 
     &--search-area {
@@ -567,7 +590,7 @@
         .popup-primary {
             &__container {
                 border-radius: 0;
-                padding: 65px 48px 48px;
+                padding: 65px 48px 16px;
                 width: 100%;
                 height: auto;
                 min-height: var(--vh);
@@ -585,7 +608,7 @@
                 margin: 0 auto;
                 text-align: left;
 
-                .card-secondary{
+                .card-secondary {
                     .card-secondary__bottom {
                         border-top: 1px solid var(--primary100);
                         display: flex;
@@ -595,7 +618,8 @@
                         margin: 16px -24px 0 -24px;
                         padding: 16px 24px 0 24px;
                     }
-                    .card-secondary__prices--2{
+
+                    .card-secondary__prices--2 {
                         margin-bottom: 24px;
                     }
                 }
@@ -1317,21 +1341,26 @@
     &__my-list {}
 
     &__clients {}
-    &__btns{
+
+    &__btns {
         margin-top: 32px;
     }
+
     [data-favorite-selection-select],
-    [data-favorite-selection-select-two]{
-        .choices__list--single{
+    [data-favorite-selection-select-two] {
+        .choices__list--single {
             padding: 0 30px 0 132px;
         }
     }
-    &__btn{
+
+    &__btn {
         width: 100%;
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 16px;
         }
     }
+
     .select-secondary,
     .search-select-one {
         &:not(:last-child) {
@@ -3969,12 +3998,19 @@
         box-shadow: none;
         background-color: transparent;
     }
-
     .furnishing-sets__tabs {
         height: 650px;
 
         @media (max-width:$desktop) {
             height: 550px;
+        }
+
+        @media (max-width:$smallTablet-max) {
+            height: 400px;
+        }
+
+        @media (max-width:$mobile-max) {
+            height: 350px;
         }
     }
 }
@@ -4005,9 +4041,21 @@
             @media (max-width:$desktop) {
                 height: 550px;
             }
+
+            @media (max-width:$smallTablet-max) {
+                height: 400px;
+            }
+
+            @media (max-width:$mobile-max) {
+                height: 350px;
+            }
         }
     }
-
+    .object-apart-renov__descr{
+     @media (max-width:$desktop){
+        padding: 0 16px; 
+     }
+    }
     .object-apart-renov__tabs {
         .tabs-primary__container {
             cursor: default;
@@ -4233,11 +4281,13 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 24px;
         grid-row-gap: 32px;
-        @media (max-width:$desktop){
-             grid-template-columns: repeat(2,1fr); 
+
+        @media (max-width:$desktop) {
+            grid-template-columns: repeat(2, 1fr);
         }
-        @media (max-width:$smallTablet-max){
-             grid-template-columns: 1fr; 
+
+        @media (max-width:$smallTablet-max) {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -4252,12 +4302,13 @@
         border-radius: 12px;
         padding: 24px;
         transition: box-shadow $transitionSpeed $transitionFunction,
-        transform $transitionSpeed $transitionFunction;
+            transform $transitionSpeed $transitionFunction;
 
         @media (min-width:$desktop-min) {
             &:hover {
                 box-shadow: var(--shadow-secondary);
                 transform: translateY(-3px);
+
                 .authorization-popup__item-button {
                     background-color: rgba(0, 150, 255, 0.12);
                     color: var(--blue);

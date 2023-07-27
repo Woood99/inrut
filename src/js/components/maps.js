@@ -255,7 +255,8 @@ const maps = () => {
                     pageBody.querySelector('.object__back').addEventListener('click', () => {
                         closeCardFull();
                     })
-                    // const wrapperModal = container.closest('.popup-primary--popup-map');
+                    
+                    pageBody.closest('.page').classList.add('page--scrollY')
                 }, 1500);
 
                 function closeCardFull() {
