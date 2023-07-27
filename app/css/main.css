@@ -5275,6 +5275,19 @@ textarea.input-reset {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 24px;
+  grid-row-gap: 32px;
+}
+@media (max-width: 1212px) {
+  .authorization-popup__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .authorization-popup__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 .authorization-popup__item {
   display: -webkit-box;
