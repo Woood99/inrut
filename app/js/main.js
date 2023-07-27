@@ -5765,7 +5765,6 @@ function controlCards() {
               }
             }
             if (note) {
-              console.log(note);
               if (checkVertical(btn)) {
                 if (!bottomMobile.querySelector('.card-primary__info--note')) {
                   const clone = note.cloneNode(true);

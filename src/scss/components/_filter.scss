@@ -1382,6 +1382,18 @@
         &.focus-visible {
             border: 1px solid var(--blue);
         }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                border: 1px solid var(--blue);
+
+                .search-select-one__button-wrapper {
+                    >div:nth-child(1) {
+                        color: var(--blue);
+                    }
+                }
+            }
+        }
     }
 
     &__button-wrapper {
@@ -1492,7 +1504,7 @@
         }
 
         .simplebar-track.simplebar-vertical {
-            margin-right: -24px;
+            margin-right: -16px;
             @media (max-width:$smallTablet-max){
                  margin-right: -12px; 
             }

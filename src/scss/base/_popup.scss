@@ -501,19 +501,20 @@
                     transform: translateX(0);
                 }
             }
-            .object-apart-renov{
-                
-            }
+
+            .object-apart-renov {}
         }
 
-    @media (min-width:$desktop-min){
-        &::before {
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
-        } 
-    }
+        z-index: 1050;
+
+        @media (min-width:$desktop-min) {
+            &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }
+        }
     }
 
     &--search-area {
@@ -3998,6 +3999,7 @@
         box-shadow: none;
         background-color: transparent;
     }
+
     .furnishing-sets__tabs {
         height: 650px;
 
@@ -4051,11 +4053,13 @@
             }
         }
     }
-    .object-apart-renov__descr{
-     @media (max-width:$desktop){
-        padding: 0 16px; 
-     }
+
+    .object-apart-renov__descr {
+        @media (max-width:$desktop) {
+            padding: 0 16px;
+        }
     }
+
     .object-apart-renov__tabs {
         .tabs-primary__container {
             cursor: default;
