@@ -1238,8 +1238,8 @@
         @media (max-width:$smallTablet-max) {
             min-width: 320px;
             padding: 48px 16px 16px 16px;
-            left: -16px;
-            right: auto;
+            left: -16px !important;
+            right: auto !important;
             width: calc(100% + 16px);
         }
 
@@ -1481,16 +1481,21 @@
             left: 0;
         }
 
+
+
         @media (max-width:$smallTablet-max) {
             min-width: 320px;
-            padding: 16px 16px 32px 16px;
-            left: -16px;
-            right: auto;
+            padding: 48px 16px 16px 16px;
+            left: -16px !important;
+            right: auto !important;
             width: calc(100% + 32px);
         }
 
         .simplebar-track.simplebar-vertical {
-            margin-right: -16px;
+            margin-right: -24px;
+            @media (max-width:$smallTablet-max){
+                 margin-right: -12px; 
+            }
         }
     }
 
@@ -1575,5 +1580,8 @@
             left: 0;
             right: auto;
         }
+    }
+    @media (max-width:$desktop) {
+        width: 100%;
     }
 }
