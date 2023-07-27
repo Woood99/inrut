@@ -8247,7 +8247,7 @@ const maps = () => {
       });
       function resize(e) {
         const width = e.pageX - container.getBoundingClientRect().left - 20;
-        if (!(width <= 706 && width >= 345)) return;
+        if (!(width <= 706 && width >= 425)) return;
         container.style.gridTemplateColumns = `${width}px 1fr`;
         map.container.fitToViewport();
       }
@@ -8266,11 +8266,11 @@ const maps = () => {
         container.querySelector('.popup-map__items').setAttribute('hidden', '');
         setTimeout(() => {
           const pageBody = (cardFull.contentDocument || cardFull.contentWindow.document).querySelector('.page__body');
-          cardFull.style.height = `${pageBody.clientHeight + 50}px`;
           cardFull.removeAttribute('scrolling');
           pageBody.querySelector('.object__back').addEventListener('click', () => {
             closeCardFull();
           });
+          // const wrapperModal = container.closest('.popup-primary--popup-map');
         }, 1500);
         function closeCardFull() {
           cardFull.classList.remove('_active');
