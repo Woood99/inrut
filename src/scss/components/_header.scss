@@ -88,7 +88,11 @@
         }
     }
 
-    &__authorization {}
+    &__authorization {
+        @media (max-width:$desktop){
+             margin-left: auto; 
+        }
+    }
 
     @media (max-width:$desktop) {
         background-color: var(--white);
@@ -195,8 +199,9 @@
     }
 
     &__name {
+        white-space: nowrap;
         color: var(--primaryTwo);
-        margin-right: 10px;
+        margin-left: 10px;
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
         transition: color $transitionSpeed $transitionFunction;
@@ -213,12 +218,12 @@
     &__title {
         display: flex;
         align-items: center;
-        color: var(--dark);
+        color: var(--primaryTwo);
         transition: color $transitionSpeed $transitionFunction;
 
         svg {
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             fill: var(--primaryTwo);
         }
 
@@ -230,11 +235,12 @@
     }
 
     &__name {
+        white-space: nowrap;
         color: inherit;
         margin-left: 10px;
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
-        font-weight: 400;
+        font-weight: 500;
     }
 }
 

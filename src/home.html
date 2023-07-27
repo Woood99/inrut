@@ -17,7 +17,7 @@
 
 <body class="page__body">
     <div class="site-container site-container--home">
-        @include('partials/header.html')
+        @include('partials/header--authorization.html')
         <main class="main main-page-gap home">
             <section class="home__banners home-banners">
                 <div class="home-banners__container">
@@ -251,10 +251,19 @@
                                                 </div>
                                                 <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
                                                 <div class="card-primary__info">
-                                                    <div class="row">
-                                                        <span class="card-primary__info--mortgage">Ипотека
-                                                            0,1%</span>
-                                                        <span class="card-primary__info--quantity">+2</span>
+                                                    <div class="row card-primary__info--tags">
+                                                        <span>
+                                                            Ипотека 0,1%
+                                                        </span>
+                                                        <div class="secondary-tooltip">
+                                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                                +2
+                                                            </button>
+                                                            <div class="secondary-tooltip__content">
+                                                                <span>Скидка до 15%</span>
+                                                                <span>С кухней</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="card-primary__info--btns-right">
                                                         <div class="card-primary__info--favorite" title="Добавить в подбор">

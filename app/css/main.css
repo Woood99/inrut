@@ -5293,16 +5293,19 @@ textarea.input-reset {
   box-shadow: var(--shadow-primary);
   border-radius: 12px;
   padding: 24px;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 @media (min-width: 1213px) {
   .authorization-popup__item:hover {
     -webkit-box-shadow: var(--shadow-secondary);
     box-shadow: var(--shadow-secondary);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
   .authorization-popup__item:hover .authorization-popup__item-button {
     background-color: rgba(0, 150, 255, 0.12);
@@ -14680,6 +14683,11 @@ textarea.input-reset {
     width: 125px;
   }
 }
+@media (max-width: 1212px) {
+  .logo {
+    width: 125px;
+  }
+}
 
 .nav {
   height: 100%;
@@ -22458,6 +22466,11 @@ textarea.input-reset {
   }
 }
 @media (max-width: 1212px) {
+  .header-top__authorization {
+    margin-left: auto;
+  }
+}
+@media (max-width: 1212px) {
   .header-top {
     background-color: var(--white);
     -webkit-box-shadow: none;
@@ -22560,8 +22573,9 @@ textarea.input-reset {
   }
 }
 .header-personal__name {
+  white-space: nowrap;
   color: var(--primaryTwo);
-  margin-right: 10px;
+  margin-left: 10px;
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
   -webkit-transition: color 0.4s ease-in-out;
@@ -22582,14 +22596,14 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: var(--dark);
+  color: var(--primaryTwo);
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
 }
 .header-authorization__title svg {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   fill: var(--primaryTwo);
 }
 @media (min-width: 1213px) {
@@ -22598,11 +22612,12 @@ textarea.input-reset {
   }
 }
 .header-authorization__name {
+  white-space: nowrap;
   color: inherit;
   margin-left: 10px;
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .header-main__container {
