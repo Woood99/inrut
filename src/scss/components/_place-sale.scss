@@ -75,7 +75,11 @@
 
     &__row-title {}
 
-    &__city {}
+    &__city {
+        .search-select{
+            max-width: 450px;
+        }
+    }
 
     &__select {
         margin-top: 24px;
@@ -138,23 +142,23 @@
             margin-bottom: 16px;
 
             &--1 {
-                grid-template-columns: percent(278, 968) percent(241, 968) 1fr;
+                grid-template-columns: percent(325, 1132) percent(325, 1132) 1fr;
             }
 
             &--2 {
-                grid-template-columns: percent(278, 968) percent(235, 968) percent(215.5, 968) percent(215.5, 968);
+                grid-template-columns: percent(278, 1132) percent(276.6, 1132) percent(276.6, 1132) percent(276.6, 1132);
             }
 
             &--3 {
-                grid-template-columns: percent(150, 968) percent(200, 968) percent(280, 968) percent(314, 968);
+                grid-template-columns: percent(200, 1132) percent(215, 1132) percent(325, 1132) percent(368, 1132);
             }
 
             &--4 {
-                grid-template-columns: percent(340, 968) percent(302, 968) percent(302, 968);
+                grid-template-columns: percent(375, 1132) percent(370.5, 1132) percent(370.5, 1132);
             }
 
             &--5 {
-                grid-template-columns: percent(385, 968) percent(385, 968) 1fr;
+                grid-template-columns: percent(429, 1132) percent(429, 1132) 1fr;
 
                 .place-sale-options__item {
                     &:first-child {
@@ -166,7 +170,7 @@
             }
 
             &--6 {
-                grid-template-columns: percent(778, 968) 1fr;
+                grid-template-columns: percent(866, 1132) 1fr;
             }
         }
 
@@ -346,9 +350,9 @@
     }
 
     &__input {
-        width: 230px;
+        width: 265px;
         height: 48px;
-        margin-right: 16px;
+        margin-right: 8px;
 
         @media (max-width:$smallTablet-max) {
             margin-right: 0;
@@ -359,7 +363,7 @@
     }
 
     &__select {
-        width: 230px;
+        width: 265px;
         height: 48px;
 
         @media (max-width:$smallTablet-max) {
@@ -399,7 +403,7 @@
     &__checkbox {
         .checkbox-secondary__label {
             justify-content: start;
-            display: inline-flex;
+           display: flex;
         }
     }
 }

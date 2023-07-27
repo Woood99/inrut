@@ -60,6 +60,57 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="place-sale-address__select filter__item search-select" data-search-select-subtitle="Любой">
+                                <button type="button" class="btn btn-reset search-select__button">
+                                    <div class="search-select__button-wrapper">
+                                        <div>Станция метро</div>
+                                        <div>Любая</div>
+                                    </div>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <div class="search-select__dropdown search-select__dropdown--left">
+                                    <button type="button" class="btn btn-reset search-select__close">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#x"></use>
+                                        </svg>
+                                    </button>
+                                    <label class="input-primary search-select__input">
+                                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                    </label>
+                                    <div class="search-select__control">
+                                        <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                        <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                    </div>
+                                    <div class="search-select__wrapper simplebar-third">
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_1" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>Станция метро 1</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_2" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>Станция метро 2</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_3" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>Станция метро 3</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="place-sale-address-map" class="place-sale-address__map map-primary remove-copyrights-pane">
                         </div>
@@ -93,17 +144,95 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="place-sale-options__item select-secondary">
-                                <div class="select-secondary__wrapper">
-                                    <span class="select-secondary__placeholder">
-                                        Комплекс
-                                    </span>
-                                    <select class="select-secondary__body" hidden name="complex">
-                                        <option placeholder value="all-room">Любой</option>
-                                        <option value="room-1">Выбор1</option>
-                                        <option value="room-2">Выбор2</option>
-                                        <option value="room-3">Выбор3</option>
-                                    </select>
+                            <div class="place-sale-options__item search-select" data-search-select-subtitle="Любой">
+                                <button type="button" class="btn btn-reset search-select__button">
+                                    <div class="search-select__button-wrapper">
+                                        <div>Комплекс</div>
+                                        <div>Любой</div>
+                                    </div>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#check"></use>
+                                    </svg>
+                                </button>
+                                <div class="search-select__dropdown">
+                                    <button type="button" class="btn btn-reset search-select__close">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#x"></use>
+                                        </svg>
+                                    </button>
+                                    <label class="input-primary search-select__input">
+                                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                    </label>
+                                    <div class="search-select__control">
+                                        <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                        <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                    </div>
+                                    <div class="search-select__wrapper simplebar-third">
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_11" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_11" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ПИК</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_12" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_12" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ГК Самолет</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_13" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_13" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ГК "А101"</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_14" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_14" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ГК МИЦ</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_15" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_15" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ЛСР</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_16" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_16" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>MR GROUP</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_17" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_17" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ГК ДОНСТРОЙ</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="search-select__item checkbox-secondary">
+                                            <input id="developer_18" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                            <label for="developer_18" class="checkbox-secondary__label">
+                                                <span class="checkbox-secondary__text">
+                                                    <span>ГК Эталон</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -364,7 +493,7 @@
                             <h2 class="place-sale__row-title place-sale-price__title title-2">
                                 Цена и тип сделки
                             </h2>
-                            <div class="place-sale-price__tooltip secondary-tooltip">
+                            <div class="place-sale-price__tooltip secondary-tooltip secondary-tooltip--dark">
                                 <button type="button" class="btn btn-reset secondary-tooltip__btn">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#info"></use>
@@ -377,7 +506,7 @@
                             </div>
                         </div>
                         <div class="place-sale-price__wrapper">
-                            <div class="place-sale-price__input  input-text input-text--no-subtitle">
+                            <div class="place-sale-price__input input-text input-text--only-number input-text--no-subtitle">
                                 <label class="input-text__label">
                                     <input type="text" name="Имя" maxlength="12" class="input-reset input-text__input" placeholder="Цена">
                                 </label>
@@ -402,7 +531,7 @@
                             <h2 class="place-sale__row-title place-sale-videoshow__title title-2">
                                 Видеопоказ
                             </h2>
-                            <div class="place-sale-videoshow__tooltip secondary-tooltip">
+                            <div class="place-sale-videoshow__tooltip secondary-tooltip secondary-tooltip--dark">
                                 <button type="button" class="btn btn-reset secondary-tooltip__btn">
                                     <svg>
                                         <use xlink:href="img/sprite.svg#info"></use>
@@ -445,12 +574,18 @@
                             Ваши контакты
                         </h2>
                         <div class="your-contacts-field__wrapper">
-                            <label class="input-primary">
-                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input" disabled value="8 921 645 45 45" placeholder="Номер телефона">
-                            </label>
-                            <label class="input-primary">
-                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input" disabled value="Алексей Г." placeholder="Имя, фамилия">
-                            </label>
+                            <div class="input-text input-text--no-exp input-text--disabled">
+                                <label class="input-text__label">
+                                    <span>Номер телефона</span>
+                                    <input type="text" name="Застройщик" class="input-reset input-text__input" value="8 921 645 45 45" disabled placeholder="Номер телефона">
+                                </label>
+                            </div>
+                            <div class="input-text input-text--no-exp input-text--disabled">
+                                <label class="input-text__label">
+                                    <span>Имя, фамилия</span>
+                                    <input type="text" name="Имя, фамилия" class="input-reset input-text__input" value="Алексей Г." disabled placeholder="Имя, фамилия">
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-reset btn-primary place-sale__btn">

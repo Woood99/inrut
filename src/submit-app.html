@@ -34,26 +34,55 @@
             </div>
             <div class="submit-app__body">
                 <form action="#" class="submit-app__container container">
+                    <div class="submit-app__row submit-app-maps">
+                        <h2 class="submit-app-maps__title submit-app__row-title title-2">
+                            Расположение поиска
+                        </h2>
+                        <p class="submit-app-maps__descr">
+                            Укажите желаемый район вашей заявки на карте
+                        </p>
+                        <div class="submit-app-maps__city select-secondary select-secondary--city _selected">
+                            <div class="select-secondary__wrapper">
+                                <span class="select-secondary__placeholder">
+                                    Город
+                                </span>
+                                <select class="select-secondary__body" hidden name="city">
+                                    <option value="apartments">Санкт-Петербург</option>
+                                    <option value="apartments2">Волгоград</option>
+                                    <option value="apartments3">Москва</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="submit-app-maps__map map-draw">
+                            <div class="map-draw__btns">
+                                <button type="button" class="btn btn-reset map-draw__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#path"></use>
+                                    </svg>
+                                    <span>Нарисовать область </span>
+                                </button>
+                                <button type="button" class="btn btn-reset map-draw__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                    </svg>
+                                    <span>Добавить ещё область</span>
+                                </button>
+                                <button type="button" class="btn btn-reset map-draw__btn">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#trash"></use>
+                                    </svg>
+                                    <span>Очистить</span>
+                                </button>
+                            </div>
+                            <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
+                        </div>
+                    </div>
                     <div class="submit-app__row submit-app-options">
                         <h2 class="submit-app-options__title submit-app__row-title title-2">
                             Параметры заявки
                         </h2>
                         <div class="submit-app-options__choice">
                             <div class="submit-app-options__row submit-app-options__row--1">
-                                <div class="submit-app-options__item select-secondary select-secondary--city _selected">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Город
-                                        </span>
-                                        <select class="select-secondary__body" hidden name="complex">
-                                            <option value="apartments">Санкт-Петербург</option>
-                                            <option value="apartments2">Волгоград</option>
-                                            <option value="apartments3">Москва</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="submit-app-options__row submit-app-options__row--2">
                                 <div class="submit-app-options__item select-secondary">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
@@ -67,17 +96,95 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="submit-app-options__item submit-app-options__item--complex select-secondary">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Комплекс
-                                        </span>
-                                        <select class="select-secondary__body" hidden name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Квартиры1</option>
-                                            <option value="room-2">Квартиры2</option>
-                                            <option value="room-3">Квартиры3</option>
-                                        </select>
+                                <div class="submit-app-options__item search-select" data-search-select-subtitle="Любой">
+                                    <button type="button" class="btn btn-reset search-select__button">
+                                        <div class="search-select__button-wrapper">
+                                            <div>Комплекс</div>
+                                            <div>Любой</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select__dropdown search-select__dropdown--left">
+                                        <button type="button" class="btn btn-reset search-select__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
+                                        <label class="input-primary search-select__input">
+                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select__control">
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                        </div>
+                                        <div class="search-select__wrapper simplebar-third">
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_1" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ПИК</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_2" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Самолет</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_3" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК "А101"</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_4" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК МИЦ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_5" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ЛСР</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_6" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>MR GROUP</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_7" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК ДОНСТРОЙ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_8" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Эталон</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="submit-app-options__item quantity-selection">
@@ -115,7 +222,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="submit-app-options__row submit-app-options__row--3">
+                            <div class="submit-app-options__row submit-app-options__row--2">
                                 <div class="submit-app-options__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь"
                                     data-filter-dropdown-subtitle="Любая">
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
@@ -131,7 +238,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left" style="min-width: 450px;">
                                         <button type="button" class="btn btn-reset filter-dropdown__close">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#x"></use>
@@ -143,7 +250,7 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <span>От</span>
+                                                            <span>Площадь от</span>
                                                             <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
@@ -177,7 +284,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter-dropdown__dropdown">
+                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left" style="min-width: 450px;">
                                         <button type="button" class="btn btn-reset filter-dropdown__close">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#x"></use>
@@ -189,7 +296,7 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <span>От</span>
+                                                            <span>Площадь от</span>
                                                             <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
@@ -223,7 +330,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </button>
-                                    <div class="filter-dropdown__dropdown filter-dropdown__dropdown--left">
+                                    <div class="filter-dropdown__dropdown" style="min-width: 400px;">
                                         <button type="button" class="btn btn-reset filter-dropdown__close">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#x"></use>
@@ -235,15 +342,15 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <span>От</span>
-                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
+                                                            <span>Этаж от</span>
+                                                            <input type="text" maxlength="2" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
                                                             <span>До</span>
-                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="">
+                                                            <input type="text" maxlength="2" class="input-reset input-text__input" placeholder="">
                                                         </label>
                                                     </div>
                                                     <div>
@@ -260,7 +367,7 @@
                             <h2 class="submit-app-options__title submit-app__row-title  title-2">
                                 Как планируете покупать объект
                             </h2>
-                            <div class="submit-app-options__row submit-app-options__row--7">
+                            <div class="submit-app-options__row submit-app-options__row--3">
                                 <div class="submit-app-options__item select-dropdown-checkbox">
                                     <button type="button" class="btn btn-reset select-dropdown-checkbox__button">
                                         <span class="select-dropdown-checkbox__placeholder">
@@ -279,9 +386,6 @@
                                                 <use xlink:href="img/sprite.svg#x"></use>
                                             </svg>
                                         </button>
-                                        <p>
-                                            Укажите какой вид расчета будет использоваться при покупке
-                                        </p>
                                         <div>
                                             <div class="checkbox-secondary">
                                                 <input id="calculation_1" name="calculation" class="checkbox-secondary__input" data-name="cash" type="checkbox" value="true">
@@ -293,7 +397,7 @@
                                                 <input id="calculation_2" name="calculation" class="checkbox-secondary__input" data-name="mortgage_yes-bank" type="checkbox"
                                                     value="true">
                                                 <label for="calculation_2" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">Ипотека,есть одобрение от
+                                                    <span class="checkbox-secondary__text">Ипотека, есть одобрение от
                                                         банка</span>
                                                 </label>
                                             </div>
@@ -310,8 +414,7 @@
                                                     value="true">
                                                 <label for="calculation_4" class="checkbox-secondary__label">
                                                     <span class="checkbox-secondary__text">
-                                                        У меня нет первоначального
-                                                        взноса
+                                                        Без первоначального взноса
                                                     </span>
                                                 </label>
                                             </div>
@@ -320,9 +423,9 @@
                                                     value="true">
                                                 <label for="calculation_5" class="checkbox-secondary__label">
                                                     <span class="checkbox-secondary__text">
-                                                        В сделке буду использовать сертификат
+                                                        В сделке будет использоваться сертификат
                                                     </span>
-                                                    <div class="secondary-tooltip">
+                                                    <div class="secondary-tooltip secondary-tooltip--dark">
                                                         <button type="button" class="btn btn-reset secondary-tooltip__btn">
                                                             <svg>
                                                                 <use xlink:href="img/sprite.svg#info"></use>
@@ -422,10 +525,10 @@
                             </div>
                         </div>
                         <div class="submit-app-options__choice">
-                            <h2 class="submit-app-options__title submit-app__row-title  title-2">
+                            <h2 class="submit-app-options__title submit-app__row-title title-2">
                                 Когда планируете начинать просмотр
                             </h2>
-                            <div class="submit-app-options__row submit-app-options__row--8">
+                            <div class="submit-app-options__row submit-app-options__row--4">
                                 <div class="submit-app-options__item select-secondary">
                                     <div class="select-secondary__wrapper">
                                         <span class="select-secondary__placeholder">
@@ -458,37 +561,6 @@
                             </label>
                         </div>
                     </div>
-                    <div class="submit-app__row submit-app-maps">
-                        <h2 class="submit-app-maps__title submit-app__row-title title-2">
-                            Расположение поиска
-                        </h2>
-                        <p class="submit-app-maps__descr">
-                            Укажите желаемый район вашей заявки на карте
-                        </p>
-                        <div class="submit-app-maps__map map-draw">
-                            <div class="map-draw__btns">
-                                <button type="button" class="btn btn-reset map-draw__btn">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#path"></use>
-                                    </svg>
-                                    <span>Нарисовать область </span>
-                                </button>
-                                <button type="button" class="btn btn-reset map-draw__btn">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#plus"></use>
-                                    </svg>
-                                    <span>Добавить ещё область</span>
-                                </button>
-                                <button type="button" class="btn btn-reset map-draw__btn">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#trash"></use>
-                                    </svg>
-                                    <span>Очистить</span>
-                                </button>
-                            </div>
-                            <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
-                        </div>
-                    </div>
                     <div class="submit-app__row communic-method-radios radio-primary">
                         <h2 class="communic-method-radios__title submit-app__row-title title-2">
                             Способ связи
@@ -513,12 +585,18 @@
                             Ваши контакты
                         </h2>
                         <div class="your-contacts-field__wrapper">
-                            <label class="input-primary">
-                                <input type="tel" name="Номер телефона" class="input-reset input-primary__input" disabled value="8 921 645 45 45" placeholder="Номер телефона">
-                            </label>
-                            <label class="input-primary">
-                                <input type="text" name="Имя, фамилия" class="input-reset input-primary__input" disabled value="Алексей Г." placeholder="Имя, фамилия">
-                            </label>
+                            <div class="input-text input-text--no-exp input-text--disabled">
+                                <label class="input-text__label">
+                                    <span>Номер телефона</span>
+                                    <input type="text" name="Застройщик" class="input-reset input-text__input" value="8 921 645 45 45" disabled placeholder="Номер телефона">
+                                </label>
+                            </div>
+                            <div class="input-text input-text--no-exp input-text--disabled">
+                                <label class="input-text__label">
+                                    <span>Имя, фамилия</span>
+                                    <input type="text" name="Имя, фамилия" class="input-reset input-text__input" value="Алексей Г." disabled placeholder="Имя, фамилия">
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-reset btn-primary submit-app__btn">

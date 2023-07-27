@@ -5485,9 +5485,19 @@ const choicesSelect = () => {
       el.addEventListener('change', e => {
         if (e.target.length >= 1) {
           el.closest('.select-multiple').classList.add('_selected');
+          wrapper.classList.remove('_hover');
         } else {
           el.closest('.select-multiple').classList.remove('_selected');
         }
+      });
+      const wrapper = el.closest('.select-multiple');
+      wrapper.addEventListener('mouseover', e => {
+        if (!e.target.closest('.choices__list.choices__list--dropdown')) {
+          wrapper.classList.add('_hover');
+        }
+      });
+      wrapper.addEventListener('mouseout', () => {
+        wrapper.classList.remove('_hover');
       });
     });
   }

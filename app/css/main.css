@@ -7853,20 +7853,20 @@ textarea.input-reset {
   display: -ms-flexbox;
   display: flex;
 }
-.your-contacts-field__wrapper .input-primary {
-  width: 230px;
+.your-contacts-field__wrapper .input-text {
+  width: 300px;
 }
-.your-contacts-field__wrapper .input-primary:not(:last-child) {
-  margin-right: 24px;
+.your-contacts-field__wrapper .input-text:not(:last-child) {
+  margin-right: 8px;
 }
 @media (max-width: 768px) {
-  .your-contacts-field__wrapper .input-primary:not(:last-child) {
+  .your-contacts-field__wrapper .input-text:not(:last-child) {
     margin-right: 0;
     margin-bottom: 16px;
   }
 }
 @media (max-width: 768px) {
-  .your-contacts-field__wrapper .input-primary {
+  .your-contacts-field__wrapper .input-text {
     width: 100%;
   }
 }
@@ -11564,6 +11564,9 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
   padding-right: 50px;
+  -webkit-transition: border 0.4s ease-in-out;
+  -o-transition: border 0.4s ease-in-out;
+  transition: border 0.4s ease-in-out;
 }
 .select-multiple .choices::after {
   content: "";
@@ -11719,6 +11722,14 @@ textarea.input-reset {
 }
 .select-multiple._selected .select-multiple__main-placeholder {
   color: #b6d5f8;
+}
+@media (min-width: 1213px) {
+  .select-multiple._hover .choices {
+    border: 1px solid var(--blue);
+  }
+  .select-multiple._hover .select-multiple__main-placeholder {
+    color: var(--blue);
+  }
 }
 
 .select-secondary {
@@ -27768,24 +27779,20 @@ textarea.input-reset {
   grid-column-gap: 8px;
 }
 .submit-app-options__row--1 {
-  -ms-grid-columns: 24.7933884298%;
-  grid-template-columns: 24.7933884298%;
+  -ms-grid-columns: 28.7102473498% 33.1272084806% 24.5583038869%;
+  grid-template-columns: 28.7102473498% 33.1272084806% 24.5583038869%;
 }
 .submit-app-options__row--2 {
-  -ms-grid-columns: 28.4090909091% 28.4090909091% 28.4090909091%;
-  grid-template-columns: 28.4090909091% 28.4090909091% 28.4090909091%;
+  -ms-grid-columns: 33.1272084806% 33.1272084806% 26.5017667845%;
+  grid-template-columns: 33.1272084806% 33.1272084806% 26.5017667845%;
 }
 .submit-app-options__row--3 {
-  -ms-grid-columns: 30.9917355372% 30.9917355372% 20.6611570248%;
-  grid-template-columns: 30.9917355372% 30.9917355372% 20.6611570248%;
+  -ms-grid-columns: 39.7526501767% 33.1272084806%;
+  grid-template-columns: 39.7526501767% 33.1272084806%;
 }
-.submit-app-options__row--7 {
-  -ms-grid-columns: 39.2561983471% 33.5743801653%;
-  grid-template-columns: 39.2561983471% 33.5743801653%;
-}
-.submit-app-options__row--8 {
-  -ms-grid-columns: 28.4090909091%;
-  grid-template-columns: 28.4090909091%;
+.submit-app-options__row--4 {
+  -ms-grid-columns: 30.9187279152%;
+  grid-template-columns: 30.9187279152%;
 }
 .submit-app-options__row:not(:last-child) {
   margin-bottom: 16px;
@@ -27799,12 +27806,6 @@ textarea.input-reset {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
-}
-.submit-app-options__item--sum .filter-dropdown__dropdown {
-  left: 0;
-}
-.submit-app-options__item--complex .choices__list--single {
-  padding: 0 30px 0 70px;
 }
 .submit-app-options__textarea {
   --height: 96px;
@@ -27821,6 +27822,10 @@ textarea.input-reset {
   .submit-app-maps__title {
     padding: 0 16px;
   }
+}
+.submit-app-maps__city {
+  margin-top: 24px;
+  max-width: 350px;
 }
 .submit-app-maps__descr {
   color: var(--primaryTwo);
@@ -27993,6 +27998,9 @@ textarea.input-reset {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+.place-sale-address__city .search-select {
+  max-width: 450px;
+}
 .place-sale-address__select {
   margin-top: 24px;
   max-width: 300px;
@@ -28057,31 +28065,31 @@ textarea.input-reset {
     margin-bottom: 16px;
   }
   .place-sale-options__row--1 {
-    -ms-grid-columns: 28.7190082645% 24.8966942149% 1fr;
-    grid-template-columns: 28.7190082645% 24.8966942149% 1fr;
+    -ms-grid-columns: 28.7102473498% 28.7102473498% 1fr;
+    grid-template-columns: 28.7102473498% 28.7102473498% 1fr;
   }
   .place-sale-options__row--2 {
-    -ms-grid-columns: 28.7190082645% 24.2768595041% 22.2623966942% 22.2623966942%;
-    grid-template-columns: 28.7190082645% 24.2768595041% 22.2623966942% 22.2623966942%;
+    -ms-grid-columns: 24.5583038869% 24.4346289753% 24.4346289753% 24.4346289753%;
+    grid-template-columns: 24.5583038869% 24.4346289753% 24.4346289753% 24.4346289753%;
   }
   .place-sale-options__row--3 {
-    -ms-grid-columns: 15.4958677686% 20.6611570248% 28.9256198347% 32.4380165289%;
-    grid-template-columns: 15.4958677686% 20.6611570248% 28.9256198347% 32.4380165289%;
+    -ms-grid-columns: 17.667844523% 18.9929328622% 28.7102473498% 32.5088339223%;
+    grid-template-columns: 17.667844523% 18.9929328622% 28.7102473498% 32.5088339223%;
   }
   .place-sale-options__row--4 {
-    -ms-grid-columns: 35.1239669421% 31.1983471074% 31.1983471074%;
-    grid-template-columns: 35.1239669421% 31.1983471074% 31.1983471074%;
+    -ms-grid-columns: 33.1272084806% 32.7296819788% 32.7296819788%;
+    grid-template-columns: 33.1272084806% 32.7296819788% 32.7296819788%;
   }
   .place-sale-options__row--5 {
-    -ms-grid-columns: 39.7727272727% 39.7727272727% 1fr;
-    grid-template-columns: 39.7727272727% 39.7727272727% 1fr;
+    -ms-grid-columns: 37.8975265018% 37.8975265018% 1fr;
+    grid-template-columns: 37.8975265018% 37.8975265018% 1fr;
   }
   .place-sale-options__row--5 .place-sale-options__item:first-child .choices__list--single {
     padding: 0 30px 0 140px;
   }
   .place-sale-options__row--6 {
-    -ms-grid-columns: 80.3719008264% 1fr;
-    grid-template-columns: 80.3719008264% 1fr;
+    -ms-grid-columns: 76.5017667845% 1fr;
+    grid-template-columns: 76.5017667845% 1fr;
   }
 }
 @media (max-width: 1212px) {
@@ -28276,9 +28284,9 @@ textarea.input-reset {
   }
 }
 .place-sale-price__input {
-  width: 230px;
+  width: 265px;
   height: 48px;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 @media (max-width: 768px) {
   .place-sale-price__input {
@@ -28289,7 +28297,7 @@ textarea.input-reset {
   }
 }
 .place-sale-price__select {
-  width: 230px;
+  width: 265px;
   height: 48px;
 }
 @media (max-width: 768px) {
@@ -28328,9 +28336,9 @@ textarea.input-reset {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .place-sale-photo__descr {

@@ -84,24 +84,21 @@
         align-items: center;
         grid-column-gap: 8px;
 
+
         &--1 {
-            grid-template-columns: percent(240, 968);
+            grid-template-columns: percent(325, 1132) percent(375, 1132) percent(278, 1132);
         }
 
         &--2 {
-            grid-template-columns: percent(275, 968) percent(275, 968) percent(275, 968);
+            grid-template-columns: percent(375, 1132) percent(375, 1132) percent(300, 1132);
         }
 
         &--3 {
-            grid-template-columns: percent(300, 968) percent(300, 968) percent(200, 968);
+            grid-template-columns: percent(450, 1132) percent(375, 1132);
         }
 
-        &--7 {
-            grid-template-columns: percent(380, 968) percent(325, 968);
-        }
-
-        &--8 {
-            grid-template-columns: percent(275, 968);
+        &--4 {
+            grid-template-columns: percent(350, 1132);
         }
 
         &:not(:last-child) {
@@ -116,17 +113,7 @@
     }
 
     &__item {
-        &--sum {
-            .filter-dropdown__dropdown {
-                left: 0;
-            }
-        }
 
-        &--complex {
-            .choices__list--single {
-                padding: 0 30px 0 70px;
-            }
-        }
     }
 
     &__textarea {
@@ -155,7 +142,10 @@
             padding: 0 16px;
         }
     }
-
+    &__city{
+        margin-top: 24px;
+        max-width: 350px;
+    }
     &__descr {
         color: var(--primaryTwo);
         font-size: var(--default-fz);
