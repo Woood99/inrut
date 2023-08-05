@@ -862,6 +862,36 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+    &--record-viewing-two {
+        z-index: 1050;
+
+        .popup-primary {
+            &__container {
+                border-radius: 12px 12px 0 0;
+                padding: 65px 16px 48px;
+                min-height: auto;
+                margin: 32px auto 0;
+                width: calc(100% - 4px);
+                vertical-align: bottom;
+                position: relative;
+            }
+
+            &__close {
+                transform: translateX(16px);
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
 
     &--client-fixed {
         .popup-primary {
@@ -2627,6 +2657,114 @@
             }
         }
     }
+}
+.record-viewing-two-confirm {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1051;
+    background-color: rgba(34, 41, 102, 0.4);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: center;
+    &::before{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &__container {
+        position: relative;
+        background-color: #fff;
+        cursor: default;
+      text-align: center;
+        display: none;
+        box-shadow: var(--shadow-primary);
+        margin: 50px auto;
+        &.open {
+            display: inline-block !important;
+        }
+
+        margin: 0 auto;
+        border-radius: 12px;
+       padding: 48px;
+        max-width: 100%;
+        width: 450px;
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary300);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                svg {
+                    fill: var(--primary500);
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__btns{
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+ 
 }
 
 .client-fixed-sent {
@@ -5062,6 +5200,68 @@
     }
 }
 
+.record-viewing-two{
+    .container {
+        padding: 0;
+        max-width: 1300px;
+    }
+    &__title{
+        margin-bottom: 32px;
+    }
+    &__wrapper{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 1fr 550px;
+        grid-column-gap: 32px;
+        grid-row-gap: 24px;
+    }
+    &__sent{
+        border-radius: 16px;
+        background-color: var(--primary200);
+
+        padding: 24px;
+    }
+    &__cancel-app{
+        border-radius: 16px;
+        background-color: var(--dark);
+        padding: 24px;
+        .title-3{
+            color: var(--white);
+        }
+    }
+    .row{
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__btns{
+
+    }
+    &__details{
+        margin-top: 32px;
+    }
+    &__card{
+        margin-top: 24px;
+    }
+    &__cancel{
+        margin-top: 32px;
+    }
+    &__maps{
+        .map-primary{
+            height: 423px;
+            width: 100%;
+            border-radius: 12px;
+        }
+        @media (min-width:$desktop-min) {
+            ._sticky {
+                position: sticky;
+                top: 16px;
+                width: 100%;
+            }
+        }
+    }
+}
 
 
 

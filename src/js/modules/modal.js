@@ -1,3 +1,4 @@
+import reviewModal from '../components/reviewModal';
 import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 
@@ -10,6 +11,8 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
         const modalCloseEl = modalEl.querySelector(`${container}__close`);
         const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
         const clientFixedSendReload = modalEl.querySelector('.client-fixed-sent__btn');
+        const recordViewingTwoConfirmBtnYes = modalEl.querySelector('.record-viewing-two-confirm__btn--yes');
+        const recordViewingTwoConfirmBtnNo = modalEl.querySelector('.record-viewing-two-confirm__btn--no');
         const settingsModal = {
             modal: modalEl,
             container: modalContainerEl,
@@ -35,6 +38,29 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
                 window.location.reload();
             })
         }
+        if (recordViewingTwoConfirmBtnNo) {
+            recordViewingTwoConfirmBtnNo.addEventListener('click', () => {
+                modalClose(settingsModal);
+            })
+        }
+        if (recordViewingTwoConfirmBtnYes) {
+            recordViewingTwoConfirmBtnYes.addEventListener('click', () => {
+                modalClose(settingsModal);
+                const recordViewingTwo = document.querySelector('.popup-primary--record-viewing-two');
+                const info = recordViewingTwo.querySelector('.record-viewing-two__info');
+                const cancelBtn = recordViewingTwo.querySelector('.record-viewing-two__cancel');
+                const sent = recordViewingTwo.querySelector('.record-viewing-two__sent');
+
+                const cancelApp = `
+                 <div class="record-viewing-two__cancel-app">
+                    <h3 class="title-3">Вы отменили заявку</h3>
+                 </div>
+                `
+                info.insertAdjacentHTML('afterbegin', cancelApp);
+                sent.remove();
+                cancelBtn.remove();
+            })
+        }
         modalEl.addEventListener('click', (e) => {
             if (e.target.classList.contains(container.replace(/^\./, ""))) {
                 modalClose(settingsModal);
@@ -56,10 +82,14 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
                 if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
                     if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
-                        enableScrollClose();
+                        if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
+                            enableScrollClose();
+                        }
                     }
                 } else {
-                    enableScrollClose();
+                    if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two'))) {
+                        enableScrollClose();
+                    }
                 }
             }
 

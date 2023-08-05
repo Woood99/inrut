@@ -4313,7 +4313,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__["default"])();
   (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000);
-  (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__["default"])();
+  (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewing)();
+  (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewingTwo)();
   (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoritesPage)();
   (0,_components_favorites__WEBPACK_IMPORTED_MODULE_34__.favoriteChoicePopup)();
@@ -4501,6 +4502,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, 'screen-demonstation-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'record-viewing-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'personal-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'client-fixed');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'add-card');
@@ -8191,6 +8193,24 @@ const maps = () => {
     }
     ymaps.ready(init);
   }
+  if (document.querySelector('#record-viewing-maps')) {
+    const objectMaps = document.querySelector('#record-viewing-maps');
+    if (!objectMaps) return;
+    function init() {
+      let map = new ymaps.Map('record-viewing-maps', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      positionElement(map);
+      removeControlsPrimary(map, '#record-viewing-maps');
+      const fullScreenControl = map.controls.get('fullscreenControl');
+      fullScreenControl.events.add('fullscreenenter', function () {
+        const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+        fullscreenElement.parentNode.style.position = 'fixed';
+      });
+    }
+    ymaps.ready(init);
+  }
   if (document.querySelector('#map-draw')) {
     function init() {
       let map = new ymaps.Map('map-draw', {
@@ -8826,9 +8846,12 @@ function placeSaleOptionMore() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "recordViewing": () => (/* binding */ recordViewing),
+/* harmony export */   "recordViewingTwo": () => (/* binding */ recordViewingTwo)
 /* harmony export */ });
 /* harmony import */ var _scrollDrag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scrollDrag */ "./src/js/components/scrollDrag.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
 
 const recordViewing = () => {
   const container = document.querySelector('.record-viewing');
@@ -9120,7 +9143,35 @@ const recordViewing = () => {
     }
   }
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (recordViewing);
+const recordViewingTwo = () => {
+  const container = document.querySelector('.record-viewing-two');
+  if (!container) return;
+  const cancel = container.querySelector('.record-viewing-two__cancel');
+  cancel.addEventListener('click', () => {
+    const modalHTML = `
+        <div class="record-viewing-two-confirm">
+        <div class="record-viewing-two-confirm__container">
+            <button class="btn-reset record-viewing-two-confirm__close" aria-label="Закрыть модальное окно">
+                <svg>
+                    <use xlink:href="img/sprite.svg#x"></use>
+                </svg>
+                <span>Закрыть</span>
+            </button>
+             <div class="record-viewing-two-confirm__content">
+                 <h2 class="record-viewing-two-confirm__title title-2">
+                    Отменить заявку?
+                 </h2>
+                 <div class="record-viewing-two-confirm__btns">
+                    <button type="button" class="btn btn-reset btn-primary record-viewing-two-confirm__btn record-viewing-two-confirm__btn--yes">Да, отменить</button>
+                    <button type="button" class="btn btn-reset btn-secondary record-viewing-two-confirm__btn record-viewing-two-confirm__btn--no">Не отменять</button>
+                 </div>
+             </div>
+        </div>
+        </div>
+        `;
+    (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(modalHTML, '.record-viewing-two-confirm', 300);
+  });
+};
 
 /***/ }),
 
@@ -11329,8 +11380,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
-/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
+/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/reviewModal */ "./src/js/components/reviewModal.js");
+/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
+/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
+
 
 
 const modal = function (modalHTML, container) {
@@ -11343,6 +11396,8 @@ const modal = function (modalHTML, container) {
     const modalCloseEl = modalEl.querySelector(`${container}__close`);
     const genplanClose = modalEl.querySelectorAll('.genplan__to-layouts');
     const clientFixedSendReload = modalEl.querySelector('.client-fixed-sent__btn');
+    const recordViewingTwoConfirmBtnYes = modalEl.querySelector('.record-viewing-two-confirm__btn--yes');
+    const recordViewingTwoConfirmBtnNo = modalEl.querySelector('.record-viewing-two-confirm__btn--no');
     const settingsModal = {
       modal: modalEl,
       container: modalContainerEl,
@@ -11368,6 +11423,28 @@ const modal = function (modalHTML, container) {
         window.location.reload();
       });
     }
+    if (recordViewingTwoConfirmBtnNo) {
+      recordViewingTwoConfirmBtnNo.addEventListener('click', () => {
+        modalClose(settingsModal);
+      });
+    }
+    if (recordViewingTwoConfirmBtnYes) {
+      recordViewingTwoConfirmBtnYes.addEventListener('click', () => {
+        modalClose(settingsModal);
+        const recordViewingTwo = document.querySelector('.popup-primary--record-viewing-two');
+        const info = recordViewingTwo.querySelector('.record-viewing-two__info');
+        const cancelBtn = recordViewingTwo.querySelector('.record-viewing-two__cancel');
+        const sent = recordViewingTwo.querySelector('.record-viewing-two__sent');
+        const cancelApp = `
+                 <div class="record-viewing-two__cancel-app">
+                    <h3 class="title-3">Вы отменили заявку</h3>
+                 </div>
+                `;
+        info.insertAdjacentHTML('afterbegin', cancelApp);
+        sent.remove();
+        cancelBtn.remove();
+      });
+    }
     modalEl.addEventListener('click', e => {
       if (e.target.classList.contains(container.replace(/^\./, ""))) {
         modalClose(settingsModal);
@@ -11388,14 +11465,18 @@ const modal = function (modalHTML, container) {
       if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
         if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
           if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
-            enableScrollClose();
+            if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
+              enableScrollClose();
+            }
           }
         } else {
-          enableScrollClose();
+          if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two'))) {
+            enableScrollClose();
+          }
         }
       }
       function enableScrollClose() {
-        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';
       }
@@ -11423,7 +11504,7 @@ const modal = function (modalHTML, container) {
       settingsModal.modal.classList.add('is-open');
       document.body.style.scrollBehavior = 'auto';
       document.documentElement.style.scrollBehavior = 'auto';
-      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
       settingsModal.container.classList.add('open');
       settingsModal.container.classList.add(settingsModal.animation);
       setTimeout(() => {

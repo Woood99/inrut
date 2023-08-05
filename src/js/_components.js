@@ -64,7 +64,7 @@ import {
 } from './components/cardActions';
 import furnishingSets from './components/furnishingSets';
 import bookConsultation from './components/bookConsultation';
-import recordViewing from './components/recordViewing';
+import {recordViewing,recordViewingTwo} from './components/recordViewing';
 import wallet from './components/wallet';
 import {
     favoritesPage,
@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bookConsultation();
     scrollDrag('.object-location__infrastructure', 1000);
     recordViewing();
+    recordViewingTwo();
     wallet();
     favoritesPage();
     favoriteChoicePopup();
