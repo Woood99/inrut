@@ -351,7 +351,11 @@
         &--like-btn {
             margin-top: 10px;
         }
-
+        &--dislike-btn{
+            span{
+                width: 135px;
+            }
+        }
         &--btns-right {
             position: absolute;
             top: 0;
@@ -634,7 +638,29 @@
             padding: 16px;
         }
     }
+    &__bottom--delete{
+        display: flex;
+        justify-content: space-between;
+        >div {
+            span {
+                font-size: var(--small-fz);
+line-height: var(--small-lh);
+                display: block;
 
+                &:nth-child(1) {
+                    font-weight: 500;
+                }
+
+                &:nth-child(2) {
+                    color: var(--primaryTwo);
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
     &__user {}
 
     &.card-primary--no-user {
@@ -686,7 +712,12 @@
             }
         }
     }
-
+    &.card-primary--new{
+        .card-primary__info--new{
+            right: auto;
+            left: 15px;
+        }
+    }
     @media (min-width:$desktop-min) {
         &:hover {
             .card-primary__image {
