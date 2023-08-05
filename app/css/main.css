@@ -14594,8 +14594,8 @@ textarea.input-reset {
   -ms-grid-column-align: end;
   justify-self: end;
 }
-@media (min-width: 1213px) {
-  .client-info:hover {
+@media (min-width: 1212px) {
+  .client-info:hover:not(.client-info--no-animate) {
     -webkit-box-shadow: var(--shadow-secondary);
     box-shadow: var(--shadow-secondary);
   }
@@ -29830,6 +29830,9 @@ textarea.input-reset {
 }
 .clients .main-table .main-table__type span:first-child {
   margin: 0;
+}
+.clients .main-table .client-info {
+  min-height: 96px;
 }
 
 .wallet__item {
