@@ -78,6 +78,7 @@ import navDropdown from './components/navDropdown';
 import videoModal from './components/videoModal';
 import favoriteBtn from './components/favoriteBtn';
 import advancePayment from './components/advancePayment';
+import submitApp from './components/submitApp';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -157,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     videoModal();
     favoriteBtn();
     advancePayment();
+    submitApp();
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

@@ -4204,6 +4204,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoModal__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/videoModal */ "./src/js/components/videoModal.js");
 /* harmony import */ var _components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/favoriteBtn */ "./src/js/components/favoriteBtn.js");
 /* harmony import */ var _components_advancePayment__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/advancePayment */ "./src/js/components/advancePayment.js");
+/* harmony import */ var _components_submitApp__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/submitApp */ "./src/js/components/submitApp.js");
+
 
 
 
@@ -4323,6 +4325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_videoModal__WEBPACK_IMPORTED_MODULE_38__["default"])();
   (0,_components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__["default"])();
   (0,_components_advancePayment__WEBPACK_IMPORTED_MODULE_40__["default"])();
+  (0,_components_submitApp__WEBPACK_IMPORTED_MODULE_41__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -6622,33 +6625,35 @@ const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radio
   });
 };
 const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, checkboxesSelector) => {
-  const form = document.querySelector(formSelector);
-  if (!form) return false;
-  const textarea = form.querySelector(textareaSelector);
-  const btn = form.querySelector(btnSelector);
-  const checkboxes = form.querySelectorAll(checkboxesSelector);
-  function checkForm() {
-    let flag = false;
-    for (let checkbox of checkboxes) {
-      flag = checkbox.checked ? true : false;
-      if (flag) break;
+  const forms = document.querySelectorAll(formSelector);
+  if (forms.length === 0) return;
+  forms.forEach(form => {
+    const textarea = form.querySelector(textareaSelector);
+    const btn = form.querySelector(btnSelector);
+    const checkboxes = form.querySelectorAll(checkboxesSelector);
+    function checkForm() {
+      let flag = false;
+      for (let checkbox of checkboxes) {
+        flag = checkbox.checked ? true : false;
+        if (flag) break;
+      }
+      flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
     }
-    flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
-  }
-  ;
-  function clearForm() {
-    textarea.value = '';
-    btn.setAttribute('disabled', '');
-    for (let radio of checkboxes) {
-      radio.checked = false;
+    ;
+    function clearForm() {
+      textarea.value = '';
+      btn.setAttribute('disabled', '');
+      for (let radio of checkboxes) {
+        radio.checked = false;
+      }
     }
-  }
-  form.addEventListener('change', e => {
-    if (e.target.type === 'checkbox') checkForm();
-  });
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    clearForm();
+    form.addEventListener('change', e => {
+      if (e.target.type === 'checkbox') checkForm();
+    });
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      clearForm();
+    });
   });
 };
 const bookConsultationValidate = () => {
@@ -9425,6 +9430,31 @@ const simplebar = selector => {
     }
   });
 };
+
+/***/ }),
+
+/***/ "./src/js/components/submitApp.js":
+/*!****************************************!*\
+  !*** ./src/js/components/submitApp.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const submitApp = () => {
+  const contianer = document.querySelector('.submit-app');
+  if (!contianer) return;
+  const checkbox = contianer.querySelector('.submit-app-maps__checkbox .checkbox-secondary__input');
+  const maps = contianer.querySelector('.submit-app-maps__map');
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) maps.setAttribute('hidden', '');
+    if (!checkbox.checked) maps.removeAttribute('hidden');
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (submitApp);
 
 /***/ }),
 

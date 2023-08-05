@@ -2866,7 +2866,7 @@
         <div class="popup__content popup-primary__content suggest-object">
             <h2 class="suggest-object__title title-2">Выберите источник подбора</h2>
             <div class="suggest-object__btns">
-                <button type="button" class="btn btn-reset btn-primary suggest-object__btn">База недвижимости</button>
+                <a href="#" class="btn btn-reset btn-primary suggest-object__btn">База недвижимости</a>
                 <button type="button" class="btn btn-reset btn-primary suggest-object__btn">Мои объекты</button>
             </div>
         </div>
@@ -29921,7 +29921,7 @@
                             <span>Время</span>
                             <span class="record-viewing__bottom-time">-</span>
                         </div>
-                        <button type="submit" class="btn btn-reset btn-primary record-viewing__btn" disabled>Отправить</button>
+                        <button type="button" class="btn btn-reset btn-primary record-viewing__btn" disabled data-popup-path="record-viewing-two">Отправить</button>
                     </div>
                 </div>
             </form>
@@ -30012,9 +30012,6 @@
         </button>
         <div class="popup__content popup-primary__content complaint-object-two">
             <div class="container">
-                <h2 class="complaint-object-two__title title-2">
-                    Суббота, 5 августа 09:00, Краснодар, ул.Карла-Маркса., 234
-                </h2>
                 <div class="complaint-object-two__wrapper">
                     <div class="complaint-object-two__info">
                         <div class="complaint-object-popup__object object-small-card">
@@ -30032,39 +30029,52 @@
                             </p>
                         </div>
                         <h2 class="complaint-object-popup__title title-3">
-                            На что жалуетесь ?
+                            Отметьте пожалуйста что вам не нравится
                         </h2>
-                        <form action="#" class="complaint-object-popup__form">
-                            <div class="complaint-object-popup__radio radio-primary">
-                                <div class="radio-primary__item">
-                                    <input hidden id="complaint-object_5" class="radio-primary__input" type="radio" value="Спам" name="complaint-object-radio-2">
-                                    <label for="complaint-object_5" class="radio-primary__label">
-                                        <span class="radio-primary__text">Спам</span>
+                        <form action="#" class="object-not-popup__form">
+                            <div class="object-not-popup__checkboxes">
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_7" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_7" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Цена</span>
                                     </label>
                                 </div>
-                                <div class="radio-primary__item">
-                                    <input hidden id="complaint-object_6" class="radio-primary__input" type="radio" value="Мошенничество" name="complaint-object-radio-2">
-                                    <label for="complaint-object_6" class="radio-primary__label">
-                                        <span class="radio-primary__text">Мошенничество</span>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_8" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_8" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Состояние объекта</span>
                                     </label>
                                 </div>
-                                <div class="radio-primary__item">
-                                    <input hidden id="complaint-object_7" class="radio-primary__input" type="radio" value="Даты просмотра не актуальны" name="complaint-object-radio-2">
-                                    <label for="complaint-object_7" class="radio-primary__label">
-                                        <span class="radio-primary__text">Даты просмотра не актуальны</span>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_9" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_9" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Состояние дома</span>
                                     </label>
                                 </div>
-                                <div class="radio-primary__item">
-                                    <input hidden id="complaint-object_8" class="radio-primary__input" type="radio" value="Другое" name="complaint-object-radio-2">
-                                    <label for="complaint-object_8" class="radio-primary__label">
-                                        <span class="radio-primary__text">Другое</span>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_10" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_10" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Инфраструктура (садики,школы,магазины,ТЦ и
+                                            тд.)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_11" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_11" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Транспортная доступность</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_12" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <label for="object-not_12" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Другое</span>
                                     </label>
                                 </div>
                             </div>
-                            <label class="complaint-object-popup__textarea textarea-primary">
-                                <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее на что жалуетесь"></textarea>
+                            <label class="object-not-popup__textarea textarea-primary">
+                                <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
                             </label>
-                            <button type="submit" class="btn btn-reset btn-primary complaint-object-popup__btn js-popup-close" disabled data-popup-path="thanks">
+                            <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close" disabled data-popup-path="thanks">
                                 Отправить
                             </button>
                         </form>
