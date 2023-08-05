@@ -29,6 +29,7 @@ popup(null, 'share-app');
 popup(null, 'complaint');
 popup(null, 'complaint-user');
 popup(null, 'complaint-object');
+popup(null, 'complaint-object-two');
 popup(null, 'thanks');
 popup(null, 'object-not');
 popup(null, 'interest-rate-modal');
@@ -84,7 +85,7 @@ popup(null, 'popup-map_buy-apartment-building');
 popup(null, 'search-area');
 popup(null, 'search-area-two');
 popup({
-    isOpen: () => {
+    isOpen: (settingsModal) => {
         const chat = document.querySelector('.chat');
         if (!chat) return;
         const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
@@ -92,10 +93,27 @@ popup({
         const chatTags = chat.querySelector('.chat__tags');
         chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
         chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
+
+        if (settingsModal.currentBtn.closest('.record-viewing-two')) {
+            const btnHTML = `
+                <button type="button" class="btn btn-reset btn-primary chat__booking-btn">Детали брониварония</button>
+            `;
+
+            chatBottom.insertAdjacentHTML('beforebegin', btnHTML);
+            chat.style.setProperty('--chat-booking-height', `${chat.querySelector('.chat__booking-btn').offsetHeight + 16}px`);
+        }
+
         bar.scrollTo({
             top: bar.querySelector('.simplebar-content').clientHeight,
         })
     },
+    isClose: (settingsModal) => {
+        const chat = document.querySelector('.chat');
+        if (!chat) return;
+        const bookingbtn = chat.querySelector('.chat__booking-btn');
+        chat.style.setProperty('--chat-booking-height', `0px`);
+        if (bookingbtn) bookingbtn.remove();
+    }
 }, 'chat');
 popup(null, 'online-display-popup');
 popup(null, 'authorization');

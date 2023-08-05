@@ -4,7 +4,7 @@
     border: 1px solid var(--primary200);
     border-radius: 12px;
     min-height: calc(var(--vh) - (24px*2));
-
+    --chat-booking-height: 0px;
     &__container {
         display: grid;
         grid-template-columns: 400px 1fr;
@@ -120,7 +120,13 @@
             stroke-width: 1.5px;
         }
     }
+    &__booking-btn{
+        margin-top: 16px;
 
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
+        height: 40px;
+    }
     .dots-dropdown {
         &__target {
             svg {
@@ -158,7 +164,7 @@
 
         +.chat__wrapper {
             .chat__bar {
-                max-height: calc(var(--vh) - 48px - 64px - 60px - 32px - var(--chat-tags-height) - 3px - 16px - 10px - var(--chat-bottom-height));
+                max-height: calc(var(--vh) - 48px - 64px - 60px - 32px - var(--chat-tags-height) - 3px - 16px - 10px - var(--chat-bottom-height) - var(--chat-booking-height));
             }
         }
     }
@@ -178,7 +184,7 @@
         height: 100%;
         flex-grow: 1;
         margin-bottom: auto;
-        max-height: calc(var(--vh) - 48px - 64px - 32px - var(--chat-tags-height) - 2px - 16px - 10px - var(--chat-bottom-height));
+        max-height: calc(var(--vh) - 48px - 64px - 32px - var(--chat-tags-height) - 2px - 16px - 10px - var(--chat-bottom-height) - var(--chat-booking-height));
 
         .message-item {
             &__text {

@@ -1985,6 +1985,34 @@ textarea.input-reset {
     background-color: rgba(34, 41, 102, 0.4);
   }
 }
+.popup-primary--complaint-object-two {
+  z-index: 1050;
+}
+.popup-primary--complaint-object-two .popup-primary__container {
+  border-radius: 12px 12px 0 0;
+  padding: 65px 16px 48px;
+  min-height: auto;
+  margin: 32px auto 0;
+  width: calc(100% - 4px);
+  vertical-align: bottom;
+  position: relative;
+}
+.popup-primary--complaint-object-two .popup-primary__close {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+.popup-primary--complaint-object-two::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+@media (max-width: 1212px) {
+  .popup-primary--complaint-object-two {
+    background-color: rgba(34, 41, 102, 0.4);
+  }
+}
 .popup-primary--client-fixed .popup-primary__container {
   border-radius: 12px 0 0 12px;
   padding: 65px 48px 48px;
@@ -6372,6 +6400,37 @@ textarea.input-reset {
 }
 @media (min-width: 1213px) {
   .record-viewing-two__maps ._sticky {
+    position: sticky;
+    top: 16px;
+    width: 100%;
+  }
+}
+
+.complaint-object-two .container {
+  padding: 0;
+  max-width: 1300px;
+}
+.complaint-object-two__title {
+  margin-bottom: 32px;
+}
+.complaint-object-two__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-grid-columns: 1fr 550px;
+  grid-template-columns: 1fr 550px;
+  grid-column-gap: 32px;
+  grid-row-gap: 24px;
+}
+.complaint-object-two__maps .map-primary {
+  height: 423px;
+  width: 100%;
+  border-radius: 12px;
+}
+@media (min-width: 1213px) {
+  .complaint-object-two__maps ._sticky {
     position: sticky;
     top: 16px;
     width: 100%;
@@ -21951,6 +22010,7 @@ textarea.input-reset {
   border: 1px solid var(--primary200);
   border-radius: 12px;
   min-height: calc(var(--vh) - 48px);
+  --chat-booking-height: 0px;
 }
 .chat__container {
   display: -ms-grid;
@@ -22065,6 +22125,12 @@ textarea.input-reset {
   stroke: var(--blue);
   stroke-width: 1.5px;
 }
+.chat__booking-btn {
+  margin-top: 16px;
+  font-size: var(--small-fz);
+  line-height: var(--small-lh);
+  height: 40px;
+}
 .chat .dots-dropdown__target svg {
   width: 15px;
   height: 16px;
@@ -22092,7 +22158,7 @@ textarea.input-reset {
   height: 37px;
 }
 .chat__object + .chat__wrapper .chat__bar {
-  max-height: calc(var(--vh) - 48px - 64px - 60px - 32px - var(--chat-tags-height) - 3px - 16px - 10px - var(--chat-bottom-height));
+  max-height: calc(var(--vh) - 48px - 64px - 60px - 32px - var(--chat-tags-height) - 3px - 16px - 10px - var(--chat-bottom-height) - var(--chat-booking-height));
 }
 .chat__wrapper {
   -webkit-box-flex: 1;
@@ -22117,7 +22183,7 @@ textarea.input-reset {
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-bottom: auto;
-  max-height: calc(var(--vh) - 48px - 64px - 32px - var(--chat-tags-height) - 2px - 16px - 10px - var(--chat-bottom-height));
+  max-height: calc(var(--vh) - 48px - 64px - 32px - var(--chat-tags-height) - 2px - 16px - 10px - var(--chat-bottom-height) - var(--chat-booking-height));
 }
 .chat__bar .message-item__text {
   background: var(--white);

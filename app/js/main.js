@@ -4424,6 +4424,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-user');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-object');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'complaint-object-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'thanks');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-not');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'interest-rate-modal');
@@ -4475,7 +4476,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'search-area');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'search-area-two');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: () => {
+  isOpen: settingsModal => {
     const chat = document.querySelector('.chat');
     if (!chat) return;
     const bar = document.querySelector('.chat__bar .simplebar-content-wrapper');
@@ -4483,9 +4484,23 @@ __webpack_require__.r(__webpack_exports__);
     const chatTags = chat.querySelector('.chat__tags');
     chat.style.setProperty('--chat-bottom-height', `${chatBottom.offsetHeight}px`);
     chat.style.setProperty('--chat-tags-height', `${chatTags.offsetHeight}px`);
+    if (settingsModal.currentBtn.closest('.record-viewing-two')) {
+      const btnHTML = `
+                <button type="button" class="btn btn-reset btn-primary chat__booking-btn">Детали брониварония</button>
+            `;
+      chatBottom.insertAdjacentHTML('beforebegin', btnHTML);
+      chat.style.setProperty('--chat-booking-height', `${chat.querySelector('.chat__booking-btn').offsetHeight + 16}px`);
+    }
     bar.scrollTo({
       top: bar.querySelector('.simplebar-content').clientHeight
     });
+  },
+  isClose: settingsModal => {
+    const chat = document.querySelector('.chat');
+    if (!chat) return;
+    const bookingbtn = chat.querySelector('.chat__booking-btn');
+    chat.style.setProperty('--chat-booking-height', `0px`);
+    if (bookingbtn) bookingbtn.remove();
   }
 }, 'chat');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'online-display-popup');
@@ -6575,33 +6590,35 @@ const validateTextMap = {
   date: 'Укажите дату'
 };
 const validateRadioPrimary = (formSelector, textareaSelector, btnSelector, radiosSelector) => {
-  const form = document.querySelector(formSelector);
-  if (!form) return false;
-  const textarea = form.querySelector(textareaSelector);
-  const btn = form.querySelector(btnSelector);
-  const radios = form.querySelectorAll(radiosSelector);
-  function checkForm() {
-    let flag = false;
-    for (let radio of radios) {
-      flag = radio.checked ? true : false;
-      if (flag) break;
+  const forms = document.querySelectorAll(formSelector);
+  if (forms.length === 0) return;
+  forms.forEach(form => {
+    const textarea = form.querySelector(textareaSelector);
+    const btn = form.querySelector(btnSelector);
+    const radios = form.querySelectorAll(radiosSelector);
+    function checkForm() {
+      let flag = false;
+      for (let radio of radios) {
+        flag = radio.checked ? true : false;
+        if (flag) break;
+      }
+      flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
     }
-    flag ? btn.removeAttribute('disabled') : btn.setAttribute('disabled', '');
-  }
-  ;
-  function clearForm() {
-    textarea.value = '';
-    btn.setAttribute('disabled', '');
-    for (let radio of radios) {
-      radio.checked = false;
+    ;
+    function clearForm() {
+      textarea.value = '';
+      btn.setAttribute('disabled', '');
+      for (let radio of radios) {
+        radio.checked = false;
+      }
     }
-  }
-  form.addEventListener('change', e => {
-    if (e.target.type === 'radio') checkForm();
-  });
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    clearForm();
+    form.addEventListener('change', e => {
+      if (e.target.type === 'radio') checkForm();
+    });
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      clearForm();
+    });
   });
 };
 const validateCheckboxPrimary = (formSelector, textareaSelector, btnSelector, checkboxesSelector) => {
@@ -8203,6 +8220,24 @@ const maps = () => {
       });
       positionElement(map);
       removeControlsPrimary(map, '#record-viewing-maps');
+      const fullScreenControl = map.controls.get('fullscreenControl');
+      fullScreenControl.events.add('fullscreenenter', function () {
+        const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
+        fullscreenElement.parentNode.style.position = 'fixed';
+      });
+    }
+    ymaps.ready(init);
+  }
+  if (document.querySelector('#complaint-object-two-maps')) {
+    const objectMaps = document.querySelector('#complaint-object-two-maps');
+    if (!objectMaps) return;
+    function init() {
+      let map = new ymaps.Map('complaint-object-two-maps', {
+        center: [55.77171185651524, 37.62811179984117],
+        zoom: 10
+      });
+      positionElement(map);
+      removeControlsPrimary(map, '#complaint-object-two-maps');
       const fullScreenControl = map.controls.get('fullscreenControl');
       fullScreenControl.events.add('fullscreenenter', function () {
         const fullscreenElement = fullScreenControl.getMap().container._fullscreenManager._element;
