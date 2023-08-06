@@ -31216,9 +31216,6 @@
         </button>
         <div class="popup__content popup-primary__content record-viewing-two">
             <div class="container">
-                <h2 class="record-viewing-two__title title-2">
-                    Заявка на просмотр объекта
-                </h2>
                 <div class="record-viewing-two__wrapper">
                     <div class="record-viewing-two__info">
                         <div class="record-viewing-two__sent">
@@ -31296,10 +31293,15 @@
         </button>
         <div class="popup__content popup-primary__content complaint-object-two">
             <div class="container">
-                <h2 class="title-2 complaint-object-two__title">Объект не подходит</h2>
                 <div class="complaint-object-two__wrapper">
                     <div class="complaint-object-two__info">
-                        <div class="complaint-object-popup__object object-small-card">
+                        <div class="record-viewing-two__sent">
+                            <h3 class="title-3">Объект не подходит</h3>
+                            <p>
+                                Ждёт подтверждения. Ждите уведомление в чате.
+                            </p>
+                        </div>
+                        <div class="complaint-object-two__card object-small-card">
                             <div class="object-small-card__image">
                                 <picture>
                                     <source srcset="./img/card-1.webp" type="image/webp">
@@ -31313,66 +31315,73 @@
                                 Краснодар, ул.Карла-Маркса., 234
                             </p>
                         </div>
-                        <h3 class="complaint-object-popup__subtitle title-3">
-                            Параметры по которым не подходит объект
-                        </h3>
-                        <form action="#" class="object-not-popup__form">
-                            <div class="object-not-popup__checkboxes">
+                        <div class="complaint-object-two__user user-info">
+                            <div class="user-info__avatar avatar online">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                            </div>
+                            <span class="user-info__pos">
+                                Застройщик
+                            </span>
+                            <span class="user-info__name">
+                                Югстройинвест
+                            </span>
+                        </div>
+                        <form action="#" class="complaint-object-two__form _not-validate">
+                            <h3 class="complaint-object-two__subtitle title-3">
+                                Параметры по которым не подходит объект
+                            </h3>
+                            <div class="complaint-object-two__checkboxes">
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_7" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                                    <input id="object-not_7" name="object-not" class="checkbox-secondary__input" disabled checked type="checkbox" value="true">
                                     <label for="object-not_7" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Цена</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_10" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                                    <input id="object-not_10" name="object-not" class="checkbox-secondary__input" disabled checked type="checkbox" value="true">
                                     <label for="object-not_10" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Инфраструктура (садики,школы,магазины,ТЦ и
                                             тд.)</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_8" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <input id="object-not_8" name="object-not" class="checkbox-secondary__input" disabled type="checkbox" value="true">
                                     <label for="object-not_8" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Состояние объекта</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_11" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                                    <input id="object-not_11" name="object-not" class="checkbox-secondary__input" disabled checked type="checkbox" value="true">
                                     <label for="object-not_11" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Транспортная доступность</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_9" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <input id="object-not_9" name="object-not" class="checkbox-secondary__input" disabled type="checkbox" value="true">
                                     <label for="object-not_9" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Состояние дома</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_12" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <input id="object-not_12" name="object-not" class="checkbox-secondary__input" disabled type="checkbox" value="true">
                                     <label for="object-not_12" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Другое</span>
                                     </label>
                                 </div>
                             </div>
-                            <h3 class="complaint-object-popup__subtitle title-3">Комментарий</h3>
-                            <label class="object-not-popup__textarea textarea-primary">
+                            <h3 class="complaint-object-two__subtitle title-3">Комментарий</h3>
+                            <label class="complaint-object-two__textarea textarea-primary">
                                 <textarea class="input-reset textarea-primary__input" disabled value="Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
-                                    placeholder="Расскажите подробнее в чем проблема">
-                                    Высокая цена, плохая инфраструктура, отсутствие садиков, школ." 
-                                </textarea>
+                                    placeholder="Расскажите подробнее в чем проблема">Высокая цена, плохая инфраструктура, отсутствие садиков, школ.</textarea>
                             </label>
-                            <h3 class="complaint-object-popup__subtitle title-3">Заметка</h3>
-                            <label class="object-not-popup__textarea textarea-primary">
+                            <h3 class="complaint-object-two__subtitle title-3">Заметка</h3>
+                            <label class="complaint-object-two__textarea textarea-primary">
                                 <textarea class="input-reset textarea-primary__input" disabled value="Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
-                                    placeholder="Расскажите подробнее в чем проблема">
-                                    Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
-                                </textarea>
+                                    placeholder="Расскажите подробнее в чем проблема">Высокая цена, плохая инфраструктура, отсутствие садиков, школ.</textarea>
                             </label>
                         </form>
                     </div>
-                    <div class="record-viewing-two__maps">
+                    <div class="complaint-object-two__maps">
                         <div class="map-primary remove-copyrights-pane _sticky" id="complaint-object-two-maps"></div>
                     </div>
                 </div>

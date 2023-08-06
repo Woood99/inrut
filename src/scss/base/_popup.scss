@@ -862,13 +862,14 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+
     &--record-viewing-two {
         z-index: 1050;
 
         .popup-primary {
             &__container {
                 border-radius: 12px 12px 0 0;
-                padding: 65px 16px 48px;
+                padding: 65px 16px;
                 min-height: auto;
                 margin: 32px auto 0;
                 width: calc(100% - 4px);
@@ -892,6 +893,7 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+
     &--complaint-object-two {
         z-index: 1050;
 
@@ -2688,6 +2690,7 @@
         }
     }
 }
+
 .record-viewing-two-confirm {
     --transition-time: 0.3s;
     position: fixed;
@@ -2703,12 +2706,14 @@
     visibility: hidden;
     transition: opacity var(--transition-time), visibility var(--transition-time);
     text-align: center;
-    &::before{
+
+    &::before {
         content: "";
         display: inline-block;
         vertical-align: middle;
         height: 100%;
     }
+
     &.is-open {
         opacity: 1;
         visibility: visible;
@@ -2719,17 +2724,18 @@
         position: relative;
         background-color: #fff;
         cursor: default;
-      text-align: center;
+        text-align: center;
         display: none;
         box-shadow: var(--shadow-primary);
         margin: 50px auto;
+
         &.open {
             display: inline-block !important;
         }
 
         margin: 0 auto;
         border-radius: 12px;
-       padding: 48px;
+        padding: 48px;
         max-width: 100%;
         width: 450px;
     }
@@ -2787,14 +2793,14 @@
         }
     }
 
-    &__btns{
+    &__btns {
         margin-top: 32px;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
     }
- 
+
 }
 
 .client-fixed-sent {
@@ -5230,82 +5236,98 @@
     }
 }
 
-.record-viewing-two{
+.record-viewing-two {
     .container {
         padding: 0;
         max-width: 1300px;
     }
-    &__title{
+
+    &__title {
         margin-bottom: 32px;
     }
-    &__subtitle{
+
+    &__subtitle {
         margin-bottom: 16px;
     }
-    &__wrapper{
+
+    &__wrapper {
         display: grid;
         justify-content: space-between;
         grid-template-columns: 1fr 550px;
         grid-column-gap: 32px;
         grid-row-gap: 24px;
     }
-    &__sent{
+
+    &__sent {
         border-radius: 16px;
         background-color: var(--primary200);
 
         padding: 24px;
     }
-    &__cancel-app{
+
+    &__cancel-app {
         border-radius: 16px;
         background-color: var(--dark);
         padding: 24px;
-        .title-3{
+
+        .title-3 {
             color: var(--white);
         }
     }
-    &__user{
+
+    &__user {
         margin-top: 24px;
     }
 
-    &__btns{
+    &__btns {
         margin-top: 32px;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
-    grid-row-gap: 16px;
+        grid-row-gap: 16px;
     }
-    &__details{
+
+    &__details {
         margin-top: 32px;
-        >div{
+
+        >div {
             display: flex;
             align-items: center;
-            span{
-                &:nth-child(1){
+
+            span {
+                &:nth-child(1) {
                     color: var(--primaryTwo);
-               
+
                 }
-                &:nth-child(2){
+
+                &:nth-child(2) {
                     margin-left: 8px;
                     font-weight: 500;
                     color: var(--dark);
                 }
             }
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 margin-bottom: 8px;
             }
         }
     }
-    &__card{
+
+    &__card {
         margin-top: 32px;
     }
-    &__cancel{
 
-    }
-    &__maps{
-        .map-primary{
+    &__cancel {}
+
+    &__maps {
+
+        .map-primary {
             height: 423px;
             width: 100%;
             border-radius: 12px;
+            min-height: 100%;
         }
+
         @media (min-width:$desktop-min) {
             ._sticky {
                 position: sticky;
@@ -5315,45 +5337,92 @@
         }
     }
 }
-.complaint-object-two{
+
+.complaint-object-two {
     .container {
         padding: 0;
         max-width: 1300px;
     }
-    &__title{
+
+    &__title {
         margin-bottom: 32px;
     }
-    &__wrapper{
+
+    &__wrapper {
         display: grid;
         justify-content: space-between;
         grid-template-columns: 1fr 550px;
         grid-column-gap: 32px;
         grid-row-gap: 24px;
     }
-    .complaint-object-popup__subtitle{
+    &__subtitle{
+        margin-top: 32px;
+    }
+    &__card{
+        margin-top: 32px;
+    }
+    &__user{
         margin-top: 24px;
     }
-    .object-not-popup__textarea{
+    &__form{
+        margin-top: 32px;
+        .complaint-object-two__subtitle{
+            &:first-child{
+                margin: 0;
+            }
+        }
+    }
+   &__textarea {
         margin-top: 16px;
     }
-    .object-not-popup__checkboxes{
+
+   &__checkboxes {
+    margin-top: 16px;
         display: grid;
-        grid-template-columns: repeat(2,max-content);
+        grid-template-columns: repeat(2, max-content);
         grid-column-gap: 32px;
         grid-row-gap: 24px;
-        .checkbox-secondary{
+
+        .checkbox-secondary {
             margin: 0;
-        }
-        .checkbox-secondary__label {
-            justify-content: start;
+
+            &__input {
+                &:not(:checked) {
+                    +.checkbox-secondary__label {
+                        &::before {
+                            background-color: var(--white);
+                            border: 2px solid #b3bcc5;
+                        }
+                        .checkbox-secondary__text{
+                            color: var(--gray);
+                        }
+                    }
+                }
+                &:checked{
+                    +.checkbox-secondary__label {
+                        &::before {
+                            background-color: var(--blue);
+                            border: 2px solid var(--blue);
+                        }
+                        .checkbox-secondary__text{
+                            color: var(--gray);
+                        }
+                    }
+                }
+            }
+            &__label{
+                justify-content: start;
+            }
         }
     }
-    &__maps{
-        .map-primary{
+
+    &__maps {
+        .map-primary {
             height: 423px;
             width: 100%;
             border-radius: 12px;
         }
+
         @media (min-width:$desktop-min) {
             ._sticky {
                 position: sticky;

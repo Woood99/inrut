@@ -1962,7 +1962,7 @@ textarea.input-reset {
 }
 .popup-primary--record-viewing-two .popup-primary__container {
   border-radius: 12px 12px 0 0;
-  padding: 65px 16px 48px;
+  padding: 65px 16px;
   min-height: auto;
   margin: 32px auto 0;
   width: calc(100% - 4px);
@@ -6415,6 +6415,7 @@ textarea.input-reset {
   height: 423px;
   width: 100%;
   border-radius: 12px;
+  min-height: 100%;
 }
 @media (min-width: 1213px) {
   .record-viewing-two__maps ._sticky {
@@ -6442,13 +6443,26 @@ textarea.input-reset {
   grid-column-gap: 32px;
   grid-row-gap: 24px;
 }
-.complaint-object-two .complaint-object-popup__subtitle {
+.complaint-object-two__subtitle {
+  margin-top: 32px;
+}
+.complaint-object-two__card {
+  margin-top: 32px;
+}
+.complaint-object-two__user {
   margin-top: 24px;
 }
-.complaint-object-two .object-not-popup__textarea {
+.complaint-object-two__form {
+  margin-top: 32px;
+}
+.complaint-object-two__form .complaint-object-two__subtitle:first-child {
+  margin: 0;
+}
+.complaint-object-two__textarea {
   margin-top: 16px;
 }
-.complaint-object-two .object-not-popup__checkboxes {
+.complaint-object-two__checkboxes {
+  margin-top: 16px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (-webkit-max-content)[2];
@@ -6458,10 +6472,24 @@ textarea.input-reset {
   grid-column-gap: 32px;
   grid-row-gap: 24px;
 }
-.complaint-object-two .object-not-popup__checkboxes .checkbox-secondary {
+.complaint-object-two__checkboxes .checkbox-secondary {
   margin: 0;
 }
-.complaint-object-two .object-not-popup__checkboxes .checkbox-secondary__label {
+.complaint-object-two__checkboxes .checkbox-secondary__input:not(:checked) + .checkbox-secondary__label::before {
+  background-color: var(--white);
+  border: 2px solid #b3bcc5;
+}
+.complaint-object-two__checkboxes .checkbox-secondary__input:not(:checked) + .checkbox-secondary__label .checkbox-secondary__text {
+  color: var(--gray);
+}
+.complaint-object-two__checkboxes .checkbox-secondary__input:checked + .checkbox-secondary__label::before {
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+}
+.complaint-object-two__checkboxes .checkbox-secondary__input:checked + .checkbox-secondary__label .checkbox-secondary__text {
+  color: var(--gray);
+}
+.complaint-object-two__checkboxes .checkbox-secondary__label {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
