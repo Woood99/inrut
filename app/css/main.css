@@ -6483,13 +6483,6 @@ textarea.input-reset {
 .complaint-object-two__checkboxes .checkbox-secondary {
   margin: 0;
 }
-.complaint-object-two__checkboxes .checkbox-secondary__input:not(:checked) + .checkbox-secondary__label::before {
-  background-color: var(--white);
-  border: 2px solid #b3bcc5;
-}
-.complaint-object-two__checkboxes .checkbox-secondary__input:not(:checked) + .checkbox-secondary__label .checkbox-secondary__text {
-  color: var(--gray);
-}
 .complaint-object-two__checkboxes .checkbox-secondary__input:checked + .checkbox-secondary__label::before {
   background-color: var(--blue);
   border: 2px solid var(--blue);
@@ -15130,6 +15123,48 @@ textarea.input-reset {
   width: 100%;
   margin-left: -16px;
   padding: 16px 16px 0;
+}
+
+.tariff-info {
+  width: 100%;
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  border-radius: 12px;
+  color: var(--dark);
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-column-gap: 32px;
+  grid-row-gap: 8px;
+  -ms-grid-columns: 19.0677966102% 19.0677966102% 12.7118644068% 8.4745762712% 16.9491525424% 1fr;
+  grid-template-columns: 19.0677966102% 19.0677966102% 12.7118644068% 8.4745762712% 16.9491525424% 1fr;
+  padding: 32px 24px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+}
+.tariff-info span:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.tariff-info span:nth-child(1) img {
+  margin-right: 16px;
+}
+@media (min-width: 1212px) {
+  .tariff-info:hover:not(.client-info--no-animate) {
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
+  }
 }
 
 .logo {
@@ -31509,5 +31544,30 @@ textarea.input-reset {
   border: none;
   margin-top: 0;
   padding-top: 0;
+}
+
+.tariff-card .tariff-card-filter__row--1 {
+  -ms-grid-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
+  grid-template-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
+}
+.tariff-card .tariff-card-filter__row--2 {
+  -ms-grid-columns: 62.7118644068%;
+  grid-template-columns: 62.7118644068%;
+}
+.tariff-card .selection-estate__controls {
+  margin-top: 0;
+}
+.tariff-card .main-table__type {
+  padding: 0 24px;
+  -ms-grid-columns: 19.0677966102% 19.0677966102% 12.7118644068% 8.4745762712% 16.9491525424% 1fr;
+  grid-template-columns: 19.0677966102% 19.0677966102% 12.7118644068% 8.4745762712% 16.9491525424% 1fr;
+  grid-column-gap: 32px;
+}
+.tariff-card .main-table__type span:first-child {
+  margin: 0;
+}
+.tariff-card .main-table__type span:not(:first-child) {
+  text-align: left;
+  margin-left: 20px;
 }
 /*# sourceMappingURL=main.css.map */

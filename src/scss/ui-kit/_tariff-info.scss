@@ -1,0 +1,37 @@
+.tariff-info {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-primary);
+    border-radius: 12px;
+
+
+    color: var(--dark);
+    display: grid;
+    align-items: center;
+    grid-column-gap: 32px;
+    grid-row-gap: 8px;
+    grid-template-columns: percent(225, 1180) percent(225, 1180) percent(150, 1180) percent(100, 1180) percent(200, 1180) 1fr;
+    padding: 32px 24px;
+
+    -webkit-tap-highlight-color: transparent;
+    transition: box-shadow $transitionSpeed $transitionFunction;
+
+   span{
+    &:nth-child(1){
+        display: flex;
+        align-items: center;
+
+        img{
+            margin-right: 16px;
+        }
+    }
+   }
+
+    @media (min-width:$desktop) {
+        &:hover {
+            &:not(.client-info--no-animate) {
+                box-shadow: var(--shadow-secondary);
+            }
+        }
+    }
+}
