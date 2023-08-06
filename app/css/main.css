@@ -1495,7 +1495,7 @@ textarea.input-reset {
 .popup-primary--object-not .popup-primary__container {
   border-radius: 12px 0 0 12px;
   padding: 65px 48px 48px;
-  width: 438px;
+  width: 525px;
 }
 @media (max-width: 1212px) {
   .popup-primary--object-not .popup-primary__container {
@@ -5079,8 +5079,11 @@ textarea.input-reset {
 .object-not-popup__checkboxes .checkbox-secondary:not(:last-child) {
   margin-bottom: 24px;
 }
-.object-not-popup__textarea {
+.object-not-popup__subtitle {
   margin-top: 32px;
+}
+.object-not-popup__textarea {
+  margin-top: 16px;
 }
 .object-not-popup__btn {
   margin-top: 32px;
@@ -6460,6 +6463,11 @@ textarea.input-reset {
 }
 .complaint-object-two__textarea {
   margin-top: 16px;
+  --height: 0;
+  height: auto;
+}
+.complaint-object-two__textarea .textarea-primary__input {
+  height: auto;
 }
 .complaint-object-two__checkboxes {
   margin-top: 16px;
@@ -6469,7 +6477,7 @@ textarea.input-reset {
   -ms-grid-columns: (max-content)[2];
   grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
-  grid-column-gap: 32px;
+  grid-column-gap: 48px;
   grid-row-gap: 24px;
 }
 .complaint-object-two__checkboxes .checkbox-secondary {
