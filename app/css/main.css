@@ -6347,6 +6347,9 @@ textarea.input-reset {
 .record-viewing-two__title {
   margin-bottom: 32px;
 }
+.record-viewing-two__subtitle {
+  margin-bottom: 16px;
+}
 .record-viewing-two__wrapper {
   display: -ms-grid;
   display: grid;
@@ -6371,27 +6374,42 @@ textarea.input-reset {
 .record-viewing-two__cancel-app .title-3 {
   color: var(--white);
 }
-.record-viewing-two .row {
+.record-viewing-two__user {
   margin-top: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+}
+.record-viewing-two__btns {
+  margin-top: 32px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
 .record-viewing-two__details {
   margin-top: 32px;
 }
-.record-viewing-two__card {
-  margin-top: 24px;
+.record-viewing-two__details > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-.record-viewing-two__cancel {
+.record-viewing-two__details > div span:nth-child(1) {
+  color: var(--primaryTwo);
+}
+.record-viewing-two__details > div span:nth-child(2) {
+  margin-left: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.record-viewing-two__details > div:not(:last-child) {
+  margin-bottom: 8px;
+}
+.record-viewing-two__card {
   margin-top: 32px;
-  margin-left: auto;
 }
 .record-viewing-two__maps .map-primary {
   height: 423px;
@@ -6423,6 +6441,30 @@ textarea.input-reset {
   grid-template-columns: 1fr 550px;
   grid-column-gap: 32px;
   grid-row-gap: 24px;
+}
+.complaint-object-two .complaint-object-popup__subtitle {
+  margin-top: 24px;
+}
+.complaint-object-two .object-not-popup__textarea {
+  margin-top: 16px;
+}
+.complaint-object-two .object-not-popup__checkboxes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (-webkit-max-content)[2];
+  -ms-grid-columns: (max-content)[2];
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 32px;
+  grid-row-gap: 24px;
+}
+.complaint-object-two .object-not-popup__checkboxes .checkbox-secondary {
+  margin: 0;
+}
+.complaint-object-two .object-not-popup__checkboxes .checkbox-secondary__label {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
 }
 .complaint-object-two__maps .map-primary {
   height: 423px;

@@ -29705,14 +29705,14 @@
         <div class="popup__content popup-primary__content record-viewing-two">
             <div class="container">
                 <h2 class="record-viewing-two__title title-2">
-                    Суббота, 5 августа 09:00, Краснодар, ул.Карла-Маркса., 234
+                    Заявка на просмотр объекта
                 </h2>
                 <div class="record-viewing-two__wrapper">
                     <div class="record-viewing-two__info">
                         <div class="record-viewing-two__sent">
                             <h3 class="title-3">Заявка отправлена</h3>
                             <p>
-                                Ждёт подтверждения, иначе отменится через 12:00 ч.
+                                Ждёт подтверждения. Ждите уведомление в чате.
                             </p>
                         </div>
                         <a href="#" class="record-viewing-two__card object-small-card">
@@ -29729,31 +29729,39 @@
                                 Краснодар, ул.Карла-Маркса., 234
                             </p>
                         </a>
-                        <div class="row">
-                            <div class="record-viewing-two__user user-info-review">
-                                <div class="user-info-review__avatar avatar online">
-                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                </div>
-                                <span class="user-info-review__name">
-                                    Алексей Г.
-                                </span>
-                                <div class="user-info-review__rating">
-                                    <svg>
-                                        <use xlink:href="img/sprite.svg#star"></use>
-                                    </svg>
-                                    <span>2.2</span>
-                                    <span>(2 отзыва)</span>
-                                </div>
+                        <div class="record-viewing-two__user user-info">
+                            <div class="user-info__avatar avatar online">
+                                <img loading="lazy" src="./img/avatar-1.jpg" width="45" height="45" alt="Абдурахманраджи Г.">
                             </div>
-                                <button type="button" class="btn btn-reset btn-primary" data-popup-path="chat" style="width:305px;">
-                                    <svg style="margin-right:10px;width:17px;height:17px;fill: currentColor;">
-                                        <use xlink:href="img/sprite.svg#chat"></use>
-                                    </svg>
-                                    <span>Задать вопрос</span>
-                                </button>
+                            <span class="user-info__name">
+                                Абдурахманраджи Г.
+                            </span>
+                            <span class="user-info__pos">
+                                Агент
+                            </span>
                         </div>
-
-                        <button type="button" class="btn btn-reset btn-secondary record-viewing-two__cancel">Отменить заявку на просмотр</button>
+                        <div class="record-viewing-two__details">
+                            <h3 class="record-viewing-two__subtitle title-3">
+                                Детали
+                            </h3>
+                            <div>
+                                <span>Дата и время</span>
+                                <span>Суббота, 5 августа, 09:00</span>
+                            </div>
+                            <div>
+                                <span>Адрес</span>
+                                <span>Краснодар, ул.Карла-Маркса., 234</span>
+                            </div>
+                        </div>
+                        <div class="record-viewing-two__btns">
+                            <button type="button" class="btn btn-reset btn-secondary record-viewing-two__cancel">Отменить заявку на просмотр</button>
+                            <button type="button" class="btn btn-reset btn-primary" data-popup-path="chat">
+                                <svg style="margin-right:10px;width:17px;height:17px;fill: currentColor;">
+                                    <use xlink:href="img/sprite.svg#chat"></use>
+                                </svg>
+                                <span>Задать вопрос</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="record-viewing-two__maps">
                         <div class="map-primary remove-copyrights-pane _sticky" id="record-viewing-maps"></div>
@@ -29776,6 +29784,7 @@
         </button>
         <div class="popup__content popup-primary__content complaint-object-two">
             <div class="container">
+                <h2 class="title-2 complaint-object-two__title">Объект не подходит</h2>
                 <div class="complaint-object-two__wrapper">
                     <div class="complaint-object-two__info">
                         <div class="complaint-object-popup__object object-small-card">
@@ -29792,15 +29801,22 @@
                                 Краснодар, ул.Карла-Маркса., 234
                             </p>
                         </div>
-                        <h2 class="complaint-object-popup__title title-3">
-                            Отметьте пожалуйста что вам не нравится
-                        </h2>
+                        <h3 class="complaint-object-popup__subtitle title-3">
+                            Параметры по которым не подходит объект
+                        </h3>
                         <form action="#" class="object-not-popup__form">
                             <div class="object-not-popup__checkboxes">
                                 <div class="checkbox-secondary">
-                                    <input id="object-not_7" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
+                                    <input id="object-not_7" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
                                     <label for="object-not_7" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Цена</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-secondary">
+                                    <input id="object-not_10" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                                    <label for="object-not_10" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Инфраструктура (садики,школы,магазины,ТЦ и
+                                            тд.)</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
@@ -29810,22 +29826,15 @@
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
+                                    <input id="object-not_11" name="object-not" class="checkbox-secondary__input" checked type="checkbox" value="true">
+                                    <label for="object-not_11" class="checkbox-secondary__label">
+                                        <span class="checkbox-secondary__text">Транспортная доступность</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-secondary">
                                     <input id="object-not_9" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
                                     <label for="object-not_9" class="checkbox-secondary__label">
                                         <span class="checkbox-secondary__text">Состояние дома</span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-secondary">
-                                    <input id="object-not_10" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
-                                    <label for="object-not_10" class="checkbox-secondary__label">
-                                        <span class="checkbox-secondary__text">Инфраструктура (садики,школы,магазины,ТЦ и
-                                            тд.)</span>
-                                    </label>
-                                </div>
-                                <div class="checkbox-secondary">
-                                    <input id="object-not_11" name="object-not" class="checkbox-secondary__input" type="checkbox" value="true">
-                                    <label for="object-not_11" class="checkbox-secondary__label">
-                                        <span class="checkbox-secondary__text">Транспортная доступность</span>
                                     </label>
                                 </div>
                                 <div class="checkbox-secondary">
@@ -29835,12 +29844,20 @@
                                     </label>
                                 </div>
                             </div>
+                            <h3 class="complaint-object-popup__subtitle title-3">Комментарий</h3>
                             <label class="object-not-popup__textarea textarea-primary">
-                                <textarea class="input-reset textarea-primary__input" placeholder="Расскажите подробнее в чем проблема"></textarea>
+                                <textarea class="input-reset textarea-primary__input" disabled value="Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
+                                    placeholder="Расскажите подробнее в чем проблема">
+                                    Высокая цена, плохая инфраструктура, отсутствие садиков, школ." 
+                                </textarea>
                             </label>
-                            <button type="submit" class="btn btn-reset btn-primary object-not-popup__btn js-popup-close" disabled data-popup-path="thanks">
-                                Отправить
-                            </button>
+                            <h3 class="complaint-object-popup__subtitle title-3">Заметка</h3>
+                            <label class="object-not-popup__textarea textarea-primary">
+                                <textarea class="input-reset textarea-primary__input" disabled value="Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
+                                    placeholder="Расскажите подробнее в чем проблема">
+                                    Высокая цена, плохая инфраструктура, отсутствие садиков, школ."
+                                </textarea>
+                            </label>
                         </form>
                     </div>
                     <div class="record-viewing-two__maps">
@@ -29851,7 +29868,6 @@
         </div>
     </div>
 </div>
-
 
 </body>
 
