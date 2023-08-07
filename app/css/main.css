@@ -15317,11 +15317,10 @@ textarea.input-reset {
 .tariff-info div span:nth-child(1) {
   margin-right: 16px;
 }
-.tariff-info > span:nth-child(1) {
+.tariff-info > span:nth-child(1), .tariff-info > span:nth-child(2) {
   font-weight: 500;
-}
-.tariff-info > span:nth-child(2) {
-  font-weight: 500;
+  font-size: var(--little-big-fz);
+  line-height: var(--little-big-lh);
 }
 .tariff-info > span:last-child {
   color: var(--blue);
@@ -15374,6 +15373,12 @@ textarea.input-reset {
 }
 .bank-info div:nth-child(1) span:nth-child(1) {
   margin-right: 16px;
+}
+.bank-info div:nth-child(3) {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .bank-info > span:last-child {
   color: var(--blue);
