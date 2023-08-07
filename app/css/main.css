@@ -1333,7 +1333,7 @@ textarea.input-reset {
   border-radius: 12px 12px 0 0;
   padding: 48px 32px 32px;
   width: calc(100% - 4px);
-  min-height: auto;
+  min-height: calc(var(--vh) - 50px);
   margin-top: 50px;
   vertical-align: bottom;
 }
@@ -2227,6 +2227,7 @@ textarea.input-reset {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
+  margin-top: 48px;
 }
 .tariff-bank-popup .tabs-primary__container .tabs__body:first-child > div > div {
   margin-top: 16px;
@@ -15374,11 +15375,21 @@ textarea.input-reset {
 .bank-info div:nth-child(1) span:nth-child(1) {
   margin-right: 16px;
 }
+.bank-info div:nth-child(1) span:nth-child(2) {
+  font-weight: 500;
+  font-size: var(--little-big-fz);
+  line-height: var(--little-big-lh);
+}
 .bank-info div:nth-child(3) {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.bank-info > span:nth-child(2) {
+  font-weight: 500;
+  font-size: var(--little-big-fz);
+  line-height: var(--little-big-lh);
 }
 .bank-info > span:last-child {
   color: var(--blue);
@@ -31771,15 +31782,10 @@ textarea.input-reset {
   padding-top: 0;
 }
 
-.tariff-card .tariff-card-filter__row--1 {
-  -ms-grid-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
-  grid-template-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
-}
-.tariff-card .tariff-card-filter__row--2 {
-  -ms-grid-columns: 62.7118644068%;
-  grid-template-columns: 62.7118644068%;
-}
 .tariff-card .selection-estate__controls {
+  margin-top: 0;
+}
+.tariff-card .selection-estate__filter {
   margin-top: 0;
 }
 .tariff-card .main-table__type {
@@ -31793,12 +31799,24 @@ textarea.input-reset {
   text-align: left;
   margin-left: 20px;
 }
-.tariff-card__table--one .main-table__type {
+.tariff-card__tab--one .main-table__type {
   -ms-grid-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
   grid-template-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
 }
-.tariff-card__table--two .main-table__type {
+.tariff-card__tab--one .tariff-card-filter__row--1 {
+  -ms-grid-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
+  grid-template-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
+}
+.tariff-card__tab--one .tariff-card-filter__row--2 {
+  -ms-grid-columns: 62.7118644068%;
+  grid-template-columns: 62.7118644068%;
+}
+.tariff-card__tab--two .main-table__type {
   -ms-grid-columns: 19.0677966102% 19.0677966102% 1fr;
   grid-template-columns: 19.0677966102% 19.0677966102% 1fr;
+}
+.tariff-card__tab--two .tariff-card-filter__row--1 {
+  -ms-grid-columns: 25.4237288136% 1fr;
+  grid-template-columns: 25.4237288136% 1fr;
 }
 /*# sourceMappingURL=main.css.map */
