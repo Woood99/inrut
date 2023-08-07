@@ -145,6 +145,57 @@
             }
         }
     }
+    &--tariff-popup {
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 48px 48px;
+                width: 400px;
+            }
+        }
+    }
+    &--tariff-bank-popup {
+        .popup-primary {
+            &__container {
+                margin: 50px auto 0;
+                border-radius: 12px 12px 0 0;
+                padding: 48px 32px 32px;
+                width: calc(100% - 4px);
+                min-height: auto;
+                margin-top: 50px;
+                vertical-align: bottom;
+
+                @media (max-width:$desktop) {
+                    margin-top: 0;
+                    border-radius: 0;
+                    width: 100%;
+                    min-height: 100vh;
+                    padding: 65px 0 32px;
+                }
+            }
+
+            &__close {
+                margin-top: -48px;
+                transform: translateX(32px);
+
+                @media (max-width:$desktop) {
+                    margin: 0;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        z-index: 1050;
+
+        @media (min-width:$desktop-min) {
+            &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }
+        }
+    }
 
     &--share-app {
         .popup-primary {
@@ -1124,7 +1175,49 @@
         }
     }
 }
+.tariff-popup{
+    >div{
+        p{
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+.tariff-bank-popup{
+    .tabs-primary__container{
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
 
+        .tabs__body{
+            &:first-child{
+                >div{
+                    >div{
+                        margin-top: 16px;
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 24px;
+                        padding-bottom: 24px;
+                        border-bottom: 1px solid var(--primary100);
+                    }
+                }
+            }
+        }
+    }
+    &__contacts{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+    &__files{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+}
 .newsline {
     &__title {
         margin-bottom: 32px;

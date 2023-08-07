@@ -4555,6 +4555,8 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, 'newsline');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'videos-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-bank-popup');
 
 // ========================================================================================
 

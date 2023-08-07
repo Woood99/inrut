@@ -249,353 +249,710 @@
                 <h1 class="selection-estate__title title-1">
                     Тарифная карта
                 </h1>
-                <form class="selection-estate__filter tariff-card-filter filter--more filter">
-                    <button type="button" class="btn btn-reset btn-secondary filter__btn">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#filter"></use>
-                        </svg>
-                        <span>Фильтр</span>
-                    </button>
-                    <div class="filter__container">
-                        <div class="filter__top">
-                            <span>Фильтры</span>
-                            <button type="button" class="btn btn-reset filter__close">Закрыть</button>
-                        </div>
-                        <div class="filter__inner">
-                            <div class="filter__row tariff-card-filter__row--1">
-                                <div class="filter__item search-select-one _selected">
-                                    <button type="button" class="btn btn-reset search-select-one__button">
-                                        <div class="search-select-one__button-wrapper">
-                                            <div>Город</div>
-                                            <div>Волгоград</div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select-one__dropdown search-select-one__dropdown--left">
-                                        <button type="button" class="btn btn-reset search-select-one__close">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#x"></use>
-                                            </svg>
-                                        </button>
-                                        <label class="input-primary search-select-one__input">
-                                            <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select-one__wrapper simplebar-third">
-                                            <div class="search-select-one__item _active" data-value="object-1">
-                                                Волгоград
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Санкт-Петербург
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-3">
-                                                Москва
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-1">
-                                                Волгоград
-                                            </div>
-                                            <div class="search-select-one__item" data-value="object-2">
-                                                Санкт-Петербург
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" name="object" value="Волгоград" class="search-select-one__input-hidden" hidden>
-                                </div>
-                                <div class="filter__item search-select" data-search-select-subtitle="Любой">
-                                    <button type="button" class="btn btn-reset search-select__button">
-                                        <div class="search-select__button-wrapper">
-                                            <div>Застройщик</div>
-                                            <div>Любой</div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select__dropdown">
-                                        <button type="button" class="btn btn-reset search-select__close">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#x"></use>
-                                            </svg>
-                                        </button>
-                                        <label class="input-primary search-select__input">
-                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select__control">
-                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
-                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
-                                        </div>
-                                        <div class="search-select__wrapper simplebar-third">
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_1" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ПИК</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_2" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК Самолет</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_3" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК "А101"</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_4" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК МИЦ</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_5" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ЛСР</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_6" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>MR GROUP</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_7" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК ДОНСТРОЙ</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_8" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК Эталон</span>
-                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
-                                                    </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="filter__item search-select" data-search-select-subtitle="Любой">
-                                    <button type="button" class="btn btn-reset search-select__button">
-                                        <div class="search-select__button-wrapper">
-                                            <div>Комплекс</div>
-                                            <div>Любой</div>
-                                        </div>
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#check"></use>
-                                        </svg>
-                                    </button>
-                                    <div class="search-select__dropdown">
-                                        <button type="button" class="btn btn-reset search-select__close">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#x"></use>
-                                            </svg>
-                                        </button>
-                                        <label class="input-primary search-select__input">
-                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
-                                        </label>
-                                        <div class="search-select__control">
-                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
-                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
-                                        </div>
-                                        <div class="search-select__wrapper simplebar-third">
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_12" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_12" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ПИК</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_13" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_13" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК Самолет</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_14" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_14" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК "А101"</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_15" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_15" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК МИЦ</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_16" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_16" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ЛСР</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_17" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_17" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>MR GROUP</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_18" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_18" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК ДОНСТРОЙ</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="search-select__item checkbox-secondary">
-                                                <input id="developer_19" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
-                                                <label for="developer_19" class="checkbox-secondary__label">
-                                                    <span class="checkbox-secondary__text">
-                                                        <span>ГК Эталон</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter__row tariff-card-filter__row--2" hidden>
-                                <label class="filter__item filter__item--input selection-estate__input input-primary">
-                                    <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="ФИО или телефон">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="filter__controls more selection-estate__controls">
-                            <button type="button" class="btn btn-reset filter__btn-control">
-                                <span>Еще фильтры</span>
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#check"></use>
-                                </svg>
-                            </button>
-                            <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
-                            <button type="button" class="btn btn-reset btn-primary filter__go">
-                                Показать
-                            </button>
-                        </div>
-                    </div>
-                </form>
             </div>
-            <div class="selection-estate__body">
-                <div class="container">
-                    <div class="selection-estate__table main-table">
-                        <div class="main-table__table">
-                            <div class="main-table__type">
-                                <span>Застройщик</span>
-                                <span>Комплекс</span>
-                                <span>Город</span>
-                                <span>Комиссия</span>
-                                <span>Комментарий</span>
-                                <span>Реклама</span>
+
+
+            <div class="tabs-primary">
+                <div data-tabs class="tabs-primary__inner">
+                    <div class="container">
+                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                Новостройки
+                            </button>
+                            <button type="button" class="btn btn-reset tabs__title">
+                                Ипотека
+                            </button>
+                        </nav>
+                    </div>
+                    <div class="tabs-primary__container">
+                        <div class="container">
+                            <div data-tabs-body class="tabs__content tabs-primary__content">
+                                <div class="tabs__body">
+                                    <form class="selection-estate__filter tariff-card-filter filter--more filter">
+                                        <button type="button" class="btn btn-reset btn-secondary filter__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#filter"></use>
+                                            </svg>
+                                            <span>Фильтр</span>
+                                        </button>
+                                        <div class="filter__container">
+                                            <div class="filter__top">
+                                                <span>Фильтры</span>
+                                                <button type="button" class="btn btn-reset filter__close">Закрыть</button>
+                                            </div>
+                                            <div class="filter__inner">
+                                                <div class="filter__row tariff-card-filter__row--1">
+                                                    <div class="filter__item search-select-one _selected">
+                                                        <button type="button" class="btn btn-reset search-select-one__button">
+                                                            <div class="search-select-one__button-wrapper">
+                                                                <div>Город</div>
+                                                                <div>Волгоград</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select-one__dropdown search-select-one__dropdown--left">
+                                                            <button type="button" class="btn btn-reset search-select-one__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select-one__input">
+                                                                <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select-one__wrapper simplebar-third">
+                                                                <div class="search-select-one__item _active" data-value="object-1">
+                                                                    Волгоград
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-2">
+                                                                    Санкт-Петербург
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-3">
+                                                                    Москва
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-1">
+                                                                    Волгоград
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-2">
+                                                                    Санкт-Петербург
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" name="object" value="Волгоград" class="search-select-one__input-hidden" hidden>
+                                                    </div>
+                                                    <div class="filter__item search-select" data-search-select-subtitle="Любой">
+                                                        <button type="button" class="btn btn-reset search-select__button">
+                                                            <div class="search-select__button-wrapper">
+                                                                <div>Застройщик</div>
+                                                                <div>Любой</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select__dropdown">
+                                                            <button type="button" class="btn btn-reset search-select__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select__input">
+                                                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select__control">
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                                            </div>
+                                                            <div class="search-select__wrapper simplebar-third">
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_1" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ПИК</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_2" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Самолет</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_3" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК "А101"</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_4" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК МИЦ</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_5" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ЛСР</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_6" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>MR GROUP</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_7" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК ДОНСТРОЙ</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_8" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Эталон</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter__item search-select" data-search-select-subtitle="Любой">
+                                                        <button type="button" class="btn btn-reset search-select__button">
+                                                            <div class="search-select__button-wrapper">
+                                                                <div>Комплекс</div>
+                                                                <div>Любой</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select__dropdown">
+                                                            <button type="button" class="btn btn-reset search-select__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select__input">
+                                                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select__control">
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                                            </div>
+                                                            <div class="search-select__wrapper simplebar-third">
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_12" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_12" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ПИК</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_13" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_13" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Самолет</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_14" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_14" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК "А101"</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_15" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_15" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК МИЦ</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_16" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_16" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ЛСР</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_17" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_17" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>MR GROUP</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_18" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_18" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК ДОНСТРОЙ</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_19" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_19" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Эталон</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row tariff-card-filter__row--2" hidden>
+                                                    <label class="filter__item filter__item--input selection-estate__input input-primary">
+                                                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="ФИО или телефон">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="filter__controls more selection-estate__controls">
+                                                <button type="button" class="btn btn-reset filter__btn-control">
+                                                    <span>Еще фильтры</span>
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#check"></use>
+                                                    </svg>
+                                                </button>
+                                                <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                                                <button type="button" class="btn btn-reset btn-primary filter__go">
+                                                    Показать
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="selection-estate__table tariff-card__table--one main-table">
+                                        <div class="main-table__table">
+                                            <div class="main-table__type">
+                                                <span>Застройщик</span>
+                                                <span>Комплекс</span>
+                                                <span>Комиссия</span>
+                                                <span>Реклама</span>
+                                            </div>
+                                            <div class="main-table__list">
+                                                  <!-- Временные статичные попапы -->
+                                                <button type="button" class="btn btn-reset main-table__item tariff-info" data-popup-path="tariff-popup">
+                                                    <div>
+                                                        <span>
+                                                            <div class="avatar">
+                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                            </div>
+                                                        </span>
+                                                        <span>ПИК</span>
+                                                    </div>
+                                                    <span>
+                                                        Европейский квартал
+                                                    </span>
+                                                    <span>
+                                                        15%
+                                                    </span>
+                                                    <span>
+                                                        Регламент
+                                                    </span>
+                                                    <span>
+                                                        Подробнее
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                                            Следующая страница
+                                        </button>
+                                        <div class="main-table__pagination pagination">
+                                            <ul class="pagination__list list-reset">
+                                                <li class="pagination__item" disabled>
+                                                    <a href="#">
+                                                        1
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        2
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        3
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        5
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item dots" tabindex="-1">
+                                                    ...
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        199
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs__body" hidden>
+                                    <form class="selection-estate__filter tariff-card-filter filter--more filter">
+                                        <button type="button" class="btn btn-reset btn-secondary filter__btn">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#filter"></use>
+                                            </svg>
+                                            <span>Фильтр</span>
+                                        </button>
+                                        <div class="filter__container">
+                                            <div class="filter__top">
+                                                <span>Фильтры</span>
+                                                <button type="button" class="btn btn-reset filter__close">Закрыть</button>
+                                            </div>
+                                            <div class="filter__inner">
+                                                <div class="filter__row tariff-card-filter__row--1">
+                                                    <div class="filter__item search-select-one _selected">
+                                                        <button type="button" class="btn btn-reset search-select-one__button">
+                                                            <div class="search-select-one__button-wrapper">
+                                                                <div>Город</div>
+                                                                <div>Волгоград</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select-one__dropdown search-select-one__dropdown--left">
+                                                            <button type="button" class="btn btn-reset search-select-one__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select-one__input">
+                                                                <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select-one__wrapper simplebar-third">
+                                                                <div class="search-select-one__item _active" data-value="object-1">
+                                                                    Волгоград
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-2">
+                                                                    Санкт-Петербург
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-3">
+                                                                    Москва
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-1">
+                                                                    Волгоград
+                                                                </div>
+                                                                <div class="search-select-one__item" data-value="object-2">
+                                                                    Санкт-Петербург
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" name="object" value="Волгоград" class="search-select-one__input-hidden" hidden>
+                                                    </div>
+                                                    <div class="filter__item search-select" data-search-select-subtitle="Любой">
+                                                        <button type="button" class="btn btn-reset search-select__button">
+                                                            <div class="search-select__button-wrapper">
+                                                                <div>Застройщик</div>
+                                                                <div>Любой</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select__dropdown">
+                                                            <button type="button" class="btn btn-reset search-select__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select__input">
+                                                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select__control">
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                                            </div>
+                                                            <div class="search-select__wrapper simplebar-third">
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_1" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ПИК</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_2" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Самолет</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_3" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК "А101"</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_4" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК МИЦ</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_5" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ЛСР</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_6" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>MR GROUP</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_7" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК ДОНСТРОЙ</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_8" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Эталон</span>
+                                                                            <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter__item search-select" data-search-select-subtitle="Любой">
+                                                        <button type="button" class="btn btn-reset search-select__button">
+                                                            <div class="search-select__button-wrapper">
+                                                                <div>Комплекс</div>
+                                                                <div>Любой</div>
+                                                            </div>
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="search-select__dropdown">
+                                                            <button type="button" class="btn btn-reset search-select__close">
+                                                                <svg>
+                                                                    <use xlink:href="img/sprite.svg#x"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <label class="input-primary search-select__input">
+                                                                <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                                            </label>
+                                                            <div class="search-select__control">
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                                                <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                                            </div>
+                                                            <div class="search-select__wrapper simplebar-third">
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_12" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_12" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ПИК</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_13" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_13" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Самолет</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_14" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_14" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК "А101"</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_15" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_15" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК МИЦ</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_16" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_16" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ЛСР</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_17" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_17" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>MR GROUP</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_18" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_18" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК ДОНСТРОЙ</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="search-select__item checkbox-secondary">
+                                                                    <input id="developer_19" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                                    <label for="developer_19" class="checkbox-secondary__label">
+                                                                        <span class="checkbox-secondary__text">
+                                                                            <span>ГК Эталон</span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row tariff-card-filter__row--2" hidden>
+                                                    <label class="filter__item filter__item--input selection-estate__input input-primary">
+                                                        <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="ФИО или телефон">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="filter__controls more selection-estate__controls">
+                                                <button type="button" class="btn btn-reset filter__btn-control">
+                                                    <span>Еще фильтры</span>
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#check"></use>
+                                                    </svg>
+                                                </button>
+                                                <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
+                                                <button type="button" class="btn btn-reset btn-primary filter__go">
+                                                    Показать
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="selection-estate__table tariff-card__table--two main-table">
+                                        <div class="main-table__table">
+                                            <div class="main-table__type">
+                                                <span>Банк</span>
+                                                <span>Комиссия</span>
+                                                <span>Программы</span>
+                                            </div>
+                                            <div class="main-table__list">
+                                                <!-- Временные статичные попапы -->
+                                                <button type="button" class="btn btn-reset main-table__item bank-info" data-popup-path="tariff-bank-popup">
+                                                    <div>
+                                                        <span>
+                                                            <div class="avatar">
+                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                            </div>
+                                                        </span>
+                                                        <span>ПИК</span>
+                                                    </div>
+                                                    <span>
+                                                        До 0.65%
+                                                    </span>
+                                                    <div>
+                                                        <p>
+                                                            "Вторичка", "Залоговый кредит целевой", "Новый дом", "Готовый дом", "Апартаменты. "Дальневосточная ипотека", ИТ- ипотека", "Апартаменты", "Новостройка", "Семейная ипотека", "Госпрограмма-2020"
+                                                        </p>
+                                                    </div>
+                                                    <span>
+                                                        Подробнее
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-reset btn-secondary main-table__next">
+                                            Следующая страница
+                                        </button>
+                                        <div class="main-table__pagination pagination">
+                                            <ul class="pagination__list list-reset">
+                                                <li class="pagination__item" disabled>
+                                                    <a href="#">
+                                                        1
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        2
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        3
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        4
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        5
+                                                    </a>
+                                                </li>
+                                                <li class="pagination__item dots" tabindex="-1">
+                                                    ...
+                                                </li>
+                                                <li class="pagination__item">
+                                                    <a href="#">
+                                                        199
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="main-table__list">
-                                <a href="./purchase-request.html" class="main-table__item tariff-info">
-                                    <span>
-                                        <picture>
-                                          <source srcset="./img/pic.webp" type="image/webp">
-                                          <img loading="lazy" src="./img/pic.png" class="image" width="40" height="40" alt="ПИК">
-                                        </picture>
-                                        ПИК
-                                    </span>
-                                    <span>
-                                        Европейский квартал
-                                    </span>
-                                    <span>
-                                        Москва
-                                    </span>
-                                    <span>
-                                        15%
-                                    </span>
-                                    <span>
-                                        Текст комментарияТекст комментарияТекст комментария Текст комментария Текст комментария
-                                    </span>
-                                    <span>
-                                        Регламент
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-reset btn-secondary main-table__next">
-                            Следующая страница
-                        </button>
-                        <div class="main-table__pagination pagination">
-                            <ul class="pagination__list list-reset">
-                                <li class="pagination__item" disabled>
-                                    <a href="#">
-                                        1
-                                    </a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">
-                                        2
-                                    </a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">
-                                        3
-                                    </a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">
-                                        4
-                                    </a>
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">
-                                        5
-                                    </a>
-                                </li>
-                                <li class="pagination__item dots" tabindex="-1">
-                                    ...
-                                </li>
-                                <li class="pagination__item">
-                                    <a href="#">
-                                        199
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="selection-estate__banners container main-banners">
                 <div class="swiper main-banners__container">
                     <div class="swiper-wrapper">
@@ -739,6 +1096,268 @@
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="popup popup-primary popup-primary--right popup-primary--tariff-popup">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="tariff-popup">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+        </button>
+        <div class="popup__content popup-primary__content tariff-popup">
+            <div>
+                <p>
+                    При оформлении сделки в ипотеку с использованием первоначального взноса сумма вознаграждения увеличивается на 1% (ЖК "Рекорд", ЖК "Парк Победы" 1-2, ЖК
+                    "Самолет", 1-6, ЖК "Догма Парк")
+                </p>
+                <p>
+                    Мотивация по коммерческим объектам расчитывается индивидуально от суммы сделки.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup popup-primary popup-primary--tariff-bank-popup">
+    <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="tariff-bank-popup">
+        <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+            <svg>
+                <use xlink:href="img/sprite.svg#x"></use>
+            </svg>
+            <span>Закрыть</span>
+        </button>
+        <div class="popup__content popup-primary__content tariff-bank-popup">
+
+            <div class="tabs-primary">
+                <div data-tabs class="tabs-primary__inner">
+                    <div class="container">
+                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
+                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                Вознаграждение
+                            </button>
+                            <button type="button" class="btn btn-reset tabs__title">
+                                Контакты
+                            </button>
+                            <button type="button" class="btn btn-reset tabs__title">
+                                Файлы
+                            </button>
+                        </nav>
+                    </div>
+                    <div class="tabs-primary__container">
+                        <div class="container">
+                            <div data-tabs-body class="tabs__content tabs-primary__content">
+                                <div class="tabs__body">
+                                    <div>
+                                        <h3 class="title-3">
+                                            Размеры комиссионного вознаграждения по программам:
+                                        </h3>
+                                        <div>
+                                            <p><strong>Акция с 01.07.2023 г. </strong>Ваша комиссия 0.65 % - гарантированно по каждой сделке, вне зависимости от общего количества!
+                                            </p>
+                                            <p>&nbsp;</p>
+                                            <p><strong>Акция с 01.03.2023 г.&nbsp;<br></strong></p>
+                                            <p>КВ зависит от общего объема выдач в месяц по всей компании Metr.Club</p>
+                                            <p>&nbsp;</p>
+                                            <p>0.4 % - до 9 сделок (включительно),</p>
+                                            <p>0.5 % - от 10 до 24 сделок (включительно),</p>
+                                            <p>0.65 % - от 25 сделок (включительно)</p>
+                                            <p>&nbsp;</p>
+                                            <p><strong>Комиссия выплачивается:</strong></p>
+                                            <p>&nbsp;</p>
+                                            <p>По программам "Вторичный рынок", "Залоговый кредит целевой", "Новый дом", "Готовый дом", "Апартаменты. Вторичный рынок",
+                                                "Дальневосточная
+                                                ипотека", "Госпрограмма. ИТ- специалисты"</p>
+                                            <p>"Апартаменты. Первичный рынок", "Новостройка", "Семейная ипотека"<br>"Госпрограмма-2020".&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p><strong>Комиссия НЕ выплачивается:</strong></p>
+                                            <p>По программам "Рефинансирование" и&nbsp; "Военная ипотека".</p>
+                                            <p>&nbsp;</p>
+                                            <p>Ставки для всех клиентов:</p>
+                                            <p>- базовые по гос.программам</p>
+                                            <p>- со скидкой 0,6 % по стандартным программам.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="title-3">
+                                            Дополнительная информация:
+                                        </h3>
+                                        <div>
+                                            <p>
+                                                При возникновении вопросов по статусам заявок необходимо обращаться к куратору в Банк.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs__body" hidden>
+                                    <div class="tariff-bank-popup__contacts">
+                                        <div class="contact-card">
+                                            <div class="contact-card__city">Калининград</div>
+                                            <div class="contact-card__name">Хрол Светлана</div>
+                                            <a href="tel:79114700303" class="contact-card__phone">+7 911 470-03-03</a>
+                                            <a href="mailto:Svetlana.khrol@open.ru" class="contact-card__email">Svetlana.khrol@open.ru</a>
+                                        </div>
+                                        <div class="contact-card">
+                                            <div class="contact-card__city">Калининград</div>
+                                            <div class="contact-card__name">Хрол Светлана</div>
+                                            <a href="tel:79114700303" class="contact-card__phone">+7 911 470-03-03</a>
+                                            <a href="mailto:Svetlana.khrol@open.ru" class="contact-card__email">Svetlana.khrol@open.ru</a>
+                                        </div>
+                                        <div class="contact-card">
+                                            <div class="contact-card__city">Калининград</div>
+                                            <div class="contact-card__name">Хрол Светлана</div>
+                                            <a href="tel:79114700303" class="contact-card__phone">+7 911 470-03-03</a>
+                                            <a href="mailto:Svetlana.khrol@open.ru" class="contact-card__email">Svetlana.khrol@open.ru</a>
+                                        </div>
+
+                                        <article class="card-agent">
+                                            <div href="#" class="card-agent__wrapper">
+                                                <div class="card-agent__avatar avatar">
+                                                    <picture>
+                                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
+                                                    </picture>
+                                                </div>
+                                                <div class="card-agent__content">
+                                                    <span class="card-agent__name">
+                                                        Сергей С.
+                                                    </span>
+                                                    <time class="card-agent__time" datetime="2022-12-12">
+                                                        Отдел продаж был в сети 12.12.2022
+                                                    </time>
+                                                    <div class="card-agent__rating">
+                                                        <div class="card-agent__rating-stars">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <span>4.8</span>
+                                                        <span>(16 отзыва)</span>
+                                                    </div>
+                                                </div>
+                                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                                    Подробнее о специалисте
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="card-agent">
+                                            <div href="#" class="card-agent__wrapper">
+                                                <div class="card-agent__avatar avatar">
+                                                    <picture>
+                                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
+                                                    </picture>
+                                                </div>
+                                                <div class="card-agent__content">
+                                                    <span class="card-agent__name">
+                                                        Сергей С.
+                                                    </span>
+                                                    <time class="card-agent__time" datetime="2022-12-12">
+                                                        Отдел продаж был в сети 12.12.2022
+                                                    </time>
+                                                    <div class="card-agent__rating">
+                                                        <div class="card-agent__rating-stars">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <span>4.8</span>
+                                                        <span>(16 отзыва)</span>
+                                                    </div>
+                                                </div>
+                                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                                    Подробнее о специалисте
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="card-agent">
+                                            <div href="#" class="card-agent__wrapper">
+                                                <div class="card-agent__avatar avatar">
+                                                    <picture>
+                                                        <source srcset="./img/avatar-1.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/avatar-1.jpg" width="95" height="95" alt="Алексей Г.">
+                                                    </picture>
+                                                </div>
+                                                <div class="card-agent__content">
+                                                    <span class="card-agent__name">
+                                                        Сергей С.
+                                                    </span>
+                                                    <time class="card-agent__time" datetime="2022-12-12">
+                                                        Отдел продаж был в сети 12.12.2022
+                                                    </time>
+                                                    <div class="card-agent__rating">
+                                                        <div class="card-agent__rating-stars">
+                                                            <svg>
+                                                                <use xlink:href="img/sprite.svg#star"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <span>4.8</span>
+                                                        <span>(16 отзыва)</span>
+                                                    </div>
+                                                </div>
+                                                <a href="link.coooooooooooooooom" class="card-agent__more">
+                                                    Подробнее о специалисте
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#arrow-right"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="tabs__body" hidden>
+                                    <div class="tariff-bank-popup__files">
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">ОТКРЫТИЕ_one_page_01_08_2023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_2023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_e_01_08_2023 e_01_08_20232023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_2023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_e_01_08_2023 e_01_08_20232023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">ОТКРЫТИЕ_one_page_01_08_2023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_2023.pptx</div>
+                                        </a>
+                                        <a href="#" class="file-card" target="_blank">
+                                            <img src="./img/file-icon.png" width="35" height="35" class="file-card__icon" alt="file-icon">
+                                            <div class="file-card__name">e_01_08_2023.pptx</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
@@ -6135,6 +6754,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 <div class="popup popup-genplan">

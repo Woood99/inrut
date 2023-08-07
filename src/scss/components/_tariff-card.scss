@@ -13,7 +13,7 @@
 
     .main-table__type {
         padding: 0 24px;
-        grid-template-columns: percent(225, 1180) percent(225, 1180) percent(150, 1180) percent(100, 1180) percent(200, 1180) 1fr;
+        grid-template-columns: percent(250, 1180) percent(275, 1180) percent(175, 1180) percent(150, 1180) 1fr;
         grid-column-gap: 32px;
 
         span {
@@ -23,6 +23,19 @@
             &:not(:first-child){
                 text-align: left;
                 margin-left: 20px;
+            }
+        }
+    }
+
+    &__table{
+        &--one{
+            .main-table__type{
+                grid-template-columns: percent(250, 1180) percent(275, 1180) percent(175, 1180) percent(150, 1180) 1fr;
+            }
+        }
+        &--two{
+   .main-table__type{
+    grid-template-columns: percent(225, 1180) percent(225, 1180) 1fr;
             }
         }
     }
