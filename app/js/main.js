@@ -4311,6 +4311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_mapMetro__WEBPACK_IMPORTED_MODULE_23__["default"])();
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-developer__content .cards-list__items');
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.block-stock .block-stock__slider');
+  (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-offers-popup__items');
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_25__["default"])();
   (0,_components_chat__WEBPACK_IMPORTED_MODULE_26__["default"])();
   (0,_components_city__WEBPACK_IMPORTED_MODULE_27__["default"])();
@@ -4558,6 +4559,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, 'newsline');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'videos-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'stock-offers-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-bank-popup');
 
@@ -5016,6 +5018,7 @@ const cardStockPopup = containerSelector => {
                         ${cardSecondary.querySelector('.card-stock-secondary__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
+                        <a href="${cardSecondary.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                             ${cardSecondary.querySelector('.card-stock-secondary__user').innerHTML}
                         </div>
@@ -5063,6 +5066,7 @@ const cardStockPopup = containerSelector => {
                         ${cardThird.querySelector('.card-stock-third__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
+                        <a href="${cardThird.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                         ${cardThird.querySelector('.card-stock-third__user').innerHTML}
                         </div>
@@ -5111,7 +5115,6 @@ const cardStockPopup = containerSelector => {
                          ${cardStock.dataset.stockDescr}
                      </div>
                      <div class="stock-popup__row-bottom">
-                         <a href="${cardStock.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                          <div class="stock-popup__user user-info">
                             ${cardStock.querySelector('.user-info').innerHTML}
                          </div>
@@ -10389,49 +10392,51 @@ function initSliders() {
       sliderMoreItem();
       function sliderMoreItem() {
         const btn = el.querySelector('.block-stock__btn');
-        btn.addEventListener('click', () => {
-          el.classList.toggle('_active');
-          if (el.classList.contains('_active')) {
-            btn.classList.add('_active');
-            slider.destroy();
-          } else {
-            btn.classList.remove('_active');
-            const topGap = window.pageYOffset + el.getBoundingClientRect().top;
-            const headerFixed = document.querySelector('.header-fixed');
-            const topHeaderMobile = document.querySelector('.top-page-inner');
-            if (window.innerWidth >= 1212) {
-              window.scrollTo({
-                top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
-              });
+        if (!btn.hasAttribute('data-popup-path')) {
+          btn.addEventListener('click', () => {
+            el.classList.toggle('_active');
+            if (el.classList.contains('_active')) {
+              btn.classList.add('_active');
+              slider.destroy();
             } else {
-              window.scrollTo({
-                top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
+              btn.classList.remove('_active');
+              const topGap = window.pageYOffset + el.getBoundingClientRect().top;
+              const headerFixed = document.querySelector('.header-fixed');
+              const topHeaderMobile = document.querySelector('.top-page-inner');
+              if (window.innerWidth >= 1212) {
+                window.scrollTo({
+                  top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
+                });
+              } else {
+                window.scrollTo({
+                  top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
+                });
+              }
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                  prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
+                  nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next')
+                },
+                breakpoints: {
+                  577: {
+                    slidesPerView: 1.8
+                  },
+                  769: {
+                    slidesPerView: 2.4
+                  },
+                  1113: {
+                    slidesPerView: 2
+                  }
+                }
               });
             }
-            slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
-              observer: true,
-              observeParents: true,
-              slidesPerView: 1.1,
-              spaceBetween: 16,
-              speed: 800,
-              navigation: {
-                prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
-                nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next')
-              },
-              breakpoints: {
-                577: {
-                  slidesPerView: 1.8
-                },
-                769: {
-                  slidesPerView: 2.4
-                },
-                1113: {
-                  slidesPerView: 2
-                }
-              }
-            });
-          }
-        });
+          });
+        }
       }
     });
   }
@@ -10551,10 +10556,11 @@ function initSliders() {
       });
     });
   }
-  if (document.querySelector('.object-construct-progress__items')) {
-    const sliders = document.querySelectorAll('.object-construct-progress__items');
-    sliders.forEach(el => {
-      const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
+  if (document.querySelector('.object-construct-progress')) {
+    const container = document.querySelectorAll('.object-construct-progress');
+    container.forEach(el => {
+      const sliderEl = el.querySelector('.object-construct-progress__items');
+      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
         observer: true,
         observeParents: true,
         slidesPerView: 1.1,
@@ -10570,6 +10576,49 @@ function initSliders() {
           }
         }
       });
+      sliderMoreItem();
+      function sliderMoreItem() {
+        const btn = el.querySelector('.object-construct-progress__btn');
+        if (!btn.hasAttribute('data-popup-path')) {
+          btn.addEventListener('click', () => {
+            el.classList.toggle('_active');
+            if (el.classList.contains('_active')) {
+              btn.classList.add('_active');
+              slider.destroy();
+            } else {
+              btn.classList.remove('_active');
+              const topGap = window.pageYOffset + el.getBoundingClientRect().top;
+              const headerFixed = document.querySelector('.header-fixed');
+              const topHeaderMobile = document.querySelector('.top-page-inner');
+              if (window.innerWidth >= 1212) {
+                window.scrollTo({
+                  top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20
+                });
+              } else {
+                window.scrollTo({
+                  top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
+                });
+              }
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                speed: 800,
+                navigation: {
+                  prevEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--prev'),
+                  nextEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--next')
+                },
+                breakpoints: {
+                  577: {
+                    slidesPerView: 2
+                  }
+                }
+              });
+            }
+          });
+        }
+      }
     });
   }
   if (document.querySelector('.construct-progress-popup__images')) {
@@ -11574,8 +11623,10 @@ const modal = function (modalHTML, container) {
             }
           }
         } else {
-          if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two'))) {
-            enableScrollClose();
+          if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
+            if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
+              enableScrollClose();
+            }
           }
         }
       }

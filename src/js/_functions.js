@@ -165,6 +165,7 @@ popup({
     },
 }, 'newsline');
 popup(null, 'videos-popup');
+popup(null, 'stock-offers-popup');
 popup(null, 'tariff-popup');
 popup(null, 'tariff-bank-popup');
 

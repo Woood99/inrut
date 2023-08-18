@@ -2147,14 +2147,49 @@
             width: 100%;
         }
     }
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
 
+        &._active {
+            position: relative;
+            font-size: 0;
+
+            &::before {
+                content: 'Свернуть';
+                font-size: var(--default-fz);
+            }
+        }
+    }
     &__items {
         @media (max-width:$desktop) {
             padding: 0 16px;
             margin: 0 -16px;
         }
     }
+    &._active {
+        .object-construct-progress {
+            &__slider {
+                overflow: visible;
+            }
 
+            &__nav {
+                display: none;
+            }
+            &__items {
+                .swiper-wrapper{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 16px;
+                    grid-row-gap: 32px;
+    
+                    @media (max-width:$mobile-max) {
+                        grid-template-columns: 1fr;
+                    }
+                }  
+            }
+        }
+    }
     @media (max-width:$desktop) {
         padding: 16px;
     }

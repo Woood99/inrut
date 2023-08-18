@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mapMetro();
     cardStockPopup('.stock-developer__content .cards-list__items');
     cardStockPopup('.block-stock .block-stock__slider');
+    cardStockPopup('.stock-offers-popup__items');
     tag();
     chat();
     city();

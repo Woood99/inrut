@@ -841,6 +841,23 @@
             }
         }
     }
+    &--stock-offers-popup {
+        z-index: 1051;
+
+        .popup-primary {
+            &__container {
+                border-radius: 12px 0 0 12px;
+                padding: 65px 48px 48px;
+                width: 750px;
+
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 55px 16px 32px;
+                    width: 100%;
+                }
+            }
+        }
+    }
 
     &--screen-demonstation {
         text-align: center;
@@ -1242,6 +1259,36 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 24px;
+    }
+}
+.stock-offers-popup {
+    &__title {
+        margin-bottom: 32px;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 24px;
+    }
+
+    .card-stock {
+        height: 100%;
+        position: relative;
+
+        .secondary-tooltip {
+            position: static;
+
+            &__content {
+                left: auto;
+                right: 16px;
+                max-width: 85%;
+                bottom: calc(16px + 22px + 8px); // gap bottom + size btn + gap
+                height: max-content;
+                transform: translateX(0);
+            }
+        }
     }
 }
 

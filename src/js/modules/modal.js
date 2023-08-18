@@ -87,8 +87,11 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
                         }
                     }
                 } else {
-                    if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two'))) {
-                        enableScrollClose();
+                    if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
+                        
+                        if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
+                            enableScrollClose();
+                        }
                     }
                 }
             }

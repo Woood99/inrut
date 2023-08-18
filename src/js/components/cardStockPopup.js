@@ -32,6 +32,7 @@ const cardStockPopup = (containerSelector) => {
                         ${cardSecondary.querySelector('.card-stock-secondary__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
+                        <a href="${cardSecondary.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                             ${cardSecondary.querySelector('.card-stock-secondary__user').innerHTML}
                         </div>
@@ -79,6 +80,7 @@ const cardStockPopup = (containerSelector) => {
                         ${cardThird.querySelector('.card-stock-third__descr').dataset.cardStockDescrFull}
                     </div>
                     <div class="stock-popup__row-bottom">
+                        <a href="${cardThird.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                         <div class="stock-popup__user user-info">
                         ${cardThird.querySelector('.card-stock-third__user').innerHTML}
                         </div>
@@ -127,7 +129,6 @@ const cardStockPopup = (containerSelector) => {
                          ${cardStock.dataset.stockDescr}
                      </div>
                      <div class="stock-popup__row-bottom">
-                         <a href="${cardStock.dataset.stockLink}" class="stock-popup__link">Смотреть</a>
                          <div class="stock-popup__user user-info">
                             ${cardStock.querySelector('.user-info').innerHTML}
                          </div>
