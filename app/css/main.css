@@ -14235,19 +14235,14 @@ textarea.input-reset {
   box-shadow: none;
   padding-bottom: 24px;
   text-align: left;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  transition: border 0.4s ease-in-out;
 }
 .card-scheme.card-scheme--improved .card-scheme__price {
   margin-top: 10px;
 }
 @media (min-width: 1213px) {
   .card-scheme.card-scheme--improved:hover:not(._active) .card-scheme__container {
-    -webkit-box-shadow: var(--shadow-primary);
-    box-shadow: var(--shadow-primary);
+    border: 1px solid var(--blue);
   }
   .card-scheme.card-scheme--improved:hover:not(._active) .card-scheme__btn {
     border: 1px solid var(--blue);
@@ -20668,6 +20663,11 @@ textarea.input-reset {
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
   border: 1px solid #EBF1FB;
+  -webkit-transition: background-color 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .layouts__item-btn._spoller-active {
   background-color: var(--stand-bg);
@@ -20680,6 +20680,11 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .layouts__item-btn:hover {
     background-color: var(--stand-bg);
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
 }
 .layouts__item-body {
@@ -20996,7 +21001,10 @@ textarea.input-reset {
 .room-info-card__favorite svg {
   width: 16px;
   height: 16px;
-  fill: var(--blue);
+  fill: var(--primaryTwo);
+  -webkit-transition: fill 0.4s ease-in-out;
+  -o-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
 }
 @media (max-width: 1212px) {
   .room-info-card__favorite {
@@ -21014,6 +21022,9 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .room-info-card:hover .room-info-card__title {
     color: var(--blue);
+  }
+  .room-info-card:hover .room-info-card__favorite svg {
+    fill: var(--blue);
   }
 }
 @media (max-width: 1212px) {

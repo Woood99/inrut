@@ -25,6 +25,9 @@
         border-radius: 12px;
         box-shadow: var(--shadow-primary);
         border: 1px solid #EBF1FB;
+        transition: background-color $transitionSpeed $transitionFunction,
+            box-shadow $transitionSpeed $transitionFunction,
+            transform $transitionSpeed $transitionFunction;
 
         &._spoller-active {
             background-color: var(--stand-bg);
@@ -38,11 +41,13 @@
             }
         }
 
-    @media (min-width:$desktop-min){
-        &:hover {
-            background-color: var(--stand-bg)
-        } 
-    }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                background-color: var(--stand-bg);
+                box-shadow: var(--shadow-secondary);
+                transform: translateY(-3px);
+            }
+        }
     }
 
     &__item-body {
@@ -88,15 +93,19 @@
     &__items {
         padding: 15px;
         margin: -15px;
-        .swiper-wrapper{
+
+        .swiper-wrapper {
             align-items: stretch;
         }
-        .swiper-slide{
+
+        .swiper-slide {
             height: auto;
         }
+
         .card-scheme {
             box-sizing: border-box;
             height: 100%;
+
             &__container {
                 width: 100%;
             }
@@ -336,7 +345,8 @@
         svg {
             width: 16px;
             height: 16px;
-            fill: var(--blue);
+            fill: var(--primaryTwo);
+            transition: fill $transitionSpeed $transitionFunction;
         }
 
         @media (max-width:$desktop) {
@@ -351,6 +361,11 @@
         &:hover {
             .room-info-card__title {
                 color: var(--blue);
+            }
+            .room-info-card__favorite{
+                svg{
+                    fill: var(--blue);
+                }
             }
         }
     }

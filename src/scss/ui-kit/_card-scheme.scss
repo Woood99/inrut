@@ -187,7 +187,7 @@
                 box-shadow: none;
                 padding-bottom: 24px;
                 text-align: left;
-                transition: box-shadow $transitionSpeed $transitionFunction;
+                transition: border $transitionSpeed $transitionFunction;
             }
 
             &__price {
@@ -200,9 +200,9 @@
                 &:not(._active) {
                     .card-scheme {
                         &__container {
-                            box-shadow: var(--shadow-primary);
+                            border: 1px solid var(--blue);
                         }
-
+        
                         &__btn {
                             border: 1px solid var(--blue);
                             color: var(--blue);
