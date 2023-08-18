@@ -382,7 +382,6 @@
         grid-column-gap: 16px;
         justify-content: space-between;
         align-items: center;
-
         &:not(:last-child) {
             margin-bottom: 40px;
 
@@ -392,6 +391,7 @@
         }
 
         &:not(.active) {
+            cursor: pointer;
             .filter-dropdown {
                 &__range {
                     cursor: default;
@@ -422,6 +422,14 @@
                     background-color: rgba(122, 127, 170, 0.3);
                 }
             }
+
+          @media (min-width:$desktop-min){
+            &:hover{
+                .filter-dropdown__range{
+                    border: 1px solid var(--blue);
+                }
+             } 
+          }
         }
 
         &.active {
@@ -480,13 +488,6 @@
 
     &__checkbox {
         flex: 0 0 16px;
-        @media (min-width:$desktop-min){
-             &:hover{
-                +.filter-dropdown__range{
-                    border: 1px solid var(--blue);
-                }
-             } 
-        }
     }
 
     &__range {

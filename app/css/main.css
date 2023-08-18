@@ -2867,8 +2867,8 @@ textarea.input-reset {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 425px 1fr;
-  grid-template-columns: 425px 1fr;
+  -ms-grid-columns: 1fr 425px;
+  grid-template-columns: 1fr 425px;
   grid-column-gap: 24px;
 }
 @media (max-width: 1212px) {
@@ -9553,7 +9553,7 @@ textarea.input-reset {
   white-space: nowrap;
 }
 .tag > div {
-  margin-left: 8px;
+  margin-left: 12px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -16349,6 +16349,9 @@ textarea.input-reset {
     margin-bottom: 32px;
   }
 }
+.filter-dropdown__item:not(.active) {
+  cursor: pointer;
+}
 .filter-dropdown__item:not(.active) .filter-dropdown__range {
   cursor: default;
   pointer-events: none;
@@ -16367,6 +16370,11 @@ textarea.input-reset {
 }
 .filter-dropdown__item:not(.active) .filter-range .noUi-touch-area {
   background-color: rgba(122, 127, 170, 0.3);
+}
+@media (min-width: 1213px) {
+  .filter-dropdown__item:not(.active):hover .filter-dropdown__range {
+    border: 1px solid var(--blue);
+  }
 }
 .filter-dropdown__item.active .filter-dropdown__choice {
   background-color: var(--primary100);
@@ -16421,11 +16429,6 @@ textarea.input-reset {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 16px;
   flex: 0 0 16px;
-}
-@media (min-width: 1213px) {
-  .filter-dropdown__checkbox:hover + .filter-dropdown__range {
-    border: 1px solid var(--blue);
-  }
 }
 .filter-dropdown__range {
   width: 100%;
@@ -29257,8 +29260,8 @@ textarea.input-reset {
   grid-template-columns: 23.5593220339% 30.7627118644% 26.6949152542% 16.9491525424%;
 }
 .buy-apartment-filter--building .buy-apartment-filter__row--2 {
-  -ms-grid-columns: 33.8983050847% 1fr;
-  grid-template-columns: 33.8983050847% 1fr;
+  -ms-grid-columns: 33.8983050847% 33.8983050847% 1fr;
+  grid-template-columns: 33.8983050847% 33.8983050847% 1fr;
 }
 
 .buy-apartment-filter--moskow .buy-apartment-filter__row--1 {

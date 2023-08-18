@@ -27141,7 +27141,7 @@
                                                 <use xlink:href="img/sprite.svg#x"></use>
                                             </svg>
                                         </button>
-                                        <div class="filter-dropdown__item active">
+                                        <label class="filter-dropdown__item active">
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по стоимости, руб.
                                             </span>
@@ -27170,8 +27170,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="filter-dropdown__item">
+                                        </label>
+                                        <label class="filter-dropdown__item">
                                             <span class="filter-dropdown__subtitle">
                                                 Поиск квартиры по ежемесячному платежу, руб.
                                             </span>
@@ -27200,7 +27200,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая">
@@ -27273,6 +27273,14 @@
                 </div>
             </form>
             <div class="popup-map__container">
+                <div class="popup-map__map _sticky">
+                    <button type="button" class="btn btn-reset popup-map__resize">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#resize"></use>
+                        </svg>
+                    </button>
+                    <div id="popup-map__map" class="map-primary remove-copyrights-pane"></div>
+                </div>
                 <iframe frameborder="0" scrolling="no" class="popup-map__card-full"></iframe>
                 <div class="popup-map__items">
                     <article class="card-secondary" data-card-full-page-src="./develop-inner.html">
@@ -27716,14 +27724,6 @@
                             </div>
                         </a>
                     </article>
-                </div>
-                <div class="popup-map__map _sticky">
-                    <button type="button" class="btn btn-reset popup-map__resize">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#resize"></use>
-                        </svg>
-                    </button>
-                    <div id="popup-map__map" class="map-primary remove-copyrights-pane"></div>
                 </div>
             </div>
         </div>
