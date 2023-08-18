@@ -19,11 +19,13 @@
     }
     &--one{
         display: grid;
-        grid-template-columns: 1fr 260px;
+        grid-template-columns: 1fr 230px;
         .ask{
+            &__title{
+                grid-column: 1/-1;
+            }
             &__btns{
                 margin-top: 0;
-
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
@@ -54,7 +56,7 @@
             }
             &__image{
                 grid-column: 2/3;
-                grid-row: 1/4;
+                grid-row: 2/5;
             }
         }
     }

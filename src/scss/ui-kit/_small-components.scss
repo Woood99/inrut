@@ -2114,12 +2114,29 @@
         padding: 16px;
         border-radius: 12px;
 
+        transition: background-color $transitionSpeed $transitionFunction;
         @media (min-width:$desktop-min) {
             &:hover {
                 svg {
                     animation: shake_online-display 0.82s cubic-bezier(.36, .07, .19, .97) both;
                     transform: rotate(-90deg) translate3d(0, 0, 0);
                 }
+            }
+        }
+        &--blue{
+            background-color: #e8ffff;
+            @media (min-width:$desktop-min){
+                 &:hover{
+                    background-color: #d5f2f2;
+                 } 
+            }
+        }
+        &--orange{
+            background-color: #ffecd6;
+            @media (min-width:$desktop-min){
+                 &:hover{
+                    background-color: #ffe0bf;
+                 } 
             }
         }
     }

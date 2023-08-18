@@ -10,11 +10,12 @@
     align-items: center;
     grid-column-gap: 32px;
     grid-row-gap: 8px;
-    grid-template-columns: percent(275, 1180) percent(200, 1180) percent(200, 1180) percent(225, 1180) 1fr;
+    grid-template-columns: percent(400, 1180) percent(220, 1180) percent(220, 1180) percent(225, 1180);
     padding: 32px 24px;
 
     -webkit-tap-highlight-color: transparent;
-    transition: box-shadow $transitionSpeed $transitionFunction;
+    transition: box-shadow $transitionSpeed $transitionFunction,
+    transform $transitionSpeed $transitionFunction;
     text-align: start;
 
     div {
@@ -50,6 +51,7 @@
         &:hover {
             &:not(.client-info--no-animate) {
                 box-shadow: var(--shadow-secondary);
+                transform: translateY(-3px);
             }
         }
     }

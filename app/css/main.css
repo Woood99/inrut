@@ -9862,6 +9862,9 @@ textarea.input-reset {
   text-align: left;
   padding: 16px;
   border-radius: 12px;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
 }
 @media (min-width: 1213px) {
   .online-display__item:hover svg {
@@ -9869,6 +9872,22 @@ textarea.input-reset {
     animation: shake_online-display 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     -webkit-transform: rotate(-90deg) translate3d(0, 0, 0);
     transform: rotate(-90deg) translate3d(0, 0, 0);
+  }
+}
+.online-display__item--blue {
+  background-color: #e8ffff;
+}
+@media (min-width: 1213px) {
+  .online-display__item--blue:hover {
+    background-color: #d5f2f2;
+  }
+}
+.online-display__item--orange {
+  background-color: #ffecd6;
+}
+@media (min-width: 1213px) {
+  .online-display__item--orange:hover {
+    background-color: #ffe0bf;
   }
 }
 .online-display__title {
@@ -15397,15 +15416,15 @@ textarea.input-reset {
   align-items: center;
   grid-column-gap: 32px;
   grid-row-gap: 8px;
-  -ms-grid-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
-  grid-template-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
+  -ms-grid-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
+  grid-template-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
   padding: 32px 24px;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
-  transition: -webkit-box-shadow 0.4s ease-in-out;
-  -o-transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   text-align: start;
 }
 .tariff-info div {
@@ -15437,6 +15456,9 @@ textarea.input-reset {
   .tariff-info:hover:not(.client-info--no-animate) {
     -webkit-box-shadow: var(--shadow-secondary);
     box-shadow: var(--shadow-secondary);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
 }
 
@@ -22284,8 +22306,11 @@ textarea.input-reset {
 .ask--one {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 260px;
-  grid-template-columns: 1fr 260px;
+  -ms-grid-columns: 1fr 230px;
+  grid-template-columns: 1fr 230px;
+}
+.ask--one .ask__title {
+  grid-column: 1/-1;
 }
 .ask--one .ask__btns {
   margin-top: 0;
@@ -22332,9 +22357,9 @@ textarea.input-reset {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 3;
-  grid-row: 1/4;
+  grid-row: 2/5;
 }
 .ask--two .ask__btns {
   margin-top: 32px;
@@ -31984,8 +32009,8 @@ textarea.input-reset {
   margin-left: 20px;
 }
 .tariff-card__tab--one .main-table__type {
-  -ms-grid-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
-  grid-template-columns: 23.3050847458% 16.9491525424% 16.9491525424% 19.0677966102% 1fr;
+  -ms-grid-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
+  grid-template-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
 }
 .tariff-card__tab--one .tariff-card-filter__row--1 {
   -ms-grid-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
