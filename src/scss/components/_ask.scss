@@ -10,7 +10,7 @@
         line-height: var(--little-small-lh);
     }
     &__user{
-        margin-top: 24px;
+        margin-top: 16px;
         grid-template-columns: 45px 1fr;
         .avatar{
             width: 45px;
@@ -18,9 +18,11 @@
         }
     }
     &--one{
+        display: grid;
+        grid-template-columns: 1fr 260px;
         .ask{
             &__btns{
-                margin-top: 32px;
+                margin-top: 0;
 
                 display: flex;
                 align-items: center;
@@ -32,6 +34,9 @@
                     flex-direction: column;
                     flex-wrap: nowrap;
                 }
+            }
+            &__descr{
+                margin-top: 24px;
             }
             &__btn {
                 height: auto;
@@ -46,6 +51,10 @@
                     width: 100%;
                     text-align: center;
                 }
+            }
+            &__image{
+                grid-column: 2/3;
+                grid-row: 1/4;
             }
         }
     }
