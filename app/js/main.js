@@ -4540,6 +4540,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'history-changes');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'furnishing-sets-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-apart-renov-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-ecology-parks-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
   isOpen: settingsModal => {
     if (settingsModal.currentBtn.closest('.news-card')) {

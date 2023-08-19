@@ -146,6 +146,7 @@ popup(null, 'suggest-object');
 popup(null, 'history-changes');
 popup(null, 'furnishing-sets-popup');
 popup(null, 'object-apart-renov-popup');
+popup(null, 'object-ecology-parks-popup');
 popup({
     isOpen: (settingsModal) => {
         if (settingsModal.currentBtn.closest('.news-card')) {

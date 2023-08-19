@@ -145,6 +145,7 @@
             }
         }
     }
+
     &--tariff-popup {
         .popup-primary {
             &__container {
@@ -154,6 +155,7 @@
             }
         }
     }
+
     &--tariff-bank-popup {
         .popup-primary {
             &__container {
@@ -522,7 +524,8 @@
     }
 
     &--furnishing-sets-popup,
-    &--object-apart-renov-popup {
+    &--object-apart-renov-popup,
+    &--object-ecology-parks-popup {
 
         .popup-primary {
             &__container {
@@ -841,6 +844,7 @@
             }
         }
     }
+
     &--stock-offers-popup {
         z-index: 1051;
 
@@ -1192,28 +1196,32 @@
         }
     }
 }
-.tariff-popup{
-    >div{
-        p{
-            &:not(:last-child){
+
+.tariff-popup {
+    >div {
+        p {
+            &:not(:last-child) {
                 margin-bottom: 16px;
             }
         }
     }
 }
-.tariff-bank-popup{
-    .tabs-primary__container{
+
+.tariff-bank-popup {
+    .tabs-primary__container {
         background-color: transparent;
         border-radius: 0;
         padding: 0;
         margin-top: 48px;
-        .tabs__body{
-            &:first-child{
-                >div{
-                    >div{
+
+        .tabs__body {
+            &:first-child {
+                >div {
+                    >div {
                         margin-top: 16px;
                     }
-                    &:not(:last-child){
+
+                    &:not(:last-child) {
                         margin-bottom: 24px;
                         padding-bottom: 24px;
                         border-bottom: 1px solid var(--primary100);
@@ -1222,19 +1230,22 @@
             }
         }
     }
-    &__contacts{
+
+    &__contacts {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
     }
-    &__files{
+
+    &__files {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
     }
 }
+
 .newsline {
     &__title {
         margin-bottom: 32px;
@@ -1261,6 +1272,7 @@
         grid-row-gap: 24px;
     }
 }
+
 .stock-offers-popup {
     &__title {
         margin-bottom: 32px;
@@ -4151,6 +4163,7 @@
     &__form {
         margin-top: 32px;
     }
+
     &__checkboxes {
         display: flex;
         flex-direction: column;
@@ -4162,9 +4175,11 @@
             }
         }
     }
-    &__subtitle{
+
+    &__subtitle {
         margin-top: 32px;
     }
+
     &__textarea {
         margin-top: 16px;
     }
@@ -4332,7 +4347,8 @@
     }
 }
 
-.object-apart-renov-popup {
+.object-apart-renov-popup,
+.object-ecology-parks-popup {
     max-width: 1250px;
     margin: 0 auto;
     height: 100%;
@@ -4385,6 +4401,7 @@
         cursor: pointer;
     }
 }
+
 
 .checkboard-cst-popup {
     --transition-time: 0.3s;
@@ -5059,11 +5076,13 @@
 
         display: flex;
         align-items: center;
-        >img{
+
+        >img {
             width: 32px;
             display: block;
-         margin-right: 16px;
+            margin-right: 16px;
         }
+
         .checkbox-secondary__label {
             justify-content: start;
         }
@@ -5500,34 +5519,41 @@
         grid-column-gap: 32px;
         grid-row-gap: 24px;
     }
-    &__subtitle{
+
+    &__subtitle {
         margin-top: 32px;
     }
-    &__card{
+
+    &__card {
         margin-top: 32px;
     }
-    &__user{
+
+    &__user {
         margin-top: 24px;
     }
-    &__form{
+
+    &__form {
         margin-top: 32px;
-        .complaint-object-two__subtitle{
-            &:first-child{
+
+        .complaint-object-two__subtitle {
+            &:first-child {
                 margin: 0;
             }
         }
     }
-   &__textarea {
+
+    &__textarea {
         margin-top: 16px;
         --height: 0;
         height: auto;
+
         .textarea-primary__input {
             height: auto;
         }
     }
 
-   &__checkboxes {
-    margin-top: 16px;
+    &__checkboxes {
+        margin-top: 16px;
         display: grid;
         grid-template-columns: repeat(2, max-content);
         grid-column-gap: 48px;
@@ -5537,20 +5563,22 @@
             margin: 0;
 
             &__input {
-            
-                &:checked{
+
+                &:checked {
                     +.checkbox-secondary__label {
                         &::before {
                             background-color: var(--blue);
                             border: 2px solid var(--blue);
                         }
-                        .checkbox-secondary__text{
+
+                        .checkbox-secondary__text {
                             color: var(--gray);
                         }
                     }
                 }
             }
-            &__label{
+
+            &__label {
                 justify-content: start;
             }
         }

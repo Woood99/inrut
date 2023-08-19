@@ -1660,10 +1660,10 @@ textarea.input-reset {
     background-color: rgba(34, 41, 102, 0.4);
   }
 }
-.popup-primary--furnishing-sets-popup, .popup-primary--object-apart-renov-popup {
+.popup-primary--furnishing-sets-popup, .popup-primary--object-apart-renov-popup, .popup-primary--object-ecology-parks-popup {
   z-index: 1050;
 }
-.popup-primary--furnishing-sets-popup .popup-primary__container, .popup-primary--object-apart-renov-popup .popup-primary__container {
+.popup-primary--furnishing-sets-popup .popup-primary__container, .popup-primary--object-apart-renov-popup .popup-primary__container, .popup-primary--object-ecology-parks-popup .popup-primary__container {
   margin: 50px auto 0;
   border-radius: 12px 12px 0 0;
   padding: 48px 32px 32px;
@@ -1673,7 +1673,7 @@ textarea.input-reset {
   vertical-align: bottom;
 }
 @media (max-width: 1212px) {
-  .popup-primary--furnishing-sets-popup .popup-primary__container, .popup-primary--object-apart-renov-popup .popup-primary__container {
+  .popup-primary--furnishing-sets-popup .popup-primary__container, .popup-primary--object-apart-renov-popup .popup-primary__container, .popup-primary--object-ecology-parks-popup .popup-primary__container {
     margin-top: 0;
     border-radius: 0;
     width: 100%;
@@ -1681,14 +1681,14 @@ textarea.input-reset {
     padding: 65px 0 32px;
   }
 }
-.popup-primary--furnishing-sets-popup .popup-primary__close, .popup-primary--object-apart-renov-popup .popup-primary__close {
+.popup-primary--furnishing-sets-popup .popup-primary__close, .popup-primary--object-apart-renov-popup .popup-primary__close, .popup-primary--object-ecology-parks-popup .popup-primary__close {
   margin-top: -48px;
   -webkit-transform: translateX(32px);
   -ms-transform: translateX(32px);
   transform: translateX(32px);
 }
 @media (max-width: 1212px) {
-  .popup-primary--furnishing-sets-popup .popup-primary__close, .popup-primary--object-apart-renov-popup .popup-primary__close {
+  .popup-primary--furnishing-sets-popup .popup-primary__close, .popup-primary--object-apart-renov-popup .popup-primary__close, .popup-primary--object-ecology-parks-popup .popup-primary__close {
     margin: 0;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -1696,7 +1696,7 @@ textarea.input-reset {
   }
 }
 @media (min-width: 1213px) {
-  .popup-primary--furnishing-sets-popup::before, .popup-primary--object-apart-renov-popup::before {
+  .popup-primary--furnishing-sets-popup::before, .popup-primary--object-apart-renov-popup::before, .popup-primary--object-ecology-parks-popup::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -5378,7 +5378,8 @@ textarea.input-reset {
   }
 }
 
-.object-apart-renov-popup {
+.object-apart-renov-popup,
+.object-ecology-parks-popup {
   max-width: 1250px;
   margin: 0 auto;
   height: 100%;
@@ -5393,43 +5394,52 @@ textarea.input-reset {
   -ms-flex-align: start;
   align-items: start;
 }
-.object-apart-renov-popup.object-apart-renov {
+.object-apart-renov-popup.object-apart-renov,
+.object-ecology-parks-popup.object-apart-renov {
   border-radius: 0;
   padding: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
   background-color: transparent;
 }
-.object-apart-renov-popup .object-apart-renov__container {
+.object-apart-renov-popup .object-apart-renov__container,
+.object-ecology-parks-popup .object-apart-renov__container {
   width: 100%;
 }
-.object-apart-renov-popup .object-apart-renov__item {
+.object-apart-renov-popup .object-apart-renov__item,
+.object-ecology-parks-popup .object-apart-renov__item {
   height: 650px;
 }
 @media (max-width: 1212px) {
-  .object-apart-renov-popup .object-apart-renov__item {
+  .object-apart-renov-popup .object-apart-renov__item,
+  .object-ecology-parks-popup .object-apart-renov__item {
     height: 550px;
   }
 }
 @media (max-width: 768px) {
-  .object-apart-renov-popup .object-apart-renov__item {
+  .object-apart-renov-popup .object-apart-renov__item,
+  .object-ecology-parks-popup .object-apart-renov__item {
     height: 400px;
   }
 }
 @media (max-width: 576px) {
-  .object-apart-renov-popup .object-apart-renov__item {
+  .object-apart-renov-popup .object-apart-renov__item,
+  .object-ecology-parks-popup .object-apart-renov__item {
     height: 350px;
   }
 }
 @media (max-width: 1212px) {
-  .object-apart-renov-popup .object-apart-renov__descr {
+  .object-apart-renov-popup .object-apart-renov__descr,
+  .object-ecology-parks-popup .object-apart-renov__descr {
     padding: 0 16px;
   }
 }
-.object-apart-renov-popup .object-apart-renov__tabs .tabs-primary__container {
+.object-apart-renov-popup .object-apart-renov__tabs .tabs-primary__container,
+.object-ecology-parks-popup .object-apart-renov__tabs .tabs-primary__container {
   cursor: default;
 }
-.object-apart-renov-popup .object-apart-renov__item {
+.object-apart-renov-popup .object-apart-renov__item,
+.object-ecology-parks-popup .object-apart-renov__item {
   cursor: pointer;
 }
 
