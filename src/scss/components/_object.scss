@@ -240,8 +240,31 @@
             }
         }
     }
+    &__banner-info{
+        margin-top: 32px;
+    }
 }
 
+.object-banner-info {
+
+    &__wrapper {
+        background-color: var(--primary100);
+        padding: 32px;
+        border-radius: 16px;
+    }
+
+    &__title {
+    }
+
+    &__descr {
+        margin-top: 8px;
+    }
+
+    &__btn {
+        margin-top: 24px;
+        width: 425px;
+    }
+}
 
 
 
@@ -1682,14 +1705,28 @@
         margin-top: 24px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 16px;
-        grid-row-gap: 16px;
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
 
         @media (max-width:$smallTablet-max) {
             grid-template-columns: 1fr;
         }
-    }
 
+        >.col{
+            &:nth-child(1){
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+            align-self: start;
+                .filter-range-one{
+                    &:nth-child(1),&:nth-child(2){
+                        grid-column: 1/-1;
+                    }
+                }
+            }
+        }
+    }
     &__list {
         margin-top: 24px;
         padding-bottom: 24px;
@@ -1743,46 +1780,36 @@
     }
 
     &__info {
-        margin-top: 24px;
-
         color: var(--primaryTwo);
         font-size: var(--default-fz);
         line-height: var(--default-lh);
         font-weight: 400;
-
-        display: flex;
-        align-items: center;
-        justify-content: end;
-
+        text-align: center;
         span {
-            display: inline-block;
-            margin-left: 16px;
+          display: block;
             color: var(--dark);
             font-weight: 500;
+
+            font-size: var(--big-small-fz);
+            line-height: var(--big-small-fz);
+
+            margin-bottom: 6px;
         }
 
         @media (max-width:$desktop) {
             margin-top: 16px;
         }
     }
+    &__btns{
+       margin-top: 24px;
 
-    &__bottom {
-        margin-top: 32px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 16px;
-
-        @media (max-width:$desktop) {
-            margin-top: 24px;
-        }
-
-        @media (max-width:$smallTablet-max) {
-            grid-template-columns: 1fr;
-            grid-row-gap: 16px;
-        }
+       display: grid;
+       grid-template-columns: 100%;
+       grid-column-gap: 16px;
+       grid-row-gap: 16px;
     }
-
     &__app {
+        width: 100%;
         svg {
             width: 20px;
             height: 20px;
@@ -1792,6 +1819,7 @@
     }
 
     &__message {
+        width: 100%;
         svg {
             width: 16px;
             height: 16px;

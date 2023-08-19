@@ -349,7 +349,7 @@
                                     <h2 class="online-display__main-title">
                                         Доступные опции
                                     </h2>
-                                    <a href="#section-furnishing-sets" class="online-display__item online-display__item--scroll" style="background-color: rgb(232, 255, 255);">
+                                    <a href="#section-furnishing-sets" class="online-display__item online-display__item--blue online-display__item--scroll">
                                         <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
                                         <h4 class="online-display__title">Меблировка</h4>
                                         <p class="online-display__descr">
@@ -359,7 +359,7 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </a>
-                                    <a href="#section-apart-renov" class="online-display__item online-display__item--scroll" style="background-color: rgb(255, 241, 197);">
+                                    <a href="#section-apart-renov" class="online-display__item online-display__item--orange online-display__item--scroll">
                                         <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
                                         <h4 class="online-display__title">Отделка</h4>
                                         <p class="online-display__descr">
@@ -369,8 +369,8 @@
                                             <use xlink:href="img/sprite.svg#check"></use>
                                         </svg>
                                     </a>
-                                    <button type="button" class="btn btn-reset online-display__item" data-popup-path="online-display-popup"
-                                        style="background-color: rgb(255, 241, 197); grid-column: 1/-1;">
+                                    <button type="button" class="btn btn-reset online-display__item online-display__item--orange" data-popup-path="online-display-popup"
+                                        style="grid-column: 1/-1;">
                                         <img loading="lazy" src="img/for-sale-owner.png" width="35" height="35" alt="">
                                         <h4 class="online-display__title">Сплитсистема</h4>
                                         <p class="online-display__descr">
@@ -2910,66 +2910,71 @@
                                     </button>
                                 </div>
                                 <div class="object-calc-mort__wrapper">
-                                    <div class="filter-range-one filter-range-one--term">
-                                        <span class="filter-range-one__subtitle">Срок кредита</span>
-                                        <div class="filter-range-one__nav">
-                                            <div data-default="5">
-                                                <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
-                                                лет
+                                    <div class="col">
+                                        <div class="filter-range-one">
+                                            <span class="filter-range-one__subtitle">Стоимость объекта</span>
+                                            <div class="filter-range-one__nav">
+                                                <div data-default="2897000">
+                                                    <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                                </div>
+                                            </div>
+                                            <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
                                             </div>
                                         </div>
-                                        <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
-                                    </div>
-                                    <div class="filter-range-one filter-range-one--contribution">
-                                        <span class="filter-range-one__subtitle">Первоначальный взнос</span>
-                                        <div class="filter-range-one__nav">
-                                            <div data-default="400000">
-                                                <input type="text" maxlength="12" name="Имя" class="input-reset">
+                                        <div class="filter-range-one filter-range-one--contribution">
+                                            <span class="filter-range-one__subtitle">Первоначальный взнос</span>
+                                            <div class="filter-range-one__nav">
+                                                <div data-default="400000">
+                                                    <input type="text" maxlength="12" name="Имя" class="input-reset">
+                                                </div>
+                                                <span>15%</span>
                                             </div>
-                                            <span>15%</span>
+                                            <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
                                         </div>
-                                        <div class="filter-range-one__inner" data-min="50000" data-max="2000000"></div>
-                                    </div>
-                                    <div class="filter-range-one">
-                                        <span class="filter-range-one__subtitle">Стоимость объекта</span>
-                                        <div class="filter-range-one__nav">
-                                            <div data-default="2897000">
-                                                <input maxlength="12" type="text" name="Имя" class="input-reset">
+                                        <div class="filter-range-one filter-range-one--term">
+                                            <span class="filter-range-one__subtitle">Срок кредита</span>
+                                            <div class="filter-range-one__nav">
+                                                <div data-default="5">
+                                                    <input type="text" maxlength="3" name="Имя" class="input-reset filter-range-one__input--w-auto">
+                                                    лет
+                                                </div>
                                             </div>
+                                            <div class="filter-range-one__inner" data-min="0" data-max="20"></div>
                                         </div>
-                                        <div class="filter-range-one__inner" data-min="1800000" data-max="6000000">
+                                        <button type="button" class="btn btn-reset field-static" data-popup-path="interest-rate-modal-two">
+                                            <span class="field-static__subtitle">
+                                                Процентная ставка
+                                            </span>
+                                            <span class="field-static__text">
+                                                от 10,9%
+                                            </span>
+                                            <div class="field-static__arrow">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#check-right"></use>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col">
+                                        <div class="object-calc-mort__info">
+                                            <span>194 000 ₽</span>
+                                            Ежемесячный платеж
+                                        </div>
+                                        <div class="object-calc-mort__btns">
+                                            <button type="button" class="btn btn-reset btn-primary object-calc-mort__app">
+                                                Подать заявку
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#tg"></use>
+                                                </svg>
+                                            </button>
+                                            <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message" data-popup-path="chat">
+                                                Задать вопрос
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#chat"></use>
+                                                </svg>
+                                            </button>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-reset field-static" data-popup-path="interest-rate-modal-two">
-                                        <span class="field-static__subtitle">
-                                            Процентная ставка
-                                        </span>
-                                        <span class="field-static__text">
-                                            от 10,9%
-                                        </span>
-                                        <div class="field-static__arrow">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#check-right"></use>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="object-calc-mort__info">
-                                    Ежемесячный платеж <span>194 000 ₽/мес.</span>
-                                </div>
-                                <div class="object-calc-mort__bottom">
-                                    <button type="button" class="btn btn-reset btn-secondary object-calc-mort__message" data-popup-path="chat">
-                                        Задать вопрос
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#chat"></use>
-                                        </svg>
-                                    </button>
-                                    <button type="button" class="btn btn-reset btn-primary object-calc-mort__app">
-                                        Подать заявку
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#tg"></use>
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
                             <div class="object-apart-renov section-observ" id="section-apart-renov">

@@ -8895,6 +8895,10 @@ textarea.input-reset {
   font-size: var(--default-fz);
   line-height: var(--default-lh);
   font-weight: 400;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .field-static__arrow {
   -ms-grid-column: 2;
@@ -26066,6 +26070,22 @@ textarea.input-reset {
   -ms-flex-pack: end;
   justify-content: end;
 }
+.object-body__banner-info {
+  margin-top: 32px;
+}
+
+.object-banner-info__wrapper {
+  background-color: var(--primary100);
+  padding: 32px;
+  border-radius: 16px;
+}
+.object-banner-info__descr {
+  margin-top: 8px;
+}
+.object-banner-info__btn {
+  margin-top: 24px;
+  width: 425px;
+}
 
 .object-other-apartment {
   -webkit-box-shadow: var(--shadow-primary);
@@ -27517,14 +27537,27 @@ textarea.input-reset {
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
 }
 @media (max-width: 768px) {
   .object-calc-mort__wrapper {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+}
+.object-calc-mort__wrapper > .col:nth-child(1) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-row-align: start;
+  align-self: start;
+}
+.object-calc-mort__wrapper > .col:nth-child(1) .filter-range-one:nth-child(1), .object-calc-mort__wrapper > .col:nth-child(1) .filter-range-one:nth-child(2) {
+  grid-column: 1/-1;
 }
 .object-calc-mort__list {
   margin-top: 24px;
@@ -27587,57 +27620,45 @@ textarea.input-reset {
   }
 }
 .object-calc-mort__info {
-  margin-top: 24px;
   color: var(--primaryTwo);
   font-size: var(--default-fz);
   line-height: var(--default-lh);
   font-weight: 400;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+  text-align: center;
 }
 .object-calc-mort__info span {
-  display: inline-block;
-  margin-left: 16px;
+  display: block;
   color: var(--dark);
   font-weight: 500;
+  font-size: var(--big-small-fz);
+  line-height: var(--big-small-fz);
+  margin-bottom: 6px;
 }
 @media (max-width: 1212px) {
   .object-calc-mort__info {
     margin-top: 16px;
   }
 }
-.object-calc-mort__bottom {
-  margin-top: 32px;
+.object-calc-mort__btns {
+  margin-top: 24px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
   grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
-@media (max-width: 1212px) {
-  .object-calc-mort__bottom {
-    margin-top: 24px;
-  }
-}
-@media (max-width: 768px) {
-  .object-calc-mort__bottom {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    grid-row-gap: 16px;
-  }
+.object-calc-mort__app {
+  width: 100%;
 }
 .object-calc-mort__app svg {
   width: 20px;
   height: 20px;
   fill: var(--white);
   margin-left: 10px;
+}
+.object-calc-mort__message {
+  width: 100%;
 }
 .object-calc-mort__message svg {
   width: 16px;
@@ -29915,6 +29936,9 @@ textarea.input-reset {
   margin-top: 0;
   margin-bottom: 24px;
 }
+.develop-inner .object-banner-info {
+  padding-bottom: 16px;
+}
 
 .detailed-flat .bid-user__avatar {
   --size: 95px;
@@ -31895,11 +31919,20 @@ textarea.input-reset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .mortgage .object-calc-mort__info > span {
   margin: 0;
   color: var(--primaryTwo);
   font-weight: 400;
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+  text-align: left;
 }
 .mortgage .object-calc-mort__info > span:not(:last-child) {
   margin-right: 16px;
@@ -31910,6 +31943,8 @@ textarea.input-reset {
   font-weight: 500;
   color: var(--dark);
   margin: 0;
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
 }
 .mortgage .object-calc-mort__wrapper:first-child {
   margin: 0;
@@ -31922,9 +31957,13 @@ textarea.input-reset {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: end;
+  display: -ms-grid;
+  display: grid;
 }
 .mortgage .object-calc-mort__app {
+  margin-top: 32px;
   padding: 0 56px;
+  width: auto;
 }
 .mortgage .object-calc-mort__app svg {
   stroke: var(--white);
@@ -32012,8 +32051,8 @@ textarea.input-reset {
   margin-left: 20px;
 }
 .tariff-card__tab--one .main-table__type {
-  -ms-grid-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
-  grid-template-columns: 33.8983050847% 18.6440677966% 18.6440677966% 19.0677966102%;
+  -ms-grid-columns: 33.8983050847% 18.6440677966% 18.6440677966% 1fr;
+  grid-template-columns: 33.8983050847% 18.6440677966% 18.6440677966% 1fr;
 }
 .tariff-card__tab--one .tariff-card-filter__row--1 {
   -ms-grid-columns: 25.4237288136% 36.6101694915% 36.6101694915%;
