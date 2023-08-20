@@ -4317,7 +4317,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_city__WEBPACK_IMPORTED_MODULE_27__["default"])();
   (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__["default"])();
   (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
-  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000);
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000, true);
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.buy-apartment__tags', 1000, 1180);
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewing)();
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewingTwo)();
   (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();
@@ -4899,6 +4900,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "cardPrimaryActions": () => (/* binding */ cardPrimaryActions),
 /* harmony export */   "cardSecondaryActions": () => (/* binding */ cardSecondaryActions)
 /* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination]);
 const cardSecondaryActions = () => {
   const cards = document.querySelectorAll('.card-secondary');
   if (cards.length === 0) return;
@@ -4906,6 +4910,7 @@ const cardSecondaryActions = () => {
     const imageSwitchItems = card.querySelectorAll('.card-secondary__item');
     const imagePagination = card.querySelector('.card-secondary__pagination');
     cardImageSwitch(card, imageSwitchItems, imagePagination);
+    cardSliderMobile(card.querySelector('.card-secondary__top'), card.querySelector('.card-secondary__images'), card.querySelectorAll('.card-secondary__item'));
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-secondary__info--favorite');
       if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
@@ -4930,6 +4935,7 @@ const cardPrimaryActions = () => {
     const imageSwitchItems = card.querySelectorAll('.card-primary__item');
     const imagePagination = card.querySelector('.card-primary__pagination');
     cardImageSwitch(card, imageSwitchItems, imagePagination);
+    cardSliderMobile(card.querySelector('.card-primary__top'), card.querySelector('.card-primary__images'), card.querySelectorAll('.card-primary__item'));
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-primary__info--favorite');
       if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
@@ -4948,13 +4954,13 @@ const cardPrimaryActions = () => {
   });
 };
 function cardImageSwitch(card, imageSwitchItems, imagePagination) {
-  if (window.innerWidth <= 768) return;
+  if (window.innerWidth <= 1024) return;
   if (imageSwitchItems.length <= 1) return;
   imageSwitchItems.forEach((el, index) => {
     el.setAttribute('data-index', index);
     imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
     el.addEventListener('mouseenter', e => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         card.querySelectorAll('.image-pagination__item').forEach(el => {
           el.classList.remove('image-pagination__item--active');
         });
@@ -4962,7 +4968,7 @@ function cardImageSwitch(card, imageSwitchItems, imagePagination) {
       }
     });
     el.addEventListener('mouseleave', e => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         card.querySelectorAll('.image-pagination__item').forEach(el => {
           el.classList.remove('image-pagination__item--active');
         });
@@ -4970,6 +4976,40 @@ function cardImageSwitch(card, imageSwitchItems, imagePagination) {
       }
     });
   });
+}
+function cardSliderMobile(cardImageWrapper, imagesBody, cardItems) {
+  let slider;
+  body();
+  window.addEventListener('resize', body);
+  function body() {
+    if (window.innerWidth <= 1024) {
+      if (!cardImageWrapper.classList.contains('swiper-initialized')) {
+        cardImageWrapper.classList.add('swiper');
+        imagesBody.classList.add('swiper-wrapper');
+        cardItems.forEach(item => item.classList.add('swiper-slide'));
+        slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](cardImageWrapper, {
+          observer: true,
+          observeParents: true,
+          autoHeight: true,
+          slidesPerView: 1.2,
+          spaceBetween: 8,
+          speed: 800,
+          breakpoints: {
+            768: {
+              slidesPerView: 1
+            }
+          }
+        });
+      }
+    } else {
+      if (cardImageWrapper.classList.contains('swiper-initialized')) {
+        slider.destroy();
+        cardImageWrapper.classList.remove('swiper');
+        imagesBody.classList.remove('swiper-wrapper');
+        cardItems.forEach(item => item.classList.remove('swiper-slide'));
+      }
+    }
+  }
 }
 
 /***/ }),
@@ -9423,28 +9463,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const scrollDrag = (blockSelector, speed) => {
+const scrollDrag = (blockSelector, speed, viewportWidth) => {
   let scrollBlock = typeof blockSelector === 'string' ? document.querySelector(blockSelector) : blockSelector;
   if (!scrollBlock) return;
   let left = 0;
   let drag = false;
   let coorX = 0;
   scrollBlock.addEventListener('mousedown', function (e) {
-    drag = true;
-    coorX = e.pageX - this.offsetLeft;
-  });
-  document.addEventListener('mouseup', function () {
-    drag = false;
-    left = scrollBlock.scrollLeft;
-  });
-  scrollBlock.addEventListener('mousemove', function (e) {
-    if (drag) {
-      scrollBlock.classList.add('_drag');
-      this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
-    } else {
-      scrollBlock.classList.remove('_drag');
+    if (viewportWidth === true || checkViewport()) {
+      drag = true;
+      coorX = e.pageX - this.offsetLeft;
     }
   });
+  document.addEventListener('mouseup', function () {
+    if (viewportWidth === true || checkViewport()) {
+      drag = false;
+      left = scrollBlock.scrollLeft;
+    }
+  });
+  scrollBlock.addEventListener('mousemove', function (e) {
+    if (viewportWidth === true || checkViewport()) {
+      if (drag) {
+        scrollBlock.classList.add('_drag');
+        this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * (speed / 1000);
+      } else {
+        scrollBlock.classList.remove('_drag');
+      }
+    }
+  });
+  function checkViewport() {
+    return window.innerWidth <= viewportWidth ? true : false;
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollDrag);
 

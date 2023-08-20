@@ -64,7 +64,10 @@ import {
 } from './components/cardActions';
 import furnishingSets from './components/furnishingSets';
 import bookConsultation from './components/bookConsultation';
-import {recordViewing,recordViewingTwo} from './components/recordViewing';
+import {
+    recordViewing,
+    recordViewingTwo
+} from './components/recordViewing';
 import wallet from './components/wallet';
 import {
     favoritesPage,
@@ -149,7 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
     city();
     furnishingSets();
     bookConsultation();
-    scrollDrag('.object-location__infrastructure', 1000);
+    scrollDrag('.object-location__infrastructure', 1000, true);
+    scrollDrag('.buy-apartment__tags', 1000, 1180);
     recordViewing();
     recordViewingTwo();
     wallet();

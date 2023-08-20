@@ -985,7 +985,7 @@
 
         @media (max-width:$smallTablet-max) {
             margin-top: 0;
-            grid-row-gap: 8px;
+            grid-row-gap: 12px;
         }
     }
 
@@ -1845,6 +1845,14 @@
 
     &__item {
         margin: 0 8px 8px 0;
+        @media (max-width:$desktop){
+          margin: 0 8px 0 0;
+        }
+    }
+    @media (max-width:$desktop){
+         overflow-x: auto;
+         @include hiddenScroll;
+         flex-wrap: nowrap; 
     }
 }
 
