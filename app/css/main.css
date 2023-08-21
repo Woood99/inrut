@@ -15561,6 +15561,12 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
 }
+.tariff-info div:nth-child(2) svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--primaryTwo);
+  margin-right: 8px;
+}
 .tariff-info div .avatar {
   width: 40px;
   height: 40px;
@@ -15602,8 +15608,8 @@ textarea.input-reset {
   align-items: center;
   grid-column-gap: 32px;
   grid-row-gap: 8px;
-  -ms-grid-columns: 19.0677966102% 19.0677966102% 1fr;
-  grid-template-columns: 19.0677966102% 19.0677966102% 1fr;
+  -ms-grid-columns: 21.186440678% 16.9491525424% 1fr;
+  grid-template-columns: 21.186440678% 16.9491525424% 1fr;
   padding: 32px 24px;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
@@ -15632,6 +15638,20 @@ textarea.input-reset {
   font-weight: 500;
   font-size: var(--little-big-fz);
   line-height: var(--little-big-lh);
+}
+.bank-info div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.bank-info div:nth-child(2) svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--primaryTwo);
+  margin-right: 8px;
 }
 .bank-info div:nth-child(3) {
   -o-text-overflow: ellipsis;
@@ -21082,8 +21102,8 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .room-info-card__image img {
-    height: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
   }
 }
 .room-info-card__image::before {
@@ -21095,16 +21115,20 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .room-info-card__image {
-    margin-bottom: 24px;
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+    -ms-grid-row-align: start;
+    align-self: start;
   }
 }
 @media (max-width: 1212px) {
   .room-info-card__name-term {
-    -ms-grid-column: 1;
+    -ms-grid-column: 2;
     -ms-grid-column-span: 1;
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
 }
 .room-info-card__title {
@@ -21135,9 +21159,9 @@ textarea.input-reset {
 @media (max-width: 1212px) {
   .room-info-card__price {
     margin-top: 16px;
-    -ms-grid-column: 1;
+    -ms-grid-column: 2;
     -ms-grid-column-span: 1;
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
 }
 .room-info-card__price-new {
@@ -21201,9 +21225,9 @@ textarea.input-reset {
 @media (max-width: 1212px) {
   .room-info-card__mortgage {
     margin-top: 16px;
-    -ms-grid-column: 1;
+    -ms-grid-column: 2;
     -ms-grid-column-span: 1;
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
 }
 .room-info-card__controls {
@@ -21268,16 +21292,32 @@ textarea.input-reset {
   transition: fill 0.4s ease-in-out;
 }
 @media (max-width: 1212px) {
+  .room-info-card__favorite svg {
+    fill: var(--blue);
+  }
+}
+@media (max-width: 1212px) {
   .room-info-card__favorite {
     margin-right: 0;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+    -ms-grid-row-align: start;
+    align-self: start;
+  }
+}
+@media (max-width: 576px) {
+  .room-info-card__favorite {
+    margin-top: 16px;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
-    -ms-grid-row: 1;
+    -ms-grid-row: 4;
     -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-row-align: start;
-    align-self: start;
+    grid-row: 4/5;
   }
 }
 @media (min-width: 1213px) {
@@ -21291,9 +21331,16 @@ textarea.input-reset {
 @media (max-width: 1212px) {
   .room-info-card {
     padding: 24px 16px;
-    -ms-grid-columns: 1fr 16px;
-    grid-template-columns: 1fr 16px;
+    -ms-grid-columns: 83px 1fr 16px;
+    grid-template-columns: 83px 1fr 16px;
     grid-column-gap: 8px;
+  }
+}
+@media (max-width: 576px) {
+  .room-info-card {
+    -ms-grid-columns: 83px 1fr;
+    grid-template-columns: 83px 1fr;
+    padding: 16px;
   }
 }
 
@@ -32191,8 +32238,8 @@ textarea.input-reset {
   grid-template-columns: 62.7118644068%;
 }
 .tariff-card__tab--two .main-table__type {
-  -ms-grid-columns: 19.0677966102% 19.0677966102% 1fr;
-  grid-template-columns: 19.0677966102% 19.0677966102% 1fr;
+  -ms-grid-columns: 21.186440678% 16.9491525424% 1fr;
+  grid-template-columns: 21.186440678% 16.9491525424% 1fr;
 }
 .tariff-card__tab--two .tariff-card-filter__row--1 {
   -ms-grid-columns: 25.4237288136% 1fr;

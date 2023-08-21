@@ -10801,8 +10801,8 @@ function initSliders() {
       const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
         observer: true,
         observeParents: true,
-        slidesPerView: 1,
-        spaceBetween: 16,
+        slidesPerView: 1.17,
+        spaceBetween: 8,
         speed: 800,
         navigation: {
           prevEl: el.closest('.room-body').querySelector('.nav-arrow-secondary--prev'),
@@ -10810,13 +10810,16 @@ function initSliders() {
         },
         breakpoints: {
           577: {
-            slidesPerView: 2
+            slidesPerView: 2,
+            spaceBetween: 16
           },
           769: {
-            slidesPerView: 2.6
+            slidesPerView: 2.6,
+            spaceBetween: 16
           },
           1113: {
-            slidesPerView: 3
+            slidesPerView: 3,
+            spaceBetween: 16
           }
         }
       });
