@@ -2107,7 +2107,7 @@
         max-width: 1180px;
 
         @media (max-width:$desktop) {
-            margin-top: 24px;
+            margin-top: 0;
             max-width: none;
             width: 100%;
         }
@@ -4450,14 +4450,27 @@
 
 
         @media (max-width:$desktop) {
-            padding: 24px 16px 24px;
+            padding: calc(46px + 16px) 16px 24px;
         }
     }
-
-    &__close {
+    &__top{
         position: sticky;
         top: 0;
         right: 0;
+        z-index: 10;
+        margin-left: auto;
+        @media (max-width:$desktop) {
+          position: fixed;
+          left: 0;
+          margin-left: 0;
+          width: 100%;
+          right: auto;
+          box-shadow: var(--shadow-secondary);
+          background-color: var(--white);
+          padding: 8px 16px;
+        }
+    }
+    &__close {
         border: none;
         padding: 0;
         width: 30px;
@@ -4468,9 +4481,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 10;
         margin-left: auto;
-
         svg {
             width: 20px;
             height: 20px;
@@ -4486,9 +4497,8 @@
                 }
             }
         }
-
-        @media (max-width:$desktop) {
-            right: 16px;
+        @media (max-width:$desktop){
+        
         }
     }
 

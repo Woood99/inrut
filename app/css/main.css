@@ -3099,7 +3099,7 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .checkboard-popup__title {
-    margin-top: 24px;
+    margin-top: 0;
     max-width: none;
     width: 100%;
   }
@@ -5497,13 +5497,30 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .checkboard-cst-popup__container {
-    padding: 24px 16px 24px;
+    padding: 62px 16px 24px;
   }
 }
-.checkboard-cst-popup__close {
+.checkboard-cst-popup__top {
   position: sticky;
   top: 0;
   right: 0;
+  z-index: 10;
+  margin-left: auto;
+}
+@media (max-width: 1212px) {
+  .checkboard-cst-popup__top {
+    position: fixed;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    right: auto;
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
+    background-color: var(--white);
+    padding: 8px 16px;
+  }
+}
+.checkboard-cst-popup__close {
   border: none;
   padding: 0;
   width: 30px;
@@ -5519,7 +5536,6 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  z-index: 10;
   margin-left: auto;
 }
 .checkboard-cst-popup__close svg {
@@ -5534,11 +5550,6 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .checkboard-cst-popup__close:hover svg {
     fill: var(--primary500);
-  }
-}
-@media (max-width: 1212px) {
-  .checkboard-cst-popup__close {
-    right: 16px;
   }
 }
 @media (max-width: 1212px) {
