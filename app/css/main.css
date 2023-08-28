@@ -31046,7 +31046,8 @@ textarea.input-reset {
 .client__list {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 238px);
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 }
@@ -31607,6 +31608,17 @@ textarea.input-reset {
 .client .bid-user__btn:not(:last-child) {
   margin-bottom: 16px;
 }
+.client .bid__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
 .client .bid__sidebar {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -31619,6 +31631,13 @@ textarea.input-reset {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
+}
+.client .bid-messages {
+  margin-top: 24px;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .info-card-teal {
@@ -32170,6 +32189,29 @@ textarea.input-reset {
   -ms-grid-columns: max-content 1fr max-content 16px;
   grid-template-columns: -webkit-max-content 1fr -webkit-max-content 16px;
   grid-template-columns: max-content 1fr max-content 16px;
+}
+
+.selection-estate-agent .main-table__type {
+  -ms-grid-columns: 18.6440677966% 18.6440677966% 27.1186440678% 1fr;
+  grid-template-columns: 18.6440677966% 18.6440677966% 27.1186440678% 1fr;
+}
+.selection-estate-agent .object-info {
+  -ms-grid-columns: 18.6440677966% 18.6440677966% 27.1186440678% -webkit-max-content 1fr;
+  -ms-grid-columns: 18.6440677966% 18.6440677966% 27.1186440678% max-content 1fr;
+  grid-template-columns: 18.6440677966% 18.6440677966% 27.1186440678% -webkit-max-content 1fr;
+  grid-template-columns: 18.6440677966% 18.6440677966% 27.1186440678% max-content 1fr;
+}
+.selection-estate-agent .request-catalog-filter__row--1 {
+  -ms-grid-columns: 29.6610169492% 1fr;
+  grid-template-columns: 29.6610169492% 1fr;
+}
+.selection-estate-agent .request-catalog-filter__row--2 {
+  -ms-grid-columns: 25.4237288136% 23.5593220339% 22.0338983051% 26.9491525424%;
+  grid-template-columns: 25.4237288136% 23.5593220339% 22.0338983051% 26.9491525424%;
+}
+.selection-estate-agent .request-catalog-filter__row--3 {
+  -ms-grid-columns: 38.1355932203% 33.0508474576% 27.4576271186%;
+  grid-template-columns: 38.1355932203% 33.0508474576% 27.4576271186%;
 }
 
 .object-agent .bid-user--grade .bid-user__grade {
