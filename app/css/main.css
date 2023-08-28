@@ -1321,6 +1321,13 @@ textarea.input-reset {
   -ms-transform: translateX(56px);
   transform: translateX(56px);
 }
+@media (max-width: 1212px) {
+  .popup-primary--city .popup-primary__close {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
 .popup-primary--add .popup-primary__container {
   border-radius: 12px 0 0 12px;
   padding: 65px 48px 48px;
@@ -9803,13 +9810,6 @@ textarea.input-reset {
     color: var(--white);
   }
 }
-@media (max-width: 1212px) {
-  .tag {
-    border-radius: 8px;
-    padding: 6px 14px;
-    height: 32px;
-  }
-}
 .tag._active {
   background-color: var(--blue);
   color: var(--white);
@@ -15893,17 +15893,6 @@ textarea.input-reset {
   -o-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
-.nav__link-icon {
-  width: 12px;
-  height: 12px;
-  fill: var(--primaryTwo);
-  margin-right: 24px;
-}
-@media (min-width: 1212px) {
-  .nav__link-icon {
-    display: none;
-  }
-}
 .nav__link-arrow {
   width: 10px;
   height: 5px;
@@ -16122,6 +16111,11 @@ textarea.input-reset {
   width: var(--size-icon);
   height: var(--size-icon);
 }
+@media (max-width: 1212px) {
+  .nav-dropdown-content__item img {
+    display: none;
+  }
+}
 .nav-dropdown-content__item span {
   color: var(--dark);
   font-size: var(--default-fz);
@@ -16136,6 +16130,11 @@ textarea.input-reset {
 .nav-dropdown-content__item span:nth-child(3) {
   color: var(--primaryTwo);
 }
+@media (max-width: 1212px) {
+  .nav-dropdown-content__item span:nth-child(3) {
+    display: none;
+  }
+}
 .nav-dropdown-content__item--one img {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -16143,8 +16142,9 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .nav-dropdown-content__item {
-    --size-icon: 30px;
     padding: 16px 0;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
   }
   .nav-dropdown-content__item:not(:last-child) {
     margin: 0;
@@ -16162,7 +16162,7 @@ textarea.input-reset {
     -ms-flex-direction: column;
     flex-direction: column;
     margin: 0;
-    padding: 0 16px 0;
+    padding: 0 40px 0;
     max-width: none;
   }
 }
@@ -16190,12 +16190,13 @@ textarea.input-reset {
 @media (max-width: 1212px) {
   .city__title {
     -webkit-tap-highlight-color: transparent;
+    width: 100%;
   }
 }
 .city__name {
   color: var(--primaryTwo);
   font-size: var(--default-fz);
-  line-height: var(--little-small-lh);
+  line-height: var(--default-lh);
   font-weight: 500;
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
@@ -16204,6 +16205,21 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .city__name:hover {
     color: var(--blue);
+  }
+}
+.city__descr {
+  color: var(--blue);
+  text-decoration: underline;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: right;
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+}
+@media (min-width: 1213px) {
+  .city__descr {
+    display: none;
   }
 }
 
@@ -23720,18 +23736,13 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .header-top__city {
-    margin-top: 33px;
+    margin-top: 24px;
     padding: 0 16px;
   }
   .header-top__city svg {
     width: 14px;
     height: 16px;
     margin-right: 16px;
-  }
-  .header-top__city .city__name {
-    font-weight: 400;
-    font-size: var(--default-fz);
-    line-height: var(--little-small-lh);
   }
 }
 .header-top__actions {
@@ -23993,7 +24004,7 @@ textarea.input-reset {
   }
   .header-main__nav .nav__link {
     width: 100%;
-    padding: 16px 0;
+    padding: 16px 0 16px 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -29835,11 +29846,14 @@ textarea.input-reset {
 }
 .buy-apartment__tags {
   margin-top: 24px;
+  padding-bottom: 2px;
 }
 @media (max-width: 1212px) {
   .buy-apartment__tag {
     background-color: var(--white);
     border: none;
+    -webkit-box-shadow: var(--shadow-secondary);
+    box-shadow: var(--shadow-secondary);
   }
 }
 @media (max-width: 768px) {
