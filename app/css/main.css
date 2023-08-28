@@ -11172,7 +11172,7 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .object-info__parameter {
-    max-width: 110px;
+    max-width: 150px;
   }
 }
 .object-info__price {
@@ -11186,11 +11186,9 @@ textarea.input-reset {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
-    -ms-grid-column: 2;
+    -ms-grid-column: 1;
     -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    -ms-grid-column-align: end;
-    justify-self: end;
+    grid-column: 1/2;
   }
 }
 .object-info__tooltips {
@@ -11206,6 +11204,9 @@ textarea.input-reset {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
     -ms-grid-column-align: end;
     justify-self: end;
   }
@@ -11254,7 +11255,7 @@ textarea.input-reset {
     -ms-grid-columns: 1fr max-content;
     grid-template-columns: 1fr -webkit-max-content;
     grid-template-columns: 1fr max-content;
-    grid-row-gap: 24px;
+    grid-row-gap: 8px;
   }
 }
 @media (max-width: 768px) {
@@ -23740,8 +23741,6 @@ textarea.input-reset {
     padding: 0 16px;
   }
   .header-top__city svg {
-    width: 14px;
-    height: 16px;
     margin-right: 16px;
   }
 }
@@ -23757,15 +23756,15 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .header-top__actions {
-    display: none;
+    margin-right: 32px;
   }
 }
 .header-top__action:not(:last-child) {
   margin-right: 40px;
 }
 @media (max-width: 1212px) {
-  .header-top__personal {
-    margin-left: auto;
+  .header-top__action:not(:last-child) {
+    margin-right: 24px;
   }
 }
 @media (max-width: 1212px) {
@@ -23787,6 +23786,16 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .header-action--add:hover .header-action__title {
     color: var(--blue);
+  }
+}
+@media (max-width: 1212px) {
+  .header-action--add {
+    display: none;
+  }
+}
+@media (max-width: 1212px) {
+  .header-action--calendar {
+    display: none;
   }
 }
 .header-action--chat .header-action__title svg {
@@ -23834,6 +23843,11 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .header-action__name:hover {
     color: var(--blue);
+  }
+}
+@media (max-width: 1212px) {
+  .header-action__name {
+    display: none;
   }
 }
 .header-action__quantity {
@@ -23898,6 +23912,11 @@ textarea.input-reset {
 @media (min-width: 1213px) {
   .header-personal__name:hover {
     color: var(--blue);
+  }
+}
+@media (max-width: 1212px) {
+  .header-personal__name {
+    display: none;
   }
 }
 

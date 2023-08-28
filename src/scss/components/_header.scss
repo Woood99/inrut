@@ -1,6 +1,7 @@
 .header {
     position: relative;
     z-index: 99;
+
     &__top {}
 
     &__main {
@@ -45,12 +46,10 @@
 
     &__city {
         @media (max-width:$desktop) {
-  margin-top: 24px;
+            margin-top: 24px;
             padding: 0 16px;
 
             svg {
-                width: 14px;
-                height: 16px;
                 margin-right: 16px;
             }
         }
@@ -64,25 +63,27 @@
         margin-right: 70px;
 
         @media (max-width:$desktop) {
-            display: none;
+            margin-right: 32px;
         }
     }
 
     &__action {
         &:not(:last-child) {
             margin-right: 40px;
+
+            @media (max-width:$desktop) {
+                margin-right: 24px;
+            }
         }
     }
 
     &__personal {
-        @media (max-width:$desktop) {
-            margin-left: auto;
-        }
+        @media (max-width:$desktop) {}
     }
 
     &__authorization {
-        @media (max-width:$desktop){
-             margin-left: auto; 
+        @media (max-width:$desktop) {
+            margin-left: auto;
         }
     }
 
@@ -97,16 +98,23 @@
 
 .header-action {
     &--add {
-      @media (min-width:$desktop-min){
-        &:hover {
-            .header-action__title {
-                color: var(--blue);
+        @media (min-width:$desktop-min) {
+            &:hover {
+                .header-action__title {
+                    color: var(--blue);
+                }
             }
-        } 
-      }
+        }
+        @media (max-width:$desktop){
+             display: none; 
+        }
     }
 
-    &--calendar {}
+    &--calendar {
+        @media (max-width:$desktop) {
+            display: none;
+        }
+    }
 
     &--chat {
         .header-action__title {
@@ -116,6 +124,7 @@
             }
         }
     }
+
     &--favorite {
         .header-action__title {
             svg {
@@ -124,7 +133,7 @@
             }
         }
 
-        .secondary-tooltip__content{
+        .secondary-tooltip__content {
             min-width: max-content;
         }
     }
@@ -135,11 +144,12 @@
         align-items: center;
         position: relative;
         transition: color $transitionSpeed $transitionFunction;
+
         svg {
             width: 16px;
             height: 16px;
             fill: var(--primaryTwo);
-         stroke: none;
+            stroke: none;
         }
     }
 
@@ -150,10 +160,15 @@
         color: var(--primaryTwo);
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
-        @media (min-width:$desktop-min){
-             &:hover{
+
+        @media (min-width:$desktop-min) {
+            &:hover {
                 color: var(--blue);
-             } 
+            }
+        }
+
+        @media (max-width:$desktop) {
+            display: none;
         }
     }
 
@@ -195,11 +210,11 @@
             fill: var(--primaryTwo);
         }
 
-      @media (min-width:$desktop-min){
-        &:hover {
-            color: var(--blue);
-        } 
-      }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                color: var(--blue);
+            }
+        }
     }
 
     &__name {
@@ -210,10 +225,15 @@
         line-height: var(--little-small-lh);
         transition: color $transitionSpeed $transitionFunction;
         font-weight: 500;
-        @media (min-width:$desktop-min){
-             &:hover{
+
+        @media (min-width:$desktop-min) {
+            &:hover {
                 color: var(--blue);
-             } 
+            }
+        }
+
+        @media (max-width:$desktop) {
+            display: none;
         }
     }
 }
@@ -231,11 +251,11 @@
             fill: var(--primaryTwo);
         }
 
-       @media (min-width:$desktop-min){
-        &:hover {
-            color: var(--blue);
-        } 
-       }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                color: var(--blue);
+            }
+        }
     }
 
     &__name {
