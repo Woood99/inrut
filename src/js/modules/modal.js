@@ -1,4 +1,3 @@
-import reviewModal from '../components/reviewModal';
 import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 
@@ -88,9 +87,10 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
                     }
                 } else {
                     if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
-                        
                         if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
+                            if (!settingsModal.modal.classList.contains('filter-modal')) {
                             enableScrollClose();
+                            }
                         }
                     }
                 }
@@ -103,6 +103,10 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             }
 
             setTimeout(() => {
+                if (settingsModal.modal.classList.contains('filter-modal')) {
+                        target.classList.remove('active');
+                    target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+                }
                 settingsModal.modal.remove();
             }, settingsModal.speed);
             settingsModal.isOpen = false;

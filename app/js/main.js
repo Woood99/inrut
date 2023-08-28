@@ -6074,6 +6074,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_inputResize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/inputResize */ "./src/js/modules/inputResize.js");
 /* harmony import */ var _modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/numberReplace */ "./src/js/modules/numberReplace.js");
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
 
 
 
@@ -6114,14 +6116,49 @@ const filterSum = () => {
       el.classList.toggle('active');
       if (!el.classList.contains('active')) {
         checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+      } else {
+        if (filterModalScreenWidthCheck() && el.classList.contains('active')) {
+          const modalHTML = `
+                    <div class="filter-modal">
+                        <div class="filter-modal__container">
+                            <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                                <span>Закрыть</span>
+                            </button>
+                            <div class="filter-modal__content">
+                            </div>
+                        </div>
+                    </div>
+                    `;
+          (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, el);
+          const filterModal = document.querySelector('.filter-modal');
+          filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', el.querySelector('.filter-dropdown__dropdown'));
+          const currentEl = filterModal.querySelector('.filter-dropdown__dropdown');
+          filterModal.querySelectorAll('.filter-range__nav input').forEach(input => {
+            input.addEventListener('change', () => {
+              checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+            });
+            input.addEventListener('input', () => {
+              input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(input.value);
+              checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+            });
+          });
+        }
       }
     });
     document.addEventListener('click', e => {
-      if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
+      if (el.classList.contains('active') && !e.target.closest('.filter-dropdown') && !filterModalScreenWidthCheck()) {
         el.classList.remove('active');
         checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
-      } else if (e.target.closest('.filter-dropdown')) {
-        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+      } else if (e.target.closest('.filter-dropdown') || e.target.closest('.filter-modal')) {
+        if (filterModalScreenWidthCheck() && el.classList.contains('active')) {
+          const currentEl = document.querySelector('.filter-modal .filter-modal__content');
+          checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+        } else {
+          checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+        }
       }
     });
     if (close) {
@@ -6131,19 +6168,23 @@ const filterSum = () => {
     }
     inputs.forEach(input => {
       input.addEventListener('change', () => {
-        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+        if (!filterModalScreenWidthCheck()) {
+          checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+        }
       });
       input.addEventListener('input', () => {
-        input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(input.value);
-        checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+        if (!filterModalScreenWidthCheck()) {
+          input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_4__["default"])(input.value);
+          checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+        }
       });
     });
   });
-  function changeTitle(el) {
+  function changeTitle(el, currentElMobile) {
     setTimeout(() => {
-      const itemActive = el.querySelector('.filter-dropdown__item.active');
+      const itemActive = !currentElMobile ? el.querySelector('.filter-dropdown__item.active') : document.querySelector('.filter-modal .filter-dropdown__item.active');
       const inputs = itemActive.querySelectorAll('.filter-range__nav input');
-      const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+      const buttonWrapper = !currentElMobile ? el.querySelector('.filter-dropdown__button-wrapper') : currentElMobile.querySelector('.filter-dropdown__button-wrapper');
       let html = ``;
       if (inputs[0].value && inputs[1].value) {
         if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
@@ -6194,12 +6235,76 @@ const filterSum = () => {
                     </div>
                 `;
         }
+        if (currentElMobile) {
+          if (currentElMobile.dataset.filterDropdownName === 'Цена' || currentElMobile.dataset.filterDropdownName === 'Сумма' || currentElMobile.dataset.filterDropdownName === 'Стоимость объекта') {
+            html = `
+                        <div>
+                            ${currentElMobile.dataset.filterDropdownName}
+                        </div>
+                        <div>
+                           от ${convertSum(inputs[0].value)}
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                        до ${convertSum(inputs[1].value)}
+                        </div>
+                    `;
+          }
+          if (currentElMobile.dataset.filterDropdownName === 'Площадь' || currentElMobile.dataset.filterDropdownName === 'Площадь кухни') {
+            html = `
+                    <div>
+                    ${currentElMobile.dataset.filterDropdownName}
+                    </div>
+                        <div>
+                           от ${inputs[0].value} м²
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                            до ${inputs[1].value} м²
+                        </div>
+                    `;
+          }
+          if (currentElMobile.dataset.filterDropdownName === 'Этаж') {
+            html = `
+                    <div>
+                    ${currentElMobile.dataset.filterDropdownName}
+                </div>
+                        <div>
+                           от ${inputs[0].value} эт.
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                            до ${inputs[1].value} эт.
+                        </div>
+                    `;
+          }
+        }
         buttonWrapper.classList.add('_active');
       } else {
-        html = `
-                <div>${el.dataset.filterDropdownName}</div>
-                <div>${el.dataset.filterDropdownSubtitle}</div>
-                `;
+        if (!filterModalScreenWidthCheck()) {
+          html = `
+                    <div>${el.dataset.filterDropdownName}</div>
+                    <div>${el.dataset.filterDropdownSubtitle}</div>
+                    `;
+        } else {
+          if (currentElMobile) {
+            html = `
+                        <div>${currentElMobile.dataset.filterDropdownName}</div>
+                        <div>${currentElMobile.dataset.filterDropdownSubtitle}</div>
+                        `;
+          } else {
+            html = `
+                        <div>${el.dataset.filterDropdownName}</div>
+                        <div>${el.dataset.filterDropdownSubtitle}</div>
+                        `;
+          }
+        }
         buttonWrapper.classList.remove('_active');
       }
       buttonWrapper.innerHTML = html;
@@ -6246,8 +6351,8 @@ const filterSum = () => {
     result = Math.floor(Number(number)) >= 1.0e+6 ? (Math.round(Number(number)) / 1.0e+6).toFixed(1) + " млн." : Math.round(Number(number)) >= 1.0e+3 ? (Math.round(Number(number)) / 1.0e+3).toFixed(1) + " тыс." : Math.round(Number(number));
     return result.replace('.0', '');
   }
-  function checkChangeTitle(container) {
-    return container.classList.contains('filter-dropdown--one');
+  function checkChangeTitle(container, currentContainer) {
+    return (container || currentContainer).classList.contains('filter-dropdown--one');
   }
 };
 const searchSelect = () => {
@@ -6262,6 +6367,25 @@ const searchSelect = () => {
         if (el !== container) el.classList.remove('_active');
       });
       container.classList.toggle('_active');
+      if (filterModalScreenWidthCheck() && container.classList.contains('_active')) {
+        const modalHTML = `
+                <div class="filter-modal">
+                    <div class="filter-modal__container">
+                        <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#x"></use>
+                            </svg>
+                            <span>Закрыть</span>
+                        </button>
+                        <div class="filter-modal__content">
+                        </div>
+                    </div>
+                </div>
+                `;
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, container);
+        const filterModal = document.querySelector('.filter-modal');
+        filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', container.querySelector('.search-select__dropdown'));
+      }
     });
     document.addEventListener('click', e => {
       if (container.classList.contains('_active') && !e.target.closest('.search-select')) {
@@ -6627,6 +6751,9 @@ const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
     target.classList.remove('_active');
   }
 };
+function filterModalScreenWidthCheck() {
+  return window.innerWidth <= 1212;
+}
 
 /***/ }),
 
@@ -11586,10 +11713,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_reviewModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/reviewModal */ "./src/js/components/reviewModal.js");
-/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
-/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
-
+/* harmony import */ var _modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/disableScroll */ "./src/js/modules/disableScroll.js");
+/* harmony import */ var _modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/enableScroll */ "./src/js/modules/enableScroll.js");
 
 
 const modal = function (modalHTML, container) {
@@ -11678,17 +11803,23 @@ const modal = function (modalHTML, container) {
         } else {
           if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
             if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
-              enableScrollClose();
+              if (!settingsModal.modal.classList.contains('filter-modal')) {
+                enableScrollClose();
+              }
             }
           }
         }
       }
       function enableScrollClose() {
-        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
+        (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';
       }
       setTimeout(() => {
+        if (settingsModal.modal.classList.contains('filter-modal')) {
+          target.classList.remove('active');
+          target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+        }
         settingsModal.modal.remove();
       }, settingsModal.speed);
       settingsModal.isOpen = false;
@@ -11712,7 +11843,7 @@ const modal = function (modalHTML, container) {
       settingsModal.modal.classList.add('is-open');
       document.body.style.scrollBehavior = 'auto';
       document.documentElement.style.scrollBehavior = 'auto';
-      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
       settingsModal.container.classList.add('open');
       settingsModal.container.classList.add(settingsModal.animation);
       setTimeout(() => {

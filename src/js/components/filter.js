@@ -8,6 +8,7 @@ import {
     _slideDown,
     _slideUp
 } from '../support-modules/slide';
+import modal from '../modules/modal';
 export const filterDropdownChoice = () => {
     const items = document.querySelectorAll('.filter-dropdown__dropdown');
     if (!items.length >= 1) return;
@@ -44,14 +45,49 @@ export const filterSum = () => {
             el.classList.toggle('active');
             if (!el.classList.contains('active')) {
                 checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+            } else {
+                if (filterModalScreenWidthCheck() && el.classList.contains('active')) {
+                    const modalHTML = `
+                    <div class="filter-modal">
+                        <div class="filter-modal__container">
+                            <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                                <span>Закрыть</span>
+                            </button>
+                            <div class="filter-modal__content">
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    modal(modalHTML, '.filter-modal', 300,el);
+                    const filterModal = document.querySelector('.filter-modal');
+                    filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', el.querySelector('.filter-dropdown__dropdown'));
+                    const currentEl = filterModal.querySelector('.filter-dropdown__dropdown');
+                    filterModal.querySelectorAll('.filter-range__nav input').forEach(input => {
+                        input.addEventListener('change', () => {
+                            checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+                        });
+                        input.addEventListener('input', () => {
+                            input.value = numberReplace(input.value);
+                            checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+                        });
+                    })
+                }
             }
         })
         document.addEventListener('click', (e) => {
-            if (el.classList.contains('active') && !e.target.closest('.filter-dropdown')) {
+            if (el.classList.contains('active') && !e.target.closest('.filter-dropdown') && !filterModalScreenWidthCheck()) {
                 el.classList.remove('active');
                 checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
-            } else if (e.target.closest('.filter-dropdown')) {
-                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+            } else if (e.target.closest('.filter-dropdown') || e.target.closest('.filter-modal')) {
+                if (filterModalScreenWidthCheck() && el.classList.contains('active')) {
+                    const currentEl = document.querySelector('.filter-modal .filter-modal__content');
+                    checkChangeTitle(currentEl, el) ? changeTitleOne(currentEl, el) : changeTitle(currentEl, el);
+                } else {
+                    checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+                }
             }
         })
         if (close) {
@@ -61,22 +97,25 @@ export const filterSum = () => {
         }
         inputs.forEach(input => {
             input.addEventListener('change', () => {
-                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+                if (!filterModalScreenWidthCheck()) {
+                    checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+                }
             });
             input.addEventListener('input', () => {
-                input.value = numberReplace(input.value);
-                checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+                if (!filterModalScreenWidthCheck()) {
+                    input.value = numberReplace(input.value);
+                    checkChangeTitle(el) ? changeTitleOne(el) : changeTitle(el);
+                }
             });
         })
     })
 
-    function changeTitle(el) {
+    function changeTitle(el, currentElMobile) {
         setTimeout(() => {
-            const itemActive = el.querySelector('.filter-dropdown__item.active');
+            const itemActive = !currentElMobile ? el.querySelector('.filter-dropdown__item.active') : document.querySelector('.filter-modal .filter-dropdown__item.active');
             const inputs = itemActive.querySelectorAll('.filter-range__nav input');
-            const buttonWrapper = el.querySelector('.filter-dropdown__button-wrapper');
+            const buttonWrapper = !currentElMobile ? el.querySelector('.filter-dropdown__button-wrapper') : currentElMobile.querySelector('.filter-dropdown__button-wrapper');
             let html = ``;
-
             if (inputs[0].value && inputs[1].value) {
                 if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                     html = `
@@ -126,12 +165,80 @@ export const filterSum = () => {
                     </div>
                 `;
                 }
+
+                if (currentElMobile) {
+                    if (currentElMobile.dataset.filterDropdownName === 'Цена' || currentElMobile.dataset.filterDropdownName === 'Сумма' || currentElMobile.dataset.filterDropdownName === 'Стоимость объекта') {
+                        html = `
+                        <div>
+                            ${currentElMobile.dataset.filterDropdownName}
+                        </div>
+                        <div>
+                           от ${convertSum(inputs[0].value)}
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                        до ${convertSum(inputs[1].value)}
+                        </div>
+                    `;
+                    }
+
+                    if (currentElMobile.dataset.filterDropdownName === 'Площадь' || currentElMobile.dataset.filterDropdownName === 'Площадь кухни') {
+                        html = `
+                    <div>
+                    ${currentElMobile.dataset.filterDropdownName}
+                    </div>
+                        <div>
+                           от ${inputs[0].value} м²
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                            до ${inputs[1].value} м²
+                        </div>
+                    `;
+                    }
+                    if (currentElMobile.dataset.filterDropdownName === 'Этаж') {
+                        html = `
+                    <div>
+                    ${currentElMobile.dataset.filterDropdownName}
+                </div>
+                        <div>
+                           от ${inputs[0].value} эт.
+                        </div>
+                        <div>
+                            -
+                        </div>
+                        <div>
+                            до ${inputs[1].value} эт.
+                        </div>
+                    `;
+                    }
+                }
+
+
                 buttonWrapper.classList.add('_active')
             } else {
-                html = `
-                <div>${el.dataset.filterDropdownName}</div>
-                <div>${el.dataset.filterDropdownSubtitle}</div>
-                `;
+                if (!filterModalScreenWidthCheck()) {
+                    html = `
+                    <div>${el.dataset.filterDropdownName}</div>
+                    <div>${el.dataset.filterDropdownSubtitle}</div>
+                    `;
+                } else {
+                    if (currentElMobile) {
+                        html = `
+                        <div>${currentElMobile.dataset.filterDropdownName}</div>
+                        <div>${currentElMobile.dataset.filterDropdownSubtitle}</div>
+                        `;
+                    } else {
+                        html = `
+                        <div>${el.dataset.filterDropdownName}</div>
+                        <div>${el.dataset.filterDropdownSubtitle}</div>
+                        `;
+                    }
+                }
                 buttonWrapper.classList.remove('_active')
             }
 
@@ -186,8 +293,8 @@ export const filterSum = () => {
         return result.replace('.0', '');
     }
 
-    function checkChangeTitle(container) {
-        return container.classList.contains('filter-dropdown--one');
+    function checkChangeTitle(container, currentContainer) {
+        return (container || currentContainer).classList.contains('filter-dropdown--one');
     }
 }
 
@@ -203,6 +310,26 @@ export const searchSelect = () => {
                 if (el !== container) el.classList.remove('_active')
             });
             container.classList.toggle('_active');
+            if (filterModalScreenWidthCheck() && container.classList.contains('_active')) {
+                const modalHTML = `
+                <div class="filter-modal">
+                    <div class="filter-modal__container">
+                        <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#x"></use>
+                            </svg>
+                            <span>Закрыть</span>
+                        </button>
+                        <div class="filter-modal__content">
+                        </div>
+                    </div>
+                </div>
+                `;
+                modal(modalHTML, '.filter-modal', 300,container);
+                const filterModal = document.querySelector('.filter-modal');
+                filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', container.querySelector('.search-select__dropdown'));
+             
+            }
         })
         document.addEventListener('click', (e) => {
             if (container.classList.contains('_active') && !e.target.closest('.search-select')) {
@@ -618,4 +745,9 @@ export const dropdownDefault = (containerEl, targetEl, dropdownEl) => {
         dropdown.classList.remove('_active');
         target.classList.remove('_active');
     }
+}
+
+
+function filterModalScreenWidthCheck() {
+    return window.innerWidth <= 1212;
 }
