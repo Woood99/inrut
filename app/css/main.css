@@ -9681,6 +9681,13 @@ textarea.input-reset {
     color: var(--white);
   }
 }
+@media (max-width: 1212px) {
+  .tag {
+    border-radius: 8px;
+    padding: 6px 14px;
+    height: 32px;
+  }
+}
 .tag._active {
   background-color: var(--blue);
   color: var(--white);
@@ -14097,6 +14104,11 @@ textarea.input-reset {
 .card-secondary__options .secondary-tooltip__content span {
   background-color: var(--white);
 }
+@media (max-width: 576px) {
+  .card-secondary__options {
+    margin-top: 0px;
+  }
+}
 .card-secondary__bottom {
   display: none;
   -webkit-box-align: center;
@@ -16247,13 +16259,13 @@ textarea.input-reset {
 .filter__btn {
   width: 100%;
   font-size: var(--default-fz);
-  line-height: var(--little-small-lh);
+  line-height: var(--default-lh);
   font-weight: 400;
   color: var(--gray);
   padding: 0 24px;
   height: 41px;
   background-color: transparent;
-  border: 1px solid var(--primary200);
+  border: 1px solid var(--primary300);
 }
 .filter__btn svg {
   --size: 20px;
@@ -16263,6 +16275,7 @@ textarea.input-reset {
   -ms-flex: 0 0 var(--size);
   flex: 0 0 var(--size);
   stroke: currentColor;
+  stroke-width: 1.5px;
   fill: none;
   margin-right: 10px;
 }
@@ -29563,7 +29576,7 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .buy-apartment__title {
-    padding: 0 45px 0 16px;
+    padding: 0 16px;
   }
 }
 .buy-apartment__filter {
@@ -29584,9 +29597,9 @@ textarea.input-reset {
   .buy-apartment__sort {
     margin-top: 8px;
     padding: 0 16px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
   }
 }
 .buy-apartment__cards-list {
@@ -29643,6 +29656,12 @@ textarea.input-reset {
 }
 .buy-apartment__tags {
   margin-top: 24px;
+}
+@media (max-width: 1212px) {
+  .buy-apartment__tag {
+    background-color: var(--white);
+    border: none;
+  }
 }
 @media (max-width: 768px) {
   .buy-apartment {

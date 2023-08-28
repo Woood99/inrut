@@ -11,7 +11,7 @@
 
     &__title {
         @media (max-width:$desktop) {
-            padding: 0 45px 0 $containerOffset+px;
+            padding: 0 $containerOffset+px;
         }
     }
 
@@ -32,7 +32,7 @@
         @media (max-width:$desktop) {
             margin-top: 8px;
             padding: 0 $containerOffset+px;
-            justify-content: center;
+            justify-content: start;
         }
     }
 
@@ -93,7 +93,12 @@
     &__tags {
         margin-top: 24px;
     }
-
+    &__tag{
+        @media (max-width:$desktop){
+             background-color: var(--white);
+             border: none; 
+        }
+    }
     @media (max-width:$smallTablet-max) {
         margin-bottom: 16px;
     }
