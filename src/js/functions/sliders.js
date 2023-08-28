@@ -88,13 +88,19 @@ function initSliders() {
         new Swiper(slider, {
             observer: true,
             observeParents: true,
-            allowTouchMove: false,
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 32,
             speed: 800,
             navigation: {
                 prevEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--prev'),
                 nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--next'),
+            },
+            breakpoints: {
+                1112: {
+                    slidesPerView: 2,
+                    spaceBetween: 32,
+                    allowTouchMove: false,
+                },
             },
         });
     }
