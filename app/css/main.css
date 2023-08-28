@@ -23779,11 +23779,6 @@ textarea.input-reset {
   }
 }
 @media (max-width: 1212px) {
-  .header-top__authorization {
-    margin-left: auto;
-  }
-}
-@media (max-width: 1212px) {
   .header-top {
     background-color: var(--white);
     -webkit-box-shadow: none;
@@ -23960,6 +23955,11 @@ textarea.input-reset {
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
   font-weight: 500;
+}
+@media (max-width: 1212px) {
+  .header-authorization__name {
+    display: none;
+  }
 }
 
 .header-main__container {
@@ -24611,13 +24611,29 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .home-services__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 4px -16px;
+    padding: 4px 16px;
     grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    scrollbar-width: none;
+  }
+  .home-services__list::-webkit-scrollbar {
+    display: none;
   }
 }
 .home-services__item--big {
   -ms-grid-column-span: 2;
   grid-column: 2 span;
+}
+@media (max-width: 1212px) {
+  .home-services__item {
+    min-width: 175px;
+  }
 }
 .home-services__login {
   border-radius: 12px;
@@ -24743,6 +24759,12 @@ textarea.input-reset {
   width: 40px;
   height: 40px;
 }
+@media (max-width: 1212px) {
+  .service-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+}
 .service-card__title {
   margin-top: 16px;
 }
@@ -24769,6 +24791,11 @@ textarea.input-reset {
     -webkit-transform: translateY(-3px);
     -ms-transform: translateY(-3px);
     transform: translateY(-3px);
+  }
+}
+@media (max-width: 1212px) {
+  .service-card {
+    padding: 16px;
   }
 }
 
@@ -25112,8 +25139,8 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .home-price__more {
-    width: calc(100% - 32px);
-    margin: 16px 16px 0;
+    margin-top: 16px;
+    width: 100%;
   }
 }
 .home-price__nav {
@@ -25198,8 +25225,8 @@ textarea.input-reset {
 }
 @media (max-width: 768px) {
   .home-spec__more {
-    margin: 16px 16px 0;
-    width: calc(100% - 32px);
+    margin-top: 16px;
+    width: 100%;
   }
 }
 .home-spec__nav {

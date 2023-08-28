@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bookConsultation();
     scrollDrag('.object-location__infrastructure', 1000, true);
     scrollDrag('.buy-apartment__tags', 1000, 1180);
+    scrollDrag('.home-services__list', 1000, 1180);
     recordViewing();
     recordViewingTwo();
     wallet();

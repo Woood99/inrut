@@ -4319,6 +4319,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000, true);
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.buy-apartment__tags', 1000, 1180);
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.home-services__list', 1000, 1180);
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewing)();
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewingTwo)();
   (0,_components_wallet__WEBPACK_IMPORTED_MODULE_33__["default"])();

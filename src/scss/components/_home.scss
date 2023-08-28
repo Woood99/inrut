@@ -205,14 +205,22 @@
         grid-column-gap: 24px;
         grid-row-gap: 24px;
         @media (max-width:$desktop){
-            grid-column-gap: 16px;
-            grid-row-gap: 16px; 
+           display: flex;
+           flex-wrap: nowrap;
+           overflow-x: auto;
+           margin: 4px -16px;
+           padding: 4px 16px;
+           grid-column-gap: 16px;
+           @include hiddenScroll;
         }
     }
 
     &__item {
         &--big {
             grid-column: 2 span;
+        }
+        @media (max-width:$desktop){
+             min-width: 175px; 
         }
     }
 
@@ -325,6 +333,10 @@
     &__icon {
         width: 40px;
         height: 40px;
+        @media (max-width:$desktop){
+             width: 36px;
+             height: 36px; 
+        }
     }
 
     &__title {
@@ -349,6 +361,9 @@
             box-shadow: var(--shadow-secondary);
             transform: translateY(-3px);
         }
+    }
+    @media (max-width:$desktop){
+         padding: 16px; 
     }
 }
 
@@ -669,8 +684,8 @@
         padding: 0 16px;
 
         @media (max-width:$smallTablet-max) {
-            width: calc(100% - 32px);
-            margin: 16px 16px 0;
+        margin-top: 16px;
+        width: 100%;
         }
     }
 
@@ -753,8 +768,8 @@
         padding: 0 16px;
 
         @media (max-width:$smallTablet-max){
-            margin: 16px 16px 0;
-            width: calc(100% - 32px); 
+          margin-top: 16px;
+            width: 100%;
        }
     }
 
