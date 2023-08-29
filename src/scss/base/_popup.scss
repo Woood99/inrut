@@ -146,6 +146,11 @@
                 border-radius: 12px 0 0 12px;
                 padding: 65px 48px 48px;
                 width: 400px;
+                @media (max-width:$desktop) {
+                    border-radius: 0;
+                    padding: 64px 16px;
+                    width: 100%;
+                }
             }
         }
     }
@@ -3000,7 +3005,7 @@
         border-radius: 12px 12px 0 0;
         padding: 65px 16px 32px;
         width: 100%;
-        min-height: calc(var(--vh)/2.25);
+        min-height: 190px;
     }
 
     &__close {

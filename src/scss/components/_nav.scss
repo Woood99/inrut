@@ -257,7 +257,9 @@
 
             &:nth-child(2) {
                 transition: color $transitionSpeed $transitionFunction;
-                text-decoration: underline;
+             @media (max-width:$desktop){
+                text-decoration: underline; 
+             }
             }
 
             &:nth-child(3) {
