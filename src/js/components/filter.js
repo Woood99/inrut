@@ -61,7 +61,7 @@ export const filterSum = () => {
                         </div>
                     </div>
                     `;
-                    modal(modalHTML, '.filter-modal', 300,el);
+                    modal(modalHTML, '.filter-modal', 300,el,el.dataset.modalScroll);
                     const filterModal = document.querySelector('.filter-modal');
                     filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', el.querySelector('.filter-dropdown__dropdown'));
                     const currentEl = filterModal.querySelector('.filter-dropdown__dropdown');
@@ -325,7 +325,7 @@ export const searchSelect = () => {
                     </div>
                 </div>
                 `;
-                modal(modalHTML, '.filter-modal', 300,container);
+                modal(modalHTML, '.filter-modal', 300,container,container.dataset.modalScroll);
                 const filterModal = document.querySelector('.filter-modal');
                 filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', container.querySelector('.search-select__dropdown'));
              
@@ -570,9 +570,33 @@ export const filterCustomSelectCheckboxes = () => {
         const close = item.querySelector('.select-dropdown-checkbox__close');
         btn.addEventListener('click', () => {
             item.classList.toggle('_active');
+            
+        if (window.innerWidth <= mobileWidth) {
+            const modalHTML = `
+            <div class="filter-modal">
+                <div class="filter-modal__container">
+                    <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#x"></use>
+                        </svg>
+                        <span>Закрыть</span>
+                    </button>
+                    <div class="filter-modal__content">
+                        <div class="select-dropdown-checkbox"></div>
+                    </div>
+                </div>
+            </div>
+            `;
+            modal(modalHTML, '.filter-modal', 300, item,item.dataset.modalScroll);
+            const filterModal = document.querySelector('.filter-modal');
+
+            filterModal.querySelector('.select-dropdown-checkbox').insertAdjacentElement('beforeend', item.querySelector('.select-dropdown-checkbox__dropdown'));
+
+
+        }
         });
         document.addEventListener('click', (e) => {
-            if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox')) {
+            if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox') && !e.target.closest('.filter-modal__container')) {
                 item.classList.remove('_active');
             }
         })
@@ -581,6 +605,7 @@ export const filterCustomSelectCheckboxes = () => {
                 item.classList.remove('_active');
             });
         }
+        const mobileWidth = 1212;
         const dropdownContainerList = item.querySelector('.select-dropdown-checkbox__dropdown div');
         const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
         const cash = item.querySelector('[data-name="cash"]');

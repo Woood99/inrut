@@ -213,6 +213,17 @@
             opacity: 1;
             visibility: visible;
         }
+        @media (max-width:$desktop){
+            display: none;
+             border-radius: 0;
+             position: static;
+             border: none;
+             box-shadow: none;
+             margin: 0;
+             transform: translate(0);
+             opacity: 1;
+             visibility: visible; 
+        }
     }
 
     .choices__list--single {
@@ -593,6 +604,9 @@
                     cursor: default;
                 }
             }
+        }
+        @media (max-width:$desktop){
+            display: none;
         }
     }
 

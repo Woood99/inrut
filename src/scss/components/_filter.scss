@@ -640,7 +640,7 @@
             width: 20px;
             height: 20px;
             fill: var(--gray);
-            transition: transform $transitionSpeed $transitionFunction;
+            transition: transform $transitionSpeedFast $transitionFunction;
         }
 
         @media (min-width:$desktop-min) {
@@ -680,6 +680,9 @@
                     fill: var(--primary500);
                 }
             }
+        }
+        @media (max-width:$desktop){
+             display: none; 
         }
     }
 
@@ -790,6 +793,16 @@
         @media (max-width:$desktop) {
             width: 100%;
             border-radius: 0 0 12px 12px;
+            display: none;
+            position: static;
+            box-shadow: none;
+            border: none;
+            transform: translate(0);
+            opacity: 1;
+            visibility: visible;
+            border-radius: 0;
+            padding: 0;
+            margin: 0;
         }
     }
 
@@ -798,7 +811,7 @@
             &__button {
 
                 svg {
-                    transform: rotate(180deg);
+                    transform: rotate(-180deg);
                 }
             }
 

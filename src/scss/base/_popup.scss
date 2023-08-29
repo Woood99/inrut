@@ -132,8 +132,9 @@
 
             &__close {
                 transform: translateX(56px);
-                @media (max-width:$desktop){
-                     transform: translateX(0); 
+
+                @media (max-width:$desktop) {
+                    transform: translateX(0);
                 }
             }
         }
@@ -2957,6 +2958,7 @@
     }
 
 }
+
 .filter-modal {
     --transition-time: 0.3s;
     position: fixed;
@@ -2974,6 +2976,7 @@
     text-align: center;
     display: flex;
     align-items: end;
+
     &.is-open {
         opacity: 1;
         visibility: visible;
@@ -2996,7 +2999,7 @@
         margin: 0 auto;
         border-radius: 12px 12px 0 0;
         padding: 65px 24px 32px;
-       width: 100%;
+        width: 100%;
     }
 
     &__close {
@@ -3060,14 +3063,47 @@
         grid-row-gap: 16px;
     }
 
-    .filter-dropdown{
-        &__dropdown{
+    .filter-dropdown {
+        &__dropdown {
             display: block;
         }
     }
-    .search-select{
-        &__dropdown{
+
+    .search-select {
+        &__dropdown {
             display: block;
+        }
+    }
+
+    .select-secondary {
+        .choices__list {
+            position: static;
+            visibility: visible;
+            border: none;
+            margin: 0;
+        }
+
+        .choices__list--dropdown {
+            border: none;
+            box-shadow: none;
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            position: static;
+            display: block;
+        }
+    }
+    .select-dropdown-checkbox {
+        &__dropdown{
+            display: flex;
+        }
+    }
+    .select-sort{
+        .choices__list--dropdown {
+display: block;
         }
     }
 }
@@ -4570,23 +4606,26 @@
             padding: calc(46px + 16px) 16px 24px;
         }
     }
-    &__top{
+
+    &__top {
         position: sticky;
         top: 0;
         right: 0;
         z-index: 10;
         margin-left: auto;
+
         @media (max-width:$desktop) {
-          position: fixed;
-          left: 0;
-          margin-left: 0;
-          width: 100%;
-          right: auto;
-          box-shadow: var(--shadow-secondary);
-          background-color: var(--white);
-          padding: 8px 16px;
+            position: fixed;
+            left: 0;
+            margin-left: 0;
+            width: 100%;
+            right: auto;
+            box-shadow: var(--shadow-secondary);
+            background-color: var(--white);
+            padding: 8px 16px;
         }
     }
+
     &__close {
         border: none;
         padding: 0;
@@ -4599,6 +4638,7 @@
         align-items: center;
         justify-content: center;
         margin-left: auto;
+
         svg {
             width: 20px;
             height: 20px;
@@ -4614,9 +4654,8 @@
                 }
             }
         }
-        @media (max-width:$desktop){
-        
-        }
+
+        @media (max-width:$desktop) {}
     }
 
     &__content {}

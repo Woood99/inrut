@@ -2,7 +2,7 @@ import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 
 
-const modal = (modalHTML, container, speed = 300, target = false) => {
+const modal = (modalHTML, container, speed = 300, target = false, closeScroll = 'true') => {
     if (document.querySelectorAll(container).length <= 0 && modalHTML) {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         const modalEl = document.querySelector(container);
@@ -64,6 +64,9 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             if (e.target.classList.contains(container.replace(/^\./, ""))) {
                 modalClose(settingsModal);
             }
+            if (e.target.closest('.choices__item')) {
+                modalClose(settingsModal);
+            }
         })
         window.addEventListener('keydown', (e) => {
             if (e.keyCode == 27) {
@@ -78,22 +81,22 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
             settingsModal.container.classList.remove(settingsModal.animation);
             settingsModal.modal.classList.remove('is-open');
             settingsModal.container.classList.remove('open');
-            if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
-                if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
-                    if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
-                        if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
-                            enableScrollClose();
-                        }
-                    }
-                } else {
-                    if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
-                        if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
-                            if (!settingsModal.modal.classList.contains('filter-modal')) {
-                            enableScrollClose();
-                            }
-                        }
-                    }
-                }
+            // if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
+            //     if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
+            //         if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
+            //             if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
+            //                 enableScrollClose();
+            //             }
+            //         }
+            //     } else {
+            //         if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
+            //             enableScrollClose();
+            //         }
+            //     }
+            // }
+
+            if (closeScroll === 'true') {
+                enableScrollClose();
             }
 
             function enableScrollClose() {
@@ -104,8 +107,12 @@ const modal = (modalHTML, container, speed = 300, target = false) => {
 
             setTimeout(() => {
                 if (settingsModal.modal.classList.contains('filter-modal')) {
-                        target.classList.remove('active');
-                    target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+                    target.classList.remove('active');
+                    if (settingsModal.modal.classList.contains('filter-modal--select-sort')) {
+                        target.querySelector('.choices').insertAdjacentElement('beforeend', settingsModal.container.querySelector('.select-sort').children[0]);
+                    } else {
+                        target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+                    }
                 }
                 settingsModal.modal.remove();
             }, settingsModal.speed);

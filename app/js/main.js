@@ -5572,6 +5572,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.js");
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(choices_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
+
 
 const choicesSelect = () => {
   const selectPrimary = document.querySelectorAll('.select-primary__body');
@@ -5587,12 +5589,43 @@ const choicesSelect = () => {
   }
   const selectSort = document.querySelectorAll('.select-sort__body');
   if (selectSort.length >= 1) {
+    const mobileWidth = 1212;
     selectSort.forEach(el => {
       const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
         searchEnabled: false,
         shouldSort: false,
         itemSelectText: '',
         position: 'bottom'
+      });
+      el.addEventListener('showDropdown', () => {
+        if (window.innerWidth <= mobileWidth) {
+          const modalHTML = `
+                    <div class="filter-modal filter-modal--select-sort">
+                        <div class="filter-modal__container">
+                            <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                                <span>Закрыть</span>
+                            </button>
+                            <div class="filter-modal__content">
+                                <div class="select-sort"></div>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+          (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(modalHTML, '.filter-modal', 300, el.closest('.select-sort'), el.closest('.select-sort').dataset.modalScroll);
+          const filterModal = document.querySelector('.filter-modal');
+          const dropdown = choices.dropdown.element;
+          filterModal.querySelector('.select-sort').insertAdjacentElement('beforeend', dropdown);
+          const items = filterModal.querySelectorAll('.choices__item');
+          items.forEach(item => {
+            item.addEventListener('click', () => {
+              choices.setChoiceByValue(item.dataset.value);
+              choices.hideDropdown();
+            });
+          });
+        }
       });
     });
   }
@@ -5643,6 +5676,7 @@ const choicesSelect = () => {
   }
   const selectSecondary = document.querySelectorAll('.select-secondary__body');
   if (selectSecondary.length >= 1) {
+    const mobileWidth = 1212;
     selectSecondary.forEach(el => {
       const choices = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(el, {
         searchEnabled: false,
@@ -5653,11 +5687,37 @@ const choicesSelect = () => {
       });
       const wrapper = el.closest('.select-secondary');
       el.addEventListener('change', () => {
-        if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
-          el.closest('.select-secondary').classList.add('_selected');
-          wrapper.classList.remove('_hover');
-        } else {
-          el.closest('.select-secondary').classList.remove('_selected');
+        checkCloseSelected();
+      });
+      el.addEventListener('showDropdown', () => {
+        if (window.innerWidth <= mobileWidth) {
+          const modalHTML = `
+                    <div class="filter-modal">
+                        <div class="filter-modal__container">
+                            <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                                <span>Закрыть</span>
+                            </button>
+                            <div class="filter-modal__content">
+                                <div class="select-secondary"></div>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+          (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(modalHTML, '.filter-modal', 300, wrapper, wrapper.dataset.modalScroll);
+          const filterModal = document.querySelector('.filter-modal');
+          const dropdown = choices.dropdown.element;
+          filterModal.querySelector('.select-secondary').insertAdjacentElement('beforeend', dropdown);
+          const items = filterModal.querySelectorAll('.choices__item');
+          items.forEach(item => {
+            item.addEventListener('click', () => {
+              choices.setChoiceByValue(item.dataset.value);
+              checkCloseSelected();
+              choices.hideDropdown();
+            });
+          });
         }
       });
       wrapper.addEventListener('mouseover', e => {
@@ -5668,6 +5728,14 @@ const choicesSelect = () => {
       wrapper.addEventListener('mouseout', () => {
         wrapper.classList.remove('_hover');
       });
+      function checkCloseSelected() {
+        if (!el.nextElementSibling.querySelector('.choices__item').classList.contains('choices__placeholder')) {
+          el.closest('.select-secondary').classList.add('_selected');
+          wrapper.classList.remove('_hover');
+        } else {
+          el.closest('.select-secondary').classList.remove('_selected');
+        }
+      }
     });
   }
 };
@@ -6171,7 +6239,7 @@ const filterSum = () => {
                         </div>
                     </div>
                     `;
-          (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, el);
+          (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, el, el.dataset.modalScroll);
           const filterModal = document.querySelector('.filter-modal');
           filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', el.querySelector('.filter-dropdown__dropdown'));
           const currentEl = filterModal.querySelector('.filter-dropdown__dropdown');
@@ -6421,7 +6489,7 @@ const searchSelect = () => {
                     </div>
                 </div>
                 `;
-        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, container);
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, container, container.dataset.modalScroll);
         const filterModal = document.querySelector('.filter-modal');
         filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', container.querySelector('.search-select__dropdown'));
       }
@@ -6648,9 +6716,29 @@ const filterCustomSelectCheckboxes = () => {
     const close = item.querySelector('.select-dropdown-checkbox__close');
     btn.addEventListener('click', () => {
       item.classList.toggle('_active');
+      if (window.innerWidth <= mobileWidth) {
+        const modalHTML = `
+            <div class="filter-modal">
+                <div class="filter-modal__container">
+                    <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#x"></use>
+                        </svg>
+                        <span>Закрыть</span>
+                    </button>
+                    <div class="filter-modal__content">
+                        <div class="select-dropdown-checkbox"></div>
+                    </div>
+                </div>
+            </div>
+            `;
+        (0,_modules_modal__WEBPACK_IMPORTED_MODULE_6__["default"])(modalHTML, '.filter-modal', 300, item, item.dataset.modalScroll);
+        const filterModal = document.querySelector('.filter-modal');
+        filterModal.querySelector('.select-dropdown-checkbox').insertAdjacentElement('beforeend', item.querySelector('.select-dropdown-checkbox__dropdown'));
+      }
     });
     document.addEventListener('click', e => {
-      if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox')) {
+      if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox') && !e.target.closest('.filter-modal__container')) {
         item.classList.remove('_active');
       }
     });
@@ -6659,6 +6747,7 @@ const filterCustomSelectCheckboxes = () => {
         item.classList.remove('_active');
       });
     }
+    const mobileWidth = 1212;
     const dropdownContainerList = item.querySelector('.select-dropdown-checkbox__dropdown div');
     const checkboxes = item.querySelectorAll('.checkbox-secondary__input');
     const cash = item.querySelector('[data-name="cash"]');
@@ -11765,6 +11854,7 @@ __webpack_require__.r(__webpack_exports__);
 const modal = function (modalHTML, container) {
   let speed = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
   let target = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  let closeScroll = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'true';
   if (document.querySelectorAll(container).length <= 0 && modalHTML) {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     const modalEl = document.querySelector(container);
@@ -11825,6 +11915,9 @@ const modal = function (modalHTML, container) {
       if (e.target.classList.contains(container.replace(/^\./, ""))) {
         modalClose(settingsModal);
       }
+      if (e.target.closest('.choices__item')) {
+        modalClose(settingsModal);
+      }
     });
     window.addEventListener('keydown', e => {
       if (e.keyCode == 27) {
@@ -11838,22 +11931,22 @@ const modal = function (modalHTML, container) {
       settingsModal.container.classList.remove(settingsModal.animation);
       settingsModal.modal.classList.remove('is-open');
       settingsModal.container.classList.remove('open');
-      if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
-        if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
-          if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
-            if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
-              enableScrollClose();
-            }
-          }
-        } else {
-          if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
-            if (!(document.querySelector('.popup-primary--stock-offers-popup') && document.querySelector('.popup-primary--stock-offers-popup').classList.contains('is-open'))) {
-              if (!settingsModal.modal.classList.contains('filter-modal')) {
-                enableScrollClose();
-              }
-            }
-          }
-        }
+      // if (!settingsModal.modal.classList.contains('checkboard-popup-card') && !settingsModal.modal.classList.contains('genplan-popup-card')) {
+      //     if (settingsModal.modal.classList.contains('video-modal') && document.querySelector('.popup-primary--videos-popup')) {
+      //         if (!document.querySelector('.popup-primary--videos-popup').classList.contains('is-open')) {
+      //             if (!document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open')) {
+      //                 enableScrollClose();
+      //             }
+      //         }
+      //     } else {
+      //         if (!(document.querySelector('.popup-primary--record-viewing-two') && document.querySelector('.popup-primary--record-viewing-two').classList.contains('is-open'))) {
+      //             enableScrollClose();
+      //         }
+      //     }
+      // }
+
+      if (closeScroll === 'true') {
+        enableScrollClose();
       }
       function enableScrollClose() {
         (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
@@ -11863,7 +11956,11 @@ const modal = function (modalHTML, container) {
       setTimeout(() => {
         if (settingsModal.modal.classList.contains('filter-modal')) {
           target.classList.remove('active');
-          target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+          if (settingsModal.modal.classList.contains('filter-modal--select-sort')) {
+            target.querySelector('.choices').insertAdjacentElement('beforeend', settingsModal.container.querySelector('.select-sort').children[0]);
+          } else {
+            target.insertAdjacentElement('beforeend', settingsModal.container.querySelector('.filter-modal__content').children[0]);
+          }
         }
         settingsModal.modal.remove();
       }, settingsModal.speed);
