@@ -519,6 +519,12 @@
             display: flex;
             align-items: center;
         }
+
+        @media (max-width:$tablet-max){
+            .card-primary__info--favorite{
+                display: none;
+            }
+        }
     }
 
     .card-primary__info--favorite-dropdown {
@@ -623,7 +629,11 @@
         }
     }
 
-    &__name {}
+    &__name {
+        @media (max-width:$tablet-max){
+            grid-column: 1/2;
+        }
+    }
 
     &__address {
         margin-top: 5px;
@@ -643,6 +653,9 @@
 
             display: block;
             color: var(--primary600)
+        }
+        @media (max-width:$tablet-max){
+            grid-column: 1/2;
         }
     }
 
