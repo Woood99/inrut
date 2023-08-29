@@ -10474,7 +10474,7 @@ function initSliders() {
     new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
       observer: true,
       observeParents: true,
-      slidesPerView: 1.1,
+      slidesPerView: 1.07,
       spaceBetween: 16,
       autoHeight: true,
       speed: 800,

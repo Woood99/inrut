@@ -54,9 +54,9 @@
             transition: width $transitionSpeed $transitionFunction;
         }
         &-arrow {
-            width: 10px;
-            height: 5px;
-            fill: var(--primaryTwo);
+            width: 12px;
+            height: 12px;
+            fill: var(--blue);
             margin-left: auto;
 
             @media (min-width:$desktop) {
@@ -257,6 +257,7 @@
 
             &:nth-child(2) {
                 transition: color $transitionSpeed $transitionFunction;
+                text-decoration: underline;
             }
 
             &:nth-child(3) {
@@ -293,7 +294,7 @@
     @media (max-width:$desktop) {
         flex-direction: column;
         margin: 0;
-        padding: 0 calc(24px + 16px) 0;
+        padding: 0 16px 0;
         max-width: none;
     }
 }
