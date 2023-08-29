@@ -9418,6 +9418,7 @@ textarea.input-reset {
   padding: 24px 24px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  border: 1px solid transparent;
 }
 .card-agent__wrapper {
   width: 100%;
@@ -9558,6 +9559,13 @@ textarea.input-reset {
   margin-left: 5px;
 }
 @media (min-width: 1213px) {
+  .card-agent {
+    -webkit-transition: border 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+    -o-transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+  }
   .card-agent:hover {
     border: 1px solid var(--blue);
     -webkit-box-shadow: none;
