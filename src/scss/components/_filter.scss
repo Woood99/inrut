@@ -448,6 +448,11 @@
                         stroke: var(--primaryTwo);
                     }
                 }
+                &__range{
+                    @media (max-width:$desktop){
+                         border: 1px solid var(--blue); 
+                    }
+                }
             }
         }
 
@@ -503,11 +508,17 @@
 
     &__checkbox {
         flex: 0 0 16px;
+        @media (max-width:$desktop){
+             display: none; 
+        }
     }
 
     &__range {
         width: 100%;
         transition: opacity $transitionSpeed $transitionFunction;
+        @media (max-width:$desktop){
+             grid-column: 1/3; 
+        }
     }
 
     &--improved {
@@ -765,7 +776,11 @@
                     }
                 }
             }
-
+            &__label{
+                &::before,&::after{
+                    flex: 0 0 16px;
+                }
+            }
             .secondary-tooltip {
                 margin-left: 6px;
                 width: 18px;
@@ -782,6 +797,9 @@
                     min-width: 85px;
                     left: 20px;
                     padding: 12px;
+                }
+                @media (max-width:$smallTablet-max){
+                     display: none; 
                 }
             }
 
@@ -880,7 +898,12 @@
                 height: 100%;
 
                 &::placeholder {
-                    opacity: 0.8;
+                  opacity: 1;
+                }
+                @media (min-width:$desktop-min){
+                     &::placeholder{
+                        opacity: 0;
+                     } 
                 }
             }
 
@@ -906,6 +929,9 @@
 
             >span {
                 margin-right: 0;
+                @media (max-width:$desktop){
+                     display: none; 
+                }
             }
         }
 
