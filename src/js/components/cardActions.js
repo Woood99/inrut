@@ -31,6 +31,27 @@ export const cardSecondaryActions = () => {
         })
 
     })
+
+    favoriteMobile();
+    window.addEventListener('resize', favoriteMobile);
+
+    function favoriteMobile() {
+        cards.forEach(card => {
+            if (window.innerWidth <= 1024) {
+                const favorite = card.querySelector('.card-secondary__info--favorite');
+                const path = card.querySelector('.card-secondary__content');
+                if (favorite && path) {
+                    path.insertAdjacentElement('afterbegin', favorite);
+                }
+            } else {
+                const favorite = card.querySelector('.card-secondary__info--favorite');
+                const path = card.querySelector('.card-secondary__info--btns-right');
+                if (favorite && path) {
+                    path.insertAdjacentElement('afterbegin', favorite);
+                }
+            }
+        })
+    }
 };
 export const cardPrimaryActions = () => {
     const cards = document.querySelectorAll('.card-primary');
@@ -56,8 +77,28 @@ export const cardPrimaryActions = () => {
                 });
             }
         })
-
     })
+
+    favoriteMobile();
+    window.addEventListener('resize', favoriteMobile);
+
+    function favoriteMobile() {
+        cards.forEach(card => {
+            if (window.innerWidth <= 1024) {
+                const favorite = card.querySelector('.card-primary__info--favorite');
+                const path = card.querySelector('.card-primary__content');
+                if (favorite && path) {
+                    path.insertAdjacentElement('afterbegin', favorite);
+                }
+            } else {
+                const favorite = card.querySelector('.card-primary__info--favorite');
+                const path = card.querySelector('.card-primary__info--btns-right');
+                if (favorite && path) {
+                    path.insertAdjacentElement('afterbegin', favorite);
+                }
+            }
+        })
+    }
 };
 
 
@@ -92,18 +133,19 @@ function cardSliderMobile(cardImageWrapper, imagesBody, cardItems) {
     let slider;
     body();
     window.addEventListener('resize', body);
+
     function body() {
         if (window.innerWidth <= 1024) {
             if (!cardImageWrapper.classList.contains('swiper-initialized')) {
                 cardImageWrapper.classList.add('swiper');
                 imagesBody.classList.add('swiper-wrapper');
                 cardItems.forEach(item => item.classList.add('swiper-slide'));
-    
+
                 slider = new Swiper(cardImageWrapper, {
                     observer: true,
                     observeParents: true,
                     autoHeight: true,
-                    slidesPerView: 1.2,
+                    slidesPerView: 1.12,
                     spaceBetween: 8,
                     speed: 800,
                     breakpoints: {

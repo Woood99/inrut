@@ -413,7 +413,10 @@
                 transition:
                     fill $transitionSpeed $transitionFunction;
             }
-
+            @media (max-width:$tablet-max){
+                grid-column: 2/3;
+                grid-row: 1/3;
+            }
             @media (min-width:$desktop-min) {
                 &:hover {
                     stroke: var(--blue);
@@ -549,7 +552,11 @@
 
     &__content {
         padding: 20px 24px 16px;
-
+        @media (max-width:$tablet-max){
+            display: grid;
+            grid-template-columns: 1fr 30px;
+            grid-column-gap: 16px;
+        }
         @media (max-width:$smallTablet-max) {
             padding: 16px;
         }
@@ -557,6 +564,9 @@
 
     &__price {
         margin-top: 24px;
+        @media (max-width:$tablet-max){
+            grid-column: 1/3;
+        }
     }
 
     &__price-old {

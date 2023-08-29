@@ -4928,6 +4928,25 @@ const cardSecondaryActions = () => {
       }
     });
   });
+  favoriteMobile();
+  window.addEventListener('resize', favoriteMobile);
+  function favoriteMobile() {
+    cards.forEach(card => {
+      if (window.innerWidth <= 1024) {
+        const favorite = card.querySelector('.card-secondary__info--favorite');
+        const path = card.querySelector('.card-secondary__content');
+        if (favorite && path) {
+          path.insertAdjacentElement('afterbegin', favorite);
+        }
+      } else {
+        const favorite = card.querySelector('.card-secondary__info--favorite');
+        const path = card.querySelector('.card-secondary__info--btns-right');
+        if (favorite && path) {
+          path.insertAdjacentElement('afterbegin', favorite);
+        }
+      }
+    });
+  }
 };
 const cardPrimaryActions = () => {
   const cards = document.querySelectorAll('.card-primary');
@@ -4953,6 +4972,25 @@ const cardPrimaryActions = () => {
       }
     });
   });
+  favoriteMobile();
+  window.addEventListener('resize', favoriteMobile);
+  function favoriteMobile() {
+    cards.forEach(card => {
+      if (window.innerWidth <= 1024) {
+        const favorite = card.querySelector('.card-primary__info--favorite');
+        const path = card.querySelector('.card-primary__content');
+        if (favorite && path) {
+          path.insertAdjacentElement('afterbegin', favorite);
+        }
+      } else {
+        const favorite = card.querySelector('.card-primary__info--favorite');
+        const path = card.querySelector('.card-primary__info--btns-right');
+        if (favorite && path) {
+          path.insertAdjacentElement('afterbegin', favorite);
+        }
+      }
+    });
+  }
 };
 function cardImageSwitch(card, imageSwitchItems, imagePagination) {
   if (window.innerWidth <= 1024) return;
@@ -4992,7 +5030,7 @@ function cardSliderMobile(cardImageWrapper, imagesBody, cardItems) {
           observer: true,
           observeParents: true,
           autoHeight: true,
-          slidesPerView: 1.2,
+          slidesPerView: 1.12,
           spaceBetween: 8,
           speed: 800,
           breakpoints: {
@@ -10537,10 +10575,10 @@ function initSliders() {
           nextEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--next')
         },
         breakpoints: {
-          577: {
+          769: {
             slidesPerView: 2
           },
-          1113: {
+          1213: {
             slidesPerView: 3
           }
         }
@@ -10568,7 +10606,7 @@ function initSliders() {
           769: {
             slidesPerView: 2.4
           },
-          1113: {
+          1213: {
             slidesPerView: 2
           }
         }
@@ -10613,7 +10651,7 @@ function initSliders() {
                   769: {
                     slidesPerView: 2.4
                   },
-                  1113: {
+                  1213: {
                     slidesPerView: 2
                   }
                 }
@@ -10665,7 +10703,7 @@ function initSliders() {
           769: {
             slidesPerView: 2.4
           },
-          1113: {
+          1213: {
             slidesPerView: 2
           }
         }
@@ -10692,7 +10730,7 @@ function initSliders() {
           769: {
             slidesPerView: 2.4
           },
-          1113: {
+          1213: {
             slidesPerView: 2
           }
         }
@@ -10846,7 +10884,7 @@ function initSliders() {
           769: {
             slidesPerView: 2.4
           },
-          1113: {
+          1213: {
             slidesPerView: 2
           }
         }
@@ -10892,7 +10930,7 @@ function initSliders() {
                   769: {
                     slidesPerView: 2.4
                   },
-                  1113: {
+                  1213: {
                     slidesPerView: 2
                   }
                 }
@@ -10951,7 +10989,7 @@ function initSliders() {
             slidesPerView: 2.6,
             spaceBetween: 16
           },
-          1113: {
+          1213: {
             slidesPerView: 3,
             spaceBetween: 16
           }

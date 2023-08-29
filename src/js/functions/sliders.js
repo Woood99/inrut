@@ -257,10 +257,10 @@ function initSliders() {
                     nextEl: el.closest('.object-similar').querySelector('.nav-arrow-secondary--next'),
                 },
                 breakpoints: {
-                    577: {
+                    769: {
                         slidesPerView: 2,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 3,
                     }
                 },
@@ -289,7 +289,7 @@ function initSliders() {
                     769: {
                         slidesPerView: 2.4,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 2,
                     }
                 },
@@ -335,7 +335,7 @@ function initSliders() {
                                     769: {
                                         slidesPerView: 2.4,
                                     },
-                                    1113: {
+                                    1213: {
                                         slidesPerView: 2,
                                     }
                                 },
@@ -387,7 +387,7 @@ function initSliders() {
                     769: {
                         slidesPerView: 2.4,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 2,
                     }
                 },
@@ -414,7 +414,7 @@ function initSliders() {
                     769: {
                         slidesPerView: 2.4,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 2,
                     }
                 },
@@ -572,7 +572,7 @@ function initSliders() {
                     769: {
                         slidesPerView: 2.4,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 2,
                     }
                 },
@@ -619,7 +619,7 @@ function initSliders() {
                                     769: {
                                         slidesPerView: 2.4,
                                     },
-                                    1113: {
+                                    1213: {
                                         slidesPerView: 2,
                                     }
                                 },
@@ -682,7 +682,7 @@ function initSliders() {
                         slidesPerView: 2.6,
                         spaceBetween: 16,
                     },
-                    1113: {
+                    1213: {
                         slidesPerView: 3,
                         spaceBetween: 16,
                     }
