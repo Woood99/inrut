@@ -11854,7 +11854,6 @@ __webpack_require__.r(__webpack_exports__);
 const modal = function (modalHTML, container) {
   let speed = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
   let target = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  let closeScroll = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'true';
   if (document.querySelectorAll(container).length <= 0 && modalHTML) {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     const modalEl = document.querySelector(container);
@@ -11869,7 +11868,8 @@ const modal = function (modalHTML, container) {
       container: modalContainerEl,
       isOpen: false,
       speed: speed,
-      animation: 'fade'
+      animation: 'fade',
+      scrollValue: document.querySelector('.page__body').classList.contains('dis-scroll') ? true : false
     };
     setTimeout(() => {
       modalOpen(settingsModal);
@@ -11945,10 +11945,7 @@ const modal = function (modalHTML, container) {
       //     }
       // }
 
-      if (closeScroll === 'true') {
-        enableScrollClose();
-      }
-      function enableScrollClose() {
+      if (!settingsModal.scrollValue) {
         (0,_modules_enableScroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
         document.body.style.scrollBehavior = 'auto';
         document.documentElement.style.scrollBehavior = 'auto';
@@ -11983,9 +11980,11 @@ const modal = function (modalHTML, container) {
       settingsModal.container.scrollTo(0, 0);
       settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
       settingsModal.modal.classList.add('is-open');
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
-      (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      if (!settingsModal.scrollValue) {
+        document.body.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = 'auto';
+        (0,_modules_disableScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      }
       settingsModal.container.classList.add('open');
       settingsModal.container.classList.add(settingsModal.animation);
       setTimeout(() => {

@@ -2,7 +2,7 @@ import disableScroll from '../modules/disableScroll';
 import enableScroll from '../modules/enableScroll';
 
 
-const modal = (modalHTML, container, speed = 300, target = false, closeScroll = 'true') => {
+const modal = (modalHTML, container, speed = 300, target = false) => {
     if (document.querySelectorAll(container).length <= 0 && modalHTML) {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         const modalEl = document.querySelector(container);
@@ -17,7 +17,8 @@ const modal = (modalHTML, container, speed = 300, target = false, closeScroll = 
             container: modalContainerEl,
             isOpen: false,
             speed: speed,
-            animation: 'fade'
+            animation: 'fade',
+            scrollValue: document.querySelector('.page__body').classList.contains('dis-scroll') ? true : false,
         };
         setTimeout(() => {
             modalOpen(settingsModal);
@@ -95,15 +96,11 @@ const modal = (modalHTML, container, speed = 300, target = false, closeScroll = 
             //     }
             // }
 
-            if (closeScroll === 'true') {
-                enableScrollClose();
-            }
-
-            function enableScrollClose() {
+             if (!settingsModal.scrollValue) {
                 enableScroll();
                 document.body.style.scrollBehavior = 'auto';
                 document.documentElement.style.scrollBehavior = 'auto';
-            }
+             }
 
             setTimeout(() => {
                 if (settingsModal.modal.classList.contains('filter-modal')) {
@@ -138,9 +135,11 @@ const modal = (modalHTML, container, speed = 300, target = false, closeScroll = 
             settingsModal.container.scrollTo(0, 0);
             settingsModal.modal.style.setProperty('--transition-time', `${settingsModal.speed / 1000}s`);
             settingsModal.modal.classList.add('is-open');
-            document.body.style.scrollBehavior = 'auto';
-            document.documentElement.style.scrollBehavior = 'auto';
-            disableScroll();
+            if (!settingsModal.scrollValue) {
+                document.body.style.scrollBehavior = 'auto';
+                document.documentElement.style.scrollBehavior = 'auto';
+                disableScroll();
+            }
             settingsModal.container.classList.add('open');
             settingsModal.container.classList.add(settingsModal.animation);
             setTimeout(() => {
