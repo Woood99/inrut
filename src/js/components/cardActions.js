@@ -21,10 +21,10 @@ export const cardSecondaryActions = () => {
                 card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
                     if (!el.classList.contains('_active')) {
                         el.classList.add('_active');
-                        el.setAttribute('title', 'Удалить с подбора');
+                        el.setAttribute('title', 'Удалить с избранного');
                     } else {
                         el.classList.remove('_active');
-                        el.setAttribute('title', 'Добавить в подбор');
+                        el.setAttribute('title', 'Добавить в избранное');
                     }
                 });
             }
@@ -69,10 +69,10 @@ export const cardPrimaryActions = () => {
                 card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
                     if (!el.classList.contains('_active')) {
                         el.classList.add('_active');
-                        el.setAttribute('title', 'Удалить с подбора');
+                        el.setAttribute('title', 'Удалить с избранного');
                     } else {
                         el.classList.remove('_active');
-                        el.setAttribute('title', 'Добавить в подбор');
+                        el.setAttribute('title', 'Добавить в избранное');
                     }
                 });
             }

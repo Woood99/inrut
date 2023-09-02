@@ -4919,10 +4919,10 @@ const cardSecondaryActions = () => {
         card.querySelectorAll('.card-secondary__info--favorite').forEach(el => {
           if (!el.classList.contains('_active')) {
             el.classList.add('_active');
-            el.setAttribute('title', 'Удалить с подбора');
+            el.setAttribute('title', 'Удалить с избранного');
           } else {
             el.classList.remove('_active');
-            el.setAttribute('title', 'Добавить в подбор');
+            el.setAttribute('title', 'Добавить в избранное');
           }
         });
       }
@@ -4963,10 +4963,10 @@ const cardPrimaryActions = () => {
         card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
           if (!el.classList.contains('_active')) {
             el.classList.add('_active');
-            el.setAttribute('title', 'Удалить с подбора');
+            el.setAttribute('title', 'Удалить с избранного');
           } else {
             el.classList.remove('_active');
-            el.setAttribute('title', 'Добавить в подбор');
+            el.setAttribute('title', 'Добавить в избранное');
           }
         });
       }
@@ -6083,10 +6083,10 @@ const favoriteBtn = () => {
       if (btn.hasAttribute('data-popup-path')) return;
       if (!btn.classList.contains('_active')) {
         btn.classList.add('_active');
-        btn.setAttribute('title', 'Удалить с подбора');
+        btn.setAttribute('title', 'Удалить с избранного');
       } else {
         btn.classList.remove('_active');
-        btn.setAttribute('title', 'Добавить в подбор');
+        btn.setAttribute('title', 'Добавить в избранное');
       }
     });
   });
