@@ -756,6 +756,13 @@ function initSliders() {
                 pagination: {
                     el: el.querySelector('.pagination-primary'),
                     type: 'fraction',
+                    renderFraction: function (currentClass, totalClass) {
+                        return `
+                            <span class="${currentClass}"></span>
+                            <span class="swiper-pagination-word">из</span>
+                            <span class="${totalClass}"></span>
+                            `;
+                    }
                 },
             });
         })
@@ -789,6 +796,13 @@ function objectSlider() {
         pagination: {
             el: container.querySelector('.pagination-primary'),
             type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+                return `
+                    <span class="${currentClass}"></span>
+                    <span class="swiper-pagination-word">из</span>
+                    <span class="${totalClass}"></span>
+                    `;
+            }
         },
         thumbs: {
             swiper: navSlider,

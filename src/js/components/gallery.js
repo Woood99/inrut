@@ -109,7 +109,6 @@ export const galleryPrimary = () => {
 
         container.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', closeBtnHTML);
         container.querySelector('.lg-content').insertAdjacentHTML('beforeend', `${prevBtnHTML} ${nextBtnHTML}`);
-
         container.querySelector('.lg-backdrop').addEventListener('click', () => galleryContainer.closeGallery());
         container.querySelector('.gallery-primary-container__close').addEventListener('click', () => galleryContainer.closeGallery());
         container.querySelector('.gallery-primary-container__prev').addEventListener('click', () => galleryContainer.goToPrevSlide());
