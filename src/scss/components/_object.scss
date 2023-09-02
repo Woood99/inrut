@@ -1738,7 +1738,7 @@
     }
 
     &__btn {
-        max-width: 260px;
+        max-width: 304px;
         flex-grow: 1;
         height: 34px;
         display: flex;
@@ -1747,16 +1747,17 @@
         padding: 0 16px;
         border-radius: 12px;
         border: none;
-        background-color: var(--primary100);
+      background-color: var(--white);
+      border: 1px solid var(--primary200);
 
         span {
-            font-size: var(--very-small-fz);
-            line-height: var(--very-small-lh);
-            font-weight: 500;
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
+            font-weight: 400;
             transition: color $transitionSpeed $transitionFunction;
 
             &:nth-child(1) {
-                color: var(--gray);
+                color: var(--dark);
             }
 
             &:nth-child(2) {
@@ -1810,8 +1811,8 @@
     &__app {
         width: 100%;
         svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             fill: var(--white);
             margin-left: 10px;
         }
@@ -1847,7 +1848,7 @@
 .object-slider {
     display: flex;
     justify-content: space-between;
-    max-height: 474px;
+    max-height: 500px;
 
     &__body {
         overflow: hidden;
