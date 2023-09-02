@@ -4920,9 +4920,11 @@ const cardSecondaryActions = () => {
           if (!el.classList.contains('_active')) {
             el.classList.add('_active');
             el.setAttribute('title', 'Удалить с избранного');
+            el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite');
           } else {
             el.classList.remove('_active');
             el.setAttribute('title', 'Добавить в избранное');
+            el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
           }
         });
       }
@@ -4964,9 +4966,11 @@ const cardPrimaryActions = () => {
           if (!el.classList.contains('_active')) {
             el.classList.add('_active');
             el.setAttribute('title', 'Удалить с избранного');
+            el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite');
           } else {
             el.classList.remove('_active');
             el.setAttribute('title', 'Добавить в избранное');
+            el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
           }
         });
       }
@@ -6084,9 +6088,11 @@ const favoriteBtn = () => {
       if (!btn.classList.contains('_active')) {
         btn.classList.add('_active');
         btn.setAttribute('title', 'Удалить с избранного');
+        btn.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite');
       } else {
         btn.classList.remove('_active');
         btn.setAttribute('title', 'Добавить в избранное');
+        btn.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
       }
     });
   });

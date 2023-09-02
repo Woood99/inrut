@@ -22,9 +22,11 @@ export const cardSecondaryActions = () => {
                     if (!el.classList.contains('_active')) {
                         el.classList.add('_active');
                         el.setAttribute('title', 'Удалить с избранного');
+                        el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite');
                     } else {
                         el.classList.remove('_active');
                         el.setAttribute('title', 'Добавить в избранное');
+                        el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
                     }
                 });
             }
@@ -70,9 +72,11 @@ export const cardPrimaryActions = () => {
                     if (!el.classList.contains('_active')) {
                         el.classList.add('_active');
                         el.setAttribute('title', 'Удалить с избранного');
+                        el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite');
                     } else {
                         el.classList.remove('_active');
                         el.setAttribute('title', 'Добавить в избранное');
+                        el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
                     }
                 });
             }
