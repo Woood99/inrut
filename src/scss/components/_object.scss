@@ -1773,7 +1773,15 @@
                 color: var(--white);
             }
         }
+        @media (min-width:$desktop-min){
+             &:hover{
+                background-color: var(--blue);
 
+            span {
+                color: var(--white);
+            }
+             } 
+        }
         @media (max-width:$smallTablet-max) {
             max-width: none;
         }
@@ -1937,7 +1945,6 @@
             border-radius: 0;
         }
     }
-
     &__fullscreen {
         width: 44px;
         height: 44px;
@@ -2011,6 +2018,27 @@
         height: 100%;
         border-radius: 12px;
         object-fit: fill;
+    }
+    &__ecology{
+        position: absolute;
+        z-index: 2;
+        bottom: 24px;
+        left: 24px;
+        color: var(--white);
+        &-title{
+            color: var(--white);
+        }
+        >div{
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            svg{
+                width: 16px;
+                height: 16px;
+                margin: 0 8px 0 12px;
+                fill: var(--white);
+            }
+        }
     }
 
     &__tags {

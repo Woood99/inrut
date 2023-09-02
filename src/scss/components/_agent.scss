@@ -244,21 +244,29 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 16px;
+        margin-bottom: 24px;
     }
 
     &__user {}
 
     &__info {
-        display: flex;
-        align-items: end;
-        flex-direction: column;
+        align-self: start;
     }
-
+    &__letters{
+        margin-top: 6px;
+        align-self: start;
+        font-size: var(--small-fz);
+        line-height: 1;
+        margin-left: 8px;
+    }
     &__rating {
         display: flex;
         align-items: center;
-
+        margin-bottom: 8px;
+        >div{
+            display: flex;
+            align-items: center;
+        }
         svg {
             width: 16px;
             height: 16px;
@@ -269,7 +277,7 @@
             color: var(--primary600);
             font-size: var(--small-fz);
             line-height: var(--small-lh);
-            margin-left: 4px;
+            margin-left: 8px;
 
             &:nth-child(2) {
                 font-weight: 500;
@@ -282,7 +290,6 @@
     }
 
     &__time {
-        margin-top: 8px;
         color: var(--primaryTwo);
         font-size: var(--very-small-fz);
         line-height: 1;

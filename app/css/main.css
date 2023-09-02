@@ -28339,6 +28339,14 @@ textarea.input-reset {
 .object-calc-mort__btn._active span {
   color: var(--white);
 }
+@media (min-width: 1213px) {
+  .object-calc-mort__btn:hover {
+    background-color: var(--blue);
+  }
+  .object-calc-mort__btn:hover span {
+    color: var(--white);
+  }
+}
 @media (max-width: 768px) {
   .object-calc-mort__btn {
     max-width: none;
@@ -28575,6 +28583,31 @@ textarea.input-reset {
   border-radius: 12px;
   -o-object-fit: fill;
   object-fit: fill;
+}
+.object-apart-renov__ecology {
+  position: absolute;
+  z-index: 2;
+  bottom: 24px;
+  left: 24px;
+  color: var(--white);
+}
+.object-apart-renov__ecology-title {
+  color: var(--white);
+}
+.object-apart-renov__ecology > div {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.object-apart-renov__ecology > div svg {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px 0 12px;
+  fill: var(--white);
 }
 .object-apart-renov__tags {
   position: absolute;
@@ -29241,21 +29274,32 @@ textarea.input-reset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .review-item__info {
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+}
+.review-item__letters {
+  margin-top: 6px;
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+  font-size: var(--small-fz);
+  line-height: 1;
+  margin-left: 8px;
+}
+.review-item__rating {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 8px;
 }
-.review-item__rating {
+.review-item__rating > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29272,7 +29316,7 @@ textarea.input-reset {
   color: var(--primary600);
   font-size: var(--small-fz);
   line-height: var(--small-lh);
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .review-item__rating span:nth-child(2) {
   font-weight: 500;
@@ -29281,7 +29325,6 @@ textarea.input-reset {
   font-weight: 400;
 }
 .review-item__time {
-  margin-top: 8px;
   color: var(--primaryTwo);
   font-size: var(--very-small-fz);
   line-height: 1;
