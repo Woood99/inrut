@@ -8479,7 +8479,10 @@ const maps = () => {
           if (!locationRoutesBtn.classList.contains('_active')) {
             locationRoutesBtn.classList.add('_active');
             routes.classList.add('_show');
-            routeShow();
+            map.container.enterFullscreen();
+            setTimeout(() => {
+              routeShow();
+            }, 50);
           } else {
             locationRoutesBtn.classList.remove('_active');
             routeHidden();
@@ -8507,6 +8510,8 @@ const maps = () => {
           }
           if (routes.classList.contains('_active')) {
             routes.classList.remove('_active-fullscreen');
+            locationRoutesBtn.classList.remove('_active');
+            routeHidden();
           }
           fullscreenElement.classList.remove('yandex-map-active-fullscreen');
           map.behaviors.disable(['scrollZoom']);
@@ -8543,8 +8548,10 @@ const maps = () => {
             }
           });
           setTimeout(() => {
-            document.querySelector('.ymaps__route-close-wrapper').closest('.ymaps-2-1-79-float-button').classList.add('ymaps__route-close');
-          }, 50);
+            document.querySelectorAll('.ymaps__route-close-wrapper').forEach(item => {
+              item.closest('.ymaps-2-1-79-float-button').classList.add('ymaps__route-close');
+            });
+          }, 10);
           btnCloseRoute.events.add('click', function (e) {
             routeHidden();
             map.controls.remove(btnCloseRoute);
