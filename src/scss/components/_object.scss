@@ -424,27 +424,21 @@
     &__top {
         margin-bottom: 32px;
         display: flex;
-        align-items: end;
-        justify-content: space-between;
-
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
         @media (max-width:$desktop) {
             margin-bottom: 16px;
-            flex-direction: column;
-            align-items: start;
-            justify-content: start;
             padding: 0 16px;
         }
     }
 
     &__date {
+        margin-top: 8px;
         color: var(--primaryTwo);
         font-size: var(--small-fz);
         line-height: var(--small-lh);
         font-weight: 400;
-
-        @media (max-width:$desktop) {
-            margin-top: 6px;
-        }
     }
 
     .filter__btn {
@@ -1966,19 +1960,13 @@
             width: 18px;
             height: 18px;
             path {
-                stroke: var(--primary200);
-                transition: stroke $transitionSpeed $transitionFunction;
+                stroke: var(--blue);
             }
         }
 
         @media (min-width:$desktop-min) {
             &:hover {
                 border: 1px solid var(--blue);
-                svg {
-                    path {
-                        stroke: var(--blue);
-                    }
-                }
             }
         }
     }
@@ -2036,7 +2024,7 @@
                 width: 16px;
                 height: 16px;
                 margin: 0 8px 0 12px;
-                fill: var(--white);
+                fill: var(--blue);
             }
         }
     }
@@ -2065,16 +2053,12 @@
         border: 1px solid transparent;
 
         svg {
-            fill: var(--primary200);
+            fill: var(--blue);
         }
 
         @media (min-width:$desktop-min) {
             &:hover {
                 border: 1px solid var(--blue);
-
-                svg {
-                    fill: var(--blue);
-                }
             }
         }
     }
