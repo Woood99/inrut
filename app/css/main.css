@@ -15714,6 +15714,7 @@ textarea.input-reset {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 100%;
 }
 .news-card__top {
   display: -webkit-box;
@@ -32844,28 +32845,22 @@ textarea.input-reset {
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
-  padding: 32px 24px 24px;
+  padding: 32px 24px;
   border-radius: 12px;
 }
 .news__images {
   margin-bottom: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 16px;
 }
 .news__image {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-bottom: 24.3494423792%;
+  width: 100%;
+  padding-bottom: 36.0824742268%;
   border-radius: 16px;
 }
 .news__image img {
   border-radius: 16px;
+}
+.news__image:not(:first-child) {
+  display: none;
 }
 .news__info {
   display: -webkit-box;
@@ -32914,5 +32909,60 @@ textarea.input-reset {
 }
 .news__user {
   margin-top: 32px;
+}
+.news__consultation {
+  margin-top: 24px;
+}
+.news__also {
+  margin-top: 32px;
+}
+
+.news-consultation {
+  background-color: var(--white);
+  -webkit-box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary);
+  padding: 32px 24px;
+  border-radius: 12px;
+}
+.news-consultation__descr {
+  margin-top: 16px;
+  max-width: 390px;
+}
+.news-consultation__wrapper {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.news-consultation__name {
+  max-width: 275px;
+}
+.news-consultation__phone {
+  margin-left: 8px;
+  max-width: 320px;
+}
+.news-consultation__btn {
+  margin-left: 8px;
+}
+.news-consultation__caption {
+  margin-top: 16px;
+}
+.news-consultation__caption a {
+  color: var(--blue);
+}
+@media (min-width: 1213px) {
+  .news-consultation__caption a:hover {
+    text-decoration: underline;
+  }
+}
+
+.news-also__list {
+  margin-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
 /*# sourceMappingURL=main.css.map */
