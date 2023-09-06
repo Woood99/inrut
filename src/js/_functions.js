@@ -147,24 +147,6 @@ popup(null, 'history-changes');
 popup(null, 'furnishing-sets-popup');
 popup(null, 'object-apart-renov-popup');
 popup(null, 'object-ecology-parks-popup');
-popup({
-    isOpen: (settingsModal) => {
-        if (settingsModal.currentBtn.closest('.news-card')) {
-            const currentId = settingsModal.currentBtn.closest('.news-card').dataset.newslineId;
-            const modalCards = settingsModal.container.querySelectorAll('.news-card');
-            modalCards.forEach(card => {
-                if (card.hasAttribute('data-newsline-id') && card.dataset.newslineId === currentId) {
-                    setTimeout(() => {
-                        settingsModal.modal.scrollTo({
-                            top: card.offsetTop - 16,
-                            behavior: 'smooth',
-                        })
-                    }, 1);
-                }
-            })
-        }
-    },
-}, 'newsline');
 popup(null, 'videos-popup');
 popup(null, 'stock-offers-popup');
 popup(null, 'tariff-popup');

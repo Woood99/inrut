@@ -4543,24 +4543,6 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'furnishing-sets-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-apart-renov-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'object-ecology-parks-popup');
-(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])({
-  isOpen: settingsModal => {
-    if (settingsModal.currentBtn.closest('.news-card')) {
-      const currentId = settingsModal.currentBtn.closest('.news-card').dataset.newslineId;
-      const modalCards = settingsModal.container.querySelectorAll('.news-card');
-      modalCards.forEach(card => {
-        if (card.hasAttribute('data-newsline-id') && card.dataset.newslineId === currentId) {
-          setTimeout(() => {
-            settingsModal.modal.scrollTo({
-              top: card.offsetTop - 16,
-              behavior: 'smooth'
-            });
-          }, 1);
-        }
-      });
-    }
-  }
-}, 'newsline');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'videos-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'stock-offers-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-popup');
