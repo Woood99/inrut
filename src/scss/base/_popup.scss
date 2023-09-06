@@ -3726,6 +3726,125 @@
         }
     }
 }
+.news-card-popup {
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1051;
+    background-color: rgba(34, 41, 102, 0.4);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    text-align: right;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+
+    &__container {
+        position: relative;
+        min-height: var(--vh);
+        vertical-align: middle;
+        background-color: #fff;
+        cursor: default;
+        text-align: left;
+        display: none;
+        max-width: 558px;
+        border-radius: 12px 0 0 12px;
+
+        &.open {
+            display: inline-block !important;
+        }
+
+        padding: 65px 48px 48px;
+
+        @media (max-width:$smallTablet-max) {
+            max-width: 100%;
+            border-radius: 0;
+            padding: 58px 16px 24px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: var(--blue);
+            transition: fill $transitionSpeed $transitionFunction;
+
+            @media (max-width:$desktop) {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--blue);
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
+            font-weight: 500;
+
+            @media (min-width:$desktop) {
+                display: none;
+            }
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                svg {
+                    fill: var(--primary500);
+                }
+            }
+        }
+
+        @media (max-width:$desktop) {
+            right: 16px;
+            top: 24px;
+            width: auto;
+            height: auto;
+        }
+    }
+    .news-card{
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        &__wrapper{
+
+        }
+        &__title{
+            font-weight: 500;
+            font-size: var(--big-fz);
+            line-height: var(--big-lh);
+            color: var(--dark);
+        }
+        &__descr,&__name{
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
+        }
+    }
+}
 
 
 .interest-rate {

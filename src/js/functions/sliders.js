@@ -392,6 +392,33 @@ function initSliders() {
                     }
                 },
             });
+            const cards = el.querySelectorAll('.news-card');
+            cards.forEach(card => {
+                const btn = card.querySelector('.news-card__wrapper'); 
+                btn.addEventListener('click',() => {
+                    const modalHTML = `
+                    <div class="news-card-popup">
+                    <div class="news-card-popup__container">
+                        <button class="btn-reset news-card-popup__close" aria-label="Закрыть модальное окно">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#x"></use>
+                            </svg>
+                            <span>Закрыть</span>
+                        </button>
+                         <div class="news-card-popup__content">
+                            <article class="news-card">
+                                <div class="news-card__wrapper">
+                                ${btn.innerHTML}
+                                </div>
+                            </article>
+                         </div>
+                    </div>
+                    </div>
+                    `;
+
+                    modal(modalHTML, '.news-card-popup', 300, card);
+                });
+            })
         })
     }
     if (document.querySelector('.block-stock__video-slider')) {
