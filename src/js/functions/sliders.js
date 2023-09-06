@@ -96,7 +96,7 @@ function initSliders() {
                 nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--next'),
             },
             breakpoints: {
-                1112: {
+                1212: {
                     slidesPerView: 2,
                     spaceBetween: 32,
                     allowTouchMove: false,
@@ -455,16 +455,27 @@ function initSliders() {
                 observer: true,
                 lazy: true,
                 observeParents: true,
-                slidesPerView: 1.1,
-                spaceBetween: 16,
+                slidesPerView: 1,
+                spaceBetween: 0,
                 speed: 800,
                 navigation: {
                     prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
                     nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next'),
                 },
+                pagination: {
+                    el: el.closest('.object-apart-renov__item').querySelector('.pagination-primary'),
+                    type: 'fraction',
+                    renderFraction: function (currentClass, totalClass) {
+                        return `
+                            <span class="${currentClass}"></span>
+                            <span class="swiper-pagination-word">из</span>
+                            <span class="${totalClass}"></span>
+                            `;
+                    }
+                },
                 breakpoints: {
-                    769: {
-                        slidesPerView: 1,
+                    1212: {
+                        spaceBetween: 16,
                     },
                 },
             });
