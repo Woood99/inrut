@@ -197,7 +197,91 @@
         width: 100%;
         display: flex;
         align-items: center;
+        &--tags {
+            display: flex;
+            align-items: center;
 
+            .secondary-tooltip {
+                width: auto;
+                height: auto;
+
+                .secondary-tooltip__btn {
+                    color: var(--blue);
+                    font-size: var(--small-fz);
+                    line-height: 1;
+                    height: 30px;
+                    font-weight: 500;
+                    padding: 0 10px;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: auto;
+                    border-radius: 8px;
+                    background-color: var(--white);
+                    backdrop-filter: blur(2px);
+                }
+
+                .secondary-tooltip__content {
+                    display: flex;
+                    align-items: center;
+                    padding: 16px;
+                    left: 0;
+                    bottom: auto;
+                    top: 38px;
+                    transform: translateX(-50%);
+                    border-radius: 16px;
+                    background-color: var(--dark);
+                    border: none;
+
+                    >span {
+                        background-color: var(--white);
+                        border-radius: 8px;
+                        color: var(--dark);
+                        height: 24px;
+                        padding: 0 12px;
+                        font-size: var(--very-small-fz);
+                        line-height: 1;
+                        white-space: nowrap;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:not(:last-child) {
+                            margin-left: 0;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+            }
+
+            >span {
+                color: var(--blue);
+                font-size: var(--small-fz);
+                line-height: 1;
+                height: 30px;
+                padding: 0 10px;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border-radius: 8px;
+                background-color: var(--white);
+                backdrop-filter: blur(2px);
+            }
+            @media (max-width:$tablet-max){
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                z-index: 2;
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
         &--new {
             font-size: var(--small-fz);
             line-height: var(--small-lh);

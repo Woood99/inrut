@@ -35,7 +35,11 @@ export const cardSecondaryActions = () => {
     })
 
     favoriteMobile();
-    window.addEventListener('resize', favoriteMobile);
+    tagsMobile();
+    window.addEventListener('resize', () => {
+        favoriteMobile();
+        tagsMobile();
+    });
 
     function favoriteMobile() {
         cards.forEach(card => {
@@ -53,6 +57,23 @@ export const cardSecondaryActions = () => {
                 }
             }
         })
+    }
+    function tagsMobile() {
+        cards.forEach(card => {
+            if (window.innerWidth <= 1024) {
+                const tags = card.querySelector('.card-secondary__info--tags');
+                const path = card.querySelector('.card-secondary__item');
+                if (tags && path) {
+                    path.insertAdjacentElement('afterbegin', tags);
+                }
+            } else {
+                const tags = card.querySelector('.card-secondary__info--tags');
+                const path = card.querySelector('.card-secondary__info');
+                if (tags && path) {
+                    path.insertAdjacentElement('afterbegin', tags);
+                }
+            }
+        }) 
     }
 };
 export const cardPrimaryActions = () => {
@@ -84,7 +105,11 @@ export const cardPrimaryActions = () => {
     })
 
     favoriteMobile();
-    window.addEventListener('resize', favoriteMobile);
+    tagsMobile();
+    window.addEventListener('resize',() => {
+        favoriteMobile();
+        tagsMobile();
+    });
 
     function favoriteMobile() {
         cards.forEach(card => {
@@ -102,6 +127,23 @@ export const cardPrimaryActions = () => {
                 }
             }
         })
+    }
+    function tagsMobile() {
+        cards.forEach(card => {
+            if (window.innerWidth <= 1024) {
+                const tags = card.querySelector('.card-primary__info--tags');
+                const path = card.querySelector('.card-primary__item');
+                if (tags && path) {
+                    path.insertAdjacentElement('afterbegin', tags);
+                }
+            } else {
+                const tags = card.querySelector('.card-primary__info--tags');
+                const path = card.querySelector('.card-primary__info');
+                if (tags && path) {
+                    path.insertAdjacentElement('afterbegin', tags);
+                }
+            }
+        }) 
     }
 };
 

@@ -499,7 +499,7 @@
         @media (max-width:$desktop) {
             padding: 0 $containerOffset+px;
             margin-top: 16px;
-            justify-content: center;
+            justify-content: start;
         }
     }
 
@@ -618,7 +618,6 @@
                 order: 3;
 
                 @media (max-width:$smallTablet-max) {
-                    order: 2;
                     width: 42%;
                 }
             }
@@ -626,10 +625,6 @@
 
         @media (max-width:$smallTablet-max) {
             justify-content: space-between;
-
-            &::after {
-                display: none;
-            }
         }
     }
 

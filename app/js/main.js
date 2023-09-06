@@ -4913,7 +4913,11 @@ const cardSecondaryActions = () => {
     });
   });
   favoriteMobile();
-  window.addEventListener('resize', favoriteMobile);
+  tagsMobile();
+  window.addEventListener('resize', () => {
+    favoriteMobile();
+    tagsMobile();
+  });
   function favoriteMobile() {
     cards.forEach(card => {
       if (window.innerWidth <= 1024) {
@@ -4927,6 +4931,23 @@ const cardSecondaryActions = () => {
         const path = card.querySelector('.card-secondary__info--btns-right');
         if (favorite && path) {
           path.insertAdjacentElement('afterbegin', favorite);
+        }
+      }
+    });
+  }
+  function tagsMobile() {
+    cards.forEach(card => {
+      if (window.innerWidth <= 1024) {
+        const tags = card.querySelector('.card-secondary__info--tags');
+        const path = card.querySelector('.card-secondary__item');
+        if (tags && path) {
+          path.insertAdjacentElement('afterbegin', tags);
+        }
+      } else {
+        const tags = card.querySelector('.card-secondary__info--tags');
+        const path = card.querySelector('.card-secondary__info');
+        if (tags && path) {
+          path.insertAdjacentElement('afterbegin', tags);
         }
       }
     });
@@ -4959,7 +4980,11 @@ const cardPrimaryActions = () => {
     });
   });
   favoriteMobile();
-  window.addEventListener('resize', favoriteMobile);
+  tagsMobile();
+  window.addEventListener('resize', () => {
+    favoriteMobile();
+    tagsMobile();
+  });
   function favoriteMobile() {
     cards.forEach(card => {
       if (window.innerWidth <= 1024) {
@@ -4973,6 +4998,23 @@ const cardPrimaryActions = () => {
         const path = card.querySelector('.card-primary__info--btns-right');
         if (favorite && path) {
           path.insertAdjacentElement('afterbegin', favorite);
+        }
+      }
+    });
+  }
+  function tagsMobile() {
+    cards.forEach(card => {
+      if (window.innerWidth <= 1024) {
+        const tags = card.querySelector('.card-primary__info--tags');
+        const path = card.querySelector('.card-primary__item');
+        if (tags && path) {
+          path.insertAdjacentElement('afterbegin', tags);
+        }
+      } else {
+        const tags = card.querySelector('.card-primary__info--tags');
+        const path = card.querySelector('.card-primary__info');
+        if (tags && path) {
+          path.insertAdjacentElement('afterbegin', tags);
         }
       }
     });
@@ -10854,12 +10896,17 @@ function initSliders() {
         observer: true,
         lazy: true,
         observeParents: true,
-        slidesPerView: 1,
+        slidesPerView: 1.1,
         spaceBetween: 16,
         speed: 800,
         navigation: {
           prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
           nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next')
+        },
+        breakpoints: {
+          769: {
+            slidesPerView: 1
+          }
         }
       });
       const marks = el.querySelectorAll('.object-apart-renov__mark');
@@ -11083,7 +11130,7 @@ function initSliders() {
       const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
         observer: true,
         observeParents: true,
-        slidesPerView: 1.17,
+        slidesPerView: 1.08,
         spaceBetween: 8,
         speed: 800,
         navigation: {

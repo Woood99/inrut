@@ -394,8 +394,8 @@ function initSliders() {
             });
             const cards = el.querySelectorAll('.news-card');
             cards.forEach(card => {
-                const btn = card.querySelector('.news-card__wrapper'); 
-                btn.addEventListener('click',() => {
+                const btn = card.querySelector('.news-card__wrapper');
+                btn.addEventListener('click', () => {
                     const modalHTML = `
                     <div class="news-card-popup">
                     <div class="news-card-popup__container">
@@ -455,12 +455,17 @@ function initSliders() {
                 observer: true,
                 lazy: true,
                 observeParents: true,
-                slidesPerView: 1,
+                slidesPerView: 1.1,
                 spaceBetween: 16,
                 speed: 800,
                 navigation: {
                     prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
                     nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next'),
+                },
+                breakpoints: {
+                    769: {
+                        slidesPerView: 1,
+                    },
                 },
             });
             const marks = el.querySelectorAll('.object-apart-renov__mark');
@@ -693,7 +698,7 @@ function initSliders() {
             const slider = new Swiper(el, {
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1.17,
+                slidesPerView: 1.08,
                 spaceBetween: 8,
                 speed: 800,
                 navigation: {
