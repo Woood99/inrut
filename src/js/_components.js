@@ -82,7 +82,6 @@ import videoModal from './components/videoModal';
 import favoriteBtn from './components/favoriteBtn';
 import advancePayment from './components/advancePayment';
 import submitApp from './components/submitApp';
-import availableOptionsScroll from './components/availableOptionsScroll';
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================================================
@@ -147,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardStockPopup('.stock-developer__content .cards-list__items');
     cardStockPopup('.block-stock .block-stock__slider');
     cardStockPopup('.stock-offers-popup__items');
+    cardStockPopup('.online-display');
     tag();
     chat();
     city();
@@ -166,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     favoriteBtn();
     advancePayment();
     submitApp();
-    availableOptionsScroll();
     // ==================================================
 
     validateRadioPrimary('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');

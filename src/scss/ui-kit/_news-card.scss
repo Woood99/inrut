@@ -35,13 +35,13 @@
             margin-left: 12px;
         }
     }
-
     &__images {
         margin-top: 16px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 16px;
+        width: 100%;
     }
 
     &__image {
@@ -89,12 +89,6 @@
 
         font-size: var(--small-fz);
         line-height: var(--small-lh);
-
-        @media (min-width:$desktop-min) {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
     }
 
     &__user {
@@ -103,5 +97,18 @@
         margin: 16px 0 -16px -16px;
         padding: 16px;
         border-radius: 0 0 12px 12px;
+    }
+
+    &__btns{
+        display: none;
+
+        margin-top: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+    }
+    &__btn{
+        &:not(:last-child){
+            margin-right: 8px;
+        }
     }
 }

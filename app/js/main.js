@@ -4205,8 +4205,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/favoriteBtn */ "./src/js/components/favoriteBtn.js");
 /* harmony import */ var _components_advancePayment__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/advancePayment */ "./src/js/components/advancePayment.js");
 /* harmony import */ var _components_submitApp__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/submitApp */ "./src/js/components/submitApp.js");
-/* harmony import */ var _components_availableOptionsScroll__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/availableOptionsScroll */ "./src/js/components/availableOptionsScroll.js");
-
 
 
 
@@ -4312,6 +4310,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-developer__content .cards-list__items');
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.block-stock .block-stock__slider');
   (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.stock-offers-popup__items');
+  (0,_components_cardStockPopup__WEBPACK_IMPORTED_MODULE_24__["default"])('.online-display');
   (0,_components_tag__WEBPACK_IMPORTED_MODULE_25__["default"])();
   (0,_components_chat__WEBPACK_IMPORTED_MODULE_26__["default"])();
   (0,_components_city__WEBPACK_IMPORTED_MODULE_27__["default"])();
@@ -4331,7 +4330,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__["default"])();
   (0,_components_advancePayment__WEBPACK_IMPORTED_MODULE_40__["default"])();
   (0,_components_submitApp__WEBPACK_IMPORTED_MODULE_41__["default"])();
-  (0,_components_availableOptionsScroll__WEBPACK_IMPORTED_MODULE_42__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4586,38 +4584,6 @@ const advancePayment = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (advancePayment);
-
-/***/ }),
-
-/***/ "./src/js/components/availableOptionsScroll.js":
-/*!*****************************************************!*\
-  !*** ./src/js/components/availableOptionsScroll.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const availableOptionsScroll = () => {
-  const itemsScrolling = document.querySelectorAll('.online-display__item.online-display__item--scroll');
-  const headerHeight = document.querySelector('.header-fixed') ? document.querySelector('.header-fixed').offsetHeight : 0;
-  const smallGap = 20;
-  itemsScrolling.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const sectionId = link.getAttribute('href').replace('#', '');
-      if (document.getElementById(sectionId)) {
-        window.scrollTo({
-          top: document.getElementById(sectionId).offsetTop - headerHeight - smallGap,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (availableOptionsScroll);
 
 /***/ }),
 
@@ -5102,6 +5068,7 @@ const cardStockPopup = containerSelector => {
     const cardSecondary = target.closest('.card-stock-secondary');
     const cardThird = target.closest('.card-stock-third');
     const cardStock = target.closest('.card-stock');
+    const cardOnlineDisplay = target.closest('.online-display__item');
     if (cardSecondary) {
       const modalHTML = `
             <div class="stock-popup">
@@ -5133,16 +5100,10 @@ const cardStockPopup = containerSelector => {
                     </div>
                     <div class="stock-popup__btns">
                     <button type="button" class="btn btn-reset btn-primary stock-popup__call">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#phone"></use>
-                        </svg>
-                        <span>Позвонить</span>
+                        Показать телефон
                     </button>
                     <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#chat"></use>
-                        </svg>
-                        <span>Написать</span>
+                        Задать вопрос
                     </button>
                 </div>
             </div>
@@ -5181,18 +5142,11 @@ const cardStockPopup = containerSelector => {
                     </div>
                     <div class="stock-popup__btns">
                     <button type="button" class="btn btn-reset btn-primary stock-popup__call">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#phone"></use>
-                        </svg>
-                        <span>Позвонить</span>
+                        Показать телефон
                     </button>
                     <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#chat"></use>
-                        </svg>
-                        <span>Написать</span>
+                        Задать вопрос
                     </button>
-                    </div>
                  </div>
             </div>
             </div>
@@ -5229,23 +5183,66 @@ const cardStockPopup = containerSelector => {
                      </div>
                      <div class="stock-popup__btns">
                      <button type="button" class="btn btn-reset btn-primary stock-popup__call">
-                         <svg>
-                             <use xlink:href="img/sprite.svg#phone"></use>
-                         </svg>
-                         <span>Позвонить</span>
+                         Показать телефон
                      </button>
                      <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
-                         <svg>
-                             <use xlink:href="img/sprite.svg#chat"></use>
-                         </svg>
-                         <span>Написать</span>
+                         Задать вопрос
                      </button>
                      </div>
-                  </div>
              </div>
              </div>
              `;
       cardStock.classList.add('_active');
+      (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.stock-popup', 300, cardThird);
+    }
+    if (cardOnlineDisplay) {
+      const modalHTML = `
+            <div class="stock-popup">
+            <div class="stock-popup__container">
+                <button class="btn-reset stock-popup__close" aria-label="Закрыть модальное окно">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#x"></use>
+                    </svg>
+                    <span>Закрыть</span>
+                </button>
+                 <div class="stock-popup__content">
+                   <div class="stock-popup__row">
+                       ${cardOnlineDisplay.dataset.stockTitle}
+                       <time class="card-stock__time">
+                       ${cardOnlineDisplay.dataset.stockTime}
+                       </time>
+                   </div>
+                    <div class="stock-popup__name">
+                        ${cardOnlineDisplay.dataset.stockName}
+                    </div>
+                    <div class="stock-popup__descr">
+                        ${cardOnlineDisplay.dataset.stockDescr}
+                    </div>
+                    <div class="stock-popup__row-bottom">
+                        <div class="stock-popup__user user-info">
+                        <div class="user-info__avatar avatar online">
+                            <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                        </div>
+                        <span class="user-info__pos">
+                            Застройщик
+                        </span>
+                        <span class="user-info__name">
+                            Югстройинвест
+                        </span>
+                        </div>
+                    </div>
+                    <div class="stock-popup__btns">
+                    <button type="button" class="btn btn-reset btn-primary stock-popup__call">
+                        Показать телефон
+                    </button>
+                    <button type="button" class="btn btn-reset btn-secondary stock-popup__message">
+                        Задать вопрос
+                    </button>
+                    </div>
+            </div>
+            </div>
+            `;
+      cardOnlineDisplay.classList.add('_active');
       (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])(modalHTML, '.stock-popup', 300, cardThird);
     }
   });
@@ -10460,8 +10457,9 @@ const popup = (options, modalName) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modal */ "./src/js/modules/modal.js");
-/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
+/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
 /* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
+/* harmony import */ var _components_scrollDrag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/scrollDrag */ "./src/js/components/scrollDrag.js");
 // =========================================================================================
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCreative, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
@@ -10927,7 +10925,7 @@ function initSliders() {
           mark.classList.add('_active');
           const btn = mark.querySelector('button');
           const content = mark.querySelector('div');
-          popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(btn, content, {
+          popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_4__.createPopper)(btn, content, {
             placement: 'bottom-start',
             modifiers: [{
               name: 'offset',
@@ -11560,6 +11558,22 @@ const tabs = () => {
             left: metroInnerMoscow.getBoundingClientRect().width / 3
           });
           metroBooleanStatus = true;
+        }
+        if (el.closest('.block-stock')) {
+          const topGap = window.pageYOffset + el.closest('.block-stock').getBoundingClientRect().top;
+          const headerFixed = document.querySelector('.header-fixed');
+          const topHeaderMobile = document.querySelector('.top-page-inner');
+          if (window.innerWidth >= 1212) {
+            window.scrollTo({
+              top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
+              behavior: 'smooth'
+            });
+          } else {
+            window.scrollTo({
+              top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20,
+              behavior: 'smooth'
+            });
+          }
         }
       }
       e.preventDefault();

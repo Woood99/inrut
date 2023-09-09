@@ -4713,6 +4713,10 @@ textarea.input-reset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  font-size: var(--big-fz);
+  line-height: var(--big-lh);
+  color: var(--dark);
+  font-weight: 500;
 }
 .stock-popup .card-stock-secondary__date {
   font-weight: 400;
@@ -4922,6 +4926,17 @@ textarea.input-reset {
 .news-card-popup .news-card__descr, .news-card-popup .news-card__name {
   font-size: var(--default-fz);
   line-height: var(--default-lh);
+}
+.news-card-popup .news-card__more {
+  display: none;
+}
+.news-card-popup .news-card__images {
+  -ms-grid-columns: 0.8fr;
+  grid-template-columns: 0.8fr;
+}
+.news-card-popup .news-card__btns {
+  display: -ms-grid;
+  display: grid;
 }
 
 .interest-rate {
@@ -16026,6 +16041,7 @@ textarea.input-reset {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
+  width: 100%;
 }
 .news-card__image {
   border-radius: 12px;
@@ -16068,17 +16084,22 @@ textarea.input-reset {
   font-size: var(--small-fz);
   line-height: var(--small-lh);
 }
-@media (min-width: 1213px) {
-  .news-card__more:hover {
-    text-decoration: underline;
-  }
-}
 .news-card__user {
   background-color: var(--white);
   width: calc(100% + 32px);
   margin: 16px 0 -16px -16px;
   padding: 16px;
   border-radius: 0 0 12px 12px;
+}
+.news-card__btns {
+  display: none;
+  margin-top: 32px;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 16px;
+}
+.news-card__btn:not(:last-child) {
+  margin-right: 8px;
 }
 
 .video-card {
@@ -23337,6 +23358,12 @@ textarea.input-reset {
   justify-content: space-between;
   margin-bottom: 24px;
 }
+.block-stock__title {
+  margin-bottom: 16px;
+}
+.block-stock .tabs-primary__inner {
+  margin-top: 0;
+}
 .block-stock .tabs-primary__container {
   margin-top: 32px;
   padding: 0;
@@ -23439,6 +23466,9 @@ textarea.input-reset {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.block-stock__ribbon-slider .news-card__images {
+  display: none;
 }
 .block-stock__video-btn {
   margin-left: auto;
@@ -24014,7 +24044,7 @@ textarea.input-reset {
 .furnishing-sets__tabs {
   grid-column: 1/-1;
   position: relative;
-  height: 420px;
+  height: 435px;
   cursor: pointer;
 }
 @media (max-width: 768px) {
@@ -28811,7 +28841,7 @@ textarea.input-reset {
 }
 .object-apart-renov__item {
   position: relative;
-  height: 420px;
+  height: 435px;
 }
 @media (max-width: 768px) {
   .object-apart-renov__item {

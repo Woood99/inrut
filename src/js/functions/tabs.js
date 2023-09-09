@@ -155,6 +155,22 @@ const tabs = () => {
                     });
                     metroBooleanStatus = true;
                 }
+                if (el.closest('.block-stock')){
+                    const topGap = window.pageYOffset + el.closest('.block-stock').getBoundingClientRect().top;
+                    const headerFixed = document.querySelector('.header-fixed');
+                    const topHeaderMobile = document.querySelector('.top-page-inner');
+                    if (window.innerWidth >= 1212) {
+                        window.scrollTo({
+                            top: headerFixed ? topGap - headerFixed.offsetHeight - 20 : topGap - 20,
+                            behavior: 'smooth'
+                        })
+                    } else {
+                        window.scrollTo({
+                            top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20,
+                            behavior: 'smooth'
+                        })
+                    }
+                }
             }
             e.preventDefault();
         }

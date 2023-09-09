@@ -18,7 +18,7 @@ import {
     _slideUp,
     _slideToggle,
 } from '../support-modules/slide';
-
+import scrollDrag from '../components/scrollDrag';
 // =========================================================================================
 
 

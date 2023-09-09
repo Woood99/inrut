@@ -3643,6 +3643,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: var(--big-fz);
+        line-height: var(--big-lh);
+        color: var(--dark);
+        font-weight: 500;
     }
 
     .card-stock-secondary__date {
@@ -3858,6 +3862,17 @@
         &__name {
             font-size: var(--default-fz);
             line-height: var(--default-lh);
+        }
+        &__more{
+            display: none;
+        }
+        &__images{
+            grid-template-columns: 0.8fr;
+        }
+        &__image{
+        }
+        &__btns{
+           display: grid;
         }
     }
 }
@@ -4782,21 +4797,24 @@
         line-height: var(--little-big-lh);
         color: var(--dark);
     }
-    &__link{
+
+    &__link {
         margin-top: 8px;
         font-size: var(--little-big-fz);
         line-height: var(--little-big-lh);
         color: var(--blue);
         text-decoration: underline;
-        @media (min-width:$desktop-min){
-             &:hover{
+
+        @media (min-width:$desktop-min) {
+            &:hover {
                 color: var(--blue-dark);
-             } 
+            }
         }
     }
-    &__btn{
-margin-top: 24px;
-width: 100%;
+
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
     }
 }
 
