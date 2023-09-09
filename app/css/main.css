@@ -24154,7 +24154,7 @@ textarea.input-reset {
   top: 16px;
   left: 16px;
   padding: 8px 16px;
-  color: var(--blue);
+  color: var(--gray);
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
@@ -28926,7 +28926,7 @@ textarea.input-reset {
   line-height: var(--default-lh);
   -webkit-box-shadow: var(--shadow-primary);
   box-shadow: var(--shadow-primary);
-  color: var(--blue);
+  color: var(--gray);
   padding: 8px 16px;
   background-color: var(--white);
   border-radius: 10px;
@@ -29638,6 +29638,9 @@ textarea.input-reset {
   font-size: var(--default-fz);
   line-height: var(--default-lh);
   font-weight: 400;
+  background: var(--primary100);
+  border-radius: 2px 12px 12px 12px;
+  padding: 16px;
 }
 .review-item__photo {
   margin-top: 24px;
@@ -33166,6 +33169,16 @@ textarea.input-reset {
   background-color: var(--stand-bg);
   padding: 24px 0;
 }
+.news__cols {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-grid-columns: 1fr 375px;
+  grid-template-columns: 1fr 375px;
+  grid-column-gap: 16px;
+}
 .news__wrapper {
   background-color: var(--white);
   -webkit-box-shadow: var(--shadow-primary);
@@ -33235,8 +33248,10 @@ textarea.input-reset {
 .news__user {
   margin-top: 32px;
 }
-.news__consultation {
-  margin-top: 24px;
+.news__consultation._sticky {
+  position: sticky;
+  top: 16px;
+  width: 100%;
 }
 .news__also {
   margin-top: 32px;
@@ -33255,19 +33270,14 @@ textarea.input-reset {
 }
 .news-consultation__wrapper {
   margin-top: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.news-consultation__name {
-  max-width: 275px;
-}
-.news-consultation__phone {
-  margin-left: 8px;
-  max-width: 320px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-row-gap: 8px;
 }
 .news-consultation__btn {
-  margin-left: 8px;
+  margin-top: 8px;
 }
 .news-consultation__caption {
   margin-top: 16px;
