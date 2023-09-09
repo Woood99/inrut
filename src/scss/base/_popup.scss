@@ -146,6 +146,7 @@
                 border-radius: 12px 0 0 12px;
                 padding: 65px 48px 48px;
                 width: 400px;
+
                 @media (max-width:$desktop) {
                     border-radius: 0;
                     padding: 64px 16px;
@@ -540,7 +541,7 @@
             &__container {
                 margin: 0 auto;
                 padding: 48px 32px 32px;
-              width: 100%;
+                width: 100%;
                 min-height: auto;
                 vertical-align: bottom;
 
@@ -1225,6 +1226,7 @@
         grid-row-gap: 16px;
     }
 }
+
 .videos-popup {
     &__title {
         margin-bottom: 32px;
@@ -2067,7 +2069,8 @@
     margin: 0 auto;
     position: relative;
 
-    &__title {
+    &__title,
+    &__date {
         margin: 0 auto;
         max-width: 1180px;
 
@@ -2076,6 +2079,15 @@
             max-width: none;
             width: 100%;
         }
+    }
+
+    &__date {
+        margin-top: 8px;
+        color: var(--primaryTwo);
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
+        font-weight: 400;
+        display: block;
     }
 
     &__filter {
@@ -3726,6 +3738,7 @@
         }
     }
 }
+
 .news-card-popup {
     --transition-time: 0.3s;
     position: fixed;
@@ -3825,21 +3838,24 @@
             height: auto;
         }
     }
-    .news-card{
+
+    .news-card {
         padding: 0;
         box-shadow: none;
         background-color: transparent;
         border-radius: 0;
-        &__wrapper{
 
-        }
-        &__title{
+        &__wrapper {}
+
+        &__title {
             font-weight: 500;
             font-size: var(--big-fz);
             line-height: var(--big-lh);
             color: var(--dark);
         }
-        &__descr,&__name{
+
+        &__descr,
+        &__name {
             font-size: var(--default-fz);
             line-height: var(--default-lh);
         }
@@ -4763,9 +4779,24 @@
         margin-top: 16px;
 
         font-size: var(--little-big-fz);
-        ;
         line-height: var(--little-big-lh);
         color: var(--dark);
+    }
+    &__link{
+        margin-top: 8px;
+        font-size: var(--little-big-fz);
+        line-height: var(--little-big-lh);
+        color: var(--blue);
+        text-decoration: underline;
+        @media (min-width:$desktop-min){
+             &:hover{
+                color: var(--blue-dark);
+             } 
+        }
+    }
+    &__btn{
+margin-top: 24px;
+width: 100%;
     }
 }
 

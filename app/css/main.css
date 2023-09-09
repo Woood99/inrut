@@ -3076,16 +3076,24 @@ textarea.input-reset {
   margin: 0 auto;
   position: relative;
 }
-.checkboard-popup__title {
+.checkboard-popup__title, .checkboard-popup__date {
   margin: 0 auto;
   max-width: 1180px;
 }
 @media (max-width: 1212px) {
-  .checkboard-popup__title {
+  .checkboard-popup__title, .checkboard-popup__date {
     margin-top: 0;
     max-width: none;
     width: 100%;
   }
+}
+.checkboard-popup__date {
+  margin-top: 8px;
+  color: var(--primaryTwo);
+  font-size: var(--small-fz);
+  line-height: var(--small-lh);
+  font-weight: 400;
+  display: block;
 }
 .checkboard-popup__filter {
   margin: 24px auto 0;
@@ -5821,6 +5829,22 @@ textarea.input-reset {
   font-size: var(--little-big-fz);
   line-height: var(--little-big-lh);
   color: var(--dark);
+}
+.online-display-popup__link {
+  margin-top: 8px;
+  font-size: var(--little-big-fz);
+  line-height: var(--little-big-lh);
+  color: var(--blue);
+  text-decoration: underline;
+}
+@media (min-width: 1213px) {
+  .online-display-popup__link:hover {
+    color: var(--blue-dark);
+  }
+}
+.online-display-popup__btn {
+  margin-top: 24px;
+  width: 100%;
 }
 
 .genplan-popup-card {
@@ -21656,6 +21680,9 @@ textarea.input-reset {
 .checkboard__card .card-scheme__mortgage {
   margin-top: 12px;
 }
+.checkboard__card .card-scheme__content {
+  padding: 12px 24px 24px;
+}
 @media (max-width: 1212px) {
   .checkboard .checkboard__card {
     display: none;
@@ -24087,7 +24114,7 @@ textarea.input-reset {
 .furnishing-sets__price {
   position: absolute;
   z-index: 2;
-  bottom: 16px;
+  top: 16px;
   left: 16px;
   padding: 8px 16px;
   color: var(--blue);
@@ -28848,7 +28875,7 @@ textarea.input-reset {
 .object-apart-renov__tags {
   position: absolute;
   z-index: 2;
-  bottom: 16px;
+  top: 16px;
   left: 16px;
 }
 .object-apart-renov__tag {
