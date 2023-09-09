@@ -9,6 +9,7 @@ const tag = () => {
     `;
     tags.forEach(tag => {
         tag.addEventListener('click', () => {
+            if (tag.classList.contains('_no-select')) return;
             if (tag.closest('._drag')) return;
             if (!tag.classList.contains('_active')) {
                 tag.classList.add('_active');

@@ -1897,11 +1897,12 @@
     }
 
     @media (min-width:$desktop-min) {
-
-        &:hover,
-        &.focus-visible {
-            background-color: var(--blue);
-            color: var(--white);
+        &:not(._no-select){
+            &:hover,
+            &.focus-visible {
+                background-color: var(--blue);
+                color: var(--white);
+            }
         }
     }
 
@@ -1910,6 +1911,9 @@
     &._active {
         background-color: var(--blue);
         color: var(--white);
+    }
+    &._no-select{
+        cursor: default;
     }
 }
 
@@ -2181,7 +2185,9 @@
         line-height: var(--small-lh);
         color: var(--dark);
     }
-
+    &__btn{
+        grid-column: 1/-1;
+    }
     img {
         align-self: center;
         grid-column: 1/2;

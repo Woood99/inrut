@@ -9981,7 +9981,7 @@ textarea.input-reset {
   height: 8px;
 }
 @media (min-width: 1213px) {
-  .tag:hover, .tag.focus-visible {
+  .tag:not(._no-select):hover, .tag:not(._no-select).focus-visible {
     background-color: var(--blue);
     color: var(--white);
   }
@@ -9989,6 +9989,9 @@ textarea.input-reset {
 .tag._active {
   background-color: var(--blue);
   color: var(--white);
+}
+.tag._no-select {
+  cursor: default;
 }
 
 .chat-user {
@@ -10265,6 +10268,9 @@ textarea.input-reset {
   font-size: var(--small-fz);
   line-height: var(--small-lh);
   color: var(--dark);
+}
+.online-display__btn {
+  grid-column: 1/-1;
 }
 .online-display img {
   -ms-grid-row-align: center;
@@ -14008,9 +14014,8 @@ textarea.input-reset {
 .card-secondary__pagination {
   position: absolute;
   z-index: 3;
-  left: 0;
+  right: 24px;
   bottom: 24px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14069,7 +14074,7 @@ textarea.input-reset {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--primaryTwo);
+  background-color: var(--white);
 }
 .card-secondary .image-pagination__item:not(:last-child) {
   margin-right: 6px;
@@ -14103,12 +14108,11 @@ textarea.input-reset {
   height: auto;
 }
 .card-secondary__info--tags .secondary-tooltip .secondary-tooltip__btn {
-  color: var(--blue);
-  font-size: var(--small-fz);
-  line-height: 1;
-  height: 30px;
-  font-weight: 500;
-  padding: 0 10px;
+  color: var(--gray);
+  font-size: var(--very-small-fz);
+  line-height: var(--very-small-lh);
+  font-weight: 400;
+  padding: 4px 8px;
   font-weight: 400;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14167,11 +14171,10 @@ textarea.input-reset {
   margin-right: 6px;
 }
 .card-secondary__info--tags > span {
-  color: var(--blue);
-  font-size: var(--small-fz);
-  line-height: 1;
-  height: 30px;
-  padding: 0 10px;
+  color: var(--gray);
+  font-size: var(--very-small-fz);
+  line-height: var(--very-small-lh);
+  padding: 4px 8px;
   font-weight: 400;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14618,7 +14621,12 @@ textarea.input-reset {
   color: var(--blue);
 }
 .card-secondary__options {
-  margin-top: auto;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14627,16 +14635,15 @@ textarea.input-reset {
   align-items: center;
 }
 .card-secondary__options span {
-  background-color: var(--primary100);
+  background-color: var(--white);
   border-radius: 8px;
-  color: var(--dark);
-  height: 24px;
-  padding: 0 12px;
+  color: var(--gray);
+  padding: 4px 8px;
   font-size: var(--very-small-fz);
-  line-height: 1;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  line-height: var(--very-small-lh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -14644,19 +14651,19 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
   white-space: nowrap;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 .card-secondary__options span:not(:last-child) {
   margin-right: 6px;
 }
 .card-secondary__options .secondary-tooltip__btn {
-  background-color: var(--primary100);
+  background-color: var(--white);
   color: var(--dark);
-  border-radius: 18px;
-  font-size: var(--small-fz);
-  line-height: var(--small-lh);
-  height: 24px;
-  min-width: 32px;
-  padding: 0 8px;
+  border-radius: 8px;
+  font-size: var(--very-small-fz);
+  line-height: var(--very-small-lh);
+  padding: 4px 8px;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -14791,8 +14798,8 @@ textarea.input-reset {
   border-radius: 8px;
   font-size: var(--small-fz);
   line-height: var(--small-lh);
-  color: var(--blue);
-  font-weight: 500;
+  color: var(--gray);
+  font-weight: 400;
 }
 .card-small-photo__tag:not(:last-child) {
   margin-right: 16px;
@@ -20786,7 +20793,7 @@ textarea.input-reset {
   .control-cards__content--vertical .card-secondary__bottom .card-secondary__info--favorite {
     height: 28px;
     width: 28px;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--gray);
     border-radius: 8px;
     margin-left: 24px;
     display: -webkit-box;
@@ -20800,7 +20807,7 @@ textarea.input-reset {
     justify-content: center;
   }
   .control-cards__content--vertical .card-secondary__bottom .card-secondary__info--favorite svg {
-    fill: var(--blue);
+    fill: var(--gray);
     width: 16px;
     height: 14px;
   }
@@ -27691,6 +27698,12 @@ textarea.input-reset {
   background-color: var(--primary100);
   border-radius: 8px;
 }
+.object-data__tags {
+  margin-top: 16px;
+}
+.object-data__tags .tag {
+  margin-bottom: 0;
+}
 .object-data__price {
   margin-top: 24px;
   display: -webkit-box;
@@ -30487,7 +30500,7 @@ textarea.input-reset {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: calc(100% + 35px);
-  margin: 16px -24px 0 -24px;
+  margin: 0px -24px 0 -24px;
   padding: 16px 24px 0 24px;
 }
 .buy-apartment .card-secondary .card-secondary__info--controls {

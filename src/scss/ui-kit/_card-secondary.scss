@@ -122,9 +122,8 @@
     &__pagination {
         position: absolute;
         z-index: 3;
-        left: 0;
+    right: 24px;
         bottom: 24px;
-        width: 100%;
         display: flex;
         justify-content: center;
         pointer-events: none;
@@ -176,7 +175,7 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: var(--primaryTwo);
+        background-color: var(--white);
 
         &:not(:last-child) {
             margin-right: 6px;
@@ -206,12 +205,11 @@
                 height: auto;
 
                 .secondary-tooltip__btn {
-                    color: var(--blue);
-                    font-size: var(--small-fz);
-                    line-height: 1;
-                    height: 30px;
-                    font-weight: 500;
-                    padding: 0 10px;
+                    color: var(--gray);
+                    font-size: var(--very-small-fz);
+                    line-height: var(--very-small-lh);
+                    font-weight: 400;
+                    padding: 4px 8px;
                     font-weight: 400;
                     display: flex;
                     align-items: center;
@@ -220,6 +218,7 @@
                     border-radius: 8px;
                     background-color: var(--white);
                     backdrop-filter: blur(2px);
+
                 }
 
                 .secondary-tooltip__content {
@@ -257,11 +256,10 @@
             }
 
             >span {
-                color: var(--blue);
-                font-size: var(--small-fz);
-                line-height: 1;
-                height: 30px;
-                padding: 0 10px;
+                color: var(--gray);
+                font-size: var(--very-small-fz);
+                line-height: var(--very-small-lh);
+                padding: 4px 8px;
                 font-weight: 400;
                 display: flex;
                 align-items: center;
@@ -662,24 +660,30 @@
     }
 
     &__options {
-        margin-top: auto;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        position: absolute;
+        z-index: 3;
+
+        width: 100%;
+
         display: flex;
         align-items: center;
 
         span {
-            background-color: var(--primary100);
+            background-color: var(--white);
             border-radius: 8px;
-            color: var(--dark);
-            height: 24px;
-            padding: 0 12px;
+            color: var(--gray);
+            padding: 4px 8px;
             font-size: var(--very-small-fz);
-            line-height: 1;
+            line-height: var(--very-small-lh);
 
-            display: inline-flex;
+      display: flex;
             align-items: center;
             justify-content: center;
             white-space: nowrap;
-
+            backdrop-filter: blur(2px);
             &:not(:last-child) {
                 margin-right: 6px;
             }
@@ -687,14 +691,12 @@
 
         .secondary-tooltip {
             &__btn {
-                background-color: var(--primary100);
+                background-color: var(--white);
                 color: var(--dark);
-                border-radius: 18px;
-                font-size: var(--small-fz);
-                line-height: var(--small-lh);
-                height: 24px;
-                min-width: 32px;
-                padding: 0 8px;
+                border-radius: 8px;
+                font-size: var(--very-small-fz);
+                line-height: var(--very-small-lh);
+                padding: 4px 8px;
                 width: max-content;
             }
 
