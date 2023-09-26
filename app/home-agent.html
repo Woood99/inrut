@@ -28328,7 +28328,7 @@
             <h2 class="title-2 popup-map__title">
                 На карте
             </h2>
-            <form class="filter popup-map__filter">
+            <form class="filter popup-map__filter filter--more">
                 <button type="button" class="btn btn-reset btn-secondary filter__btn">
                     <svg>
                         <use xlink:href="img/sprite.svg#filter"></use>
@@ -28341,42 +28341,42 @@
                             <button type="button" class="btn btn-reset filter__close">Закрыть</button>
                         </div>
                         <div class="filter__inner">
-                            <div class="filter__row" style="grid-template-columns: 21.3846153846% 30.7692307692% 25.3846153846% 20.6153846154%;">
-                                <div class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                            <div class="filter__row" style="grid-template-columns: 23.5593220339% 30.7627118644% 26.6949152542% 16.9491525424%;">
+                                <div class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection" >
                                     <div class="quantity-selection__inner">
                                         <div class="checkbox">
-                                            <input id="filter-quantity_studios_3" name="filter-quantity-studios" class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_studios_3" class="checkbox__label">
+                                            <input id="filter-quantity_studios" name="filter-quantity-studios" class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_studios" class="checkbox__label">
                                                 <span class="checkbox__text checkbox__text-studios">Студия</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_3_1" name="filter-quantity-1" class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3_1" class="checkbox__label">
+                                            <input id="filter-quantity_1" name="filter-quantity-1" class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_1" class="checkbox__label">
                                                 <span class="checkbox__text">1</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_3_2" name="filter-quantity-2" class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3_2" class="checkbox__label">
+                                            <input id="filter-quantity_2" name="filter-quantity-2" class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_2" class="checkbox__label">
                                                 <span class="checkbox__text">2</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_3_3" name="filter-quantity-3" class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3_3" class="checkbox__label">
+                                            <input id="filter-quantity_3" name="filter-quantity-3" class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_3" class="checkbox__label">
                                                 <span class="checkbox__text">3</span>
                                             </label>
                                         </div>
                                         <div class="checkbox">
-                                            <input id="filter-quantity_3_4" name="filter-quantity-4" class="checkbox__input" type="checkbox" value="true">
-                                            <label for="filter-quantity_3_4" class="checkbox__label">
+                                            <input id="filter-quantity_4" name="filter-quantity-4" class="checkbox__input" type="checkbox" value="true">
+                                            <label for="filter-quantity_4" class="checkbox__label">
                                                 <span class="checkbox__text">4+</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="filter__item filter-dropdown" data-filter-dropdown-name="Сумма" data-filter-dropdown-subtitle="Любая">
+                                <div class="filter__item filter-dropdown" data-filter-dropdown-name="Сумма" data-filter-dropdown-subtitle="Любая" >
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper">
                                             <div>
@@ -28439,8 +28439,8 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <span>Цена от</span>
-                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="Цена от">
+                                                            <span>Платёж от</span>
+                                                            <input type="text" maxlength="11" class="input-reset input-text__input" placeholder="Платёж от">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
@@ -28458,7 +28458,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая">
+                                <div class="filter__item filter-dropdown filter-dropdown--improved" data-filter-dropdown-name="Площадь" data-filter-dropdown-subtitle="Любая" >
                                     <button type="button" class="btn btn-reset filter-dropdown__button">
                                         <div class="filter-dropdown__button-wrapper">
                                             <div>
@@ -28484,8 +28484,8 @@
                                                 <div class="filter-range__nav">
                                                     <div class="input-text input-text--only-number">
                                                         <label class="input-text__label">
-                                                            <span>От</span>
-                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="От">
+                                                            <span>Площадь от</span>
+                                                            <input type="text" maxlength="3" class="input-reset input-text__input" placeholder="Площадь от">
                                                         </label>
                                                     </div>
                                                     <div>–</div>
@@ -28496,29 +28496,220 @@
                                                         </label>
                                                     </div>
                                                     <div>
-                                                        м²
+                                                        ₽
                                                     </div>
                                                 </div>
                                             </div>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="select-secondary">
-                                    <div class="select-secondary__wrapper">
-                                        <span class="select-secondary__placeholder">
-                                            Комплекс
-                                        </span>
-                                        <select class="select-secondary__body" hidden name="complex">
-                                            <option placeholder value="all-room">Любой</option>
-                                            <option value="room-1">Квартиры1</option>
-                                            <option value="room-2">Квартиры2</option>
-                                            <option value="room-3">Квартиры3</option>
-                                        </select>
+                                <button type="button" class="btn btn-reset filter__item select-map-btn" data-popup-path="search-area">
+                                    <span>Район поиска</span>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#location-two"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter__row" style="grid-template-columns: 33.8983050847% 33.8983050847% 1fr;" hidden>
+                                <div class="filter__item search-select" data-search-select-subtitle="Любой" >
+                                    <button type="button" class="btn btn-reset search-select__button">
+                                        <div class="search-select__button-wrapper">
+                                            <div>Застройщик</div>
+                                            <div>Любой</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select__dropdown">
+                                        <button type="button" class="btn btn-reset search-select__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
+                                        <label class="input-primary search-select__input">
+                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select__control">
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                        </div>
+                                        <div class="search-select__wrapper simplebar-third">
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_1" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_1" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ПИК</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_2" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_2" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Самолет</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_3" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_3" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК "А101"</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_4" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_4" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК МИЦ</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_5" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_5" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ЛСР</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_6" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_6" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>MR GROUP</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_7" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_7" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК ДОНСТРОЙ</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_8" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_8" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Эталон</span>
+                                                        <img loading="lazy" src="./img/pic.png" alt="ПИК">
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter__item search-select" data-search-select-subtitle="Любой" >
+                                    <button type="button" class="btn btn-reset search-select__button">
+                                        <div class="search-select__button-wrapper">
+                                            <div>Комплекс</div>
+                                            <div>Любой</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select__dropdown search-select__dropdown--left">
+                                        <button type="button" class="btn btn-reset search-select__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
+                                        <label class="input-primary search-select__input">
+                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select__control">
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                        </div>
+                                        <div class="search-select__wrapper simplebar-third">
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_10" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_10" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ПИК</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_11" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_11" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Самолет</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_12" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_12" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК "А101"</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_13" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_13" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК МИЦ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_14" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_14" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ЛСР</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_15" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_15" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>MR GROUP</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_16" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_16" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК ДОНСТРОЙ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_17" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_17" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Эталон</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="filter__controls more">
+                        <div class="filter__controls">
+                            <button type="button" class="btn btn-reset filter__btn-control">
+                                <span>Еще фильтры</span>
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#check"></use>
+                                </svg>
+                            </button>
                             <button type="reset" class="btn btn-reset btn-secondary filter__clear">Очистить</button>
                             <button type="button" class="btn btn-reset btn-primary filter__go">
                                 Показать 1567 объявлений
@@ -28572,18 +28763,42 @@
                                 </div>
                                 <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                 <div class="card-secondary__info">
+                                    <div class="row card-secondary__info--tags">
+                                        <span>
+                                            Ипотека 0,1%
+                                        </span>
+                                        <div class="secondary-tooltip">
+                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                +2
+                                            </button>
+                                            <div class="secondary-tooltip__content">
+                                                <span>Скидка до 15%</span>
+                                                <span>С кухней</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-secondary__info--btns-right">
-                                        <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                        <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-secondary__options">
+                                    <span>С отделкой</span>
+                                    <span>С кухней</span>
+                                    <div class="secondary-tooltip">
+                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                            +2
+                                        </button>
+                                        <div class="secondary-tooltip__content">
+                                            <span>Скидка до 15%</span>
+                                            <span>С кухней</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-
-
                             <div class="card-secondary__content">
                                 <h3 class="card-secondary__name">
                                     ЖК “Элит цветочные поляны экопарк”
@@ -28632,19 +28847,6 @@
                                         <span>от 145 350 ₽/мес.</span>
                                     </div>
                                 </div>
-                                <div class="card-secondary__options">
-                                    <span>С отделкой</span>
-                                    <span>С кухней</span>
-                                    <div class="secondary-tooltip">
-                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                            +2
-                                        </button>
-                                        <div class="secondary-tooltip__content">
-                                            <span>Скидка до 15%</span>
-                                            <span>С кухней</span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="card-secondary__bottom">
                                     <div class="card-secondary__user user-info">
                                         <div class="user-info__avatar avatar online">
@@ -28656,20 +28858,6 @@
                                         <span class="user-info__pos">
                                             Застройщик
                                         </span>
-                                    </div>
-                                    <div class="card-secondary__tooltip">
-                                        <div class="secondary-tooltip secondary-tooltip--dark">
-                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#info"></use>
-                                                </svg>
-                                            </button>
-                                            <div class="secondary-tooltip__content">
-                                                Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
-                                                Какой-то текст!! Какой-то текст!!
-                                            </div>
-                                        </div>
-                                        <span>Бонус от 50 000 ₽</span>
                                     </div>
                                     <div class="card-secondary__info--mobile">
                                     </div>
@@ -28719,18 +28907,42 @@
                                 </div>
                                 <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                 <div class="card-secondary__info">
+                                    <div class="row card-secondary__info--tags">
+                                        <span>
+                                            Ипотека 0,1%
+                                        </span>
+                                        <div class="secondary-tooltip">
+                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                +2
+                                            </button>
+                                            <div class="secondary-tooltip__content">
+                                                <span>Скидка до 15%</span>
+                                                <span>С кухней</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-secondary__info--btns-right">
-                                        <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                        <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-secondary__options">
+                                    <span>С отделкой</span>
+                                    <span>С кухней</span>
+                                    <div class="secondary-tooltip">
+                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                            +2
+                                        </button>
+                                        <div class="secondary-tooltip__content">
+                                            <span>Скидка до 15%</span>
+                                            <span>С кухней</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-
-
                             <div class="card-secondary__content">
                                 <h3 class="card-secondary__name">
                                     ЖК “Элит цветочные поляны экопарк”
@@ -28779,19 +28991,6 @@
                                         <span>от 145 350 ₽/мес.</span>
                                     </div>
                                 </div>
-                                <div class="card-secondary__options">
-                                    <span>С отделкой</span>
-                                    <span>С кухней</span>
-                                    <div class="secondary-tooltip">
-                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                            +2
-                                        </button>
-                                        <div class="secondary-tooltip__content">
-                                            <span>Скидка до 15%</span>
-                                            <span>С кухней</span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="card-secondary__bottom">
                                     <div class="card-secondary__user user-info">
                                         <div class="user-info__avatar avatar online">
@@ -28803,20 +29002,6 @@
                                         <span class="user-info__pos">
                                             Застройщик
                                         </span>
-                                    </div>
-                                    <div class="card-secondary__tooltip">
-                                        <div class="secondary-tooltip secondary-tooltip--dark">
-                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#info"></use>
-                                                </svg>
-                                            </button>
-                                            <div class="secondary-tooltip__content">
-                                                Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
-                                                Какой-то текст!! Какой-то текст!!
-                                            </div>
-                                        </div>
-                                        <span>Бонус от 50 000 ₽</span>
                                     </div>
                                     <div class="card-secondary__info--mobile">
                                     </div>
@@ -28866,18 +29051,42 @@
                                 </div>
                                 <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                 <div class="card-secondary__info">
+                                    <div class="row card-secondary__info--tags">
+                                        <span>
+                                            Ипотека 0,1%
+                                        </span>
+                                        <div class="secondary-tooltip">
+                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                +2
+                                            </button>
+                                            <div class="secondary-tooltip__content">
+                                                <span>Скидка до 15%</span>
+                                                <span>С кухней</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-secondary__info--btns-right">
-                                        <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                        <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-secondary__options">
+                                    <span>С отделкой</span>
+                                    <span>С кухней</span>
+                                    <div class="secondary-tooltip">
+                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                            +2
+                                        </button>
+                                        <div class="secondary-tooltip__content">
+                                            <span>Скидка до 15%</span>
+                                            <span>С кухней</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-
-
                             <div class="card-secondary__content">
                                 <h3 class="card-secondary__name">
                                     ЖК “Элит цветочные поляны экопарк”
@@ -28926,19 +29135,6 @@
                                         <span>от 145 350 ₽/мес.</span>
                                     </div>
                                 </div>
-                                <div class="card-secondary__options">
-                                    <span>С отделкой</span>
-                                    <span>С кухней</span>
-                                    <div class="secondary-tooltip">
-                                        <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                            +2
-                                        </button>
-                                        <div class="secondary-tooltip__content">
-                                            <span>Скидка до 15%</span>
-                                            <span>С кухней</span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="card-secondary__bottom">
                                     <div class="card-secondary__user user-info">
                                         <div class="user-info__avatar avatar online">
@@ -28950,20 +29146,6 @@
                                         <span class="user-info__pos">
                                             Застройщик
                                         </span>
-                                    </div>
-                                    <div class="card-secondary__tooltip">
-                                        <div class="secondary-tooltip secondary-tooltip--dark">
-                                            <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                <svg>
-                                                    <use xlink:href="img/sprite.svg#info"></use>
-                                                </svg>
-                                            </button>
-                                            <div class="secondary-tooltip__content">
-                                                Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
-                                                Какой-то текст!! Какой-то текст!!
-                                            </div>
-                                        </div>
-                                        <span>Бонус от 50 000 ₽</span>
                                     </div>
                                     <div class="card-secondary__info--mobile">
                                     </div>

@@ -1764,7 +1764,7 @@ textarea.input-reset {
 }
 .popup-primary--popup-map .popup-primary__container {
   border-radius: 0;
-  padding: 65px 48px 16px;
+  padding: 48px 16px 16px;
   width: 100%;
   height: auto;
   min-height: var(--vh);
@@ -1778,8 +1778,6 @@ textarea.input-reset {
 }
 .popup-primary--popup-map .popup-primary__content {
   position: relative;
-  max-width: 1332px;
-  margin: 0 auto;
   text-align: left;
 }
 .popup-primary--popup-map .popup-primary__content .card-secondary .card-secondary__bottom {
@@ -1799,6 +1797,15 @@ textarea.input-reset {
 }
 .popup-primary--popup-map .popup-primary__content .card-secondary .card-secondary__prices--2 {
   margin-bottom: 24px;
+}
+.popup-primary--popup-map .popup-primary__close {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
 }
 .popup-primary--edit-profile {
   text-align: center;
@@ -2870,18 +2877,15 @@ textarea.input-reset {
   }
 }
 
-@media (max-width: 1212px) {
-  .popup-map__title {
-    padding: 0 16px;
-  }
+.popup-map__title {
+  max-width: 1332px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 .popup-map__filter {
-  margin-top: 24px;
-}
-@media (max-width: 1212px) {
-  .popup-map__filter {
-    padding: 0 16px;
-  }
+  max-width: 1332px;
+  margin: 24px auto 0;
+  padding: 0 16px;
 }
 .popup-map__container {
   margin-top: 32px;
@@ -14097,9 +14101,8 @@ textarea.input-reset {
   color: var(--gray);
   font-size: var(--very-small-fz);
   line-height: var(--very-small-lh);
-  font-weight: 400;
   padding: 4px 8px;
-  font-weight: 400;
+  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23276,6 +23279,17 @@ textarea.input-reset {
 }
 .search-area__map.map-draw {
   height: calc(var(--vh) - 113px);
+}
+.search-area__map .map-draw__btn {
+  width: 237px;
+}
+.search-area__map .map-draw__btn span {
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+}
+.search-area__map .map-draw__btn svg {
+  width: 14px;
+  height: 14px;
 }
 .search-area__map-btn {
   position: absolute;

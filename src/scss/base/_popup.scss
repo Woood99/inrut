@@ -642,7 +642,7 @@
         .popup-primary {
             &__container {
                 border-radius: 0;
-                padding: 65px 48px 16px;
+                padding: 48px 16px 16px;
                 width: 100%;
                 height: auto;
                 min-height: var(--vh);
@@ -656,8 +656,6 @@
 
             &__content {
                 position: relative;
-                max-width: 1332px;
-                margin: 0 auto;
                 text-align: left;
 
                 .card-secondary {
@@ -675,6 +673,14 @@
                         margin-bottom: 24px;
                     }
                 }
+            }
+            &__close{
+                transform: translateX(0);
+             position: absolute;
+
+             top: 0;
+             right: 0;
+             margin-top: 0;
             }
         }
     }
@@ -1881,17 +1887,15 @@
 
 .popup-map {
     &__title {
-        @media (max-width:$desktop) {
-            padding: 0 16px;
-        }
+        max-width: 1332px;
+        margin: 0 auto;
+        padding: 0 16px;
     }
 
     &__filter {
-        margin-top: 24px;
-
-        @media (max-width:$desktop) {
-            padding: 0 16px;
-        }
+        max-width: 1332px;
+        margin: 24px auto 0;
+        padding: 0 16px;
     }
 
     &__container {
