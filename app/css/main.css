@@ -1716,7 +1716,7 @@ textarea.input-reset {
 }
 .popup-primary--search-area .popup-primary__container {
   border-radius: 0;
-  padding: 32px 0;
+  padding: 32px 0 0;
   width: 100%;
   height: auto;
   min-height: var(--vh);
@@ -22591,16 +22591,20 @@ textarea.input-reset {
   padding: 0 16px;
 }
 .search-area__container {
-  margin-top: 24px;
+  margin-top: 0;
 }
 .search-area .popup-primary__close {
   -webkit-transform: translate(0);
   -ms-transform: translate(0);
   transform: translate(0);
+  margin-top: 0;
+  width: 25px;
+  height: 25px;
+  margin-right: 16px;
 }
 .search-area__items {
   margin-top: 32px;
-  padding-bottom: 89px;
+  padding-bottom: 46px;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -22634,6 +22638,21 @@ textarea.input-reset {
   scrollbar-width: none;
 }
 .search-area .dragscroll::-webkit-scrollbar {
+  display: none;
+}
+.search-area__right {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  max-height: calc(var(--vh) - 80px - 105px);
+  overflow-y: auto;
+  padding-left: 16px;
+}
+.search-area__right .simplebar-vertical {
+  right: auto;
+  left: 4px;
+}
+.search-area__right .simplebar-horizontal {
   display: none;
 }
 .search-area__left {
@@ -22972,6 +22991,17 @@ textarea.input-reset {
 .search-area .tabs-primary__inner {
   margin-top: 0;
 }
+.search-area .tabs-primary__inner > ._sticky .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .search-area .tabs-primary__btns {
   display: -ms-grid;
   display: grid;
@@ -23001,7 +23031,7 @@ textarea.input-reset {
   -ms-grid-columns: 345px 1fr;
   grid-template-columns: 345px 1fr;
   grid-column-gap: 24px;
-  padding: 0 16px;
+  padding: 0;
 }
 .search-area__nav-left {
   width: 100%;
@@ -23009,6 +23039,7 @@ textarea.input-reset {
 }
 .search-area__bottom {
   position: fixed;
+  z-index: 101;
   bottom: 0;
   right: 0;
   left: 0;
@@ -23244,7 +23275,7 @@ textarea.input-reset {
   width: 100%;
 }
 .search-area__map.map-draw {
-  min-height: calc(var(--vh) - 100px);
+  height: calc(var(--vh) - 113px);
 }
 .search-area__map-btn {
   position: absolute;

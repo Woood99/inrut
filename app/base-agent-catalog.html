@@ -11670,25 +11670,29 @@
 <div class="popup popup-primary popup-primary--search-area">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="search-area">
         <div class="popup__content popup-primary__content search-area">
-                <h2 class="search-area__title title-2">
-                    Москва
-                </h2>
-                <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#x"></use>
-                    </svg>
-                    <span>Закрыть</span>
-                </button>
             <div class="tabs-primary search-area__container">
                 <div data-tabs class="tabs-primary__inner">
-                    <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
-                        <button type="button" class="btn btn-reset tabs__title _tab-active">
-                            Область на карте
-                        </button>
-                        <button type="button" class="btn btn-reset tabs__title ">
-                            Метро
-                        </button>
-                    </nav>
+                    <div class="_sticky">
+                        <div class="row">
+                            <h2 class="search-area__title title-2">
+                                Москва
+                            </h2>
+                            <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#x"></use>
+                                </svg>
+                                <span>Закрыть</span>
+                            </button>
+                        </div>
+                        <nav data-tabs-titles class="tabs-primary__btns tabs__navigation _sticky">
+                            <button type="button" class="btn btn-reset tabs__title _tab-active">
+                                Область на карте
+                            </button>
+                            <button type="button" class="btn btn-reset tabs__title ">
+                                Метро
+                            </button>
+                        </nav>
+                    </div>
                     <div class="tabs-primary__container">
                         <div data-tabs-body class="tabs__content tabs-primary__content">
                             <div class="tabs__body">
@@ -11720,6 +11724,7 @@
                             </div>
                             <div class="tabs__body" hidden>
                                 <form action="#" class="search-area__form">
+                                    <div class="search-area__right simplebar-third">
                                     <div class="search-area__top">
                                         <label class="input-primary search-area__search">
                                             <input type="search" name="Имя" class="input-reset input-primary__input" placeholder="Введите название станции">
@@ -16471,6 +16476,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                     <div class="search-area__left">
                                         <div class="search-area__metro _sticky">
                                             <button type="button" class="btn btn-reset search-area__resize">
