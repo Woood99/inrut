@@ -1716,7 +1716,7 @@ textarea.input-reset {
 }
 .popup-primary--search-area .popup-primary__container {
   border-radius: 0;
-  padding: 32px;
+  padding: 32px 0;
   width: 100%;
   height: auto;
   min-height: var(--vh);
@@ -1730,20 +1730,6 @@ textarea.input-reset {
 }
 .popup-primary--search-area .popup-primary__content {
   position: relative;
-  max-width: 1332px;
-  padding: 0;
-}
-.popup-primary--search-area .popup-primary__close {
-  position: sticky;
-  top: 16px;
-  right: 0;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
-  width: 20px;
-  height: 20px;
-  margin-left: auto;
-  z-index: 99;
 }
 .popup-primary--search-area-two .popup-primary__container {
   border-radius: 0;
@@ -22980,9 +22966,10 @@ textarea.input-reset {
   margin-top: 0;
 }
 .search-area .tabs-primary__btns {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
 }
 .search-area .tabs-primary__content {
   margin-top: 0;
@@ -23256,7 +23243,7 @@ textarea.input-reset {
   width: 100%;
 }
 .search-area__map.map-draw {
-  min-height: calc(var(--vh) - 200px);
+  min-height: calc(var(--vh) - 100px);
 }
 .search-area__map-btn {
   position: absolute;

@@ -24,7 +24,6 @@
         text-align: left;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(230px, auto));
-
         .select-secondary {
             &:nth-child(2) {
 
@@ -464,7 +463,8 @@
         }
 
         &__btns {
-            justify-content: start;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
         }
 
         &__content {
@@ -799,7 +799,7 @@
 
     &__map {
         &.map-draw {
-            min-height: calc(var(--vh) - 200px);
+            min-height: calc(var(--vh) - 100px);
         }
     }
 
