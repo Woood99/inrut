@@ -678,14 +678,14 @@
                 <div class="buy-apartment__cards-list cards-list control-cards">
                     <div class="container">
                         <div class="cards-list__controls control-cards__btns">
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#apps"></use>
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical _active">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#pause"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#apps"></use>
                                 </svg>
                             </button>
                             <button type="button" class="btn btn-reset control-cards__btn--maps" data-popup-path="popup-map_buy-apartment-building">
@@ -695,7 +695,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="cards-list__items control-cards__content control-cards__content--horizontal">
+                        <div class="cards-list__items control-cards__content control-cards__content--vertical">
 
 
                             <article class="card-secondary">
@@ -13767,8 +13767,7 @@
 <div class="popup popup-primary popup-primary--search-area">
     <div class="popup__container popup-primary__container" role="dialog" aria-modal="true" data-popup-target="search-area">
         <div class="popup__content popup-primary__content search-area">
-            <div class="container">
-                <h2 class="search-area__title title-2 container">
+                <h2 class="search-area__title title-2">
                     Москва
                 </h2>
                 <button class="btn-reset js-popup-close popup__close popup-primary__close" aria-label="Закрыть модальное окно">
@@ -13777,10 +13776,9 @@
                     </svg>
                     <span>Закрыть</span>
                 </button>
-            </div>
             <div class="tabs-primary search-area__container">
                 <div data-tabs class="tabs-primary__inner">
-                    <nav data-tabs-titles class="tabs-primary__btns tabs__navigation container--no-padding">
+                    <nav data-tabs-titles class="tabs-primary__btns tabs__navigation">
                         <button type="button" class="btn btn-reset tabs__title _tab-active">
                             Область на карте
                         </button>
@@ -13817,7 +13815,7 @@
                                     <div id="map-draw" class="map-primary remove-copyrights-pane"></div>
                                 </div>
                             </div>
-                            <div class="tabs__body container--no-padding" hidden>
+                            <div class="tabs__body" hidden>
                                 <form action="#" class="search-area__form">
                                     <div class="search-area__top">
                                         <label class="input-primary search-area__search">
