@@ -642,7 +642,7 @@
         .popup-primary {
             &__container {
                 border-radius: 0;
-                padding: 48px 16px 16px;
+                padding: 32px 16px 16px;
                 width: 100%;
                 height: auto;
                 min-height: var(--vh);
@@ -676,11 +676,14 @@
             }
             &__close{
                 transform: translateX(0);
-             position: absolute;
+     position: static;
 
              top: 0;
              right: 0;
              margin-top: 0;
+
+             width: 30px;
+             height: 30px;
             }
         }
     }
@@ -1886,15 +1889,29 @@
 }
 
 .popup-map {
-    &__title {
-        max-width: 1332px;
-        margin: 0 auto;
-        padding: 0 16px;
+    &__top{
+        padding: 16px 0;
+        &._sticky{
+            @media (min-width:$desktop-min){
+                 position: sticky;
+                top: 0;
+                 background-color: var(--white);
+                 z-index: 5; 
+                 margin: 0 -16px;
+                 padding: 16px;
+            }
+        }
+        .container{
+            max-width: 1332px;
+
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__filter {
         max-width: 1332px;
-        margin: 24px auto 0;
+        margin: 8px auto 0;
         padding: 0 16px;
     }
 
@@ -1941,8 +1958,8 @@
     }
 
     &__map {
-        max-height: var(--vh);
-        min-height: var(--vh);
+        max-height: calc(var(--vh) - 65px);
+        min-height: calc(var(--vh) - 65px);
         overflow: hidden;
         padding-left: 20px;
         margin-left: -20px;
@@ -1950,7 +1967,7 @@
         @media (min-width:$desktop-min) {
             &._sticky {
                 position: sticky;
-                top: 0;
+                top: 65px;
                 width: calc(100% + 20px);
             }
         }
@@ -1959,7 +1976,9 @@
             height: 100%;
             width: 100%;
         }
-
+        .map-draw__btns{
+            left: 40px;
+        }
         @media (max-width:$desktop) {
             order: 1;
             margin-bottom: 24px;
