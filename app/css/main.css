@@ -14070,7 +14070,7 @@ textarea.input-reset {
   margin-right: 6px;
 }
 .card-secondary .image-pagination__item--active {
-  background-color: var(--blue);
+  background-color: var(--dark);
 }
 .card-secondary__info {
   position: absolute;
@@ -14113,6 +14113,8 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
   width: auto;
+  min-width: 30px;
+  height: 30px;
   border-radius: 8px;
   background-color: var(--white);
   -webkit-backdrop-filter: blur(2px);
@@ -14174,6 +14176,7 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  height: 30px;
   border-radius: 8px;
   background-color: var(--white);
   -webkit-backdrop-filter: blur(2px);
@@ -14643,9 +14646,14 @@ textarea.input-reset {
   white-space: nowrap;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
+  height: 30px;
 }
 .card-secondary__options span:not(:last-child) {
   margin-right: 6px;
+}
+.card-secondary__options .secondary-tooltip {
+  width: auto;
+  height: auto;
 }
 .card-secondary__options .secondary-tooltip__btn {
   background-color: var(--white);
@@ -14657,6 +14665,7 @@ textarea.input-reset {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  height: 30px;
 }
 .card-secondary__options .secondary-tooltip__content {
   display: -webkit-box;
