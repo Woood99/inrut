@@ -221,8 +221,16 @@ const maps = () => {
                 center: [55.77171185651524, 37.62811179984117],
                 zoom: 10,
             });
-            positionElement(map);
             removeControlsPrimary(map, '#map-draw');
+            map.behaviors.enable(['scrollZoom']);
+            map.controls.remove('fullscreenControl');
+            map.controls.get('zoomControl').options.set({
+                position: {
+                    top: 20,
+                    right: 20
+                },
+                maxWidth: '44'
+            })
         }
         ymaps.ready(init);
     }

@@ -8364,7 +8364,7 @@ const mapMetro = () => {
     });
     function resize(e) {
       const width = e.pageX - container.getBoundingClientRect().left - 20;
-      if (!(width <= 750 && width >= 345)) return;
+      if (!(width <= 750 && width >= 360)) return;
       container.style.gridTemplateColumns = `${width}px 1fr`;
     }
     function stopResize() {
@@ -8389,6 +8389,7 @@ const mapMetro = () => {
     const maxScale = 1.15;
     const minScale = 0.5;
     const stap = 0.05;
+    const stapNav = 0.15;
     addOnWheel(map, function (e) {
       let delta = e.deltaY || e.detail || e.wheelDelta;
       if (delta === 100) {
@@ -8401,6 +8402,21 @@ const mapMetro = () => {
       }
       map.querySelector('#map-metro_moscow').style.transform = map.style.WebkitTransform = map.style.MsTransform = 'scale(' + scale + ')';
       e.preventDefault();
+    });
+    const plus = container.querySelector('.search-area__scale-btn--plus');
+    const minus = container.querySelector('.search-area__scale-btn--minus');
+    plus.addEventListener('click', () => {
+      if (scale < maxScale) scale += stapNav;
+      if (scale > maxScale) scale = maxScale;
+    });
+    minus.addEventListener('click', () => {
+      if (scale > minScale) scale -= stapNav;
+      if (scale < minScale) scale = minScale;
+    });
+    [plus, minus].forEach(el => {
+      el.addEventListener('click', () => {
+        map.querySelector('#map-metro_moscow').style.transform = map.style.WebkitTransform = map.style.MsTransform = 'scale(' + scale + ')';
+      });
     });
   }
   clearAllBtn.addEventListener('click', clearAll);
@@ -8634,8 +8650,16 @@ const maps = () => {
         center: [55.77171185651524, 37.62811179984117],
         zoom: 10
       });
-      positionElement(map);
       removeControlsPrimary(map, '#map-draw');
+      map.behaviors.enable(['scrollZoom']);
+      map.controls.remove('fullscreenControl');
+      map.controls.get('zoomControl').options.set({
+        position: {
+          top: 20,
+          right: 20
+        },
+        maxWidth: '44'
+      });
     }
     ymaps.ready(init);
   }

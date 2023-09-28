@@ -517,11 +517,52 @@ left: 4px;
     &__form {
         position: relative;
         display: grid;
-        grid-template-columns: 345px 1fr;
+        grid-template-columns: 360px 1fr;
         grid-column-gap: 24px;
         padding: 0;
     }
+    &__scale{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 99;
 
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(93, 112, 134, 0.1);
+        overflow: hidden;
+    }
+    &__scale-btn{
+        background-color: var(--white);
+
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        svg{
+            width: 18px;
+            height: 18px;
+            stroke: var(--black);
+            stroke-width: 2px;
+        }
+        &--minus{
+         &::before{
+            content: "";
+            width: 40%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.05);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+         }
+        }
+    }
     &__nav-left {
         width: 100%;
         max-height: 81px;
