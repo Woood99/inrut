@@ -802,6 +802,16 @@
         background-color: var(--primary100);
         border-radius: 8px;
     }
+    &__discount{
+        margin-top: 16px;
+        color: var(--blue);
+        transition: color $transitionSpeed $transitionFunction;
+        @media (min-width:$desktop-min){
+             &:hover{
+                color: var(--blue-dark);
+             } 
+        }
+    }
     &__tags{
         margin-top: 16px;
         .tag{
@@ -1129,9 +1139,9 @@
             }
         }
 
-        @media (max-width:$smallTablet-max) {
-            margin: 4px 0 0 0;
-        }
+       @media (max-width:$desktop){
+        margin: 4px 0 0 0; 
+       }
     }
 
     &__choices {

@@ -4205,6 +4205,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/favoriteBtn */ "./src/js/components/favoriteBtn.js");
 /* harmony import */ var _components_advancePayment__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/advancePayment */ "./src/js/components/advancePayment.js");
 /* harmony import */ var _components_submitApp__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/submitApp */ "./src/js/components/submitApp.js");
+/* harmony import */ var _components_wantDiscount__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/wantDiscount */ "./src/js/components/wantDiscount.js");
+
 
 
 
@@ -4330,6 +4332,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_favoriteBtn__WEBPACK_IMPORTED_MODULE_39__["default"])();
   (0,_components_advancePayment__WEBPACK_IMPORTED_MODULE_40__["default"])();
   (0,_components_submitApp__WEBPACK_IMPORTED_MODULE_41__["default"])();
+  (0,_components_wantDiscount__WEBPACK_IMPORTED_MODULE_42__["default"])();
   // ==================================================
 
   (0,_components_formValidate__WEBPACK_IMPORTED_MODULE_8__.validateRadioPrimary)('.complaint-popup__form', '.textarea-primary__input', '.complaint-popup__btn', '.radio-primary__input');
@@ -4545,6 +4548,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'stock-offers-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-bank-popup');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'want-discount');
 
 // ========================================================================================
 
@@ -10097,6 +10101,44 @@ const wallet = () => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wallet);
+
+/***/ }),
+
+/***/ "./src/js/components/wantDiscount.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/wantDiscount.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modules_numberReplace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/numberReplace */ "./src/js/modules/numberReplace.js");
+
+const wantDiscount = () => {
+  const container = document.querySelector('.want-discount__form');
+  if (!container) return;
+  const defaultPrice = container.dataset.wantDiscountDefaultPrice;
+  const input = container.querySelector('.want-discount__input input');
+  const btns = container.querySelectorAll('.want-discount__prc');
+  input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_0__["default"])((+defaultPrice + defaultPrice / 100 * btns[0].dataset.wantDiscountPrc).toString());
+  btns[0].classList.add('_active');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(btn => btn.classList.remove('_active'));
+      btn.classList.add('_active');
+      container.querySelector('.want-discount__input').classList.add('_active');
+      const result = +defaultPrice + defaultPrice / 100 * btn.dataset.wantDiscountPrc;
+      input.value = (0,_modules_numberReplace__WEBPACK_IMPORTED_MODULE_0__["default"])(result.toString());
+    });
+  });
+  input.addEventListener('input', () => {
+    btns.forEach(btn => btn.classList.remove('_active'));
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wantDiscount);
 
 /***/ }),
 
