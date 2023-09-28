@@ -16,14 +16,14 @@
 </head>
 
 <body class="page__body">
-    <div class="site-container site-container--buy-apartment">
+    <div class="site-container site-container--buy-apartment site-container--header-filter">
         @include('partials/header.html')
         <main class="main main-page-gap buy-apartment">
             <div class="buy-apartment__body">
                 <h1 class="buy-apartment__title title-1 container">
                     Купить квартиру в Новостройке
                 </h1>
-                <form class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--building filter--more container">
+                <form class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--building filter--more container" data-da=".header,1212,last">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="filter__inner">
                             <div class="filter__row buy-apartment-filter__row--1">
-                                <div class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection">
+                                <div class="filter__item filter__item--quantity-selection request-catalog__quantity-selection quantity-selection" >
                                     <div class="quantity-selection__inner">
                                         <div class="checkbox">
                                             <input id="filter-quantity_studios" name="filter-quantity-studios" class="checkbox__input" type="checkbox" value="true">
@@ -305,6 +305,97 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="filter__item search-select" data-search-select-subtitle="Любой" >
+                                    <button type="button" class="btn btn-reset search-select__button">
+                                        <div class="search-select__button-wrapper">
+                                            <div>Комплекс</div>
+                                            <div>Любой</div>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#check"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="search-select__dropdown search-select__dropdown--left">
+                                        <button type="button" class="btn btn-reset search-select__close">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#x"></use>
+                                            </svg>
+                                        </button>
+                                        <label class="input-primary search-select__input">
+                                            <input type="text" name="Имя" class="input-reset input-primary__input" placeholder="Поиск по названию">
+                                        </label>
+                                        <div class="search-select__control">
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__all">Выбрать всё</button>
+                                            <button type="button" class="btn btn-reset btn-secondary search-select__clear">Очистить всё</button>
+                                        </div>
+                                        <div class="search-select__wrapper simplebar-third">
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_10" name="developer-name_1" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_10" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ПИК</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_11" name="developer-name_2" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_11" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Самолет</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_12" name="developer-name_3" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_12" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК "А101"</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_13" name="developer-name_4" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_13" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК МИЦ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_14" name="developer-name_5" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_14" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ЛСР</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_15" name="developer-name_6" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_15" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>MR GROUP</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_16" name="developer-name_7" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_16" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК ДОНСТРОЙ</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="search-select__item checkbox-secondary">
+                                                <input id="developer_17" name="developer-name_8" class="checkbox-secondary__input" type="checkbox" value="true">
+                                                <label for="developer_17" class="checkbox-secondary__label">
+                                                    <span class="checkbox-secondary__text">
+                                                        <span>ГК Эталон</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="filter__controls">
@@ -321,13 +412,13 @@
                         </div>
                     </div>
                 </form>
-                <div class="buy-apartment__sort select-sort container" >
+                <!-- <div class="buy-apartment__sort select-sort container" >
                     <span class="select-sort__label">Сортировка:</span>
                     <select class="select-sort__body" hidden name="filter-sort">
                         <option value="price">Стоимость</option>
                         <option value="rating">Рейтинг</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="buy-apartment__tags tags container">
                     <button type="button" class="btn btn-reset  buy-apartment__tag tags__item tag">
                         Нужен ремоент
@@ -364,30 +455,29 @@
                     </button>
                 </div>
                 <div class="buy-apartment__cards-list cards-list control-cards">
-                    <div class="container--no-padding">
+                    <div class="container">
                         <div class="cards-list__controls control-cards__btns">
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#apps"></use>
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical _active">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#pause"></use>
                                 </svg>
                             </button>
-                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-popup-path="popup-map_buy-apartment-building">
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#apps"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-da=".buy-apartment__filter,1024,1" data-popup-path="popup-map_buy-apartment-building">
                                 <span>На карте</span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#location-fill"></use>
                                 </svg>
                             </button>
                         </div>
-                        <div class="cards-list__items control-cards__content control-cards__content--horizontal">
-
+                        <div class="cards-list__items control-cards__content control-cards__content--vertical">
 
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -428,64 +518,26 @@
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="card-secondary__content">
-                                        <h3 class="card-secondary__name">
-                                            ЖК “Элит цветочные поляны экопарк”
-                                        </h3>
-                                        <div class="card-secondary__add-info">
-                                            <span>25 квартир от застройщика</span>
-                                            <span>Срок сдачи: 1 кв. 2024г; &nbsp; есть сданные</span>
-                                        </div>
-                                        <div class="card-secondary__address">
-                                            Краснодар, ул.Карла-Маркса., 234
-                                        </div>
-                                        <div class="card-secondary__prices card-secondary__prices--1">
-                                            <div>
-                                                <div class="card-secondary__price">
-                                                    <span>Студии</span>
-                                                    <span>от 4,7 млн ₽</span>
-                                                </div>
-                                                <div class="card-secondary__price">
-                                                    <span>1-комн.</span>
-                                                    <span>от 34,7 млн ₽</span>
-                                                </div>
-                                                <div class="card-secondary__price">
-                                                    <span>2-комн.</span>
-                                                    <span>от 40,7 млн ₽</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="card-secondary__price">
-                                                    <span>3-комн.</span>
-                                                    <span>от 134 млн ₽</span>
-                                                </div>
-                                                <div class="card-secondary__price">
-                                                    <span>4-комн.</span>
-                                                    <span>от 134 млн ₽</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__prices card-secondary__prices--2">
-                                            <div class="card-secondary__price-main">
-                                                <span class="card-secondary__price-new">
-                                                    <span class="title-3">от 2 897 000 ₽</span>
-                                                </span>
-                                            </div>
-                                            <div class="card-secondary__price">
-                                                <span>В ипотеку </span>
-                                                <span>от 145 350 ₽/мес.</span>
                                             </div>
                                         </div>
                                         <div class="card-secondary__options">
@@ -498,80 +550,6 @@
                                                 <div class="secondary-tooltip__content">
                                                     <span>Скидка до 15%</span>
                                                     <span>С кухней</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__bottom">
-                                            <div class="card-secondary__user user-info">
-                                                <div class="user-info__avatar avatar online">
-                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
-                                                </div>
-                                                <span class="user-info__name">
-                                                    Югстройинвест
-                                                </span>
-                                                <span class="user-info__pos">
-                                                    Застройщик
-                                                </span>
-                                            </div>
-                                            <div class="card-secondary__tooltip">
-                                                <div class="secondary-tooltip secondary-tooltip--dark">
-                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                        <svg>
-                                                            <use xlink:href="img/sprite.svg#info"></use>
-                                                        </svg>
-                                                    </button>
-                                                    <div class="secondary-tooltip__content">
-                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
-                                                        Какой-то текст!! Какой-то текст!!
-                                                    </div>
-                                                </div>
-                                                <span>Бонус от 50 000 ₽</span>
-                                            </div>
-                                            <div class="card-secondary__info--mobile">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
-
-
-
-                                    <div class="card-secondary__top">
-                                        <div class="card-secondary__images">
-                                            <div class="card-secondary__item">
-                                                <div class="card-secondary__image">
-                                                    <picture>
-                                                        <source srcset="./img/card-6.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                            <div class="card-secondary__item">
-                                                <div class="card-secondary__image">
-                                                    <picture>
-                                                        <source srcset="./img/card-7.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                            <div class="card-secondary__item">
-                                                <div class="card-secondary__image">
-                                                    <picture>
-                                                        <source srcset="./img/card-8.webp" type="image/webp">
-                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
-                                        <div class="card-secondary__info">
-                                            <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
-                                                    <svg>
-                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
-                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -624,19 +602,6 @@
                                                 <span>от 145 350 ₽/мес.</span>
                                             </div>
                                         </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="card-secondary__bottom">
                                             <div class="card-secondary__user user-info">
                                                 <div class="user-info__avatar avatar online">
@@ -670,7 +635,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -700,26 +665,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -766,19 +758,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -814,7 +793,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -844,26 +823,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -910,19 +916,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -958,7 +951,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -988,26 +981,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1054,19 +1074,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1102,7 +1109,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1132,26 +1139,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1200,6 +1234,102 @@
                                                 <span>от 145 350 ₽/мес.</span>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__bottom">
+                                            <div class="card-secondary__user user-info">
+                                                <div class="user-info__avatar avatar online">
+                                                    <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                </div>
+                                                <span class="user-info__name">
+                                                    Югстройинвест
+                                                </span>
+                                                <span class="user-info__pos">
+                                                    Застройщик
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__tooltip">
+                                                <div class="secondary-tooltip secondary-tooltip--dark">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        <svg>
+                                                            <use xlink:href="img/sprite.svg#info"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        Какой-то текст!! Какой-то текст!! Какой-то текст!! Какой-то текст!!
+                                                        Какой-то текст!! Какой-то текст!!
+                                                    </div>
+                                                </div>
+                                                <span>Бонус от 50 000 ₽</span>
+                                            </div>
+                                            <div class="card-secondary__info--mobile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="card-secondary">
+                                <a href="./develop-inner.html" class="card-secondary__container">
+
+
+
+                                    <div class="card-secondary__top">
+                                        <div class="card-secondary__images">
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-1.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-1.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-6.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
+                                        <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-secondary__info--btns-right">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#favorite-stroke"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card-secondary__options">
                                             <span>С отделкой</span>
                                             <span>С кухней</span>
@@ -1211,6 +1341,55 @@
                                                     <span>Скидка до 15%</span>
                                                     <span>С кухней</span>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary__content">
+                                        <h3 class="card-secondary__name">
+                                            ЖК “Элит цветочные поляны экопарк”
+                                        </h3>
+                                        <div class="card-secondary__add-info">
+                                            <span>25 квартир от застройщика</span>
+                                            <span>Срок сдачи: 1 кв. 2024г; &nbsp; есть сданные</span>
+                                        </div>
+                                        <div class="card-secondary__address">
+                                            Краснодар, ул.Карла-Маркса., 234
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--1">
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>Студии</span>
+                                                    <span>от 4,7 млн ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>1-комн.</span>
+                                                    <span>от 34,7 млн ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>2-комн.</span>
+                                                    <span>от 40,7 млн ₽</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card-secondary__price">
+                                                    <span>3-комн.</span>
+                                                    <span>от 134 млн ₽</span>
+                                                </div>
+                                                <div class="card-secondary__price">
+                                                    <span>4-комн.</span>
+                                                    <span>от 134 млн ₽</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-secondary__prices card-secondary__prices--2">
+                                            <div class="card-secondary__price-main">
+                                                <span class="card-secondary__price-new">
+                                                    <span class="title-3">от 2 897 000 ₽</span>
+                                                </span>
+                                            </div>
+                                            <div class="card-secondary__price">
+                                                <span>В ипотеку </span>
+                                                <span>от 145 350 ₽/мес.</span>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1249,7 +1428,7 @@
                                 Баннер
                             </div>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1279,26 +1458,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1345,19 +1551,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1393,7 +1586,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1423,26 +1616,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1489,19 +1709,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1537,7 +1744,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1567,26 +1774,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1633,19 +1867,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1681,7 +1902,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1711,26 +1932,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1777,19 +2025,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1825,7 +2060,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1855,26 +2090,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -1921,19 +2183,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -1969,7 +2218,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -1999,26 +2248,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -2065,19 +2341,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -2113,7 +2376,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -2143,26 +2406,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -2209,19 +2499,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -2257,7 +2534,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -2287,26 +2564,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -2353,19 +2657,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
@@ -2401,7 +2692,7 @@
                                 </a>
                             </article>
                             <article class="card-secondary">
-                                <a href="#" class="card-secondary__container">
+                                <a href="./develop-inner.html" class="card-secondary__container">
 
 
 
@@ -2431,26 +2722,53 @@
                                                     </picture>
                                                 </div>
                                             </div>
+                                            <div class="card-secondary__item">
+                                                <div class="card-secondary__image">
+                                                    <picture>
+                                                        <source srcset="./img/card-10.webp" type="image/webp">
+                                                        <img loading="lazy" src="./img/card-10.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                    </picture>
+                                                </div>
+                                            </div>
                                         </div>
                                         <ul class="card-secondary__pagination list-reset" aria-hidden="true"></ul>
                                         <div class="card-secondary__info">
+                                            <div class="row card-secondary__info--tags">
+                                                <span>
+                                                    Ипотека 0,1%
+                                                </span>
+                                                <div class="secondary-tooltip">
+                                                    <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                        +2
+                                                    </button>
+                                                    <div class="secondary-tooltip__content">
+                                                        <span>Скидка до 15%</span>
+                                                        <span>С кухней</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-secondary__info--btns-right">
-                                                <div class="card-secondary__info--favorite" title="Добавить в избранное" data-popup-path="favorite-two">
+                                                <div class="card-secondary__info--favorite" title="Добавить в избранное">
                                                     <svg>
                                                         <use xlink:href="img/sprite.svg#favorite-stroke"></use>
                                                     </svg>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-secondary__options">
+                                            <span>С отделкой</span>
+                                            <span>С кухней</span>
+                                            <div class="secondary-tooltip">
+                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
+                                                    +2
+                                                </button>
+                                                <div class="secondary-tooltip__content">
+                                                    <span>Скидка до 15%</span>
+                                                    <span>С кухней</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
-
-
-
-
-
                                     <div class="card-secondary__content">
                                         <h3 class="card-secondary__name">
                                             ЖК “Элит цветочные поляны экопарк”
@@ -2497,19 +2815,6 @@
                                             <div class="card-secondary__price">
                                                 <span>В ипотеку </span>
                                                 <span>от 145 350 ₽/мес.</span>
-                                            </div>
-                                        </div>
-                                        <div class="card-secondary__options">
-                                            <span>С отделкой</span>
-                                            <span>С кухней</span>
-                                            <div class="secondary-tooltip">
-                                                <button type="button" class="btn btn-reset secondary-tooltip__btn">
-                                                    +2
-                                                </button>
-                                                <div class="secondary-tooltip__content">
-                                                    <span>Скидка до 15%</span>
-                                                    <span>С кухней</span>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-secondary__bottom">
