@@ -5977,18 +5977,6 @@ function controlCards() {
               bottomMobile.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
             }
           }
-          if (tags) {
-            if (checkVertical(btn)) {
-              if (!bottomMobile.querySelector('.card-primary__info--tags')) {
-                const clone = tags.cloneNode(true);
-                bottomMobile.appendChild(clone);
-              }
-              bottomMobile.querySelector('.card-primary__info--tags').removeAttribute('hidden');
-            }
-            if (checkHorizontal(btn)) {
-              bottomMobile.querySelector('.card-primary__info--tags').setAttribute('hidden', '');
-            }
-          }
           if (favorite) {
             if (checkVertical(btn)) {
               if (!bottomMobile.querySelector('.card-primary__info--favorite')) {

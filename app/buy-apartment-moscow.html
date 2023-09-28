@@ -16,7 +16,7 @@
 </head>
 
 <body class="page__body">
-    <div class="site-container site-container--buy-apartment">
+    <div class="site-container site-container--buy-apartment site-container--header-filter">
         <header class="header">
     <div class="header__top header-top">
         <div class="header-top__container container">
@@ -244,7 +244,7 @@
                 <h1 class="buy-apartment__title title-1 container">
                     Купить квартиру в Москве
                 </h1>
-                <form class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--moskow filter--more container">
+                <form class="buy-apartment__filter filter buy-apartment-filter buy-apartment-filter--moskow filter--more container" data-da=".header,1212,last">
                     <button type="button" class="btn btn-reset btn-secondary filter__btn">
                         <svg>
                             <use xlink:href="img/sprite.svg#filter"></use>
@@ -598,13 +598,13 @@
                         </div>
                     </div>
                 </form>
-                <div class="buy-apartment__sort select-sort container" >
+                <!-- <div class="buy-apartment__sort select-sort container" >
                     <span class="select-sort__label">Сортировка:</span>
                     <select class="select-sort__body" hidden name="filter-sort">
                         <option value="price">Стоимость</option>
                         <option value="rating">Рейтинг</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="buy-apartment__tags tags container">
                     <button type="button" class="btn btn-reset  buy-apartment__tag tags__item tag">
                         Нужен ремоент
@@ -643,24 +643,24 @@
                 <div class="buy-apartment__cards-list cards-list control-cards">
                     <div class="container">
                         <div class="cards-list__controls control-cards__btns">
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
-                                <svg>
-                                    <use xlink:href="img/sprite.svg#apps"></use>
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical _active">
                                 <svg>
                                     <use xlink:href="img/sprite.svg#pause"></use>
                                 </svg>
                             </button>
-                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--maps">
+                            <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#apps"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn btn-reset control-cards__btn--maps" data-da=".buy-apartment__filter,1024,1" data-popup-path="popup-map_buy-apartment-building">
                                 <span>На карте</span>
                                 <svg>
                                     <use xlink:href="img/sprite.svg#location-fill"></use>
                                 </svg>
                             </button>
                         </div>
-                        <div class="cards-list__items control-cards__content control-cards__content--horizontal">
+                        <div class="cards-list__items control-cards__content control-cards__content--vertical">
                             <article class="card-primary">
                                 <a href="#" class="card-primary__container">
                                     <div class="card-primary__top">

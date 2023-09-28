@@ -13185,9 +13185,8 @@ textarea.input-reset {
 .card-primary__pagination {
   position: absolute;
   z-index: 3;
-  left: 0;
+  right: 24px;
   bottom: 24px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13206,13 +13205,13 @@ textarea.input-reset {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--primaryTwo);
+  background-color: var(--white);
 }
 .card-primary .image-pagination__item:not(:last-child) {
   margin-right: 6px;
 }
 .card-primary .image-pagination__item--active {
-  background-color: var(--blue);
+  background-color: var(--dark);
 }
 .card-primary__info {
   position: absolute;
@@ -13240,13 +13239,11 @@ textarea.input-reset {
   height: auto;
 }
 .card-primary__info--tags .secondary-tooltip .secondary-tooltip__btn {
-  color: var(--blue);
+  color: var(--gray);
   font-size: var(--small-fz);
-  line-height: 1;
-  height: 30px;
+  line-height: var(--small-lh);
+  padding: 4px 8px;
   font-weight: 500;
-  padding: 0 10px;
-  font-weight: 400;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13257,6 +13254,8 @@ textarea.input-reset {
   -ms-flex-pack: center;
   justify-content: center;
   width: auto;
+  min-width: 30px;
+  height: 30px;
   border-radius: 8px;
   background-color: var(--white);
   -webkit-backdrop-filter: blur(2px);
@@ -13286,7 +13285,7 @@ textarea.input-reset {
   color: var(--dark);
   height: 24px;
   padding: 0 12px;
-  font-size: var(--very-small-fz);
+  font-size: var(--small-fz);
   line-height: 1;
   white-space: nowrap;
   display: -webkit-box;
@@ -13304,12 +13303,11 @@ textarea.input-reset {
   margin-right: 6px;
 }
 .card-primary__info--tags > span {
-  color: var(--blue);
+  color: var(--gray);
   font-size: var(--small-fz);
-  line-height: 1;
-  height: 30px;
-  padding: 0 10px;
-  font-weight: 400;
+  line-height: var(--small-lh);
+  padding: 4px 8px;
+  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13319,6 +13317,7 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  height: 30px;
   border-radius: 8px;
   background-color: var(--white);
   -webkit-backdrop-filter: blur(2px);
@@ -13544,29 +13543,15 @@ textarea.input-reset {
   height: 15px;
   fill: var(--gray);
   stroke: none;
-  -webkit-transition: fill 0.4s ease-in-out;
-  -o-transition: fill 0.4s ease-in-out;
-  transition: fill 0.4s ease-in-out;
-}
-@media (max-width: 1024px) {
-  .card-primary__info--favorite svg {
-    width: 17px;
-    height: 17px;
-  }
 }
 @media (max-width: 1024px) {
   .card-primary__info--favorite {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
-    width: 34px;
-    height: 34px;
-    -webkit-transform: translateY(-2px);
-    -ms-transform: translateY(-2px);
-    transform: translateY(-2px);
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
   }
 }
 @media (min-width: 1213px) {
@@ -13574,11 +13559,8 @@ textarea.input-reset {
     stroke: var(--blue);
   }
 }
-.card-primary__info--favorite._active {
-  background-color: var(--blue) !important;
-}
 .card-primary__info--favorite._active svg {
-  fill: var(--white) !important;
+  fill: var(--blue) !important;
 }
 .card-primary__info--controls {
   margin-top: 10px;
@@ -20558,9 +20540,9 @@ textarea.input-reset {
   .control-cards__content--vertical .card-primary__bottom .card-primary__info--favorite {
     height: 28px;
     width: 28px;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--gray);
     border-radius: 8px;
-    margin-left: 16px;
+    margin-left: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -20572,7 +20554,7 @@ textarea.input-reset {
     justify-content: center;
   }
   .control-cards__content--vertical .card-primary__bottom .card-primary__info--favorite svg {
-    fill: var(--blue);
+    fill: var(--gray);
     width: 16px;
     height: 14px;
   }
@@ -20594,9 +20576,6 @@ textarea.input-reset {
     top: auto;
   }
   .control-cards__content--vertical .card-primary__info .card-primary__info--favorite {
-    display: none;
-  }
-  .control-cards__content--vertical .card-primary__info .card-primary__info--tags {
     display: none;
   }
   .control-cards__content--vertical .card-primary__info .card-primary__info--controls {
