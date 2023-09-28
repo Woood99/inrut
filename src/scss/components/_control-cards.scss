@@ -38,6 +38,7 @@
             &__container {
                 display: grid;
                 grid-template-columns: percent(315, 1016) 1fr;
+                height: auto;
             }
 
             &__top {
@@ -89,7 +90,7 @@
             }
 
             &__bottom {
-                margin-top: 48px;
+                margin-top: 62px;
                 grid-column: 2/3;
 
                 &._vertical-active {
@@ -177,7 +178,6 @@
                     margin-top: 0;
                 }
             }
-
             &__user {
                 margin-right: auto;
             }
@@ -459,7 +459,14 @@
                 animation-duration: 1.1s;
             }
         }
-
+        .card-primary{
+            &__copies-btn{
+                display: none;
+            }
+            &__copies{
+                display: none;
+            }
+        }
         .card-secondary {
             &__add-info {
                 span:nth-child(1) {

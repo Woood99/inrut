@@ -4850,15 +4850,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "cardSecondaryActions": () => (/* binding */ cardSecondaryActions)
 /* harmony export */ });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _support_modules_slide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../support-modules/slide */ "./src/js/support-modules/slide.js");
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination]);
+
 const cardSecondaryActions = () => {
   const cards = document.querySelectorAll('.card-secondary');
   if (cards.length === 0) return;
   cards.forEach(card => {
     const imageSwitchItems = card.querySelectorAll('.card-secondary__item');
     const imagePagination = card.querySelector('.card-secondary__pagination');
-    cardImageSwitch(card, imageSwitchItems, imagePagination);
+    if (!(window.innerWidth <= 1024 && imageSwitchItems.length <= 1)) {
+      imageSwitchItems.forEach((el, index) => {
+        el.setAttribute('data-index', index);
+        if (card.querySelector('.card-secondary__item--limit')) {
+          if (index !== imageSwitchItems.length - 1) {
+            imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+          } else {
+            imagePagination.innerHTML += `<li class="image-pagination__item image-pagination__item--quantity">+ ${card.querySelector('.card-secondary__images').dataset.cardQuantityImage - 4}</li>`;
+          }
+        } else {
+          imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+        }
+        el.addEventListener('mouseenter', e => {
+          if (window.innerWidth > 1024) {
+            card.querySelectorAll('.image-pagination__item').forEach(el => el.classList.remove('image-pagination__item--active'));
+            if (el.classList.contains('card-secondary__item--limit')) {
+              card.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index - 1}"]`).classList.add('image-pagination__item--active');
+            } else {
+              card.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
+            }
+          }
+        });
+        el.addEventListener('mouseleave', e => {
+          if (window.innerWidth > 1024) {
+            card.querySelectorAll('.image-pagination__item').forEach(el => {
+              el.classList.remove('image-pagination__item--active');
+            });
+            card.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
+          }
+        });
+      });
+    }
     cardSliderMobile(card.querySelector('.card-secondary__top'), card.querySelector('.card-secondary__images'), card.querySelectorAll('.card-secondary__item'));
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-secondary__info--favorite');
@@ -4925,10 +4958,43 @@ const cardPrimaryActions = () => {
   cards.forEach(card => {
     const imageSwitchItems = card.querySelectorAll('.card-primary__item');
     const imagePagination = card.querySelector('.card-primary__pagination');
-    cardImageSwitch(card, imageSwitchItems, imagePagination);
+    if (!(window.innerWidth <= 1024 && imageSwitchItems.length <= 1)) {
+      imageSwitchItems.forEach((el, index) => {
+        el.setAttribute('data-index', index);
+        if (card.querySelector('.card-primary__item--limit')) {
+          if (index !== imageSwitchItems.length - 1) {
+            imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+          } else {
+            imagePagination.innerHTML += `<li class="image-pagination__item image-pagination__item--quantity">+ ${card.querySelector('.card-primary__images').dataset.cardQuantityImage - 4}</li>`;
+          }
+        } else {
+          imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
+        }
+        el.addEventListener('mouseenter', e => {
+          if (window.innerWidth > 1024) {
+            card.querySelectorAll('.image-pagination__item').forEach(el => el.classList.remove('image-pagination__item--active'));
+            if (el.classList.contains('card-primary__item--limit')) {
+              card.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index - 1}"]`).classList.add('image-pagination__item--active');
+            } else {
+              card.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
+            }
+          }
+        });
+        el.addEventListener('mouseleave', e => {
+          if (window.innerWidth > 1024) {
+            card.querySelectorAll('.image-pagination__item').forEach(el => {
+              el.classList.remove('image-pagination__item--active');
+            });
+            card.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
+          }
+        });
+      });
+    }
     cardSliderMobile(card.querySelector('.card-primary__top'), card.querySelector('.card-primary__images'), card.querySelectorAll('.card-primary__item'));
     card.addEventListener('click', e => {
       const favorite = e.target.closest('.card-primary__info--favorite');
+      const copiesBtn = e.target.closest('.card-primary__copies-btn');
+      const copiesClose = e.target.closest('.card-primary__copies-close');
       if (favorite && !(favorite.dataset.popupPath && favorite.dataset.popupPath === 'favorite-two')) {
         e.preventDefault();
         card.querySelectorAll('.card-primary__info--favorite').forEach(el => {
@@ -4942,6 +5008,10 @@ const cardPrimaryActions = () => {
             el.querySelector('svg use').setAttribute('xlink:href', 'img/sprite.svg#favorite-stroke');
           }
         });
+      }
+      if (copiesBtn || copiesClose) {
+        e.preventDefault();
+        copiesBlock(card, card.querySelector('.card-primary__copies-btn'), card.querySelector('.card-primary__copies'));
       }
     });
   });
@@ -4985,31 +5055,19 @@ const cardPrimaryActions = () => {
       }
     });
   }
+  function copiesBlock(card, target, block) {
+    if (!block) return;
+    if (!card.classList.contains('_copies-visible')) {
+      card.classList.add('_copies-visible');
+      target.classList.add('_active');
+      (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideDown)(block);
+    } else {
+      card.classList.remove('_copies-visible');
+      target.classList.remove('_active');
+      (0,_support_modules_slide__WEBPACK_IMPORTED_MODULE_1__._slideUp)(block);
+    }
+  }
 };
-function cardImageSwitch(card, imageSwitchItems, imagePagination) {
-  if (window.innerWidth <= 1024) return;
-  if (imageSwitchItems.length <= 1) return;
-  imageSwitchItems.forEach((el, index) => {
-    el.setAttribute('data-index', index);
-    imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
-    el.addEventListener('mouseenter', e => {
-      if (window.innerWidth > 1024) {
-        card.querySelectorAll('.image-pagination__item').forEach(el => {
-          el.classList.remove('image-pagination__item--active');
-        });
-        card.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
-      }
-    });
-    el.addEventListener('mouseleave', e => {
-      if (window.innerWidth > 1024) {
-        card.querySelectorAll('.image-pagination__item').forEach(el => {
-          el.classList.remove('image-pagination__item--active');
-        });
-        card.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
-      }
-    });
-  });
-}
 function cardSliderMobile(cardImageWrapper, imagesBody, cardItems) {
   let slider;
   body();
