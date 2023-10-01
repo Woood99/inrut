@@ -3,6 +3,7 @@
     box-sizing: border-box;
     box-shadow: var(--shadow-secondary);
     border-radius: 12px;
+    overflow: hidden;
     &__container {
         position: relative;
         z-index: 1;
@@ -178,8 +179,9 @@
         width: 100%;
         display: flex;
         align-items: center;
-
+        pointer-events: none;
         &--tags {
+            pointer-events: all;
             display: flex;
             align-items: center;
             box-sizing: border-box;
@@ -211,7 +213,7 @@
                     padding: 16px;
                     left: 0;
                     bottom: auto;
-                    top: 38px;
+                    top: 32px;
                     transform: translateX(-50%);
                     border-radius: 16px;
                     background-color: var(--dark);
@@ -265,7 +267,7 @@
             }
         }
 
-        &--new {
+        &--new {       pointer-events: all;
             font-size: var(--small-fz);
             line-height: var(--small-lh);
             color: var(--white);
@@ -281,7 +283,7 @@
             left: 15px;
         }
 
-        &--dislike {
+        &--dislike {       pointer-events: all;
             width: 31px;
             height: 28px;
 
@@ -309,7 +311,7 @@
             }
         }
 
-        &--comment {
+        &--comment {       pointer-events: all;
             width: 31px;
             height: 28px;
 
@@ -342,7 +344,7 @@
         }
 
         &--dislike-btn,
-        &--like-btn {
+        &--like-btn {       pointer-events: all;
             align-self: start;
             position: relative;
             display: flex;
@@ -428,7 +430,7 @@
         &--btns-right {
             position: absolute;
             top: 0;
-            right: 15px;
+            right: 15px;       pointer-events: all;
         }
 
 
@@ -467,7 +469,7 @@
             }
         }
 
-        &--controls {
+        &--controls {       pointer-events: all;
             margin-top: 10px;
 
             .dots-dropdown__dropdown {
@@ -502,7 +504,7 @@
             }
         }
 
-        &--note {
+        &--note {       pointer-events: all;
             margin-top: 8px;
             width: 30px;
             height: 30px;
@@ -536,7 +538,7 @@
             }
         }
 
-        &--delete {
+        &--delete {       pointer-events: all;
             svg {
                 width: 18px;
                 height: 18px;

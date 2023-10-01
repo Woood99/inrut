@@ -13170,6 +13170,7 @@ textarea.input-reset {
   -webkit-box-shadow: var(--shadow-secondary);
   box-shadow: var(--shadow-secondary);
   border-radius: 12px;
+  overflow: hidden;
 }
 .card-primary__container {
   position: relative;
@@ -13367,8 +13368,10 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  pointer-events: none;
 }
 .card-primary__info--tags {
+  pointer-events: all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13415,7 +13418,7 @@ textarea.input-reset {
   padding: 16px;
   left: 0;
   bottom: auto;
-  top: 38px;
+  top: 32px;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -13483,6 +13486,7 @@ textarea.input-reset {
   }
 }
 .card-primary__info--new {
+  pointer-events: all;
   font-size: var(--small-fz);
   line-height: var(--small-lh);
   color: var(--white);
@@ -13497,6 +13501,7 @@ textarea.input-reset {
   left: 15px;
 }
 .card-primary__info--dislike {
+  pointer-events: all;
   width: 31px;
   height: 28px;
   display: -webkit-box;
@@ -13529,6 +13534,7 @@ textarea.input-reset {
   max-width: 230px;
 }
 .card-primary__info--comment {
+  pointer-events: all;
   width: 31px;
   height: 28px;
   display: -webkit-box;
@@ -13567,6 +13573,7 @@ textarea.input-reset {
   flex-direction: column;
 }
 .card-primary__info--dislike-btn, .card-primary__info--like-btn {
+  pointer-events: all;
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
@@ -13663,6 +13670,7 @@ textarea.input-reset {
   position: absolute;
   top: 0;
   right: 15px;
+  pointer-events: all;
 }
 .card-primary__info--favorite {
   width: 30px;
@@ -13707,6 +13715,7 @@ textarea.input-reset {
   fill: var(--blue) !important;
 }
 .card-primary__info--controls {
+  pointer-events: all;
   margin-top: 10px;
 }
 .card-primary__info--controls .dots-dropdown__dropdown {
@@ -13743,6 +13752,7 @@ textarea.input-reset {
   }
 }
 .card-primary__info--note {
+  pointer-events: all;
   margin-top: 8px;
   width: 30px;
   height: 30px;
@@ -13778,6 +13788,9 @@ textarea.input-reset {
 }
 .card-primary__info--note .secondary-tooltip__content span {
   color: var(--primaryTwo);
+}
+.card-primary__info--delete {
+  pointer-events: all;
 }
 .card-primary__info--delete svg {
   width: 18px;
@@ -14384,8 +14397,10 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  pointer-events: none;
 }
 .card-secondary__info--tags {
+  pointer-events: all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14432,7 +14447,7 @@ textarea.input-reset {
   padding: 16px;
   left: 0;
   bottom: auto;
-  top: 38px;
+  top: 32px;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -14500,6 +14515,7 @@ textarea.input-reset {
   }
 }
 .card-secondary__info--new {
+  pointer-events: all;
   font-size: var(--small-fz);
   line-height: var(--small-lh);
   color: var(--white);
@@ -14514,6 +14530,7 @@ textarea.input-reset {
   right: 15px;
 }
 .card-secondary__info--dislike {
+  pointer-events: all;
   width: 31px;
   height: 28px;
   display: -webkit-box;
@@ -14536,6 +14553,7 @@ textarea.input-reset {
   fill: var(--blue);
 }
 .card-secondary__info--comment {
+  pointer-events: all;
   width: 31px;
   height: 28px;
   display: -webkit-box;
@@ -14564,6 +14582,7 @@ textarea.input-reset {
   flex-direction: column;
 }
 .card-secondary__info--dislike-btn, .card-secondary__info--like-btn {
+  pointer-events: all;
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
@@ -14657,6 +14676,7 @@ textarea.input-reset {
   position: absolute;
   top: 0;
   right: 15px;
+  pointer-events: all;
 }
 .card-secondary__info--favorite {
   width: 30px;
@@ -14702,6 +14722,7 @@ textarea.input-reset {
 }
 .card-secondary__info--controls {
   margin-top: 10px;
+  pointer-events: all;
 }
 .card-secondary__info--controls .dots-dropdown__dropdown {
   padding: 8px 0;
@@ -14932,6 +14953,7 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  pointer-events: none;
 }
 .card-secondary__options span {
   background-color: var(--white);
@@ -14961,6 +14983,7 @@ textarea.input-reset {
 .card-secondary__options .secondary-tooltip {
   width: auto;
   height: auto;
+  pointer-events: all;
 }
 .card-secondary__options .secondary-tooltip__btn {
   background-color: var(--white);
@@ -25416,6 +25439,7 @@ textarea.input-reset {
 .home {
   margin-top: 0;
   background-color: var(--stand-bg);
+  padding-bottom: 24px;
 }
 @media (max-width: 1212px) {
   .home {
@@ -26178,8 +26202,8 @@ textarea.input-reset {
   margin-top: 16px;
 }
 .home-price__items {
-  margin: -10px;
-  padding: 10px;
+  margin: -12px;
+  padding: 12px;
 }
 .home-price__items .swiper-wrapper {
   -webkit-box-align: stretch;
@@ -26280,8 +26304,8 @@ textarea.input-reset {
   }
 }
 .home-spec__items {
-  margin: -10px;
-  padding: 10px;
+  margin: -12px;
+  padding: 12px;
 }
 .home-spec__items .swiper-wrapper {
   -webkit-box-align: stretch;
