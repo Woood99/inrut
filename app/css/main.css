@@ -13294,9 +13294,9 @@ textarea.input-reset {
   .card-primary__item.card-primary__item--limit .card-image-more {
     color: var(--white);
     border-radius: 12px;
-    font-size: var(--little-big-fz);
-    line-height: var(--little-big-lh);
-    font-weight: 500;
+    font-size: var(--default-fz);
+    line-height: var(--default-lh);
+    font-weight: 400;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14286,9 +14286,9 @@ textarea.input-reset {
   .card-secondary__item.card-secondary__item--limit .card-image-more {
     color: var(--white);
     border-radius: 12px;
-    font-size: var(--little-big-fz);
-    line-height: var(--little-big-lh);
-    font-weight: 500;
+    font-size: var(--default-fz);
+    line-height: var(--default-lh);
+    font-weight: 400;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -28167,11 +28167,27 @@ textarea.input-reset {
   border-radius: 8px;
 }
 .object-data__discount {
-  margin-top: 16px;
+  position: relative;
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  margin-left: 16px;
   color: var(--blue);
   -webkit-transition: color 0.4s ease-in-out;
   -o-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.object-data__discount svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  fill: currentColor;
 }
 @media (min-width: 1213px) {
   .object-data__discount:hover {
@@ -30478,7 +30494,7 @@ textarea.input-reset {
   margin-left: 10px;
   font-size: var(--default-fz);
   line-height: var(--default-lh);
-  font-weight: 500;
+  font-weight: 400;
 }
 .map-draw__btn:not(:last-child) {
   margin-bottom: 10px;
