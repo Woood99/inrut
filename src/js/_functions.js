@@ -152,5 +152,6 @@ popup(null, 'stock-offers-popup');
 popup(null, 'tariff-popup');
 popup(null, 'tariff-bank-popup');
 popup(null, 'want-discount');
+popup(null, 'proposal-sent');
 
 // ========================================================================================

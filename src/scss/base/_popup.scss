@@ -345,7 +345,7 @@
                 text-align: center;
                 border-radius: 12px;
                 padding: 65px 48px 48px;
-                width: 500px;
+                width: 440px;
 
                 @media (max-width:$desktop) {
                     max-width: 100%;
@@ -373,7 +373,45 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+    &--proposal-sent{
+        text-align: center;
+        z-index: 1053;
 
+        .popup-primary {
+            &__container {
+                min-height: auto;
+                margin: 50px auto;
+                text-align: center;
+                border-radius: 12px;
+                padding: 65px 48px 48px;
+                width: 400px;
+
+                @media (max-width:$desktop) {
+                    max-width: 100%;
+                    width: calc(100% - 4px);
+                    margin: 50px auto 0;
+                    vertical-align: bottom;
+
+                    padding: 75px 16px 32px;
+
+                    border-radius: 12px 12px 0 0;
+                }
+            }
+        }
+
+
+        &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%
+        }
+
+
+        @media (max-width:$desktop) {
+            background-color: rgba(34, 41, 102, 0.4);
+        }
+    }
     &--online-display {
         text-align: center;
 
@@ -3597,7 +3635,11 @@
 .want-discount {
     box-sizing: border-box;
     text-align: left;
-
+    &__decor{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
     &__title {
         text-align: center;
     }
@@ -3668,13 +3710,51 @@
         font-size: var(--small-fz);
         line-height: var(--small-lh);
     }
+    &__badge{
+        margin-top: 16px;
+        font-size: var(--small-fz);
+        line-height: var(--small-lh);
 
+        padding: 8px 16px;
+        border-radius: 8px;
+        background-color: var(--primary200);
+    }
     &__btn {
         margin-top: 24px;
         width: 100%;
     }
 }
+.proposal-sent {
+    box-sizing: border-box;
+    text-align: left;
+    &__decor{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__descr{
+        margin-top: 16px;
+        p{
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
+            &:not(:last-child){
+                margin-bottom: 8px;
+            }
+        }
+    }
+    &__btn {
+        margin-top: 24px;
+        width: 100%;
+    }
 
+    @media (max-width:$smallTablet-max) {
+        max-width: 222px;
+        margin: 0 auto;
+    }
+}
 .stock-popup {
     --transition-time: 0.3s;
     position: fixed;
@@ -4497,6 +4577,7 @@
         margin: 0 auto;
     }
 }
+
 
 .complaint-user-popup {
 

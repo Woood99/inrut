@@ -1505,7 +1505,7 @@ textarea.input-reset {
   text-align: center;
   border-radius: 12px;
   padding: 65px 48px 48px;
-  width: 500px;
+  width: 440px;
 }
 @media (max-width: 1212px) {
   .popup-primary--want-discount .popup-primary__container {
@@ -1525,6 +1525,39 @@ textarea.input-reset {
 }
 @media (max-width: 1212px) {
   .popup-primary--want-discount {
+    background-color: rgba(34, 41, 102, 0.4);
+  }
+}
+.popup-primary--proposal-sent {
+  text-align: center;
+  z-index: 1053;
+}
+.popup-primary--proposal-sent .popup-primary__container {
+  min-height: auto;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 12px;
+  padding: 65px 48px 48px;
+  width: 400px;
+}
+@media (max-width: 1212px) {
+  .popup-primary--proposal-sent .popup-primary__container {
+    max-width: 100%;
+    width: calc(100% - 4px);
+    margin: 50px auto 0;
+    vertical-align: bottom;
+    padding: 75px 16px 32px;
+    border-radius: 12px 12px 0 0;
+  }
+}
+.popup-primary--proposal-sent::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+@media (max-width: 1212px) {
+  .popup-primary--proposal-sent {
     background-color: rgba(34, 41, 102, 0.4);
   }
 }
@@ -4629,6 +4662,15 @@ textarea.input-reset {
   box-sizing: border-box;
   text-align: left;
 }
+.want-discount__decor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
 .want-discount__title {
   text-align: center;
 }
@@ -4694,9 +4736,55 @@ textarea.input-reset {
   font-size: var(--small-fz);
   line-height: var(--small-lh);
 }
+.want-discount__badge {
+  margin-top: 16px;
+  font-size: var(--small-fz);
+  line-height: var(--small-lh);
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--primary200);
+}
 .want-discount__btn {
   margin-top: 24px;
   width: 100%;
+}
+
+.proposal-sent {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: left;
+}
+.proposal-sent__decor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.proposal-sent__title {
+  text-align: center;
+}
+.proposal-sent__descr {
+  margin-top: 16px;
+}
+.proposal-sent__descr p {
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+}
+.proposal-sent__descr p:not(:last-child) {
+  margin-bottom: 8px;
+}
+.proposal-sent__btn {
+  margin-top: 24px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .proposal-sent {
+    max-width: 222px;
+    margin: 0 auto;
+  }
 }
 
 .stock-popup {

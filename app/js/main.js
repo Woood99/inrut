@@ -4549,6 +4549,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'tariff-bank-popup');
 (0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'want-discount');
+(0,_functions_popup__WEBPACK_IMPORTED_MODULE_8__["default"])(null, 'proposal-sent');
 
 // ========================================================================================
 
