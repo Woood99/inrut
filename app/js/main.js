@@ -11262,8 +11262,8 @@ function initSliders() {
         spaceBetween: 8,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.room-body').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.room-body').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.closest('.room-body').querySelector('.nav-arrow-secondary--prev') || el.closest('.room-body').querySelector('.room-body__nav-test.nav-arrow-primary--prev'),
+          nextEl: el.closest('.room-body').querySelector('.nav-arrow-secondary--next') || el.closest('.room-body').querySelector('.room-body__nav-test.nav-arrow-primary--next')
         },
         breakpoints: {
           577: {
