@@ -4870,8 +4870,6 @@ const cardSecondaryActions = () => {
         if (card.querySelector('.card-secondary__item--limit')) {
           if (index !== imageSwitchItems.length - 1) {
             imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
-          } else {
-            imagePagination.innerHTML += `<li class="image-pagination__item image-pagination__item--quantity">+ ${card.querySelector('.card-secondary__images').dataset.cardQuantityImage - 4}</li>`;
           }
         } else {
           imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
@@ -4968,8 +4966,6 @@ const cardPrimaryActions = () => {
         if (card.querySelector('.card-primary__item--limit')) {
           if (index !== imageSwitchItems.length - 1) {
             imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
-          } else {
-            imagePagination.innerHTML += `<li class="image-pagination__item image-pagination__item--quantity">+ ${card.querySelector('.card-primary__images').dataset.cardQuantityImage - 4}</li>`;
           }
         } else {
           imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? 'image-pagination__item--active' : ''}" data-index="${index}"></li>`;
