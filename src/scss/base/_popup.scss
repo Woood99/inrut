@@ -2050,10 +2050,18 @@
         width: 40px;
         z-index: 99;
 
+
+
         svg {
             width: 25px;
             height: 25px;
             fill: var(--dark);
+        }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                box-shadow: var(--shadow-black-big);
+            }
         }
 
         @media (max-width:$desktop) {
@@ -3589,23 +3597,28 @@
 .want-discount {
     box-sizing: border-box;
     text-align: left;
-    &__title{
+
+    &__title {
         text-align: center;
     }
-    &__controls{
+
+    &__controls {
         margin-top: 16px;
-        .row{
+
+        .row {
             margin-top: 8px;
             display: flex;
             align-items: center;
         }
     }
-    &__descr{
+
+    &__descr {
         color: var(--primaryTwo);
         font-size: var(--small-fz);
         line-height: var(--small-lh);
     }
-    &__prc{
+
+    &__prc {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3613,24 +3626,29 @@
         background-color: var(--white);
         border: 1px solid var(--primary200);
         border-radius: 8px;
-        color: var(--gray);;
+        color: var(--gray);
+        ;
         padding: 0 16px;
         height: 32px;
         transition: background-color $transitionSpeed $transitionFunction,
-        color $transitionSpeed $transitionFunction,
-        border $transitionSpeed $transitionFunction;
+            color $transitionSpeed $transitionFunction,
+            border $transitionSpeed $transitionFunction;
         font-weight: 400;
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-right: 8px;
         }
-        &._active{
+
+        &._active {
             background-color: var(--blue);
             border: 1px solid var(--blue);
             color: var(--white);
         }
     }
+
     &__input {
         margin-top: 16px;
+
         .input-text__label {
             span {
                 &:last-child {
@@ -3642,14 +3660,16 @@
             }
         }
     }
-    &__default-price{
+
+    &__default-price {
         display: block;
         margin-top: 4px;
         color: var(--primaryTwo);
         font-size: var(--small-fz);
         line-height: var(--small-lh);
     }
-    &__btn{
+
+    &__btn {
         margin-top: 24px;
         width: 100%;
     }

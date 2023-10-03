@@ -35,6 +35,7 @@
         border-radius: 16px;
         width: 44px;
 
+        transition: box-shadow $transitionSpeed $transitionFunction;
         .ymaps-2-1-79-float-button {
             padding-left: 0;
             width: 100%;
@@ -85,7 +86,11 @@
                 position: static;
             }
         }
-
+        @media (min-width:$desktop-min){
+             &:hover{
+                box-shadow: var(--shadow-black-big);
+             } 
+        }
         @media (max-width:$smallTablet-max) {
             display: none;
         }

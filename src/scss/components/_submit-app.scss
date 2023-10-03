@@ -112,9 +112,7 @@
         }
     }
 
-    &__item {
-
-    }
+    &__item {}
 
     &__textarea {
         --height: 96px;
@@ -142,10 +140,12 @@
             padding: 0 16px;
         }
     }
-    &__city{
+
+    &__city {
         margin-top: 24px;
         max-width: 350px;
     }
+
     &__descr {
         color: var(--primaryTwo);
         font-size: var(--default-fz);
@@ -159,9 +159,11 @@
     &__map {
         margin-top: 24px;
     }
-    &__checkbox{
+
+    &__checkbox {
         margin-top: 24px;
-        .checkbox-secondary__label{
+
+        .checkbox-secondary__label {
             justify-content: start;
         }
     }
@@ -204,8 +206,8 @@
     }
 
     &__btn {
-        height: 48px;
-        width: 167px;
+        height: 50px;
+        width: 237px;
         background-color: var(--white);
         border: 1px solid rgba(93, 112, 134, 0.1);
         box-shadow: var(--shadow-primary);
@@ -216,16 +218,19 @@
 
         padding: 0 10px 0 17px;
 
+
+        transition: box-shadow $transitionSpeed $transitionFunction;
+
         svg {
-            width: 11px;
-            height: 11px;
+            width: 14px;
+            height: 14px;
             fill: var(--dark);
         }
 
         span {
             margin-left: 10px;
-            font-size: var(--very-small-fz);
-            line-height: var(--very-small-lh);
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
             font-weight: 500;
         }
 
@@ -233,13 +238,20 @@
             margin-bottom: 10px;
         }
 
+        @media (min-width:$desktop-min) {
+            &:hover {
+                box-shadow: var(--shadow-black-big);
+            }
+        }
+
         @media (max-width:$desktop) {
-            height: 42px;
+            height: 44px;
             border-radius: 12px;
         }
     }
 
-    #map-draw,#map-draw--2 {
+    #map-draw,
+    #map-draw--2 {
         width: 100%;
         height: 100%;
     }

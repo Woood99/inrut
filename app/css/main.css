@@ -25,6 +25,7 @@
   --shadow-primary: 0 4px 12px 1px #24262914;
   --shadow-secondary: 0px 0px 20px rgba(0, 0, 0, 0.1);
   --shadow-third: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  --shadow-black-big: 0 3px 8px rgba(0, 0, 0, .24);
   --hover-primary: #f2f2f2;
   --very-small-fz: 11px;
   --small-fz: 13px;
@@ -3039,6 +3040,12 @@ textarea.input-reset {
   width: 25px;
   height: 25px;
   fill: var(--dark);
+}
+@media (min-width: 1213px) {
+  .popup-map__resize:hover {
+    -webkit-box-shadow: var(--shadow-black-big);
+    box-shadow: var(--shadow-black-big);
+  }
 }
 @media (max-width: 1212px) {
   .popup-map__resize {
@@ -7968,6 +7975,34 @@ textarea.input-reset {
     transform: translateY(0);
   }
 }
+@-webkit-keyframes leftRightSmall {
+  33% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  66% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes leftRightSmall {
+  33% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  66% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 @-webkit-keyframes fadeTransformY {
   0% {
     -webkit-transform: translateY(6%);
@@ -10722,6 +10757,11 @@ textarea.input-reset {
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   width: 44px;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 }
 .ymaps-2-1-79-map .ymaps-2-1-79-zoom .ymaps-2-1-79-float-button {
   padding-left: 0;
@@ -10773,6 +10813,12 @@ textarea.input-reset {
   background-image: url("../img/plus.svg");
   background-size: cover;
   position: static;
+}
+@media (min-width: 1213px) {
+  .ymaps-2-1-79-map .ymaps-2-1-79-zoom:hover {
+    -webkit-box-shadow: var(--shadow-black-big);
+    box-shadow: var(--shadow-black-big);
+  }
 }
 @media (max-width: 768px) {
   .ymaps-2-1-79-map .ymaps-2-1-79-zoom {
@@ -23060,6 +23106,12 @@ textarea.input-reset {
   height: 25px;
   fill: var(--dark);
 }
+@media (min-width: 1213px) {
+  .search-area__resize:hover {
+    -webkit-box-shadow: var(--shadow-black-big);
+    box-shadow: var(--shadow-black-big);
+  }
+}
 .search-area__controls {
   margin-top: 24px;
   display: -webkit-box;
@@ -23672,17 +23724,6 @@ textarea.input-reset {
 }
 .search-area__map.map-draw {
   height: calc(var(--vh) - 113px);
-}
-.search-area__map .map-draw__btn {
-  width: 237px;
-}
-.search-area__map .map-draw__btn span {
-  font-size: var(--default-fz);
-  line-height: var(--default-lh);
-}
-.search-area__map .map-draw__btn svg {
-  width: 14px;
-  height: 14px;
 }
 .search-area__map-btn {
   position: absolute;
@@ -30408,8 +30449,8 @@ textarea.input-reset {
   }
 }
 .map-draw__btn {
-  height: 48px;
-  width: 167px;
+  height: 50px;
+  width: 237px;
   background-color: var(--white);
   border: 1px solid rgba(93, 112, 134, 0.1);
   -webkit-box-shadow: var(--shadow-primary);
@@ -30422,28 +30463,40 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 10px 0 17px;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 }
 .map-draw__btn svg {
-  width: 11px;
-  height: 11px;
+  width: 14px;
+  height: 14px;
   fill: var(--dark);
 }
 .map-draw__btn span {
   margin-left: 10px;
-  font-size: var(--very-small-fz);
-  line-height: var(--very-small-lh);
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
   font-weight: 500;
 }
 .map-draw__btn:not(:last-child) {
   margin-bottom: 10px;
 }
+@media (min-width: 1213px) {
+  .map-draw__btn:hover {
+    -webkit-box-shadow: var(--shadow-black-big);
+    box-shadow: var(--shadow-black-big);
+  }
+}
 @media (max-width: 1212px) {
   .map-draw__btn {
-    height: 42px;
+    height: 44px;
     border-radius: 12px;
   }
 }
-.map-draw #map-draw, .map-draw #map-draw--2 {
+.map-draw #map-draw,
+.map-draw #map-draw--2 {
   width: 100%;
   height: 100%;
 }

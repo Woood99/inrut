@@ -119,6 +119,12 @@ left: 4px;
             height: 25px;
             fill: var(--dark);
         }
+
+        @media (min-width:$desktop-min) {
+            &:hover {
+                box-shadow: var(--shadow-black-big);
+            }
+        }
     }
 
     &__controls {
@@ -863,17 +869,6 @@ left: 4px;
     &__map {
         &.map-draw {
             height: calc(var(--vh) - 113px);
-        }
-        .map-draw__btn{
-            width: 237px;
-            span{
-                font-size: var(--default-fz);
-                line-height: var(--default-lh);
-            }
-            svg{
-                width: 14px;
-                height: 14px;
-            }
         }
     }
 
