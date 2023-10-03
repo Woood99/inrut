@@ -61,7 +61,7 @@ export const filterSum = () => {
                         </div>
                     </div>
                     `;
-                    modal(modalHTML, '.filter-modal', 300,el,el.dataset.modalScroll);
+                    modal(modalHTML, '.filter-modal', 300, el, el.dataset.modalScroll);
                     const filterModal = document.querySelector('.filter-modal');
                     filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', el.querySelector('.filter-dropdown__dropdown'));
                     const currentEl = filterModal.querySelector('.filter-dropdown__dropdown');
@@ -116,53 +116,35 @@ export const filterSum = () => {
             const inputs = itemActive.querySelectorAll('.filter-range__nav input');
             const buttonWrapper = !currentElMobile ? el.querySelector('.filter-dropdown__button-wrapper') : currentElMobile.querySelector('.filter-dropdown__button-wrapper');
             let html = ``;
-            if (inputs[0].value && inputs[1].value) {
+            if (((inputs[0].value || inputs[0].value == 0) || (inputs[1].value == 0 || inputs[1].value)) && (inputs[0].value !== '' || inputs[1].value !== '')) {
                 if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
                     html = `
                     <div>
                         ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                       от ${convertSum(inputs[0].value)}
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                    до ${convertSum(inputs[1].value)}
-                    </div>
+                    ${inputs[0].value ? `<div>от ${convertSum(inputs[0].value)}</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${convertSum(inputs[1].value)}</div>` : ''}
                 `;
                 }
                 if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
                     html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-                </div>
                     <div>
-                       от ${inputs[0].value} м²
+                        ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} м²
-                    </div>
+                    ${inputs[0].value ? `<div>от ${inputs[0].value} м²</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${inputs[1].value} м²</div>` : ''}
                 `;
                 }
                 if (el.dataset.filterDropdownName === 'Этаж') {
                     html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
                     <div>
-                       от ${inputs[0].value} эт.
+                        ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} эт.
-                    </div>
+                    ${inputs[0].value ? `<div>от ${inputs[0].value} эт.</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${inputs[1].value} эт.</div>` : ''}
                 `;
                 }
 
@@ -325,10 +307,10 @@ export const searchSelect = () => {
                     </div>
                 </div>
                 `;
-                modal(modalHTML, '.filter-modal', 300,container,container.dataset.modalScroll);
+                modal(modalHTML, '.filter-modal', 300, container, container.dataset.modalScroll);
                 const filterModal = document.querySelector('.filter-modal');
                 filterModal.querySelector('.filter-modal__content').insertAdjacentElement('beforeend', container.querySelector('.search-select__dropdown'));
-             
+
             }
         })
         document.addEventListener('click', (e) => {
@@ -570,9 +552,9 @@ export const filterCustomSelectCheckboxes = () => {
         const close = item.querySelector('.select-dropdown-checkbox__close');
         btn.addEventListener('click', () => {
             item.classList.toggle('_active');
-            
-        if (window.innerWidth <= mobileWidth) {
-            const modalHTML = `
+
+            if (window.innerWidth <= mobileWidth) {
+                const modalHTML = `
             <div class="filter-modal">
                 <div class="filter-modal__container">
                     <button class="btn-reset filter-modal__close" aria-label="Закрыть модальное окно">
@@ -587,13 +569,13 @@ export const filterCustomSelectCheckboxes = () => {
                 </div>
             </div>
             `;
-            modal(modalHTML, '.filter-modal', 300, item,item.dataset.modalScroll);
-            const filterModal = document.querySelector('.filter-modal');
+                modal(modalHTML, '.filter-modal', 300, item, item.dataset.modalScroll);
+                const filterModal = document.querySelector('.filter-modal');
 
-            filterModal.querySelector('.select-dropdown-checkbox').insertAdjacentElement('beforeend', item.querySelector('.select-dropdown-checkbox__dropdown'));
+                filterModal.querySelector('.select-dropdown-checkbox').insertAdjacentElement('beforeend', item.querySelector('.select-dropdown-checkbox__dropdown'));
 
 
-        }
+            }
         });
         document.addEventListener('click', (e) => {
             if (item.classList.contains('_active') && !e.target.closest('.select-dropdown-checkbox') && !e.target.closest('.filter-modal__container')) {

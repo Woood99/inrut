@@ -6371,53 +6371,35 @@ const filterSum = () => {
       const inputs = itemActive.querySelectorAll('.filter-range__nav input');
       const buttonWrapper = !currentElMobile ? el.querySelector('.filter-dropdown__button-wrapper') : currentElMobile.querySelector('.filter-dropdown__button-wrapper');
       let html = ``;
-      if (inputs[0].value && inputs[1].value) {
+      if ((inputs[0].value || inputs[0].value == 0 || inputs[1].value == 0 || inputs[1].value) && (inputs[0].value !== '' || inputs[1].value !== '')) {
         if (el.dataset.filterDropdownName === 'Цена' || el.dataset.filterDropdownName === 'Сумма' || el.dataset.filterDropdownName === 'Стоимость объекта') {
           html = `
                     <div>
                         ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                       от ${convertSum(inputs[0].value)}
-                    </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                    до ${convertSum(inputs[1].value)}
-                    </div>
+                    ${inputs[0].value ? `<div>от ${convertSum(inputs[0].value)}</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${convertSum(inputs[1].value)}</div>` : ''}
                 `;
         }
         if (el.dataset.filterDropdownName === 'Площадь' || el.dataset.filterDropdownName === 'Площадь кухни') {
           html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-                </div>
                     <div>
-                       от ${inputs[0].value} м²
+                        ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} м²
-                    </div>
+                    ${inputs[0].value ? `<div>от ${inputs[0].value} м²</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${inputs[1].value} м²</div>` : ''}
                 `;
         }
         if (el.dataset.filterDropdownName === 'Этаж') {
           html = `
-                <div>
-                ${el.dataset.filterDropdownName}
-            </div>
                     <div>
-                       от ${inputs[0].value} эт.
+                        ${el.dataset.filterDropdownName}
                     </div>
-                    <div>
-                        -
-                    </div>
-                    <div>
-                        до ${inputs[1].value} эт.
-                    </div>
+                    ${inputs[0].value ? `<div>от ${inputs[0].value} эт.</div>` : ''}
+                    ${inputs[0].value && inputs[1].value ? '<div>-</div>' : ''}
+                    ${inputs[1].value ? `<div>до ${inputs[1].value} эт.</div>` : ''}
                 `;
         }
         if (currentElMobile) {
