@@ -459,8 +459,8 @@ function initSliders() {
                 spaceBetween: 0,
                 speed: 800,
                 navigation: {
-                    prevEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--prev'),
-                    nextEl: el.closest('.object-apart-renov__images').nextElementSibling.querySelector('.nav-arrow-secondary--next'),
+                    prevEl: el.parentElement.querySelector('.nav-arrow-primary--prev'),
+                    nextEl: el.parentElement.querySelector('.nav-arrow-primary--next'),
                 },
                 pagination: {
                     el: el.closest('.object-apart-renov__item').querySelector('.pagination-primary'),

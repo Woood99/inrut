@@ -17,20 +17,34 @@ const mortgage = () => {
         const items = list.querySelectorAll('[data-mortgage-card]');
         const itemsPopup = listPopup.querySelectorAll('[data-mortgage-card]');
         const textPrc = containerAdd.querySelector('.field-static__text');
+
         list.addEventListener('click', (e) => {
-            toggleClass(e, items, itemsPopup, items);
+            toggleClass(e, items, itemsPopup, items, true);
         })
 
         listPopup.addEventListener('click', (e) => {
-            toggleClass(e, itemsPopup, items, items);
+            toggleClass(e, itemsPopup, items, items, false);
         })
 
-        function toggleClass(e, containerOne, containerTwo, container) {
-            const target = e.target;
+        function toggleClass(e, containerOne, containerTwo, container, checkDecor = false) {
+            const target = e.target ? e.target : e;
             const item = target.closest('[data-mortgage-card]');
             if (!item) return;
-            containerOne.forEach(item => item.classList.remove('_active'));
+            containerOne.forEach(item => {
+                item.classList.remove('_active');
+                if (checkDecor && item.querySelector('div')) item.querySelector('div').remove();
+            });
             item.classList.add('_active');
+            if (checkDecor) {
+                const svgIconHTML = `
+                <div>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#check"></use>
+                    </svg>
+                </div>
+            `;
+                item.insertAdjacentHTML('beforeend', svgIconHTML);
+            }
             containerTwo.forEach(el => {
                 +item.dataset.mortgageCard === +el.dataset.mortgageCard ? el.classList.add('_active') : el.classList.remove('_active');
             });
