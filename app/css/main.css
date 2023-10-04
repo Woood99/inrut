@@ -22324,14 +22324,14 @@ textarea.input-reset {
   border-top: 1px solid var(--primary100);
 }
 .room-body__nav-test.nav-arrow-primary--next {
-  right: 0;
+  right: 2px;
 }
 .room-body__nav-test.nav-arrow-primary--prev {
-  left: 0;
+  left: 2px;
 }
 .room-body__nav-test .nav-arrow-primary__wrapper {
-  -webkit-box-shadow: var(--shadow-primary);
-  box-shadow: var(--shadow-primary);
+  -webkit-box-shadow: var(--shadow-black-big);
+  box-shadow: var(--shadow-black-big);
 }
 .room-body__next {
   margin-top: 24px;
@@ -29450,13 +29450,12 @@ textarea.input-reset {
   }
 }
 .object-apart-renov__fullscreen {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background-color: var(--white);
-  border: 1px solid rgba(93, 112, 134, 0.1);
   -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
+  border-radius: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29470,17 +29469,32 @@ textarea.input-reset {
   z-index: 2;
   top: 16px;
   right: 16px;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .object-apart-renov__fullscreen svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 .object-apart-renov__fullscreen svg path {
-  stroke: var(--blue);
+  stroke: rgba(22, 22, 22, 0.5);
+  -webkit-transition: stroke 0.4s ease-in-out;
+  -o-transition: stroke 0.4s ease-in-out;
+  transition: stroke 0.4s ease-in-out;
 }
 @media (min-width: 1213px) {
   .object-apart-renov__fullscreen:hover {
-    border: 1px solid var(--blue);
+    -webkit-box-shadow: 0 7px 14px rgba(11, 31, 53, 0.15);
+    box-shadow: 0 7px 14px rgba(11, 31, 53, 0.15);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  .object-apart-renov__fullscreen:hover svg path {
+    stroke: rgb(22, 22, 22);
   }
 }
 .object-apart-renov__item {
