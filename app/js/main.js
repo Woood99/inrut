@@ -7777,77 +7777,52 @@ const genplan = () => {
   const marks = container.querySelectorAll('.genplan__mark');
   const visualInfo = container.querySelectorAll('.visual-info');
   const innerWidth = 1212;
+  function togglePopper(container) {
+    container.forEach(item => {
+      let popper;
+      item.addEventListener('mouseenter', () => {
+        if (!item.classList.contains('_static')) {
+          item.classList.add('_active');
+          const btn = item.querySelector('button');
+          const content = item.querySelector('.visual-info__content') ? item.querySelector('.visual-info__content') : item.querySelector('div');
+          if (btn && content) {
+            popper = (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
+              placement: 'auto',
+              modifiers: [{
+                name: 'offset',
+                options: {
+                  offset: [5, 5]
+                }
+              }]
+            });
+          }
+          marks.forEach(mark => {
+            if (item !== mark) mark.classList.add('_small-index');
+          });
+          visualInfo.forEach(info => {
+            if (item !== info) info.classList.add('_small-index');
+          });
+        }
+      });
+      item.addEventListener('mouseleave', () => {
+        if (!item.classList.contains('_static')) {
+          item.classList.remove('_active');
+          setTimeout(() => {
+            if (!item.classList.contains('_active')) popper.destroy();
+          }, 300);
+          marks.forEach(mark => {
+            if (item !== mark) mark.classList.remove('_small-index');
+          });
+          visualInfo.forEach(info => {
+            if (item !== info) info.classList.remove('_small-index');
+          });
+        }
+      });
+    });
+  }
   if (window.innerWidth > innerWidth) {
-    marks.forEach(item => {
-      const btn = item.querySelector('button');
-      const content = item.querySelector('div');
-      if (btn && content) {
-        (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
-          placement: 'auto',
-          modifiers: [{
-            name: 'offset',
-            options: {
-              offset: [5, 5]
-            }
-          }]
-        });
-      }
-      item.addEventListener('mouseenter', () => {
-        if (!item.classList.contains('._static')) {
-          item.classList.add('_active');
-          setTimeout(() => {
-            marks.forEach(mark => {
-              if (item !== mark) mark.classList.add('_small-index');
-            });
-          }, 300);
-        }
-      });
-      item.addEventListener('mouseleave', () => {
-        if (!item.classList.contains('._static')) {
-          item.classList.remove('_active');
-          setTimeout(() => {
-            marks.forEach(mark => {
-              if (item !== mark) mark.classList.remove('_small-index');
-            });
-          }, 300);
-        }
-      });
-    });
-    visualInfo.forEach(item => {
-      const btn = item.querySelector('.visual-info__btn');
-      const content = item.querySelector('.visual-info__content');
-      if (btn && content) {
-        (0,_popperjs_core__WEBPACK_IMPORTED_MODULE_2__.createPopper)(btn, content, {
-          placement: 'auto',
-          modifiers: [{
-            name: 'offset',
-            options: {
-              offset: [5, 5]
-            }
-          }]
-        });
-      }
-      item.addEventListener('mouseenter', () => {
-        if (!item.classList.contains('._static')) {
-          item.classList.add('_active');
-          setTimeout(() => {
-            visualInfo.forEach(info => {
-              if (item !== info) info.classList.add('_small-index');
-            });
-          }, 300);
-        }
-      });
-      item.addEventListener('mouseleave', () => {
-        if (!item.classList.contains('._static')) {
-          item.classList.remove('_active');
-          setTimeout(() => {
-            visualInfo.forEach(info => {
-              if (item !== info) info.classList.remove('_small-index');
-            });
-          }, 300);
-        }
-      });
-    });
+    togglePopper(marks);
+    togglePopper(visualInfo);
   } else {
     marks.forEach(item => {
       item.addEventListener('click', () => {
