@@ -137,103 +137,112 @@
         stroke: var(--blue);
         stroke-width: 1.4px;
     }
-
-    .visual-info {
-        position: absolute;
-        z-index: 4;
-        height: 26px;
-
-        display: flex;
-        align-items: center;
-
-        &__icon {
-            width: 26px;
+        .visual-info {
+            position: absolute;
+            z-index: 4;
             height: 26px;
 
-            background-color: var(--white);
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: relative;
-            z-index: 5;
-            transition: background-color $transitionSpeed $transitionFunction;
-
-            img {
-                width: 18px;
-                height: 18px;
-                transition: filter $transitionSpeed $transitionFunction;
-            }
-        }
-
-        &__content {
-            height: 100%;
-            color: var(--dark);
-            background-color: var(--white);
-
             display: flex;
             align-items: center;
 
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 2;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background-color: var(--white);
-            box-shadow: var(--shadow-primary);
-            border-radius: 13px;
-            font-size: var(--small-fz);
-            line-height: var(--small-lh);
-            font-weight: 500;
-            padding: 0 12px 0 32px;
-            width: auto;
-            white-space: nowrap;
-
-            pointer-events: none;
-            max-width: 0;
-            opacity: 0;
-            visibility: hidden;
-
-            transition: max-width $transitionSpeed $transitionFunction,
-                opacity $transitionSpeed $transitionFunction,
+            transition: opacity $transitionSpeed $transitionFunction,
+                transform $transitionSpeed $transitionFunction,
                 visibility $transitionSpeed $transitionFunction;
-        }
 
-        &._content-left {
-            .visual-info {
-                &__content {
-                    right: 0;
-                    left: auto;
-                    padding: 0 32px 0 12px;
+            &__icon {
+                width: 26px;
+                height: 26px;
+
+                background-color: var(--white);
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                position: relative;
+                z-index: 5;
+                transition: background-color $transitionSpeed $transitionFunction;
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                    transition: filter $transitionSpeed $transitionFunction;
                 }
             }
-        }
 
-        &._active {
-            .visual-info {
-                &__icon {
-                    background-color: var(--blue);
+            &__content {
+                height: 100%;
+                color: var(--dark);
+                background-color: var(--white);
 
-                    img {
-                        filter: brightness(0) invert(1);
+                display: flex;
+                align-items: center;
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: var(--white);
+                box-shadow: var(--shadow-primary);
+                border-radius: 13px;
+                font-size: var(--small-fz);
+                line-height: var(--small-lh);
+                font-weight: 500;
+                padding: 0 12px 0 32px;
+                width: auto;
+                white-space: nowrap;
+
+                pointer-events: none;
+                max-width: 0;
+                opacity: 0;
+                visibility: hidden;
+
+                transition: max-width $transitionSpeed $transitionFunction,
+                    opacity $transitionSpeed $transitionFunction,
+                    visibility $transitionSpeed $transitionFunction;
+            }
+
+            &._content-left {
+                .visual-info {
+                    &__content {
+                        right: 0;
+                        left: auto;
+                        padding: 0 32px 0 12px;
                     }
                 }
+            }
 
-                &__content {
-                    max-width: 250px;
-                    opacity: 1;
-                    visibility: visible;
-                    pointer-events: all;
+            &._active {
+                .visual-info {
+                    &__icon {
+                        background-color: var(--blue);
+
+                        img {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+
+                    &__content {
+                        max-width: 250px;
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: all;
+                    }
                 }
             }
+
+            &._no-visible {
+                opacity: 0;
+                transform: scale(0);
+                visibility: hidden;
+            }
         }
-    }
 
     @media (max-width:$desktop) {
         overflow-x: scroll;
@@ -245,6 +254,58 @@
 
         &::-webkit-scrollbar {
             display: none;
+        }
+    }
+
+    &__bottom {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+
+        z-index: 4;
+
+        background-color: var(--white);
+        padding: 16px 24px;
+        border-radius: 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__tooltip {
+        margin-left: 12px;
+        position: static;
+
+        .secondary-tooltip {
+            &__btn {
+                width: 25px;
+                height: 25px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            &__content {
+                left: 0;
+                bottom: 60px;
+                width: 100%;
+                border-radius: 22px;
+                li{
+                    display: flex;
+                    align-items: center;
+                    span{
+                        color: var(--dark);
+                        font-weight: 500;
+                        margin-left: 8px;
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 12px;
+                    }
+                }
+            }
         }
     }
 }
@@ -377,11 +438,11 @@
                     width: 190px;
                     text-align: right;
 
-                   @media (min-width:$desktop-min){
-                    &:hover {
-                        text-decoration: underline;
-                    } 
-                   }
+                    @media (min-width:$desktop-min) {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
 
                     &:not(:first-child) {
                         margin-top: 8px;
@@ -412,25 +473,27 @@
             }
         }
     }
-    &__tags{
+
+    &__tags {
         margin-top: 32px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 8px;
-       span{
-        background-color: var(--primary100);
-        border-radius: 8px;
-        color: var(--dark);
-        height: 24px;
-        padding: 0 12px;
-        font-size: var(--very-small-fz);
-        line-height: 1;
 
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-       }
+        span {
+            background-color: var(--primary100);
+            border-radius: 8px;
+            color: var(--dark);
+            height: 24px;
+            padding: 0 12px;
+            font-size: var(--very-small-fz);
+            line-height: 1;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
     }
 }

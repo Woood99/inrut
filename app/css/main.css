@@ -22793,6 +22793,11 @@ textarea.input-reset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .genplan .visual-info__icon {
   width: 26px;
@@ -22878,6 +22883,13 @@ textarea.input-reset {
   visibility: visible;
   pointer-events: all;
 }
+.genplan .visual-info._no-visible {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  visibility: hidden;
+}
 @media (max-width: 1212px) {
   .genplan {
     overflow-x: scroll;
@@ -22890,6 +22902,58 @@ textarea.input-reset {
   .genplan::-webkit-scrollbar {
     display: none;
   }
+}
+.genplan__bottom {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 4;
+  background-color: var(--white);
+  padding: 16px 24px;
+  border-radius: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.genplan__tooltip {
+  margin-left: 12px;
+  position: static;
+}
+.genplan__tooltip .secondary-tooltip__btn {
+  width: 25px;
+  height: 25px;
+}
+.genplan__tooltip .secondary-tooltip__btn svg {
+  width: 20px;
+  height: 20px;
+}
+.genplan__tooltip .secondary-tooltip__content {
+  left: 0;
+  bottom: 60px;
+  width: 100%;
+  border-radius: 22px;
+}
+.genplan__tooltip .secondary-tooltip__content li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.genplan__tooltip .secondary-tooltip__content li span {
+  color: var(--dark);
+  font-weight: 500;
+  margin-left: 8px;
+}
+.genplan__tooltip .secondary-tooltip__content li:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 .genplan-mark__title {

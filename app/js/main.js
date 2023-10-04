@@ -7773,6 +7773,7 @@ __webpack_require__.r(__webpack_exports__);
 const genplan = () => {
   const container = document.querySelector('.genplan');
   if (!container) return;
+  const infrastructureBtn = container.querySelector('.genplan__infrastructure');
   const marks = container.querySelectorAll('.genplan__mark');
   const visualInfo = container.querySelectorAll('.visual-info');
   const innerWidth = 1212;
@@ -7832,6 +7833,14 @@ const genplan = () => {
       }, 500);
     });
   }
+  infrastructureBtn.addEventListener('click', () => {
+    const checked = infrastructureBtn.querySelector('input').checked;
+    if (checked) {
+      visualInfo.forEach(item => item.classList.remove('_no-visible'));
+    } else {
+      visualInfo.forEach(item => item.classList.add('_no-visible'));
+    }
+  });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (genplan);
 
