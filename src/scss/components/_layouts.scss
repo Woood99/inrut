@@ -142,16 +142,25 @@
             border-bottom: 1px solid var(--primary100);
         }
     }
-    &__nav-test{
+    &__nav{
+        --size: 36px;
         &.nav-arrow-primary--next{
-            right: 2px;
+            right: 3px;
         }
         &.nav-arrow-primary--prev{
-            left: 2px;
+            left: 3px;
         }
         .nav-arrow-primary__wrapper{
-            box-shadow: var(--shadow-black-big);
+            box-shadow: var(--shadow-black-very-big);
         }
+        @media (min-width:$desktop-min){
+            &:hover{
+                .nav-arrow-primary__wrapper{
+                    transform: scale(1.15);
+                    box-shadow: var(--shadow-black-very-big);
+                }
+            } 
+       }
     }
     &__next {
         margin-top: 24px;
