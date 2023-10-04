@@ -17,21 +17,72 @@ const genplan = () => {
         marks.forEach(item => {
             const btn = item.querySelector('button');
             const content = item.querySelector('div');
-            createPopper(btn, content, {
-                placement: 'auto',
-                modifiers: [{
-                    name: 'offset',
-                    options: {
-                        offset: [5, 5]
-                    }
-                }]
+            if (btn && content) {
+                createPopper(btn, content, {
+                    placement: 'auto',
+                    modifiers: [{
+                        name: 'offset',
+                        options: {
+                            offset: [5, 5]
+                        }
+                    }]
+                });
+            }
+            item.addEventListener('mouseenter', () => {
+                if (!item.classList.contains('._static')) {
+                    item.classList.add('_active');
+                    setTimeout(() => {
+                        marks.forEach(mark => {
+                            if (item !== mark) mark.classList.add('_small-index');
+                        })
+                    }, 300);
+                }
             });
-            item.addEventListener('mouseenter', () => item.classList.add('_active'));
-            item.addEventListener('mouseleave', () => item.classList.remove('_active'));
+            item.addEventListener('mouseleave', () => {
+                if (!item.classList.contains('._static')) {
+                    item.classList.remove('_active');
+                    setTimeout(() => {
+                        marks.forEach(mark => {
+                            if (item !== mark) mark.classList.remove('_small-index');
+                        })
+                    }, 300);
+                }
+            });
         });
         visualInfo.forEach(item => {
-            item.addEventListener('mouseenter', () => item.classList.add('_active'));
-            item.addEventListener('mouseleave', () => item.classList.remove('_active'));
+            const btn = item.querySelector('.visual-info__btn');
+            const content = item.querySelector('.visual-info__content');
+            if (btn && content){
+                createPopper(btn, content, {
+                    placement: 'auto',
+                    modifiers: [{
+                        name: 'offset',
+                        options: {
+                            offset: [5, 5]
+                        }
+                    }]
+                });
+            }
+            item.addEventListener('mouseenter', () => {
+                if (!item.classList.contains('._static')) {
+                    item.classList.add('_active');
+                    setTimeout(() => {
+                        visualInfo.forEach(info => {
+                            if (item !== info) info.classList.add('_small-index');
+                        })
+                    }, 300);
+                }
+            });
+            item.addEventListener('mouseleave', () => {
+                if (!item.classList.contains('._static')) {
+                    item.classList.remove('_active');
+                    setTimeout(() => {
+                        visualInfo.forEach(info => {
+                            if (item !== info) info.classList.remove('_small-index');
+                        })
+                    }, 300);
+                }
+            });
         })
     } else {
 
