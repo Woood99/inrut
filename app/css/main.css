@@ -22909,7 +22909,7 @@ textarea.input-reset {
 .genplan .visual-info__content > div > div:not(:last-child) {
   margin-bottom: 12px;
 }
-.genplan .visual-info__content > div button {
+.genplan .visual-info__content button {
   margin-top: 24px;
   width: 100%;
 }
@@ -22935,9 +22935,30 @@ textarea.input-reset {
 .genplan .visual-info._small-index {
   z-index: 4;
 }
-.genplan .visual-info--metro .visual-info__btn span {
+.genplan .visual-info--metro .visual-info__btn img {
+  width: 16px;
+  height: 16px;
+}
+.genplan .visual-info--metro .visual-info__btn > span {
   padding: 0 16px;
   margin: 0 0 0 8px;
+}
+.genplan .visual-info--metro .visual-info__btn > span span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 0 0 12px;
+  padding: 0;
+  font-weight: 400;
+  color: var(--primaryTwo);
+}
+.genplan .visual-info--metro .visual-info__btn > span span svg {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
 }
 .genplan .visual-info._static .visual-info__btn {
   cursor: default;
@@ -22964,8 +22985,8 @@ textarea.input-reset {
 }
 .genplan__bottom {
   position: fixed;
-  bottom: 16px;
-  left: 16px;
+  bottom: 24px;
+  left: 24px;
   z-index: 4;
   background-color: var(--white);
   padding: 16px 24px;
@@ -22980,83 +23001,32 @@ textarea.input-reset {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.genplan__tooltip {
-  margin-left: 12px;
-  position: static;
-}
-.genplan__tooltip .secondary-tooltip__btn {
-  width: 25px;
-  height: 25px;
-}
-.genplan__tooltip .secondary-tooltip__btn svg {
-  width: 20px;
-  height: 20px;
-}
-.genplan__tooltip .secondary-tooltip__content {
-  left: 0;
-  bottom: 60px;
-  width: 100%;
-  border-radius: 22px;
-}
-.genplan__tooltip .secondary-tooltip__content li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.genplan__tooltip .secondary-tooltip__content li span {
-  color: var(--dark);
-  font-weight: 500;
-  margin-left: 8px;
-}
-.genplan__tooltip .secondary-tooltip__content li:not(:last-child) {
-  margin-bottom: 12px;
-}
 
 .genplan-mark__title {
   font-weight: 500;
   font-size: var(--default-fz);
   line-height: var(--default-lh);
   color: var(--dark);
-  margin-bottom: 5px;
-}
-.genplan-mark .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
 .genplan-mark__term {
   color: var(--primary600);
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
   font-weight: 400;
+  display: block;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--primary200);
 }
 .genplan-mark__floor {
-  margin-left: 30px;
+  display: block;
   color: var(--primary600);
   font-size: var(--default-fz);
   line-height: var(--little-small-lh);
   font-weight: 400;
   position: relative;
-}
-.genplan-mark__floor::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -10px;
-  -webkit-transform: translateY(-50%) translateX(-100%);
-  -ms-transform: translateY(-50%) translateX(-100%);
-  transform: translateY(-50%) translateX(-100%);
-  width: 10px;
-  height: 10px;
-  background-color: #D9D9D9;
-  border-radius: 50%;
+  margin-bottom: 4px;
 }
 .genplan-mark .spollers__item:not(:last-child) {
   margin-bottom: 16px;

@@ -7810,12 +7810,14 @@ const genplan = () => {
           setTimeout(() => {
             if (!item.classList.contains('_active')) popper.destroy();
           }, 300);
-          marks.forEach(mark => {
-            if (item !== mark) mark.classList.remove('_small-index');
-          });
-          visualInfo.forEach(info => {
-            if (item !== info) info.classList.remove('_small-index');
-          });
+          setTimeout(() => {
+            marks.forEach(mark => {
+              if (item !== mark) mark.classList.remove('_small-index');
+            });
+            visualInfo.forEach(info => {
+              if (item !== info) info.classList.remove('_small-index');
+            });
+          }, 100);
         }
       });
     });

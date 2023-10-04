@@ -220,6 +220,7 @@
             border-radius: 16px;
             padding: 24px;
             transform: scale(0);
+
             >div {
                 margin-top: 16px;
                 padding-top: 16px;
@@ -241,10 +242,12 @@
                     }
                 }
 
-                button {
-                    margin-top: 24px;
-                    width: 100%;
-                }
+
+            }
+
+            button {
+                margin-top: 24px;
+                width: 100%;
             }
         }
 
@@ -278,9 +281,30 @@
         &--metro {
             .visual-info {
                 &__btn {
-                    span {
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+                    >span {
                         padding: 0 16px;
                         margin: 0 0 0 8px;
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            margin: 0 0 0 12px;
+                            padding: 0;
+
+                            font-weight: 400;
+                            color: var(--primaryTwo);
+                            svg {
+                                margin-right: 8px;
+
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
                     }
                 }
             }
@@ -314,8 +338,8 @@
 
     &__bottom {
         position: fixed;
-        bottom: 16px;
-        left: 16px;
+        bottom: 24px;
+        left: 24px;
 
         z-index: 4;
 
@@ -327,45 +351,6 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    &__tooltip {
-        margin-left: 12px;
-        position: static;
-
-        .secondary-tooltip {
-            &__btn {
-                width: 25px;
-                height: 25px;
-
-                svg {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            &__content {
-                left: 0;
-                bottom: 60px;
-                width: 100%;
-                border-radius: 22px;
-
-                li {
-                    display: flex;
-                    align-items: center;
-
-                    span {
-                        color: var(--dark);
-                        font-weight: 500;
-                        margin-left: 8px;
-                    }
-
-                    &:not(:last-child) {
-                        margin-bottom: 12px;
-                    }
-                }
-            }
-        }
-    }
 }
 
 .genplan-mark {
@@ -375,42 +360,30 @@
         font-size: var(--default-fz);
         line-height: var(--default-lh);
         color: var(--dark);
-        margin-bottom: 5px;
+        margin-bottom: 4px;
     }
 
-    .row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 24px;
-    }
 
     &__term {
         color: var(--primary600);
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
         font-weight: 400;
+        display: block;
+
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--primary200);
     }
 
     &__floor {
-        margin-left: 30px;
+        display: block;
         color: var(--primary600);
         font-size: var(--default-fz);
         line-height: var(--little-small-lh);
         font-weight: 400;
         position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            transform: translateY(-50%) translateX(-100%);
-
-            width: 10px;
-            height: 10px;
-            background-color: #D9D9D9;
-            border-radius: 50%;
-        }
+        margin-bottom: 4px;
     }
 
     .spollers {
