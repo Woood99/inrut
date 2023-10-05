@@ -1867,9 +1867,15 @@
 
 
 .tags {
-    display: flex;
-    flex-wrap: wrap;
-
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width:$desktop) {
+            overflow-x: auto;
+            @include hiddenScroll;
+            flex-wrap: nowrap;
+        }
+    }
     &__item {
         margin: 0 8px 8px 0;
 
@@ -1877,11 +1883,33 @@
             margin: 0 8px 0 0;
         }
     }
+    &__btn{
+        margin-top: 16px;
+        color: var(--blue);
+        display: flex;
+        align-items: center;
 
-    @media (max-width:$desktop) {
-        overflow-x: auto;
-        @include hiddenScroll;
-        flex-wrap: nowrap;
+        span {
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
+            font-weight: 400;
+        }
+
+        svg {
+            width: 20px;
+            height: 17px;
+            fill: currentColor;
+            margin-left: 8px;
+            transition: transform $transitionSpeed $transitionFunction;
+        }
+
+        &.focus-visible {
+            color: var(--primary600);
+        }
+
+        @media (max-width:$desktop) {
+            display: none;
+        }
     }
 }
 

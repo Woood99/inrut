@@ -4319,7 +4319,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_components_furnishingSets__WEBPACK_IMPORTED_MODULE_30__["default"])();
   (0,_components_bookConsultation__WEBPACK_IMPORTED_MODULE_31__["default"])();
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.object-location__infrastructure', 1000, true);
-  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.buy-apartment__tags', 1000, 1180);
+  (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.buy-apartment__tags .tags__list', 1000, 1180);
   (0,_components_scrollDrag__WEBPACK_IMPORTED_MODULE_28__["default"])('.home-services__list', 1000, 1180);
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewing)();
   (0,_components_recordViewing__WEBPACK_IMPORTED_MODULE_32__.recordViewingTwo)();
@@ -9960,6 +9960,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const tag = () => {
+  const containers = document.querySelectorAll('.tags');
+  if (containers.length) {
+    containers.forEach(container => {
+      const list = container.querySelector('.tags__list');
+      const moreBtn = container.querySelector('.tags__btn');
+      let items = container.querySelectorAll('.tags__item:not([hidden])');
+      if (list && moreBtn && items.length && window.innerWidth > 1180) {
+        onlyOneLine();
+        function onlyOneLine() {
+          for (let i = 0; i < items.length - 1; i++) {
+            items = container.querySelectorAll('.tags__item:not([hidden])');
+            const firstTag = items[0];
+            const lastTag = items[items.length - 1];
+            const style = getComputedStyle(firstTag);
+            const heightTag = firstTag.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
+            const heightList = list.offsetHeight;
+            if (heightList > heightTag) {
+              lastTag.setAttribute('hidden', '');
+            }
+          }
+        }
+        const btnTextMap = {
+          more: moreBtn.querySelector('span').textContent,
+          none: 'Скрыть теги'
+        };
+        if (!container.querySelector('.tags__item[hidden]')) btn.remove();
+        moreBtn.addEventListener('click', () => {
+          if (container.classList.contains('_active')) {
+            moreBtn.querySelector('span').textContent = btnTextMap.more;
+            container.classList.remove('_active');
+            container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
+            items = container.querySelectorAll('.tags__item:not([hidden])');
+            onlyOneLine();
+          } else {
+            moreBtn.querySelector('span').textContent = btnTextMap.none;
+            container.classList.add('_active');
+            container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
+          }
+        });
+      }
+    });
+  }
   const tags = document.querySelectorAll('.tag');
   const svgIconHTML = `
         <div>
