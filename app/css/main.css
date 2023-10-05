@@ -27878,6 +27878,9 @@ textarea.input-reset {
   -ms-flex-align: center;
   align-items: center;
 }
+.object-advantages__nav .nav-arrow-secondary {
+  border-radius: 50%;
+}
 .object-advantages__nav .nav-arrow-secondary--next {
   margin-left: 10px;
 }
@@ -29316,6 +29319,7 @@ textarea.input-reset {
   border: none;
   background-color: var(--white);
   border: 1px solid var(--primary200);
+  position: relative;
 }
 .object-calc-mort__btn span {
   font-size: var(--default-fz);
@@ -29337,8 +29341,10 @@ textarea.input-reset {
   margin-left: 12px;
 }
 .object-calc-mort__btn div {
-  margin-left: 12px;
-  --size: 18px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  --size: 20px;
   width: var(--size);
   height: var(--size);
   -webkit-box-flex: 0;
@@ -29353,11 +29359,15 @@ textarea.input-reset {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-shadow: var(--shadow-secondary);
+  box-shadow: var(--shadow-secondary);
 }
 .object-calc-mort__btn div svg {
-  width: 14px;
-  height: 11px;
-  fill: var(--dark);
+  width: 10px;
+  height: 10px;
+  stroke: var(--blue);
+  stroke-width: 1.5px;
+  fill: none;
 }
 .object-calc-mort__btn._active {
   background-color: var(--blue);
@@ -29376,6 +29386,9 @@ textarea.input-reset {
   }
   .object-calc-mort__btn:hover span {
     color: var(--white);
+  }
+  .object-calc-mort__btn:hover div svg {
+    fill: none !important;
   }
 }
 @media (max-width: 768px) {

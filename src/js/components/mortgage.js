@@ -39,7 +39,7 @@ const mortgage = () => {
                 const svgIconHTML = `
                 <div>
                     <svg>
-                        <use xlink:href="img/sprite.svg#check"></use>
+                        <use xlink:href="img/sprite.svg#verif"></use>
                     </svg>
                 </div>
             `;
