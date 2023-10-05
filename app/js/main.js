@@ -9985,20 +9985,22 @@ const tag = () => {
           more: moreBtn.querySelector('span').textContent,
           none: 'Скрыть теги'
         };
-        if (!container.querySelector('.tags__item[hidden]')) btn.remove();
-        moreBtn.addEventListener('click', () => {
-          if (container.classList.contains('_active')) {
-            moreBtn.querySelector('span').textContent = btnTextMap.more;
-            container.classList.remove('_active');
-            container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
-            items = container.querySelectorAll('.tags__item:not([hidden])');
-            onlyOneLine();
-          } else {
-            moreBtn.querySelector('span').textContent = btnTextMap.none;
-            container.classList.add('_active');
-            container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
-          }
-        });
+        if (!container.querySelector('.tags__item[hidden]')) moreBtn.remove();
+        if (moreBtn) {
+          moreBtn.addEventListener('click', () => {
+            if (container.classList.contains('_active')) {
+              moreBtn.querySelector('span').textContent = btnTextMap.more;
+              container.classList.remove('_active');
+              container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
+              items = container.querySelectorAll('.tags__item:not([hidden])');
+              onlyOneLine();
+            } else {
+              moreBtn.querySelector('span').textContent = btnTextMap.none;
+              container.classList.add('_active');
+              container.querySelectorAll('.tags__item').forEach(tag => tag.removeAttribute('hidden'));
+            }
+          });
+        }
       }
     });
   }
