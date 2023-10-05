@@ -107,6 +107,26 @@
     &--next {
         right: 12px;
     }
+    &--big{
+        --size: 36px;
+        &.nav-arrow-primary--next{
+            right: 3px;
+        }
+        &.nav-arrow-primary--prev{
+            left: 3px;
+        }
+        .nav-arrow-primary__wrapper{
+            box-shadow: var(--shadow-black-very-big);
+        }
+        @media (min-width:$desktop-min){
+            &:hover{
+                .nav-arrow-primary__wrapper{
+                    transform: scale(1.15);
+                    box-shadow: var(--shadow-black-very-big);
+                }
+            } 
+       }
+    }
 }
 
 .nav-arrow-secondary {

@@ -298,7 +298,7 @@ function initSliders() {
 
             function sliderMoreItem() {
                 const btn = el.querySelector('.block-stock__btn');
-                if (!btn.hasAttribute('data-popup-path')) {
+                if (!btn.hasAttribute('data-popup-path') && !btn.hasAttribute('href')) {
                     btn.addEventListener('click', () => {
                         el.classList.toggle('_active');
                         if (el.classList.contains('_active')) {
@@ -377,8 +377,8 @@ function initSliders() {
                 spaceBetween: 16,
                 speed: 800,
                 navigation: {
-                    prevEl: el.closest('.block-stock__ribbon').querySelector('.nav-arrow-secondary--prev'),
-                    nextEl: el.closest('.block-stock__ribbon').querySelector('.nav-arrow-secondary--next'),
+                    prevEl: el.querySelector('.nav-arrow-primary--prev'),
+                    nextEl: el.querySelector('.nav-arrow-primary--next'),
                 },
                 breakpoints: {
                     577: {
@@ -431,8 +431,8 @@ function initSliders() {
                 spaceBetween: 16,
                 speed: 800,
                 navigation: {
-                    prevEl: el.closest('.block-stock__video').querySelector('.nav-arrow-secondary--prev'),
-                    nextEl: el.closest('.block-stock__video').querySelector('.nav-arrow-secondary--next'),
+                    prevEl: el.querySelector('.nav-arrow-primary--prev'),
+                    nextEl: el.querySelector('.nav-arrow-primary--next'),
                 },
                 breakpoints: {
                     577: {
