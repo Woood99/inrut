@@ -12,24 +12,17 @@
         position: sticky;
         top: 50%;
         transform: translateY(-50%);
-        opacity: 0;
-        visibility: hidden;
-
-        border: 1px solid var(--blue);
-
-        transition: opacity $transitionSpeedFast $transitionFunction,
-            visibility $transitionSpeedFast $transitionFunction;
-
-        &._active {
-            opacity: 1;
-            visibility: visible;
-        }
 
         @media (max-width:$desktop) {
             display: none;
         }
     }
-
+    &__prev{
+        left: 0;
+    }
+    &__next{
+        right: 0;
+    }
     &__prev {}
 
     &__next {}
@@ -70,13 +63,12 @@
 
     &__go-top,
     &__go-bottom {
-        border: 1px solid var(--blue);
-        background-color: var(--white);
         position: fixed;
         bottom: 35px;
+        top: auto;
         left: auto;
-        transform: translateX(89%);
-
+        right: auto;
+        transform: translateX(25px);
         &[hidden] {
             display: none;
         }

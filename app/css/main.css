@@ -7619,12 +7619,6 @@ textarea.input-reset {
 .nav-arrow-primary--big {
   --size: 36px;
 }
-.nav-arrow-primary--big.nav-arrow-primary--next {
-  right: 3px;
-}
-.nav-arrow-primary--big.nav-arrow-primary--prev {
-  left: 3px;
-}
 .nav-arrow-primary--big .nav-arrow-primary__wrapper {
   -webkit-box-shadow: var(--shadow-black-very-big);
   box-shadow: var(--shadow-black-very-big);
@@ -21894,21 +21888,17 @@ textarea.input-reset {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  opacity: 0;
-  visibility: hidden;
-  border: 1px solid var(--blue);
-  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-}
-.checkboard__prev._active, .checkboard__next._active {
-  opacity: 1;
-  visibility: visible;
 }
 @media (max-width: 1212px) {
   .checkboard__prev, .checkboard__next {
     display: none;
   }
+}
+.checkboard__prev {
+  left: 0;
+}
+.checkboard__next {
+  right: 0;
 }
 .checkboard__bottom {
   margin: 32px 0 32px 51px;
@@ -21950,14 +21940,14 @@ textarea.input-reset {
   font-weight: 500;
 }
 .checkboard__go-top, .checkboard__go-bottom {
-  border: 1px solid var(--blue);
-  background-color: var(--white);
   position: fixed;
   bottom: 35px;
+  top: auto;
   left: auto;
-  -webkit-transform: translateX(89%);
-  -ms-transform: translateX(89%);
-  transform: translateX(89%);
+  right: auto;
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
 }
 .checkboard__go-top[hidden], .checkboard__go-bottom[hidden] {
   display: none;
@@ -22345,6 +22335,12 @@ textarea.input-reset {
 }
 .room-body__list .room-info-card:first-child {
   border-top: 1px solid var(--primary100);
+}
+.room-body__nav.nav-arrow-primary--next {
+  right: 3px;
+}
+.room-body__nav.nav-arrow-primary--prev {
+  left: 3px;
 }
 .room-body__next {
   margin-top: 24px;
@@ -24048,16 +24044,16 @@ textarea.input-reset {
   background-color: transparent;
   border-radius: 0;
 }
-@media (max-width: 768px) {
-  .block-stock__nav {
-    display: none;
-  }
-}
 .block-stock__nav.nav-arrow-primary--prev {
   left: 0;
 }
 .block-stock__nav.nav-arrow-primary--next {
   right: 0;
+}
+@media (max-width: 768px) {
+  .block-stock__nav {
+    display: none;
+  }
 }
 .block-stock__slider .swiper-wrapper {
   -webkit-box-align: stretch;
