@@ -8839,31 +8839,17 @@ const mortgage = () => {
     const itemsPopup = listPopup.querySelectorAll('[data-mortgage-card]');
     const textPrc = containerAdd.querySelector('.field-static__text');
     list.addEventListener('click', e => {
-      toggleClass(e, items, itemsPopup, items, true);
+      toggleClass(e, items, itemsPopup, items);
     });
     listPopup.addEventListener('click', e => {
-      toggleClass(e, itemsPopup, items, items, false);
+      toggleClass(e, itemsPopup, items, items);
     });
     function toggleClass(e, containerOne, containerTwo, container) {
-      let checkDecor = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
       const target = e.target ? e.target : e;
       const item = target.closest('[data-mortgage-card]');
       if (!item) return;
-      containerOne.forEach(item => {
-        item.classList.remove('_active');
-        if (checkDecor && item.querySelector('div')) item.querySelector('div').remove();
-      });
+      containerOne.forEach(item => item.classList.remove('_active'));
       item.classList.add('_active');
-      if (checkDecor) {
-        const svgIconHTML = `
-                <div>
-                    <svg>
-                        <use xlink:href="img/sprite.svg#verif"></use>
-                    </svg>
-                </div>
-            `;
-        item.insertAdjacentHTML('beforeend', svgIconHTML);
-      }
       containerTwo.forEach(el => {
         +item.dataset.mortgageCard === +el.dataset.mortgageCard ? el.classList.add('_active') : el.classList.remove('_active');
       });
@@ -10905,7 +10891,7 @@ function initSliders() {
     const container = document.querySelectorAll('.block-stock');
     container.forEach(el => {
       const sliderEl = el.querySelector('.block-stock__slider');
-      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+      const bodySlider = {
         observer: true,
         observeParents: true,
         slidesPerView: 1.1,
@@ -10926,7 +10912,8 @@ function initSliders() {
             slidesPerView: 2
           }
         }
-      });
+      };
+      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
       sliderMoreItem();
       function sliderMoreItem() {
         const btn = el.querySelector('.block-stock__btn');
@@ -10950,28 +10937,7 @@ function initSliders() {
                   top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
                 });
               }
-              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
-                observer: true,
-                observeParents: true,
-                slidesPerView: 1.1,
-                spaceBetween: 16,
-                speed: 800,
-                navigation: {
-                  prevEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--prev'),
-                  nextEl: el.closest('.block-stock').querySelector('.nav-arrow-secondary--next')
-                },
-                breakpoints: {
-                  577: {
-                    slidesPerView: 1.8
-                  },
-                  769: {
-                    slidesPerView: 2.4
-                  },
-                  1213: {
-                    slidesPerView: 2
-                  }
-                }
-              });
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
             }
           });
         }
@@ -10988,8 +10954,8 @@ function initSliders() {
         spaceBetween: 16,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.object-other-apartment').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.object-other-apartment').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.querySelector('.nav-arrow-primary--prev'),
+          nextEl: el.querySelector('.nav-arrow-primary--next')
         },
         breakpoints: {
           577: {
@@ -11140,22 +11106,23 @@ function initSliders() {
     const container = document.querySelectorAll('.object-construct-progress');
     container.forEach(el => {
       const sliderEl = el.querySelector('.object-construct-progress__items');
-      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+      const bodySlider = {
         observer: true,
         observeParents: true,
         slidesPerView: 1.1,
         spaceBetween: 16,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.querySelector('.nav-arrow-primary--prev'),
+          nextEl: el.querySelector('.nav-arrow-primary--next')
         },
         breakpoints: {
           577: {
             slidesPerView: 2
           }
         }
-      });
+      };
+      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
       sliderMoreItem();
       function sliderMoreItem() {
         const btn = el.querySelector('.object-construct-progress__btn');
@@ -11179,22 +11146,7 @@ function initSliders() {
                   top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
                 });
               }
-              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
-                observer: true,
-                observeParents: true,
-                slidesPerView: 1.1,
-                spaceBetween: 16,
-                speed: 800,
-                navigation: {
-                  prevEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--prev'),
-                  nextEl: el.closest('.object-construct-progress').querySelector('.nav-arrow-secondary--next')
-                },
-                breakpoints: {
-                  577: {
-                    slidesPerView: 2
-                  }
-                }
-              });
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
             }
           });
         }
@@ -11225,15 +11177,15 @@ function initSliders() {
     const container = document.querySelectorAll('.object-advantages');
     container.forEach(el => {
       const sliderEl = el.querySelector('.object-advantages__slider');
-      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+      const bodySlider = {
         observer: true,
         observeParents: true,
         slidesPerView: 1.1,
         spaceBetween: 16,
         speed: 800,
         navigation: {
-          prevEl: el.closest('.object-advantages').querySelector('.nav-arrow-secondary--prev'),
-          nextEl: el.closest('.object-advantages').querySelector('.nav-arrow-secondary--next')
+          prevEl: el.querySelector('.nav-arrow-primary--prev'),
+          nextEl: el.querySelector('.nav-arrow-primary--next')
         },
         breakpoints: {
           577: {
@@ -11246,7 +11198,8 @@ function initSliders() {
             slidesPerView: 2
           }
         }
-      });
+      };
+      let slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
       const objectAdvantages = () => {
         sliderMoreItem();
         itemPopup();
@@ -11271,28 +11224,7 @@ function initSliders() {
                   top: topHeaderMobile ? topGap - topHeaderMobile.offsetHeight - 20 : topGap - 20
                 });
               }
-              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
-                observer: true,
-                observeParents: true,
-                slidesPerView: 1.1,
-                spaceBetween: 16,
-                speed: 800,
-                navigation: {
-                  prevEl: el.closest('.object-advantages').querySelector('.nav-arrow-secondary--prev'),
-                  nextEl: el.closest('.object-advantages').querySelector('.nav-arrow-secondary--next')
-                },
-                breakpoints: {
-                  577: {
-                    slidesPerView: 1.8
-                  },
-                  769: {
-                    slidesPerView: 2.4
-                  },
-                  1213: {
-                    slidesPerView: 2
-                  }
-                }
-              });
+              slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, bodySlider);
             }
           });
         }
