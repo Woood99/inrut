@@ -19,6 +19,7 @@ const genplan = () => {
             item.addEventListener('mouseenter', () => {
                 if (!item.classList.contains('_static')) {
                     item.classList.add('_active');
+                    item.classList.add('_big-index');
                     const btn = item.querySelector('button');
                     const content = item.querySelector('.visual-info__content') ? item.querySelector('.visual-info__content') : item.querySelector('div');
                     if (btn && content) {
@@ -32,33 +33,20 @@ const genplan = () => {
                             }]
                         });
                     }
-                    deleteAllSmallindex();
-                    marks.forEach(mark => {
-                        if (item !== mark) mark.classList.add('_small-index');
-                    })
-                    visualInfo.forEach(info => {
-                        if (item !== info) info.classList.add('_small-index');
-                    })
                 }
             });
             item.addEventListener('mouseleave', () => {
                 if (!item.classList.contains('_static')) {
                     item.classList.remove('_active');
                     setTimeout(() => {
-                        deleteAllSmallindex();
-                    }, 50);
+                        item.classList.remove('_big-index');
+                    }, 150);
                     setTimeout(() => {
                         if (!item.classList.contains('_active')) popper.destroy();
                     }, 300);
                 }
             });
         });
-
-
-        function deleteAllSmallindex() {
-            marks.forEach(mark => mark.classList.remove('_small-index'));
-            visualInfo.forEach(info => info.classList.remove('_small-index'));
-        }
     }
 
     if (window.innerWidth > innerWidth) {
@@ -107,6 +95,7 @@ const genplan = () => {
         });
     }
 
+    visualInfo.forEach(item => item.classList.add('_no-visible'));
     infrastructureBtn.addEventListener('click', () => {
         const checked = infrastructureBtn.querySelector('input').checked;
         if (checked) {
