@@ -12367,7 +12367,7 @@ textarea.input-reset {
   grid-row-gap: 8px;
   -ms-grid-columns: 41.3223140496% 1fr 1fr;
   grid-template-columns: 41.3223140496% 1fr 1fr;
-  padding: 24px 24px 24px 24px;
+  padding: 32px 24px;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
   transition: -webkit-box-shadow 0.4s ease-in-out;
@@ -16317,8 +16317,8 @@ textarea.input-reset {
   display: grid;
   -ms-grid-columns: 45px 1fr;
   grid-template-columns: 45px 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 4px;
+  grid-column-gap: 12px;
+  grid-row-gap: 2px;
 }
 .user-info-develop__avatar {
   -ms-grid-column: 1;
@@ -16330,7 +16330,7 @@ textarea.input-reset {
   width: 45px;
   height: 45px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1212px) {
   .user-info-develop__avatar {
     width: 40px;
     height: 40px;
@@ -16339,14 +16339,18 @@ textarea.input-reset {
 .user-info-develop__name {
   font-size: var(--little-big-fz);
   line-height: var(--little-big-lh);
-  -ms-flex-item-align: end;
   -ms-grid-row-align: end;
   align-self: end;
   white-space: nowrap;
   font-weight: 500;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
 }
 .user-info-develop__date {
-  -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
   color: var(--primaryTwo);
@@ -16354,12 +16358,17 @@ textarea.input-reset {
   font-size: var(--default-fz);
   line-height: var(--default-lh);
   white-space: nowrap;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
 }
 @media (max-width: 768px) {
   .user-info-develop {
     -ms-grid-columns: 40px 1fr;
     grid-template-columns: 40px 1fr;
-    grid-column-gap: 12px;
   }
 }
 
@@ -31540,8 +31549,6 @@ textarea.input-reset {
 }
 .develop-catalog__filter .filter__go {
   padding: 0 35px;
-  max-width: 224px;
-  width: 100%;
 }
 @media (max-width: 1212px) {
   .develop-catalog__filter .filter__go {
@@ -31579,6 +31586,7 @@ textarea.input-reset {
 }
 .develop-catalog__table {
   margin-top: 32px;
+  background-color: var(--stand-bg);
 }
 .develop-catalog__table .main-table__type {
   -ms-grid-columns: 41.3223140496% 1fr 1fr;
@@ -34006,7 +34014,7 @@ textarea.input-reset {
 }
 .news__image {
   width: 100%;
-  padding-bottom: 36.0824742268%;
+  padding-bottom: 45%;
   border-radius: 16px;
 }
 .news__image img {
