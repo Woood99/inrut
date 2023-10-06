@@ -5,6 +5,8 @@
     border-radius: 12px;
     box-shadow: var(--shadow-third);
 
+    display: flex;
+    flex-direction: column;
     &__image {
         border-radius: 12px;
         padding-bottom: percent(207, 323);
@@ -15,11 +17,12 @@
     }
 
     &__content {
+        flex-grow: 1;
         padding: 20px 16px 16px;
         display: grid;
         grid-template-columns: 1fr 24px;
         grid-column-gap: 24px;
-        grid-row-gap: 16px;
+        grid-row-gap: 24px;
     }
 
     &__title {
@@ -49,7 +52,21 @@
     }
 
     &__user {
+        margin-top: auto;
         grid-column: 1/3;
-        margin-top: 16px;
+    }
+
+    .user-info {
+        grid-template-columns: 34px 1fr;
+
+        &__avatar {
+            width: 34px;
+            height: 34px;
+        }
+
+        &__name {
+            font-size: var(--small-fz);
+            line-height: var(--small-lh);
+        }
     }
 }
