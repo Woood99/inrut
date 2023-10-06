@@ -4,8 +4,8 @@
 
         .bid {
             &__container {
-                grid-template-columns: 1fr percent(400, 1016);
-                padding: 32px;
+                grid-template-columns: 1fr 350px;
+          padding: 24px 0;
 
                 @media (max-width:$desktop) {
                     margin-top: 24px;
@@ -44,12 +44,11 @@
            padding-bottom: 0;
 
             &__content {}
-
+            &__avatar{
+                --size: 95px;
+            }
             &__btns {
                 margin-top: 32px;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-column-gap: 12px;
                 width: 100%;
             }
 
@@ -57,9 +56,9 @@
                 width: 100%;
                 margin-top: 0;
 
-                &--call {}
-
-                &--message {}
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
             }
 
             &__bottom {

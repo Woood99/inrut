@@ -53,7 +53,7 @@ function controlCards() {
                             }
                             bottomMobile.querySelector('.card-secondary__info--favorite').removeAttribute('hidden');
                         }
-                        if (checkHorizontal(btn)) {
+                        if (checkHorizontal(btn) && bottomMobile.querySelector('.card-secondary__info--favorite')) {
                             bottomMobile.querySelector('.card-secondary__info--favorite').setAttribute('hidden', '');
                             if (favorite.hasAttribute('data-popup-path')) {
                                 card.querySelector('.card-secondary__info--btns-right').insertAdjacentElement('afterbegin', favorite);
