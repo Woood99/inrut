@@ -146,6 +146,12 @@
                         <div class="bid__maps bid-maps">
                             <h2 class="bid__title title-2">
                                 Расположение поиска
+                                <span>
+                                    (
+                                    <span>2 локакции</span>
+                                    <span>Возможно изменения района</span>
+                                    )
+                                </span>
                             </h2>
                             <div class="bid-maps__container map-primary remove-copyrights-pane" id="bid-maps"></div>
                         </div>
@@ -226,24 +232,8 @@
                                         Алексей Г.
                                     </a>
                                     <time class="bid-user__time" datetime="2022-12-12">
-                                        Агент покупателя был в сети 12.12.2022
+                                        Покупатель был в сети 12.12.2022
                                     </time>
-                                    <div class="bid-user__rating">
-                                        <div class="bid-user__rating-stars">
-                                            <svg>
-                                                <use xlink:href="img/sprite.svg#star"></use>
-                                            </svg>
-                                        </div>
-                                        <span>2.2</span>
-                                        <span>(2 отзыва)</span>
-                                    </div>
-                                    <div class="bid-user__quantity">
-                                        <svg>
-                                            <use xlink:href="img/sprite.svg#briefcase"></use>
-                                        </svg>
-                                        <span>10 объектов</span>,&nbsp;
-                                        <span>8 сделок</span>
-                                    </div>
                                 </div>
                                 <button type="button" class="btn btn-reset btn-primary bid-user__btn" data-popup-path="suggest-object">
                                     Предложить объект
@@ -567,20 +557,18 @@
                         <div class="control-cards__container container--no-padding">
                             <div data-tabs-body class="tabs__content tabs-primary__content control-cards__content control-cards__content--horizontal">
                                 <div class="tabs__body">
-                                    <div class="tabs-primary__controls control-cards__btns">
-                                        <button type="button"
-                                            class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
+                                    <div class="cards-list__controls control-cards__btns">
+                                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#apps"></use>
                                             </svg>
                                         </button>
-                                        <button type="button"
-                                            class="btn btn-reset tabs-primary__control tabs-primary__control--vertical control-cards__btn control-cards__btn--vertical">
+                                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#pause"></use>
                                             </svg>
                                         </button>
-                                        <button type="button" class="btn btn-reset tabs-primary__control tabs-primary__control--maps">
+                                        <button type="button" class="btn btn-reset control-cards__btn--maps" data-da=".agent-object__filter,1024,1" data-popup-path="popup-map_buy-apartment-building">
                                             <span>На карте</span>
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#location-fill"></use>
@@ -595,13 +583,12 @@
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -609,8 +596,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -618,8 +604,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -683,19 +679,20 @@
                                                                 Агент
                                                             </span>
                                                         </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </article>
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -703,8 +700,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -712,8 +708,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -774,19 +780,20 @@
                                                                 Агент
                                                             </span>
                                                         </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </article>
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -794,8 +801,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -803,8 +809,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -860,6 +876,8 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
+                                                        </div>
+                                                        <div class="card-primary__info--mobile">
                                                         </div>
                                                     </div>
                                                 </a>
@@ -874,13 +892,12 @@
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -888,8 +905,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -897,8 +913,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -962,19 +988,20 @@
                                                                 Агент
                                                             </span>
                                                         </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </article>
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -982,8 +1009,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -991,8 +1017,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1053,19 +1089,20 @@
                                                                 Агент
                                                             </span>
                                                         </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </article>
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1073,8 +1110,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1082,8 +1118,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1140,6 +1186,105 @@
                                                                 Агент
                                                             </span>
                                                         </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </article>
+                                            <article class="tabs-primary__row-item card-primary">
+                                                <a href="./object-two.html" class="card-primary__container">
+                                                    <div class="card-primary__top">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
+                                                            <div class="card-primary__item">
+                                                                <div class="card-primary__image">
+                                                                    <picture>
+                                                                        <source srcset="./img/card-6.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item">
+                                                                <div class="card-primary__image">
+                                                                    <picture>
+                                                                        <source srcset="./img/card-7.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item">
+                                                                <div class="card-primary__image">
+                                                                    <picture>
+                                                                        <source srcset="./img/card-8.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="card-primary__pagination list-reset" aria-hidden="true"></ul>
+                                                        <div class="card-primary__info">
+                                                            <span class="card-primary__info--new">Новое</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-primary__content">
+                                                        <h3 class="card-primary__name title-4">
+                                                            1-комн. квартира, 54 м², 12/12 эт.
+                                                        </h3>
+                                                        <div class="card-primary__address">
+                                                            <span class="card-primary__address--two">
+                                                                Краснодар,
+                                                                ул.Карла-Маркса., 234
+                                                            </span>
+                                                        </div>
+                                                        <div class="card-primary__price">
+                                                            <span class="card-primary__price-new">
+                                                                <span class="title-3">2 897 000 ₽</span>
+                                                                <span>(94 742 ₽/м²)</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="card-primary__text">
+                                                            <p>
+                                                                Уникальна квартира с ремонтом продается в новом доме по
+                                                                улице Тополиная это район Петра Метальникова.
+                                                            </p>
+                                                            <p>
+                                                                В квартире шикарный, современный ремонт панорамные окна,
+                                                                на
+                                                                полу ламинат, шикарный вид на город. Из кухни сделана
+                                                                кухня
+                                                                гостиная очень актуально в наше время, при этом квартира
+                                                                см.
+                                                                Уникальна квартира с ремонтом продается в новом доме по
+                                                                улице Тополиная квартира см. Уникальна квартира с
+                                                                ремонтом
+                                                                продается в новом доме по улице Тополиная
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-primary__bottom">
+                                                        <div class="card-primary__user user-info user-info--small-mobile">
+                                                            <div class="user-info__avatar avatar online">
+                                                                <img loading="lazy" src="./img/avatar-1.jpg" width="40" height="40" alt="Алексей Г.">
+                                                            </div>
+                                                            <span class="user-info__name">
+                                                                Алексей Г.
+                                                            </span>
+                                                            <span class="user-info__pos">
+                                                                Агент
+                                                            </span>
+                                                        </div>
+                                                        <div class="card-primary__info--mobile">
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </article>
@@ -1147,20 +1292,18 @@
                                     </div>
                                 </div>
                                 <div class="tabs__body">
-                                    <div class="tabs-primary__controls control-cards__btns">
-                                        <button type="button"
-                                            class="btn btn-reset tabs-primary__control tabs-primary__control--horizontal control-cards__btn control-cards__btn--horizontal _active">
+                                    <div class="cards-list__controls control-cards__btns">
+                                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--horizontal _active">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#apps"></use>
                                             </svg>
                                         </button>
-                                        <button type="button"
-                                            class="btn btn-reset tabs-primary__control tabs-primary__control--vertical control-cards__btn control-cards__btn--vertical">
+                                        <button type="button" class="btn btn-reset control-cards__btn control-cards__btn--vertical">
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#pause"></use>
                                             </svg>
                                         </button>
-                                        <button type="button" class="btn btn-reset tabs-primary__control tabs-primary__control--maps">
+                                        <button type="button" class="btn btn-reset control-cards__btn--maps" data-popup-path="popup-map_buy-apartment-building">
                                             <span>На карте</span>
                                             <svg>
                                                 <use xlink:href="img/sprite.svg#location-fill"></use>
@@ -1175,13 +1318,12 @@
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1189,8 +1331,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1198,8 +1339,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1276,6 +1427,8 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
+                                                        </div>
+                                                        <div class="card-primary__info--mobile">
                                                         </div>
                                                     </div>
                                                 </a>
@@ -1283,13 +1436,12 @@
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1297,8 +1449,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1306,8 +1457,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1384,6 +1545,8 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
+                                                        </div>
+                                                        <div class="card-primary__info--mobile">
                                                         </div>
                                                     </div>
                                                 </a>
@@ -1391,13 +1554,12 @@
                                             <article class="tabs-primary__row-item card-primary">
                                                 <a href="./object-two.html" class="card-primary__container">
                                                     <div class="card-primary__top">
-                                                        <div class="card-primary__images">
+                                                        <div class="card-primary__images" data-card-quantity-image="8">
                                                             <div class="card-primary__item">
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-6.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-6.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1405,8 +1567,7 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-7.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-7.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1414,8 +1575,18 @@
                                                                 <div class="card-primary__image">
                                                                     <picture>
                                                                         <source srcset="./img/card-8.webp" type="image/webp">
-                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207"
-                                                                            alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                        <img loading="lazy" src="./img/card-8.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-primary__item card-primary__item--limit">
+                                                                <div class="card-primary__image">
+                                                                    <div class="card-image-more">
+                                                                        Показать ещё 5 фото
+                                                                    </div>
+                                                                    <picture>
+                                                                        <source srcset="./img/card-3.webp" type="image/webp">
+                                                                        <img loading="lazy" src="./img/card-3.jpg" width="323" height="207" alt="1-комн. квартира, 54 м², 12/12 эт.">
                                                                     </picture>
                                                                 </div>
                                                             </div>
@@ -1492,6 +1663,8 @@
                                                             <span class="user-info__pos">
                                                                 Агент
                                                             </span>
+                                                        </div>
+                                                        <div class="card-primary__info--mobile">
                                                         </div>
                                                     </div>
                                                 </a>

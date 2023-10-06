@@ -6012,7 +6012,7 @@ function controlCards() {
               }
               bottomMobile.querySelector('.card-primary__info--dislike').removeAttribute('hidden');
             }
-            if (checkHorizontal(btn)) {
+            if (checkHorizontal(btn) && bottomMobile.querySelector('.card-primary__info--dislike')) {
               bottomMobile.querySelector('.card-primary__info--dislike').setAttribute('hidden', '');
             }
           }
@@ -6024,7 +6024,7 @@ function controlCards() {
               }
               bottomMobile.querySelector('.card-primary__info--comment').removeAttribute('hidden');
             }
-            if (checkHorizontal(btn)) {
+            if (checkHorizontal(btn) && bottomMobile.querySelector('.card-primary__info--comment')) {
               bottomMobile.querySelector('.card-primary__info--comment').setAttribute('hidden', '');
             }
           }

@@ -54,8 +54,9 @@
         font-size: var(--small-fz);
         line-height: var(--small-lh);
         font-weight: 400;
-        @media (max-width:$smallTablet-max){
-             display: none; 
+
+        @media (max-width:$smallTablet-max) {
+            display: none;
         }
     }
 
@@ -220,10 +221,12 @@
             margin-top: 0;
             padding: 16px;
         }
-        .message-item{
-            &__text{
+
+        .message-item {
+            &__text {
                 border-radius: 12px 12px 2px 12px;
-                &::after{
+
+                &::after {
                     content: '';
                     background-image: url('../img/message-check.svg');
                     height: 20px;
@@ -344,6 +347,35 @@
 
 
 .bid-maps {
+    .bid__title {
+        span {
+            color: var(--primaryTwo);
+            font-weight: 500;
+            font-size: var(--default-fz);
+            line-height: var(--default-lh);
+
+            span {
+                position: relative;
+                &:not(:first-child) {
+                    padding-left: 14px;
+                   margin-left: 4px;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+
+                        border-radius: 50%;
+                        width: 6px;
+                        height: 6px;
+                        background-color: var(--primaryTwo);
+                    }
+                }
+            }
+        }
+    }
+
     &__container {
         margin-top: 24px;
         width: 100%;
@@ -360,11 +392,13 @@
             height: 215px;
         }
     }
-    @media (max-width:$smallTablet-max){
-         padding: 0 16px; 
-         .bid__title{
+
+    @media (max-width:$smallTablet-max) {
+        padding: 0 16px;
+
+        .bid__title {
             padding: 0;
-         }
+        }
     }
 }
 
@@ -447,11 +481,11 @@
         font-weight: 500;
         transition: color $transitionSpeed $transitionFunction;
 
-     @media (min-width:$desktop-min){
-        &:hover {
-            color: var(--blue);
-        } 
-     }
+        @media (min-width:$desktop-min) {
+            &:hover {
+                color: var(--blue);
+            }
+        }
 
         @media (max-width:$smallTablet-max) {
             margin-top: 2px;

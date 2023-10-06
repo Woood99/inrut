@@ -20482,6 +20482,32 @@ textarea.input-reset {
   margin-top: 24px;
 }
 
+.bid-maps .bid__title span {
+  color: var(--primaryTwo);
+  font-weight: 500;
+  font-size: var(--default-fz);
+  line-height: var(--default-lh);
+}
+.bid-maps .bid__title span span {
+  position: relative;
+}
+.bid-maps .bid__title span span:not(:first-child) {
+  padding-left: 14px;
+  margin-left: 4px;
+}
+.bid-maps .bid__title span span:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primaryTwo);
+}
 .bid-maps__container {
   margin-top: 24px;
   width: 100%;
@@ -26912,6 +26938,9 @@ textarea.input-reset {
   .purchase-request .bid-user__content {
     margin-top: 0;
   }
+}
+.purchase-request .bid-user__btn {
+  margin-top: 16px;
 }
 @media (min-width: 1213px) {
   .purchase-request .bid__sidebar {
