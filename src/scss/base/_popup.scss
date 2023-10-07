@@ -373,7 +373,8 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
-    &--proposal-sent{
+
+    &--proposal-sent {
         text-align: center;
         z-index: 1053;
 
@@ -412,6 +413,7 @@
             background-color: rgba(34, 41, 102, 0.4);
         }
     }
+
     &--online-display {
         text-align: center;
 
@@ -1236,11 +1238,11 @@
 
         .popup-primary {
             &__container {
-                border-radius: 12px 12px 0 0;
+                border-radius: 0;
                 padding: 75px 16px 32px;
-                min-height: auto;
-                margin: 32px auto 0;
-                width: calc(100% - 4px);
+                margin: 0 auto;
+                width: 100%;
+                max-width: 100%;
                 vertical-align: bottom;
                 position: relative;
             }
@@ -1249,13 +1251,6 @@
                 transform: translateX(16px);
                 margin-top: -70px;
             }
-        }
-
-        &::before {
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
         }
 
         @media (max-width:$desktop) {
@@ -1402,39 +1397,58 @@
 }
 
 .history-changes {
-    .container {
-        max-width: 1300px;
+    position: relative;
 
+    &__title {
+        margin-bottom: 24px;
+
+        max-width: 1250px;
+        padding: 0;
         @media (max-width:1500px) {
-            max-width: 1250px;
+            max-width: 1200px;
         }
     }
 
-    &__top {
+    &__content {
+        position: relative;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        margin-bottom: 24px;
+        padding: 0;
+
+        max-width: calc(1250px + (36px*2));
+
+        @media (max-width:1500px) {
+            max-width: calc(1200px + (36px*2));
+        }
     }
 
     &__nav {
-        display: flex;
-        align-items: center;
+        flex: 0 0 36px;
 
-        .nav-arrow-secondary {
-            border: 1px solid var(--blue);
+        &.nav-arrow-primary {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
 
-            &.swiper-button-disabled {
-                opacity: 0.4;
-            }
-
-            svg {
-                fill: var(--blue);
+            @media (max-width:$desktop) {
+                display: none;
             }
         }
 
-        .nav-arrow-secondary--next {
-            margin-left: 10px;
+        &.nav-arrow-primary--prev {
+            left: 0;
+            transform: translateX(-16px) translateY(-50%);
+            &.swiper-button-disabled{
+                transform: translateX(-16px) translateY(-50%) scale(0.75); 
+            }
+        }
+
+        &.nav-arrow-primary--next {
+            right: 0;
+            transform: translateX(16px) translateY(-50%);
+            &.swiper-button-disabled{
+                transform: translateX(16px) translateY(-50%) scale(0.75); 
+            }
         }
     }
 
@@ -3635,11 +3649,13 @@
 .want-discount {
     box-sizing: border-box;
     text-align: left;
-    &__decor{
+
+    &__decor {
         display: flex;
         justify-content: center;
         margin-bottom: 16px;
     }
+
     &__title {
         text-align: center;
     }
@@ -3710,7 +3726,8 @@
         font-size: var(--small-fz);
         line-height: var(--small-lh);
     }
-    &__badge{
+
+    &__badge {
         margin-top: 16px;
         font-size: var(--small-fz);
         line-height: var(--small-lh);
@@ -3719,32 +3736,40 @@
         border-radius: 8px;
         background-color: var(--primary200);
     }
+
     &__btn {
         margin-top: 24px;
         width: 100%;
     }
 }
+
 .proposal-sent {
     box-sizing: border-box;
     text-align: left;
-    &__decor{
+
+    &__decor {
         display: flex;
         justify-content: center;
         margin-bottom: 16px;
     }
+
     &__title {
         text-align: center;
     }
-    &__descr{
+
+    &__descr {
         margin-top: 16px;
-        p{
+
+        p {
             font-size: var(--default-fz);
             line-height: var(--default-lh);
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 margin-bottom: 8px;
             }
         }
     }
+
     &__btn {
         margin-top: 24px;
         width: 100%;
@@ -3755,6 +3780,7 @@
         margin: 0 auto;
     }
 }
+
 .stock-popup {
     --transition-time: 0.3s;
     position: fixed;
@@ -4107,8 +4133,8 @@
         }
 
         &__images {
-           width: 80%;
-           margin-bottom: 24px;
+            width: 80%;
+            margin-bottom: 24px;
         }
 
         &__image {}

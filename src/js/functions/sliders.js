@@ -92,8 +92,8 @@ function initSliders() {
             spaceBetween: 32,
             speed: 800,
             navigation: {
-                prevEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--prev'),
-                nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-secondary--next'),
+                prevEl: slider.closest('.history-changes').querySelector('.nav-arrow-primary--prev'),
+                nextEl: slider.closest('.history-changes').querySelector('.nav-arrow-primary--next'),
             },
             breakpoints: {
                 1212: {
