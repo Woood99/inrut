@@ -20,7 +20,7 @@
     }
 
     &__images {
-       margin-top: 24px;
+        margin-top: 24px;
     }
 
     &__image {
@@ -72,12 +72,54 @@
         margin-top: 32px;
     }
 
-    &__descr {
+    &__content {
         margin-top: 16px;
 
-        p {
-            &:not(:last-child) {
-                margin-bottom: 8px;
+        :not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        a:not(.btn) {
+            color: var(--blue);
+            text-decoration: underline;
+
+            @media (min-width:$desktop-min) {
+                &:hover {
+                    color: var(--blue-dark);
+                }
+            }
+        }
+
+        ol {
+            li {
+                position: relative;
+                counter-increment: inst;
+                margin: 0 0 12px 32px;
+
+                &::before {
+                    content: counter(inst) ". ";
+                    position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                    left: -19px;
+                    font-weight: 500;
+                }
+            }
+        }
+        ul{
+            li{
+                margin: 0 0 12px 28px;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    left: -15px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                  background-color: currentColor;
+                }
             }
         }
     }
@@ -103,14 +145,17 @@
             width: 100%;
             margin-top: 32px;
         }
-        &__btn{
+
+        &__btn {
             margin: 0;
+
             &:not(:last-child) {
                 margin-bottom: 16px;
             }
         }
     }
-    &__consultation{
+
+    &__consultation {
         margin-top: 32px;
     }
 }

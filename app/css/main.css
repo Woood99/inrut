@@ -34092,11 +34092,49 @@ textarea.input-reset {
 .news__title {
   margin-top: 32px;
 }
-.news__descr {
+.news__content {
   margin-top: 16px;
 }
-.news__descr p:not(:last-child) {
+.news__content :not(:last-child) {
   margin-bottom: 8px;
+}
+.news__content a:not(.btn) {
+  color: var(--blue);
+  text-decoration: underline;
+}
+@media (min-width: 1213px) {
+  .news__content a:not(.btn):hover {
+    color: var(--blue-dark);
+  }
+}
+.news__content ol li {
+  position: relative;
+  counter-increment: inst;
+  margin: 0 0 12px 32px;
+}
+.news__content ol li::before {
+  content: counter(inst) ". ";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: -19px;
+  font-weight: 500;
+}
+.news__content ul li {
+  margin: 0 0 12px 28px;
+  position: relative;
+}
+.news__content ul li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -15px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
 }
 .news__consultation._sticky {
   position: sticky;
